@@ -36,8 +36,10 @@ var Learn = function Learn(props) {
   console.log(data);
 
   var submitResult = function submitResult(result) {
-    setPosition(position + 1);
-    if (result.length === 1) setCorrect(correct + 1);
+    setTimeout(function () {
+      setPosition(position + 1);
+      if (result.length === 1) setCorrect(correct + 1);
+    }, 500);
   };
 
   if (position >= data.length) {
@@ -45,7 +47,7 @@ var Learn = function Learn(props) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22,
+        lineNumber: 24,
         columnNumber: 9
       }
     }, __jsx("span", {
@@ -54,28 +56,28 @@ var Learn = function Learn(props) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23,
+        lineNumber: 25,
         columnNumber: 11
       }
     }, "\uD83C\uDF89"), ' ', "You've answered all the questions!"), __jsx("p", {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27,
+        lineNumber: 29,
         columnNumber: 9
       }
     }, "Correct answers:", ' ', correct), __jsx("p", {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 32,
+        lineNumber: 34,
         columnNumber: 9
       }
     }, "Incorrect answers:", ' ', data.length - correct), __jsx("p", {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 37,
+        lineNumber: 39,
         columnNumber: 9
       }
     }, "Total answers:", ' ', data.length));
@@ -88,7 +90,7 @@ var Learn = function Learn(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 49,
       columnNumber: 5
     }
   });
@@ -217,7 +219,7 @@ var LearnCard = function LearnCard(props) {
 
   var selectAnswer = function selectAnswer(index, correct) {
     var newSelected = [index].concat(Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(selected));
-    if (correct) return submitResult(newSelected);
+    if (correct) submitResult(newSelected);
     setSelected(newSelected);
     return null;
   };
@@ -444,7 +446,17 @@ var SiteLayout = function SiteLayout(_ref) {
       lineNumber: 21,
       columnNumber: 11
     }
-  }, "lynx"), ", 2020")));
+  }, "lynx"), ", 2020.", ' ', __jsx("a", {
+    href: "https://github.com/4ndv/hsk",
+    target: "_blank",
+    rel: "noopener",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24,
+      columnNumber: 11
+    }
+  }, "Source code and issues reports."))));
 };
 
 SiteLayout.propTypes = {

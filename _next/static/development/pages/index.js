@@ -520,7 +520,17 @@ var SiteLayout = function SiteLayout(_ref) {
       lineNumber: 21,
       columnNumber: 11
     }
-  }, "lynx"), ", 2020")));
+  }, "lynx"), ", 2020.", ' ', __jsx("a", {
+    href: "https://github.com/4ndv/hsk",
+    target: "_blank",
+    rel: "noopener",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24,
+      columnNumber: 11
+    }
+  }, "Source code and issues reports."))));
 };
 
 SiteLayout.propTypes = {
