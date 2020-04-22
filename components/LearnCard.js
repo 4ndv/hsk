@@ -7,13 +7,18 @@ import {
 const renderQuestion = (question, type) => {
   switch (type) {
     case 'characters-pinyin':
-      return question.simplified
+      return <div className="question">{question.simplified}</div>
     case 'pinyin-characters':
-      return question.pinyin
+      return <div className="question">{question.pinyin}</div>
     case 'characters-translation':
-      return question.simplified
+      return (
+        <>
+          <div className="question">{question.simplified}</div>
+          <div className="comment">{question.pinyin}</div>
+        </>
+      )
     case 'translation-characters':
-      return question.definitions[0]
+      return <div className="question">{question.definitions[0]}</div>
     default:
       return 'None'
   }
@@ -28,7 +33,7 @@ const renderAnswerText = (answer, type) => {
     case 'characters-translation':
       return answer.definitions[0]
     case 'translation-characters':
-      return answer.simplified
+      return `${answer.simplified} (${answer.pinyin})`
     default:
       return 'None'
   }
