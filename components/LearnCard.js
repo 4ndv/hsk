@@ -47,7 +47,7 @@ const LearnCard = (props) => {
   const selectAnswer = (index, correct) => {
     const newSelected = [index, ...selected]
 
-    if (correct) return submitResult(newSelected)
+    if (correct) submitResult(newSelected)
 
     setSelected(newSelected)
 

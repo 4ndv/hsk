@@ -11,9 +11,11 @@ const Learn = (props) => {
   console.log(data)
 
   const submitResult = (result) => {
-    setPosition(position + 1)
+    setTimeout(() => {
+      setPosition(position + 1)
 
-    if (result.length === 1) setCorrect(correct + 1)
+      if (result.length === 1) setCorrect(correct + 1)
+    }, 500)
   }
 
   if (position >= data.length) {
