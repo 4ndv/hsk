@@ -5,7 +5,7 @@ import SettingsForm from '~/components/SettingsForm'
 
 const onSubmit = (data) => {
   Router.push({
-    pathname: '/learn',
+    pathname: `${process.env.base}/learn`,
     query: { config: JSON.stringify(data) }
   })
 }

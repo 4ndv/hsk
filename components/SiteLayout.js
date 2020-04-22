@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { Container, Row, Col } from 'reactstrap'
+import Link from './Link'
 
 const SiteLayout = ({ children }) => {
   return (
@@ -10,7 +11,7 @@ const SiteLayout = ({ children }) => {
         <Row>
           <Col>
             <header>
-              <div className="logo">hsk</div>
+              <Link href="/"><a className="logo">hsk</a></Link>
             </header>
           </Col>
         </Row>
