@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "analyze": "ANALYZE=true next build"
+    "analyze": "ANALYZE=true next build",
+    "gh-pages": "BASE_URL=/hsk next export && touch out/.nojekyll && gh-pages -d out -t"
   },
   "dependencies": {
     "bootstrap": "^4.4.1",
@@ -27,6 +28,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^3.0.0",
+    "gh-pages": "^2.2.0",
     "sass-loader": "^8.0.2"
   }
 }
