@@ -1,0 +1,25 @@
+@import "bs";
+@import "bootstrap/scss/bootstrap";
+
+header {
+  padding: 20px 0;
+
+  .logo {
+    font-weight: bold;
+    font-size: 2rem;
+  }
+}
+
+footer {
+  padding: 20px 0;
+  width: 100%;
+}
+
+.learn-card {
+  .question {
+    font-family: monospace;
+    text-align: center;
+
+    font-size: 4rem;
+  }
+}
