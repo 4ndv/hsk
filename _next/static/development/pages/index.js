@@ -266,8 +266,9 @@ var SettingsForm = function SettingsForm(props) {
     defaultValues: {
       levels: [1, 2, 3, 4],
       wordsLimit: 0,
-      modes: ['characters-pinyin', 'character-translation'],
-      hidePinyin: true
+      modes: ['characters-pinyin'],
+      alwaysShowPinyin: false,
+      alwaysShowTranslation: false
     }
   }),
       control = _useForm.control,
@@ -279,14 +280,14 @@ var SettingsForm = function SettingsForm(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 26,
       columnNumber: 5
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 27,
       columnNumber: 7
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Label"], {
@@ -294,14 +295,14 @@ var SettingsForm = function SettingsForm(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 28,
       columnNumber: 9
     }
   }, "HSK Levels (all levels does not include previous ones)"), __jsx("div", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 29,
       columnNumber: 9
     }
   }, __jsx(react_hook_form__WEBPACK_IMPORTED_MODULE_2__["Controller"], {
@@ -335,14 +336,14 @@ var SettingsForm = function SettingsForm(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 30,
       columnNumber: 11
     }
   }))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 48,
       columnNumber: 7
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Label"], {
@@ -350,7 +351,7 @@ var SettingsForm = function SettingsForm(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 49,
       columnNumber: 9
     }
   }, "Words limit (0 = disabled)"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Input"], {
@@ -363,7 +364,7 @@ var SettingsForm = function SettingsForm(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 50,
       columnNumber: 9
     }
   })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], {
@@ -371,7 +372,7 @@ var SettingsForm = function SettingsForm(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 59,
       columnNumber: 7
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Label"], {
@@ -379,7 +380,7 @@ var SettingsForm = function SettingsForm(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 60,
       columnNumber: 9
     }
   }, "Modes (if multiple selected modes will be randomized)")), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], {
@@ -387,7 +388,7 @@ var SettingsForm = function SettingsForm(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 62,
       columnNumber: 7
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Label"], {
@@ -395,7 +396,7 @@ var SettingsForm = function SettingsForm(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 63,
       columnNumber: 9
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Input"], {
@@ -406,7 +407,7 @@ var SettingsForm = function SettingsForm(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 64,
       columnNumber: 11
     }
   }), ' ', "Select pinyin for characters")), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], {
@@ -414,7 +415,7 @@ var SettingsForm = function SettingsForm(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 74,
       columnNumber: 7
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Label"], {
@@ -422,7 +423,7 @@ var SettingsForm = function SettingsForm(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
+      lineNumber: 75,
       columnNumber: 9
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Input"], {
@@ -433,7 +434,7 @@ var SettingsForm = function SettingsForm(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 76,
       columnNumber: 11
     }
   }), ' ', "Select characters for pinyin")), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], {
@@ -441,7 +442,7 @@ var SettingsForm = function SettingsForm(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85,
+      lineNumber: 86,
       columnNumber: 7
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Label"], {
@@ -449,7 +450,7 @@ var SettingsForm = function SettingsForm(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86,
+      lineNumber: 87,
       columnNumber: 9
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Input"], {
@@ -460,7 +461,7 @@ var SettingsForm = function SettingsForm(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87,
+      lineNumber: 88,
       columnNumber: 11
     }
   }), ' ', "Select translation for characters")), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], {
@@ -468,7 +469,7 @@ var SettingsForm = function SettingsForm(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97,
+      lineNumber: 98,
       columnNumber: 7
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Label"], {
@@ -476,7 +477,7 @@ var SettingsForm = function SettingsForm(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98,
+      lineNumber: 99,
       columnNumber: 9
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Input"], {
@@ -487,7 +488,7 @@ var SettingsForm = function SettingsForm(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99,
+      lineNumber: 100,
       columnNumber: 11
     }
   }), ' ', "Select characters for translation")), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], {
@@ -495,7 +496,7 @@ var SettingsForm = function SettingsForm(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109,
+      lineNumber: 110,
       columnNumber: 7
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Label"], {
@@ -503,7 +504,7 @@ var SettingsForm = function SettingsForm(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110,
+      lineNumber: 111,
       columnNumber: 9
     }
   }, "Other settings")), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], {
@@ -511,7 +512,7 @@ var SettingsForm = function SettingsForm(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112,
+      lineNumber: 113,
       columnNumber: 7
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Label"], {
@@ -519,25 +520,51 @@ var SettingsForm = function SettingsForm(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113,
+      lineNumber: 114,
       columnNumber: 9
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Input"], {
     type: "checkbox",
-    name: "hidePinyin",
+    name: "alwaysShowPinyin",
     innerRef: register(),
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114,
+      lineNumber: 115,
       columnNumber: 11
     }
-  }), ' ', "Hide pinyin")), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], {
+  }), ' ', "Always show pinyin")), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], {
+    check: true,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 124,
+      columnNumber: 7
+    }
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Label"], {
+    check: true,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 125,
+      columnNumber: 9
+    }
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Input"], {
+    type: "checkbox",
+    name: "alwaysShowTranslation",
+    innerRef: register(),
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 126,
+      columnNumber: 11
+    }
+  }), ' ', "Always show definition")), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], {
     className: "mt-3",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 123,
+      lineNumber: 135,
       columnNumber: 7
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Button"], {
@@ -547,7 +574,7 @@ var SettingsForm = function SettingsForm(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 124,
+      lineNumber: 136,
       columnNumber: 9
     }
   }, "Start")));

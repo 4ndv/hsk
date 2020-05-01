@@ -190,11 +190,16 @@ var Learn = function Learn(props) {
       errors = _useState3[0],
       setErrors = _useState3[1];
 
+  var _useState4 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(false),
+      finished = _useState4[0],
+      setFinished = _useState4[1];
+
   console.log(data);
   Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(function () {
     setPosition(0);
     setCorrect(0);
     setErrors([]);
+    setFinished(false);
   }, [config]);
 
   var submitResult = function submitResult(result) {
@@ -209,6 +214,10 @@ var Learn = function Learn(props) {
         setErrors([].concat(Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(errors), [word]));
       }
     }, 500);
+  };
+
+  var finish = function finish() {
+    setFinished(true);
   };
 
   var tryAgain = function tryAgain() {
@@ -228,12 +237,12 @@ var Learn = function Learn(props) {
     });
   };
 
-  if (position >= data.length) {
+  if (position >= data.length || finished) {
     return __jsx(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, __jsx("h3", {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 93,
+        lineNumber: 99,
         columnNumber: 9
       }
     }, __jsx("span", {
@@ -242,35 +251,35 @@ var Learn = function Learn(props) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 94,
+        lineNumber: 100,
         columnNumber: 11
       }
     }, "\uD83C\uDF89"), ' ', "You've answered all the questions!"), __jsx("p", {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 98,
+        lineNumber: 104,
         columnNumber: 9
       }
     }, "Correct answers:", ' ', correct), __jsx("p", {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 103,
+        lineNumber: 109,
         columnNumber: 9
       }
-    }, "Incorrect answers:", ' ', data.length - correct), __jsx("p", {
+    }, "Incorrect answers:", ' ', errors.length), __jsx("p", {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 108,
+        lineNumber: 114,
         columnNumber: 9
       }
-    }, "Total answers:", ' ', data.length), __jsx("p", {
+    }, "Total answers:", ' ', correct + errors.length), __jsx("p", {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 113,
+        lineNumber: 119,
         columnNumber: 9
       }
     }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_5__["Button"], {
@@ -278,7 +287,7 @@ var Learn = function Learn(props) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 114,
+        lineNumber: 120,
         columnNumber: 11
       }
     }, "Try again"), errors.length > 0 ? __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_5__["Button"], {
@@ -287,7 +296,7 @@ var Learn = function Learn(props) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 115,
+        lineNumber: 121,
         columnNumber: 32
       }
     }, "Retry incorrect") : null, __jsx(_Link__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -295,7 +304,7 @@ var Learn = function Learn(props) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 116,
+        lineNumber: 122,
         columnNumber: 11
       }
     }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_5__["Button"], {
@@ -303,7 +312,7 @@ var Learn = function Learn(props) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 116,
+        lineNumber: 122,
         columnNumber: 26
       }
     }, "Return to home"))), renderMistakes(errors));
@@ -315,7 +324,7 @@ var Learn = function Learn(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 125,
+      lineNumber: 131,
       columnNumber: 7
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_5__["Progress"], {
@@ -325,7 +334,7 @@ var Learn = function Learn(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 126,
+      lineNumber: 132,
       columnNumber: 9
     }
   }), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_5__["Progress"], {
@@ -335,7 +344,7 @@ var Learn = function Learn(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 127,
+      lineNumber: 133,
       columnNumber: 9
     }
   })), __jsx(_LearnCard__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -343,10 +352,11 @@ var Learn = function Learn(props) {
     key: position,
     submitResult: submitResult,
     config: config,
+    finish: finish,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 129,
+      lineNumber: 136,
       columnNumber: 7
     }
   }));
@@ -390,38 +400,17 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 var renderQuestion = function renderQuestion(config, question, type) {
-  var hidePinyin = config.hidePinyin;
+  var alwaysShowPinyin = config.alwaysShowPinyin,
+      alwaysShowTranslation = config.alwaysShowTranslation;
 
   switch (type) {
     case 'characters-pinyin':
-      return __jsx("div", {
-        className: "question",
-        __self: _this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 16,
-          columnNumber: 14
-        }
-      }, question.simplified);
-
-    case 'pinyin-characters':
-      return __jsx("div", {
-        className: "question",
-        __self: _this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 18,
-          columnNumber: 14
-        }
-      }, question.pinyin);
-
-    case 'characters-translation':
       return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx("div", {
         className: "question",
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22,
+          lineNumber: 18,
           columnNumber: 11
         }
       }, question.simplified), __jsx("div", {
@@ -429,16 +418,72 @@ var renderQuestion = function renderQuestion(config, question, type) {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23,
+          lineNumber: 19,
           columnNumber: 11
         }
       }, __jsx(_Hider__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        enabled: hidePinyin,
+        enabled: !alwaysShowTranslation,
+        caption: "Show translation",
+        __self: _this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 20,
+          columnNumber: 13
+        }
+      }, question.definitions[0])));
+
+    case 'pinyin-characters':
+      return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx("div", {
+        className: "question",
+        __self: _this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 32,
+          columnNumber: 11
+        }
+      }, question.pinyin), __jsx("div", {
+        className: "comment",
+        __self: _this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 33,
+          columnNumber: 11
+        }
+      }, __jsx(_Hider__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        enabled: !alwaysShowTranslation,
+        caption: "Show translation",
+        __self: _this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 34,
+          columnNumber: 13
+        }
+      }, question.definitions[0])));
+
+    case 'characters-translation':
+      return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx("div", {
+        className: "question",
+        __self: _this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 46,
+          columnNumber: 11
+        }
+      }, question.simplified), __jsx("div", {
+        className: "comment",
+        __self: _this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 47,
+          columnNumber: 11
+        }
+      }, __jsx(_Hider__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        enabled: !alwaysShowPinyin,
         caption: "Show pinyin",
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24,
+          lineNumber: 48,
           columnNumber: 13
         }
       }, question.pinyin)));
@@ -449,7 +494,7 @@ var renderQuestion = function renderQuestion(config, question, type) {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 34,
+          lineNumber: 58,
           columnNumber: 14
         }
       }, question.definitions[0]);
@@ -481,7 +526,8 @@ var renderAnswerText = function renderAnswerText(answer, type) {
 var LearnCard = function LearnCard(props) {
   var word = props.word,
       submitResult = props.submitResult,
-      config = props.config;
+      config = props.config,
+      finish = props.finish;
   var question = word.question,
       variants = word.variants,
       type = word.type;
@@ -548,7 +594,7 @@ var LearnCard = function LearnCard(props) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 107,
+        lineNumber: 134,
         columnNumber: 7
       }
     }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Button"], {
@@ -563,7 +609,7 @@ var LearnCard = function LearnCard(props) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 108,
+        lineNumber: 135,
         columnNumber: 9
       }
     }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Badge"], {
@@ -572,7 +618,7 @@ var LearnCard = function LearnCard(props) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 116,
+        lineNumber: 143,
         columnNumber: 11
       }
     }, index + 1), ' ', __jsx("span", {
@@ -580,7 +626,7 @@ var LearnCard = function LearnCard(props) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 118,
+        lineNumber: 145,
         columnNumber: 11
       }
     }, renderAnswerText(variant, type))));
@@ -591,14 +637,14 @@ var LearnCard = function LearnCard(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 126,
+      lineNumber: 153,
       columnNumber: 7
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["CardBody"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 127,
+      lineNumber: 154,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -606,14 +652,14 @@ var LearnCard = function LearnCard(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 128,
+      lineNumber: 155,
       columnNumber: 11
     }
   }, renderQuestion(config, question, type)))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Row"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 133,
+      lineNumber: 160,
       columnNumber: 7
     }
   }, variants.map(function (variant, i) {
@@ -623,7 +669,7 @@ var LearnCard = function LearnCard(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 143,
+      lineNumber: 170,
       columnNumber: 9
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Button"], {
@@ -633,10 +679,11 @@ var LearnCard = function LearnCard(props) {
       return skip();
     },
     size: "lg",
+    className: "mb-4",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 144,
+      lineNumber: 171,
       columnNumber: 11
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Badge"], {
@@ -644,16 +691,38 @@ var LearnCard = function LearnCard(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 150,
+      lineNumber: 178,
       columnNumber: 13
     }
-  }, "Space"), ' ', "Skip"))));
+  }, "Space"), ' ', "Skip")), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
+    lg: 12,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 183,
+      columnNumber: 9
+    }
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Button"], {
+    block: true,
+    color: "dark",
+    onClick: function onClick() {
+      return finish();
+    },
+    size: "lg",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 184,
+      columnNumber: 11
+    }
+  }, "Finish"))));
 };
 
 LearnCard.propTypes = {
   word: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.object.isRequired,
   submitResult: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func.isRequired,
-  config: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.object.isRequired
+  config: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.object.isRequired,
+  finish: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func.isRequired
 };
 /* harmony default export */ __webpack_exports__["default"] = (LearnCard);
 
