@@ -53,7 +53,10 @@ const renderAnswerText = (answer, type) => {
 }
 
 const LearnCard = (props) => {
-  const { word, submitResult, config } = props
+  const {
+    word, submitResult, config, finish
+  } = props
+
   const { question, variants, type } = word
   const [selected, setSelected] = useState([])
   const [disableAll, setDisableAll] = useState(false)
@@ -146,10 +149,21 @@ const LearnCard = (props) => {
             color="warning"
             onClick={() => skip()}
             size="lg"
+            className="mb-4"
           >
             <Badge color="dark">Space</Badge>
             {' '}
             Skip
+          </Button>
+        </Col>
+        <Col lg={12}>
+          <Button
+            block
+            color="dark"
+            onClick={() => finish()}
+            size="lg"
+          >
+            Finish
           </Button>
         </Col>
       </Row>
@@ -160,7 +174,8 @@ const LearnCard = (props) => {
 LearnCard.propTypes = {
   word: PropTypes.object.isRequired,
   submitResult: PropTypes.func.isRequired,
-  config: PropTypes.object.isRequired
+  config: PropTypes.object.isRequired,
+  finish: PropTypes.func.isRequired
 }
 
 export default LearnCard

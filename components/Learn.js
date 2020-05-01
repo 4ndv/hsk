@@ -48,6 +48,7 @@ const Learn = (props) => {
   const [position, setPosition] = useState(0)
   const [correct, setCorrect] = useState(0)
   const [errors, setErrors] = useState([])
+  const [finished, setFinished] = useState(false)
 
   console.log(data)
 
@@ -55,6 +56,7 @@ const Learn = (props) => {
     setPosition(0)
     setCorrect(0)
     setErrors([])
+    setFinished(false)
   }, [config])
 
   const submitResult = (result) => {
@@ -69,6 +71,10 @@ const Learn = (props) => {
         setErrors([...errors, word])
       }
     }, 500)
+  }
+
+  const finish = () => {
+    setFinished(true)
   }
 
   const tryAgain = () => {
@@ -87,7 +93,7 @@ const Learn = (props) => {
     })
   }
 
-  if (position >= data.length) {
+  if (position >= data.length || finished) {
     return (
       <>
         <h3>
@@ -103,12 +109,12 @@ const Learn = (props) => {
         <p>
           Incorrect answers:
           {' '}
-          {data.length - correct}
+          {errors.length}
         </p>
         <p>
           Total answers:
           {' '}
-          {data.length}
+          {correct + errors.length}
         </p>
         <p>
           <Button onClick={tryAgain}>Try again</Button>
@@ -126,7 +132,14 @@ const Learn = (props) => {
         <Progress bar color="success" value={(100.0 / data.length) * correct} />
         <Progress bar color="danger" value={(100.0 / data.length) * errors.length} />
       </Progress>
-      <LearnCard word={data[position]} key={position} submitResult={submitResult} config={config} />
+
+      <LearnCard
+        word={data[position]}
+        key={position}
+        submitResult={submitResult}
+        config={config}
+        finish={finish}
+      />
     </>
   )
 }
