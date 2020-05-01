@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "analyze": "ANALYZE=true next build",
-    "gh-pages": "BASE_URL=/hsk next build && BASE_URL=/hsk next export && touch out/.nojekyll && gh-pages -d out -t"
+    "gh-pages": "BASE_URL=/hsk next build && next export && touch out/.nojekyll && gh-pages -d out -t"
   },
   "dependencies": {
     "bootstrap": "^4.4.1",
