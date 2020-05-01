@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Head from 'next/head'
 
+import NextNprogress from 'nextjs-progressbar'
+
 import '~/styles/main.scss'
 
 function MyApp({ Component, pageProps }) {
@@ -9,9 +11,15 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>HSK</title>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       </Head>
+      <NextNprogress
+        color="#29D"
+        startPosition="0.3"
+        stopDelayMs="200"
+        height="3"
+      />
       <Component {...pageProps} />
     </>
   )
