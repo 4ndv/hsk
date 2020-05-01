@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
+import { Button } from 'reactstrap'
+
 import LearnCard from './LearnCard'
 
 const Learn = (props) => {
@@ -16,6 +18,10 @@ const Learn = (props) => {
 
       if (result.length === 1) setCorrect(correct + 1)
     }, 500)
+  }
+
+  const tryAgain = () => {
+    window.location.reload()
   }
 
   if (position >= data.length) {
@@ -41,6 +47,7 @@ const Learn = (props) => {
           {' '}
           {data.length}
         </p>
+        <p><Button onClick={tryAgain}>Try again</Button></p>
       </>
     )
   }
