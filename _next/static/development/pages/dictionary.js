@@ -1,94 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/index.js"],{
-
-/***/ "./components/ButtonCheckboxGroup.js":
-/*!*******************************************!*\
-  !*** ./components/ButtonCheckboxGroup.js ***!
-  \*******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
-
-
-var _this = undefined,
-    _jsxFileName = "/Users/lynx/projects/hsk/components/ButtonCheckboxGroup.js";
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
-
-
-
-
-var ButtonCheckboxGroup = function ButtonCheckboxGroup(props) {
-  var size = props.size,
-      color = props.color,
-      options = props.options,
-      selected = props.selected,
-      onChange = props.onChange,
-      disabled = props.disabled;
-
-  var toggle = function toggle(value) {
-    if (selected.includes(value)) {
-      onChange(selected.filter(function (s) {
-        return s !== value;
-      }));
-    } else {
-      onChange([value].concat(Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(selected)));
-    }
-  };
-
-  return __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["ButtonGroup"], {
-    size: size,
-    toggle: true,
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 20,
-      columnNumber: 5
-    }
-  }, options.map(function (option) {
-    return [__jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Button"], {
-      key: option.value,
-      color: color,
-      disabled: disabled,
-      active: selected.includes(option.value),
-      onClick: function onClick() {
-        return toggle(option.value);
-      },
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 24,
-        columnNumber: 13
-      }
-    }, option.label)];
-  }));
-};
-
-ButtonCheckboxGroup.propTypes = {
-  options: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.array.isRequired,
-  selected: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.array,
-  disabled: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.bool,
-  size: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
-  color: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
-  onChange: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func
-};
-ButtonCheckboxGroup.defaultProps = {
-  size: 'md',
-  color: 'primary',
-  disabled: false,
-  selected: [],
-  onChange: function onChange() {}
-};
-/* harmony default export */ __webpack_exports__["default"] = (ButtonCheckboxGroup);
-
-/***/ }),
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/dictionary.js"],{
 
 /***/ "./components/Link.js":
 /*!****************************!*\
@@ -233,333 +143,6 @@ MainNav.propTypes = {
 
 /***/ }),
 
-/***/ "./components/SettingsForm.js":
-/*!************************************!*\
-  !*** ./components/SettingsForm.js ***!
-  \************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_hook_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-hook-form */ "./node_modules/react-hook-form/dist/react-hook-form.es.js");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
-/* harmony import */ var _ButtonCheckboxGroup__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ButtonCheckboxGroup */ "./components/ButtonCheckboxGroup.js");
-var _this = undefined,
-    _jsxFileName = "/Users/lynx/projects/hsk/components/SettingsForm.js";
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-
-
-
-var SettingsForm = function SettingsForm(props) {
-  var onSubmit = props.onSubmit;
-
-  var _useForm = Object(react_hook_form__WEBPACK_IMPORTED_MODULE_2__["useForm"])({
-    defaultValues: {
-      levels: [1, 2, 3, 4],
-      wordsLimit: 0,
-      modes: ['characters-pinyin', 'character-translation'],
-      hidePinyin: true
-    }
-  }),
-      control = _useForm.control,
-      register = _useForm.register,
-      handleSubmit = _useForm.handleSubmit;
-
-  return __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Form"], {
-    onSubmit: handleSubmit(onSubmit),
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25,
-      columnNumber: 5
-    }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 26,
-      columnNumber: 7
-    }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Label"], {
-    "for": "levels",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 27,
-      columnNumber: 9
-    }
-  }, "HSK Levels (all levels does not include previous ones)"), __jsx("div", {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 28,
-      columnNumber: 9
-    }
-  }, __jsx(react_hook_form__WEBPACK_IMPORTED_MODULE_2__["Controller"], {
-    as: _ButtonCheckboxGroup__WEBPACK_IMPORTED_MODULE_4__["default"],
-    control: control,
-    rules: {
-      required: true
-    },
-    options: [{
-      value: 1,
-      label: 'HSK 1'
-    }, {
-      value: 2,
-      label: 'HSK 2'
-    }, {
-      value: 3,
-      label: 'HSK 3'
-    }, {
-      value: 4,
-      label: 'HSK 4'
-    }, {
-      value: 5,
-      label: 'HSK 5'
-    }, {
-      value: 6,
-      label: 'HSK 6'
-    }],
-    name: "levels",
-    valueName: "selected",
-    color: "secondary",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29,
-      columnNumber: 11
-    }
-  }))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 47,
-      columnNumber: 7
-    }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Label"], {
-    "for": "words-limit",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 48,
-      columnNumber: 9
-    }
-  }, "Words limit (0 = disabled)"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Input"], {
-    type: "number",
-    name: "wordsLimit",
-    placeholder: "0",
-    id: "words-limit",
-    min: 0,
-    innerRef: register(),
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 49,
-      columnNumber: 9
-    }
-  })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], {
-    className: "mb-0",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 58,
-      columnNumber: 7
-    }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Label"], {
-    "for": "modes",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 59,
-      columnNumber: 9
-    }
-  }, "Modes (if multiple selected modes will be randomized)")), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], {
-    check: true,
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 61,
-      columnNumber: 7
-    }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Label"], {
-    check: true,
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 62,
-      columnNumber: 9
-    }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Input"], {
-    type: "checkbox",
-    name: "modes",
-    value: "characters-pinyin",
-    innerRef: register(),
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 63,
-      columnNumber: 11
-    }
-  }), ' ', "Select pinyin for characters")), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], {
-    check: true,
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 73,
-      columnNumber: 7
-    }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Label"], {
-    check: true,
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 74,
-      columnNumber: 9
-    }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Input"], {
-    type: "checkbox",
-    name: "modes",
-    value: "pinyin-characters",
-    innerRef: register(),
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 75,
-      columnNumber: 11
-    }
-  }), ' ', "Select characters for pinyin")), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], {
-    check: true,
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 85,
-      columnNumber: 7
-    }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Label"], {
-    check: true,
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 86,
-      columnNumber: 9
-    }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Input"], {
-    type: "checkbox",
-    name: "modes",
-    value: "characters-translation",
-    innerRef: register(),
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 87,
-      columnNumber: 11
-    }
-  }), ' ', "Select translation for characters")), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], {
-    check: true,
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 97,
-      columnNumber: 7
-    }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Label"], {
-    check: true,
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 98,
-      columnNumber: 9
-    }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Input"], {
-    type: "checkbox",
-    name: "modes",
-    value: "translation-characters",
-    innerRef: register(),
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 99,
-      columnNumber: 11
-    }
-  }), ' ', "Select characters for translation")), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], {
-    className: "mb-0 mt-2",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 109,
-      columnNumber: 7
-    }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Label"], {
-    "for": "modes",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 110,
-      columnNumber: 9
-    }
-  }, "Other settings")), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], {
-    check: true,
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 112,
-      columnNumber: 7
-    }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Label"], {
-    check: true,
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 113,
-      columnNumber: 9
-    }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Input"], {
-    type: "checkbox",
-    name: "hidePinyin",
-    innerRef: register(),
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 114,
-      columnNumber: 11
-    }
-  }), ' ', "Hide pinyin")), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], {
-    className: "mt-3",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 123,
-      columnNumber: 7
-    }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Button"], {
-    type: "submit",
-    color: "primary",
-    size: "lg",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 124,
-      columnNumber: 9
-    }
-  }, "Start")));
-};
-
-SettingsForm.propTypes = {
-  onSubmit: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired
-};
-/* harmony default export */ __webpack_exports__["default"] = (SettingsForm);
-
-/***/ }),
-
 /***/ "./components/SiteLayout.js":
 /*!**********************************!*\
   !*** ./components/SiteLayout.js ***!
@@ -674,6 +257,162 @@ SiteLayout.propTypes = {
 
 /***/ }),
 
+/***/ "./lib/learn.js":
+/*!**********************!*\
+  !*** ./lib/learn.js ***!
+  \**********************/
+/*! exports provided: levelWords, nRandomDigitsWithoutRepetitionExcluding, selectNWords, buildFromConfig */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "levelWords", function() { return levelWords; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "nRandomDigitsWithoutRepetitionExcluding", function() { return nRandomDigitsWithoutRepetitionExcluding; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "selectNWords", function() { return selectNWords; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buildFromConfig", function() { return buildFromConfig; });
+/* harmony import */ var _babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+/* harmony import */ var lodash_random__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/random */ "./node_modules/lodash/random.js");
+/* harmony import */ var lodash_random__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_random__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var lodash_uniq__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash/uniq */ "./node_modules/lodash/uniq.js");
+/* harmony import */ var lodash_uniq__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash_uniq__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var lodash_map__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lodash/map */ "./node_modules/lodash/map.js");
+/* harmony import */ var lodash_map__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lodash_map__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var lodash_sample__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lodash/sample */ "./node_modules/lodash/sample.js");
+/* harmony import */ var lodash_sample__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(lodash_sample__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var lodash_shuffle__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! lodash/shuffle */ "./node_modules/lodash/shuffle.js");
+/* harmony import */ var lodash_shuffle__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(lodash_shuffle__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var lodash_slice__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! lodash/slice */ "./node_modules/lodash/slice.js");
+/* harmony import */ var lodash_slice__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(lodash_slice__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var lodash_flatten__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! lodash/flatten */ "./node_modules/lodash/flatten.js");
+/* harmony import */ var lodash_flatten__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(lodash_flatten__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _words_hsk1__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ~/words/hsk1 */ "./words/hsk1.json");
+var _words_hsk1__WEBPACK_IMPORTED_MODULE_9___namespace = /*#__PURE__*/__webpack_require__.t(/*! ~/words/hsk1 */ "./words/hsk1.json", 1);
+/* harmony import */ var _words_hsk2__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ~/words/hsk2 */ "./words/hsk2.json");
+var _words_hsk2__WEBPACK_IMPORTED_MODULE_10___namespace = /*#__PURE__*/__webpack_require__.t(/*! ~/words/hsk2 */ "./words/hsk2.json", 1);
+/* harmony import */ var _words_hsk3__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ~/words/hsk3 */ "./words/hsk3.json");
+var _words_hsk3__WEBPACK_IMPORTED_MODULE_11___namespace = /*#__PURE__*/__webpack_require__.t(/*! ~/words/hsk3 */ "./words/hsk3.json", 1);
+/* harmony import */ var _words_hsk4__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ~/words/hsk4 */ "./words/hsk4.json");
+var _words_hsk4__WEBPACK_IMPORTED_MODULE_12___namespace = /*#__PURE__*/__webpack_require__.t(/*! ~/words/hsk4 */ "./words/hsk4.json", 1);
+/* harmony import */ var _words_hsk5__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ~/words/hsk5 */ "./words/hsk5.json");
+var _words_hsk5__WEBPACK_IMPORTED_MODULE_13___namespace = /*#__PURE__*/__webpack_require__.t(/*! ~/words/hsk5 */ "./words/hsk5.json", 1);
+/* harmony import */ var _words_hsk6__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ~/words/hsk6 */ "./words/hsk6.json");
+var _words_hsk6__WEBPACK_IMPORTED_MODULE_14___namespace = /*#__PURE__*/__webpack_require__.t(/*! ~/words/hsk6 */ "./words/hsk6.json", 1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function levelWords(level) {
+  switch (level) {
+    case 1:
+      return _words_hsk1__WEBPACK_IMPORTED_MODULE_9__;
+
+    case 2:
+      return _words_hsk2__WEBPACK_IMPORTED_MODULE_10__;
+
+    case 3:
+      return _words_hsk3__WEBPACK_IMPORTED_MODULE_11__;
+
+    case 4:
+      return _words_hsk4__WEBPACK_IMPORTED_MODULE_12__;
+
+    case 5:
+      return _words_hsk5__WEBPACK_IMPORTED_MODULE_13__;
+
+    case 6:
+      return _words_hsk6__WEBPACK_IMPORTED_MODULE_14__;
+
+    default:
+      return {};
+  }
+}
+function nRandomDigitsWithoutRepetitionExcluding(count, max, exclude) {
+  var digits = [];
+
+  while (lodash_uniq__WEBPACK_IMPORTED_MODULE_3___default()(digits).length !== count) {
+    var digit = lodash_random__WEBPACK_IMPORTED_MODULE_2___default()(0, max);
+    if (digit !== exclude) digits.push(digit);
+  }
+
+  return lodash_uniq__WEBPACK_IMPORTED_MODULE_3___default()(digits);
+}
+function selectNWords(words, count, exclude) {
+  return lodash_map__WEBPACK_IMPORTED_MODULE_4___default()(nRandomDigitsWithoutRepetitionExcluding(count, words.length - 1, exclude), function (d) {
+    return words[d];
+  });
+}
+function buildFromConfig(config) {
+  // Ignore every other setting except modes
+  if (Array.isArray(config.forceIds) && config.forceIds.length > 0) {
+    var levelsMap = config.forceIds.reduce(function (obj, item) {
+      var _item$split = item.split('-'),
+          _item$split2 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(_item$split, 2),
+          level = _item$split2[0],
+          index = _item$split2[1];
+
+      if (!Array.isArray(obj[level])) {
+        // eslint-disable-next-line no-param-reassign
+        obj[level] = [];
+      } // eslint-disable-next-line no-param-reassign
+
+
+      obj[level] = [].concat(Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(obj[level]), [index]);
+      return obj;
+    }, {});
+    var _data = [];
+    Object.keys(levelsMap).map(function (d) {
+      return +d;
+    }).forEach(function (level) {
+      var words = levelWords(level);
+      var selectedWords = levelsMap[level].map(function (index) {
+        var word = words[+index];
+        var variants = [word].concat(Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(selectNWords(words, 3, index)));
+        return {
+          id: "".concat(level, "-").concat(index),
+          type: lodash_sample__WEBPACK_IMPORTED_MODULE_5___default()(config.modes),
+          question: word,
+          variants: lodash_shuffle__WEBPACK_IMPORTED_MODULE_6___default()(variants)
+        };
+      });
+
+      _data.push(selectedWords);
+    });
+    return lodash_shuffle__WEBPACK_IMPORTED_MODULE_6___default()(lodash_flatten__WEBPACK_IMPORTED_MODULE_8___default()(_data));
+  }
+
+  var data = lodash_shuffle__WEBPACK_IMPORTED_MODULE_6___default()(lodash_flatten__WEBPACK_IMPORTED_MODULE_8___default()(config.levels.map(function (level) {
+    var words = levelWords(level);
+    return lodash_map__WEBPACK_IMPORTED_MODULE_4___default()(words, function (word, index) {
+      var variants = [word].concat(Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(selectNWords(words, 3, index)));
+      return {
+        id: "".concat(level, "-").concat(index),
+        type: lodash_sample__WEBPACK_IMPORTED_MODULE_5___default()(config.modes),
+        question: word,
+        variants: lodash_shuffle__WEBPACK_IMPORTED_MODULE_6___default()(variants)
+      };
+    });
+  })));
+
+  if (+config.wordsLimit > 0) {
+    return lodash_slice__WEBPACK_IMPORTED_MODULE_7___default()(data, 0, +config.wordsLimit);
+  }
+
+  return data;
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js":
 /*!**********************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/assertThisInitialized.js ***!
@@ -737,6 +476,22 @@ function _arrayLikeToArray(arr, len) {
   }
 
   return arr2;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _arrayWithHoles; });
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
 }
 
 /***/ }),
@@ -870,6 +625,61 @@ function _iterableToArray(iter) {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _iterableToArrayLimit; });
+function _iterableToArrayLimit(arr, i) {
+  if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+  var _e = undefined;
+
+  try {
+    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/nonIterableRest.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/nonIterableRest.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _nonIterableRest; });
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js":
 /*!**********************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js ***!
@@ -975,6 +785,30 @@ function _objectWithoutPropertiesLoose(source, excluded) {
   }
 
   return target;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _slicedToArray; });
+/* harmony import */ var _arrayWithHoles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrayWithHoles */ "./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js");
+/* harmony import */ var _iterableToArrayLimit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./iterableToArrayLimit */ "./node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js");
+/* harmony import */ var _unsupportedIterableToArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./unsupportedIterableToArray */ "./node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js");
+/* harmony import */ var _nonIterableRest__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./nonIterableRest */ "./node_modules/@babel/runtime/helpers/esm/nonIterableRest.js");
+
+
+
+
+function _slicedToArray(arr, i) {
+  return Object(_arrayWithHoles__WEBPACK_IMPORTED_MODULE_0__["default"])(arr) || Object(_iterableToArrayLimit__WEBPACK_IMPORTED_MODULE_1__["default"])(arr, i) || Object(_unsupportedIterableToArray__WEBPACK_IMPORTED_MODULE_2__["default"])(arr, i) || Object(_nonIterableRest__WEBPACK_IMPORTED_MODULE_3__["default"])();
 }
 
 /***/ }),
@@ -2256,6 +2090,5748 @@ module.exports = function isRegex(value) {
 
 /***/ }),
 
+/***/ "./node_modules/lodash/_DataView.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_DataView.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getNative = __webpack_require__(/*! ./_getNative */ "./node_modules/lodash/_getNative.js"),
+    root = __webpack_require__(/*! ./_root */ "./node_modules/lodash/_root.js");
+
+/* Built-in method references that are verified to be native. */
+var DataView = getNative(root, 'DataView');
+
+module.exports = DataView;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_Hash.js":
+/*!**************************************!*\
+  !*** ./node_modules/lodash/_Hash.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var hashClear = __webpack_require__(/*! ./_hashClear */ "./node_modules/lodash/_hashClear.js"),
+    hashDelete = __webpack_require__(/*! ./_hashDelete */ "./node_modules/lodash/_hashDelete.js"),
+    hashGet = __webpack_require__(/*! ./_hashGet */ "./node_modules/lodash/_hashGet.js"),
+    hashHas = __webpack_require__(/*! ./_hashHas */ "./node_modules/lodash/_hashHas.js"),
+    hashSet = __webpack_require__(/*! ./_hashSet */ "./node_modules/lodash/_hashSet.js");
+
+/**
+ * Creates a hash object.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function Hash(entries) {
+  var index = -1,
+      length = entries == null ? 0 : entries.length;
+
+  this.clear();
+  while (++index < length) {
+    var entry = entries[index];
+    this.set(entry[0], entry[1]);
+  }
+}
+
+// Add methods to `Hash`.
+Hash.prototype.clear = hashClear;
+Hash.prototype['delete'] = hashDelete;
+Hash.prototype.get = hashGet;
+Hash.prototype.has = hashHas;
+Hash.prototype.set = hashSet;
+
+module.exports = Hash;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_ListCache.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_ListCache.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var listCacheClear = __webpack_require__(/*! ./_listCacheClear */ "./node_modules/lodash/_listCacheClear.js"),
+    listCacheDelete = __webpack_require__(/*! ./_listCacheDelete */ "./node_modules/lodash/_listCacheDelete.js"),
+    listCacheGet = __webpack_require__(/*! ./_listCacheGet */ "./node_modules/lodash/_listCacheGet.js"),
+    listCacheHas = __webpack_require__(/*! ./_listCacheHas */ "./node_modules/lodash/_listCacheHas.js"),
+    listCacheSet = __webpack_require__(/*! ./_listCacheSet */ "./node_modules/lodash/_listCacheSet.js");
+
+/**
+ * Creates an list cache object.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function ListCache(entries) {
+  var index = -1,
+      length = entries == null ? 0 : entries.length;
+
+  this.clear();
+  while (++index < length) {
+    var entry = entries[index];
+    this.set(entry[0], entry[1]);
+  }
+}
+
+// Add methods to `ListCache`.
+ListCache.prototype.clear = listCacheClear;
+ListCache.prototype['delete'] = listCacheDelete;
+ListCache.prototype.get = listCacheGet;
+ListCache.prototype.has = listCacheHas;
+ListCache.prototype.set = listCacheSet;
+
+module.exports = ListCache;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_Map.js":
+/*!*************************************!*\
+  !*** ./node_modules/lodash/_Map.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getNative = __webpack_require__(/*! ./_getNative */ "./node_modules/lodash/_getNative.js"),
+    root = __webpack_require__(/*! ./_root */ "./node_modules/lodash/_root.js");
+
+/* Built-in method references that are verified to be native. */
+var Map = getNative(root, 'Map');
+
+module.exports = Map;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_MapCache.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_MapCache.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var mapCacheClear = __webpack_require__(/*! ./_mapCacheClear */ "./node_modules/lodash/_mapCacheClear.js"),
+    mapCacheDelete = __webpack_require__(/*! ./_mapCacheDelete */ "./node_modules/lodash/_mapCacheDelete.js"),
+    mapCacheGet = __webpack_require__(/*! ./_mapCacheGet */ "./node_modules/lodash/_mapCacheGet.js"),
+    mapCacheHas = __webpack_require__(/*! ./_mapCacheHas */ "./node_modules/lodash/_mapCacheHas.js"),
+    mapCacheSet = __webpack_require__(/*! ./_mapCacheSet */ "./node_modules/lodash/_mapCacheSet.js");
+
+/**
+ * Creates a map cache object to store key-value pairs.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function MapCache(entries) {
+  var index = -1,
+      length = entries == null ? 0 : entries.length;
+
+  this.clear();
+  while (++index < length) {
+    var entry = entries[index];
+    this.set(entry[0], entry[1]);
+  }
+}
+
+// Add methods to `MapCache`.
+MapCache.prototype.clear = mapCacheClear;
+MapCache.prototype['delete'] = mapCacheDelete;
+MapCache.prototype.get = mapCacheGet;
+MapCache.prototype.has = mapCacheHas;
+MapCache.prototype.set = mapCacheSet;
+
+module.exports = MapCache;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_Promise.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_Promise.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getNative = __webpack_require__(/*! ./_getNative */ "./node_modules/lodash/_getNative.js"),
+    root = __webpack_require__(/*! ./_root */ "./node_modules/lodash/_root.js");
+
+/* Built-in method references that are verified to be native. */
+var Promise = getNative(root, 'Promise');
+
+module.exports = Promise;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_Set.js":
+/*!*************************************!*\
+  !*** ./node_modules/lodash/_Set.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getNative = __webpack_require__(/*! ./_getNative */ "./node_modules/lodash/_getNative.js"),
+    root = __webpack_require__(/*! ./_root */ "./node_modules/lodash/_root.js");
+
+/* Built-in method references that are verified to be native. */
+var Set = getNative(root, 'Set');
+
+module.exports = Set;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_SetCache.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_SetCache.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var MapCache = __webpack_require__(/*! ./_MapCache */ "./node_modules/lodash/_MapCache.js"),
+    setCacheAdd = __webpack_require__(/*! ./_setCacheAdd */ "./node_modules/lodash/_setCacheAdd.js"),
+    setCacheHas = __webpack_require__(/*! ./_setCacheHas */ "./node_modules/lodash/_setCacheHas.js");
+
+/**
+ *
+ * Creates an array cache object to store unique values.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [values] The values to cache.
+ */
+function SetCache(values) {
+  var index = -1,
+      length = values == null ? 0 : values.length;
+
+  this.__data__ = new MapCache;
+  while (++index < length) {
+    this.add(values[index]);
+  }
+}
+
+// Add methods to `SetCache`.
+SetCache.prototype.add = SetCache.prototype.push = setCacheAdd;
+SetCache.prototype.has = setCacheHas;
+
+module.exports = SetCache;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_Stack.js":
+/*!***************************************!*\
+  !*** ./node_modules/lodash/_Stack.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var ListCache = __webpack_require__(/*! ./_ListCache */ "./node_modules/lodash/_ListCache.js"),
+    stackClear = __webpack_require__(/*! ./_stackClear */ "./node_modules/lodash/_stackClear.js"),
+    stackDelete = __webpack_require__(/*! ./_stackDelete */ "./node_modules/lodash/_stackDelete.js"),
+    stackGet = __webpack_require__(/*! ./_stackGet */ "./node_modules/lodash/_stackGet.js"),
+    stackHas = __webpack_require__(/*! ./_stackHas */ "./node_modules/lodash/_stackHas.js"),
+    stackSet = __webpack_require__(/*! ./_stackSet */ "./node_modules/lodash/_stackSet.js");
+
+/**
+ * Creates a stack cache object to store key-value pairs.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function Stack(entries) {
+  var data = this.__data__ = new ListCache(entries);
+  this.size = data.size;
+}
+
+// Add methods to `Stack`.
+Stack.prototype.clear = stackClear;
+Stack.prototype['delete'] = stackDelete;
+Stack.prototype.get = stackGet;
+Stack.prototype.has = stackHas;
+Stack.prototype.set = stackSet;
+
+module.exports = Stack;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_Symbol.js":
+/*!****************************************!*\
+  !*** ./node_modules/lodash/_Symbol.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var root = __webpack_require__(/*! ./_root */ "./node_modules/lodash/_root.js");
+
+/** Built-in value references. */
+var Symbol = root.Symbol;
+
+module.exports = Symbol;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_Uint8Array.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_Uint8Array.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var root = __webpack_require__(/*! ./_root */ "./node_modules/lodash/_root.js");
+
+/** Built-in value references. */
+var Uint8Array = root.Uint8Array;
+
+module.exports = Uint8Array;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_WeakMap.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_WeakMap.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getNative = __webpack_require__(/*! ./_getNative */ "./node_modules/lodash/_getNative.js"),
+    root = __webpack_require__(/*! ./_root */ "./node_modules/lodash/_root.js");
+
+/* Built-in method references that are verified to be native. */
+var WeakMap = getNative(root, 'WeakMap');
+
+module.exports = WeakMap;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_arrayFilter.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_arrayFilter.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * A specialized version of `_.filter` for arrays without support for
+ * iteratee shorthands.
+ *
+ * @private
+ * @param {Array} [array] The array to iterate over.
+ * @param {Function} predicate The function invoked per iteration.
+ * @returns {Array} Returns the new filtered array.
+ */
+function arrayFilter(array, predicate) {
+  var index = -1,
+      length = array == null ? 0 : array.length,
+      resIndex = 0,
+      result = [];
+
+  while (++index < length) {
+    var value = array[index];
+    if (predicate(value, index, array)) {
+      result[resIndex++] = value;
+    }
+  }
+  return result;
+}
+
+module.exports = arrayFilter;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_arrayIncludes.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash/_arrayIncludes.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseIndexOf = __webpack_require__(/*! ./_baseIndexOf */ "./node_modules/lodash/_baseIndexOf.js");
+
+/**
+ * A specialized version of `_.includes` for arrays without support for
+ * specifying an index to search from.
+ *
+ * @private
+ * @param {Array} [array] The array to inspect.
+ * @param {*} target The value to search for.
+ * @returns {boolean} Returns `true` if `target` is found, else `false`.
+ */
+function arrayIncludes(array, value) {
+  var length = array == null ? 0 : array.length;
+  return !!length && baseIndexOf(array, value, 0) > -1;
+}
+
+module.exports = arrayIncludes;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_arrayIncludesWith.js":
+/*!***************************************************!*\
+  !*** ./node_modules/lodash/_arrayIncludesWith.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * This function is like `arrayIncludes` except that it accepts a comparator.
+ *
+ * @private
+ * @param {Array} [array] The array to inspect.
+ * @param {*} target The value to search for.
+ * @param {Function} comparator The comparator invoked per element.
+ * @returns {boolean} Returns `true` if `target` is found, else `false`.
+ */
+function arrayIncludesWith(array, value, comparator) {
+  var index = -1,
+      length = array == null ? 0 : array.length;
+
+  while (++index < length) {
+    if (comparator(value, array[index])) {
+      return true;
+    }
+  }
+  return false;
+}
+
+module.exports = arrayIncludesWith;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_arrayLikeKeys.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash/_arrayLikeKeys.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseTimes = __webpack_require__(/*! ./_baseTimes */ "./node_modules/lodash/_baseTimes.js"),
+    isArguments = __webpack_require__(/*! ./isArguments */ "./node_modules/lodash/isArguments.js"),
+    isArray = __webpack_require__(/*! ./isArray */ "./node_modules/lodash/isArray.js"),
+    isBuffer = __webpack_require__(/*! ./isBuffer */ "./node_modules/lodash/isBuffer.js"),
+    isIndex = __webpack_require__(/*! ./_isIndex */ "./node_modules/lodash/_isIndex.js"),
+    isTypedArray = __webpack_require__(/*! ./isTypedArray */ "./node_modules/lodash/isTypedArray.js");
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Creates an array of the enumerable property names of the array-like `value`.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @param {boolean} inherited Specify returning inherited property names.
+ * @returns {Array} Returns the array of property names.
+ */
+function arrayLikeKeys(value, inherited) {
+  var isArr = isArray(value),
+      isArg = !isArr && isArguments(value),
+      isBuff = !isArr && !isArg && isBuffer(value),
+      isType = !isArr && !isArg && !isBuff && isTypedArray(value),
+      skipIndexes = isArr || isArg || isBuff || isType,
+      result = skipIndexes ? baseTimes(value.length, String) : [],
+      length = result.length;
+
+  for (var key in value) {
+    if ((inherited || hasOwnProperty.call(value, key)) &&
+        !(skipIndexes && (
+           // Safari 9 has enumerable `arguments.length` in strict mode.
+           key == 'length' ||
+           // Node.js 0.10 has enumerable non-index properties on buffers.
+           (isBuff && (key == 'offset' || key == 'parent')) ||
+           // PhantomJS 2 has enumerable non-index properties on typed arrays.
+           (isType && (key == 'buffer' || key == 'byteLength' || key == 'byteOffset')) ||
+           // Skip index properties.
+           isIndex(key, length)
+        ))) {
+      result.push(key);
+    }
+  }
+  return result;
+}
+
+module.exports = arrayLikeKeys;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_arrayMap.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_arrayMap.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * A specialized version of `_.map` for arrays without support for iteratee
+ * shorthands.
+ *
+ * @private
+ * @param {Array} [array] The array to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Array} Returns the new mapped array.
+ */
+function arrayMap(array, iteratee) {
+  var index = -1,
+      length = array == null ? 0 : array.length,
+      result = Array(length);
+
+  while (++index < length) {
+    result[index] = iteratee(array[index], index, array);
+  }
+  return result;
+}
+
+module.exports = arrayMap;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_arrayPush.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_arrayPush.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Appends the elements of `values` to `array`.
+ *
+ * @private
+ * @param {Array} array The array to modify.
+ * @param {Array} values The values to append.
+ * @returns {Array} Returns `array`.
+ */
+function arrayPush(array, values) {
+  var index = -1,
+      length = values.length,
+      offset = array.length;
+
+  while (++index < length) {
+    array[offset + index] = values[index];
+  }
+  return array;
+}
+
+module.exports = arrayPush;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_arraySample.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_arraySample.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseRandom = __webpack_require__(/*! ./_baseRandom */ "./node_modules/lodash/_baseRandom.js");
+
+/**
+ * A specialized version of `_.sample` for arrays.
+ *
+ * @private
+ * @param {Array} array The array to sample.
+ * @returns {*} Returns the random element.
+ */
+function arraySample(array) {
+  var length = array.length;
+  return length ? array[baseRandom(0, length - 1)] : undefined;
+}
+
+module.exports = arraySample;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_arrayShuffle.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_arrayShuffle.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var copyArray = __webpack_require__(/*! ./_copyArray */ "./node_modules/lodash/_copyArray.js"),
+    shuffleSelf = __webpack_require__(/*! ./_shuffleSelf */ "./node_modules/lodash/_shuffleSelf.js");
+
+/**
+ * A specialized version of `_.shuffle` for arrays.
+ *
+ * @private
+ * @param {Array} array The array to shuffle.
+ * @returns {Array} Returns the new shuffled array.
+ */
+function arrayShuffle(array) {
+  return shuffleSelf(copyArray(array));
+}
+
+module.exports = arrayShuffle;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_arraySome.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_arraySome.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * A specialized version of `_.some` for arrays without support for iteratee
+ * shorthands.
+ *
+ * @private
+ * @param {Array} [array] The array to iterate over.
+ * @param {Function} predicate The function invoked per iteration.
+ * @returns {boolean} Returns `true` if any element passes the predicate check,
+ *  else `false`.
+ */
+function arraySome(array, predicate) {
+  var index = -1,
+      length = array == null ? 0 : array.length;
+
+  while (++index < length) {
+    if (predicate(array[index], index, array)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+module.exports = arraySome;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_assocIndexOf.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_assocIndexOf.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var eq = __webpack_require__(/*! ./eq */ "./node_modules/lodash/eq.js");
+
+/**
+ * Gets the index at which the `key` is found in `array` of key-value pairs.
+ *
+ * @private
+ * @param {Array} array The array to inspect.
+ * @param {*} key The key to search for.
+ * @returns {number} Returns the index of the matched value, else `-1`.
+ */
+function assocIndexOf(array, key) {
+  var length = array.length;
+  while (length--) {
+    if (eq(array[length][0], key)) {
+      return length;
+    }
+  }
+  return -1;
+}
+
+module.exports = assocIndexOf;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseEach.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_baseEach.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseForOwn = __webpack_require__(/*! ./_baseForOwn */ "./node_modules/lodash/_baseForOwn.js"),
+    createBaseEach = __webpack_require__(/*! ./_createBaseEach */ "./node_modules/lodash/_createBaseEach.js");
+
+/**
+ * The base implementation of `_.forEach` without support for iteratee shorthands.
+ *
+ * @private
+ * @param {Array|Object} collection The collection to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Array|Object} Returns `collection`.
+ */
+var baseEach = createBaseEach(baseForOwn);
+
+module.exports = baseEach;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseFindIndex.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash/_baseFindIndex.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * The base implementation of `_.findIndex` and `_.findLastIndex` without
+ * support for iteratee shorthands.
+ *
+ * @private
+ * @param {Array} array The array to inspect.
+ * @param {Function} predicate The function invoked per iteration.
+ * @param {number} fromIndex The index to search from.
+ * @param {boolean} [fromRight] Specify iterating from right to left.
+ * @returns {number} Returns the index of the matched value, else `-1`.
+ */
+function baseFindIndex(array, predicate, fromIndex, fromRight) {
+  var length = array.length,
+      index = fromIndex + (fromRight ? 1 : -1);
+
+  while ((fromRight ? index-- : ++index < length)) {
+    if (predicate(array[index], index, array)) {
+      return index;
+    }
+  }
+  return -1;
+}
+
+module.exports = baseFindIndex;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseFlatten.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_baseFlatten.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayPush = __webpack_require__(/*! ./_arrayPush */ "./node_modules/lodash/_arrayPush.js"),
+    isFlattenable = __webpack_require__(/*! ./_isFlattenable */ "./node_modules/lodash/_isFlattenable.js");
+
+/**
+ * The base implementation of `_.flatten` with support for restricting flattening.
+ *
+ * @private
+ * @param {Array} array The array to flatten.
+ * @param {number} depth The maximum recursion depth.
+ * @param {boolean} [predicate=isFlattenable] The function invoked per iteration.
+ * @param {boolean} [isStrict] Restrict to values that pass `predicate` checks.
+ * @param {Array} [result=[]] The initial result value.
+ * @returns {Array} Returns the new flattened array.
+ */
+function baseFlatten(array, depth, predicate, isStrict, result) {
+  var index = -1,
+      length = array.length;
+
+  predicate || (predicate = isFlattenable);
+  result || (result = []);
+
+  while (++index < length) {
+    var value = array[index];
+    if (depth > 0 && predicate(value)) {
+      if (depth > 1) {
+        // Recursively flatten arrays (susceptible to call stack limits).
+        baseFlatten(value, depth - 1, predicate, isStrict, result);
+      } else {
+        arrayPush(result, value);
+      }
+    } else if (!isStrict) {
+      result[result.length] = value;
+    }
+  }
+  return result;
+}
+
+module.exports = baseFlatten;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseFor.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_baseFor.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var createBaseFor = __webpack_require__(/*! ./_createBaseFor */ "./node_modules/lodash/_createBaseFor.js");
+
+/**
+ * The base implementation of `baseForOwn` which iterates over `object`
+ * properties returned by `keysFunc` and invokes `iteratee` for each property.
+ * Iteratee functions may exit iteration early by explicitly returning `false`.
+ *
+ * @private
+ * @param {Object} object The object to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @param {Function} keysFunc The function to get the keys of `object`.
+ * @returns {Object} Returns `object`.
+ */
+var baseFor = createBaseFor();
+
+module.exports = baseFor;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseForOwn.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_baseForOwn.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseFor = __webpack_require__(/*! ./_baseFor */ "./node_modules/lodash/_baseFor.js"),
+    keys = __webpack_require__(/*! ./keys */ "./node_modules/lodash/keys.js");
+
+/**
+ * The base implementation of `_.forOwn` without support for iteratee shorthands.
+ *
+ * @private
+ * @param {Object} object The object to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Object} Returns `object`.
+ */
+function baseForOwn(object, iteratee) {
+  return object && baseFor(object, iteratee, keys);
+}
+
+module.exports = baseForOwn;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseGet.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_baseGet.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var castPath = __webpack_require__(/*! ./_castPath */ "./node_modules/lodash/_castPath.js"),
+    toKey = __webpack_require__(/*! ./_toKey */ "./node_modules/lodash/_toKey.js");
+
+/**
+ * The base implementation of `_.get` without support for default values.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @param {Array|string} path The path of the property to get.
+ * @returns {*} Returns the resolved value.
+ */
+function baseGet(object, path) {
+  path = castPath(path, object);
+
+  var index = 0,
+      length = path.length;
+
+  while (object != null && index < length) {
+    object = object[toKey(path[index++])];
+  }
+  return (index && index == length) ? object : undefined;
+}
+
+module.exports = baseGet;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseGetAllKeys.js":
+/*!************************************************!*\
+  !*** ./node_modules/lodash/_baseGetAllKeys.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayPush = __webpack_require__(/*! ./_arrayPush */ "./node_modules/lodash/_arrayPush.js"),
+    isArray = __webpack_require__(/*! ./isArray */ "./node_modules/lodash/isArray.js");
+
+/**
+ * The base implementation of `getAllKeys` and `getAllKeysIn` which uses
+ * `keysFunc` and `symbolsFunc` to get the enumerable property names and
+ * symbols of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @param {Function} keysFunc The function to get the keys of `object`.
+ * @param {Function} symbolsFunc The function to get the symbols of `object`.
+ * @returns {Array} Returns the array of property names and symbols.
+ */
+function baseGetAllKeys(object, keysFunc, symbolsFunc) {
+  var result = keysFunc(object);
+  return isArray(object) ? result : arrayPush(result, symbolsFunc(object));
+}
+
+module.exports = baseGetAllKeys;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseGetTag.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_baseGetTag.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Symbol = __webpack_require__(/*! ./_Symbol */ "./node_modules/lodash/_Symbol.js"),
+    getRawTag = __webpack_require__(/*! ./_getRawTag */ "./node_modules/lodash/_getRawTag.js"),
+    objectToString = __webpack_require__(/*! ./_objectToString */ "./node_modules/lodash/_objectToString.js");
+
+/** `Object#toString` result references. */
+var nullTag = '[object Null]',
+    undefinedTag = '[object Undefined]';
+
+/** Built-in value references. */
+var symToStringTag = Symbol ? Symbol.toStringTag : undefined;
+
+/**
+ * The base implementation of `getTag` without fallbacks for buggy environments.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the `toStringTag`.
+ */
+function baseGetTag(value) {
+  if (value == null) {
+    return value === undefined ? undefinedTag : nullTag;
+  }
+  return (symToStringTag && symToStringTag in Object(value))
+    ? getRawTag(value)
+    : objectToString(value);
+}
+
+module.exports = baseGetTag;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseHasIn.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_baseHasIn.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * The base implementation of `_.hasIn` without support for deep paths.
+ *
+ * @private
+ * @param {Object} [object] The object to query.
+ * @param {Array|string} key The key to check.
+ * @returns {boolean} Returns `true` if `key` exists, else `false`.
+ */
+function baseHasIn(object, key) {
+  return object != null && key in Object(object);
+}
+
+module.exports = baseHasIn;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseIndexOf.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_baseIndexOf.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseFindIndex = __webpack_require__(/*! ./_baseFindIndex */ "./node_modules/lodash/_baseFindIndex.js"),
+    baseIsNaN = __webpack_require__(/*! ./_baseIsNaN */ "./node_modules/lodash/_baseIsNaN.js"),
+    strictIndexOf = __webpack_require__(/*! ./_strictIndexOf */ "./node_modules/lodash/_strictIndexOf.js");
+
+/**
+ * The base implementation of `_.indexOf` without `fromIndex` bounds checks.
+ *
+ * @private
+ * @param {Array} array The array to inspect.
+ * @param {*} value The value to search for.
+ * @param {number} fromIndex The index to search from.
+ * @returns {number} Returns the index of the matched value, else `-1`.
+ */
+function baseIndexOf(array, value, fromIndex) {
+  return value === value
+    ? strictIndexOf(array, value, fromIndex)
+    : baseFindIndex(array, baseIsNaN, fromIndex);
+}
+
+module.exports = baseIndexOf;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseIsArguments.js":
+/*!*************************************************!*\
+  !*** ./node_modules/lodash/_baseIsArguments.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseGetTag = __webpack_require__(/*! ./_baseGetTag */ "./node_modules/lodash/_baseGetTag.js"),
+    isObjectLike = __webpack_require__(/*! ./isObjectLike */ "./node_modules/lodash/isObjectLike.js");
+
+/** `Object#toString` result references. */
+var argsTag = '[object Arguments]';
+
+/**
+ * The base implementation of `_.isArguments`.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an `arguments` object,
+ */
+function baseIsArguments(value) {
+  return isObjectLike(value) && baseGetTag(value) == argsTag;
+}
+
+module.exports = baseIsArguments;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseIsEqual.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_baseIsEqual.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseIsEqualDeep = __webpack_require__(/*! ./_baseIsEqualDeep */ "./node_modules/lodash/_baseIsEqualDeep.js"),
+    isObjectLike = __webpack_require__(/*! ./isObjectLike */ "./node_modules/lodash/isObjectLike.js");
+
+/**
+ * The base implementation of `_.isEqual` which supports partial comparisons
+ * and tracks traversed objects.
+ *
+ * @private
+ * @param {*} value The value to compare.
+ * @param {*} other The other value to compare.
+ * @param {boolean} bitmask The bitmask flags.
+ *  1 - Unordered comparison
+ *  2 - Partial comparison
+ * @param {Function} [customizer] The function to customize comparisons.
+ * @param {Object} [stack] Tracks traversed `value` and `other` objects.
+ * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
+ */
+function baseIsEqual(value, other, bitmask, customizer, stack) {
+  if (value === other) {
+    return true;
+  }
+  if (value == null || other == null || (!isObjectLike(value) && !isObjectLike(other))) {
+    return value !== value && other !== other;
+  }
+  return baseIsEqualDeep(value, other, bitmask, customizer, baseIsEqual, stack);
+}
+
+module.exports = baseIsEqual;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseIsEqualDeep.js":
+/*!*************************************************!*\
+  !*** ./node_modules/lodash/_baseIsEqualDeep.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Stack = __webpack_require__(/*! ./_Stack */ "./node_modules/lodash/_Stack.js"),
+    equalArrays = __webpack_require__(/*! ./_equalArrays */ "./node_modules/lodash/_equalArrays.js"),
+    equalByTag = __webpack_require__(/*! ./_equalByTag */ "./node_modules/lodash/_equalByTag.js"),
+    equalObjects = __webpack_require__(/*! ./_equalObjects */ "./node_modules/lodash/_equalObjects.js"),
+    getTag = __webpack_require__(/*! ./_getTag */ "./node_modules/lodash/_getTag.js"),
+    isArray = __webpack_require__(/*! ./isArray */ "./node_modules/lodash/isArray.js"),
+    isBuffer = __webpack_require__(/*! ./isBuffer */ "./node_modules/lodash/isBuffer.js"),
+    isTypedArray = __webpack_require__(/*! ./isTypedArray */ "./node_modules/lodash/isTypedArray.js");
+
+/** Used to compose bitmasks for value comparisons. */
+var COMPARE_PARTIAL_FLAG = 1;
+
+/** `Object#toString` result references. */
+var argsTag = '[object Arguments]',
+    arrayTag = '[object Array]',
+    objectTag = '[object Object]';
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * A specialized version of `baseIsEqual` for arrays and objects which performs
+ * deep comparisons and tracks traversed objects enabling objects with circular
+ * references to be compared.
+ *
+ * @private
+ * @param {Object} object The object to compare.
+ * @param {Object} other The other object to compare.
+ * @param {number} bitmask The bitmask flags. See `baseIsEqual` for more details.
+ * @param {Function} customizer The function to customize comparisons.
+ * @param {Function} equalFunc The function to determine equivalents of values.
+ * @param {Object} [stack] Tracks traversed `object` and `other` objects.
+ * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
+ */
+function baseIsEqualDeep(object, other, bitmask, customizer, equalFunc, stack) {
+  var objIsArr = isArray(object),
+      othIsArr = isArray(other),
+      objTag = objIsArr ? arrayTag : getTag(object),
+      othTag = othIsArr ? arrayTag : getTag(other);
+
+  objTag = objTag == argsTag ? objectTag : objTag;
+  othTag = othTag == argsTag ? objectTag : othTag;
+
+  var objIsObj = objTag == objectTag,
+      othIsObj = othTag == objectTag,
+      isSameTag = objTag == othTag;
+
+  if (isSameTag && isBuffer(object)) {
+    if (!isBuffer(other)) {
+      return false;
+    }
+    objIsArr = true;
+    objIsObj = false;
+  }
+  if (isSameTag && !objIsObj) {
+    stack || (stack = new Stack);
+    return (objIsArr || isTypedArray(object))
+      ? equalArrays(object, other, bitmask, customizer, equalFunc, stack)
+      : equalByTag(object, other, objTag, bitmask, customizer, equalFunc, stack);
+  }
+  if (!(bitmask & COMPARE_PARTIAL_FLAG)) {
+    var objIsWrapped = objIsObj && hasOwnProperty.call(object, '__wrapped__'),
+        othIsWrapped = othIsObj && hasOwnProperty.call(other, '__wrapped__');
+
+    if (objIsWrapped || othIsWrapped) {
+      var objUnwrapped = objIsWrapped ? object.value() : object,
+          othUnwrapped = othIsWrapped ? other.value() : other;
+
+      stack || (stack = new Stack);
+      return equalFunc(objUnwrapped, othUnwrapped, bitmask, customizer, stack);
+    }
+  }
+  if (!isSameTag) {
+    return false;
+  }
+  stack || (stack = new Stack);
+  return equalObjects(object, other, bitmask, customizer, equalFunc, stack);
+}
+
+module.exports = baseIsEqualDeep;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseIsMatch.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_baseIsMatch.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Stack = __webpack_require__(/*! ./_Stack */ "./node_modules/lodash/_Stack.js"),
+    baseIsEqual = __webpack_require__(/*! ./_baseIsEqual */ "./node_modules/lodash/_baseIsEqual.js");
+
+/** Used to compose bitmasks for value comparisons. */
+var COMPARE_PARTIAL_FLAG = 1,
+    COMPARE_UNORDERED_FLAG = 2;
+
+/**
+ * The base implementation of `_.isMatch` without support for iteratee shorthands.
+ *
+ * @private
+ * @param {Object} object The object to inspect.
+ * @param {Object} source The object of property values to match.
+ * @param {Array} matchData The property names, values, and compare flags to match.
+ * @param {Function} [customizer] The function to customize comparisons.
+ * @returns {boolean} Returns `true` if `object` is a match, else `false`.
+ */
+function baseIsMatch(object, source, matchData, customizer) {
+  var index = matchData.length,
+      length = index,
+      noCustomizer = !customizer;
+
+  if (object == null) {
+    return !length;
+  }
+  object = Object(object);
+  while (index--) {
+    var data = matchData[index];
+    if ((noCustomizer && data[2])
+          ? data[1] !== object[data[0]]
+          : !(data[0] in object)
+        ) {
+      return false;
+    }
+  }
+  while (++index < length) {
+    data = matchData[index];
+    var key = data[0],
+        objValue = object[key],
+        srcValue = data[1];
+
+    if (noCustomizer && data[2]) {
+      if (objValue === undefined && !(key in object)) {
+        return false;
+      }
+    } else {
+      var stack = new Stack;
+      if (customizer) {
+        var result = customizer(objValue, srcValue, key, object, source, stack);
+      }
+      if (!(result === undefined
+            ? baseIsEqual(srcValue, objValue, COMPARE_PARTIAL_FLAG | COMPARE_UNORDERED_FLAG, customizer, stack)
+            : result
+          )) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+module.exports = baseIsMatch;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseIsNaN.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_baseIsNaN.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * The base implementation of `_.isNaN` without support for number objects.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is `NaN`, else `false`.
+ */
+function baseIsNaN(value) {
+  return value !== value;
+}
+
+module.exports = baseIsNaN;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseIsNative.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_baseIsNative.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isFunction = __webpack_require__(/*! ./isFunction */ "./node_modules/lodash/isFunction.js"),
+    isMasked = __webpack_require__(/*! ./_isMasked */ "./node_modules/lodash/_isMasked.js"),
+    isObject = __webpack_require__(/*! ./isObject */ "./node_modules/lodash/isObject.js"),
+    toSource = __webpack_require__(/*! ./_toSource */ "./node_modules/lodash/_toSource.js");
+
+/**
+ * Used to match `RegExp`
+ * [syntax characters](http://ecma-international.org/ecma-262/7.0/#sec-patterns).
+ */
+var reRegExpChar = /[\\^$.*+?()[\]{}|]/g;
+
+/** Used to detect host constructors (Safari). */
+var reIsHostCtor = /^\[object .+?Constructor\]$/;
+
+/** Used for built-in method references. */
+var funcProto = Function.prototype,
+    objectProto = Object.prototype;
+
+/** Used to resolve the decompiled source of functions. */
+var funcToString = funcProto.toString;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/** Used to detect if a method is native. */
+var reIsNative = RegExp('^' +
+  funcToString.call(hasOwnProperty).replace(reRegExpChar, '\\$&')
+  .replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') + '$'
+);
+
+/**
+ * The base implementation of `_.isNative` without bad shim checks.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a native function,
+ *  else `false`.
+ */
+function baseIsNative(value) {
+  if (!isObject(value) || isMasked(value)) {
+    return false;
+  }
+  var pattern = isFunction(value) ? reIsNative : reIsHostCtor;
+  return pattern.test(toSource(value));
+}
+
+module.exports = baseIsNative;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseIsTypedArray.js":
+/*!**************************************************!*\
+  !*** ./node_modules/lodash/_baseIsTypedArray.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseGetTag = __webpack_require__(/*! ./_baseGetTag */ "./node_modules/lodash/_baseGetTag.js"),
+    isLength = __webpack_require__(/*! ./isLength */ "./node_modules/lodash/isLength.js"),
+    isObjectLike = __webpack_require__(/*! ./isObjectLike */ "./node_modules/lodash/isObjectLike.js");
+
+/** `Object#toString` result references. */
+var argsTag = '[object Arguments]',
+    arrayTag = '[object Array]',
+    boolTag = '[object Boolean]',
+    dateTag = '[object Date]',
+    errorTag = '[object Error]',
+    funcTag = '[object Function]',
+    mapTag = '[object Map]',
+    numberTag = '[object Number]',
+    objectTag = '[object Object]',
+    regexpTag = '[object RegExp]',
+    setTag = '[object Set]',
+    stringTag = '[object String]',
+    weakMapTag = '[object WeakMap]';
+
+var arrayBufferTag = '[object ArrayBuffer]',
+    dataViewTag = '[object DataView]',
+    float32Tag = '[object Float32Array]',
+    float64Tag = '[object Float64Array]',
+    int8Tag = '[object Int8Array]',
+    int16Tag = '[object Int16Array]',
+    int32Tag = '[object Int32Array]',
+    uint8Tag = '[object Uint8Array]',
+    uint8ClampedTag = '[object Uint8ClampedArray]',
+    uint16Tag = '[object Uint16Array]',
+    uint32Tag = '[object Uint32Array]';
+
+/** Used to identify `toStringTag` values of typed arrays. */
+var typedArrayTags = {};
+typedArrayTags[float32Tag] = typedArrayTags[float64Tag] =
+typedArrayTags[int8Tag] = typedArrayTags[int16Tag] =
+typedArrayTags[int32Tag] = typedArrayTags[uint8Tag] =
+typedArrayTags[uint8ClampedTag] = typedArrayTags[uint16Tag] =
+typedArrayTags[uint32Tag] = true;
+typedArrayTags[argsTag] = typedArrayTags[arrayTag] =
+typedArrayTags[arrayBufferTag] = typedArrayTags[boolTag] =
+typedArrayTags[dataViewTag] = typedArrayTags[dateTag] =
+typedArrayTags[errorTag] = typedArrayTags[funcTag] =
+typedArrayTags[mapTag] = typedArrayTags[numberTag] =
+typedArrayTags[objectTag] = typedArrayTags[regexpTag] =
+typedArrayTags[setTag] = typedArrayTags[stringTag] =
+typedArrayTags[weakMapTag] = false;
+
+/**
+ * The base implementation of `_.isTypedArray` without Node.js optimizations.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a typed array, else `false`.
+ */
+function baseIsTypedArray(value) {
+  return isObjectLike(value) &&
+    isLength(value.length) && !!typedArrayTags[baseGetTag(value)];
+}
+
+module.exports = baseIsTypedArray;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseIteratee.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_baseIteratee.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseMatches = __webpack_require__(/*! ./_baseMatches */ "./node_modules/lodash/_baseMatches.js"),
+    baseMatchesProperty = __webpack_require__(/*! ./_baseMatchesProperty */ "./node_modules/lodash/_baseMatchesProperty.js"),
+    identity = __webpack_require__(/*! ./identity */ "./node_modules/lodash/identity.js"),
+    isArray = __webpack_require__(/*! ./isArray */ "./node_modules/lodash/isArray.js"),
+    property = __webpack_require__(/*! ./property */ "./node_modules/lodash/property.js");
+
+/**
+ * The base implementation of `_.iteratee`.
+ *
+ * @private
+ * @param {*} [value=_.identity] The value to convert to an iteratee.
+ * @returns {Function} Returns the iteratee.
+ */
+function baseIteratee(value) {
+  // Don't store the `typeof` result in a variable to avoid a JIT bug in Safari 9.
+  // See https://bugs.webkit.org/show_bug.cgi?id=156034 for more details.
+  if (typeof value == 'function') {
+    return value;
+  }
+  if (value == null) {
+    return identity;
+  }
+  if (typeof value == 'object') {
+    return isArray(value)
+      ? baseMatchesProperty(value[0], value[1])
+      : baseMatches(value);
+  }
+  return property(value);
+}
+
+module.exports = baseIteratee;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseKeys.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_baseKeys.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isPrototype = __webpack_require__(/*! ./_isPrototype */ "./node_modules/lodash/_isPrototype.js"),
+    nativeKeys = __webpack_require__(/*! ./_nativeKeys */ "./node_modules/lodash/_nativeKeys.js");
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * The base implementation of `_.keys` which doesn't treat sparse arrays as dense.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names.
+ */
+function baseKeys(object) {
+  if (!isPrototype(object)) {
+    return nativeKeys(object);
+  }
+  var result = [];
+  for (var key in Object(object)) {
+    if (hasOwnProperty.call(object, key) && key != 'constructor') {
+      result.push(key);
+    }
+  }
+  return result;
+}
+
+module.exports = baseKeys;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseMap.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_baseMap.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseEach = __webpack_require__(/*! ./_baseEach */ "./node_modules/lodash/_baseEach.js"),
+    isArrayLike = __webpack_require__(/*! ./isArrayLike */ "./node_modules/lodash/isArrayLike.js");
+
+/**
+ * The base implementation of `_.map` without support for iteratee shorthands.
+ *
+ * @private
+ * @param {Array|Object} collection The collection to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Array} Returns the new mapped array.
+ */
+function baseMap(collection, iteratee) {
+  var index = -1,
+      result = isArrayLike(collection) ? Array(collection.length) : [];
+
+  baseEach(collection, function(value, key, collection) {
+    result[++index] = iteratee(value, key, collection);
+  });
+  return result;
+}
+
+module.exports = baseMap;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseMatches.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_baseMatches.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseIsMatch = __webpack_require__(/*! ./_baseIsMatch */ "./node_modules/lodash/_baseIsMatch.js"),
+    getMatchData = __webpack_require__(/*! ./_getMatchData */ "./node_modules/lodash/_getMatchData.js"),
+    matchesStrictComparable = __webpack_require__(/*! ./_matchesStrictComparable */ "./node_modules/lodash/_matchesStrictComparable.js");
+
+/**
+ * The base implementation of `_.matches` which doesn't clone `source`.
+ *
+ * @private
+ * @param {Object} source The object of property values to match.
+ * @returns {Function} Returns the new spec function.
+ */
+function baseMatches(source) {
+  var matchData = getMatchData(source);
+  if (matchData.length == 1 && matchData[0][2]) {
+    return matchesStrictComparable(matchData[0][0], matchData[0][1]);
+  }
+  return function(object) {
+    return object === source || baseIsMatch(object, source, matchData);
+  };
+}
+
+module.exports = baseMatches;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseMatchesProperty.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/lodash/_baseMatchesProperty.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseIsEqual = __webpack_require__(/*! ./_baseIsEqual */ "./node_modules/lodash/_baseIsEqual.js"),
+    get = __webpack_require__(/*! ./get */ "./node_modules/lodash/get.js"),
+    hasIn = __webpack_require__(/*! ./hasIn */ "./node_modules/lodash/hasIn.js"),
+    isKey = __webpack_require__(/*! ./_isKey */ "./node_modules/lodash/_isKey.js"),
+    isStrictComparable = __webpack_require__(/*! ./_isStrictComparable */ "./node_modules/lodash/_isStrictComparable.js"),
+    matchesStrictComparable = __webpack_require__(/*! ./_matchesStrictComparable */ "./node_modules/lodash/_matchesStrictComparable.js"),
+    toKey = __webpack_require__(/*! ./_toKey */ "./node_modules/lodash/_toKey.js");
+
+/** Used to compose bitmasks for value comparisons. */
+var COMPARE_PARTIAL_FLAG = 1,
+    COMPARE_UNORDERED_FLAG = 2;
+
+/**
+ * The base implementation of `_.matchesProperty` which doesn't clone `srcValue`.
+ *
+ * @private
+ * @param {string} path The path of the property to get.
+ * @param {*} srcValue The value to match.
+ * @returns {Function} Returns the new spec function.
+ */
+function baseMatchesProperty(path, srcValue) {
+  if (isKey(path) && isStrictComparable(srcValue)) {
+    return matchesStrictComparable(toKey(path), srcValue);
+  }
+  return function(object) {
+    var objValue = get(object, path);
+    return (objValue === undefined && objValue === srcValue)
+      ? hasIn(object, path)
+      : baseIsEqual(srcValue, objValue, COMPARE_PARTIAL_FLAG | COMPARE_UNORDERED_FLAG);
+  };
+}
+
+module.exports = baseMatchesProperty;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseProperty.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_baseProperty.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * The base implementation of `_.property` without support for deep paths.
+ *
+ * @private
+ * @param {string} key The key of the property to get.
+ * @returns {Function} Returns the new accessor function.
+ */
+function baseProperty(key) {
+  return function(object) {
+    return object == null ? undefined : object[key];
+  };
+}
+
+module.exports = baseProperty;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_basePropertyDeep.js":
+/*!**************************************************!*\
+  !*** ./node_modules/lodash/_basePropertyDeep.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseGet = __webpack_require__(/*! ./_baseGet */ "./node_modules/lodash/_baseGet.js");
+
+/**
+ * A specialized version of `baseProperty` which supports deep paths.
+ *
+ * @private
+ * @param {Array|string} path The path of the property to get.
+ * @returns {Function} Returns the new accessor function.
+ */
+function basePropertyDeep(path) {
+  return function(object) {
+    return baseGet(object, path);
+  };
+}
+
+module.exports = basePropertyDeep;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseRandom.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_baseRandom.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeFloor = Math.floor,
+    nativeRandom = Math.random;
+
+/**
+ * The base implementation of `_.random` without support for returning
+ * floating-point numbers.
+ *
+ * @private
+ * @param {number} lower The lower bound.
+ * @param {number} upper The upper bound.
+ * @returns {number} Returns the random number.
+ */
+function baseRandom(lower, upper) {
+  return lower + nativeFloor(nativeRandom() * (upper - lower + 1));
+}
+
+module.exports = baseRandom;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseSample.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_baseSample.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arraySample = __webpack_require__(/*! ./_arraySample */ "./node_modules/lodash/_arraySample.js"),
+    values = __webpack_require__(/*! ./values */ "./node_modules/lodash/values.js");
+
+/**
+ * The base implementation of `_.sample`.
+ *
+ * @private
+ * @param {Array|Object} collection The collection to sample.
+ * @returns {*} Returns the random element.
+ */
+function baseSample(collection) {
+  return arraySample(values(collection));
+}
+
+module.exports = baseSample;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseShuffle.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_baseShuffle.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var shuffleSelf = __webpack_require__(/*! ./_shuffleSelf */ "./node_modules/lodash/_shuffleSelf.js"),
+    values = __webpack_require__(/*! ./values */ "./node_modules/lodash/values.js");
+
+/**
+ * The base implementation of `_.shuffle`.
+ *
+ * @private
+ * @param {Array|Object} collection The collection to shuffle.
+ * @returns {Array} Returns the new shuffled array.
+ */
+function baseShuffle(collection) {
+  return shuffleSelf(values(collection));
+}
+
+module.exports = baseShuffle;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseSlice.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_baseSlice.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * The base implementation of `_.slice` without an iteratee call guard.
+ *
+ * @private
+ * @param {Array} array The array to slice.
+ * @param {number} [start=0] The start position.
+ * @param {number} [end=array.length] The end position.
+ * @returns {Array} Returns the slice of `array`.
+ */
+function baseSlice(array, start, end) {
+  var index = -1,
+      length = array.length;
+
+  if (start < 0) {
+    start = -start > length ? 0 : (length + start);
+  }
+  end = end > length ? length : end;
+  if (end < 0) {
+    end += length;
+  }
+  length = start > end ? 0 : ((end - start) >>> 0);
+  start >>>= 0;
+
+  var result = Array(length);
+  while (++index < length) {
+    result[index] = array[index + start];
+  }
+  return result;
+}
+
+module.exports = baseSlice;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseTimes.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_baseTimes.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * The base implementation of `_.times` without support for iteratee shorthands
+ * or max array length checks.
+ *
+ * @private
+ * @param {number} n The number of times to invoke `iteratee`.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Array} Returns the array of results.
+ */
+function baseTimes(n, iteratee) {
+  var index = -1,
+      result = Array(n);
+
+  while (++index < n) {
+    result[index] = iteratee(index);
+  }
+  return result;
+}
+
+module.exports = baseTimes;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseToString.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_baseToString.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Symbol = __webpack_require__(/*! ./_Symbol */ "./node_modules/lodash/_Symbol.js"),
+    arrayMap = __webpack_require__(/*! ./_arrayMap */ "./node_modules/lodash/_arrayMap.js"),
+    isArray = __webpack_require__(/*! ./isArray */ "./node_modules/lodash/isArray.js"),
+    isSymbol = __webpack_require__(/*! ./isSymbol */ "./node_modules/lodash/isSymbol.js");
+
+/** Used as references for various `Number` constants. */
+var INFINITY = 1 / 0;
+
+/** Used to convert symbols to primitives and strings. */
+var symbolProto = Symbol ? Symbol.prototype : undefined,
+    symbolToString = symbolProto ? symbolProto.toString : undefined;
+
+/**
+ * The base implementation of `_.toString` which doesn't convert nullish
+ * values to empty strings.
+ *
+ * @private
+ * @param {*} value The value to process.
+ * @returns {string} Returns the string.
+ */
+function baseToString(value) {
+  // Exit early for strings to avoid a performance hit in some environments.
+  if (typeof value == 'string') {
+    return value;
+  }
+  if (isArray(value)) {
+    // Recursively convert values (susceptible to call stack limits).
+    return arrayMap(value, baseToString) + '';
+  }
+  if (isSymbol(value)) {
+    return symbolToString ? symbolToString.call(value) : '';
+  }
+  var result = (value + '');
+  return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
+}
+
+module.exports = baseToString;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseUnary.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_baseUnary.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * The base implementation of `_.unary` without support for storing metadata.
+ *
+ * @private
+ * @param {Function} func The function to cap arguments for.
+ * @returns {Function} Returns the new capped function.
+ */
+function baseUnary(func) {
+  return function(value) {
+    return func(value);
+  };
+}
+
+module.exports = baseUnary;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseUniq.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_baseUniq.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var SetCache = __webpack_require__(/*! ./_SetCache */ "./node_modules/lodash/_SetCache.js"),
+    arrayIncludes = __webpack_require__(/*! ./_arrayIncludes */ "./node_modules/lodash/_arrayIncludes.js"),
+    arrayIncludesWith = __webpack_require__(/*! ./_arrayIncludesWith */ "./node_modules/lodash/_arrayIncludesWith.js"),
+    cacheHas = __webpack_require__(/*! ./_cacheHas */ "./node_modules/lodash/_cacheHas.js"),
+    createSet = __webpack_require__(/*! ./_createSet */ "./node_modules/lodash/_createSet.js"),
+    setToArray = __webpack_require__(/*! ./_setToArray */ "./node_modules/lodash/_setToArray.js");
+
+/** Used as the size to enable large array optimizations. */
+var LARGE_ARRAY_SIZE = 200;
+
+/**
+ * The base implementation of `_.uniqBy` without support for iteratee shorthands.
+ *
+ * @private
+ * @param {Array} array The array to inspect.
+ * @param {Function} [iteratee] The iteratee invoked per element.
+ * @param {Function} [comparator] The comparator invoked per element.
+ * @returns {Array} Returns the new duplicate free array.
+ */
+function baseUniq(array, iteratee, comparator) {
+  var index = -1,
+      includes = arrayIncludes,
+      length = array.length,
+      isCommon = true,
+      result = [],
+      seen = result;
+
+  if (comparator) {
+    isCommon = false;
+    includes = arrayIncludesWith;
+  }
+  else if (length >= LARGE_ARRAY_SIZE) {
+    var set = iteratee ? null : createSet(array);
+    if (set) {
+      return setToArray(set);
+    }
+    isCommon = false;
+    includes = cacheHas;
+    seen = new SetCache;
+  }
+  else {
+    seen = iteratee ? [] : result;
+  }
+  outer:
+  while (++index < length) {
+    var value = array[index],
+        computed = iteratee ? iteratee(value) : value;
+
+    value = (comparator || value !== 0) ? value : 0;
+    if (isCommon && computed === computed) {
+      var seenIndex = seen.length;
+      while (seenIndex--) {
+        if (seen[seenIndex] === computed) {
+          continue outer;
+        }
+      }
+      if (iteratee) {
+        seen.push(computed);
+      }
+      result.push(value);
+    }
+    else if (!includes(seen, computed, comparator)) {
+      if (seen !== result) {
+        seen.push(computed);
+      }
+      result.push(value);
+    }
+  }
+  return result;
+}
+
+module.exports = baseUniq;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseValues.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_baseValues.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayMap = __webpack_require__(/*! ./_arrayMap */ "./node_modules/lodash/_arrayMap.js");
+
+/**
+ * The base implementation of `_.values` and `_.valuesIn` which creates an
+ * array of `object` property values corresponding to the property names
+ * of `props`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @param {Array} props The property names to get values for.
+ * @returns {Object} Returns the array of property values.
+ */
+function baseValues(object, props) {
+  return arrayMap(props, function(key) {
+    return object[key];
+  });
+}
+
+module.exports = baseValues;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_cacheHas.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_cacheHas.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Checks if a `cache` value for `key` exists.
+ *
+ * @private
+ * @param {Object} cache The cache to query.
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function cacheHas(cache, key) {
+  return cache.has(key);
+}
+
+module.exports = cacheHas;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_castPath.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_castPath.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isArray = __webpack_require__(/*! ./isArray */ "./node_modules/lodash/isArray.js"),
+    isKey = __webpack_require__(/*! ./_isKey */ "./node_modules/lodash/_isKey.js"),
+    stringToPath = __webpack_require__(/*! ./_stringToPath */ "./node_modules/lodash/_stringToPath.js"),
+    toString = __webpack_require__(/*! ./toString */ "./node_modules/lodash/toString.js");
+
+/**
+ * Casts `value` to a path array if it's not one.
+ *
+ * @private
+ * @param {*} value The value to inspect.
+ * @param {Object} [object] The object to query keys on.
+ * @returns {Array} Returns the cast property path array.
+ */
+function castPath(value, object) {
+  if (isArray(value)) {
+    return value;
+  }
+  return isKey(value, object) ? [value] : stringToPath(toString(value));
+}
+
+module.exports = castPath;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_copyArray.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_copyArray.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Copies the values of `source` to `array`.
+ *
+ * @private
+ * @param {Array} source The array to copy values from.
+ * @param {Array} [array=[]] The array to copy values to.
+ * @returns {Array} Returns `array`.
+ */
+function copyArray(source, array) {
+  var index = -1,
+      length = source.length;
+
+  array || (array = Array(length));
+  while (++index < length) {
+    array[index] = source[index];
+  }
+  return array;
+}
+
+module.exports = copyArray;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_coreJsData.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_coreJsData.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var root = __webpack_require__(/*! ./_root */ "./node_modules/lodash/_root.js");
+
+/** Used to detect overreaching core-js shims. */
+var coreJsData = root['__core-js_shared__'];
+
+module.exports = coreJsData;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_createBaseEach.js":
+/*!************************************************!*\
+  !*** ./node_modules/lodash/_createBaseEach.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isArrayLike = __webpack_require__(/*! ./isArrayLike */ "./node_modules/lodash/isArrayLike.js");
+
+/**
+ * Creates a `baseEach` or `baseEachRight` function.
+ *
+ * @private
+ * @param {Function} eachFunc The function to iterate over a collection.
+ * @param {boolean} [fromRight] Specify iterating from right to left.
+ * @returns {Function} Returns the new base function.
+ */
+function createBaseEach(eachFunc, fromRight) {
+  return function(collection, iteratee) {
+    if (collection == null) {
+      return collection;
+    }
+    if (!isArrayLike(collection)) {
+      return eachFunc(collection, iteratee);
+    }
+    var length = collection.length,
+        index = fromRight ? length : -1,
+        iterable = Object(collection);
+
+    while ((fromRight ? index-- : ++index < length)) {
+      if (iteratee(iterable[index], index, iterable) === false) {
+        break;
+      }
+    }
+    return collection;
+  };
+}
+
+module.exports = createBaseEach;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_createBaseFor.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash/_createBaseFor.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Creates a base function for methods like `_.forIn` and `_.forOwn`.
+ *
+ * @private
+ * @param {boolean} [fromRight] Specify iterating from right to left.
+ * @returns {Function} Returns the new base function.
+ */
+function createBaseFor(fromRight) {
+  return function(object, iteratee, keysFunc) {
+    var index = -1,
+        iterable = Object(object),
+        props = keysFunc(object),
+        length = props.length;
+
+    while (length--) {
+      var key = props[fromRight ? length : ++index];
+      if (iteratee(iterable[key], key, iterable) === false) {
+        break;
+      }
+    }
+    return object;
+  };
+}
+
+module.exports = createBaseFor;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_createSet.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_createSet.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Set = __webpack_require__(/*! ./_Set */ "./node_modules/lodash/_Set.js"),
+    noop = __webpack_require__(/*! ./noop */ "./node_modules/lodash/noop.js"),
+    setToArray = __webpack_require__(/*! ./_setToArray */ "./node_modules/lodash/_setToArray.js");
+
+/** Used as references for various `Number` constants. */
+var INFINITY = 1 / 0;
+
+/**
+ * Creates a set object of `values`.
+ *
+ * @private
+ * @param {Array} values The values to add to the set.
+ * @returns {Object} Returns the new set.
+ */
+var createSet = !(Set && (1 / setToArray(new Set([,-0]))[1]) == INFINITY) ? noop : function(values) {
+  return new Set(values);
+};
+
+module.exports = createSet;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_equalArrays.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_equalArrays.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var SetCache = __webpack_require__(/*! ./_SetCache */ "./node_modules/lodash/_SetCache.js"),
+    arraySome = __webpack_require__(/*! ./_arraySome */ "./node_modules/lodash/_arraySome.js"),
+    cacheHas = __webpack_require__(/*! ./_cacheHas */ "./node_modules/lodash/_cacheHas.js");
+
+/** Used to compose bitmasks for value comparisons. */
+var COMPARE_PARTIAL_FLAG = 1,
+    COMPARE_UNORDERED_FLAG = 2;
+
+/**
+ * A specialized version of `baseIsEqualDeep` for arrays with support for
+ * partial deep comparisons.
+ *
+ * @private
+ * @param {Array} array The array to compare.
+ * @param {Array} other The other array to compare.
+ * @param {number} bitmask The bitmask flags. See `baseIsEqual` for more details.
+ * @param {Function} customizer The function to customize comparisons.
+ * @param {Function} equalFunc The function to determine equivalents of values.
+ * @param {Object} stack Tracks traversed `array` and `other` objects.
+ * @returns {boolean} Returns `true` if the arrays are equivalent, else `false`.
+ */
+function equalArrays(array, other, bitmask, customizer, equalFunc, stack) {
+  var isPartial = bitmask & COMPARE_PARTIAL_FLAG,
+      arrLength = array.length,
+      othLength = other.length;
+
+  if (arrLength != othLength && !(isPartial && othLength > arrLength)) {
+    return false;
+  }
+  // Assume cyclic values are equal.
+  var stacked = stack.get(array);
+  if (stacked && stack.get(other)) {
+    return stacked == other;
+  }
+  var index = -1,
+      result = true,
+      seen = (bitmask & COMPARE_UNORDERED_FLAG) ? new SetCache : undefined;
+
+  stack.set(array, other);
+  stack.set(other, array);
+
+  // Ignore non-index properties.
+  while (++index < arrLength) {
+    var arrValue = array[index],
+        othValue = other[index];
+
+    if (customizer) {
+      var compared = isPartial
+        ? customizer(othValue, arrValue, index, other, array, stack)
+        : customizer(arrValue, othValue, index, array, other, stack);
+    }
+    if (compared !== undefined) {
+      if (compared) {
+        continue;
+      }
+      result = false;
+      break;
+    }
+    // Recursively compare arrays (susceptible to call stack limits).
+    if (seen) {
+      if (!arraySome(other, function(othValue, othIndex) {
+            if (!cacheHas(seen, othIndex) &&
+                (arrValue === othValue || equalFunc(arrValue, othValue, bitmask, customizer, stack))) {
+              return seen.push(othIndex);
+            }
+          })) {
+        result = false;
+        break;
+      }
+    } else if (!(
+          arrValue === othValue ||
+            equalFunc(arrValue, othValue, bitmask, customizer, stack)
+        )) {
+      result = false;
+      break;
+    }
+  }
+  stack['delete'](array);
+  stack['delete'](other);
+  return result;
+}
+
+module.exports = equalArrays;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_equalByTag.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_equalByTag.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Symbol = __webpack_require__(/*! ./_Symbol */ "./node_modules/lodash/_Symbol.js"),
+    Uint8Array = __webpack_require__(/*! ./_Uint8Array */ "./node_modules/lodash/_Uint8Array.js"),
+    eq = __webpack_require__(/*! ./eq */ "./node_modules/lodash/eq.js"),
+    equalArrays = __webpack_require__(/*! ./_equalArrays */ "./node_modules/lodash/_equalArrays.js"),
+    mapToArray = __webpack_require__(/*! ./_mapToArray */ "./node_modules/lodash/_mapToArray.js"),
+    setToArray = __webpack_require__(/*! ./_setToArray */ "./node_modules/lodash/_setToArray.js");
+
+/** Used to compose bitmasks for value comparisons. */
+var COMPARE_PARTIAL_FLAG = 1,
+    COMPARE_UNORDERED_FLAG = 2;
+
+/** `Object#toString` result references. */
+var boolTag = '[object Boolean]',
+    dateTag = '[object Date]',
+    errorTag = '[object Error]',
+    mapTag = '[object Map]',
+    numberTag = '[object Number]',
+    regexpTag = '[object RegExp]',
+    setTag = '[object Set]',
+    stringTag = '[object String]',
+    symbolTag = '[object Symbol]';
+
+var arrayBufferTag = '[object ArrayBuffer]',
+    dataViewTag = '[object DataView]';
+
+/** Used to convert symbols to primitives and strings. */
+var symbolProto = Symbol ? Symbol.prototype : undefined,
+    symbolValueOf = symbolProto ? symbolProto.valueOf : undefined;
+
+/**
+ * A specialized version of `baseIsEqualDeep` for comparing objects of
+ * the same `toStringTag`.
+ *
+ * **Note:** This function only supports comparing values with tags of
+ * `Boolean`, `Date`, `Error`, `Number`, `RegExp`, or `String`.
+ *
+ * @private
+ * @param {Object} object The object to compare.
+ * @param {Object} other The other object to compare.
+ * @param {string} tag The `toStringTag` of the objects to compare.
+ * @param {number} bitmask The bitmask flags. See `baseIsEqual` for more details.
+ * @param {Function} customizer The function to customize comparisons.
+ * @param {Function} equalFunc The function to determine equivalents of values.
+ * @param {Object} stack Tracks traversed `object` and `other` objects.
+ * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
+ */
+function equalByTag(object, other, tag, bitmask, customizer, equalFunc, stack) {
+  switch (tag) {
+    case dataViewTag:
+      if ((object.byteLength != other.byteLength) ||
+          (object.byteOffset != other.byteOffset)) {
+        return false;
+      }
+      object = object.buffer;
+      other = other.buffer;
+
+    case arrayBufferTag:
+      if ((object.byteLength != other.byteLength) ||
+          !equalFunc(new Uint8Array(object), new Uint8Array(other))) {
+        return false;
+      }
+      return true;
+
+    case boolTag:
+    case dateTag:
+    case numberTag:
+      // Coerce booleans to `1` or `0` and dates to milliseconds.
+      // Invalid dates are coerced to `NaN`.
+      return eq(+object, +other);
+
+    case errorTag:
+      return object.name == other.name && object.message == other.message;
+
+    case regexpTag:
+    case stringTag:
+      // Coerce regexes to strings and treat strings, primitives and objects,
+      // as equal. See http://www.ecma-international.org/ecma-262/7.0/#sec-regexp.prototype.tostring
+      // for more details.
+      return object == (other + '');
+
+    case mapTag:
+      var convert = mapToArray;
+
+    case setTag:
+      var isPartial = bitmask & COMPARE_PARTIAL_FLAG;
+      convert || (convert = setToArray);
+
+      if (object.size != other.size && !isPartial) {
+        return false;
+      }
+      // Assume cyclic values are equal.
+      var stacked = stack.get(object);
+      if (stacked) {
+        return stacked == other;
+      }
+      bitmask |= COMPARE_UNORDERED_FLAG;
+
+      // Recursively compare objects (susceptible to call stack limits).
+      stack.set(object, other);
+      var result = equalArrays(convert(object), convert(other), bitmask, customizer, equalFunc, stack);
+      stack['delete'](object);
+      return result;
+
+    case symbolTag:
+      if (symbolValueOf) {
+        return symbolValueOf.call(object) == symbolValueOf.call(other);
+      }
+  }
+  return false;
+}
+
+module.exports = equalByTag;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_equalObjects.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_equalObjects.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getAllKeys = __webpack_require__(/*! ./_getAllKeys */ "./node_modules/lodash/_getAllKeys.js");
+
+/** Used to compose bitmasks for value comparisons. */
+var COMPARE_PARTIAL_FLAG = 1;
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * A specialized version of `baseIsEqualDeep` for objects with support for
+ * partial deep comparisons.
+ *
+ * @private
+ * @param {Object} object The object to compare.
+ * @param {Object} other The other object to compare.
+ * @param {number} bitmask The bitmask flags. See `baseIsEqual` for more details.
+ * @param {Function} customizer The function to customize comparisons.
+ * @param {Function} equalFunc The function to determine equivalents of values.
+ * @param {Object} stack Tracks traversed `object` and `other` objects.
+ * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
+ */
+function equalObjects(object, other, bitmask, customizer, equalFunc, stack) {
+  var isPartial = bitmask & COMPARE_PARTIAL_FLAG,
+      objProps = getAllKeys(object),
+      objLength = objProps.length,
+      othProps = getAllKeys(other),
+      othLength = othProps.length;
+
+  if (objLength != othLength && !isPartial) {
+    return false;
+  }
+  var index = objLength;
+  while (index--) {
+    var key = objProps[index];
+    if (!(isPartial ? key in other : hasOwnProperty.call(other, key))) {
+      return false;
+    }
+  }
+  // Assume cyclic values are equal.
+  var stacked = stack.get(object);
+  if (stacked && stack.get(other)) {
+    return stacked == other;
+  }
+  var result = true;
+  stack.set(object, other);
+  stack.set(other, object);
+
+  var skipCtor = isPartial;
+  while (++index < objLength) {
+    key = objProps[index];
+    var objValue = object[key],
+        othValue = other[key];
+
+    if (customizer) {
+      var compared = isPartial
+        ? customizer(othValue, objValue, key, other, object, stack)
+        : customizer(objValue, othValue, key, object, other, stack);
+    }
+    // Recursively compare objects (susceptible to call stack limits).
+    if (!(compared === undefined
+          ? (objValue === othValue || equalFunc(objValue, othValue, bitmask, customizer, stack))
+          : compared
+        )) {
+      result = false;
+      break;
+    }
+    skipCtor || (skipCtor = key == 'constructor');
+  }
+  if (result && !skipCtor) {
+    var objCtor = object.constructor,
+        othCtor = other.constructor;
+
+    // Non `Object` object instances with different constructors are not equal.
+    if (objCtor != othCtor &&
+        ('constructor' in object && 'constructor' in other) &&
+        !(typeof objCtor == 'function' && objCtor instanceof objCtor &&
+          typeof othCtor == 'function' && othCtor instanceof othCtor)) {
+      result = false;
+    }
+  }
+  stack['delete'](object);
+  stack['delete'](other);
+  return result;
+}
+
+module.exports = equalObjects;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_freeGlobal.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_freeGlobal.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {/** Detect free variable `global` from Node.js. */
+var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
+
+module.exports = freeGlobal;
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_getAllKeys.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_getAllKeys.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseGetAllKeys = __webpack_require__(/*! ./_baseGetAllKeys */ "./node_modules/lodash/_baseGetAllKeys.js"),
+    getSymbols = __webpack_require__(/*! ./_getSymbols */ "./node_modules/lodash/_getSymbols.js"),
+    keys = __webpack_require__(/*! ./keys */ "./node_modules/lodash/keys.js");
+
+/**
+ * Creates an array of own enumerable property names and symbols of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names and symbols.
+ */
+function getAllKeys(object) {
+  return baseGetAllKeys(object, keys, getSymbols);
+}
+
+module.exports = getAllKeys;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_getMapData.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_getMapData.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isKeyable = __webpack_require__(/*! ./_isKeyable */ "./node_modules/lodash/_isKeyable.js");
+
+/**
+ * Gets the data for `map`.
+ *
+ * @private
+ * @param {Object} map The map to query.
+ * @param {string} key The reference key.
+ * @returns {*} Returns the map data.
+ */
+function getMapData(map, key) {
+  var data = map.__data__;
+  return isKeyable(key)
+    ? data[typeof key == 'string' ? 'string' : 'hash']
+    : data.map;
+}
+
+module.exports = getMapData;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_getMatchData.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_getMatchData.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isStrictComparable = __webpack_require__(/*! ./_isStrictComparable */ "./node_modules/lodash/_isStrictComparable.js"),
+    keys = __webpack_require__(/*! ./keys */ "./node_modules/lodash/keys.js");
+
+/**
+ * Gets the property names, values, and compare flags of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the match data of `object`.
+ */
+function getMatchData(object) {
+  var result = keys(object),
+      length = result.length;
+
+  while (length--) {
+    var key = result[length],
+        value = object[key];
+
+    result[length] = [key, value, isStrictComparable(value)];
+  }
+  return result;
+}
+
+module.exports = getMatchData;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_getNative.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_getNative.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseIsNative = __webpack_require__(/*! ./_baseIsNative */ "./node_modules/lodash/_baseIsNative.js"),
+    getValue = __webpack_require__(/*! ./_getValue */ "./node_modules/lodash/_getValue.js");
+
+/**
+ * Gets the native function at `key` of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @param {string} key The key of the method to get.
+ * @returns {*} Returns the function if it's native, else `undefined`.
+ */
+function getNative(object, key) {
+  var value = getValue(object, key);
+  return baseIsNative(value) ? value : undefined;
+}
+
+module.exports = getNative;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_getRawTag.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_getRawTag.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Symbol = __webpack_require__(/*! ./_Symbol */ "./node_modules/lodash/_Symbol.js");
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var nativeObjectToString = objectProto.toString;
+
+/** Built-in value references. */
+var symToStringTag = Symbol ? Symbol.toStringTag : undefined;
+
+/**
+ * A specialized version of `baseGetTag` which ignores `Symbol.toStringTag` values.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the raw `toStringTag`.
+ */
+function getRawTag(value) {
+  var isOwn = hasOwnProperty.call(value, symToStringTag),
+      tag = value[symToStringTag];
+
+  try {
+    value[symToStringTag] = undefined;
+    var unmasked = true;
+  } catch (e) {}
+
+  var result = nativeObjectToString.call(value);
+  if (unmasked) {
+    if (isOwn) {
+      value[symToStringTag] = tag;
+    } else {
+      delete value[symToStringTag];
+    }
+  }
+  return result;
+}
+
+module.exports = getRawTag;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_getSymbols.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_getSymbols.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayFilter = __webpack_require__(/*! ./_arrayFilter */ "./node_modules/lodash/_arrayFilter.js"),
+    stubArray = __webpack_require__(/*! ./stubArray */ "./node_modules/lodash/stubArray.js");
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Built-in value references. */
+var propertyIsEnumerable = objectProto.propertyIsEnumerable;
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeGetSymbols = Object.getOwnPropertySymbols;
+
+/**
+ * Creates an array of the own enumerable symbols of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of symbols.
+ */
+var getSymbols = !nativeGetSymbols ? stubArray : function(object) {
+  if (object == null) {
+    return [];
+  }
+  object = Object(object);
+  return arrayFilter(nativeGetSymbols(object), function(symbol) {
+    return propertyIsEnumerable.call(object, symbol);
+  });
+};
+
+module.exports = getSymbols;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_getTag.js":
+/*!****************************************!*\
+  !*** ./node_modules/lodash/_getTag.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var DataView = __webpack_require__(/*! ./_DataView */ "./node_modules/lodash/_DataView.js"),
+    Map = __webpack_require__(/*! ./_Map */ "./node_modules/lodash/_Map.js"),
+    Promise = __webpack_require__(/*! ./_Promise */ "./node_modules/lodash/_Promise.js"),
+    Set = __webpack_require__(/*! ./_Set */ "./node_modules/lodash/_Set.js"),
+    WeakMap = __webpack_require__(/*! ./_WeakMap */ "./node_modules/lodash/_WeakMap.js"),
+    baseGetTag = __webpack_require__(/*! ./_baseGetTag */ "./node_modules/lodash/_baseGetTag.js"),
+    toSource = __webpack_require__(/*! ./_toSource */ "./node_modules/lodash/_toSource.js");
+
+/** `Object#toString` result references. */
+var mapTag = '[object Map]',
+    objectTag = '[object Object]',
+    promiseTag = '[object Promise]',
+    setTag = '[object Set]',
+    weakMapTag = '[object WeakMap]';
+
+var dataViewTag = '[object DataView]';
+
+/** Used to detect maps, sets, and weakmaps. */
+var dataViewCtorString = toSource(DataView),
+    mapCtorString = toSource(Map),
+    promiseCtorString = toSource(Promise),
+    setCtorString = toSource(Set),
+    weakMapCtorString = toSource(WeakMap);
+
+/**
+ * Gets the `toStringTag` of `value`.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the `toStringTag`.
+ */
+var getTag = baseGetTag;
+
+// Fallback for data views, maps, sets, and weak maps in IE 11 and promises in Node.js < 6.
+if ((DataView && getTag(new DataView(new ArrayBuffer(1))) != dataViewTag) ||
+    (Map && getTag(new Map) != mapTag) ||
+    (Promise && getTag(Promise.resolve()) != promiseTag) ||
+    (Set && getTag(new Set) != setTag) ||
+    (WeakMap && getTag(new WeakMap) != weakMapTag)) {
+  getTag = function(value) {
+    var result = baseGetTag(value),
+        Ctor = result == objectTag ? value.constructor : undefined,
+        ctorString = Ctor ? toSource(Ctor) : '';
+
+    if (ctorString) {
+      switch (ctorString) {
+        case dataViewCtorString: return dataViewTag;
+        case mapCtorString: return mapTag;
+        case promiseCtorString: return promiseTag;
+        case setCtorString: return setTag;
+        case weakMapCtorString: return weakMapTag;
+      }
+    }
+    return result;
+  };
+}
+
+module.exports = getTag;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_getValue.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_getValue.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Gets the value at `key` of `object`.
+ *
+ * @private
+ * @param {Object} [object] The object to query.
+ * @param {string} key The key of the property to get.
+ * @returns {*} Returns the property value.
+ */
+function getValue(object, key) {
+  return object == null ? undefined : object[key];
+}
+
+module.exports = getValue;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_hasPath.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_hasPath.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var castPath = __webpack_require__(/*! ./_castPath */ "./node_modules/lodash/_castPath.js"),
+    isArguments = __webpack_require__(/*! ./isArguments */ "./node_modules/lodash/isArguments.js"),
+    isArray = __webpack_require__(/*! ./isArray */ "./node_modules/lodash/isArray.js"),
+    isIndex = __webpack_require__(/*! ./_isIndex */ "./node_modules/lodash/_isIndex.js"),
+    isLength = __webpack_require__(/*! ./isLength */ "./node_modules/lodash/isLength.js"),
+    toKey = __webpack_require__(/*! ./_toKey */ "./node_modules/lodash/_toKey.js");
+
+/**
+ * Checks if `path` exists on `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @param {Array|string} path The path to check.
+ * @param {Function} hasFunc The function to check properties.
+ * @returns {boolean} Returns `true` if `path` exists, else `false`.
+ */
+function hasPath(object, path, hasFunc) {
+  path = castPath(path, object);
+
+  var index = -1,
+      length = path.length,
+      result = false;
+
+  while (++index < length) {
+    var key = toKey(path[index]);
+    if (!(result = object != null && hasFunc(object, key))) {
+      break;
+    }
+    object = object[key];
+  }
+  if (result || ++index != length) {
+    return result;
+  }
+  length = object == null ? 0 : object.length;
+  return !!length && isLength(length) && isIndex(key, length) &&
+    (isArray(object) || isArguments(object));
+}
+
+module.exports = hasPath;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_hashClear.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_hashClear.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var nativeCreate = __webpack_require__(/*! ./_nativeCreate */ "./node_modules/lodash/_nativeCreate.js");
+
+/**
+ * Removes all key-value entries from the hash.
+ *
+ * @private
+ * @name clear
+ * @memberOf Hash
+ */
+function hashClear() {
+  this.__data__ = nativeCreate ? nativeCreate(null) : {};
+  this.size = 0;
+}
+
+module.exports = hashClear;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_hashDelete.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_hashDelete.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Removes `key` and its value from the hash.
+ *
+ * @private
+ * @name delete
+ * @memberOf Hash
+ * @param {Object} hash The hash to modify.
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function hashDelete(key) {
+  var result = this.has(key) && delete this.__data__[key];
+  this.size -= result ? 1 : 0;
+  return result;
+}
+
+module.exports = hashDelete;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_hashGet.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_hashGet.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var nativeCreate = __webpack_require__(/*! ./_nativeCreate */ "./node_modules/lodash/_nativeCreate.js");
+
+/** Used to stand-in for `undefined` hash values. */
+var HASH_UNDEFINED = '__lodash_hash_undefined__';
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Gets the hash value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf Hash
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function hashGet(key) {
+  var data = this.__data__;
+  if (nativeCreate) {
+    var result = data[key];
+    return result === HASH_UNDEFINED ? undefined : result;
+  }
+  return hasOwnProperty.call(data, key) ? data[key] : undefined;
+}
+
+module.exports = hashGet;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_hashHas.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_hashHas.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var nativeCreate = __webpack_require__(/*! ./_nativeCreate */ "./node_modules/lodash/_nativeCreate.js");
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Checks if a hash value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf Hash
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function hashHas(key) {
+  var data = this.__data__;
+  return nativeCreate ? (data[key] !== undefined) : hasOwnProperty.call(data, key);
+}
+
+module.exports = hashHas;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_hashSet.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_hashSet.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var nativeCreate = __webpack_require__(/*! ./_nativeCreate */ "./node_modules/lodash/_nativeCreate.js");
+
+/** Used to stand-in for `undefined` hash values. */
+var HASH_UNDEFINED = '__lodash_hash_undefined__';
+
+/**
+ * Sets the hash `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf Hash
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the hash instance.
+ */
+function hashSet(key, value) {
+  var data = this.__data__;
+  this.size += this.has(key) ? 0 : 1;
+  data[key] = (nativeCreate && value === undefined) ? HASH_UNDEFINED : value;
+  return this;
+}
+
+module.exports = hashSet;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_isFlattenable.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash/_isFlattenable.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Symbol = __webpack_require__(/*! ./_Symbol */ "./node_modules/lodash/_Symbol.js"),
+    isArguments = __webpack_require__(/*! ./isArguments */ "./node_modules/lodash/isArguments.js"),
+    isArray = __webpack_require__(/*! ./isArray */ "./node_modules/lodash/isArray.js");
+
+/** Built-in value references. */
+var spreadableSymbol = Symbol ? Symbol.isConcatSpreadable : undefined;
+
+/**
+ * Checks if `value` is a flattenable `arguments` object or array.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is flattenable, else `false`.
+ */
+function isFlattenable(value) {
+  return isArray(value) || isArguments(value) ||
+    !!(spreadableSymbol && value && value[spreadableSymbol]);
+}
+
+module.exports = isFlattenable;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_isIndex.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_isIndex.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/** Used as references for various `Number` constants. */
+var MAX_SAFE_INTEGER = 9007199254740991;
+
+/** Used to detect unsigned integer values. */
+var reIsUint = /^(?:0|[1-9]\d*)$/;
+
+/**
+ * Checks if `value` is a valid array-like index.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
+ * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
+ */
+function isIndex(value, length) {
+  var type = typeof value;
+  length = length == null ? MAX_SAFE_INTEGER : length;
+
+  return !!length &&
+    (type == 'number' ||
+      (type != 'symbol' && reIsUint.test(value))) &&
+        (value > -1 && value % 1 == 0 && value < length);
+}
+
+module.exports = isIndex;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_isIterateeCall.js":
+/*!************************************************!*\
+  !*** ./node_modules/lodash/_isIterateeCall.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var eq = __webpack_require__(/*! ./eq */ "./node_modules/lodash/eq.js"),
+    isArrayLike = __webpack_require__(/*! ./isArrayLike */ "./node_modules/lodash/isArrayLike.js"),
+    isIndex = __webpack_require__(/*! ./_isIndex */ "./node_modules/lodash/_isIndex.js"),
+    isObject = __webpack_require__(/*! ./isObject */ "./node_modules/lodash/isObject.js");
+
+/**
+ * Checks if the given arguments are from an iteratee call.
+ *
+ * @private
+ * @param {*} value The potential iteratee value argument.
+ * @param {*} index The potential iteratee index or key argument.
+ * @param {*} object The potential iteratee object argument.
+ * @returns {boolean} Returns `true` if the arguments are from an iteratee call,
+ *  else `false`.
+ */
+function isIterateeCall(value, index, object) {
+  if (!isObject(object)) {
+    return false;
+  }
+  var type = typeof index;
+  if (type == 'number'
+        ? (isArrayLike(object) && isIndex(index, object.length))
+        : (type == 'string' && index in object)
+      ) {
+    return eq(object[index], value);
+  }
+  return false;
+}
+
+module.exports = isIterateeCall;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_isKey.js":
+/*!***************************************!*\
+  !*** ./node_modules/lodash/_isKey.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isArray = __webpack_require__(/*! ./isArray */ "./node_modules/lodash/isArray.js"),
+    isSymbol = __webpack_require__(/*! ./isSymbol */ "./node_modules/lodash/isSymbol.js");
+
+/** Used to match property names within property paths. */
+var reIsDeepProp = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/,
+    reIsPlainProp = /^\w*$/;
+
+/**
+ * Checks if `value` is a property name and not a property path.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @param {Object} [object] The object to query keys on.
+ * @returns {boolean} Returns `true` if `value` is a property name, else `false`.
+ */
+function isKey(value, object) {
+  if (isArray(value)) {
+    return false;
+  }
+  var type = typeof value;
+  if (type == 'number' || type == 'symbol' || type == 'boolean' ||
+      value == null || isSymbol(value)) {
+    return true;
+  }
+  return reIsPlainProp.test(value) || !reIsDeepProp.test(value) ||
+    (object != null && value in Object(object));
+}
+
+module.exports = isKey;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_isKeyable.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_isKeyable.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Checks if `value` is suitable for use as unique object key.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is suitable, else `false`.
+ */
+function isKeyable(value) {
+  var type = typeof value;
+  return (type == 'string' || type == 'number' || type == 'symbol' || type == 'boolean')
+    ? (value !== '__proto__')
+    : (value === null);
+}
+
+module.exports = isKeyable;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_isMasked.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_isMasked.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var coreJsData = __webpack_require__(/*! ./_coreJsData */ "./node_modules/lodash/_coreJsData.js");
+
+/** Used to detect methods masquerading as native. */
+var maskSrcKey = (function() {
+  var uid = /[^.]+$/.exec(coreJsData && coreJsData.keys && coreJsData.keys.IE_PROTO || '');
+  return uid ? ('Symbol(src)_1.' + uid) : '';
+}());
+
+/**
+ * Checks if `func` has its source masked.
+ *
+ * @private
+ * @param {Function} func The function to check.
+ * @returns {boolean} Returns `true` if `func` is masked, else `false`.
+ */
+function isMasked(func) {
+  return !!maskSrcKey && (maskSrcKey in func);
+}
+
+module.exports = isMasked;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_isPrototype.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_isPrototype.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Checks if `value` is likely a prototype object.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a prototype, else `false`.
+ */
+function isPrototype(value) {
+  var Ctor = value && value.constructor,
+      proto = (typeof Ctor == 'function' && Ctor.prototype) || objectProto;
+
+  return value === proto;
+}
+
+module.exports = isPrototype;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_isStrictComparable.js":
+/*!****************************************************!*\
+  !*** ./node_modules/lodash/_isStrictComparable.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isObject = __webpack_require__(/*! ./isObject */ "./node_modules/lodash/isObject.js");
+
+/**
+ * Checks if `value` is suitable for strict equality comparisons, i.e. `===`.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` if suitable for strict
+ *  equality comparisons, else `false`.
+ */
+function isStrictComparable(value) {
+  return value === value && !isObject(value);
+}
+
+module.exports = isStrictComparable;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_listCacheClear.js":
+/*!************************************************!*\
+  !*** ./node_modules/lodash/_listCacheClear.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Removes all key-value entries from the list cache.
+ *
+ * @private
+ * @name clear
+ * @memberOf ListCache
+ */
+function listCacheClear() {
+  this.__data__ = [];
+  this.size = 0;
+}
+
+module.exports = listCacheClear;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_listCacheDelete.js":
+/*!*************************************************!*\
+  !*** ./node_modules/lodash/_listCacheDelete.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var assocIndexOf = __webpack_require__(/*! ./_assocIndexOf */ "./node_modules/lodash/_assocIndexOf.js");
+
+/** Used for built-in method references. */
+var arrayProto = Array.prototype;
+
+/** Built-in value references. */
+var splice = arrayProto.splice;
+
+/**
+ * Removes `key` and its value from the list cache.
+ *
+ * @private
+ * @name delete
+ * @memberOf ListCache
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function listCacheDelete(key) {
+  var data = this.__data__,
+      index = assocIndexOf(data, key);
+
+  if (index < 0) {
+    return false;
+  }
+  var lastIndex = data.length - 1;
+  if (index == lastIndex) {
+    data.pop();
+  } else {
+    splice.call(data, index, 1);
+  }
+  --this.size;
+  return true;
+}
+
+module.exports = listCacheDelete;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_listCacheGet.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_listCacheGet.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var assocIndexOf = __webpack_require__(/*! ./_assocIndexOf */ "./node_modules/lodash/_assocIndexOf.js");
+
+/**
+ * Gets the list cache value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf ListCache
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function listCacheGet(key) {
+  var data = this.__data__,
+      index = assocIndexOf(data, key);
+
+  return index < 0 ? undefined : data[index][1];
+}
+
+module.exports = listCacheGet;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_listCacheHas.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_listCacheHas.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var assocIndexOf = __webpack_require__(/*! ./_assocIndexOf */ "./node_modules/lodash/_assocIndexOf.js");
+
+/**
+ * Checks if a list cache value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf ListCache
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function listCacheHas(key) {
+  return assocIndexOf(this.__data__, key) > -1;
+}
+
+module.exports = listCacheHas;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_listCacheSet.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_listCacheSet.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var assocIndexOf = __webpack_require__(/*! ./_assocIndexOf */ "./node_modules/lodash/_assocIndexOf.js");
+
+/**
+ * Sets the list cache `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf ListCache
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the list cache instance.
+ */
+function listCacheSet(key, value) {
+  var data = this.__data__,
+      index = assocIndexOf(data, key);
+
+  if (index < 0) {
+    ++this.size;
+    data.push([key, value]);
+  } else {
+    data[index][1] = value;
+  }
+  return this;
+}
+
+module.exports = listCacheSet;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_mapCacheClear.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash/_mapCacheClear.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Hash = __webpack_require__(/*! ./_Hash */ "./node_modules/lodash/_Hash.js"),
+    ListCache = __webpack_require__(/*! ./_ListCache */ "./node_modules/lodash/_ListCache.js"),
+    Map = __webpack_require__(/*! ./_Map */ "./node_modules/lodash/_Map.js");
+
+/**
+ * Removes all key-value entries from the map.
+ *
+ * @private
+ * @name clear
+ * @memberOf MapCache
+ */
+function mapCacheClear() {
+  this.size = 0;
+  this.__data__ = {
+    'hash': new Hash,
+    'map': new (Map || ListCache),
+    'string': new Hash
+  };
+}
+
+module.exports = mapCacheClear;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_mapCacheDelete.js":
+/*!************************************************!*\
+  !*** ./node_modules/lodash/_mapCacheDelete.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getMapData = __webpack_require__(/*! ./_getMapData */ "./node_modules/lodash/_getMapData.js");
+
+/**
+ * Removes `key` and its value from the map.
+ *
+ * @private
+ * @name delete
+ * @memberOf MapCache
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function mapCacheDelete(key) {
+  var result = getMapData(this, key)['delete'](key);
+  this.size -= result ? 1 : 0;
+  return result;
+}
+
+module.exports = mapCacheDelete;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_mapCacheGet.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_mapCacheGet.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getMapData = __webpack_require__(/*! ./_getMapData */ "./node_modules/lodash/_getMapData.js");
+
+/**
+ * Gets the map value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf MapCache
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function mapCacheGet(key) {
+  return getMapData(this, key).get(key);
+}
+
+module.exports = mapCacheGet;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_mapCacheHas.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_mapCacheHas.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getMapData = __webpack_require__(/*! ./_getMapData */ "./node_modules/lodash/_getMapData.js");
+
+/**
+ * Checks if a map value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf MapCache
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function mapCacheHas(key) {
+  return getMapData(this, key).has(key);
+}
+
+module.exports = mapCacheHas;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_mapCacheSet.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_mapCacheSet.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getMapData = __webpack_require__(/*! ./_getMapData */ "./node_modules/lodash/_getMapData.js");
+
+/**
+ * Sets the map `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf MapCache
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the map cache instance.
+ */
+function mapCacheSet(key, value) {
+  var data = getMapData(this, key),
+      size = data.size;
+
+  data.set(key, value);
+  this.size += data.size == size ? 0 : 1;
+  return this;
+}
+
+module.exports = mapCacheSet;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_mapToArray.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_mapToArray.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Converts `map` to its key-value pairs.
+ *
+ * @private
+ * @param {Object} map The map to convert.
+ * @returns {Array} Returns the key-value pairs.
+ */
+function mapToArray(map) {
+  var index = -1,
+      result = Array(map.size);
+
+  map.forEach(function(value, key) {
+    result[++index] = [key, value];
+  });
+  return result;
+}
+
+module.exports = mapToArray;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_matchesStrictComparable.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/lodash/_matchesStrictComparable.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * A specialized version of `matchesProperty` for source values suitable
+ * for strict equality comparisons, i.e. `===`.
+ *
+ * @private
+ * @param {string} key The key of the property to get.
+ * @param {*} srcValue The value to match.
+ * @returns {Function} Returns the new spec function.
+ */
+function matchesStrictComparable(key, srcValue) {
+  return function(object) {
+    if (object == null) {
+      return false;
+    }
+    return object[key] === srcValue &&
+      (srcValue !== undefined || (key in Object(object)));
+  };
+}
+
+module.exports = matchesStrictComparable;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_memoizeCapped.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash/_memoizeCapped.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var memoize = __webpack_require__(/*! ./memoize */ "./node_modules/lodash/memoize.js");
+
+/** Used as the maximum memoize cache size. */
+var MAX_MEMOIZE_SIZE = 500;
+
+/**
+ * A specialized version of `_.memoize` which clears the memoized function's
+ * cache when it exceeds `MAX_MEMOIZE_SIZE`.
+ *
+ * @private
+ * @param {Function} func The function to have its output memoized.
+ * @returns {Function} Returns the new memoized function.
+ */
+function memoizeCapped(func) {
+  var result = memoize(func, function(key) {
+    if (cache.size === MAX_MEMOIZE_SIZE) {
+      cache.clear();
+    }
+    return key;
+  });
+
+  var cache = result.cache;
+  return result;
+}
+
+module.exports = memoizeCapped;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_nativeCreate.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_nativeCreate.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getNative = __webpack_require__(/*! ./_getNative */ "./node_modules/lodash/_getNative.js");
+
+/* Built-in method references that are verified to be native. */
+var nativeCreate = getNative(Object, 'create');
+
+module.exports = nativeCreate;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_nativeKeys.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_nativeKeys.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var overArg = __webpack_require__(/*! ./_overArg */ "./node_modules/lodash/_overArg.js");
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeKeys = overArg(Object.keys, Object);
+
+module.exports = nativeKeys;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_nodeUtil.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_nodeUtil.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(module) {var freeGlobal = __webpack_require__(/*! ./_freeGlobal */ "./node_modules/lodash/_freeGlobal.js");
+
+/** Detect free variable `exports`. */
+var freeExports =  true && exports && !exports.nodeType && exports;
+
+/** Detect free variable `module`. */
+var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module;
+
+/** Detect the popular CommonJS extension `module.exports`. */
+var moduleExports = freeModule && freeModule.exports === freeExports;
+
+/** Detect free variable `process` from Node.js. */
+var freeProcess = moduleExports && freeGlobal.process;
+
+/** Used to access faster Node.js helpers. */
+var nodeUtil = (function() {
+  try {
+    // Use `util.types` for Node.js 10+.
+    var types = freeModule && freeModule.require && freeModule.require('util').types;
+
+    if (types) {
+      return types;
+    }
+
+    // Legacy `process.binding('util')` for Node.js < 10.
+    return freeProcess && freeProcess.binding && freeProcess.binding('util');
+  } catch (e) {}
+}());
+
+module.exports = nodeUtil;
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_objectToString.js":
+/*!************************************************!*\
+  !*** ./node_modules/lodash/_objectToString.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var nativeObjectToString = objectProto.toString;
+
+/**
+ * Converts `value` to a string using `Object.prototype.toString`.
+ *
+ * @private
+ * @param {*} value The value to convert.
+ * @returns {string} Returns the converted string.
+ */
+function objectToString(value) {
+  return nativeObjectToString.call(value);
+}
+
+module.exports = objectToString;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_overArg.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_overArg.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Creates a unary function that invokes `func` with its argument transformed.
+ *
+ * @private
+ * @param {Function} func The function to wrap.
+ * @param {Function} transform The argument transform.
+ * @returns {Function} Returns the new function.
+ */
+function overArg(func, transform) {
+  return function(arg) {
+    return func(transform(arg));
+  };
+}
+
+module.exports = overArg;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_root.js":
+/*!**************************************!*\
+  !*** ./node_modules/lodash/_root.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var freeGlobal = __webpack_require__(/*! ./_freeGlobal */ "./node_modules/lodash/_freeGlobal.js");
+
+/** Detect free variable `self`. */
+var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+
+/** Used as a reference to the global object. */
+var root = freeGlobal || freeSelf || Function('return this')();
+
+module.exports = root;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_setCacheAdd.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_setCacheAdd.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/** Used to stand-in for `undefined` hash values. */
+var HASH_UNDEFINED = '__lodash_hash_undefined__';
+
+/**
+ * Adds `value` to the array cache.
+ *
+ * @private
+ * @name add
+ * @memberOf SetCache
+ * @alias push
+ * @param {*} value The value to cache.
+ * @returns {Object} Returns the cache instance.
+ */
+function setCacheAdd(value) {
+  this.__data__.set(value, HASH_UNDEFINED);
+  return this;
+}
+
+module.exports = setCacheAdd;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_setCacheHas.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_setCacheHas.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Checks if `value` is in the array cache.
+ *
+ * @private
+ * @name has
+ * @memberOf SetCache
+ * @param {*} value The value to search for.
+ * @returns {number} Returns `true` if `value` is found, else `false`.
+ */
+function setCacheHas(value) {
+  return this.__data__.has(value);
+}
+
+module.exports = setCacheHas;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_setToArray.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_setToArray.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Converts `set` to an array of its values.
+ *
+ * @private
+ * @param {Object} set The set to convert.
+ * @returns {Array} Returns the values.
+ */
+function setToArray(set) {
+  var index = -1,
+      result = Array(set.size);
+
+  set.forEach(function(value) {
+    result[++index] = value;
+  });
+  return result;
+}
+
+module.exports = setToArray;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_shuffleSelf.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_shuffleSelf.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseRandom = __webpack_require__(/*! ./_baseRandom */ "./node_modules/lodash/_baseRandom.js");
+
+/**
+ * A specialized version of `_.shuffle` which mutates and sets the size of `array`.
+ *
+ * @private
+ * @param {Array} array The array to shuffle.
+ * @param {number} [size=array.length] The size of `array`.
+ * @returns {Array} Returns `array`.
+ */
+function shuffleSelf(array, size) {
+  var index = -1,
+      length = array.length,
+      lastIndex = length - 1;
+
+  size = size === undefined ? length : size;
+  while (++index < size) {
+    var rand = baseRandom(index, lastIndex),
+        value = array[rand];
+
+    array[rand] = array[index];
+    array[index] = value;
+  }
+  array.length = size;
+  return array;
+}
+
+module.exports = shuffleSelf;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_stackClear.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_stackClear.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var ListCache = __webpack_require__(/*! ./_ListCache */ "./node_modules/lodash/_ListCache.js");
+
+/**
+ * Removes all key-value entries from the stack.
+ *
+ * @private
+ * @name clear
+ * @memberOf Stack
+ */
+function stackClear() {
+  this.__data__ = new ListCache;
+  this.size = 0;
+}
+
+module.exports = stackClear;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_stackDelete.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_stackDelete.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Removes `key` and its value from the stack.
+ *
+ * @private
+ * @name delete
+ * @memberOf Stack
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function stackDelete(key) {
+  var data = this.__data__,
+      result = data['delete'](key);
+
+  this.size = data.size;
+  return result;
+}
+
+module.exports = stackDelete;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_stackGet.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_stackGet.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Gets the stack value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf Stack
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function stackGet(key) {
+  return this.__data__.get(key);
+}
+
+module.exports = stackGet;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_stackHas.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_stackHas.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Checks if a stack value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf Stack
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function stackHas(key) {
+  return this.__data__.has(key);
+}
+
+module.exports = stackHas;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_stackSet.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_stackSet.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var ListCache = __webpack_require__(/*! ./_ListCache */ "./node_modules/lodash/_ListCache.js"),
+    Map = __webpack_require__(/*! ./_Map */ "./node_modules/lodash/_Map.js"),
+    MapCache = __webpack_require__(/*! ./_MapCache */ "./node_modules/lodash/_MapCache.js");
+
+/** Used as the size to enable large array optimizations. */
+var LARGE_ARRAY_SIZE = 200;
+
+/**
+ * Sets the stack `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf Stack
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the stack cache instance.
+ */
+function stackSet(key, value) {
+  var data = this.__data__;
+  if (data instanceof ListCache) {
+    var pairs = data.__data__;
+    if (!Map || (pairs.length < LARGE_ARRAY_SIZE - 1)) {
+      pairs.push([key, value]);
+      this.size = ++data.size;
+      return this;
+    }
+    data = this.__data__ = new MapCache(pairs);
+  }
+  data.set(key, value);
+  this.size = data.size;
+  return this;
+}
+
+module.exports = stackSet;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_strictIndexOf.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash/_strictIndexOf.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * A specialized version of `_.indexOf` which performs strict equality
+ * comparisons of values, i.e. `===`.
+ *
+ * @private
+ * @param {Array} array The array to inspect.
+ * @param {*} value The value to search for.
+ * @param {number} fromIndex The index to search from.
+ * @returns {number} Returns the index of the matched value, else `-1`.
+ */
+function strictIndexOf(array, value, fromIndex) {
+  var index = fromIndex - 1,
+      length = array.length;
+
+  while (++index < length) {
+    if (array[index] === value) {
+      return index;
+    }
+  }
+  return -1;
+}
+
+module.exports = strictIndexOf;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_stringToPath.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_stringToPath.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var memoizeCapped = __webpack_require__(/*! ./_memoizeCapped */ "./node_modules/lodash/_memoizeCapped.js");
+
+/** Used to match property names within property paths. */
+var rePropName = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g;
+
+/** Used to match backslashes in property paths. */
+var reEscapeChar = /\\(\\)?/g;
+
+/**
+ * Converts `string` to a property path array.
+ *
+ * @private
+ * @param {string} string The string to convert.
+ * @returns {Array} Returns the property path array.
+ */
+var stringToPath = memoizeCapped(function(string) {
+  var result = [];
+  if (string.charCodeAt(0) === 46 /* . */) {
+    result.push('');
+  }
+  string.replace(rePropName, function(match, number, quote, subString) {
+    result.push(quote ? subString.replace(reEscapeChar, '$1') : (number || match));
+  });
+  return result;
+});
+
+module.exports = stringToPath;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_toKey.js":
+/*!***************************************!*\
+  !*** ./node_modules/lodash/_toKey.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isSymbol = __webpack_require__(/*! ./isSymbol */ "./node_modules/lodash/isSymbol.js");
+
+/** Used as references for various `Number` constants. */
+var INFINITY = 1 / 0;
+
+/**
+ * Converts `value` to a string key if it's not a string or symbol.
+ *
+ * @private
+ * @param {*} value The value to inspect.
+ * @returns {string|symbol} Returns the key.
+ */
+function toKey(value) {
+  if (typeof value == 'string' || isSymbol(value)) {
+    return value;
+  }
+  var result = (value + '');
+  return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
+}
+
+module.exports = toKey;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_toSource.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_toSource.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/** Used for built-in method references. */
+var funcProto = Function.prototype;
+
+/** Used to resolve the decompiled source of functions. */
+var funcToString = funcProto.toString;
+
+/**
+ * Converts `func` to its source code.
+ *
+ * @private
+ * @param {Function} func The function to convert.
+ * @returns {string} Returns the source code.
+ */
+function toSource(func) {
+  if (func != null) {
+    try {
+      return funcToString.call(func);
+    } catch (e) {}
+    try {
+      return (func + '');
+    } catch (e) {}
+  }
+  return '';
+}
+
+module.exports = toSource;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/eq.js":
+/*!***********************************!*\
+  !*** ./node_modules/lodash/eq.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Performs a
+ * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+ * comparison between two values to determine if they are equivalent.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to compare.
+ * @param {*} other The other value to compare.
+ * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
+ * @example
+ *
+ * var object = { 'a': 1 };
+ * var other = { 'a': 1 };
+ *
+ * _.eq(object, object);
+ * // => true
+ *
+ * _.eq(object, other);
+ * // => false
+ *
+ * _.eq('a', 'a');
+ * // => true
+ *
+ * _.eq('a', Object('a'));
+ * // => false
+ *
+ * _.eq(NaN, NaN);
+ * // => true
+ */
+function eq(value, other) {
+  return value === other || (value !== value && other !== other);
+}
+
+module.exports = eq;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/flatten.js":
+/*!****************************************!*\
+  !*** ./node_modules/lodash/flatten.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseFlatten = __webpack_require__(/*! ./_baseFlatten */ "./node_modules/lodash/_baseFlatten.js");
+
+/**
+ * Flattens `array` a single level deep.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Array
+ * @param {Array} array The array to flatten.
+ * @returns {Array} Returns the new flattened array.
+ * @example
+ *
+ * _.flatten([1, [2, [3, [4]], 5]]);
+ * // => [1, 2, [3, [4]], 5]
+ */
+function flatten(array) {
+  var length = array == null ? 0 : array.length;
+  return length ? baseFlatten(array, 1) : [];
+}
+
+module.exports = flatten;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/get.js":
+/*!************************************!*\
+  !*** ./node_modules/lodash/get.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseGet = __webpack_require__(/*! ./_baseGet */ "./node_modules/lodash/_baseGet.js");
+
+/**
+ * Gets the value at `path` of `object`. If the resolved value is
+ * `undefined`, the `defaultValue` is returned in its place.
+ *
+ * @static
+ * @memberOf _
+ * @since 3.7.0
+ * @category Object
+ * @param {Object} object The object to query.
+ * @param {Array|string} path The path of the property to get.
+ * @param {*} [defaultValue] The value returned for `undefined` resolved values.
+ * @returns {*} Returns the resolved value.
+ * @example
+ *
+ * var object = { 'a': [{ 'b': { 'c': 3 } }] };
+ *
+ * _.get(object, 'a[0].b.c');
+ * // => 3
+ *
+ * _.get(object, ['a', '0', 'b', 'c']);
+ * // => 3
+ *
+ * _.get(object, 'a.b.c', 'default');
+ * // => 'default'
+ */
+function get(object, path, defaultValue) {
+  var result = object == null ? undefined : baseGet(object, path);
+  return result === undefined ? defaultValue : result;
+}
+
+module.exports = get;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/hasIn.js":
+/*!**************************************!*\
+  !*** ./node_modules/lodash/hasIn.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseHasIn = __webpack_require__(/*! ./_baseHasIn */ "./node_modules/lodash/_baseHasIn.js"),
+    hasPath = __webpack_require__(/*! ./_hasPath */ "./node_modules/lodash/_hasPath.js");
+
+/**
+ * Checks if `path` is a direct or inherited property of `object`.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Object
+ * @param {Object} object The object to query.
+ * @param {Array|string} path The path to check.
+ * @returns {boolean} Returns `true` if `path` exists, else `false`.
+ * @example
+ *
+ * var object = _.create({ 'a': _.create({ 'b': 2 }) });
+ *
+ * _.hasIn(object, 'a');
+ * // => true
+ *
+ * _.hasIn(object, 'a.b');
+ * // => true
+ *
+ * _.hasIn(object, ['a', 'b']);
+ * // => true
+ *
+ * _.hasIn(object, 'b');
+ * // => false
+ */
+function hasIn(object, path) {
+  return object != null && hasPath(object, path, baseHasIn);
+}
+
+module.exports = hasIn;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/identity.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/identity.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * This method returns the first argument it receives.
+ *
+ * @static
+ * @since 0.1.0
+ * @memberOf _
+ * @category Util
+ * @param {*} value Any value.
+ * @returns {*} Returns `value`.
+ * @example
+ *
+ * var object = { 'a': 1 };
+ *
+ * console.log(_.identity(object) === object);
+ * // => true
+ */
+function identity(value) {
+  return value;
+}
+
+module.exports = identity;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/isArguments.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/isArguments.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseIsArguments = __webpack_require__(/*! ./_baseIsArguments */ "./node_modules/lodash/_baseIsArguments.js"),
+    isObjectLike = __webpack_require__(/*! ./isObjectLike */ "./node_modules/lodash/isObjectLike.js");
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/** Built-in value references. */
+var propertyIsEnumerable = objectProto.propertyIsEnumerable;
+
+/**
+ * Checks if `value` is likely an `arguments` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an `arguments` object,
+ *  else `false`.
+ * @example
+ *
+ * _.isArguments(function() { return arguments; }());
+ * // => true
+ *
+ * _.isArguments([1, 2, 3]);
+ * // => false
+ */
+var isArguments = baseIsArguments(function() { return arguments; }()) ? baseIsArguments : function(value) {
+  return isObjectLike(value) && hasOwnProperty.call(value, 'callee') &&
+    !propertyIsEnumerable.call(value, 'callee');
+};
+
+module.exports = isArguments;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/isArray.js":
+/*!****************************************!*\
+  !*** ./node_modules/lodash/isArray.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Checks if `value` is classified as an `Array` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an array, else `false`.
+ * @example
+ *
+ * _.isArray([1, 2, 3]);
+ * // => true
+ *
+ * _.isArray(document.body.children);
+ * // => false
+ *
+ * _.isArray('abc');
+ * // => false
+ *
+ * _.isArray(_.noop);
+ * // => false
+ */
+var isArray = Array.isArray;
+
+module.exports = isArray;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/isArrayLike.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/isArrayLike.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isFunction = __webpack_require__(/*! ./isFunction */ "./node_modules/lodash/isFunction.js"),
+    isLength = __webpack_require__(/*! ./isLength */ "./node_modules/lodash/isLength.js");
+
+/**
+ * Checks if `value` is array-like. A value is considered array-like if it's
+ * not a function and has a `value.length` that's an integer greater than or
+ * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
+ * @example
+ *
+ * _.isArrayLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isArrayLike(document.body.children);
+ * // => true
+ *
+ * _.isArrayLike('abc');
+ * // => true
+ *
+ * _.isArrayLike(_.noop);
+ * // => false
+ */
+function isArrayLike(value) {
+  return value != null && isLength(value.length) && !isFunction(value);
+}
+
+module.exports = isArrayLike;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/isBuffer.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/isBuffer.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(/*! ./_root */ "./node_modules/lodash/_root.js"),
+    stubFalse = __webpack_require__(/*! ./stubFalse */ "./node_modules/lodash/stubFalse.js");
+
+/** Detect free variable `exports`. */
+var freeExports =  true && exports && !exports.nodeType && exports;
+
+/** Detect free variable `module`. */
+var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module;
+
+/** Detect the popular CommonJS extension `module.exports`. */
+var moduleExports = freeModule && freeModule.exports === freeExports;
+
+/** Built-in value references. */
+var Buffer = moduleExports ? root.Buffer : undefined;
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeIsBuffer = Buffer ? Buffer.isBuffer : undefined;
+
+/**
+ * Checks if `value` is a buffer.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.3.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a buffer, else `false`.
+ * @example
+ *
+ * _.isBuffer(new Buffer(2));
+ * // => true
+ *
+ * _.isBuffer(new Uint8Array(2));
+ * // => false
+ */
+var isBuffer = nativeIsBuffer || stubFalse;
+
+module.exports = isBuffer;
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
+
+/***/ }),
+
+/***/ "./node_modules/lodash/isFunction.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/isFunction.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseGetTag = __webpack_require__(/*! ./_baseGetTag */ "./node_modules/lodash/_baseGetTag.js"),
+    isObject = __webpack_require__(/*! ./isObject */ "./node_modules/lodash/isObject.js");
+
+/** `Object#toString` result references. */
+var asyncTag = '[object AsyncFunction]',
+    funcTag = '[object Function]',
+    genTag = '[object GeneratorFunction]',
+    proxyTag = '[object Proxy]';
+
+/**
+ * Checks if `value` is classified as a `Function` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a function, else `false`.
+ * @example
+ *
+ * _.isFunction(_);
+ * // => true
+ *
+ * _.isFunction(/abc/);
+ * // => false
+ */
+function isFunction(value) {
+  if (!isObject(value)) {
+    return false;
+  }
+  // The use of `Object#toString` avoids issues with the `typeof` operator
+  // in Safari 9 which returns 'object' for typed arrays and other constructors.
+  var tag = baseGetTag(value);
+  return tag == funcTag || tag == genTag || tag == asyncTag || tag == proxyTag;
+}
+
+module.exports = isFunction;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/isLength.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/isLength.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/** Used as references for various `Number` constants. */
+var MAX_SAFE_INTEGER = 9007199254740991;
+
+/**
+ * Checks if `value` is a valid array-like length.
+ *
+ * **Note:** This method is loosely based on
+ * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
+ * @example
+ *
+ * _.isLength(3);
+ * // => true
+ *
+ * _.isLength(Number.MIN_VALUE);
+ * // => false
+ *
+ * _.isLength(Infinity);
+ * // => false
+ *
+ * _.isLength('3');
+ * // => false
+ */
+function isLength(value) {
+  return typeof value == 'number' &&
+    value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
+}
+
+module.exports = isLength;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/isObject.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/isObject.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Checks if `value` is the
+ * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+ * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+ * @example
+ *
+ * _.isObject({});
+ * // => true
+ *
+ * _.isObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isObject(_.noop);
+ * // => true
+ *
+ * _.isObject(null);
+ * // => false
+ */
+function isObject(value) {
+  var type = typeof value;
+  return value != null && (type == 'object' || type == 'function');
+}
+
+module.exports = isObject;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/isObjectLike.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/isObjectLike.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Checks if `value` is object-like. A value is object-like if it's not `null`
+ * and has a `typeof` result of "object".
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+ * @example
+ *
+ * _.isObjectLike({});
+ * // => true
+ *
+ * _.isObjectLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isObjectLike(_.noop);
+ * // => false
+ *
+ * _.isObjectLike(null);
+ * // => false
+ */
+function isObjectLike(value) {
+  return value != null && typeof value == 'object';
+}
+
+module.exports = isObjectLike;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/isSymbol.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/isSymbol.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseGetTag = __webpack_require__(/*! ./_baseGetTag */ "./node_modules/lodash/_baseGetTag.js"),
+    isObjectLike = __webpack_require__(/*! ./isObjectLike */ "./node_modules/lodash/isObjectLike.js");
+
+/** `Object#toString` result references. */
+var symbolTag = '[object Symbol]';
+
+/**
+ * Checks if `value` is classified as a `Symbol` primitive or object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
+ * @example
+ *
+ * _.isSymbol(Symbol.iterator);
+ * // => true
+ *
+ * _.isSymbol('abc');
+ * // => false
+ */
+function isSymbol(value) {
+  return typeof value == 'symbol' ||
+    (isObjectLike(value) && baseGetTag(value) == symbolTag);
+}
+
+module.exports = isSymbol;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/isTypedArray.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/isTypedArray.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseIsTypedArray = __webpack_require__(/*! ./_baseIsTypedArray */ "./node_modules/lodash/_baseIsTypedArray.js"),
+    baseUnary = __webpack_require__(/*! ./_baseUnary */ "./node_modules/lodash/_baseUnary.js"),
+    nodeUtil = __webpack_require__(/*! ./_nodeUtil */ "./node_modules/lodash/_nodeUtil.js");
+
+/* Node.js helper references. */
+var nodeIsTypedArray = nodeUtil && nodeUtil.isTypedArray;
+
+/**
+ * Checks if `value` is classified as a typed array.
+ *
+ * @static
+ * @memberOf _
+ * @since 3.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a typed array, else `false`.
+ * @example
+ *
+ * _.isTypedArray(new Uint8Array);
+ * // => true
+ *
+ * _.isTypedArray([]);
+ * // => false
+ */
+var isTypedArray = nodeIsTypedArray ? baseUnary(nodeIsTypedArray) : baseIsTypedArray;
+
+module.exports = isTypedArray;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/keys.js":
+/*!*************************************!*\
+  !*** ./node_modules/lodash/keys.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayLikeKeys = __webpack_require__(/*! ./_arrayLikeKeys */ "./node_modules/lodash/_arrayLikeKeys.js"),
+    baseKeys = __webpack_require__(/*! ./_baseKeys */ "./node_modules/lodash/_baseKeys.js"),
+    isArrayLike = __webpack_require__(/*! ./isArrayLike */ "./node_modules/lodash/isArrayLike.js");
+
+/**
+ * Creates an array of the own enumerable property names of `object`.
+ *
+ * **Note:** Non-object values are coerced to objects. See the
+ * [ES spec](http://ecma-international.org/ecma-262/7.0/#sec-object.keys)
+ * for more details.
+ *
+ * @static
+ * @since 0.1.0
+ * @memberOf _
+ * @category Object
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names.
+ * @example
+ *
+ * function Foo() {
+ *   this.a = 1;
+ *   this.b = 2;
+ * }
+ *
+ * Foo.prototype.c = 3;
+ *
+ * _.keys(new Foo);
+ * // => ['a', 'b'] (iteration order is not guaranteed)
+ *
+ * _.keys('hi');
+ * // => ['0', '1']
+ */
+function keys(object) {
+  return isArrayLike(object) ? arrayLikeKeys(object) : baseKeys(object);
+}
+
+module.exports = keys;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/map.js":
+/*!************************************!*\
+  !*** ./node_modules/lodash/map.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayMap = __webpack_require__(/*! ./_arrayMap */ "./node_modules/lodash/_arrayMap.js"),
+    baseIteratee = __webpack_require__(/*! ./_baseIteratee */ "./node_modules/lodash/_baseIteratee.js"),
+    baseMap = __webpack_require__(/*! ./_baseMap */ "./node_modules/lodash/_baseMap.js"),
+    isArray = __webpack_require__(/*! ./isArray */ "./node_modules/lodash/isArray.js");
+
+/**
+ * Creates an array of values by running each element in `collection` thru
+ * `iteratee`. The iteratee is invoked with three arguments:
+ * (value, index|key, collection).
+ *
+ * Many lodash methods are guarded to work as iteratees for methods like
+ * `_.every`, `_.filter`, `_.map`, `_.mapValues`, `_.reject`, and `_.some`.
+ *
+ * The guarded methods are:
+ * `ary`, `chunk`, `curry`, `curryRight`, `drop`, `dropRight`, `every`,
+ * `fill`, `invert`, `parseInt`, `random`, `range`, `rangeRight`, `repeat`,
+ * `sampleSize`, `slice`, `some`, `sortBy`, `split`, `take`, `takeRight`,
+ * `template`, `trim`, `trimEnd`, `trimStart`, and `words`
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Collection
+ * @param {Array|Object} collection The collection to iterate over.
+ * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+ * @returns {Array} Returns the new mapped array.
+ * @example
+ *
+ * function square(n) {
+ *   return n * n;
+ * }
+ *
+ * _.map([4, 8], square);
+ * // => [16, 64]
+ *
+ * _.map({ 'a': 4, 'b': 8 }, square);
+ * // => [16, 64] (iteration order is not guaranteed)
+ *
+ * var users = [
+ *   { 'user': 'barney' },
+ *   { 'user': 'fred' }
+ * ];
+ *
+ * // The `_.property` iteratee shorthand.
+ * _.map(users, 'user');
+ * // => ['barney', 'fred']
+ */
+function map(collection, iteratee) {
+  var func = isArray(collection) ? arrayMap : baseMap;
+  return func(collection, baseIteratee(iteratee, 3));
+}
+
+module.exports = map;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/memoize.js":
+/*!****************************************!*\
+  !*** ./node_modules/lodash/memoize.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var MapCache = __webpack_require__(/*! ./_MapCache */ "./node_modules/lodash/_MapCache.js");
+
+/** Error message constants. */
+var FUNC_ERROR_TEXT = 'Expected a function';
+
+/**
+ * Creates a function that memoizes the result of `func`. If `resolver` is
+ * provided, it determines the cache key for storing the result based on the
+ * arguments provided to the memoized function. By default, the first argument
+ * provided to the memoized function is used as the map cache key. The `func`
+ * is invoked with the `this` binding of the memoized function.
+ *
+ * **Note:** The cache is exposed as the `cache` property on the memoized
+ * function. Its creation may be customized by replacing the `_.memoize.Cache`
+ * constructor with one whose instances implement the
+ * [`Map`](http://ecma-international.org/ecma-262/7.0/#sec-properties-of-the-map-prototype-object)
+ * method interface of `clear`, `delete`, `get`, `has`, and `set`.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Function
+ * @param {Function} func The function to have its output memoized.
+ * @param {Function} [resolver] The function to resolve the cache key.
+ * @returns {Function} Returns the new memoized function.
+ * @example
+ *
+ * var object = { 'a': 1, 'b': 2 };
+ * var other = { 'c': 3, 'd': 4 };
+ *
+ * var values = _.memoize(_.values);
+ * values(object);
+ * // => [1, 2]
+ *
+ * values(other);
+ * // => [3, 4]
+ *
+ * object.a = 2;
+ * values(object);
+ * // => [1, 2]
+ *
+ * // Modify the result cache.
+ * values.cache.set(object, ['a', 'b']);
+ * values(object);
+ * // => ['a', 'b']
+ *
+ * // Replace `_.memoize.Cache`.
+ * _.memoize.Cache = WeakMap;
+ */
+function memoize(func, resolver) {
+  if (typeof func != 'function' || (resolver != null && typeof resolver != 'function')) {
+    throw new TypeError(FUNC_ERROR_TEXT);
+  }
+  var memoized = function() {
+    var args = arguments,
+        key = resolver ? resolver.apply(this, args) : args[0],
+        cache = memoized.cache;
+
+    if (cache.has(key)) {
+      return cache.get(key);
+    }
+    var result = func.apply(this, args);
+    memoized.cache = cache.set(key, result) || cache;
+    return result;
+  };
+  memoized.cache = new (memoize.Cache || MapCache);
+  return memoized;
+}
+
+// Expose `MapCache`.
+memoize.Cache = MapCache;
+
+module.exports = memoize;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/noop.js":
+/*!*************************************!*\
+  !*** ./node_modules/lodash/noop.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * This method returns `undefined`.
+ *
+ * @static
+ * @memberOf _
+ * @since 2.3.0
+ * @category Util
+ * @example
+ *
+ * _.times(2, _.noop);
+ * // => [undefined, undefined]
+ */
+function noop() {
+  // No operation performed.
+}
+
+module.exports = noop;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/property.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/property.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseProperty = __webpack_require__(/*! ./_baseProperty */ "./node_modules/lodash/_baseProperty.js"),
+    basePropertyDeep = __webpack_require__(/*! ./_basePropertyDeep */ "./node_modules/lodash/_basePropertyDeep.js"),
+    isKey = __webpack_require__(/*! ./_isKey */ "./node_modules/lodash/_isKey.js"),
+    toKey = __webpack_require__(/*! ./_toKey */ "./node_modules/lodash/_toKey.js");
+
+/**
+ * Creates a function that returns the value at `path` of a given object.
+ *
+ * @static
+ * @memberOf _
+ * @since 2.4.0
+ * @category Util
+ * @param {Array|string} path The path of the property to get.
+ * @returns {Function} Returns the new accessor function.
+ * @example
+ *
+ * var objects = [
+ *   { 'a': { 'b': 2 } },
+ *   { 'a': { 'b': 1 } }
+ * ];
+ *
+ * _.map(objects, _.property('a.b'));
+ * // => [2, 1]
+ *
+ * _.map(_.sortBy(objects, _.property(['a', 'b'])), 'a.b');
+ * // => [1, 2]
+ */
+function property(path) {
+  return isKey(path) ? baseProperty(toKey(path)) : basePropertyDeep(path);
+}
+
+module.exports = property;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/random.js":
+/*!***************************************!*\
+  !*** ./node_modules/lodash/random.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseRandom = __webpack_require__(/*! ./_baseRandom */ "./node_modules/lodash/_baseRandom.js"),
+    isIterateeCall = __webpack_require__(/*! ./_isIterateeCall */ "./node_modules/lodash/_isIterateeCall.js"),
+    toFinite = __webpack_require__(/*! ./toFinite */ "./node_modules/lodash/toFinite.js");
+
+/** Built-in method references without a dependency on `root`. */
+var freeParseFloat = parseFloat;
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeMin = Math.min,
+    nativeRandom = Math.random;
+
+/**
+ * Produces a random number between the inclusive `lower` and `upper` bounds.
+ * If only one argument is provided a number between `0` and the given number
+ * is returned. If `floating` is `true`, or either `lower` or `upper` are
+ * floats, a floating-point number is returned instead of an integer.
+ *
+ * **Note:** JavaScript follows the IEEE-754 standard for resolving
+ * floating-point values which can produce unexpected results.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.7.0
+ * @category Number
+ * @param {number} [lower=0] The lower bound.
+ * @param {number} [upper=1] The upper bound.
+ * @param {boolean} [floating] Specify returning a floating-point number.
+ * @returns {number} Returns the random number.
+ * @example
+ *
+ * _.random(0, 5);
+ * // => an integer between 0 and 5
+ *
+ * _.random(5);
+ * // => also an integer between 0 and 5
+ *
+ * _.random(5, true);
+ * // => a floating-point number between 0 and 5
+ *
+ * _.random(1.2, 5.2);
+ * // => a floating-point number between 1.2 and 5.2
+ */
+function random(lower, upper, floating) {
+  if (floating && typeof floating != 'boolean' && isIterateeCall(lower, upper, floating)) {
+    upper = floating = undefined;
+  }
+  if (floating === undefined) {
+    if (typeof upper == 'boolean') {
+      floating = upper;
+      upper = undefined;
+    }
+    else if (typeof lower == 'boolean') {
+      floating = lower;
+      lower = undefined;
+    }
+  }
+  if (lower === undefined && upper === undefined) {
+    lower = 0;
+    upper = 1;
+  }
+  else {
+    lower = toFinite(lower);
+    if (upper === undefined) {
+      upper = lower;
+      lower = 0;
+    } else {
+      upper = toFinite(upper);
+    }
+  }
+  if (lower > upper) {
+    var temp = lower;
+    lower = upper;
+    upper = temp;
+  }
+  if (floating || lower % 1 || upper % 1) {
+    var rand = nativeRandom();
+    return nativeMin(lower + (rand * (upper - lower + freeParseFloat('1e-' + ((rand + '').length - 1)))), upper);
+  }
+  return baseRandom(lower, upper);
+}
+
+module.exports = random;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/sample.js":
+/*!***************************************!*\
+  !*** ./node_modules/lodash/sample.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arraySample = __webpack_require__(/*! ./_arraySample */ "./node_modules/lodash/_arraySample.js"),
+    baseSample = __webpack_require__(/*! ./_baseSample */ "./node_modules/lodash/_baseSample.js"),
+    isArray = __webpack_require__(/*! ./isArray */ "./node_modules/lodash/isArray.js");
+
+/**
+ * Gets a random element from `collection`.
+ *
+ * @static
+ * @memberOf _
+ * @since 2.0.0
+ * @category Collection
+ * @param {Array|Object} collection The collection to sample.
+ * @returns {*} Returns the random element.
+ * @example
+ *
+ * _.sample([1, 2, 3, 4]);
+ * // => 2
+ */
+function sample(collection) {
+  var func = isArray(collection) ? arraySample : baseSample;
+  return func(collection);
+}
+
+module.exports = sample;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/shuffle.js":
+/*!****************************************!*\
+  !*** ./node_modules/lodash/shuffle.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayShuffle = __webpack_require__(/*! ./_arrayShuffle */ "./node_modules/lodash/_arrayShuffle.js"),
+    baseShuffle = __webpack_require__(/*! ./_baseShuffle */ "./node_modules/lodash/_baseShuffle.js"),
+    isArray = __webpack_require__(/*! ./isArray */ "./node_modules/lodash/isArray.js");
+
+/**
+ * Creates an array of shuffled values, using a version of the
+ * [Fisher-Yates shuffle](https://en.wikipedia.org/wiki/Fisher-Yates_shuffle).
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Collection
+ * @param {Array|Object} collection The collection to shuffle.
+ * @returns {Array} Returns the new shuffled array.
+ * @example
+ *
+ * _.shuffle([1, 2, 3, 4]);
+ * // => [4, 1, 3, 2]
+ */
+function shuffle(collection) {
+  var func = isArray(collection) ? arrayShuffle : baseShuffle;
+  return func(collection);
+}
+
+module.exports = shuffle;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/slice.js":
+/*!**************************************!*\
+  !*** ./node_modules/lodash/slice.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseSlice = __webpack_require__(/*! ./_baseSlice */ "./node_modules/lodash/_baseSlice.js"),
+    isIterateeCall = __webpack_require__(/*! ./_isIterateeCall */ "./node_modules/lodash/_isIterateeCall.js"),
+    toInteger = __webpack_require__(/*! ./toInteger */ "./node_modules/lodash/toInteger.js");
+
+/**
+ * Creates a slice of `array` from `start` up to, but not including, `end`.
+ *
+ * **Note:** This method is used instead of
+ * [`Array#slice`](https://mdn.io/Array/slice) to ensure dense arrays are
+ * returned.
+ *
+ * @static
+ * @memberOf _
+ * @since 3.0.0
+ * @category Array
+ * @param {Array} array The array to slice.
+ * @param {number} [start=0] The start position.
+ * @param {number} [end=array.length] The end position.
+ * @returns {Array} Returns the slice of `array`.
+ */
+function slice(array, start, end) {
+  var length = array == null ? 0 : array.length;
+  if (!length) {
+    return [];
+  }
+  if (end && typeof end != 'number' && isIterateeCall(array, start, end)) {
+    start = 0;
+    end = length;
+  }
+  else {
+    start = start == null ? 0 : toInteger(start);
+    end = end === undefined ? length : toInteger(end);
+  }
+  return baseSlice(array, start, end);
+}
+
+module.exports = slice;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/stubArray.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/stubArray.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * This method returns a new empty array.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.13.0
+ * @category Util
+ * @returns {Array} Returns the new empty array.
+ * @example
+ *
+ * var arrays = _.times(2, _.stubArray);
+ *
+ * console.log(arrays);
+ * // => [[], []]
+ *
+ * console.log(arrays[0] === arrays[1]);
+ * // => false
+ */
+function stubArray() {
+  return [];
+}
+
+module.exports = stubArray;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/stubFalse.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/stubFalse.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * This method returns `false`.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.13.0
+ * @category Util
+ * @returns {boolean} Returns `false`.
+ * @example
+ *
+ * _.times(2, _.stubFalse);
+ * // => [false, false]
+ */
+function stubFalse() {
+  return false;
+}
+
+module.exports = stubFalse;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/toFinite.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/toFinite.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var toNumber = __webpack_require__(/*! ./toNumber */ "./node_modules/lodash/toNumber.js");
+
+/** Used as references for various `Number` constants. */
+var INFINITY = 1 / 0,
+    MAX_INTEGER = 1.7976931348623157e+308;
+
+/**
+ * Converts `value` to a finite number.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.12.0
+ * @category Lang
+ * @param {*} value The value to convert.
+ * @returns {number} Returns the converted number.
+ * @example
+ *
+ * _.toFinite(3.2);
+ * // => 3.2
+ *
+ * _.toFinite(Number.MIN_VALUE);
+ * // => 5e-324
+ *
+ * _.toFinite(Infinity);
+ * // => 1.7976931348623157e+308
+ *
+ * _.toFinite('3.2');
+ * // => 3.2
+ */
+function toFinite(value) {
+  if (!value) {
+    return value === 0 ? value : 0;
+  }
+  value = toNumber(value);
+  if (value === INFINITY || value === -INFINITY) {
+    var sign = (value < 0 ? -1 : 1);
+    return sign * MAX_INTEGER;
+  }
+  return value === value ? value : 0;
+}
+
+module.exports = toFinite;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/toInteger.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/toInteger.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var toFinite = __webpack_require__(/*! ./toFinite */ "./node_modules/lodash/toFinite.js");
+
+/**
+ * Converts `value` to an integer.
+ *
+ * **Note:** This method is loosely based on
+ * [`ToInteger`](http://www.ecma-international.org/ecma-262/7.0/#sec-tointeger).
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to convert.
+ * @returns {number} Returns the converted integer.
+ * @example
+ *
+ * _.toInteger(3.2);
+ * // => 3
+ *
+ * _.toInteger(Number.MIN_VALUE);
+ * // => 0
+ *
+ * _.toInteger(Infinity);
+ * // => 1.7976931348623157e+308
+ *
+ * _.toInteger('3.2');
+ * // => 3
+ */
+function toInteger(value) {
+  var result = toFinite(value),
+      remainder = result % 1;
+
+  return result === result ? (remainder ? result - remainder : result) : 0;
+}
+
+module.exports = toInteger;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/toNumber.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/toNumber.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isObject = __webpack_require__(/*! ./isObject */ "./node_modules/lodash/isObject.js"),
+    isSymbol = __webpack_require__(/*! ./isSymbol */ "./node_modules/lodash/isSymbol.js");
+
+/** Used as references for various `Number` constants. */
+var NAN = 0 / 0;
+
+/** Used to match leading and trailing whitespace. */
+var reTrim = /^\s+|\s+$/g;
+
+/** Used to detect bad signed hexadecimal string values. */
+var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
+
+/** Used to detect binary string values. */
+var reIsBinary = /^0b[01]+$/i;
+
+/** Used to detect octal string values. */
+var reIsOctal = /^0o[0-7]+$/i;
+
+/** Built-in method references without a dependency on `root`. */
+var freeParseInt = parseInt;
+
+/**
+ * Converts `value` to a number.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to process.
+ * @returns {number} Returns the number.
+ * @example
+ *
+ * _.toNumber(3.2);
+ * // => 3.2
+ *
+ * _.toNumber(Number.MIN_VALUE);
+ * // => 5e-324
+ *
+ * _.toNumber(Infinity);
+ * // => Infinity
+ *
+ * _.toNumber('3.2');
+ * // => 3.2
+ */
+function toNumber(value) {
+  if (typeof value == 'number') {
+    return value;
+  }
+  if (isSymbol(value)) {
+    return NAN;
+  }
+  if (isObject(value)) {
+    var other = typeof value.valueOf == 'function' ? value.valueOf() : value;
+    value = isObject(other) ? (other + '') : other;
+  }
+  if (typeof value != 'string') {
+    return value === 0 ? value : +value;
+  }
+  value = value.replace(reTrim, '');
+  var isBinary = reIsBinary.test(value);
+  return (isBinary || reIsOctal.test(value))
+    ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
+    : (reIsBadHex.test(value) ? NAN : +value);
+}
+
+module.exports = toNumber;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/toString.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/toString.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseToString = __webpack_require__(/*! ./_baseToString */ "./node_modules/lodash/_baseToString.js");
+
+/**
+ * Converts `value` to a string. An empty string is returned for `null`
+ * and `undefined` values. The sign of `-0` is preserved.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to convert.
+ * @returns {string} Returns the converted string.
+ * @example
+ *
+ * _.toString(null);
+ * // => ''
+ *
+ * _.toString(-0);
+ * // => '-0'
+ *
+ * _.toString([1, 2, 3]);
+ * // => '1,2,3'
+ */
+function toString(value) {
+  return value == null ? '' : baseToString(value);
+}
+
+module.exports = toString;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/uniq.js":
+/*!*************************************!*\
+  !*** ./node_modules/lodash/uniq.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseUniq = __webpack_require__(/*! ./_baseUniq */ "./node_modules/lodash/_baseUniq.js");
+
+/**
+ * Creates a duplicate-free version of an array, using
+ * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+ * for equality comparisons, in which only the first occurrence of each element
+ * is kept. The order of result values is determined by the order they occur
+ * in the array.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Array
+ * @param {Array} array The array to inspect.
+ * @returns {Array} Returns the new duplicate free array.
+ * @example
+ *
+ * _.uniq([2, 1, 2]);
+ * // => [2, 1]
+ */
+function uniq(array) {
+  return (array && array.length) ? baseUniq(array) : [];
+}
+
+module.exports = uniq;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/values.js":
+/*!***************************************!*\
+  !*** ./node_modules/lodash/values.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseValues = __webpack_require__(/*! ./_baseValues */ "./node_modules/lodash/_baseValues.js"),
+    keys = __webpack_require__(/*! ./keys */ "./node_modules/lodash/keys.js");
+
+/**
+ * Creates an array of the own enumerable string keyed property values of `object`.
+ *
+ * **Note:** Non-object values are coerced to objects.
+ *
+ * @static
+ * @since 0.1.0
+ * @memberOf _
+ * @category Object
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property values.
+ * @example
+ *
+ * function Foo() {
+ *   this.a = 1;
+ *   this.b = 2;
+ * }
+ *
+ * Foo.prototype.c = 3;
+ *
+ * _.values(new Foo);
+ * // => [1, 2] (iteration order is not guaranteed)
+ *
+ * _.values('hi');
+ * // => ['h', 'i']
+ */
+function values(object) {
+  return object == null ? [] : baseValues(object, keys(object));
+}
+
+module.exports = values;
+
+
+/***/ }),
+
 /***/ "./node_modules/native-url/dist/index.js":
 /*!***********************************************!*\
   !*** ./node_modules/native-url/dist/index.js ***!
@@ -2292,21 +7868,21 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Flynx%2Fprojects%2Fhsk%2Fpages%2Findex.js!./":
-/*!****************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Flynx%2Fprojects%2Fhsk%2Fpages%2Findex.js ***!
-  \****************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fdictionary&absolutePagePath=%2FUsers%2Flynx%2Fprojects%2Fhsk%2Fpages%2Fdictionary.js!./":
+/*!*******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fdictionary&absolutePagePath=%2FUsers%2Flynx%2Fprojects%2Fhsk%2Fpages%2Fdictionary.js ***!
+  \*******************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    (window.__NEXT_P=window.__NEXT_P||[]).push(["/", function() {
-      var mod = __webpack_require__(/*! ./pages/index.js */ "./pages/index.js")
+    (window.__NEXT_P=window.__NEXT_P||[]).push(["/dictionary", function() {
+      var mod = __webpack_require__(/*! ./pages/dictionary.js */ "./pages/dictionary.js")
       if(true) {
-        module.hot.accept(/*! ./pages/index.js */ "./pages/index.js", function() {
-          if(!next.router.components["/"]) return
-          var updatedPage = __webpack_require__(/*! ./pages/index.js */ "./pages/index.js")
-          next.router.update("/", updatedPage)
+        module.hot.accept(/*! ./pages/dictionary.js */ "./pages/dictionary.js", function() {
+          if(!next.router.components["/dictionary"]) return
+          var updatedPage = __webpack_require__(/*! ./pages/dictionary.js */ "./pages/dictionary.js")
+          next.router.update("/dictionary", updatedPage)
         })
       }
       return mod
@@ -8610,1899 +14186,6 @@ exports.encode = exports.stringify = __webpack_require__(/*! ./encode */ "./node
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(/*! dll-reference dll_c2e10d183b950a67d9e7 */ "dll-reference dll_c2e10d183b950a67d9e7"))("./node_modules/react-dom/index.js");
-
-/***/ }),
-
-/***/ "./node_modules/react-hook-form/dist/react-hook-form.es.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/react-hook-form/dist/react-hook-form.es.js ***!
-  \*****************************************************************/
-/*! exports provided: Controller, ErrorMessage, FormContext, useFieldArray, useForm, useFormContext */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Controller", function() { return Controller; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ErrorMessage", function() { return ErrorMessage; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FormContext", function() { return FormContext; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useFieldArray", function() { return useFieldArray; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useForm", function() { return useForm; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useFormContext", function() { return useFormContext; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-
-var isNullOrUndefined = (value) => value == null;
-
-var isArray = (value) => Array.isArray(value);
-
-const isObjectType = (value) => typeof value === 'object';
-var isObject = (value) => !isNullOrUndefined(value) && !isArray(value) && isObjectType(value);
-
-var isHTMLElement = (value) => isObject(value) && value.nodeType === Node.ELEMENT_NODE;
-
-const VALIDATION_MODE = {
-    onBlur: 'onBlur',
-    onChange: 'onChange',
-    onSubmit: 'onSubmit',
-};
-const VALUE = 'value';
-const UNDEFINED = 'undefined';
-const EVENTS = {
-    BLUR: 'blur',
-    CHANGE: 'change',
-    INPUT: 'input',
-};
-const INPUT_VALIDATION_RULES = {
-    max: 'max',
-    min: 'min',
-    maxLength: 'maxLength',
-    minLength: 'minLength',
-    pattern: 'pattern',
-    required: 'required',
-    validate: 'validate',
-};
-const REGEX_IS_DEEP_PROP = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/;
-const REGEX_IS_PLAIN_PROP = /^\w*$/;
-const REGEX_PROP_NAME = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g;
-const REGEX_ESCAPE_CHAR = /\\(\\)?/g;
-const REGEX_ARRAY_FIELD_INDEX = /[\d+]/g;
-
-function attachEventListeners({ field: { ref }, handleChange, isRadioOrCheckbox, }) {
-    if (isHTMLElement(ref) && handleChange) {
-        ref.addEventListener(isRadioOrCheckbox ? EVENTS.CHANGE : EVENTS.INPUT, handleChange);
-        ref.addEventListener(EVENTS.BLUR, handleChange);
-    }
-}
-
-var isKey = (value) => !isArray(value) &&
-    (REGEX_IS_PLAIN_PROP.test(value) || !REGEX_IS_DEEP_PROP.test(value));
-
-var stringToPath = (string) => {
-    const result = [];
-    string.replace(REGEX_PROP_NAME, (match, number, quote, string) => {
-        result.push(quote ? string.replace(REGEX_ESCAPE_CHAR, '$1') : number || match);
-    });
-    return result;
-};
-
-function set(object, path, value) {
-    let index = -1;
-    const tempPath = isKey(path) ? [path] : stringToPath(path);
-    const length = tempPath.length;
-    const lastIndex = length - 1;
-    while (++index < length) {
-        const key = tempPath[index];
-        let newValue = value;
-        if (index !== lastIndex) {
-            const objValue = object[key];
-            newValue =
-                isObject(objValue) || isArray(objValue)
-                    ? objValue
-                    : !isNaN(+tempPath[index + 1])
-                        ? []
-                        : {};
-        }
-        object[key] = newValue;
-        object = object[key];
-    }
-    return object;
-}
-
-var transformToNestObject = (data) => Object.entries(data).reduce((previous, [key, value]) => {
-    if (!isKey(key)) {
-        set(previous, key, value);
-        return previous;
-    }
-    return Object.assign(Object.assign({}, previous), { [key]: value });
-}, {});
-
-var isUndefined = (val) => val === undefined;
-
-var get = (obj, path, defaultValue) => {
-    const result = path
-        .split(/[,[\].]+?/)
-        .filter(Boolean)
-        .reduce((result, key) => (isNullOrUndefined(result) ? result : result[key]), obj);
-    return isUndefined(result) || result === obj
-        ? obj[path] || defaultValue
-        : result;
-};
-
-var focusOnErrorField = (fields, fieldErrors) => {
-    for (const key in fields) {
-        if (get(fieldErrors, key)) {
-            const field = fields[key];
-            if (field) {
-                if (field.ref.focus) {
-                    field.ref.focus();
-                    break;
-                }
-                else if (field.options) {
-                    field.options[0].ref.focus();
-                    break;
-                }
-            }
-        }
-    }
-};
-
-var removeAllEventListeners = (ref, validateWithStateUpdate) => {
-    if (isHTMLElement(ref) && ref.removeEventListener) {
-        ref.removeEventListener(EVENTS.INPUT, validateWithStateUpdate);
-        ref.removeEventListener(EVENTS.CHANGE, validateWithStateUpdate);
-        ref.removeEventListener(EVENTS.BLUR, validateWithStateUpdate);
-    }
-};
-
-var isRadioInput = (element) => element.type === 'radio';
-
-var isCheckBoxInput = (element) => element.type === 'checkbox';
-
-function isDetached(element) {
-    if (!element) {
-        return true;
-    }
-    if (!(element instanceof HTMLElement) ||
-        element.nodeType === Node.DOCUMENT_NODE) {
-        return false;
-    }
-    return isDetached(element.parentNode);
-}
-
-var isEmptyObject = (value) => isObject(value) && !Object.keys(value).length;
-
-function castPath(value) {
-    return isArray(value) ? value : stringToPath(value);
-}
-function baseGet(object, path) {
-    const updatePath = isKey(path) ? [path] : castPath(path);
-    const length = path.length;
-    let index = 0;
-    while (index < length) {
-        object = isUndefined(object) ? index++ : object[updatePath[index++]];
-    }
-    return index == length ? object : undefined;
-}
-function baseSlice(array, start, end) {
-    let index = -1;
-    let length = array.length;
-    if (start < 0) {
-        start = -start > length ? 0 : length + start;
-    }
-    end = end > length ? length : end;
-    if (end < 0) {
-        end += length;
-    }
-    length = start > end ? 0 : end - start;
-    const result = Array(length);
-    while (++index < length) {
-        result[index] = array[index + start];
-    }
-    return result;
-}
-function parent(object, path) {
-    return path.length == 1 ? object : baseGet(object, baseSlice(path, 0, -1));
-}
-function baseUnset(object, path) {
-    const updatePath = isKey(path) ? [path] : castPath(path);
-    const childObject = parent(object, updatePath);
-    const key = updatePath[updatePath.length - 1];
-    const result = !(childObject != null) || delete childObject[key];
-    let previousObjRef = undefined;
-    for (let k = 0; k < updatePath.slice(0, -1).length; k++) {
-        let index = -1;
-        let objectRef = undefined;
-        const currentPaths = updatePath.slice(0, -(k + 1));
-        const currentPathsLength = currentPaths.length - 1;
-        if (k > 0) {
-            previousObjRef = object;
-        }
-        while (++index < currentPaths.length) {
-            const item = currentPaths[index];
-            objectRef = objectRef ? objectRef[item] : object[item];
-            if (currentPathsLength === index) {
-                if ((isObject(objectRef) && isEmptyObject(objectRef)) ||
-                    (isArray(objectRef) &&
-                        !objectRef.filter((data) => isObject(data) && !isEmptyObject(data))
-                            .length)) {
-                    previousObjRef ? delete previousObjRef[item] : delete object[item];
-                }
-            }
-            previousObjRef = objectRef;
-        }
-    }
-    return result;
-}
-function unset(object, paths) {
-    paths.forEach((path) => {
-        baseUnset(object, path);
-    });
-    return object;
-}
-
-const isSameRef = (fieldValue, ref) => fieldValue && fieldValue.ref === ref;
-function findRemovedFieldAndRemoveListener(fields, handleChange, field, forceDelete) {
-    const { ref, ref: { name, type }, mutationWatcher, } = field;
-    const fieldValue = fields[name];
-    if (!type) {
-        delete fields[name];
-        return;
-    }
-    if ((isRadioInput(ref) || isCheckBoxInput(ref)) && fieldValue) {
-        const { options } = fieldValue;
-        if (isArray(options) && options.length) {
-            options.filter(Boolean).forEach((option, index) => {
-                const { ref, mutationWatcher } = option;
-                if ((ref && isDetached(ref) && isSameRef(option, ref)) || forceDelete) {
-                    removeAllEventListeners(ref, handleChange);
-                    if (mutationWatcher) {
-                        mutationWatcher.disconnect();
-                    }
-                    unset(options, [`[${index}]`]);
-                }
-            });
-            if (options && !options.filter(Boolean).length) {
-                delete fields[name];
-            }
-        }
-        else {
-            delete fields[name];
-        }
-    }
-    else if ((isDetached(ref) && isSameRef(fieldValue, ref)) || forceDelete) {
-        removeAllEventListeners(ref, handleChange);
-        if (mutationWatcher) {
-            mutationWatcher.disconnect();
-        }
-        delete fields[name];
-    }
-}
-
-const defaultReturn = {
-    isValid: false,
-    value: '',
-};
-var getRadioValue = (options) => isArray(options)
-    ? options.reduce((previous, { ref: { checked, value } }) => checked
-        ? {
-            isValid: true,
-            value,
-        }
-        : previous, defaultReturn)
-    : defaultReturn;
-
-var getMultipleSelectValue = (options) => [...options]
-    .filter(({ selected }) => selected)
-    .map(({ value }) => value);
-
-var isFileInput = (element) => element.type === 'file';
-
-var isMultipleSelect = (element) => element.type === 'select-multiple';
-
-var isEmptyString = (value) => value === '';
-
-const defaultResult = {
-    value: false,
-    isValid: false,
-};
-const validResult = { value: true, isValid: true };
-var getCheckboxValue = (options) => {
-    if (isArray(options)) {
-        if (options.length > 1) {
-            const values = options
-                .filter(({ ref: { checked } }) => checked)
-                .map(({ ref: { value } }) => value);
-            return { value: values, isValid: !!values.length };
-        }
-        const { checked, value, attributes } = options[0].ref;
-        return checked
-            ? attributes && !isUndefined(attributes.value)
-                ? isUndefined(value) || isEmptyString(value)
-                    ? validResult
-                    : { value: value, isValid: true }
-                : validResult
-            : defaultResult;
-    }
-    return defaultResult;
-};
-
-function getFieldValue(fields, ref) {
-    const { name, value } = ref;
-    const field = fields[name];
-    if (isFileInput(ref)) {
-        return ref.files;
-    }
-    if (isRadioInput(ref)) {
-        return field ? getRadioValue(field.options).value : '';
-    }
-    if (isMultipleSelect(ref)) {
-        return getMultipleSelectValue(ref.options);
-    }
-    if (isCheckBoxInput(ref)) {
-        return field ? getCheckboxValue(field.options).value : false;
-    }
-    return value;
-}
-
-var isString = (value) => typeof value === 'string';
-
-var getFieldsValues = (fields, search) => {
-    const output = {};
-    for (const name in fields) {
-        if (isUndefined(search) ||
-            (isString(search)
-                ? name.startsWith(search)
-                : isArray(search)
-                    ? search.find((data) => name.startsWith(data))
-                    : search && search.nest)) {
-            output[name] = getFieldValue(fields, fields[name].ref);
-        }
-    }
-    return output;
-};
-
-var compareObject = (objectA = {}, objectB = {}) => {
-    const objectAKeys = Object.keys(objectA);
-    const objectBKeys = Object.keys(objectB);
-    return (objectAKeys.length === objectBKeys.length &&
-        objectAKeys.every((key) => objectB[key] && objectB[key] === objectA[key]));
-};
-
-var isSameError = (error, { type, types, message, }) => isObject(error) &&
-    error.type === type &&
-    error.message === message &&
-    compareObject(error.types, types);
-
-function shouldRenderBasedOnError({ errors, name, error, validFields, fieldsWithValidation, }) {
-    const isFieldValid = isEmptyObject(error);
-    const isFormValid = isEmptyObject(errors);
-    const currentFieldError = get(error, name);
-    const existFieldError = get(errors, name);
-    if ((isFieldValid && validFields.has(name)) ||
-        (existFieldError && existFieldError.isManual)) {
-        return false;
-    }
-    if (isFormValid !== isFieldValid ||
-        (!isFormValid && !existFieldError) ||
-        (isFieldValid && fieldsWithValidation.has(name) && !validFields.has(name))) {
-        return true;
-    }
-    return currentFieldError && !isSameError(existFieldError, currentFieldError);
-}
-
-var isRegex = (value) => value instanceof RegExp;
-
-var getValueAndMessage = (validationData) => {
-    const isValueMessage = (value) => isObject(value) && !isRegex(value);
-    return isValueMessage(validationData)
-        ? validationData
-        : {
-            value: validationData,
-            message: '',
-        };
-};
-
-var isFunction = (value) => typeof value === 'function';
-
-var isBoolean = (value) => typeof value === 'boolean';
-
-var isMessage = (value) => isString(value) || (isObject(value) && Object(react__WEBPACK_IMPORTED_MODULE_0__["isValidElement"])(value));
-
-function getValidateError(result, ref, type = 'validate') {
-    if (isMessage(result) || (isBoolean(result) && !result)) {
-        return {
-            type,
-            message: isMessage(result) ? result : '',
-            ref,
-        };
-    }
-}
-
-var appendErrors = (name, validateAllFieldCriteria, errors, type, message) => {
-    if (validateAllFieldCriteria) {
-        const error = errors[name];
-        return Object.assign(Object.assign({}, error), { types: Object.assign(Object.assign({}, (error && error.types ? error.types : {})), { [type]: message || true }) });
-    }
-    return {};
-};
-
-var validateField = async (fieldsRef, validateAllFieldCriteria, { ref, ref: { type, value, name }, options, required, maxLength, minLength, min, max, pattern, validate, }) => {
-    var _a;
-    const fields = fieldsRef.current;
-    const error = {};
-    const isRadio = isRadioInput(ref);
-    const isCheckBox = isCheckBoxInput(ref);
-    const isRadioOrCheckbox = isRadio || isCheckBox;
-    const isEmpty = isEmptyString(value);
-    const appendErrorsCurry = appendErrors.bind(null, name, validateAllFieldCriteria, error);
-    const getMinMaxMessage = (exceedMax, maxLengthMessage, minLengthMessage, maxType = INPUT_VALIDATION_RULES.maxLength, minType = INPUT_VALIDATION_RULES.minLength) => {
-        const message = exceedMax ? maxLengthMessage : minLengthMessage;
-        error[name] = Object.assign({ type: exceedMax ? maxType : minType, message,
-            ref }, (exceedMax
-            ? appendErrorsCurry(maxType, message)
-            : appendErrorsCurry(minType, message)));
-        if (!validateAllFieldCriteria) {
-            return error;
-        }
-    };
-    if (required &&
-        ((!isRadio && !isCheckBox && (isEmpty || isNullOrUndefined(value))) ||
-            (isBoolean(value) && !value) ||
-            (isCheckBox && !getCheckboxValue(options).isValid) ||
-            (isRadio && !getRadioValue(options).isValid))) {
-        const { value: requiredValue, message: requiredMessage } = isMessage(required)
-            ? { value: !!required, message: required }
-            : getValueAndMessage(required);
-        if (requiredValue) {
-            error[name] = Object.assign({ type: INPUT_VALIDATION_RULES.required, message: requiredMessage, ref: isRadioOrCheckbox ? (_a = fields[name].options) === null || _a === void 0 ? void 0 : _a[0].ref : ref }, appendErrorsCurry(INPUT_VALIDATION_RULES.required, requiredMessage));
-            if (!validateAllFieldCriteria) {
-                return error;
-            }
-        }
-    }
-    if (!isNullOrUndefined(min) || !isNullOrUndefined(max)) {
-        let exceedMax;
-        let exceedMin;
-        const { value: maxValue, message: maxMessage } = getValueAndMessage(max);
-        const { value: minValue, message: minMessage } = getValueAndMessage(min);
-        if (type === 'number' || (!type && !isNaN(value))) {
-            const valueNumber = ref.valueAsNumber || parseFloat(value);
-            if (!isNullOrUndefined(maxValue)) {
-                exceedMax = valueNumber > maxValue;
-            }
-            if (!isNullOrUndefined(minValue)) {
-                exceedMin = valueNumber < minValue;
-            }
-        }
-        else {
-            const valueDate = ref.valueAsDate || new Date(value);
-            if (isString(maxValue)) {
-                exceedMax = valueDate > new Date(maxValue);
-            }
-            if (isString(minValue)) {
-                exceedMin = valueDate < new Date(minValue);
-            }
-        }
-        if (exceedMax || exceedMin) {
-            getMinMaxMessage(!!exceedMax, maxMessage, minMessage, INPUT_VALIDATION_RULES.max, INPUT_VALIDATION_RULES.min);
-            if (!validateAllFieldCriteria) {
-                return error;
-            }
-        }
-    }
-    if (isString(value) && !isEmpty && (maxLength || minLength)) {
-        const { value: maxLengthValue, message: maxLengthMessage, } = getValueAndMessage(maxLength);
-        const { value: minLengthValue, message: minLengthMessage, } = getValueAndMessage(minLength);
-        const inputLength = value.toString().length;
-        const exceedMax = !isNullOrUndefined(maxLengthValue) && inputLength > maxLengthValue;
-        const exceedMin = !isNullOrUndefined(minLengthValue) && inputLength < minLengthValue;
-        if (exceedMax || exceedMin) {
-            getMinMaxMessage(!!exceedMax, maxLengthMessage, minLengthMessage);
-            if (!validateAllFieldCriteria) {
-                return error;
-            }
-        }
-    }
-    if (pattern && !isEmpty) {
-        const { value: patternValue, message: patternMessage } = getValueAndMessage(pattern);
-        if (isRegex(patternValue) && !patternValue.test(value)) {
-            error[name] = Object.assign({ type: INPUT_VALIDATION_RULES.pattern, message: patternMessage, ref }, appendErrorsCurry(INPUT_VALIDATION_RULES.pattern, patternMessage));
-            if (!validateAllFieldCriteria) {
-                return error;
-            }
-        }
-    }
-    if (validate) {
-        const fieldValue = getFieldValue(fields, ref);
-        const validateRef = isRadioOrCheckbox && options ? options[0].ref : ref;
-        if (isFunction(validate)) {
-            const result = await validate(fieldValue);
-            const validateError = getValidateError(result, validateRef);
-            if (validateError) {
-                error[name] = Object.assign(Object.assign({}, validateError), appendErrorsCurry(INPUT_VALIDATION_RULES.validate, validateError.message));
-                if (!validateAllFieldCriteria) {
-                    return error;
-                }
-            }
-        }
-        else if (isObject(validate)) {
-            let validationResult = {};
-            for (const [key, validateFunction] of Object.entries(validate)) {
-                if (!isEmptyObject(validationResult) && !validateAllFieldCriteria) {
-                    break;
-                }
-                const validateResult = await validateFunction(fieldValue);
-                const validateError = getValidateError(validateResult, validateRef, key);
-                if (validateError) {
-                    validationResult = Object.assign(Object.assign({}, validateError), appendErrorsCurry(key, validateError.message));
-                    if (validateAllFieldCriteria) {
-                        error[name] = validationResult;
-                    }
-                }
-            }
-            if (!isEmptyObject(validationResult)) {
-                error[name] = Object.assign({ ref: validateRef }, validationResult);
-                if (!validateAllFieldCriteria) {
-                    return error;
-                }
-            }
-        }
-    }
-    return error;
-};
-
-const parseErrorSchema = (error, validateAllFieldCriteria) => isArray(error.inner)
-    ? error.inner.reduce((previous, { path, message, type }) => (Object.assign(Object.assign({}, previous), (path
-        ? previous[path] && validateAllFieldCriteria
-            ? {
-                [path]: appendErrors(path, validateAllFieldCriteria, previous, type, message),
-            }
-            : {
-                [path]: previous[path] || Object.assign({ message,
-                    type }, (validateAllFieldCriteria
-                    ? {
-                        types: { [type]: message || true },
-                    }
-                    : {})),
-            }
-        : {}))), {})
-    : {
-        [error.path]: { message: error.message, type: error.type },
-    };
-async function validateWithSchema(validationSchema, validateAllFieldCriteria, data, validationResolver, context) {
-    if (validationResolver) {
-        return validationResolver(data, context);
-    }
-    try {
-        return {
-            values: await validationSchema.validate(data, {
-                abortEarly: false,
-                context,
-            }),
-            errors: {},
-        };
-    }
-    catch (e) {
-        return {
-            values: {},
-            errors: transformToNestObject(parseErrorSchema(e, validateAllFieldCriteria)),
-        };
-    }
-}
-
-var isPrimitive = (value) => isNullOrUndefined(value) || !isObjectType(value);
-
-const getPath = (path, values) => {
-    const getInnerPath = (value, key, isObject) => {
-        const pathWithIndex = isObject ? `${path}.${key}` : `${path}[${key}]`;
-        return isPrimitive(value) ? pathWithIndex : getPath(pathWithIndex, value);
-    };
-    return isArray(values)
-        ? values.map((value, key) => getInnerPath(value, key))
-        : Object.entries(values).map(([key, value]) => getInnerPath(value, key, true));
-};
-var getPath$1 = (parentPath, value) => getPath(parentPath, value).flat(Infinity);
-
-var assignWatchFields = (fieldValues, fieldName, watchFields, combinedDefaultValues) => {
-    let value;
-    watchFields.add(fieldName);
-    if (isEmptyObject(fieldValues)) {
-        value = undefined;
-    }
-    else if (!isUndefined(fieldValues[fieldName])) {
-        value = fieldValues[fieldName];
-        watchFields.add(fieldName);
-    }
-    else {
-        value = get(transformToNestObject(fieldValues), fieldName);
-        if (!isUndefined(value)) {
-            getPath$1(fieldName, value).forEach((name) => watchFields.add(name));
-        }
-    }
-    return isUndefined(value)
-        ? isObject(combinedDefaultValues)
-            ? get(combinedDefaultValues, fieldName)
-            : combinedDefaultValues
-        : value;
-};
-
-var skipValidation = ({ isOnChange, hasError, isBlurEvent, isOnSubmit, isReValidateOnSubmit, isOnBlur, isReValidateOnBlur, isSubmitted, }) => (isOnChange && isBlurEvent) ||
-    (isOnSubmit && isReValidateOnSubmit) ||
-    (isOnSubmit && !isSubmitted) ||
-    (isOnBlur && !isBlurEvent && !hasError) ||
-    (isReValidateOnBlur && !isBlurEvent && hasError) ||
-    (isReValidateOnSubmit && isSubmitted);
-
-var getFieldArrayParentName = (name) => name.substring(0, name.indexOf('['));
-
-var getFieldValueByName = (fields, name) => {
-    const results = transformToNestObject(getFieldsValues(fields));
-    return name ? get(results, name, results) : results;
-};
-
-function getIsFieldsDifferent(referenceArray, differenceArray) {
-    let isMatch = false;
-    if (!isArray(referenceArray) ||
-        !isArray(differenceArray) ||
-        referenceArray.length !== differenceArray.length) {
-        return true;
-    }
-    for (let i = 0; i < referenceArray.length; i++) {
-        if (isMatch) {
-            break;
-        }
-        const dataA = referenceArray[i];
-        const dataB = differenceArray[i];
-        if (isUndefined(dataB) ||
-            Object.keys(dataA).length !== Object.keys(dataB).length) {
-            isMatch = true;
-            break;
-        }
-        for (const key in dataA) {
-            if (dataA[key] !== dataB[key]) {
-                isMatch = true;
-                break;
-            }
-        }
-    }
-    return isMatch;
-}
-
-const isMatchFieldArrayName = (name, searchName) => RegExp(`^${searchName}[\\d+]`.replace(/\[/g, '\\[').replace(/\]/g, '\\]')).test(name);
-var isNameInFieldArray = (names, name) => [...names].reduce((prev, current) => (isMatchFieldArrayName(name, current) ? true : prev), false);
-
-function onDomRemove(element, onDetachCallback) {
-    const observer = new MutationObserver(() => {
-        if (isDetached(element)) {
-            observer.disconnect();
-            onDetachCallback();
-        }
-    });
-    observer.observe(window.document, {
-        childList: true,
-        subtree: true,
-    });
-    return observer;
-}
-
-var modeChecker = (mode) => ({
-    isOnSubmit: !mode || mode === VALIDATION_MODE.onSubmit,
-    isOnBlur: mode === VALIDATION_MODE.onBlur,
-    isOnChange: mode === VALIDATION_MODE.onChange,
-});
-
-var isRadioOrCheckboxFunction = (ref) => isRadioInput(ref) || isCheckBoxInput(ref);
-
-function useForm({ mode = VALIDATION_MODE.onSubmit, reValidateMode = VALIDATION_MODE.onChange, validationSchema, validationResolver, validationContext, defaultValues = {}, submitFocusError = true, validateCriteriaMode, } = {}) {
-    const fieldsRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])({});
-    const errorsRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])({});
-    const touchedFieldsRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])({});
-    const fieldArrayDefaultValues = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])({});
-    const watchFieldsRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(new Set());
-    const dirtyFieldsRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(new Set());
-    const fieldsWithValidationRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(new Set());
-    const validFieldsRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(new Set());
-    const isValidRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(true);
-    const defaultValuesRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(defaultValues);
-    const defaultValuesAtRenderRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])({});
-    const isUnMount = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(false);
-    const isWatchAllRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(false);
-    const isSubmittedRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(false);
-    const isDirtyRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(false);
-    const submitCountRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(0);
-    const isSubmittingRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(false);
-    const handleChangeRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
-    const resetFieldArrayFunctionRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])({});
-    const validationContextRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(validationContext);
-    const fieldArrayNamesRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(new Set());
-    const [, render] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])();
-    const { isOnBlur, isOnSubmit, isOnChange } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(modeChecker(mode)).current;
-    const validateAllFieldCriteria = validateCriteriaMode === 'all';
-    const isWindowUndefined = typeof window === UNDEFINED;
-    const shouldValidateSchemaOrResolver = !!(validationSchema || validationResolver);
-    const isWeb = typeof document !== UNDEFINED &&
-        !isWindowUndefined &&
-        !isUndefined(window.HTMLElement);
-    const isProxyEnabled = isWeb ? 'Proxy' in window : typeof Proxy !== UNDEFINED;
-    const readFormStateRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])({
-        dirty: !isProxyEnabled,
-        dirtyFields: !isProxyEnabled,
-        isSubmitted: isOnSubmit,
-        submitCount: !isProxyEnabled,
-        touched: !isProxyEnabled,
-        isSubmitting: !isProxyEnabled,
-        isValid: !isProxyEnabled,
-    });
-    const { isOnBlur: isReValidateOnBlur, isOnSubmit: isReValidateOnSubmit, } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(modeChecker(reValidateMode)).current;
-    validationContextRef.current = validationContext;
-    const reRender = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(() => {
-        if (!isUnMount.current) {
-            render({});
-        }
-    }, []);
-    const shouldRenderBaseOnError = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])((name, error, shouldRender = false) => {
-        let shouldReRender = shouldRender ||
-            shouldRenderBasedOnError({
-                errors: errorsRef.current,
-                error,
-                name,
-                validFields: validFieldsRef.current,
-                fieldsWithValidation: fieldsWithValidationRef.current,
-            });
-        if (isEmptyObject(error)) {
-            if (fieldsWithValidationRef.current.has(name) ||
-                shouldValidateSchemaOrResolver) {
-                validFieldsRef.current.add(name);
-                shouldReRender = shouldReRender || get(errorsRef.current, name);
-            }
-            errorsRef.current = unset(errorsRef.current, [name]);
-        }
-        else {
-            validFieldsRef.current.delete(name);
-            shouldReRender = shouldReRender || !get(errorsRef.current, name);
-            set(errorsRef.current, name, error[name]);
-        }
-        if (shouldReRender && !isNullOrUndefined(shouldRender)) {
-            reRender();
-            return true;
-        }
-    }, [reRender, shouldValidateSchemaOrResolver]);
-    const setFieldValue = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])((field, rawValue) => {
-        const { ref, options } = field;
-        const value = isWeb && isHTMLElement(ref) && isNullOrUndefined(rawValue)
-            ? ''
-            : rawValue;
-        if (isRadioInput(ref) && options) {
-            options.forEach(({ ref: radioRef }) => (radioRef.checked = radioRef.value === value));
-        }
-        else if (isFileInput(ref)) {
-            if (isString(value)) {
-                ref.value = value;
-            }
-            else {
-                ref.files = value;
-            }
-        }
-        else if (isMultipleSelect(ref)) {
-            [...ref.options].forEach((selectRef) => (selectRef.selected = value.includes(selectRef.value)));
-        }
-        else if (isCheckBoxInput(ref) && options) {
-            options.length > 1
-                ? options.forEach(({ ref: checkboxRef }) => (checkboxRef.checked = value.includes(checkboxRef.value)))
-                : (options[0].ref.checked = !!value);
-        }
-        else {
-            ref.value = value;
-        }
-    }, [isWeb]);
-    const setDirty = (name) => {
-        if (!fieldsRef.current[name] ||
-            (!readFormStateRef.current.dirty && !readFormStateRef.current.dirtyFields)) {
-            return false;
-        }
-        let isFieldDirty = defaultValuesAtRenderRef.current[name] !==
-            getFieldValue(fieldsRef.current, fieldsRef.current[name].ref);
-        const isFieldArray = isNameInFieldArray(fieldArrayNamesRef.current, name);
-        const previousDirtyFieldsLength = dirtyFieldsRef.current.size;
-        if (isFieldArray) {
-            const fieldArrayName = getFieldArrayParentName(name);
-            isFieldDirty = getIsFieldsDifferent(getFieldValueByName(fieldsRef.current, fieldArrayName), get(defaultValuesRef.current, fieldArrayName));
-        }
-        const isDirtyChanged = (isFieldArray ? isDirtyRef.current : dirtyFieldsRef.current.has(name)) !==
-            isFieldDirty;
-        if (isFieldDirty) {
-            dirtyFieldsRef.current.add(name);
-        }
-        else {
-            dirtyFieldsRef.current.delete(name);
-        }
-        isDirtyRef.current = isFieldArray
-            ? isFieldDirty
-            : !!dirtyFieldsRef.current.size;
-        return readFormStateRef.current.dirty
-            ? isDirtyChanged
-            : previousDirtyFieldsLength !== dirtyFieldsRef.current.size;
-    };
-    const setDirtyAndTouchedFields = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])((fieldName) => {
-        if (setDirty(fieldName) ||
-            (!get(touchedFieldsRef.current, fieldName) &&
-                readFormStateRef.current.touched)) {
-            return !!set(touchedFieldsRef.current, fieldName, true);
-        }
-    }, []);
-    const setInternalValues = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])((name, value, parentFieldName) => {
-        const isValueArray = isArray(value);
-        for (const key in value) {
-            const fieldName = `${parentFieldName || name}${isValueArray ? `[${key}]` : `.${key}`}`;
-            const field = fieldsRef.current[fieldName];
-            if (isObject(value[key])) {
-                setInternalValues(name, value[key], fieldName);
-            }
-            if (field) {
-                setFieldValue(field, value[key]);
-                setDirtyAndTouchedFields(fieldName);
-            }
-        }
-    }, [setFieldValue, setDirtyAndTouchedFields]);
-    const setInternalValue = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])((name, value) => {
-        const field = fieldsRef.current[name];
-        if (field) {
-            setFieldValue(field, value);
-            const output = setDirtyAndTouchedFields(name);
-            if (isBoolean(output)) {
-                return output;
-            }
-        }
-        else if (!isPrimitive(value)) {
-            setInternalValues(name, value);
-        }
-    }, [setDirtyAndTouchedFields, setFieldValue, setInternalValues]);
-    const executeValidation = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(async (name, skipReRender) => {
-        const field = fieldsRef.current[name];
-        if (field) {
-            const error = await validateField(fieldsRef, validateAllFieldCriteria, field);
-            shouldRenderBaseOnError(name, error, skipReRender ? null : false);
-            return isEmptyObject(error);
-        }
-        return false;
-    }, [shouldRenderBaseOnError, validateAllFieldCriteria]);
-    const executeSchemaOrResolverValidation = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(async (payload) => {
-        const { errors } = await validateWithSchema(validationSchema, validateAllFieldCriteria, getFieldValueByName(fieldsRef.current), validationResolver, validationContextRef.current);
-        const previousFormIsValid = isValidRef.current;
-        isValidRef.current = isEmptyObject(errors);
-        if (isArray(payload)) {
-            payload.forEach((name) => {
-                const error = get(errors, name);
-                if (error) {
-                    set(errorsRef.current, name, error);
-                }
-                else {
-                    unset(errorsRef.current, [name]);
-                }
-            });
-            reRender();
-        }
-        else {
-            const error = get(errors, payload);
-            shouldRenderBaseOnError(payload, (error ? { [payload]: error } : {}), previousFormIsValid !== isValidRef.current);
-        }
-        return isEmptyObject(errorsRef.current);
-    }, [
-        reRender,
-        shouldRenderBaseOnError,
-        validateAllFieldCriteria,
-        validationResolver,
-        validationSchema,
-    ]);
-    const triggerValidation = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(async (payload) => {
-        const fields = payload || Object.keys(fieldsRef.current);
-        if (shouldValidateSchemaOrResolver) {
-            return executeSchemaOrResolverValidation(fields);
-        }
-        if (isArray(fields)) {
-            const result = await Promise.all(fields.map(async (data) => await executeValidation(data, true)));
-            reRender();
-            return result.every(Boolean);
-        }
-        return await executeValidation(fields);
-    }, [
-        executeSchemaOrResolverValidation,
-        executeValidation,
-        reRender,
-        shouldValidateSchemaOrResolver,
-    ]);
-    const isFieldWatched = (name) => isWatchAllRef.current ||
-        watchFieldsRef.current.has(name) ||
-        watchFieldsRef.current.has((name.match(/\w+/) || [])[0]);
-    function setValue(names, valueOrShouldValidate, shouldValidate) {
-        let shouldRender = false;
-        const isArrayValue = isArray(names);
-        (isArrayValue
-            ? names
-            : [names]).forEach((name) => {
-            const isStringFieldName = isString(name);
-            shouldRender =
-                setInternalValue(isStringFieldName ? name : Object.keys(name)[0], isStringFieldName
-                    ? valueOrShouldValidate
-                    : Object.values(name)[0]) || isArrayValue
-                    ? true
-                    : isFieldWatched(name);
-        });
-        if (shouldRender || isArrayValue) {
-            reRender();
-        }
-        if (shouldValidate || (isArrayValue && valueOrShouldValidate)) {
-            triggerValidation(isArrayValue ? undefined : names);
-        }
-    }
-    handleChangeRef.current = handleChangeRef.current
-        ? handleChangeRef.current
-        : async ({ type, target }) => {
-            const name = target ? target.name : '';
-            const fields = fieldsRef.current;
-            const errors = errorsRef.current;
-            const field = fields[name];
-            const currentError = get(errors, name);
-            let error;
-            if (!field) {
-                return;
-            }
-            const isBlurEvent = type === EVENTS.BLUR;
-            const shouldSkipValidation = skipValidation({
-                hasError: !!currentError,
-                isOnChange,
-                isBlurEvent,
-                isOnSubmit,
-                isReValidateOnSubmit,
-                isOnBlur,
-                isReValidateOnBlur,
-                isSubmitted: isSubmittedRef.current,
-            });
-            const shouldUpdateDirty = setDirty(name);
-            let shouldRender = isFieldWatched(name) || shouldUpdateDirty;
-            if (isBlurEvent &&
-                !get(touchedFieldsRef.current, name) &&
-                readFormStateRef.current.touched) {
-                set(touchedFieldsRef.current, name, true);
-                shouldRender = true;
-            }
-            if (shouldSkipValidation) {
-                return shouldRender && reRender();
-            }
-            if (shouldValidateSchemaOrResolver) {
-                const { errors } = await validateWithSchema(validationSchema, validateAllFieldCriteria, getFieldValueByName(fields), validationResolver, validationContextRef.current);
-                const previousFormIsValid = isValidRef.current;
-                isValidRef.current = isEmptyObject(errors);
-                error = (get(errors, name)
-                    ? { [name]: get(errors, name) }
-                    : {});
-                if (previousFormIsValid !== isValidRef.current) {
-                    shouldRender = true;
-                }
-            }
-            else {
-                error = await validateField(fieldsRef, validateAllFieldCriteria, field);
-            }
-            if (!shouldRenderBaseOnError(name, error) && shouldRender) {
-                reRender();
-            }
-        };
-    const validateSchemaOrResolver = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])((values = {}) => {
-        const fieldValues = isEmptyObject(defaultValuesRef.current)
-            ? getFieldsValues(fieldsRef.current)
-            : defaultValuesRef.current;
-        validateWithSchema(validationSchema, validateAllFieldCriteria, transformToNestObject(Object.assign(Object.assign({}, fieldValues), values)), validationResolver, validationContextRef.current).then(({ errors }) => {
-            const previousFormIsValid = isValidRef.current;
-            isValidRef.current = isEmptyObject(errors);
-            if (previousFormIsValid !== isValidRef.current) {
-                reRender();
-            }
-        });
-    }, 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [reRender, validateAllFieldCriteria, validationResolver]);
-    const removeFieldEventListener = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])((field, forceDelete) => {
-        if (handleChangeRef.current && field) {
-            findRemovedFieldAndRemoveListener(fieldsRef.current, handleChangeRef.current, field, forceDelete);
-        }
-    }, []);
-    const removeFieldEventListenerAndRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])((field, forceDelete) => {
-        if (!field ||
-            (field &&
-                isNameInFieldArray(fieldArrayNamesRef.current, field.ref.name) &&
-                !forceDelete)) {
-            return;
-        }
-        removeFieldEventListener(field, forceDelete);
-        const { name } = field.ref;
-        errorsRef.current = unset(errorsRef.current, [name]);
-        touchedFieldsRef.current = unset(touchedFieldsRef.current, [name]);
-        defaultValuesAtRenderRef.current = unset(defaultValuesAtRenderRef.current, [name]);
-        [
-            dirtyFieldsRef,
-            fieldsWithValidationRef,
-            validFieldsRef,
-            watchFieldsRef,
-        ].forEach((data) => data.current.delete(name));
-        if (readFormStateRef.current.isValid ||
-            readFormStateRef.current.touched) {
-            reRender();
-            if (shouldValidateSchemaOrResolver) {
-                validateSchemaOrResolver();
-            }
-        }
-    }, [
-        reRender,
-        shouldValidateSchemaOrResolver,
-        validateSchemaOrResolver,
-        removeFieldEventListener,
-    ]);
-    function clearError(name) {
-        if (name) {
-            unset(errorsRef.current, isArray(name) ? name : [name]);
-        }
-        else {
-            errorsRef.current = {};
-        }
-        reRender();
-    }
-    const setInternalError = ({ name, type, types, message, shouldRender, }) => {
-        const field = fieldsRef.current[name];
-        if (!isSameError(errorsRef.current[name], {
-            type,
-            message,
-            types,
-        })) {
-            set(errorsRef.current, name, {
-                type,
-                types,
-                message,
-                ref: field ? field.ref : {},
-                isManual: true,
-            });
-            if (shouldRender) {
-                reRender();
-            }
-        }
-    };
-    function setError(name, type = '', message) {
-        if (isString(name)) {
-            setInternalError(Object.assign(Object.assign({ name }, (isObject(type)
-                ? {
-                    types: type,
-                    type: '',
-                }
-                : {
-                    type,
-                    message,
-                })), { shouldRender: true }));
-        }
-        else if (isArray(name)) {
-            name.forEach((error) => setInternalError(Object.assign({}, error)));
-            reRender();
-        }
-    }
-    function watch(fieldNames, defaultValue) {
-        const watchFields = watchFieldsRef.current;
-        const combinedDefaultValues = isUndefined(defaultValue)
-            ? isUndefined(defaultValuesRef.current)
-                ? {}
-                : defaultValuesRef.current
-            : defaultValue;
-        const fieldValues = getFieldsValues(fieldsRef.current, fieldNames);
-        if (isString(fieldNames)) {
-            return assignWatchFields(fieldValues, fieldNames, watchFields, combinedDefaultValues);
-        }
-        if (isArray(fieldNames)) {
-            return fieldNames.reduce((previous, name) => (Object.assign(Object.assign({}, previous), { [name]: assignWatchFields(fieldValues, name, watchFields, combinedDefaultValues) })), {});
-        }
-        isWatchAllRef.current = true;
-        const result = (!isEmptyObject(fieldValues) && fieldValues) || combinedDefaultValues;
-        return fieldNames && fieldNames.nest
-            ? transformToNestObject(result)
-            : result;
-    }
-    function unregister(names) {
-        if (fieldsRef.current) {
-            (isArray(names) ? names : [names]).forEach((fieldName) => removeFieldEventListenerAndRef(fieldsRef.current[fieldName], true));
-        }
-    }
-    function registerFieldsRef(ref, validateOptions = {}) {
-        if (!ref.name) {
-            // eslint-disable-next-line no-console
-            return console.warn('Missing name @', ref);
-        }
-        const { name, type, value } = ref;
-        const fieldRefAndValidationOptions = Object.assign({ ref }, validateOptions);
-        const fields = fieldsRef.current;
-        const isRadioOrCheckbox = isRadioOrCheckboxFunction(ref);
-        let field = fields[name];
-        let isEmptyDefaultValue = true;
-        let isFieldArray;
-        let defaultValue;
-        if (isRadioOrCheckbox
-            ? field &&
-                isArray(field.options) &&
-                field.options.filter(Boolean).find((option) => {
-                    return value === option.ref.value && option.ref === ref;
-                })
-            : field && ref === field.ref) {
-            fields[name] = Object.assign(Object.assign({}, field), validateOptions);
-            return;
-        }
-        if (type) {
-            const mutationWatcher = onDomRemove(ref, () => removeFieldEventListenerAndRef(field));
-            field = isRadioOrCheckbox
-                ? Object.assign({ options: [
-                        ...((field && field.options) || []),
-                        {
-                            ref,
-                            mutationWatcher,
-                        },
-                    ], ref: { type, name } }, validateOptions) : Object.assign(Object.assign({}, fieldRefAndValidationOptions), { mutationWatcher });
-        }
-        else {
-            field = fieldRefAndValidationOptions;
-        }
-        fields[name] = field;
-        if (!isEmptyObject(defaultValuesRef.current)) {
-            defaultValue = get(defaultValuesRef.current, name);
-            isEmptyDefaultValue = isUndefined(defaultValue);
-            isFieldArray = isNameInFieldArray(fieldArrayNamesRef.current, name);
-            if (!isEmptyDefaultValue && !isFieldArray) {
-                setFieldValue(field, defaultValue);
-            }
-        }
-        if (shouldValidateSchemaOrResolver &&
-            !isFieldArray &&
-            readFormStateRef.current.isValid) {
-            validateSchemaOrResolver();
-        }
-        else if (!isEmptyObject(validateOptions)) {
-            fieldsWithValidationRef.current.add(name);
-            if (!isOnSubmit && readFormStateRef.current.isValid) {
-                validateField(fieldsRef, validateAllFieldCriteria, field).then((error) => {
-                    const previousFormIsValid = isValidRef.current;
-                    isEmptyObject(error)
-                        ? validFieldsRef.current.add(name)
-                        : (isValidRef.current = false);
-                    if (previousFormIsValid !== isValidRef.current) {
-                        reRender();
-                    }
-                });
-            }
-        }
-        if (!defaultValuesAtRenderRef.current[name] &&
-            !(isFieldArray && isEmptyDefaultValue)) {
-            defaultValuesAtRenderRef.current[name] = isEmptyDefaultValue ? getFieldValue(fields, field.ref) : defaultValue;
-        }
-        if (type) {
-            attachEventListeners({
-                field: isRadioOrCheckbox && field.options
-                    ? field.options[field.options.length - 1]
-                    : field,
-                isRadioOrCheckbox,
-                handleChange: handleChangeRef.current,
-            });
-        }
-    }
-    function register(refOrValidationOptions, validationOptions) {
-        if (isWindowUndefined) {
-            return;
-        }
-        if (isString(refOrValidationOptions)) {
-            registerFieldsRef({ name: refOrValidationOptions }, validationOptions);
-            return;
-        }
-        if (isObject(refOrValidationOptions) && 'name' in refOrValidationOptions) {
-            registerFieldsRef(refOrValidationOptions, validationOptions);
-            return;
-        }
-        return (ref) => ref && registerFieldsRef(ref, refOrValidationOptions);
-    }
-    const handleSubmit = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])((callback) => async (e) => {
-        if (e) {
-            e.preventDefault();
-            e.persist();
-        }
-        let fieldErrors = {};
-        const fields = fieldsRef.current;
-        let fieldValues = getFieldsValues(fields);
-        if (readFormStateRef.current.isSubmitting) {
-            isSubmittingRef.current = true;
-            reRender();
-        }
-        try {
-            if (shouldValidateSchemaOrResolver) {
-                const { errors, values } = await validateWithSchema(validationSchema, validateAllFieldCriteria, transformToNestObject(fieldValues), validationResolver, validationContextRef.current);
-                errorsRef.current = errors;
-                fieldErrors = errors;
-                fieldValues = values;
-            }
-            else {
-                for (const field of Object.values(fields)) {
-                    if (field) {
-                        const { ref: { name }, } = field;
-                        const fieldError = await validateField(fieldsRef, validateAllFieldCriteria, field);
-                        if (fieldError[name]) {
-                            set(fieldErrors, name, fieldError[name]);
-                            validFieldsRef.current.delete(name);
-                        }
-                        else {
-                            if (fieldsWithValidationRef.current.has(name)) {
-                                validFieldsRef.current.add(name);
-                            }
-                        }
-                    }
-                }
-            }
-            if (isEmptyObject(fieldErrors)) {
-                errorsRef.current = {};
-                await callback(transformToNestObject(fieldValues), e);
-            }
-            else {
-                errorsRef.current = fieldErrors;
-                if (submitFocusError && isWeb) {
-                    focusOnErrorField(fields, fieldErrors);
-                }
-            }
-        }
-        finally {
-            isSubmittedRef.current = true;
-            isSubmittingRef.current = false;
-            submitCountRef.current = submitCountRef.current + 1;
-            reRender();
-        }
-    }, [
-        isWeb,
-        reRender,
-        shouldValidateSchemaOrResolver,
-        submitFocusError,
-        validateAllFieldCriteria,
-        validationResolver,
-        validationSchema,
-    ]);
-    const resetRefs = ({ errors, dirty, isSubmitted, touched, isValid, submitCount, dirtyFields, }) => {
-        fieldsRef.current = {};
-        if (!errors) {
-            errorsRef.current = {};
-        }
-        if (!touched) {
-            touchedFieldsRef.current = {};
-        }
-        if (!isValid) {
-            validFieldsRef.current = new Set();
-            fieldsWithValidationRef.current = new Set();
-            isValidRef.current = true;
-        }
-        if (!dirty) {
-            isDirtyRef.current = false;
-        }
-        if (!dirtyFields) {
-            dirtyFieldsRef.current = new Set();
-        }
-        if (!isSubmitted) {
-            isSubmittedRef.current = false;
-        }
-        if (!submitCount) {
-            submitCountRef.current = 0;
-        }
-        defaultValuesAtRenderRef.current = {};
-        fieldArrayDefaultValues.current = {};
-        watchFieldsRef.current = new Set();
-        isWatchAllRef.current = false;
-    };
-    const reset = (values, omitResetState = {}) => {
-        if (isWeb) {
-            for (const field of Object.values(fieldsRef.current)) {
-                if (field) {
-                    const { ref, options } = field;
-                    const inputRef = isRadioOrCheckboxFunction(ref) && isArray(options)
-                        ? options[0].ref
-                        : ref;
-                    if (isHTMLElement(inputRef)) {
-                        try {
-                            inputRef.closest('form').reset();
-                            break;
-                        }
-                        catch (_a) { }
-                    }
-                }
-            }
-        }
-        if (values) {
-            defaultValuesRef.current = values;
-        }
-        Object.values(resetFieldArrayFunctionRef.current).forEach((resetFieldArray) => isFunction(resetFieldArray) && resetFieldArray());
-        resetRefs(omitResetState);
-        reRender();
-    };
-    function getValues(payload) {
-        if (isString(payload)) {
-            return fieldsRef.current[payload]
-                ? getFieldValue(fieldsRef.current, fieldsRef.current[payload].ref)
-                : undefined;
-        }
-        const fieldValues = getFieldsValues(fieldsRef.current);
-        const outputValues = isEmptyObject(fieldValues)
-            ? defaultValuesRef.current
-            : fieldValues;
-        return payload && payload.nest
-            ? transformToNestObject(outputValues)
-            : outputValues;
-    }
-    Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => () => {
-        isUnMount.current = true;
-        fieldsRef.current &&
-            "development" === 'production' &&
-            Object.values(fieldsRef.current).forEach((field) => removeFieldEventListenerAndRef(field, true));
-    }, [removeFieldEventListenerAndRef]);
-    if (!shouldValidateSchemaOrResolver) {
-        isValidRef.current =
-            validFieldsRef.current.size >= fieldsWithValidationRef.current.size &&
-                isEmptyObject(errorsRef.current);
-    }
-    const formState = {
-        dirty: isDirtyRef.current,
-        dirtyFields: dirtyFieldsRef.current,
-        isSubmitted: isSubmittedRef.current,
-        submitCount: submitCountRef.current,
-        touched: touchedFieldsRef.current,
-        isSubmitting: isSubmittingRef.current,
-        isValid: isOnSubmit
-            ? isSubmittedRef.current && isEmptyObject(errorsRef.current)
-            : isValidRef.current,
-    };
-    const commonProps = {
-        triggerValidation,
-        setValue: Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(setValue, [
-            reRender,
-            setInternalValue,
-            triggerValidation,
-        ]),
-        register: Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(register, [
-            defaultValuesRef.current,
-            defaultValuesAtRenderRef.current,
-        ]),
-        unregister: Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(unregister, []),
-        getValues: Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(getValues, []),
-        formState: isProxyEnabled
-            ? new Proxy(formState, {
-                get: (obj, prop) => {
-                    if (prop in obj) {
-                        readFormStateRef.current[prop] = true;
-                        return obj[prop];
-                    }
-                    return {};
-                },
-            })
-            : formState,
-    };
-    const control = Object.assign(Object.assign(Object.assign({ removeFieldEventListener,
-        reRender }, (shouldValidateSchemaOrResolver
-        ? { validateSchemaIsValid: validateSchemaOrResolver }
-        : {})), { mode: {
-            isOnBlur,
-            isOnSubmit,
-            isOnChange,
-        }, reValidateMode: {
-            isReValidateOnBlur,
-            isReValidateOnSubmit,
-        }, errorsRef,
-        touchedFieldsRef,
-        fieldsRef,
-        isWatchAllRef,
-        watchFieldsRef,
-        resetFieldArrayFunctionRef,
-        fieldArrayDefaultValues,
-        validFieldsRef,
-        dirtyFieldsRef,
-        fieldsWithValidationRef,
-        fieldArrayNamesRef,
-        isDirtyRef,
-        readFormStateRef,
-        defaultValuesRef }), commonProps);
-    return Object.assign({ watch,
-        control,
-        handleSubmit, reset: Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(reset, []), clearError: Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(clearError, []), setError: Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(setError, []), errors: errorsRef.current }, commonProps);
-}
-
-/*! *****************************************************************************
-Copyright (c) Microsoft Corporation. All rights reserved.
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use
-this file except in compliance with the License. You may obtain a copy of the
-License at http://www.apache.org/licenses/LICENSE-2.0
-
-THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
-WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
-MERCHANTABLITY OR NON-INFRINGEMENT.
-
-See the Apache Version 2.0 License for specific language governing permissions
-and limitations under the License.
-***************************************************************************** */
-
-function __rest(s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-}
-
-const FormGlobalContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])(null);
-function useFormContext() {
-    return Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(FormGlobalContext);
-}
-function FormContext(_a) {
-    var { children, formState, errors } = _a, restMethods = __rest(_a, ["children", "formState", "errors"]);
-    return (Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(FormGlobalContext.Provider, { value: Object.assign(Object.assign({}, restMethods), { formState, errors }) }, children));
-}
-
-var generateId = () => {
-    const d = typeof performance === UNDEFINED ? Date.now() : performance.now() * 1000;
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-        const r = (Math.random() * 16 + d) % 16 | 0;
-        return (c == 'x' ? r : (r & 0x3) | 0x8).toString(16);
-    });
-};
-
-const appendId = (value, keyName) => (Object.assign({ [keyName]: generateId() }, (isObject(value) ? value : { value })));
-const mapIds = (data, keyName) => (isArray(data) ? data : []).map((value) => appendId(value, keyName));
-
-var getSortRemovedItems = (indexes, removeIndexes, updatedIndexes = [], count = 0, notFoundIndexes = []) => {
-    for (const removeIndex of removeIndexes) {
-        if (indexes.indexOf(removeIndex) < 0) {
-            notFoundIndexes.push(removeIndex);
-        }
-    }
-    for (const index of indexes.sort()) {
-        if (removeIndexes.indexOf(index) > -1) {
-            updatedIndexes.push(-1);
-            count++;
-        }
-        else {
-            updatedIndexes.push(index -
-                count -
-                (notFoundIndexes.length
-                    ? notFoundIndexes
-                        .map((notFoundIndex) => notFoundIndex < index)
-                        .filter(Boolean).length
-                    : 0));
-        }
-    }
-    return updatedIndexes;
-};
-
-const removeAt = (data, index) => [
-    ...data.slice(0, index),
-    ...data.slice(index + 1),
-];
-function removeAtIndexes(data, index) {
-    let k = -1;
-    while (++k < data.length) {
-        if (index.indexOf(k) >= 0) {
-            delete data[k];
-        }
-    }
-    return data.filter(Boolean);
-}
-var removeArrayAt = (data, index) => isUndefined(index)
-    ? []
-    : isArray(index)
-        ? removeAtIndexes(data, index)
-        : removeAt(data, index);
-
-var moveArrayAt = (data, from, to) => isArray(data) ? data.splice(to, 0, data.splice(from, 1)[0]) : [];
-
-var swapArrayAt = (data, indexA, indexB) => {
-    const temp = [data[indexB], data[indexA]];
-    data[indexA] = temp[0];
-    data[indexB] = temp[1];
-};
-
-function prepend(data, value) {
-    return [...(isArray(value) ? value : [value || null]), ...data];
-}
-
-function insert(data, index, value) {
-    return [
-        ...data.slice(0, index),
-        ...(isArray(value) ? value : [value || null]),
-        ...data.slice(index),
-    ];
-}
-
-var fillEmptyArray = (value) => isArray(value) ? Array(value.length).fill(null) : null;
-
-const useFieldArray = ({ control, name, keyName = 'id', }) => {
-    const methods = useFormContext();
-    const { isWatchAllRef, resetFieldArrayFunctionRef, fieldArrayNamesRef, reRender, fieldsRef, getValues, defaultValuesRef, removeFieldEventListener, errorsRef, dirtyFieldsRef, isDirtyRef, touchedFieldsRef, readFormStateRef, watchFieldsRef, validFieldsRef, fieldsWithValidationRef, fieldArrayDefaultValues, validateSchemaIsValid, } = control || methods.control;
-    const getDefaultValues = () => [
-        ...get(fieldArrayDefaultValues.current[getFieldArrayParentName(name)]
-            ? fieldArrayDefaultValues.current
-            : defaultValuesRef.current, name, []),
-    ];
-    const memoizedDefaultValues = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(getDefaultValues());
-    const [fields, setField] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(mapIds(memoizedDefaultValues.current, keyName));
-    const [isDeleted, setIsDeleted] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
-    const allFields = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(fields);
-    const isNameKey = isKey(name);
-    allFields.current = fields;
-    if (isNameKey) {
-        fieldArrayDefaultValues.current[name] = memoizedDefaultValues.current;
-    }
-    const appendValueWithKey = (values) => values.map((value) => appendId(value, keyName));
-    const setFieldAndValidState = (fieldsValues) => {
-        setField(fieldsValues);
-        if (readFormStateRef.current.isValid && validateSchemaIsValid) {
-            validateSchemaIsValid({
-                [name]: fieldsValues,
-            });
-        }
-    };
-    const modifyDirtyFields = ({ shouldRender, isRemove, isPrePend, index, value = {}, } = {}) => {
-        let render = shouldRender;
-        const values = isArray(value) ? value : [value];
-        if (readFormStateRef.current.dirty) {
-            const dirtyFieldIndexesAndValues = {};
-            if (isPrePend || isRemove) {
-                for (const dirtyField of [...dirtyFieldsRef.current].sort()) {
-                    if (isMatchFieldArrayName(dirtyField, name)) {
-                        const matchedIndexes = dirtyField.match(REGEX_ARRAY_FIELD_INDEX);
-                        if (matchedIndexes) {
-                            const matchIndex = +matchedIndexes[matchedIndexes.length - 1];
-                            if (dirtyFieldIndexesAndValues[matchIndex]) {
-                                dirtyFieldIndexesAndValues[matchIndex].push(dirtyField);
-                            }
-                            else {
-                                dirtyFieldIndexesAndValues[matchIndex] = [dirtyField];
-                            }
-                        }
-                        dirtyFieldsRef.current.delete(dirtyField);
-                    }
-                }
-            }
-            if (!isUndefined(index) || isPrePend) {
-                const updatedDirtyFieldIndexes = isUndefined(index)
-                    ? []
-                    : getSortRemovedItems(Object.keys(dirtyFieldIndexesAndValues).map((i) => +i), isArray(index) ? index : [index]);
-                Object.values(dirtyFieldIndexesAndValues).forEach((values, index) => {
-                    const updateIndex = isPrePend ? 0 : updatedDirtyFieldIndexes[index];
-                    if (updateIndex > -1) {
-                        for (const value of values) {
-                            const matchedIndexes = value.match(REGEX_ARRAY_FIELD_INDEX);
-                            if (matchedIndexes) {
-                                dirtyFieldsRef.current.add(value.replace(/[\d+]([^[\d+]+)$/, `${isPrePend
-                                    ? +matchedIndexes[matchedIndexes.length - 1] +
-                                        values.length
-                                    : updateIndex}$1`));
-                            }
-                        }
-                    }
-                });
-            }
-            if (!isRemove) {
-                values.forEach((fieldValue, index) => Object.keys(fieldValue).forEach((key) => dirtyFieldsRef.current.add(`${name}[${isPrePend ? index : allFields.current.length + index}].${key}`)));
-                isDirtyRef.current = true;
-            }
-            render = true;
-        }
-        if (render && !isWatchAllRef.current) {
-            reRender();
-        }
-    };
-    const resetFields = (flagOrFields) => {
-        if (readFormStateRef.current.dirty) {
-            isDirtyRef.current = isUndefined(flagOrFields)
-                ? true
-                : getIsFieldsDifferent(flagOrFields, defaultValuesRef.current[name] || []);
-        }
-        for (const key in fieldsRef.current) {
-            if (isMatchFieldArrayName(key, name) && fieldsRef.current[key]) {
-                removeFieldEventListener(fieldsRef.current[key], true);
-            }
-        }
-    };
-    const mapCurrentFieldsValueWithState = () => {
-        const currentFieldsValue = get(getValues({ nest: true }), name);
-        if (isArray(currentFieldsValue)) {
-            for (let i = 0; i < currentFieldsValue.length; i++) {
-                allFields.current[i] = Object.assign(Object.assign({}, allFields.current[i]), currentFieldsValue[i]);
-            }
-        }
-    };
-    const append = (value) => {
-        setFieldAndValidState([
-            ...allFields.current,
-            ...(isArray(value)
-                ? appendValueWithKey(value)
-                : [appendId(value, keyName)]),
-        ]);
-        modifyDirtyFields({ value });
-    };
-    const prepend$1 = (value) => {
-        let shouldRender = false;
-        resetFields();
-        setFieldAndValidState(prepend(allFields.current, isArray(value) ? appendValueWithKey(value) : [appendId(value, keyName)]));
-        if (errorsRef.current[name]) {
-            errorsRef.current[name] = prepend(errorsRef.current[name], fillEmptyArray(value));
-        }
-        if (readFormStateRef.current.touched && touchedFieldsRef.current[name]) {
-            touchedFieldsRef.current[name] = prepend(touchedFieldsRef.current[name], fillEmptyArray(value));
-            shouldRender = true;
-        }
-        modifyDirtyFields({
-            shouldRender,
-            isPrePend: true,
-            value,
-        });
-    };
-    const remove = (index) => {
-        let shouldRender = false;
-        const isIndexUndefined = isUndefined(index);
-        if (!isIndexUndefined) {
-            mapCurrentFieldsValueWithState();
-        }
-        resetFields(removeArrayAt(getFieldValueByName(fieldsRef.current, name), index));
-        setFieldAndValidState(removeArrayAt(allFields.current, index));
-        setIsDeleted(true);
-        if (errorsRef.current[name]) {
-            errorsRef.current[name] = removeArrayAt(errorsRef.current[name], index);
-            if (!errorsRef.current[name].filter(Boolean).length) {
-                delete errorsRef.current[name];
-            }
-        }
-        if (readFormStateRef.current.touched && touchedFieldsRef.current[name]) {
-            touchedFieldsRef.current[name] = removeArrayAt(touchedFieldsRef.current[name], index);
-            shouldRender = true;
-        }
-        if (readFormStateRef.current.isValid && !validateSchemaIsValid) {
-            let fieldIndex = -1;
-            let isFound = false;
-            const isIndexUndefined = isUndefined(index);
-            while (fieldIndex++ < fields.length) {
-                const isLast = fieldIndex === fields.length - 1;
-                const isCurrentIndex = (isArray(index) ? index : [index]).indexOf(fieldIndex) >= 0;
-                if (isCurrentIndex || isIndexUndefined) {
-                    isFound = true;
-                }
-                if (!isFound) {
-                    continue;
-                }
-                for (const key in fields[fieldIndex]) {
-                    const currentFieldName = `${name}[${fieldIndex}].${key}`;
-                    if (isCurrentIndex || isLast || isIndexUndefined) {
-                        validFieldsRef.current.delete(currentFieldName);
-                        fieldsWithValidationRef.current.delete(currentFieldName);
-                    }
-                    else {
-                        const previousFieldName = `${name}[${fieldIndex - 1}].${key}`;
-                        if (validFieldsRef.current.has(currentFieldName)) {
-                            validFieldsRef.current.add(previousFieldName);
-                        }
-                        if (fieldsWithValidationRef.current.has(currentFieldName)) {
-                            fieldsWithValidationRef.current.add(previousFieldName);
-                        }
-                    }
-                }
-            }
-        }
-        modifyDirtyFields({
-            shouldRender,
-            isRemove: true,
-            index,
-        });
-    };
-    const insert$1 = (index, value) => {
-        mapCurrentFieldsValueWithState();
-        resetFields(insert(getFieldValueByName(fieldsRef.current, name), index));
-        setFieldAndValidState(insert(allFields.current, index, isArray(value) ? appendValueWithKey(value) : [appendId(value, keyName)]));
-        if (errorsRef.current[name]) {
-            errorsRef.current[name] = insert(errorsRef.current[name], index, fillEmptyArray(value));
-        }
-        if (readFormStateRef.current.touched && touchedFieldsRef.current[name]) {
-            touchedFieldsRef.current[name] = insert(touchedFieldsRef.current[name], index, fillEmptyArray(value));
-            reRender();
-        }
-    };
-    const swap = (indexA, indexB) => {
-        mapCurrentFieldsValueWithState();
-        const fieldValues = getFieldValueByName(fieldsRef.current, name);
-        swapArrayAt(fieldValues, indexA, indexB);
-        resetFields(fieldValues);
-        swapArrayAt(allFields.current, indexA, indexB);
-        setFieldAndValidState([...allFields.current]);
-        if (errorsRef.current[name]) {
-            swapArrayAt(errorsRef.current[name], indexA, indexB);
-        }
-        if (readFormStateRef.current.touched && touchedFieldsRef.current[name]) {
-            swapArrayAt(touchedFieldsRef.current[name], indexA, indexB);
-            reRender();
-        }
-    };
-    const move = (from, to) => {
-        mapCurrentFieldsValueWithState();
-        const fieldValues = getFieldValueByName(fieldsRef.current, name);
-        moveArrayAt(fieldValues, from, to);
-        resetFields(fieldValues);
-        moveArrayAt(allFields.current, from, to);
-        setFieldAndValidState([...allFields.current]);
-        if (errorsRef.current[name]) {
-            moveArrayAt(errorsRef.current[name], from, to);
-        }
-        if (readFormStateRef.current.touched && touchedFieldsRef.current[name]) {
-            moveArrayAt(touchedFieldsRef.current[name], from, to);
-            reRender();
-        }
-    };
-    const reset = () => {
-        resetFields();
-        memoizedDefaultValues.current = getDefaultValues();
-        setField(mapIds(memoizedDefaultValues.current, keyName));
-    };
-    Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-        if (isNameKey &&
-            isDeleted &&
-            fieldArrayDefaultValues.current[name] &&
-            fields.length < fieldArrayDefaultValues.current[name].length) {
-            fieldArrayDefaultValues.current[name].pop();
-        }
-    }, [fields, name, fieldArrayDefaultValues, isDeleted, isNameKey]);
-    Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-        if (isWatchAllRef && isWatchAllRef.current) {
-            reRender();
-        }
-        else if (watchFieldsRef) {
-            for (const watchField of watchFieldsRef.current) {
-                if (watchField.startsWith(name)) {
-                    reRender();
-                    break;
-                }
-            }
-        }
-    }, [fields, name, reRender, watchFieldsRef, isWatchAllRef]);
-    Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-        const resetFunctions = resetFieldArrayFunctionRef.current;
-        const fieldArrayNames = fieldArrayNamesRef.current;
-        fieldArrayNames.add(name);
-        resetFunctions[name] = reset;
-        return () => {
-            resetFields();
-            delete resetFunctions[name];
-            fieldArrayNames.delete(name);
-        };
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-    return {
-        swap: Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(swap, [name]),
-        move: Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(move, [name]),
-        prepend: Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(prepend$1, [name]),
-        append: Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(append, [name]),
-        remove: Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(remove, [fields, name]),
-        insert: Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(insert$1, [name]),
-        fields,
-    };
-};
-
-var getInputValue = (event, isCheckboxInput) => isPrimitive(event) ||
-    !isObject(event.target) ||
-    (isObject(event.target) && !event.type)
-    ? event
-    : isCheckboxInput || isUndefined(event.target.value)
-        ? event.target.checked
-        : event.target.value;
-
-const Controller = (_a) => {
-    var { name, rules, as: InnerComponent, onBlur, onChange, onChangeName = VALIDATION_MODE.onChange, onBlurName = VALIDATION_MODE.onBlur, valueName, defaultValue, control, onFocus } = _a, rest = __rest(_a, ["name", "rules", "as", "onBlur", "onChange", "onChangeName", "onBlurName", "valueName", "defaultValue", "control", "onFocus"]);
-    const methods = useFormContext();
-    const { defaultValuesRef, setValue, register, unregister, errorsRef, removeFieldEventListener, triggerValidation, mode: { isOnSubmit, isOnBlur, isOnChange }, reValidateMode: { isReValidateOnBlur, isReValidateOnSubmit }, formState: { isSubmitted }, fieldsRef, fieldArrayNamesRef, } = control || methods.control;
-    const [value, setInputStateValue] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(isUndefined(defaultValue)
-        ? get(defaultValuesRef.current, name)
-        : defaultValue);
-    const valueRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(value);
-    const isCheckboxInput = isBoolean(value);
-    const shouldReValidateOnBlur = isOnBlur || isReValidateOnBlur;
-    const rulesRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(rules);
-    const isNotFieldArray = !isNameInFieldArray(fieldArrayNamesRef.current, name);
-    rulesRef.current = rules;
-    const shouldValidate = () => !skipValidation({
-        hasError: !!get(errorsRef.current, name),
-        isOnBlur,
-        isOnSubmit,
-        isOnChange,
-        isReValidateOnBlur,
-        isReValidateOnSubmit,
-        isSubmitted,
-    });
-    const commonTask = (event) => {
-        const data = getInputValue(event, isCheckboxInput);
-        setInputStateValue(data);
-        valueRef.current = data;
-        return data;
-    };
-    const eventWrapper = (event) => (...arg) => setValue(name, commonTask(event(arg)), shouldValidate());
-    const handleChange = (event) => {
-        const data = commonTask(event);
-        setValue(name, data, shouldValidate());
-    };
-    const registerField = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(() => {
-        if (!isNotFieldArray && fieldsRef.current[name]) {
-            removeFieldEventListener(fieldsRef.current[name], true);
-        }
-        register(Object.defineProperty({ name, focus: onFocus }, VALUE, {
-            set(data) {
-                setInputStateValue(data);
-                valueRef.current = data;
-            },
-            get() {
-                return valueRef.current;
-            },
-        }), rulesRef.current);
-    }, [
-        isNotFieldArray,
-        fieldsRef,
-        rulesRef,
-        name,
-        onFocus,
-        register,
-        removeFieldEventListener,
-    ]);
-    Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => () => unregister(name), [unregister, name]);
-    Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-        registerField();
-    }, [registerField]);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-        if (!fieldsRef.current[name]) {
-            registerField();
-            if (isNotFieldArray) {
-                setInputStateValue(isUndefined(defaultValue)
-                    ? get(defaultValuesRef.current, name)
-                    : defaultValue);
-            }
-        }
-    });
-    const props = Object.assign(Object.assign(Object.assign(Object.assign({ name }, rest), (onChange
-        ? { [onChangeName]: eventWrapper(onChange) }
-        : { [onChangeName]: handleChange })), (onBlur || shouldReValidateOnBlur
-        ? {
-            [onBlurName]: (...args) => {
-                if (onBlur) {
-                    onBlur(args);
-                }
-                if (shouldReValidateOnBlur) {
-                    triggerValidation(name);
-                }
-            },
-        }
-        : {})), { [valueName || (isCheckboxInput ? 'checked' : VALUE)]: value });
-    return Object(react__WEBPACK_IMPORTED_MODULE_0__["isValidElement"])(InnerComponent)
-        ? Object(react__WEBPACK_IMPORTED_MODULE_0__["cloneElement"])(InnerComponent, props)
-        : Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(InnerComponent, props);
-};
-
-const ErrorMessage = (_a) => {
-    var { as: InnerComponent, errors, name, message, children } = _a, rest = __rest(_a, ["as", "errors", "name", "message", "children"]);
-    const methods = useFormContext();
-    const error = get(errors || methods.errors, name);
-    if (!error) {
-        return null;
-    }
-    const { message: messageFromRegister, types } = error;
-    const props = Object.assign(Object.assign({}, (InnerComponent ? rest : {})), { children: children
-            ? children({ message: messageFromRegister || message, messages: types })
-            : messageFromRegister || message });
-    return InnerComponent ? (Object(react__WEBPACK_IMPORTED_MODULE_0__["isValidElement"])(InnerComponent) ? (Object(react__WEBPACK_IMPORTED_MODULE_0__["cloneElement"])(InnerComponent, props)) : (Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(InnerComponent, props))) : (Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], Object.assign({}, props)));
-};
-
-
-
 
 /***/ }),
 
@@ -22955,24 +26638,58 @@ module.exports = g;
 
 /***/ }),
 
-/***/ "./pages/index.js":
-/*!************************!*\
-  !*** ./pages/index.js ***!
-  \************************/
+/***/ "./node_modules/webpack/buildin/module.js":
+/*!***********************************!*\
+  !*** (webpack)/buildin/module.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function(module) {
+	if (!module.webpackPolyfill) {
+		module.deprecate = function() {};
+		module.paths = [];
+		// module.parent = undefined by default
+		if (!module.children) module.children = [];
+		Object.defineProperty(module, "loaded", {
+			enumerable: true,
+			get: function() {
+				return module.l;
+			}
+		});
+		Object.defineProperty(module, "id", {
+			enumerable: true,
+			get: function() {
+				return module.i;
+			}
+		});
+		module.webpackPolyfill = 1;
+	}
+	return module;
+};
+
+
+/***/ }),
+
+/***/ "./pages/dictionary.js":
+/*!*****************************!*\
+  !*** ./pages/dictionary.js ***!
+  \*****************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Home; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Dictionary; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
 /* harmony import */ var _components_MainNav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ~/components/MainNav */ "./components/MainNav.js");
 /* harmony import */ var _components_SiteLayout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ~/components/SiteLayout */ "./components/SiteLayout.js");
-/* harmony import */ var _components_SettingsForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ~/components/SettingsForm */ "./components/SettingsForm.js");
-var _jsxFileName = "/Users/lynx/projects/hsk/pages/index.js";
+/* harmony import */ var _lib_learn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ~/lib/learn */ "./lib/learn.js");
+var _this = undefined,
+    _jsxFileName = "/Users/lynx/projects/hsk/pages/dictionary.js";
+
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -22980,52 +26697,325 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-var onSubmit = function onSubmit(data) {
-  next_router__WEBPACK_IMPORTED_MODULE_1___default.a.push({
-    pathname: "".concat("", "/learn"),
-    query: {
-      config: JSON.stringify(data)
+var renderTable = function renderTable(level, words) {
+  if (words.length === 0) return null;
+  return __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Table"], {
+    striped: true,
+    bordered: true,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 5
     }
-  });
+  }, __jsx("thead", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17,
+      columnNumber: 7
+    }
+  }, __jsx("tr", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
+      columnNumber: 9
+    }
+  }, __jsx("th", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19,
+      columnNumber: 11
+    }
+  }, "#"), __jsx("th", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20,
+      columnNumber: 11
+    }
+  }, "Character"), __jsx("th", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21,
+      columnNumber: 11
+    }
+  }, "Pinyin"), __jsx("th", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22,
+      columnNumber: 11
+    }
+  }, "Definitions"))), __jsx("tbody", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25,
+      columnNumber: 7
+    }
+  }, words.map(function (word, index) {
+    var key = "".concat(level, "-").concat(index);
+    return __jsx("tr", {
+      key: key,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 31,
+        columnNumber: 15
+      }
+    }, __jsx("td", {
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 32,
+        columnNumber: 17
+      }
+    }, index + 1), __jsx("td", {
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 33,
+        columnNumber: 17
+      }
+    }, word.simplified), __jsx("td", {
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 34,
+        columnNumber: 17
+      }
+    }, word.pinyin), __jsx("td", {
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 35,
+        columnNumber: 17
+      }
+    }, word.definitions.join('; ')));
+  })));
 };
 
-function Home() {
+function Dictionary() {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
+      words = _useState[0],
+      setWords = _useState[1];
+
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      level = _useState2[0],
+      setLevel = _useState2[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (level === 0) {
+      setWords([]);
+      return undefined;
+    }
+
+    setWords(Object(_lib_learn__WEBPACK_IMPORTED_MODULE_4__["levelWords"])(level));
+    return undefined;
+  }, [level]);
   return __jsx(_components_SiteLayout__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 61,
       columnNumber: 5
     }
   }, __jsx(_components_MainNav__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    activeLink: "learn",
+    activeLink: "dictionary",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 62,
       columnNumber: 7
     }
-  }), __jsx(_components_SettingsForm__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    onSubmit: onSubmit,
+  }), __jsx("h3", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 63,
       columnNumber: 7
     }
-  }));
+  }, "Dictionary"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["FormGroup"], {
+    row: true,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 64,
+      columnNumber: 7
+    }
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65,
+      columnNumber: 9
+    }
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+    type: "select",
+    name: "select",
+    id: "levelSelect",
+    onChange: function onChange(e) {
+      return setLevel(+e.target.value);
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66,
+      columnNumber: 11
+    }
+  }, __jsx("option", {
+    value: 0,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67,
+      columnNumber: 13
+    }
+  }, "Select HSK level"), __jsx("option", {
+    value: 1,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 68,
+      columnNumber: 13
+    }
+  }, "HSK 1"), __jsx("option", {
+    value: 2,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 69,
+      columnNumber: 13
+    }
+  }, "HSK 2"), __jsx("option", {
+    value: 3,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70,
+      columnNumber: 13
+    }
+  }, "HSK 3"), __jsx("option", {
+    value: 4,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 71,
+      columnNumber: 13
+    }
+  }, "HSK 4"), __jsx("option", {
+    value: 5,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 72,
+      columnNumber: 13
+    }
+  }, "HSK 5"), __jsx("option", {
+    value: 6,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 73,
+      columnNumber: 13
+    }
+  }, "HSK 6")))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 77,
+      columnNumber: 7
+    }
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 78,
+      columnNumber: 9
+    }
+  }, renderTable(level, words))));
 }
 
 /***/ }),
 
-/***/ 2:
-/*!********************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Flynx%2Fprojects%2Fhsk%2Fpages%2Findex.js ***!
-  \********************************************************************************************************************/
+/***/ "./words/hsk1.json":
+/*!*************************!*\
+  !*** ./words/hsk1.json ***!
+  \*************************/
+/*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("[{\"simplified\":\"﻿爱\",\"traditional\":\"愛\",\"pinyin\":\"ài\",\"definitions\":[\"love\"]},{\"simplified\":\"八\",\"traditional\":\"八\",\"pinyin\":\"bā\",\"definitions\":[\"eight\"]},{\"simplified\":\"爸爸\",\"traditional\":\"爸爸\",\"pinyin\":\"bàba\",\"definitions\":[\"Dad\"]},{\"simplified\":\"杯子\",\"traditional\":\"杯子\",\"pinyin\":\"bēizi\",\"definitions\":[\"cup\",\"glass\"]},{\"simplified\":\"北京\",\"traditional\":\"北京\",\"pinyin\":\"Běijīng\",\"definitions\":[\"Beijing\"]},{\"simplified\":\"本\",\"traditional\":\"本\",\"pinyin\":\"běn\",\"definitions\":[\"measure word for books\"]},{\"simplified\":\"不客气\",\"traditional\":\"不客氣\",\"pinyin\":\"bú kèqi\",\"definitions\":[\"you're welcome\",\"don't be polite\"]},{\"simplified\":\"不\",\"traditional\":\"不\",\"pinyin\":\"bù\",\"definitions\":[\"no\",\"not\"]},{\"simplified\":\"菜\",\"traditional\":\"菜\",\"pinyin\":\"cài\",\"definitions\":[\"dish (type of food)\",\"vegetables\"]},{\"simplified\":\"茶\",\"traditional\":\"茶\",\"pinyin\":\"chá\",\"definitions\":[\"tea\"]},{\"simplified\":\"吃\",\"traditional\":\"吃\",\"pinyin\":\"chī\",\"definitions\":[\"eat\"]},{\"simplified\":\"出租车\",\"traditional\":\"出租車\",\"pinyin\":\"chūzūchē\",\"definitions\":[\"taxi\",\"cab\"]},{\"simplified\":\"打电话\",\"traditional\":\"打電話\",\"pinyin\":\"dǎ diànhuà\",\"definitions\":[\"make a phone call\"]},{\"simplified\":\"大\",\"traditional\":\"大\",\"pinyin\":\"dà\",\"definitions\":[\"big\",\"large\"]},{\"simplified\":\"的\",\"traditional\":\"的\",\"pinyin\":\"de\",\"definitions\":[\"indicates possession, like adding 's to a noun\"]},{\"simplified\":\"点\",\"traditional\":\"點\",\"pinyin\":\"diǎn\",\"definitions\":[\"a dot\",\"a little\",\"o'clock\"]},{\"simplified\":\"电脑\",\"traditional\":\"電腦\",\"pinyin\":\"diànnǎo\",\"definitions\":[\"computer\"]},{\"simplified\":\"电视\",\"traditional\":\"電視\",\"pinyin\":\"diànshì\",\"definitions\":[\"television\",\"TV\"]},{\"simplified\":\"电影\",\"traditional\":\"電影\",\"pinyin\":\"diànyǐng\",\"definitions\":[\"movie\",\"film\"]},{\"simplified\":\"东西\",\"traditional\":\"東西\",\"pinyin\":\"dōngxi\",\"definitions\":[\"things\",\"stuff\"]},{\"simplified\":\"都\",\"traditional\":\"都\",\"pinyin\":\"dōu\",\"definitions\":[\"all\",\"both\"]},{\"simplified\":\"读\",\"traditional\":\"讀\",\"pinyin\":\"dú\",\"definitions\":[\"to read\",\"to study\"]},{\"simplified\":\"对不起\",\"traditional\":\"對不起\",\"pinyin\":\"duìbuqǐ\",\"definitions\":[\"sorry\"]},{\"simplified\":\"多\",\"traditional\":\"多\",\"pinyin\":\"duō\",\"definitions\":[\"many\"]},{\"simplified\":\"多少\",\"traditional\":\"多少\",\"pinyin\":\"duōshao\",\"definitions\":[\"how much?\",\"how many?\"]},{\"simplified\":\"儿子\",\"traditional\":\"兒子\",\"pinyin\":\"érzi\",\"definitions\":[\"son\"]},{\"simplified\":\"二\",\"traditional\":\"二\",\"pinyin\":\"èr\",\"definitions\":[\"two\"]},{\"simplified\":\"饭店\",\"traditional\":\"飯店\",\"pinyin\":\"fàndiàn\",\"definitions\":[\"restaurant\",\"hotel\"]},{\"simplified\":\"飞机\",\"traditional\":\"飛機\",\"pinyin\":\"fēijī\",\"definitions\":[\"airplane\"]},{\"simplified\":\"分钟\",\"traditional\":\"分鐘\",\"pinyin\":\"fēnzhōng\",\"definitions\":[\"minute\",\"(measure word for time)\"]},{\"simplified\":\"高兴\",\"traditional\":\"高興\",\"pinyin\":\"gāoxìng\",\"definitions\":[\"happy\",\"glad\"]},{\"simplified\":\"个\",\"traditional\":\"個\",\"pinyin\":\"ge\",\"definitions\":[\"general measure word\"]},{\"simplified\":\"工作\",\"traditional\":\"工作\",\"pinyin\":\"gōngzuò\",\"definitions\":[\"work\",\"a job\"]},{\"simplified\":\"狗\",\"traditional\":\"狗\",\"pinyin\":\"gǒu\",\"definitions\":[\"dog\"]},{\"simplified\":\"汉语\",\"traditional\":\"漢語\",\"pinyin\":\"Hànyǔ\",\"definitions\":[\"Chinese language\"]},{\"simplified\":\"好\",\"traditional\":\"好\",\"pinyin\":\"hǎo\",\"definitions\":[\"good\"]},{\"simplified\":\"号\",\"traditional\":\"號\",\"pinyin\":\"hào\",\"definitions\":[\"number\",\"day of a month\"]},{\"simplified\":\"喝\",\"traditional\":\"喝\",\"pinyin\":\"hē\",\"definitions\":[\"to drink\"]},{\"simplified\":\"和\",\"traditional\":\"和\",\"pinyin\":\"hé\",\"definitions\":[\"and\",\"with\"]},{\"simplified\":\"很\",\"traditional\":\"很\",\"pinyin\":\"hěn\",\"definitions\":[\"very\",\"quite\"]},{\"simplified\":\"后面\",\"traditional\":\"后面\",\"pinyin\":\"hòumian\",\"definitions\":[\"back\",\"behind\"]},{\"simplified\":\"回\",\"traditional\":\"回\",\"pinyin\":\"huí\",\"definitions\":[\"to return\",\"to reply\",\"to go back\"]},{\"simplified\":\"会\",\"traditional\":\"會\",\"pinyin\":\"huì\",\"definitions\":[\"know how to\"]},{\"simplified\":\"几\",\"traditional\":\"幾\",\"pinyin\":\"jǐ\",\"definitions\":[\"how many\",\"several\",\"a few\"]},{\"simplified\":\"家\",\"traditional\":\"家\",\"pinyin\":\"jiā\",\"definitions\":[\"family\",\"home\"]},{\"simplified\":\"叫\",\"traditional\":\"叫\",\"pinyin\":\"jiào\",\"definitions\":[\"to be called\"]},{\"simplified\":\"今天\",\"traditional\":\"今天\",\"pinyin\":\"jīntiān\",\"definitions\":[\"today\"]},{\"simplified\":\"九\",\"traditional\":\"九\",\"pinyin\":\"jiǔ\",\"definitions\":[\"nine\"]},{\"simplified\":\"开\",\"traditional\":\"開\",\"pinyin\":\"kāi\",\"definitions\":[\"to open\",\"to start\",\"to operate (a vehicle)\"]},{\"simplified\":\"看\",\"traditional\":\"看\",\"pinyin\":\"kàn\",\"definitions\":[\"see\",\"look at\",\"to watch\"]},{\"simplified\":\"看见\",\"traditional\":\"看見\",\"pinyin\":\"kànjiàn\",\"definitions\":[\"see\",\"catch sight of\"]},{\"simplified\":\"块\",\"traditional\":\"塊\",\"pinyin\":\"kuài\",\"definitions\":[\"lump\",\"piece\",\"sum of money\"]},{\"simplified\":\"来\",\"traditional\":\"來\",\"pinyin\":\"lái\",\"definitions\":[\"come\",\"arrive\",\"ever since\",\"next\"]},{\"simplified\":\"老师\",\"traditional\":\"老師\",\"pinyin\":\"lǎoshī\",\"definitions\":[\"teacher\"]},{\"simplified\":\"了\",\"traditional\":\"了\",\"pinyin\":\"le\",\"definitions\":[\"indicates a completed or finished action\"]},{\"simplified\":\"冷\",\"traditional\":\"冷\",\"pinyin\":\"lěng\",\"definitions\":[\"cold\"]},{\"simplified\":\"里\",\"traditional\":\"裡\",\"pinyin\":\"lǐ\",\"definitions\":[\"inside\",\"Chinese mile (~.5 km)\"]},{\"simplified\":\"六\",\"traditional\":\"六\",\"pinyin\":\"liù\",\"definitions\":[\"six\"]},{\"simplified\":\"妈妈\",\"traditional\":\"媽媽\",\"pinyin\":\"māma\",\"definitions\":[\"mom\",\"mum\"]},{\"simplified\":\"吗\",\"traditional\":\"嗎\",\"pinyin\":\"ma\",\"definitions\":[\"indicates a yes/no question (added to a statement)\"]},{\"simplified\":\"买\",\"traditional\":\"買\",\"pinyin\":\"mǎi\",\"definitions\":[\"to buy\"]},{\"simplified\":\"猫\",\"traditional\":\"貓\",\"pinyin\":\"māo\",\"definitions\":[\"cat\"]},{\"simplified\":\"没关系\",\"traditional\":\"沒關系\",\"pinyin\":\"méi guānxi\",\"definitions\":[\"it doesn't matter\",\"never mind\"]},{\"simplified\":\"没有\",\"traditional\":\"沒有\",\"pinyin\":\"méiyǒu\",\"definitions\":[\"not have\",\"there is not\"]},{\"simplified\":\"米饭\",\"traditional\":\"米飯\",\"pinyin\":\"mǐfàn\",\"definitions\":[\"(cooked) rice\"]},{\"simplified\":\"明天\",\"traditional\":\"明天\",\"pinyin\":\"míngtiān\",\"definitions\":[\"tomorrow\"]},{\"simplified\":\"名字\",\"traditional\":\"名字\",\"pinyin\":\"míngzi\",\"definitions\":[\"name\"]},{\"simplified\":\"哪\",\"traditional\":\"哪\",\"pinyin\":\"nǎa\",\"definitions\":[\"which\",\"how\"]},{\"simplified\":\"哪儿\",\"traditional\":\"哪兒\",\"pinyin\":\"nǎr\",\"definitions\":[\"where? (Beijing accent)\"]},{\"simplified\":\"那\",\"traditional\":\"那\",\"pinyin\":\"nà\",\"definitions\":[\"that\",\"then\"]},{\"simplified\":\"呢\",\"traditional\":\"呢\",\"pinyin\":\"ne\",\"definitions\":[\"indicates a question\",\"how about...?\",\"\"]},{\"simplified\":\"能\",\"traditional\":\"能\",\"pinyin\":\"néng\",\"definitions\":[\"can\",\"be able\"]},{\"simplified\":\"你\",\"traditional\":\"你\",\"pinyin\":\"nǐ\",\"definitions\":[\"you (singular)\"]},{\"simplified\":\"年\",\"traditional\":\"年\",\"pinyin\":\"nián\",\"definitions\":[\"year\"]},{\"simplified\":\"女儿\",\"traditional\":\"女兒\",\"pinyin\":\"nǚ'ér\",\"definitions\":[\"daughter\"]},{\"simplified\":\"朋友\",\"traditional\":\"朋友\",\"pinyin\":\"péngyou\",\"definitions\":[\"friend\"]},{\"simplified\":\"漂亮\",\"traditional\":\"漂亮\",\"pinyin\":\"piàoliang\",\"definitions\":[\"pretty\",\"beautiful\"]},{\"simplified\":\"苹果\",\"traditional\":\"蘋果\",\"pinyin\":\"píngguǒ\",\"definitions\":[\"apple\"]},{\"simplified\":\"七\",\"traditional\":\"七\",\"pinyin\":\"qī\",\"definitions\":[\"seven\"]},{\"simplified\":\"钱\",\"traditional\":\"錢\",\"pinyin\":\"qián\",\"definitions\":[\"money\",\"coin\"]},{\"simplified\":\"前面\",\"traditional\":\"前面\",\"pinyin\":\"qiánmiàn\",\"definitions\":[\"in front\"]},{\"simplified\":\"请\",\"traditional\":\"請\",\"pinyin\":\"qǐng\",\"definitions\":[\"please\",\"invite\",\"to treat someone to something\"]},{\"simplified\":\"去\",\"traditional\":\"去\",\"pinyin\":\"qù\",\"definitions\":[\"go\",\"to leave\"]},{\"simplified\":\"热\",\"traditional\":\"熱\",\"pinyin\":\"rè\",\"definitions\":[\"heat\",\"hot\"]},{\"simplified\":\"人\",\"traditional\":\"人\",\"pinyin\":\"rén\",\"definitions\":[\"person\",\"man\",\"people\"]},{\"simplified\":\"认识\",\"traditional\":\"認識\",\"pinyin\":\"rènshi\",\"definitions\":[\"recognize\",\"know (a person)\"]},{\"simplified\":\"三\",\"traditional\":\"三\",\"pinyin\":\"sān\",\"definitions\":[\"three\"]},{\"simplified\":\"商店\",\"traditional\":\"商店\",\"pinyin\":\"shāngdiàn\",\"definitions\":[\"shop\",\"store\"]},{\"simplified\":\"上\",\"traditional\":\"上\",\"pinyin\":\"shàng\",\"definitions\":[\"above\",\"up\"]},{\"simplified\":\"上午\",\"traditional\":\"上午\",\"pinyin\":\"shàngwǔ\",\"definitions\":[\"late morning (before noon)\"]},{\"simplified\":\"少\",\"traditional\":\"少\",\"pinyin\":\"shǎo\",\"definitions\":[\"few\",\"little\"]},{\"simplified\":\"谁\",\"traditional\":\"誰\",\"pinyin\":\"shéi\",\"definitions\":[\"who\"]},{\"simplified\":\"什么\",\"traditional\":\"什麼\",\"pinyin\":\"shénme\",\"definitions\":[\"what? (replaces the noun to turn a statement into a question)\"]},{\"simplified\":\"十\",\"traditional\":\"十\",\"pinyin\":\"shí\",\"definitions\":[\"ten\"]},{\"simplified\":\"时候\",\"traditional\":\"時候\",\"pinyin\":\"shíhou\",\"definitions\":[\"time\"]},{\"simplified\":\"是\",\"traditional\":\"是\",\"pinyin\":\"shì\",\"definitions\":[\"be\",\"is\",\"are\",\"am\"]},{\"simplified\":\"书\",\"traditional\":\"書\",\"pinyin\":\"shū\",\"definitions\":[\"book\",\"letter\"]},{\"simplified\":\"水\",\"traditional\":\"水\",\"pinyin\":\"shuǐ\",\"definitions\":[\"water\"]},{\"simplified\":\"水果\",\"traditional\":\"水果\",\"pinyin\":\"shuǐguǒ\",\"definitions\":[\"fruit\"]},{\"simplified\":\"睡觉\",\"traditional\":\"睡覺\",\"pinyin\":\"shuì jiào\",\"definitions\":[\"to sleep\",\"go to bed\"]},{\"simplified\":\"说\",\"traditional\":\"說\",\"pinyin\":\"shuō\",\"definitions\":[\"speak\"]},{\"simplified\":\"四\",\"traditional\":\"四\",\"pinyin\":\"sì\",\"definitions\":[\"four\"]},{\"simplified\":\"岁\",\"traditional\":\"歲\",\"pinyin\":\"suì\",\"definitions\":[\"years old\",\"age\"]},{\"simplified\":\"他\",\"traditional\":\"他\",\"pinyin\":\"tā\",\"definitions\":[\"he\",\"him\"]},{\"simplified\":\"她\",\"traditional\":\"她\",\"pinyin\":\"tā\",\"definitions\":[\"she\"]},{\"simplified\":\"太\",\"traditional\":\"太\",\"pinyin\":\"tài\",\"definitions\":[\"too (much)\"]},{\"simplified\":\"天气\",\"traditional\":\"天氣\",\"pinyin\":\"tiānqì\",\"definitions\":[\"weather\"]},{\"simplified\":\"听\",\"traditional\":\"聽\",\"pinyin\":\"tīng\",\"definitions\":[\"listen\",\"hear\"]},{\"simplified\":\"同学\",\"traditional\":\"同學\",\"pinyin\":\"tóngxué\",\"definitions\":[\"fellow student\",\"schoolmate\"]},{\"simplified\":\"喂\",\"traditional\":\"喂\",\"pinyin\":\"wèi\",\"definitions\":[\"hello (on the phone)\"]},{\"simplified\":\"我\",\"traditional\":\"我\",\"pinyin\":\"wǒ\",\"definitions\":[\"I\",\"me\"]},{\"simplified\":\"我们\",\"traditional\":\"我們\",\"pinyin\":\"wǒmen\",\"definitions\":[\"we\",\"us\"]},{\"simplified\":\"五\",\"traditional\":\"五\",\"pinyin\":\"wǔ\",\"definitions\":[\"five\"]},{\"simplified\":\"喜欢\",\"traditional\":\"喜歡\",\"pinyin\":\"xǐhuan\",\"definitions\":[\"to like\"]},{\"simplified\":\"下\",\"traditional\":\"下\",\"pinyin\":\"xià\",\"definitions\":[\"fall\",\"below\"]},{\"simplified\":\"下午\",\"traditional\":\"下午\",\"pinyin\":\"xiàwǔ\",\"definitions\":[\"afternoon\"]},{\"simplified\":\"下雨\",\"traditional\":\"下雨\",\"pinyin\":\"xiàyǔ\",\"definitions\":[\"to rain\"]},{\"simplified\":\"先生\",\"traditional\":\"先生\",\"pinyin\":\"xiānsheng\",\"definitions\":[\"Mr.\",\"Sir\"]},{\"simplified\":\"现在\",\"traditional\":\"現在\",\"pinyin\":\"xiànzài\",\"definitions\":[\"now\"]},{\"simplified\":\"想\",\"traditional\":\"想\",\"pinyin\":\"xiǎng\",\"definitions\":[\"think\",\"believe\",\"suppose\",\"would like to\"]},{\"simplified\":\"小\",\"traditional\":\"小\",\"pinyin\":\"xiǎo\",\"definitions\":[\"small\",\"young\"]},{\"simplified\":\"小姐\",\"traditional\":\"小姐\",\"pinyin\":\"xiǎojie\",\"definitions\":[\"young lady\",\"miss\",\"Ms.\"]},{\"simplified\":\"些\",\"traditional\":\"些\",\"pinyin\":\"xiē\",\"definitions\":[\"some\",\"few\",\"several\"]},{\"simplified\":\"写\",\"traditional\":\"寫\",\"pinyin\":\"xiě\",\"definitions\":[\"to write\",\"to compose\"]},{\"simplified\":\"谢谢\",\"traditional\":\"謝謝\",\"pinyin\":\"xièxie\",\"definitions\":[\"thank you\"]},{\"simplified\":\"星期\",\"traditional\":\"星期\",\"pinyin\":\"xīngqī\",\"definitions\":[\"week\"]},{\"simplified\":\"学生\",\"traditional\":\"學生\",\"pinyin\":\"xuésheng\",\"definitions\":[\"student\"]},{\"simplified\":\"学习\",\"traditional\":\"學習\",\"pinyin\":\"xuéxí\",\"definitions\":[\"learn\",\"to study\"]},{\"simplified\":\"学校\",\"traditional\":\"學校\",\"pinyin\":\"xuéxiào\",\"definitions\":[\"school\"]},{\"simplified\":\"一\",\"traditional\":\"一\",\"pinyin\":\"yī\",\"definitions\":[\"one\",\"once\",\"a\"]},{\"simplified\":\"衣服\",\"traditional\":\"衣服\",\"pinyin\":\"yīfu\",\"definitions\":[\"clothes\"]},{\"simplified\":\"医生\",\"traditional\":\"醫生\",\"pinyin\":\"yīshēng\",\"definitions\":[\"doctor\"]},{\"simplified\":\"医院\",\"traditional\":\"醫院\",\"pinyin\":\"yīyuàn\",\"definitions\":[\"hospital\"]},{\"simplified\":\"椅子\",\"traditional\":\"椅子\",\"pinyin\":\"yǐzi\",\"definitions\":[\"chair\"]},{\"simplified\":\"一点儿\",\"traditional\":\"一點兒\",\"pinyin\":\"yìdiǎnr\",\"definitions\":[\"a bit\",\"a few\"]},{\"simplified\":\"有\",\"traditional\":\"有\",\"pinyin\":\"yǒu\",\"definitions\":[\"have\"]},{\"simplified\":\"月\",\"traditional\":\"月\",\"pinyin\":\"yuè\",\"definitions\":[\"moon\",\"month\"]},{\"simplified\":\"在\",\"traditional\":\"在\",\"pinyin\":\"zài\",\"definitions\":[\"at\",\"on\",\"in\",\"indicates an action in progress\"]},{\"simplified\":\"再见\",\"traditional\":\"再見\",\"pinyin\":\"zàijiàn\",\"definitions\":[\"goodbye\",\"see you later\"]},{\"simplified\":\"怎么\",\"traditional\":\"怎麼\",\"pinyin\":\"zěnme\",\"definitions\":[\"how?\"]},{\"simplified\":\"怎么样\",\"traditional\":\"怎麼樣\",\"pinyin\":\"zěnmeyàng\",\"definitions\":[\"how about?\",\"how is/was it?\"]},{\"simplified\":\"这\",\"traditional\":\"這\",\"pinyin\":\"zhè\",\"definitions\":[\"this\"]},{\"simplified\":\"中国\",\"traditional\":\"中國\",\"pinyin\":\"Zhōngguó\",\"definitions\":[\"China\"]},{\"simplified\":\"中午\",\"traditional\":\"中午\",\"pinyin\":\"zhōngwǔ\",\"definitions\":[\"noon\",\"midday\"]},{\"simplified\":\"住\",\"traditional\":\"住\",\"pinyin\":\"zhù\",\"definitions\":[\"to live\",\"reside\",\"to stop\"]},{\"simplified\":\"桌子\",\"traditional\":\"桌子\",\"pinyin\":\"zhuōzi\",\"definitions\":[\"table\",\"desk\"]},{\"simplified\":\"字\",\"traditional\":\"字\",\"pinyin\":\"zì\",\"definitions\":[\"letter\",\"character\"]},{\"simplified\":\"昨天\",\"traditional\":\"昨天\",\"pinyin\":\"zuótiān\",\"definitions\":[\"yesterday\"]},{\"simplified\":\"做\",\"traditional\":\"做\",\"pinyin\":\"zuò\",\"definitions\":[\"do\",\"make\"]},{\"simplified\":\"坐\",\"traditional\":\"坐\",\"pinyin\":\"zuò\",\"definitions\":[\"sit\"]}]");
+
+/***/ }),
+
+/***/ "./words/hsk2.json":
+/*!*************************!*\
+  !*** ./words/hsk2.json ***!
+  \*************************/
+/*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("[{\"simplified\":\"﻿吧\",\"traditional\":\"吧\",\"pinyin\":\"ba\",\"definitions\":[\"particle indicating polite suggestion\",\"| onomatopoeia | bar (serving drinks, providing internet access, etc.)\"]},{\"simplified\":\"白\",\"traditional\":\"白\",\"pinyin\":\"bái\",\"definitions\":[\"white\",\"snowy\",\"pure\",\"bright\",\"empty (Kangxi radical 106)\"]},{\"simplified\":\"百\",\"traditional\":\"百\",\"pinyin\":\"bǎi\",\"definitions\":[\"hundred\"]},{\"simplified\":\"帮助\",\"traditional\":\"幫助\",\"pinyin\":\"bāngzhù\",\"definitions\":[\"help\",\"assist\",\"aid\"]},{\"simplified\":\"报纸\",\"traditional\":\"報紙\",\"pinyin\":\"bàozhǐ\",\"definitions\":[\"newspaper\"]},{\"simplified\":\"比\",\"traditional\":\"比\",\"pinyin\":\"bǐ\",\"definitions\":[\"compare\",\"(indicates comparison) (Kangxi radical 81)\",\"to gesticulate as one talks\"]},{\"simplified\":\"别\",\"traditional\":\"別\",\"pinyin\":\"bié\",\"definitions\":[\"don't do something\",\"don't | depart\",\"| other\",\"difference\",\"distinguish\"]},{\"simplified\":\"宾馆\",\"traditional\":\"賓館\",\"pinyin\":\"bīnguǎn\",\"definitions\":[\"guesthouse\",\"hotel\"]},{\"simplified\":\"长\",\"traditional\":\"長\",\"pinyin\":\"cháng, zhǎng\",\"definitions\":[\"long\",\"length | grow\",\"chief (Kangxi radical 168)\"]},{\"simplified\":\"唱歌\",\"traditional\":\"唱歌\",\"pinyin\":\"chànggē\",\"definitions\":[\"sing (a song)\"]},{\"simplified\":\"出\",\"traditional\":\"出\",\"pinyin\":\"chū\",\"definitions\":[\"go out\",\"occur\"]},{\"simplified\":\"穿\",\"traditional\":\"穿\",\"pinyin\":\"chuān\",\"definitions\":[\"to wear\",\"put on\",\"penetrate\"]},{\"simplified\":\"次\",\"traditional\":\"次\",\"pinyin\":\"cì\",\"definitions\":[\"(mw for number of times of occurrence)\",\"nth\",\"order\"]},{\"simplified\":\"从\",\"traditional\":\"從\",\"pinyin\":\"cóng\",\"definitions\":[\"from\",\"obey\",\"observe\"]},{\"simplified\":\"错\",\"traditional\":\"錯\",\"pinyin\":\"cuò\",\"definitions\":[\"mistake\",\"error\",\"blunder\",\"miss an opportunity\"]},{\"simplified\":\"打篮球\",\"traditional\":\"打籃球\",\"pinyin\":\"dǎ lánqiú\",\"definitions\":[\"play basketball\"]},{\"simplified\":\"大家\",\"traditional\":\"大家\",\"pinyin\":\"dàjiā\",\"definitions\":[\"everyone\"]},{\"simplified\":\"到\",\"traditional\":\"到\",\"pinyin\":\"dào\",\"definitions\":[\"arrive (at a place)\",\"until (a time)\"]},{\"simplified\":\"得\",\"traditional\":\"得\",\"pinyin\":\"de\",\"definitions\":[\"(complement particle)\"]},{\"simplified\":\"等\",\"traditional\":\"等\",\"pinyin\":\"děng\",\"definitions\":[\"to wait\",\"rank\",\"equal\",\"etc.\"]},{\"simplified\":\"弟弟\",\"traditional\":\"弟弟\",\"pinyin\":\"dìdi\",\"definitions\":[\"younger brother\"]},{\"simplified\":\"第一\",\"traditional\":\"第一\",\"pinyin\":\"dìyī\",\"definitions\":[\"first\",\"number 1\"]},{\"simplified\":\"懂\",\"traditional\":\"懂\",\"pinyin\":\"dǒng\",\"definitions\":[\"understand\",\"know\"]},{\"simplified\":\"对\",\"traditional\":\"對\",\"pinyin\":\"duì\",\"definitions\":[\"correct\",\"a pair\",\"to face\",\"be opposite\",\"to\",\"towards\"]},{\"simplified\":\"房间\",\"traditional\":\"房間\",\"pinyin\":\"fángjiān\",\"definitions\":[\"room\"]},{\"simplified\":\"非常\",\"traditional\":\"非常\",\"pinyin\":\"fēicháng\",\"definitions\":[\"extremely\",\"extraordinary\",\"very\"]},{\"simplified\":\"服务员\",\"traditional\":\"服務員\",\"pinyin\":\"fúwùyuán\",\"definitions\":[\"waiter/waitress\",\"server\",\"attendant\"]},{\"simplified\":\"高\",\"traditional\":\"高\",\"pinyin\":\"gāo\",\"definitions\":[\"high\",\"tall (Kangxi radical 189)\"]},{\"simplified\":\"告诉\",\"traditional\":\"告訴\",\"pinyin\":\"gàosu\",\"definitions\":[\"to tell\",\"inform\"]},{\"simplified\":\"哥哥\",\"traditional\":\"哥哥\",\"pinyin\":\"gēge\",\"definitions\":[\"older brother\"]},{\"simplified\":\"给\",\"traditional\":\"給\",\"pinyin\":\"gěi\",\"definitions\":[\"to give\",\"to grant\",\"(passive particle)\"]},{\"simplified\":\"公共汽车\",\"traditional\":\"公共汽車\",\"pinyin\":\"gōnggòng qìchē\",\"definitions\":[\"(public) bus\"]},{\"simplified\":\"公司\",\"traditional\":\"公司\",\"pinyin\":\"gōngsī\",\"definitions\":[\"company\",\"corporation\"]},{\"simplified\":\"贵\",\"traditional\":\"貴\",\"pinyin\":\"guì\",\"definitions\":[\"expensive\",\"noble\",\"honorable\",\"Guizhou province (abbreviation)\"]},{\"simplified\":\"过\",\"traditional\":\"過\",\"pinyin\":\"guò\",\"definitions\":[\"to pass\",\"to cross\",\"go over\",\"(indicates a past experience)\"]},{\"simplified\":\"还\",\"traditional\":\"還\",\"pinyin\":\"hái\",\"definitions\":[\"still\",\"yet\",\"in addition\",\"even\"]},{\"simplified\":\"孩子\",\"traditional\":\"孩子\",\"pinyin\":\"háizi\",\"definitions\":[\"child\",\"children\",\"son or daughter\"]},{\"simplified\":\"好吃\",\"traditional\":\"好吃\",\"pinyin\":\"hǎochī\",\"definitions\":[\"tasty\"]},{\"simplified\":\"黑\",\"traditional\":\"黑\",\"pinyin\":\"hēi\",\"definitions\":[\"black\",\"dark (Kangxi radical 203)\",\"Heilongjiang province (abbreviation)\"]},{\"simplified\":\"红\",\"traditional\":\"紅\",\"pinyin\":\"hóng\",\"definitions\":[\"red\",\"symbol of success\",\"bonus\",\"popular\"]},{\"simplified\":\"火车站\",\"traditional\":\"火車站\",\"pinyin\":\"huǒchēzhàn\",\"definitions\":[\"train station\"]},{\"simplified\":\"机场\",\"traditional\":\"機場\",\"pinyin\":\"jīchǎng\",\"definitions\":[\"airport\",\"airfield\"]},{\"simplified\":\"鸡蛋\",\"traditional\":\"雞蛋\",\"pinyin\":\"jīdàn\",\"definitions\":[\"(chicken) egg\"]},{\"simplified\":\"件\",\"traditional\":\"件\",\"pinyin\":\"jiàn\",\"definitions\":[\"(mw for things, clothes, and items)\"]},{\"simplified\":\"教室\",\"traditional\":\"教室\",\"pinyin\":\"jiàoshì\",\"definitions\":[\"classroom\"]},{\"simplified\":\"姐姐\",\"traditional\":\"姐姐\",\"pinyin\":\"jiějie\",\"definitions\":[\"older sister\"]},{\"simplified\":\"介绍\",\"traditional\":\"介紹\",\"pinyin\":\"jièshào\",\"definitions\":[\"to introduce\",\"recommend\",\"introduction\"]},{\"simplified\":\"进\",\"traditional\":\"進\",\"pinyin\":\"jìn\",\"definitions\":[\"enter\",\"come in\"]},{\"simplified\":\"近\",\"traditional\":\"近\",\"pinyin\":\"jìn\",\"definitions\":[\"near\",\"close (to)\"]},{\"simplified\":\"就\",\"traditional\":\"就\",\"pinyin\":\"jiù\",\"definitions\":[\"then\",\"at once\",\"just\",\"only\",\"with regard to\"]},{\"simplified\":\"觉得\",\"traditional\":\"覺得\",\"pinyin\":\"juéde\",\"definitions\":[\"feel\",\"think\"]},{\"simplified\":\"咖啡\",\"traditional\":\"咖啡\",\"pinyin\":\"kāfēi\",\"definitions\":[\"coffee\"]},{\"simplified\":\"开始\",\"traditional\":\"開始\",\"pinyin\":\"kāishǐ\",\"definitions\":[\"begin\",\"to start\",\"beginning\"]},{\"simplified\":\"考试\",\"traditional\":\"考試\",\"pinyin\":\"kǎoshì\",\"definitions\":[\"test\",\"exam\",\"to give or take a test\"]},{\"simplified\":\"可能\",\"traditional\":\"可能\",\"pinyin\":\"kěnéng\",\"definitions\":[\"possible\",\"maybe\"]},{\"simplified\":\"可以\",\"traditional\":\"可以\",\"pinyin\":\"kěyǐ\",\"definitions\":[\"can\",\"may\",\"possible\",\"okay\"]},{\"simplified\":\"课\",\"traditional\":\"課\",\"pinyin\":\"kè\",\"definitions\":[\"class\",\"subject\",\"lesson\",\"course\"]},{\"simplified\":\"快\",\"traditional\":\"快\",\"pinyin\":\"kuài\",\"definitions\":[\"fast\",\"quick\",\"swift\"]},{\"simplified\":\"快乐\",\"traditional\":\"快樂\",\"pinyin\":\"kuàilè\",\"definitions\":[\"happy\"]},{\"simplified\":\"累\",\"traditional\":\"累\",\"pinyin\":\"lèi\",\"definitions\":[\"tired\"]},{\"simplified\":\"离\",\"traditional\":\"離\",\"pinyin\":\"lí\",\"definitions\":[\"leave\",\"depart\",\"go away\",\"apart from\"]},{\"simplified\":\"两\",\"traditional\":\"兩\",\"pinyin\":\"liǎng\",\"definitions\":[\"two\",\"2\",\"both\",\"(unit of weight equal to 50 grams)\"]},{\"simplified\":\"零\",\"traditional\":\"零\",\"pinyin\":\"líng\",\"definitions\":[\"zero\",\"remnant\"]},{\"simplified\":\"路\",\"traditional\":\"路\",\"pinyin\":\"lù\",\"definitions\":[\"road\",\"path\",\"journey\",\"route\"]},{\"simplified\":\"旅游\",\"traditional\":\"旅游\",\"pinyin\":\"lǚyóu\",\"definitions\":[\"trip\",\"journey\",\"tour\"]},{\"simplified\":\"卖\",\"traditional\":\"賣\",\"pinyin\":\"mài\",\"definitions\":[\"to sell\"]},{\"simplified\":\"慢\",\"traditional\":\"慢\",\"pinyin\":\"màn\",\"definitions\":[\"slow\"]},{\"simplified\":\"忙\",\"traditional\":\"忙\",\"pinyin\":\"máng\",\"definitions\":[\"busy\"]},{\"simplified\":\"每\",\"traditional\":\"每\",\"pinyin\":\"měi\",\"definitions\":[\"each\",\"every\"]},{\"simplified\":\"妹妹\",\"traditional\":\"妹妹\",\"pinyin\":\"mèimei\",\"definitions\":[\"younger sister\"]},{\"simplified\":\"门\",\"traditional\":\"門\",\"pinyin\":\"mén\",\"definitions\":[\"door\",\"opening\",\"gate (Kangxi radical 169)\"]},{\"simplified\":\"面条\",\"traditional\":\"面條\",\"pinyin\":\"miàntiáo\",\"definitions\":[\"noodles\"]},{\"simplified\":\"男\",\"traditional\":\"男\",\"pinyin\":\"nán\",\"definitions\":[\"male\"]},{\"simplified\":\"您\",\"traditional\":\"您\",\"pinyin\":\"nín\",\"definitions\":[\"you (polite)\"]},{\"simplified\":\"牛奶\",\"traditional\":\"牛奶\",\"pinyin\":\"niúnǎi\",\"definitions\":[\"cow's milk\"]},{\"simplified\":\"女\",\"traditional\":\"女\",\"pinyin\":\"nǚ\",\"definitions\":[\"woman\",\"female (Kangxi radical 38)\"]},{\"simplified\":\"旁边\",\"traditional\":\"旁邊\",\"pinyin\":\"pángbiān\",\"definitions\":[\"side, beside\"]},{\"simplified\":\"跑步\",\"traditional\":\"跑步\",\"pinyin\":\"pǎobù\",\"definitions\":[\"to run\",\"to jog\"]},{\"simplified\":\"便宜\",\"traditional\":\"便宜\",\"pinyin\":\"piányi\",\"definitions\":[\"cheap\"]},{\"simplified\":\"票\",\"traditional\":\"票\",\"pinyin\":\"piào\",\"definitions\":[\"ticket\",\"bank note\",\"a vote\"]},{\"simplified\":\"妻子\",\"traditional\":\"妻子\",\"pinyin\":\"qīzi\",\"definitions\":[\"wife\"]},{\"simplified\":\"起床\",\"traditional\":\"起床\",\"pinyin\":\"qǐ chuáng\",\"definitions\":[\"get out of bed\"]},{\"simplified\":\"千\",\"traditional\":\"千\",\"pinyin\":\"qiān\",\"definitions\":[\"one thousand\"]},{\"simplified\":\"铅笔\",\"traditional\":\"鉛筆\",\"pinyin\":\"qiānbǐ\",\"definitions\":[\"pencil\"]},{\"simplified\":\"晴\",\"traditional\":\"晴\",\"pinyin\":\"qíng\",\"definitions\":[\"clear\",\"fine (as of weather)\"]},{\"simplified\":\"去年\",\"traditional\":\"去年\",\"pinyin\":\"qùnián\",\"definitions\":[\"last year\"]},{\"simplified\":\"让\",\"traditional\":\"讓\",\"pinyin\":\"ràng\",\"definitions\":[\"ask\",\"let\",\"yield\"]},{\"simplified\":\"日\",\"traditional\":\"日\",\"pinyin\":\"rì\",\"definitions\":[\"sun\",\"day\",\"date\",\"time (Kangxi radical 72)\"]},{\"simplified\":\"上班\",\"traditional\":\"上班\",\"pinyin\":\"shàngbān\",\"definitions\":[\"go to work\",\"be on duty\"]},{\"simplified\":\"身体\",\"traditional\":\"身體\",\"pinyin\":\"shēntǐ\",\"definitions\":[\"health\",\"(human) body\"]},{\"simplified\":\"生病\",\"traditional\":\"生病\",\"pinyin\":\"shēngbìng\",\"definitions\":[\"get sick\",\"fall ill\"]},{\"simplified\":\"生日\",\"traditional\":\"生日\",\"pinyin\":\"shēngrì\",\"definitions\":[\"birthday\"]},{\"simplified\":\"时间\",\"traditional\":\"時間\",\"pinyin\":\"shíjiān\",\"definitions\":[\"time\",\"period\"]},{\"simplified\":\"事情\",\"traditional\":\"事情\",\"pinyin\":\"shìqing\",\"definitions\":[\"matter\",\"affair\",\"thing\",\"business\"]},{\"simplified\":\"手表\",\"traditional\":\"手表\",\"pinyin\":\"shǒubiǎo\",\"definitions\":[\"wristwatch\"]},{\"simplified\":\"手机\",\"traditional\":\"手機\",\"pinyin\":\"shǒujī\",\"definitions\":[\"mobile (cell) phone\"]},{\"simplified\":\"说话\",\"traditional\":\"說話\",\"pinyin\":\"shuōhuà\",\"definitions\":[\"to talk\",\"speak\"]},{\"simplified\":\"送\",\"traditional\":\"送\",\"pinyin\":\"sòng\",\"definitions\":[\"deliver\",\"to carry\",\"to give\",\"send\"]},{\"simplified\":\"虽然\",\"traditional\":\"雖然\",\"pinyin\":\"suīrán\",\"definitions\":[\"although\",\"even though\"]},{\"simplified\":\"但是\",\"traditional\":\"但是\",\"pinyin\":\"dànshì\",\"definitions\":[\"but\",\"however\"]},{\"simplified\":\"它\",\"traditional\":\"它\",\"pinyin\":\"tā\",\"definitions\":[\"it\"]},{\"simplified\":\"踢足球\",\"traditional\":\"踢足球\",\"pinyin\":\"tīzúqiú\",\"definitions\":[\"to play football/soccer\"]},{\"simplified\":\"题\",\"traditional\":\"題\",\"pinyin\":\"tí\",\"definitions\":[\"topic\",\"subject\",\"question on a test or assignment\"]},{\"simplified\":\"跳舞\",\"traditional\":\"跳舞\",\"pinyin\":\"tiàowǔ\",\"definitions\":[\"to dance\"]},{\"simplified\":\"外\",\"traditional\":\"外\",\"pinyin\":\"wài\",\"definitions\":[\"outer\",\"outside\",\"in addition\",\"foreign\"]},{\"simplified\":\"完\",\"traditional\":\"完\",\"pinyin\":\"wán\",\"definitions\":[\"to finish\",\"be over\",\"complete\"]},{\"simplified\":\"玩\",\"traditional\":\"玩\",\"pinyin\":\"wán\",\"definitions\":[\"to play\",\"have a good time\",\"visit\",\"enjoy\"]},{\"simplified\":\"晚上\",\"traditional\":\"晚上\",\"pinyin\":\"wǎnshang\",\"definitions\":[\"evening\",\"night\"]},{\"simplified\":\"往\",\"traditional\":\"往\",\"pinyin\":\"wǎng\",\"definitions\":[\"to go (in a direction)\",\"towards\",\"in the past\"]},{\"simplified\":\"为什么\",\"traditional\":\"為什麼\",\"pinyin\":\"wèishénme\",\"definitions\":[\"why?\",\"for what reason?\"]},{\"simplified\":\"问\",\"traditional\":\"問\",\"pinyin\":\"wèn\",\"definitions\":[\"ask\",\"inquire\"]},{\"simplified\":\"问题\",\"traditional\":\"問題\",\"pinyin\":\"wèntí\",\"definitions\":[\"question\",\"problem\"]},{\"simplified\":\"西瓜\",\"traditional\":\"西瓜\",\"pinyin\":\"xīguā\",\"definitions\":[\"watermelon\"]},{\"simplified\":\"希望\",\"traditional\":\"希望\",\"pinyin\":\"xīwàng\",\"definitions\":[\"to hope\",\"wish for\",\"to desire\"]},{\"simplified\":\"洗\",\"traditional\":\"洗\",\"pinyin\":\"xǐ\",\"definitions\":[\"to wash\",\"bathe\"]},{\"simplified\":\"小时\",\"traditional\":\"小時\",\"pinyin\":\"xiǎoshí\",\"definitions\":[\"hour\"]},{\"simplified\":\"笑\",\"traditional\":\"笑\",\"pinyin\":\"xiào\",\"definitions\":[\"to laugh\",\"to smile\"]},{\"simplified\":\"新\",\"traditional\":\"新\",\"pinyin\":\"xīn\",\"definitions\":[\"new\",\"Xinjiang autonomous region (abbreviation)\"]},{\"simplified\":\"姓\",\"traditional\":\"姓\",\"pinyin\":\"xìng\",\"definitions\":[\"surname\",\"family name\"]},{\"simplified\":\"休息\",\"traditional\":\"休息\",\"pinyin\":\"xiūxi\",\"definitions\":[\"to rest\",\"take a break\"]},{\"simplified\":\"雪\",\"traditional\":\"雪\",\"pinyin\":\"xuě\",\"definitions\":[\"snow\"]},{\"simplified\":\"颜色\",\"traditional\":\"顏色\",\"pinyin\":\"yánsè\",\"definitions\":[\"color\"]},{\"simplified\":\"眼睛\",\"traditional\":\"眼睛\",\"pinyin\":\"yǎnjing\",\"definitions\":[\"eye\"]},{\"simplified\":\"羊肉\",\"traditional\":\"羊肉\",\"pinyin\":\"yángròu\",\"definitions\":[\"mutton\",\"lamb\"]},{\"simplified\":\"药\",\"traditional\":\"藥\",\"pinyin\":\"yào\",\"definitions\":[\"medicine\",\"drug\",\"cure\",\"chemical\"]},{\"simplified\":\"要\",\"traditional\":\"要\",\"pinyin\":\"yào\",\"definitions\":[\"to want\",\"to need\",\"will/shall\",\"important\"]},{\"simplified\":\"也\",\"traditional\":\"也\",\"pinyin\":\"yě\",\"definitions\":[\"also\",\"too\"]},{\"simplified\":\"一起\",\"traditional\":\"一起\",\"pinyin\":\"yìqǐ\",\"definitions\":[\"together\",\"in the same place\"]},{\"simplified\":\"一下\",\"traditional\":\"一下\",\"pinyin\":\"yíxià\",\"definitions\":[\"a little bit/while\",\"one time\",\"once\"]},{\"simplified\":\"已经\",\"traditional\":\"已經\",\"pinyin\":\"yǐjing\",\"definitions\":[\"already\"]},{\"simplified\":\"意思\",\"traditional\":\"意思\",\"pinyin\":\"yìsi\",\"definitions\":[\"meaning\",\"idea\",\"opinion\"]},{\"simplified\":\"因为\",\"traditional\":\"因為\",\"pinyin\":\"yīnwèi\",\"definitions\":[\"because\"]},{\"simplified\":\"所以\",\"traditional\":\"所以\",\"pinyin\":\"suǒyǐ\",\"definitions\":[\"so\",\"therefore\",\"as a result\"]},{\"simplified\":\"阴\",\"traditional\":\"陰\",\"pinyin\":\"yīn\",\"definitions\":[\"cloudy (weather)\",\"yin (the negative principle of Yin and Yang)\",\"secret\",\"the moon\",\"negative\",\"shade\"]},{\"simplified\":\"游泳\",\"traditional\":\"游泳\",\"pinyin\":\"yóuyǒng\",\"definitions\":[\"to swim\"]},{\"simplified\":\"右边\",\"traditional\":\"右邊\",\"pinyin\":\"yòubian\",\"definitions\":[\"the right (as opposed to left) side\"]},{\"simplified\":\"鱼\",\"traditional\":\"魚\",\"pinyin\":\"yú\",\"definitions\":[\"fish (Kangxi radical 195)\"]},{\"simplified\":\"远\",\"traditional\":\"遠\",\"pinyin\":\"yuǎn\",\"definitions\":[\"far\",\"distant\",\"remote\"]},{\"simplified\":\"运动\",\"traditional\":\"運動\",\"pinyin\":\"yùndòng\",\"definitions\":[\"(physical) exercise\",\"movement\",\"sports\",\"campaign\"]},{\"simplified\":\"再\",\"traditional\":\"再\",\"pinyin\":\"zài\",\"definitions\":[\"again\",\"once more\"]},{\"simplified\":\"早上\",\"traditional\":\"早上\",\"pinyin\":\"zǎoshang\",\"definitions\":[\"(early) morning\"]},{\"simplified\":\"丈夫\",\"traditional\":\"丈夫\",\"pinyin\":\"zhàngfu\",\"definitions\":[\"husband\",\"man\"]},{\"simplified\":\"找\",\"traditional\":\"找\",\"pinyin\":\"zhǎo\",\"definitions\":[\"try to find\",\"look for\",\"seek\",\"to give change\"]},{\"simplified\":\"着\",\"traditional\":\"著\",\"pinyin\":\"zhe\",\"definitions\":[\"-ing (indicating action in progress)\"]},{\"simplified\":\"真\",\"traditional\":\"真\",\"pinyin\":\"zhēn\",\"definitions\":[\"real\",\"true\",\"genuine\"]},{\"simplified\":\"正在\",\"traditional\":\"正在\",\"pinyin\":\"zhèngzài\",\"definitions\":[\"in the process of (doing something)\",\"currently\"]},{\"simplified\":\"知道\",\"traditional\":\"知道\",\"pinyin\":\"zhīdao\",\"definitions\":[\"know\",\"be aware of\"]},{\"simplified\":\"准备\",\"traditional\":\"准備\",\"pinyin\":\"zhǔnbèi\",\"definitions\":[\"prepare\",\"get ready\"]},{\"simplified\":\"走\",\"traditional\":\"走\",\"pinyin\":\"zǒu\",\"definitions\":[\"to walk\",\"to go\",\"to move (Kangxi radical 156)\"]},{\"simplified\":\"最\",\"traditional\":\"最\",\"pinyin\":\"zuì\",\"definitions\":[\"the most\",\"-est\",\"(indicator for superlative)\"]},{\"simplified\":\"左边\",\"traditional\":\"左邊\",\"pinyin\":\"zuǒbian\",\"definitions\":[\"the left side\",\"the left\"]}]");
+
+/***/ }),
+
+/***/ "./words/hsk3.json":
+/*!*************************!*\
+  !*** ./words/hsk3.json ***!
+  \*************************/
+/*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("[{\"simplified\":\"﻿阿姨\",\"traditional\":\"阿姨\",\"pinyin\":\"āyí\",\"definitions\":[\"auntie\",\"step-mother\",\"mother's younger sister\"]},{\"simplified\":\"啊\",\"traditional\":\"啊\",\"pinyin\":\"a\",\"definitions\":[\"ah\",\"(particle showing elation, doubt, puzzled surprise, or approval)\"]},{\"simplified\":\"矮\",\"traditional\":\"矮\",\"pinyin\":\"ǎi\",\"definitions\":[\"short\",\"low\"]},{\"simplified\":\"爱好\",\"traditional\":\"愛好\",\"pinyin\":\"àihào\",\"definitions\":[\"hobby\",\"fond of\",\"to like\",\"interest\"]},{\"simplified\":\"安静\",\"traditional\":\"安靜\",\"pinyin\":\"ānjìng\",\"definitions\":[\"quiet\",\"peaceful\",\"calm\"]},{\"simplified\":\"把\",\"traditional\":\"把\",\"pinyin\":\"bǎ\",\"definitions\":[\"(mw for things with handles)\",\"(pretransitive particle)\",\"to hold\"]},{\"simplified\":\"班\",\"traditional\":\"班\",\"pinyin\":\"bān\",\"definitions\":[\"team\",\"class\",\"squad\"]},{\"simplified\":\"搬\",\"traditional\":\"搬\",\"pinyin\":\"bān\",\"definitions\":[\"to move\",\"to transport\"]},{\"simplified\":\"办法\",\"traditional\":\"辦法\",\"pinyin\":\"bànfǎ\",\"definitions\":[\"method\",\"way (of doing something)\"]},{\"simplified\":\"办公室\",\"traditional\":\"辦公室\",\"pinyin\":\"bàngōngshì\",\"definitions\":[\"office\"]},{\"simplified\":\"半\",\"traditional\":\"半\",\"pinyin\":\"bàn\",\"definitions\":[\"half\",\"semi-\",\"incomplete\"]},{\"simplified\":\"帮忙\",\"traditional\":\"幫忙\",\"pinyin\":\"bāngmáng\",\"definitions\":[\"to help\"]},{\"simplified\":\"包\",\"traditional\":\"包\",\"pinyin\":\"bāo\",\"definitions\":[\"to cover\",\"to wrap\",\"to hold\",\"include\",\"(mw for containers, packages, etc.)\"]},{\"simplified\":\"饱\",\"traditional\":\"飽\",\"pinyin\":\"bǎo\",\"definitions\":[\"eat until full\",\"satisfied\"]},{\"simplified\":\"北方\",\"traditional\":\"北方\",\"pinyin\":\"běifāng\",\"definitions\":[\"north\",\"the northern part of the country\"]},{\"simplified\":\"被\",\"traditional\":\"被\",\"pinyin\":\"bèi\",\"definitions\":[\"by (indicates passive voice sentences)\",\"a quilt/blanket\"]},{\"simplified\":\"鼻子\",\"traditional\":\"鼻子\",\"pinyin\":\"bízi\",\"definitions\":[\"nose\"]},{\"simplified\":\"比较\",\"traditional\":\"比較\",\"pinyin\":\"bǐjiào\",\"definitions\":[\"compare\",\"contrast\",\"relatively\"]},{\"simplified\":\"比赛\",\"traditional\":\"比賽\",\"pinyin\":\"bǐsài\",\"definitions\":[\"(sports) match\",\"competition\"]},{\"simplified\":\"笔记本\",\"traditional\":\"筆記本\",\"pinyin\":\"bǐjìběn\",\"definitions\":[\"notebook\"]},{\"simplified\":\"必须\",\"traditional\":\"必須\",\"pinyin\":\"bìxū\",\"definitions\":[\"must\",\"have to\"]},{\"simplified\":\"变化\",\"traditional\":\"變化\",\"pinyin\":\"biànhuà\",\"definitions\":[\"change\"]},{\"simplified\":\"别人\",\"traditional\":\"別人\",\"pinyin\":\"biéren\",\"definitions\":[\"other people\",\"others\"]},{\"simplified\":\"冰箱\",\"traditional\":\"冰箱\",\"pinyin\":\"bīngxiāng\",\"definitions\":[\"refrigerator\"]},{\"simplified\":\"不但\",\"traditional\":\"不但\",\"pinyin\":\"búdàn\",\"definitions\":[\"not only\"]},{\"simplified\":\"而且\",\"traditional\":\"而且\",\"pinyin\":\"érqiě\",\"definitions\":[\"moreover\",\"in addition\",\"as well as\"]},{\"simplified\":\"菜单\",\"traditional\":\"菜單\",\"pinyin\":\"càidān\",\"definitions\":[\"menu\"]},{\"simplified\":\"参加\",\"traditional\":\"參加\",\"pinyin\":\"cānjiā\",\"definitions\":[\"participate\",\"join\",\"take part in\"]},{\"simplified\":\"草\",\"traditional\":\"草\",\"pinyin\":\"cǎo\",\"definitions\":[\"grass\",\"straw\",\"draft (of a document)\"]},{\"simplified\":\"层\",\"traditional\":\"層\",\"pinyin\":\"céng\",\"definitions\":[\"(mw for layers, floors of buildings)\"]},{\"simplified\":\"差\",\"traditional\":\"差\",\"pinyin\":\"chà\",\"definitions\":[\"differ from\",\"fall short of\",\"poor\",\"inferior\"]},{\"simplified\":\"超市\",\"traditional\":\"超市\",\"pinyin\":\"chāoshì\",\"definitions\":[\"supermarket\"]},{\"simplified\":\"衬衫\",\"traditional\":\"襯衫\",\"pinyin\":\"chènshān\",\"definitions\":[\"shirt\",\"blouse\"]},{\"simplified\":\"成绩\",\"traditional\":\"成績\",\"pinyin\":\"chéngjì\",\"definitions\":[\"achievement\",\"success\",\"results (of work or study)\"]},{\"simplified\":\"城市\",\"traditional\":\"城市\",\"pinyin\":\"chéngshì\",\"definitions\":[\"city or town\"]},{\"simplified\":\"迟到\",\"traditional\":\"遲到\",\"pinyin\":\"chídào\",\"definitions\":[\"arrive late\"]},{\"simplified\":\"除了\",\"traditional\":\"除了\",\"pinyin\":\"chúle\",\"definitions\":[\"besides\",\"except for\",\"aside from\",\"in addition to\"]},{\"simplified\":\"船\",\"traditional\":\"船\",\"pinyin\":\"chuán\",\"definitions\":[\"a boat\",\"vessel\",\"ship\"]},{\"simplified\":\"春\",\"traditional\":\"春\",\"pinyin\":\"chūn\",\"definitions\":[\"spring (season)\",\"joyful\"]},{\"simplified\":\"词典\",\"traditional\":\"詞典\",\"pinyin\":\"cídiǎn\",\"definitions\":[\"dictionary\"]},{\"simplified\":\"聪明\",\"traditional\":\"聰明\",\"pinyin\":\"cōngming\",\"definitions\":[\"intelligent\",\"clever\",\"bright\",\"smart\"]},{\"simplified\":\"打扫\",\"traditional\":\"打掃\",\"pinyin\":\"dǎsǎo\",\"definitions\":[\"to clean\",\"to sweep\"]},{\"simplified\":\"打算\",\"traditional\":\"打算\",\"pinyin\":\"dǎsuàn\",\"definitions\":[\"to plan\",\"intend\"]},{\"simplified\":\"带\",\"traditional\":\"帶\",\"pinyin\":\"dài\",\"definitions\":[\"band\",\"belt\",\"ribbon\",\"carry\",\"bring\",\"take along\",\"bring up (kids)\"]},{\"simplified\":\"担心\",\"traditional\":\"擔心\",\"pinyin\":\"dānxīn\",\"definitions\":[\"to worry\",\"feel anxious\"]},{\"simplified\":\"蛋糕\",\"traditional\":\"蛋糕\",\"pinyin\":\"dàngāo\",\"definitions\":[\"cake\"]},{\"simplified\":\"当然\",\"traditional\":\"當然\",\"pinyin\":\"dāngrán\",\"definitions\":[\"of course\",\"naturally\"]},{\"simplified\":\"地\",\"traditional\":\"地\",\"pinyin\":\"dì, de\",\"definitions\":[\"earth\",\"ground | (adverbial particle)\"]},{\"simplified\":\"灯\",\"traditional\":\"燈\",\"pinyin\":\"dēng\",\"definitions\":[\"lamp\",\"light\"]},{\"simplified\":\"地方\",\"traditional\":\"地方\",\"pinyin\":\"dìfang\",\"definitions\":[\"place\",\"space\",\"room\",\"part, (fāng: local\",\"regional)\"]},{\"simplified\":\"地铁\",\"traditional\":\"地鐵\",\"pinyin\":\"dìtiě\",\"definitions\":[\"subway\"]},{\"simplified\":\"地图\",\"traditional\":\"地圖\",\"pinyin\":\"dìtú\",\"definitions\":[\"map\"]},{\"simplified\":\"电梯\",\"traditional\":\"電梯\",\"pinyin\":\"diàntī\",\"definitions\":[\"elevator\"]},{\"simplified\":\"电子邮件\",\"traditional\":\"電子郵件\",\"pinyin\":\"diànzǐ yóujiàn\",\"definitions\":[\"email\"]},{\"simplified\":\"东\",\"traditional\":\"東\",\"pinyin\":\"dōng\",\"definitions\":[\"East\"]},{\"simplified\":\"冬\",\"traditional\":\"冬\",\"pinyin\":\"dōng\",\"definitions\":[\"winter\"]},{\"simplified\":\"动物\",\"traditional\":\"動物\",\"pinyin\":\"dòngwù\",\"definitions\":[\"animal\"]},{\"simplified\":\"短\",\"traditional\":\"短\",\"pinyin\":\"duǎn\",\"definitions\":[\"short (in length, duration, or height)\",\"lack\"]},{\"simplified\":\"段\",\"traditional\":\"段\",\"pinyin\":\"duàn\",\"definitions\":[\"paragraph\",\"segment\",\"section\"]},{\"simplified\":\"锻炼\",\"traditional\":\"鍛煉\",\"pinyin\":\"duànliàn\",\"definitions\":[\"to exercise\",\"work out\",\"toughen\",\"to temper\"]},{\"simplified\":\"多么\",\"traditional\":\"多麼\",\"pinyin\":\"duōme\",\"definitions\":[\"how (wonderful, etc.)\",\"what (a great idea)\"]},{\"simplified\":\"饿\",\"traditional\":\"餓\",\"pinyin\":\"è\",\"definitions\":[\"hungry\"]},{\"simplified\":\"耳朵\",\"traditional\":\"耳朵\",\"pinyin\":\"ěrduo\",\"definitions\":[\"ear\"]},{\"simplified\":\"发\",\"traditional\":\"發\",\"pinyin\":\"fā, fà\",\"definitions\":[\"send out\",\"to issue\",\"to show (one's feelings) | hair\"]},{\"simplified\":\"发烧\",\"traditional\":\"發燒\",\"pinyin\":\"fāshāo\",\"definitions\":[\"have a fever\"]},{\"simplified\":\"发现\",\"traditional\":\"發現\",\"pinyin\":\"fāxiàn\",\"definitions\":[\"discover\",\"to find\"]},{\"simplified\":\"方便\",\"traditional\":\"方便\",\"pinyin\":\"fāngbiàn\",\"definitions\":[\"convenient\"]},{\"simplified\":\"放\",\"traditional\":\"放\",\"pinyin\":\"fàng\",\"definitions\":[\"put\",\"to place\",\"to release\",\"to free\"]},{\"simplified\":\"放心\",\"traditional\":\"放心\",\"pinyin\":\"fàngxīn\",\"definitions\":[\"relax\",\"feel relieved\",\"rest assured\"]},{\"simplified\":\"分\",\"traditional\":\"分\",\"pinyin\":\"fēn, fèn\",\"definitions\":[\"divide\",\"part\",\"minute\",\"cent | component\",\"share\",\"ingredient\"]},{\"simplified\":\"附近\",\"traditional\":\"附近\",\"pinyin\":\"fùjìn\",\"definitions\":[\"(in the) vicinity\",\"nearby\",\"neighboring\"]},{\"simplified\":\"复习\",\"traditional\":\"復習\",\"pinyin\":\"fùxí\",\"definitions\":[\"revise\",\"to review\"]},{\"simplified\":\"干净\",\"traditional\":\"干淨\",\"pinyin\":\"gānjìng\",\"definitions\":[\"clean\",\"neat and tidy\"]},{\"simplified\":\"感冒\",\"traditional\":\"感冒\",\"pinyin\":\"gǎnmào\",\"definitions\":[\"catch cold\",\"(common) cold\"]},{\"simplified\":\"感兴趣\",\"traditional\":\"感興趣\",\"pinyin\":\"gǎn xìngqù\",\"definitions\":[\"be interested in\"]},{\"simplified\":\"刚才\",\"traditional\":\"剛才\",\"pinyin\":\"gāngcái\",\"definitions\":[\"just now\",\"a moment ago\"]},{\"simplified\":\"个子\",\"traditional\":\"個子\",\"pinyin\":\"gèzi\",\"definitions\":[\"height\",\"stature\",\"build\"]},{\"simplified\":\"根据\",\"traditional\":\"根據\",\"pinyin\":\"gēnjù\",\"definitions\":[\"according to\",\"based on\",\"basis\"]},{\"simplified\":\"跟\",\"traditional\":\"跟\",\"pinyin\":\"gēn\",\"definitions\":[\"to follow\",\"go with\",\"heel\"]},{\"simplified\":\"更\",\"traditional\":\"更\",\"pinyin\":\"gèng\",\"definitions\":[\"more\",\"even more\"]},{\"simplified\":\"公斤\",\"traditional\":\"公斤\",\"pinyin\":\"gōngjīn\",\"definitions\":[\"kilogram\"]},{\"simplified\":\"公园\",\"traditional\":\"公園\",\"pinyin\":\"gōngyuán\",\"definitions\":[\"public park\"]},{\"simplified\":\"故事\",\"traditional\":\"故事\",\"pinyin\":\"gùshi\",\"definitions\":[\"story\",\"tale\"]},{\"simplified\":\"刮风\",\"traditional\":\"刮風\",\"pinyin\":\"guāfēng\",\"definitions\":[\"windy\",\"to blow (wind)\"]},{\"simplified\":\"关\",\"traditional\":\"關\",\"pinyin\":\"guān\",\"definitions\":[\"to close\",\"shut\",\"concern\",\"relationship\",\"turn off\",\"mountain pass\"]},{\"simplified\":\"关系\",\"traditional\":\"關系\",\"pinyin\":\"guānxi\",\"definitions\":[\"relation\",\"to concern\"]},{\"simplified\":\"关心\",\"traditional\":\"關心\",\"pinyin\":\"guānxīn\",\"definitions\":[\"concerned about/with\"]},{\"simplified\":\"关于\",\"traditional\":\"關於\",\"pinyin\":\"guānyú\",\"definitions\":[\"about\",\"regarding\",\"concerning\"]},{\"simplified\":\"国家\",\"traditional\":\"國家\",\"pinyin\":\"guójiā\",\"definitions\":[\"country\",\"state\",\"nation\"]},{\"simplified\":\"过\",\"traditional\":\"過\",\"pinyin\":\"guò\",\"definitions\":[\"to pass\",\"to cross\",\"go over\",\"(indicates a past experience)\"]},{\"simplified\":\"过去\",\"traditional\":\"過去\",\"pinyin\":\"guòqù\",\"definitions\":[\"in the past\",\"formerly\"]},{\"simplified\":\"还是\",\"traditional\":\"還是\",\"pinyin\":\"háishi\",\"definitions\":[\"or\",\"still\",\"nevertheless\",\"had better\"]},{\"simplified\":\"害怕\",\"traditional\":\"害怕\",\"pinyin\":\"hàipà\",\"definitions\":[\"afraid of\",\"to fear\"]},{\"simplified\":\"黑板\",\"traditional\":\"黑板\",\"pinyin\":\"hēibǎn\",\"definitions\":[\"blackboard\"]},{\"simplified\":\"后来\",\"traditional\":\"后來\",\"pinyin\":\"hòulái\",\"definitions\":[\"afterwards\",\"after\",\"later\"]},{\"simplified\":\"护照\",\"traditional\":\"護照\",\"pinyin\":\"hùzhào\",\"definitions\":[\"passport\"]},{\"simplified\":\"花\",\"traditional\":\"花\",\"pinyin\":\"huā\",\"definitions\":[\"flower\",\"blossom\",\"spend money\",\"cost\"]},{\"simplified\":\"画\",\"traditional\":\"畫\",\"pinyin\":\"huà\",\"definitions\":[\"draw\",\"picture\",\"painting\"]},{\"simplified\":\"坏\",\"traditional\":\"壞\",\"pinyin\":\"huài\",\"definitions\":[\"bad\",\"broken\"]},{\"simplified\":\"欢迎\",\"traditional\":\"歡迎\",\"pinyin\":\"huānyíng\",\"definitions\":[\"to welcome\",\"greet\"]},{\"simplified\":\"还\",\"traditional\":\"還\",\"pinyin\":\"hái\",\"definitions\":[\"still\",\"yet\",\"in addition\",\"even\"]},{\"simplified\":\"环境\",\"traditional\":\"環境\",\"pinyin\":\"huánjìng\",\"definitions\":[\"environment\",\"surroundings\"]},{\"simplified\":\"换\",\"traditional\":\"換\",\"pinyin\":\"huàn\",\"definitions\":[\"change\",\"to exchange\",\"to barter\",\"to trade\"]},{\"simplified\":\"黄河\",\"traditional\":\"黃河\",\"pinyin\":\"huánghé\",\"definitions\":[\"Yellow River\"]},{\"simplified\":\"回答\",\"traditional\":\"回答\",\"pinyin\":\"huídá\",\"definitions\":[\"to reply\",\"to answer\"]},{\"simplified\":\"会议\",\"traditional\":\"會議\",\"pinyin\":\"huìyì\",\"definitions\":[\"meeting\",\"conference\"]},{\"simplified\":\"或者\",\"traditional\":\"或者\",\"pinyin\":\"huòzhě\",\"definitions\":[\"or\",\"possible\",\"maybe\",\"perhaps\"]},{\"simplified\":\"几乎\",\"traditional\":\"幾乎\",\"pinyin\":\"jīhū\",\"definitions\":[\"almost\"]},{\"simplified\":\"机会\",\"traditional\":\"機會\",\"pinyin\":\"jīhuì\",\"definitions\":[\"opportunity\",\"chance\",\"occasion\"]},{\"simplified\":\"极\",\"traditional\":\"極\",\"pinyin\":\"jí\",\"definitions\":[\"an extreme\",\"pole\",\"very\"]},{\"simplified\":\"记得\",\"traditional\":\"記得\",\"pinyin\":\"jìde\",\"definitions\":[\"remember\"]},{\"simplified\":\"季节\",\"traditional\":\"季節\",\"pinyin\":\"jìjié\",\"definitions\":[\"season\",\"time\",\"period\"]},{\"simplified\":\"检查\",\"traditional\":\"檢查\",\"pinyin\":\"jiǎnchá\",\"definitions\":[\"to check\",\"examine\",\"inspect\"]},{\"simplified\":\"简单\",\"traditional\":\"簡單\",\"pinyin\":\"jiǎndān\",\"definitions\":[\"simple\",\"not complicated\"]},{\"simplified\":\"见面\",\"traditional\":\"見面\",\"pinyin\":\"jiànmiàn\",\"definitions\":[\"meet/see somebody\",\"meeting\"]},{\"simplified\":\"健康\",\"traditional\":\"健康\",\"pinyin\":\"jiànkāng\",\"definitions\":[\"health\",\"healthy\"]},{\"simplified\":\"讲\",\"traditional\":\"講\",\"pinyin\":\"jiǎng\",\"definitions\":[\"to talk\",\"to lecture\",\"to explain\",\"a speech\"]},{\"simplified\":\"教\",\"traditional\":\"教\",\"pinyin\":\"jiāo, jiào\",\"definitions\":[\"teach\",\"instruct | religion\",\"teaching\"]},{\"simplified\":\"角\",\"traditional\":\"角\",\"pinyin\":\"jiǎo, jué\",\"definitions\":[\"horn\",\"angle\",\"unit of money (1/10 yuan)\",\"corner (Kangxi radical 148) | role (theater)\"]},{\"simplified\":\"脚\",\"traditional\":\"腳\",\"pinyin\":\"jiǎo\",\"definitions\":[\"foot (body part)\"]},{\"simplified\":\"接\",\"traditional\":\"接\",\"pinyin\":\"jiē\",\"definitions\":[\"connect\",\"to meet\",\"to pick up (somebody)\",\"to receive\"]},{\"simplified\":\"街道\",\"traditional\":\"街道\",\"pinyin\":\"jiēdào\",\"definitions\":[\"street\"]},{\"simplified\":\"节目\",\"traditional\":\"節目\",\"pinyin\":\"jiémù\",\"definitions\":[\"program\",\"item (on a program)\"]},{\"simplified\":\"节日\",\"traditional\":\"節日\",\"pinyin\":\"jiérì\",\"definitions\":[\"holiday\",\"festival\"]},{\"simplified\":\"结婚\",\"traditional\":\"結婚\",\"pinyin\":\"jiéhūn\",\"definitions\":[\"get married\"]},{\"simplified\":\"结束\",\"traditional\":\"結束\",\"pinyin\":\"jiéshù\",\"definitions\":[\"to end\",\"to finish\",\"conclude\"]},{\"simplified\":\"解决\",\"traditional\":\"解決\",\"pinyin\":\"jiějué\",\"definitions\":[\"settle (a dispute)\",\"resolve\",\"solve\"]},{\"simplified\":\"借\",\"traditional\":\"借\",\"pinyin\":\"jiè\",\"definitions\":[\"lend\",\"borrow\",\"excuse\"]},{\"simplified\":\"经常\",\"traditional\":\"經常\",\"pinyin\":\"jīngcháng\",\"definitions\":[\"often\",\"frequently\",\"daily\"]},{\"simplified\":\"经过\",\"traditional\":\"經過\",\"pinyin\":\"jīngguò\",\"definitions\":[\"to pass\",\"go through\",\"as a result of\"]},{\"simplified\":\"经理\",\"traditional\":\"經理\",\"pinyin\":\"jīnglǐ\",\"definitions\":[\"manager\",\"director\"]},{\"simplified\":\"久\",\"traditional\":\"久\",\"pinyin\":\"jiǔ\",\"definitions\":[\"long (time)\"]},{\"simplified\":\"旧\",\"traditional\":\"舊\",\"pinyin\":\"jiù\",\"definitions\":[\"old\",\"past\",\"used\"]},{\"simplified\":\"句子\",\"traditional\":\"句子\",\"pinyin\":\"jùzi\",\"definitions\":[\"sentence\"]},{\"simplified\":\"决定\",\"traditional\":\"決定\",\"pinyin\":\"juédìng\",\"definitions\":[\"decide\",\"resolve\"]},{\"simplified\":\"可爱\",\"traditional\":\"可愛\",\"pinyin\":\"kě'ài\",\"definitions\":[\"cute\",\"lovely\"]},{\"simplified\":\"渴\",\"traditional\":\"渴\",\"pinyin\":\"kě\",\"definitions\":[\"thirsty\"]},{\"simplified\":\"刻\",\"traditional\":\"刻\",\"pinyin\":\"kè\",\"definitions\":[\"quarter (hour)\",\"(mw for short time intervals)\",\"carve\",\"to cut\"]},{\"simplified\":\"客人\",\"traditional\":\"客人\",\"pinyin\":\"kèrén\",\"definitions\":[\"guest\",\"customer\"]},{\"simplified\":\"空调\",\"traditional\":\"空調\",\"pinyin\":\"kōngtiáo\",\"definitions\":[\"air conditioning\"]},{\"simplified\":\"口\",\"traditional\":\"口\",\"pinyin\":\"kǒu\",\"definitions\":[\"mouth (Kangxi radical 30)\"]},{\"simplified\":\"哭\",\"traditional\":\"哭\",\"pinyin\":\"kū\",\"definitions\":[\"cry\",\"weep\"]},{\"simplified\":\"裤子\",\"traditional\":\"褲子\",\"pinyin\":\"kùzi\",\"definitions\":[\"pants\",\"trousers\"]},{\"simplified\":\"筷子\",\"traditional\":\"筷子\",\"pinyin\":\"kuàizi\",\"definitions\":[\"chopsticks\"]},{\"simplified\":\"蓝\",\"traditional\":\"藍\",\"pinyin\":\"lán\",\"definitions\":[\"blue\"]},{\"simplified\":\"老\",\"traditional\":\"老\",\"pinyin\":\"lǎo\",\"definitions\":[\"old\",\"aged\",\"tough\",\"often (Kangxi radical 125)\"]},{\"simplified\":\"离开\",\"traditional\":\"離開\",\"pinyin\":\"líkāi\",\"definitions\":[\"leave\",\"depart\"]},{\"simplified\":\"礼物\",\"traditional\":\"禮物\",\"pinyin\":\"lǐwù\",\"definitions\":[\"gift\",\"present\"]},{\"simplified\":\"历史\",\"traditional\":\"歷史\",\"pinyin\":\"lìshǐ\",\"definitions\":[\"history\"]},{\"simplified\":\"脸\",\"traditional\":\"臉\",\"pinyin\":\"liǎn\",\"definitions\":[\"face\"]},{\"simplified\":\"练习\",\"traditional\":\"練習\",\"pinyin\":\"liànxí\",\"definitions\":[\"practice\",\"exercise\"]},{\"simplified\":\"辆\",\"traditional\":\"輛\",\"pinyin\":\"liàng\",\"definitions\":[\"(mw for vehicles)\"]},{\"simplified\":\"聊天\",\"traditional\":\"聊天\",\"pinyin\":\"liáotiān\",\"definitions\":[\"to chat\"]},{\"simplified\":\"了解\",\"traditional\":\"了解\",\"pinyin\":\"liǎojiě\",\"definitions\":[\"comprehend\",\"understand\",\"know\",\"find out\"]},{\"simplified\":\"邻居\",\"traditional\":\"鄰居\",\"pinyin\":\"línjū\",\"definitions\":[\"neighbor\"]},{\"simplified\":\"留学\",\"traditional\":\"留學\",\"pinyin\":\"liúxué\",\"definitions\":[\"study abroad\"]},{\"simplified\":\"楼\",\"traditional\":\"樓\",\"pinyin\":\"lóu\",\"definitions\":[\"story\",\"floor\",\"(multi-story) building\"]},{\"simplified\":\"绿\",\"traditional\":\"綠\",\"pinyin\":\"lǜ\",\"definitions\":[\"green\"]},{\"simplified\":\"马\",\"traditional\":\"馬\",\"pinyin\":\"mǎ\",\"definitions\":[\"horse (Kangxi radical 187)\"]},{\"simplified\":\"马上\",\"traditional\":\"馬上\",\"pinyin\":\"mǎshàng\",\"definitions\":[\"at once\",\"immediately\",\"right away\"]},{\"simplified\":\"满意\",\"traditional\":\"滿意\",\"pinyin\":\"mǎnyì\",\"definitions\":[\"satisfied\",\"pleased\"]},{\"simplified\":\"帽子\",\"traditional\":\"帽子\",\"pinyin\":\"màozi\",\"definitions\":[\"hat\",\"cap\"]},{\"simplified\":\"米\",\"traditional\":\"米\",\"pinyin\":\"mǐ\",\"definitions\":[\"rice\",\"meter (Kangxi radical 119)\"]},{\"simplified\":\"面包\",\"traditional\":\"面包\",\"pinyin\":\"miànbāo\",\"definitions\":[\"bread\"]},{\"simplified\":\"明白\",\"traditional\":\"明白\",\"pinyin\":\"míngbai\",\"definitions\":[\"clear\",\"obvious\",\"understand\",\"explicit\"]},{\"simplified\":\"拿\",\"traditional\":\"拿\",\"pinyin\":\"ná\",\"definitions\":[\"carry in your hand\",\"seize\",\"to catch\"]},{\"simplified\":\"奶奶\",\"traditional\":\"奶奶\",\"pinyin\":\"nǎinai\",\"definitions\":[\"grandma\",\"(informal) paternal grandmother\"]},{\"simplified\":\"南\",\"traditional\":\"南\",\"pinyin\":\"nán\",\"definitions\":[\"South\"]},{\"simplified\":\"难\",\"traditional\":\"難\",\"pinyin\":\"nán\",\"definitions\":[\"difficult\"]},{\"simplified\":\"难过\",\"traditional\":\"難過\",\"pinyin\":\"nánguò\",\"definitions\":[\"be grieved\",\"be sad\",\"have a hard time\"]},{\"simplified\":\"年级\",\"traditional\":\"年級\",\"pinyin\":\"niánjí\",\"definitions\":[\"grade\",\"year (in school)\"]},{\"simplified\":\"年轻\",\"traditional\":\"年輕\",\"pinyin\":\"niánqīng\",\"definitions\":[\"young\"]},{\"simplified\":\"鸟\",\"traditional\":\"鳥\",\"pinyin\":\"niǎo\",\"definitions\":[\"bird (Kangxi radical 196)\"]},{\"simplified\":\"努力\",\"traditional\":\"努力\",\"pinyin\":\"nǔlì\",\"definitions\":[\"to work hard\",\"to strive\"]},{\"simplified\":\"爬山\",\"traditional\":\"爬山\",\"pinyin\":\"páshān\",\"definitions\":[\"mountain climbing\"]},{\"simplified\":\"盘子\",\"traditional\":\"盤子\",\"pinyin\":\"pánzi\",\"definitions\":[\"plate\",\"dish\",\"tray\"]},{\"simplified\":\"胖\",\"traditional\":\"胖\",\"pinyin\":\"pàng\",\"definitions\":[\"fat\",\"plump\"]},{\"simplified\":\"皮鞋\",\"traditional\":\"皮鞋\",\"pinyin\":\"píxié\",\"definitions\":[\"leather shoes\"]},{\"simplified\":\"啤酒\",\"traditional\":\"啤酒\",\"pinyin\":\"píjiǔ\",\"definitions\":[\"beer\"]},{\"simplified\":\"瓶子\",\"traditional\":\"瓶子\",\"pinyin\":\"píngzi\",\"definitions\":[\"bottle\"]},{\"simplified\":\"其实\",\"traditional\":\"其實\",\"pinyin\":\"qíshí\",\"definitions\":[\"actually\",\"in fact\"]},{\"simplified\":\"其他\",\"traditional\":\"其他\",\"pinyin\":\"qítā\",\"definitions\":[\"other\",\"else\"]},{\"simplified\":\"奇怪\",\"traditional\":\"奇怪\",\"pinyin\":\"qíguài\",\"definitions\":[\"strange\",\"odd\"]},{\"simplified\":\"骑\",\"traditional\":\"騎\",\"pinyin\":\"qí\",\"definitions\":[\"to ride (an animal or bike)\",\"to sit astride\"]},{\"simplified\":\"起飞\",\"traditional\":\"起飛\",\"pinyin\":\"qǐfēi\",\"definitions\":[\"take off (in an airplane)\",\"liftoff\"]},{\"simplified\":\"起来\",\"traditional\":\"起來\",\"pinyin\":\"qǐlai\",\"definitions\":[\"(beginning or continuing an action)\",\"to rise\",\"get up (from bed)\"]},{\"simplified\":\"清楚\",\"traditional\":\"清楚\",\"pinyin\":\"qīngchu\",\"definitions\":[\"clear\",\"distinct\",\"be clear about\"]},{\"simplified\":\"请假\",\"traditional\":\"請假\",\"pinyin\":\"qǐngjià\",\"definitions\":[\"to ask for time off\"]},{\"simplified\":\"秋\",\"traditional\":\"秋\",\"pinyin\":\"qiū\",\"definitions\":[\"autumn\",\"fall\",\"harvest time\"]},{\"simplified\":\"裙子\",\"traditional\":\"裙子\",\"pinyin\":\"qúnzi\",\"definitions\":[\"skirt\"]},{\"simplified\":\"然后\",\"traditional\":\"然后\",\"pinyin\":\"ránhòu\",\"definitions\":[\"then\",\"afterwards\"]},{\"simplified\":\"热情\",\"traditional\":\"熱情\",\"pinyin\":\"rèqíng\",\"definitions\":[\"cordial\",\"warm\",\"enthusiastic\"]},{\"simplified\":\"认为\",\"traditional\":\"認為\",\"pinyin\":\"rènwéi\",\"definitions\":[\"believe\",\"think that\"]},{\"simplified\":\"认真\",\"traditional\":\"認真\",\"pinyin\":\"rènzhēn\",\"definitions\":[\"serious\",\"earnest\",\"take seriously\"]},{\"simplified\":\"容易\",\"traditional\":\"容易\",\"pinyin\":\"róngyì\",\"definitions\":[\"easy\",\"likely\",\"liable (to)\"]},{\"simplified\":\"如果\",\"traditional\":\"如果\",\"pinyin\":\"rúguǒ\",\"definitions\":[\"if\",\"in the event that\"]},{\"simplified\":\"伞\",\"traditional\":\"傘\",\"pinyin\":\"sǎn\",\"definitions\":[\"umbrella\",\"parasol\"]},{\"simplified\":\"上网\",\"traditional\":\"上網\",\"pinyin\":\"shàngwǎng\",\"definitions\":[\"to surf the web\",\"to go online\"]},{\"simplified\":\"生气\",\"traditional\":\"生氣\",\"pinyin\":\"shēngqì\",\"definitions\":[\"angry\",\"mad\"]},{\"simplified\":\"声音\",\"traditional\":\"聲音\",\"pinyin\":\"shēngyīn\",\"definitions\":[\"sound\",\"voice\"]},{\"simplified\":\"世界\",\"traditional\":\"世界\",\"pinyin\":\"shìjiè\",\"definitions\":[\"world\"]},{\"simplified\":\"试\",\"traditional\":\"試\",\"pinyin\":\"shì\",\"definitions\":[\"to try\",\"to test\",\"examination\"]},{\"simplified\":\"瘦\",\"traditional\":\"瘦\",\"pinyin\":\"shòu\",\"definitions\":[\"thin\",\"tight\",\"lean\"]},{\"simplified\":\"叔叔\",\"traditional\":\"叔叔\",\"pinyin\":\"shūshu\",\"definitions\":[\"(informal) father's younger brother\",\"uncle\"]},{\"simplified\":\"舒服\",\"traditional\":\"舒服\",\"pinyin\":\"shūfu\",\"definitions\":[\"comfortable\",\"feeling well\"]},{\"simplified\":\"树\",\"traditional\":\"樹\",\"pinyin\":\"shù\",\"definitions\":[\"tree\"]},{\"simplified\":\"数学\",\"traditional\":\"數學\",\"pinyin\":\"shùxué\",\"definitions\":[\"mathematics\"]},{\"simplified\":\"刷牙\",\"traditional\":\"刷牙\",\"pinyin\":\"shuāyá\",\"definitions\":[\"brush one's teeth\"]},{\"simplified\":\"双\",\"traditional\":\"雙\",\"pinyin\":\"shuāng\",\"definitions\":[\"two\",\"double\",\"(mw for pairs)\"]},{\"simplified\":\"水平\",\"traditional\":\"水平\",\"pinyin\":\"shuǐpíng\",\"definitions\":[\"level\",\"standard\",\"horizontal\"]},{\"simplified\":\"司机\",\"traditional\":\"司機\",\"pinyin\":\"sījī\",\"definitions\":[\"driver\",\"chauffeur\"]},{\"simplified\":\"太阳\",\"traditional\":\"太陽\",\"pinyin\":\"tàiyáng\",\"definitions\":[\"the sun\"]},{\"simplified\":\"特别\",\"traditional\":\"特別\",\"pinyin\":\"tèbié\",\"definitions\":[\"special\",\"especially\",\"particular\"]},{\"simplified\":\"疼\",\"traditional\":\"疼\",\"pinyin\":\"téng\",\"definitions\":[\"ache\",\"sore\",\"(it) hurts\",\"love fondly\"]},{\"simplified\":\"提高\",\"traditional\":\"提高\",\"pinyin\":\"tígāo\",\"definitions\":[\"to raise\",\"heighten\",\"improve\"]},{\"simplified\":\"体育\",\"traditional\":\"體育\",\"pinyin\":\"tǐyù\",\"definitions\":[\"physical training\",\"sports\"]},{\"simplified\":\"甜\",\"traditional\":\"甜\",\"pinyin\":\"tián\",\"definitions\":[\"sweet\"]},{\"simplified\":\"条\",\"traditional\":\"條\",\"pinyin\":\"tiáo\",\"definitions\":[\"strip\",\"(mw for long thin objects)\",\"item\"]},{\"simplified\":\"同事\",\"traditional\":\"同事\",\"pinyin\":\"tóngshì\",\"definitions\":[\"colleague\",\"co-worker\"]},{\"simplified\":\"同意\",\"traditional\":\"同意\",\"pinyin\":\"tóngyì\",\"definitions\":[\"agree\",\"to consent\",\"approve\"]},{\"simplified\":\"头发\",\"traditional\":\"頭發\",\"pinyin\":\"tóufa\",\"definitions\":[\"hair (on the head)\"]},{\"simplified\":\"突然\",\"traditional\":\"突然\",\"pinyin\":\"tūrán\",\"definitions\":[\"sudden\",\"abrupt\"]},{\"simplified\":\"图书馆\",\"traditional\":\"圖書館\",\"pinyin\":\"túshūguǎn\",\"definitions\":[\"library\"]},{\"simplified\":\"腿\",\"traditional\":\"腿\",\"pinyin\":\"tuǐ\",\"definitions\":[\"leg\"]},{\"simplified\":\"完成\",\"traditional\":\"完成\",\"pinyin\":\"wánchéng\",\"definitions\":[\"to complete\",\"accomplish\",\"to fulfill\"]},{\"simplified\":\"碗\",\"traditional\":\"碗\",\"pinyin\":\"wǎn\",\"definitions\":[\"bowl\",\"cup\"]},{\"simplified\":\"万\",\"traditional\":\"萬\",\"pinyin\":\"wàn\",\"definitions\":[\"ten thousand\"]},{\"simplified\":\"忘记\",\"traditional\":\"忘記\",\"pinyin\":\"wàngjì\",\"definitions\":[\"forget\"]},{\"simplified\":\"为\",\"traditional\":\"為\",\"pinyin\":\"wèi\",\"definitions\":[\"for\",\"because of\",\"to\",\"for the sake of\"]},{\"simplified\":\"为了\",\"traditional\":\"為了\",\"pinyin\":\"wèile\",\"definitions\":[\"in order to\",\"for the sake of\",\"for the purpose of\"]},{\"simplified\":\"位\",\"traditional\":\"位\",\"pinyin\":\"wèi\",\"definitions\":[\"position\",\"location\",\"(polite mw for people)\"]},{\"simplified\":\"文化\",\"traditional\":\"文化\",\"pinyin\":\"wénhuà\",\"definitions\":[\"culture\",\"civilization\"]},{\"simplified\":\"西\",\"traditional\":\"西\",\"pinyin\":\"xī\",\"definitions\":[\"West (Kangxi radical 146)\"]},{\"simplified\":\"习惯\",\"traditional\":\"習慣\",\"pinyin\":\"xíguàn\",\"definitions\":[\"habit\",\"be accustomed to\",\"usual practice\"]},{\"simplified\":\"洗手间\",\"traditional\":\"洗手間\",\"pinyin\":\"xǐshǒujiān\",\"definitions\":[\"toilet\",\"lavatory\",\"washroom\"]},{\"simplified\":\"洗澡\",\"traditional\":\"洗澡\",\"pinyin\":\"xǐzǎo\",\"definitions\":[\"bathe\",\"take a bath or shower\",\"bath or shower\"]},{\"simplified\":\"夏\",\"traditional\":\"夏\",\"pinyin\":\"xià\",\"definitions\":[\"summer\"]},{\"simplified\":\"先\",\"traditional\":\"先\",\"pinyin\":\"xiān\",\"definitions\":[\"first\",\"early\",\"before\"]},{\"simplified\":\"相信\",\"traditional\":\"相信\",\"pinyin\":\"xiāngxìn\",\"definitions\":[\"believe (sb.)\",\"be convinced of\"]},{\"simplified\":\"香蕉\",\"traditional\":\"香蕉\",\"pinyin\":\"xiāngjiāo\",\"definitions\":[\"banana\"]},{\"simplified\":\"向\",\"traditional\":\"向\",\"pinyin\":\"xiàng\",\"definitions\":[\"direction\",\"towards\",\"to turn\",\"to face\"]},{\"simplified\":\"像\",\"traditional\":\"像\",\"pinyin\":\"xiàng\",\"definitions\":[\"be like\",\"resemble\",\"appearance\",\"appear\"]},{\"simplified\":\"小心\",\"traditional\":\"小心\",\"pinyin\":\"xiǎoxīn\",\"definitions\":[\"be careful\"]},{\"simplified\":\"校长\",\"traditional\":\"校長\",\"pinyin\":\"xiàozhǎng\",\"definitions\":[\"principal (of school, college or university)\",\"president\",\"headmaster\"]},{\"simplified\":\"新闻\",\"traditional\":\"新聞\",\"pinyin\":\"xīnwén\",\"definitions\":[\"news\"]},{\"simplified\":\"新鲜\",\"traditional\":\"新鮮\",\"pinyin\":\"xīnxiān\",\"definitions\":[\"fresh (experience, food, etc.)\",\"new\",\"novel\"]},{\"simplified\":\"信用卡\",\"traditional\":\"信用卡\",\"pinyin\":\"xìnyòngkǎ\",\"definitions\":[\"credit card\"]},{\"simplified\":\"行李箱\",\"traditional\":\"行李箱\",\"pinyin\":\"xínglǐxiāng\",\"definitions\":[\"trunk\",\"suitcase\"]},{\"simplified\":\"熊猫\",\"traditional\":\"熊貓\",\"pinyin\":\"xióngmāo\",\"definitions\":[\"panda\"]},{\"simplified\":\"需要\",\"traditional\":\"需要\",\"pinyin\":\"xūyào\",\"definitions\":[\"to need\",\"to want\",\"to demand\"]},{\"simplified\":\"选择\",\"traditional\":\"選擇\",\"pinyin\":\"xuǎnzé\",\"definitions\":[\"select\",\"to pick\",\"choose\"]},{\"simplified\":\"要求\",\"traditional\":\"要求\",\"pinyin\":\"yāoqiú\",\"definitions\":[\"to request\",\"to demand\",\"requirement\"]},{\"simplified\":\"爷爷\",\"traditional\":\"爺爺\",\"pinyin\":\"yéye\",\"definitions\":[\"(informal) father's father\",\"paternal grandfather\"]},{\"simplified\":\"一般\",\"traditional\":\"一般\",\"pinyin\":\"yìbān\",\"definitions\":[\"general\",\"ordinary\",\"common\",\"same\"]},{\"simplified\":\"一边\",\"traditional\":\"一邊\",\"pinyin\":\"yìbiān\",\"definitions\":[\"one side\",\"on the one hand\",\"at the same time\"]},{\"simplified\":\"一定\",\"traditional\":\"一定\",\"pinyin\":\"yídìng\",\"definitions\":[\"surely\",\"certainly\",\"necessarily\",\"definite\"]},{\"simplified\":\"一共\",\"traditional\":\"一共\",\"pinyin\":\"yígòng\",\"definitions\":[\"altogether\",\"in total\"]},{\"simplified\":\"一会儿\",\"traditional\":\"一會兒\",\"pinyin\":\"yíhuìr\",\"definitions\":[\"a while\",\"a moment\"]},{\"simplified\":\"一样\",\"traditional\":\"一樣\",\"pinyin\":\"yíyàng\",\"definitions\":[\"the same\",\"alike\",\"equal to\"]},{\"simplified\":\"一直\",\"traditional\":\"一直\",\"pinyin\":\"yìzhí\",\"definitions\":[\"always\",\"all along\",\"straight (in a straight line)\"]},{\"simplified\":\"以前\",\"traditional\":\"以前\",\"pinyin\":\"yǐqián\",\"definitions\":[\"before\",\"formerly\",\"previous\"]},{\"simplified\":\"音乐\",\"traditional\":\"音樂\",\"pinyin\":\"yīnyuè\",\"definitions\":[\"music\"]},{\"simplified\":\"银行\",\"traditional\":\"銀行\",\"pinyin\":\"yínháng\",\"definitions\":[\"bank\"]},{\"simplified\":\"饮料\",\"traditional\":\"飲料\",\"pinyin\":\"yǐnliào\",\"definitions\":[\"beverage\",\"drink\"]},{\"simplified\":\"应该\",\"traditional\":\"應該\",\"pinyin\":\"yīnggāi\",\"definitions\":[\"should\",\"ought to\",\"must\"]},{\"simplified\":\"影响\",\"traditional\":\"影響\",\"pinyin\":\"yǐngxiǎng\",\"definitions\":[\"influence\",\"affect\",\"effect\"]},{\"simplified\":\"用\",\"traditional\":\"用\",\"pinyin\":\"yòng\",\"definitions\":[\"to use (Kangxi radical 101)\"]},{\"simplified\":\"游戏\",\"traditional\":\"游戲\",\"pinyin\":\"yóuxì\",\"definitions\":[\"game\",\"play\",\"recreation\"]},{\"simplified\":\"有名\",\"traditional\":\"有名\",\"pinyin\":\"yǒumíng\",\"definitions\":[\"famous\",\"well-known\"]},{\"simplified\":\"又\",\"traditional\":\"又\",\"pinyin\":\"yòu\",\"definitions\":[\"(once) again\",\"also\",\"both (Kangxi radical 29)\"]},{\"simplified\":\"遇到\",\"traditional\":\"遇到\",\"pinyin\":\"yùdào\",\"definitions\":[\"to meet\",\"run into\",\"come across\"]},{\"simplified\":\"元\",\"traditional\":\"元\",\"pinyin\":\"yuán\",\"definitions\":[\"Chinese monetary unit\",\"dollar\",\"first\",\"principal\"]},{\"simplified\":\"愿意\",\"traditional\":\"願意\",\"pinyin\":\"yuànyì\",\"definitions\":[\"be willing\",\"want to\",\"be ready\"]},{\"simplified\":\"月亮\",\"traditional\":\"月亮\",\"pinyin\":\"yuèliang\",\"definitions\":[\"the moon\"]},{\"simplified\":\"越\",\"traditional\":\"越\",\"pinyin\":\"yuè\",\"definitions\":[\"even more\",\"the more\",\"exceed\"]},{\"simplified\":\"站\",\"traditional\":\"站\",\"pinyin\":\"zhàn\",\"definitions\":[\"stand\",\"a station\",\"be on one's feet\",\"service center\"]},{\"simplified\":\"张\",\"traditional\":\"張\",\"pinyin\":\"zhāng\",\"definitions\":[\"(mw for flat objects)\",\"to spread out\",\"(common surname)\"]},{\"simplified\":\"长\",\"traditional\":\"長\",\"pinyin\":\"cháng, zhǎng\",\"definitions\":[\"long\",\"length | grow\",\"chief (Kangxi radical 168)\"]},{\"simplified\":\"着急\",\"traditional\":\"著急\",\"pinyin\":\"zháojí\",\"definitions\":[\"to worry\",\"feel anxious\"]},{\"simplified\":\"照顾\",\"traditional\":\"照顧\",\"pinyin\":\"zhàogu\",\"definitions\":[\"take care of\",\"look after\",\"give consideration\"]},{\"simplified\":\"照片\",\"traditional\":\"照片\",\"pinyin\":\"zhàopiàn\",\"definitions\":[\"picture\",\"photograph\"]},{\"simplified\":\"照相机\",\"traditional\":\"照相機\",\"pinyin\":\"zhàoxiàngjī\",\"definitions\":[\"camera\"]},{\"simplified\":\"只\",\"traditional\":\"隻\",\"pinyin\":\"zhī, zhǐ\",\"definitions\":[\"but\",\"only\",\"merely\",\"just | (mw for birds and certain animals)\"]},{\"simplified\":\"只有\",\"traditional\":\"隻有\",\"pinyin\":\"zhǐyǒu\",\"definitions\":[\"only\"]},{\"simplified\":\"才\",\"traditional\":\"才\",\"pinyin\":\"cái\",\"definitions\":[\"ability\",\"talent\",\"just now\",\"not until\"]},{\"simplified\":\"中间\",\"traditional\":\"中間\",\"pinyin\":\"zhōngjiān\",\"definitions\":[\"center\",\"middle\",\"between\",\"among\"]},{\"simplified\":\"中文\",\"traditional\":\"中文\",\"pinyin\":\"Zhōngwén\",\"definitions\":[\"Chinese (language)\"]},{\"simplified\":\"终于\",\"traditional\":\"終於\",\"pinyin\":\"zhōngyú\",\"definitions\":[\"at last\",\"in the end\",\"finally\"]},{\"simplified\":\"种\",\"traditional\":\"種\",\"pinyin\":\"zhǒng\",\"definitions\":[\"type\",\"breed\",\"race\",\"seed\"]},{\"simplified\":\"重要\",\"traditional\":\"重要\",\"pinyin\":\"zhòngyào\",\"definitions\":[\"important\",\"significant\",\"major\"]},{\"simplified\":\"周末\",\"traditional\":\"周末\",\"pinyin\":\"zhōumò\",\"definitions\":[\"weekend\"]},{\"simplified\":\"主要\",\"traditional\":\"主要\",\"pinyin\":\"zhǔyào\",\"definitions\":[\"main\",\"principal\",\"major\"]},{\"simplified\":\"注意\",\"traditional\":\"注意\",\"pinyin\":\"zhùyì\",\"definitions\":[\"pay attention to\",\"take notice of\",\"be careful\"]},{\"simplified\":\"自己\",\"traditional\":\"自己\",\"pinyin\":\"zìjǐ\",\"definitions\":[\"oneself\",\"self\"]},{\"simplified\":\"自行车\",\"traditional\":\"自行車\",\"pinyin\":\"zìxíngchē\",\"definitions\":[\"bike\",\"bicycle\"]},{\"simplified\":\"总是\",\"traditional\":\"總是\",\"pinyin\":\"zǒngshì\",\"definitions\":[\"always\",\"eventually\"]},{\"simplified\":\"嘴\",\"traditional\":\"嘴\",\"pinyin\":\"zuǐ\",\"definitions\":[\"mouth\"]},{\"simplified\":\"最后\",\"traditional\":\"最后\",\"pinyin\":\"zuìhòu\",\"definitions\":[\"last\",\"final\",\"ultimately\"]},{\"simplified\":\"最近\",\"traditional\":\"最近\",\"pinyin\":\"zuìjìn\",\"definitions\":[\"recently\",\"lately\",\"these days\"]},{\"simplified\":\"作业\",\"traditional\":\"作業\",\"pinyin\":\"zuòyè\",\"definitions\":[\"school assignment\",\"homework\",\"task\"]}]");
+
+/***/ }),
+
+/***/ "./words/hsk4.json":
+/*!*************************!*\
+  !*** ./words/hsk4.json ***!
+  \*************************/
+/*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 575, 576, 577, 578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 588, 589, 590, 591, 592, 593, 594, 595, 596, 597, 598, 599, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("[{\"simplified\":\"﻿爱情\",\"traditional\":\"愛情\",\"pinyin\":\"àiqíng\",\"definitions\":[\"(romantic) love\"]},{\"simplified\":\"安排\",\"traditional\":\"安排\",\"pinyin\":\"ānpái\",\"definitions\":[\"arrange\",\"to plan\"]},{\"simplified\":\"安全\",\"traditional\":\"安全\",\"pinyin\":\"ānquán\",\"definitions\":[\"safe\",\"safety\",\"secure\",\"security\"]},{\"simplified\":\"按时\",\"traditional\":\"按時\",\"pinyin\":\"ànshí\",\"definitions\":[\"on time\",\"on schedule\"]},{\"simplified\":\"按照\",\"traditional\":\"按照\",\"pinyin\":\"ànzhào\",\"definitions\":[\"according to\",\"in accordance with\",\"in light of\"]},{\"simplified\":\"百分之\",\"traditional\":\"百分之\",\"pinyin\":\"bǎifēnzhī\",\"definitions\":[\"percent\"]},{\"simplified\":\"棒\",\"traditional\":\"棒\",\"pinyin\":\"bàng\",\"definitions\":[\"stick\",\"club\",\"good\",\"excellent\"]},{\"simplified\":\"包子\",\"traditional\":\"包子\",\"pinyin\":\"bāozi\",\"definitions\":[\"steamed stuffed bun\"]},{\"simplified\":\"保护\",\"traditional\":\"保護\",\"pinyin\":\"bǎohù\",\"definitions\":[\"to protect\",\"to defend\"]},{\"simplified\":\"保证\",\"traditional\":\"保證\",\"pinyin\":\"bǎozhèng\",\"definitions\":[\"to guarantee\",\"ensure\"]},{\"simplified\":\"报名\",\"traditional\":\"報名\",\"pinyin\":\"bào míng\",\"definitions\":[\"sign up\",\"apply\"]},{\"simplified\":\"抱\",\"traditional\":\"抱\",\"pinyin\":\"bào\",\"definitions\":[\"to hold\",\"to hug\",\"carry in one's arms\",\"to cradle\"]},{\"simplified\":\"抱歉\",\"traditional\":\"抱歉\",\"pinyin\":\"bàoqiàn\",\"definitions\":[\"be sorry\",\"feel apologetic\",\"to regret\"]},{\"simplified\":\"倍\",\"traditional\":\"倍\",\"pinyin\":\"bèi\",\"definitions\":[\"(two, three, etc)-fold\",\"times (multiplier)\"]},{\"simplified\":\"本来\",\"traditional\":\"本來\",\"pinyin\":\"běnlái\",\"definitions\":[\"originally\",\"at first\"]},{\"simplified\":\"笨\",\"traditional\":\"笨\",\"pinyin\":\"bèn\",\"definitions\":[\"stupid\",\"foolish\",\"silly\",\"dumb\",\"clumsy\"]},{\"simplified\":\"比如\",\"traditional\":\"比如\",\"pinyin\":\"bǐrú\",\"definitions\":[\"for example\",\"for instance\",\"such as\"]},{\"simplified\":\"毕业\",\"traditional\":\"畢業\",\"pinyin\":\"bì yè\",\"definitions\":[\"to graduate\",\"to finish school\"]},{\"simplified\":\"遍\",\"traditional\":\"遍\",\"pinyin\":\"biàn\",\"definitions\":[\"a time\",\"everywhere\",\"turn\",\"(mw for times or turns)\"]},{\"simplified\":\"标准\",\"traditional\":\"標准\",\"pinyin\":\"biāozhǔn\",\"definitions\":[\"(an official) standard\",\"norm\",\"criterion\"]},{\"simplified\":\"表格\",\"traditional\":\"表格\",\"pinyin\":\"biǎogé\",\"definitions\":[\"form (document)\"]},{\"simplified\":\"表示\",\"traditional\":\"表示\",\"pinyin\":\"biǎoshì\",\"definitions\":[\"express\",\"show\",\"indicate\"]},{\"simplified\":\"表演\",\"traditional\":\"表演\",\"pinyin\":\"biǎoyǎn\",\"definitions\":[\"perform\",\"to play\"]},{\"simplified\":\"表扬\",\"traditional\":\"表揚\",\"pinyin\":\"biǎoyáng\",\"definitions\":[\"to praise\",\"commend\"]},{\"simplified\":\"饼干\",\"traditional\":\"餅幹\",\"pinyin\":\"bǐnggān\",\"definitions\":[\"biscuit\",\"cracker\",\"cookie\"]},{\"simplified\":\"并且\",\"traditional\":\"並且\",\"pinyin\":\"bìngqiě\",\"definitions\":[\"and\",\"besides\",\"moreover\"]},{\"simplified\":\"博士\",\"traditional\":\"博士\",\"pinyin\":\"bóshì\",\"definitions\":[\"doctor\",\"PhD\"]},{\"simplified\":\"不得不\",\"traditional\":\"不得不\",\"pinyin\":\"bù dé bù\",\"definitions\":[\"have to\",\"have no choice but to\",\"cannot but\"]},{\"simplified\":\"不管\",\"traditional\":\"不管\",\"pinyin\":\"bùguǎn\",\"definitions\":[\"no matter (what, how, etc.)\",\"regardless of\"]},{\"simplified\":\"不过\",\"traditional\":\"不過\",\"pinyin\":\"búguò\",\"definitions\":[\"only\",\"merely\",\"but\",\"however\"]},{\"simplified\":\"不仅\",\"traditional\":\"不僅\",\"pinyin\":\"bùjǐn\",\"definitions\":[\"not only\",\"not just\"]},{\"simplified\":\"部分\",\"traditional\":\"部分\",\"pinyin\":\"bùfen\",\"definitions\":[\"part\",\"share\",\"section\"]},{\"simplified\":\"擦\",\"traditional\":\"擦\",\"pinyin\":\"cā\",\"definitions\":[\"to wipe\",\"to rub\",\"to polish\"]},{\"simplified\":\"猜\",\"traditional\":\"猜\",\"pinyin\":\"cāi\",\"definitions\":[\"to guess\"]},{\"simplified\":\"材料\",\"traditional\":\"材料\",\"pinyin\":\"cáiliào\",\"definitions\":[\"material\"]},{\"simplified\":\"参观\",\"traditional\":\"參觀\",\"pinyin\":\"cānguān\",\"definitions\":[\"to visit (a place, such as a tourist spot)\",\"inspect\"]},{\"simplified\":\"餐厅\",\"traditional\":\"餐廳\",\"pinyin\":\"cāntīng\",\"definitions\":[\"dining hall\",\"cafeteria\",\"restaurant\"]},{\"simplified\":\"厕所\",\"traditional\":\"廁所\",\"pinyin\":\"cèsuǒ\",\"definitions\":[\"bathroom\",\"toilet\",\"lavatory\"]},{\"simplified\":\"差不多\",\"traditional\":\"差不多\",\"pinyin\":\"chàbuduō\",\"definitions\":[\"almost\",\"about the same\"]},{\"simplified\":\"长城\",\"traditional\":\"長城\",\"pinyin\":\"chángchéng\",\"definitions\":[\"the Great Wall\"]},{\"simplified\":\"长江\",\"traditional\":\"長江\",\"pinyin\":\"Chángjiāng\",\"definitions\":[\"the Yangtze River\",\"the Changjiang River\"]},{\"simplified\":\"尝\",\"traditional\":\"嘗\",\"pinyin\":\"cháng\",\"definitions\":[\"to taste\",\"flavor\",\"(past tense marker)\"]},{\"simplified\":\"场\",\"traditional\":\"場\",\"pinyin\":\"chǎng\",\"definitions\":[\"courtyard\",\"place\",\"field\",\"(mw for games, performances, etc.)\"]},{\"simplified\":\"超过\",\"traditional\":\"超過\",\"pinyin\":\"chāoguò\",\"definitions\":[\"surpass\",\"exceed\",\"outstrip\"]},{\"simplified\":\"成功\",\"traditional\":\"成功\",\"pinyin\":\"chénggōng\",\"definitions\":[\"success\",\"to succeed\"]},{\"simplified\":\"成为\",\"traditional\":\"成爲\",\"pinyin\":\"chéngwéi\",\"definitions\":[\"become\",\"turn into\"]},{\"simplified\":\"诚实\",\"traditional\":\"誠實\",\"pinyin\":\"chéngshí\",\"definitions\":[\"honest\",\"honorable\"]},{\"simplified\":\"乘坐\",\"traditional\":\"乘坐\",\"pinyin\":\"chéngzuò\",\"definitions\":[\"ride\",\"get into (a vehicle)\"]},{\"simplified\":\"吃惊\",\"traditional\":\"吃驚\",\"pinyin\":\"chī jīng\",\"definitions\":[\"be startled\",\"be shocked\",\"be amazed\"]},{\"simplified\":\"重新\",\"traditional\":\"重新\",\"pinyin\":\"chóngxīn\",\"definitions\":[\"again\",\"anew\",\"once more\"]},{\"simplified\":\"抽烟\",\"traditional\":\"抽煙\",\"pinyin\":\"chōuyān\",\"definitions\":[\"to smoke (a cigarette, pipe, etc.)\"]},{\"simplified\":\"出差\",\"traditional\":\"出差\",\"pinyin\":\"chū chāi\",\"definitions\":[\"go on a business trip\"]},{\"simplified\":\"出发\",\"traditional\":\"出發\",\"pinyin\":\"chūfā\",\"definitions\":[\"start out\",\"set off\"]},{\"simplified\":\"出生\",\"traditional\":\"出生\",\"pinyin\":\"chūshēng\",\"definitions\":[\"be born\"]},{\"simplified\":\"出现\",\"traditional\":\"出現\",\"pinyin\":\"chūxiàn\",\"definitions\":[\"appear\",\"arise\",\"emerge\"]},{\"simplified\":\"厨房\",\"traditional\":\"廚房\",\"pinyin\":\"chúfáng\",\"definitions\":[\"kitchen\"]},{\"simplified\":\"传真\",\"traditional\":\"傳真\",\"pinyin\":\"chuánzhēn\",\"definitions\":[\"fax\",\"facsimile\"]},{\"simplified\":\"窗户\",\"traditional\":\"窗戶\",\"pinyin\":\"chuānghu\",\"definitions\":[\"window\"]},{\"simplified\":\"词语\",\"traditional\":\"詞語\",\"pinyin\":\"cíyǔ\",\"definitions\":[\"words and expressions\",\"terms\"]},{\"simplified\":\"从来\",\"traditional\":\"從來\",\"pinyin\":\"cónglái\",\"definitions\":[\"always\",\"at all times\"]},{\"simplified\":\"粗心\",\"traditional\":\"粗心\",\"pinyin\":\"cūxīn\",\"definitions\":[\"careless\",\"inadvertent\",\"negligent\"]},{\"simplified\":\"存\",\"traditional\":\"存\",\"pinyin\":\"cún\",\"definitions\":[\"exist\",\"to deposit\",\"to store\"]},{\"simplified\":\"错误\",\"traditional\":\"錯誤\",\"pinyin\":\"cuòwù\",\"definitions\":[\"error\",\"mistake\",\"mistaken\"]},{\"simplified\":\"答案\",\"traditional\":\"答案\",\"pinyin\":\"dá'àn\",\"definitions\":[\"answer\",\"solution\"]},{\"simplified\":\"打扮\",\"traditional\":\"打扮\",\"pinyin\":\"dǎban\",\"definitions\":[\"dress up\",\"put on make up\"]},{\"simplified\":\"打扰\",\"traditional\":\"打擾\",\"pinyin\":\"dǎrǎo\",\"definitions\":[\"disturb\"]},{\"simplified\":\"打印\",\"traditional\":\"打印\",\"pinyin\":\"dǎyìn\",\"definitions\":[\"to print\"]},{\"simplified\":\"打招呼\",\"traditional\":\"打招呼\",\"pinyin\":\"dǎzhāohu\",\"definitions\":[\"notify\",\"greet\",\"inform\"]},{\"simplified\":\"打折\",\"traditional\":\"打折\",\"pinyin\":\"dǎzhé\",\"definitions\":[\"sell at a discount\"]},{\"simplified\":\"打针\",\"traditional\":\"打針\",\"pinyin\":\"dǎzhēn\",\"definitions\":[\"inject\",\"get a shot\"]},{\"simplified\":\"大概\",\"traditional\":\"大概\",\"pinyin\":\"dàgài\",\"definitions\":[\"probably\",\"roughly\",\"approximate\"]},{\"simplified\":\"大使馆\",\"traditional\":\"大使館\",\"pinyin\":\"dàshǐguǎn\",\"definitions\":[\"embassy\"]},{\"simplified\":\"大约\",\"traditional\":\"大約\",\"pinyin\":\"dàyuē\",\"definitions\":[\"approximately\",\"about\"]},{\"simplified\":\"大夫\",\"traditional\":\"大夫\",\"pinyin\":\"dàifu\",\"definitions\":[\"doctor\",\"physician\"]},{\"simplified\":\"戴\",\"traditional\":\"戴\",\"pinyin\":\"dài\",\"definitions\":[\"put on\",\"to wear\",\"to respect\"]},{\"simplified\":\"当\",\"traditional\":\"當\",\"pinyin\":\"dāng\",\"definitions\":[\"should\",\"act as\",\"work as\",\"manage\",\"match\",\"(sound of bells)\"]},{\"simplified\":\"当时\",\"traditional\":\"當時\",\"pinyin\":\"dāngshí\",\"definitions\":[\"then\",\"at that time\",\"while\"]},{\"simplified\":\"刀\",\"traditional\":\"刀\",\"pinyin\":\"dāo\",\"definitions\":[\"knife\",\"blade (Kangxi radical 18)\"]},{\"simplified\":\"导游\",\"traditional\":\"導遊\",\"pinyin\":\"dǎoyóu\",\"definitions\":[\"tour guide\"]},{\"simplified\":\"到处\",\"traditional\":\"到處\",\"pinyin\":\"dàochù\",\"definitions\":[\"everywhere\",\"in all places\",\"all over\"]},{\"simplified\":\"到底\",\"traditional\":\"到底\",\"pinyin\":\"dào dǐ\",\"definitions\":[\"after all\",\"in the end (used in a question)\"]},{\"simplified\":\"倒\",\"traditional\":\"倒\",\"pinyin\":\"dǎo, dào\",\"definitions\":[\"to collapse\",\"to fall\",\"fail\",\"to exchange | to pour\",\"contrary to expectations\"]},{\"simplified\":\"道歉\",\"traditional\":\"道歉\",\"pinyin\":\"dàoqiàn\",\"definitions\":[\"apologize\",\"make an apology\"]},{\"simplified\":\"得意\",\"traditional\":\"得意\",\"pinyin\":\"déyì\",\"definitions\":[\"proud of oneself\",\"complacent\"]},{\"simplified\":\"得\",\"traditional\":\"得\",\"pinyin\":\"de\",\"definitions\":[\"(complement particle)\"]},{\"simplified\":\"登机牌\",\"traditional\":\"登機牌\",\"pinyin\":\"dēngjīpái\",\"definitions\":[\"boarding pass\"]},{\"simplified\":\"等\",\"traditional\":\"等\",\"pinyin\":\"děng\",\"definitions\":[\"to wait\",\"rank\",\"equal\",\"etc.\"]},{\"simplified\":\"低\",\"traditional\":\"低\",\"pinyin\":\"dī\",\"definitions\":[\"low\",\"to lower (one's head)\",\"droop\"]},{\"simplified\":\"底\",\"traditional\":\"底\",\"pinyin\":\"dǐ\",\"definitions\":[\"bottom\",\"background\",\"base\"]},{\"simplified\":\"地点\",\"traditional\":\"地點\",\"pinyin\":\"dìdiǎn\",\"definitions\":[\"place\",\"site\",\"location\"]},{\"simplified\":\"地球\",\"traditional\":\"地球\",\"pinyin\":\"dìqiú\",\"definitions\":[\"the Earth\",\"planet\"]},{\"simplified\":\"地址\",\"traditional\":\"地址\",\"pinyin\":\"dìzhǐ\",\"definitions\":[\"address\"]},{\"simplified\":\"调查\",\"traditional\":\"調查\",\"pinyin\":\"diàochá\",\"definitions\":[\"investigate\",\"survey\",\"inquiry\"]},{\"simplified\":\"掉\",\"traditional\":\"掉\",\"pinyin\":\"diào\",\"definitions\":[\"to drop\",\"to fall\"]},{\"simplified\":\"丢\",\"traditional\":\"丟\",\"pinyin\":\"diū\",\"definitions\":[\"lose (something)\",\"throw\",\"put aside\"]},{\"simplified\":\"动作\",\"traditional\":\"動作\",\"pinyin\":\"dòngzuò\",\"definitions\":[\"movement\",\"motion\",\"action\"]},{\"simplified\":\"堵车\",\"traditional\":\"堵車\",\"pinyin\":\"dǔchē\",\"definitions\":[\"traffic jam\"]},{\"simplified\":\"肚子\",\"traditional\":\"肚子\",\"pinyin\":\"dùzi\",\"definitions\":[\"belly\",\"abdomen\",\"stomach\"]},{\"simplified\":\"短信\",\"traditional\":\"短信\",\"pinyin\":\"duǎnxìn\",\"definitions\":[\"text message\",\"SMS\"]},{\"simplified\":\"对话\",\"traditional\":\"對話\",\"pinyin\":\"duìhuà\",\"definitions\":[\"dialogue\",\"conversation\"]},{\"simplified\":\"对面\",\"traditional\":\"對面\",\"pinyin\":\"duìmiàn\",\"definitions\":[\"opposite\",\"across from\",\"the other side\"]},{\"simplified\":\"对于\",\"traditional\":\"對于\",\"pinyin\":\"duìyú\",\"definitions\":[\"regarding\",\"as far as sth. is concerned\",\"with regards to\",\"for\"]},{\"simplified\":\"儿童\",\"traditional\":\"兒童\",\"pinyin\":\"értóng\",\"definitions\":[\"child\",\"children\"]},{\"simplified\":\"而\",\"traditional\":\"而\",\"pinyin\":\"ér\",\"definitions\":[\"and\",\"but\",\"yet\",\"while (Kangxi radical 126)\"]},{\"simplified\":\"发生\",\"traditional\":\"發生\",\"pinyin\":\"fāshēng\",\"definitions\":[\"happen\",\"occur\",\"take place\"]},{\"simplified\":\"发展\",\"traditional\":\"發展\",\"pinyin\":\"fāzhǎn\",\"definitions\":[\"develop\",\"development\",\"growth\"]},{\"simplified\":\"法律\",\"traditional\":\"法律\",\"pinyin\":\"fǎlǜ\",\"definitions\":[\"law\",\"statute\"]},{\"simplified\":\"翻译\",\"traditional\":\"翻譯\",\"pinyin\":\"fānyì\",\"definitions\":[\"translate\",\"translation\",\"interpret\"]},{\"simplified\":\"烦恼\",\"traditional\":\"煩惱\",\"pinyin\":\"fánnǎo\",\"definitions\":[\"worried\",\"vexed\"]},{\"simplified\":\"反对\",\"traditional\":\"反對\",\"pinyin\":\"fǎnduì\",\"definitions\":[\"oppose\",\"fight against\"]},{\"simplified\":\"方法\",\"traditional\":\"方法\",\"pinyin\":\"fāngfǎ\",\"definitions\":[\"method\",\"way\",\"means\"]},{\"simplified\":\"方面\",\"traditional\":\"方面\",\"pinyin\":\"fāngmiàn\",\"definitions\":[\"aspect\",\"field\",\"side\"]},{\"simplified\":\"方向\",\"traditional\":\"方向\",\"pinyin\":\"fāngxiàng\",\"definitions\":[\"direction\",\"orientation\"]},{\"simplified\":\"房东\",\"traditional\":\"房東\",\"pinyin\":\"fángdōng\",\"definitions\":[\"landlord\"]},{\"simplified\":\"放弃\",\"traditional\":\"放棄\",\"pinyin\":\"fàngqì\",\"definitions\":[\"abandon\",\"renounce\",\"give up\"]},{\"simplified\":\"放暑假\",\"traditional\":\"放暑假\",\"pinyin\":\"fàng shǔjià\",\"definitions\":[\"have summer vacation\"]},{\"simplified\":\"放松\",\"traditional\":\"放松\",\"pinyin\":\"fàngsōng\",\"definitions\":[\"relax\",\"loosen\",\"slacken\"]},{\"simplified\":\"份\",\"traditional\":\"份\",\"pinyin\":\"fèn\",\"definitions\":[\"part\",\"portion\",\"(mw for documents, papers, jobs, etc.)\"]},{\"simplified\":\"丰富\",\"traditional\":\"豐富\",\"pinyin\":\"fēngfù\",\"definitions\":[\"rich\",\"enrich\",\"abundant\",\"plentiful\"]},{\"simplified\":\"否则\",\"traditional\":\"否則\",\"pinyin\":\"fǒuzé\",\"definitions\":[\"if not\",\"otherwise\",\"or else\"]},{\"simplified\":\"符合\",\"traditional\":\"符合\",\"pinyin\":\"fúhé\",\"definitions\":[\"in keeping with\",\"in accordance with\",\"conform\"]},{\"simplified\":\"父亲\",\"traditional\":\"父親\",\"pinyin\":\"fùqin\",\"definitions\":[\"father\"]},{\"simplified\":\"付款\",\"traditional\":\"付款\",\"pinyin\":\"fù kuǎn\",\"definitions\":[\"to pay\"]},{\"simplified\":\"负责\",\"traditional\":\"負責\",\"pinyin\":\"fùzé\",\"definitions\":[\"responsible for (something)\",\"in charge of\"]},{\"simplified\":\"复印\",\"traditional\":\"複印\",\"pinyin\":\"fùyìn\",\"definitions\":[\"photocopy\",\"duplicate\"]},{\"simplified\":\"复杂\",\"traditional\":\"複雜\",\"pinyin\":\"fùzá\",\"definitions\":[\"complicated\",\"complex\"]},{\"simplified\":\"富\",\"traditional\":\"富\",\"pinyin\":\"fù\",\"definitions\":[\"wealthy\"]},{\"simplified\":\"改变\",\"traditional\":\"改變\",\"pinyin\":\"gǎibiàn\",\"definitions\":[\"to change\",\"alter\",\"to transform\"]},{\"simplified\":\"干杯\",\"traditional\":\"幹杯\",\"pinyin\":\"gān bēi\",\"definitions\":[\"to drink a toast\",\"cheers!\",\"bottoms up!\"]},{\"simplified\":\"赶\",\"traditional\":\"趕\",\"pinyin\":\"gǎn\",\"definitions\":[\"catch up\",\"overtake\",\"drive away\"]},{\"simplified\":\"敢\",\"traditional\":\"敢\",\"pinyin\":\"gǎn\",\"definitions\":[\"to dare\"]},{\"simplified\":\"感动\",\"traditional\":\"感動\",\"pinyin\":\"gǎndòng\",\"definitions\":[\"be moved\",\"to touch emotionally\"]},{\"simplified\":\"感觉\",\"traditional\":\"感覺\",\"pinyin\":\"gǎnjué\",\"definitions\":[\"to feel\",\"become aware of\",\"feeling\"]},{\"simplified\":\"感情\",\"traditional\":\"感情\",\"pinyin\":\"gǎnqíng\",\"definitions\":[\"feeling\",\"emotion\",\"sensation\"]},{\"simplified\":\"感谢\",\"traditional\":\"感謝\",\"pinyin\":\"gǎnxiè\",\"definitions\":[\"thank\",\"be grateful\"]},{\"simplified\":\"干\",\"traditional\":\"幹\",\"pinyin\":\"gān\",\"definitions\":[\"to concern\",\"shield\",\"dry\",\"clean (Kangxi radical 51)\"]},{\"simplified\":\"刚\",\"traditional\":\"剛\",\"pinyin\":\"gāng\",\"definitions\":[\"just (indicating the immediate past)\",\"recently\",\"firm\"]},{\"simplified\":\"高速公路\",\"traditional\":\"高速公路\",\"pinyin\":\"gāosù gōnglù\",\"definitions\":[\"highway\"]},{\"simplified\":\"胳膊\",\"traditional\":\"胳膊\",\"pinyin\":\"gēbo\",\"definitions\":[\"arm\"]},{\"simplified\":\"各\",\"traditional\":\"各\",\"pinyin\":\"gè\",\"definitions\":[\"each\",\"every\"]},{\"simplified\":\"工资\",\"traditional\":\"工資\",\"pinyin\":\"gōngzī\",\"definitions\":[\"wages\",\"pay\",\"earnings\",\"salary\"]},{\"simplified\":\"公里\",\"traditional\":\"公裏\",\"pinyin\":\"gōnglǐ\",\"definitions\":[\"kilometer\"]},{\"simplified\":\"功夫\",\"traditional\":\"功夫\",\"pinyin\":\"gōngfu\",\"definitions\":[\"kung fu\",\"skill\",\"art\",\"labor\"]},{\"simplified\":\"共同\",\"traditional\":\"共同\",\"pinyin\":\"gòngtóng\",\"definitions\":[\"together\",\"common\",\"joint\"]},{\"simplified\":\"购物\",\"traditional\":\"購物\",\"pinyin\":\"gòuwù\",\"definitions\":[\"go shopping\",\"buy goods\"]},{\"simplified\":\"够\",\"traditional\":\"夠\",\"pinyin\":\"gòu\",\"definitions\":[\"enough\",\"to reach\"]},{\"simplified\":\"估计\",\"traditional\":\"估計\",\"pinyin\":\"gūjì\",\"definitions\":[\"appraise\",\"estimate\"]},{\"simplified\":\"鼓励\",\"traditional\":\"鼓勵\",\"pinyin\":\"gǔlì\",\"definitions\":[\"encourage\",\"inspire\"]},{\"simplified\":\"故意\",\"traditional\":\"故意\",\"pinyin\":\"gùyì\",\"definitions\":[\"deliberately\",\"intentional\",\"on purpose\"]},{\"simplified\":\"顾客\",\"traditional\":\"顧客\",\"pinyin\":\"gùkè\",\"definitions\":[\"customer\",\"client\"]},{\"simplified\":\"挂\",\"traditional\":\"挂\",\"pinyin\":\"guà\",\"definitions\":[\"hang\",\"put up\",\"suspend\"]},{\"simplified\":\"关键\",\"traditional\":\"關鍵\",\"pinyin\":\"guānjiàn\",\"definitions\":[\"crucial\",\"key\",\"pivotal\"]},{\"simplified\":\"观众\",\"traditional\":\"觀衆\",\"pinyin\":\"guānzhòng\",\"definitions\":[\"spectator\",\"audience\"]},{\"simplified\":\"管理\",\"traditional\":\"管理\",\"pinyin\":\"guǎnlǐ\",\"definitions\":[\"supervise\",\"manage\"]},{\"simplified\":\"光\",\"traditional\":\"光\",\"pinyin\":\"guāng\",\"definitions\":[\"light\",\"ray\",\"bright\",\"only\",\"merely\",\"used up\"]},{\"simplified\":\"广播\",\"traditional\":\"廣播\",\"pinyin\":\"guǎngbō\",\"definitions\":[\"broadcast\",\"on the air\"]},{\"simplified\":\"广告\",\"traditional\":\"廣告\",\"pinyin\":\"guǎnggào\",\"definitions\":[\"advertisement\",\"a commercial\"]},{\"simplified\":\"逛\",\"traditional\":\"逛\",\"pinyin\":\"guàng\",\"definitions\":[\"to stroll\",\"to visit\",\"go window shopping\"]},{\"simplified\":\"规定\",\"traditional\":\"規定\",\"pinyin\":\"guīdìng\",\"definitions\":[\"regulation\",\"stipulate\",\"fix\",\"set\"]},{\"simplified\":\"国籍\",\"traditional\":\"國籍\",\"pinyin\":\"guójí\",\"definitions\":[\"nationality\"]},{\"simplified\":\"国际\",\"traditional\":\"國際\",\"pinyin\":\"guójì\",\"definitions\":[\"international\"]},{\"simplified\":\"果汁\",\"traditional\":\"果汁\",\"pinyin\":\"guǒzhī\",\"definitions\":[\"fruit juice\"]},{\"simplified\":\"过程\",\"traditional\":\"過程\",\"pinyin\":\"guòchéng\",\"definitions\":[\"course of events\",\"process\"]},{\"simplified\":\"海洋\",\"traditional\":\"海洋\",\"pinyin\":\"hǎiyáng\",\"definitions\":[\"ocean\"]},{\"simplified\":\"害羞\",\"traditional\":\"害羞\",\"pinyin\":\"hài xiū\",\"definitions\":[\"blush\",\"shy\"]},{\"simplified\":\"寒假\",\"traditional\":\"寒假\",\"pinyin\":\"hánjià\",\"definitions\":[\"winter vacation\"]},{\"simplified\":\"汗\",\"traditional\":\"汗\",\"pinyin\":\"hàn\",\"definitions\":[\"sweat\",\"perspiration\",\"Khan\"]},{\"simplified\":\"航班\",\"traditional\":\"航班\",\"pinyin\":\"hángbān\",\"definitions\":[\"scheduled flight\",\"flight number\"]},{\"simplified\":\"好处\",\"traditional\":\"好處\",\"pinyin\":\"hǎochu\",\"definitions\":[\"benefit\",\"advantage\"]},{\"simplified\":\"好像\",\"traditional\":\"好像\",\"pinyin\":\"hǎoxiàng\",\"definitions\":[\"as if\",\"seem to be\"]},{\"simplified\":\"号码\",\"traditional\":\"號碼\",\"pinyin\":\"hàomǎ\",\"definitions\":[\"number\"]},{\"simplified\":\"合格\",\"traditional\":\"合格\",\"pinyin\":\"hégé\",\"definitions\":[\"qualified\",\"up to standard\"]},{\"simplified\":\"合适\",\"traditional\":\"合適\",\"pinyin\":\"héshì\",\"definitions\":[\"suitable\",\"proper\",\"appropriate\"]},{\"simplified\":\"盒子\",\"traditional\":\"盒子\",\"pinyin\":\"hézi\",\"definitions\":[\"box\"]},{\"simplified\":\"后悔\",\"traditional\":\"後悔\",\"pinyin\":\"hòuhuǐ\",\"definitions\":[\"to regret\",\"repent\"]},{\"simplified\":\"厚\",\"traditional\":\"厚\",\"pinyin\":\"hòu\",\"definitions\":[\"thick (for flat things)\",\"generous\"]},{\"simplified\":\"互联网\",\"traditional\":\"互聯網\",\"pinyin\":\"Hùliánwǎng\",\"definitions\":[\"Internet\"]},{\"simplified\":\"互相\",\"traditional\":\"互相\",\"pinyin\":\"hùxiāng\",\"definitions\":[\"mutually\",\"with each other\"]},{\"simplified\":\"护士\",\"traditional\":\"護士\",\"pinyin\":\"hùshi\",\"definitions\":[\"nurse\"]},{\"simplified\":\"怀疑\",\"traditional\":\"懷疑\",\"pinyin\":\"huáiyí\",\"definitions\":[\"doubt\",\"to suspect\",\"be skeptical\"]},{\"simplified\":\"回忆\",\"traditional\":\"回憶\",\"pinyin\":\"huíyì\",\"definitions\":[\"to recall\",\"recollect\"]},{\"simplified\":\"活动\",\"traditional\":\"活動\",\"pinyin\":\"huódòng\",\"definitions\":[\"activity\",\"exercise\",\"move about\"]},{\"simplified\":\"活泼\",\"traditional\":\"活潑\",\"pinyin\":\"huópo\",\"definitions\":[\"lively\",\"vivacious\"]},{\"simplified\":\"火\",\"traditional\":\"火\",\"pinyin\":\"huǒ\",\"definitions\":[\"fire (Kangxi radical 86)\"]},{\"simplified\":\"获得\",\"traditional\":\"獲得\",\"pinyin\":\"huòdé\",\"definitions\":[\"obtain\",\"acquire\",\"to gain\"]},{\"simplified\":\"积极\",\"traditional\":\"積極\",\"pinyin\":\"jījí\",\"definitions\":[\"active\",\"positive\",\"energetic\"]},{\"simplified\":\"积累\",\"traditional\":\"積累\",\"pinyin\":\"jīlěi\",\"definitions\":[\"accumulate\",\"accumulation\"]},{\"simplified\":\"基础\",\"traditional\":\"基礎\",\"pinyin\":\"jīchǔ\",\"definitions\":[\"base\",\"foundation\"]},{\"simplified\":\"激动\",\"traditional\":\"激動\",\"pinyin\":\"jīdòng\",\"definitions\":[\"excite\",\"agitate\"]},{\"simplified\":\"及时\",\"traditional\":\"及時\",\"pinyin\":\"jíshí\",\"definitions\":[\"timely\",\"in time\",\"promptly\",\"without delay\"]},{\"simplified\":\"即使\",\"traditional\":\"即使\",\"pinyin\":\"jíshǐ\",\"definitions\":[\"even if\",\"even though\"]},{\"simplified\":\"计划\",\"traditional\":\"計劃\",\"pinyin\":\"jìhuà\",\"definitions\":[\"plan\",\"project\"]},{\"simplified\":\"记者\",\"traditional\":\"記者\",\"pinyin\":\"jìzhě\",\"definitions\":[\"reporter\",\"journalist\"]},{\"simplified\":\"技术\",\"traditional\":\"技術\",\"pinyin\":\"jìshù\",\"definitions\":[\"technology\",\"technique\",\"skill\"]},{\"simplified\":\"既然\",\"traditional\":\"既然\",\"pinyin\":\"jìrán\",\"definitions\":[\"since\",\"given that\",\"now that\"]},{\"simplified\":\"继续\",\"traditional\":\"繼續\",\"pinyin\":\"jìxù\",\"definitions\":[\"to continue\",\"to go on\",\"to proceed\"]},{\"simplified\":\"寄\",\"traditional\":\"寄\",\"pinyin\":\"jì\",\"definitions\":[\"send by mail\"]},{\"simplified\":\"加班\",\"traditional\":\"加班\",\"pinyin\":\"jiā bān\",\"definitions\":[\"work overtime\"]},{\"simplified\":\"加油站\",\"traditional\":\"加油站\",\"pinyin\":\"jiāyóuzhàn\",\"definitions\":[\"gas station\"]},{\"simplified\":\"家具\",\"traditional\":\"家具\",\"pinyin\":\"jiājù\",\"definitions\":[\"furniture\"]},{\"simplified\":\"假\",\"traditional\":\"假\",\"pinyin\":\"jiǎ, jià\",\"definitions\":[\"fake\",\"if\",\"borrow | vacation\",\"holiday\"]},{\"simplified\":\"价格\",\"traditional\":\"價格\",\"pinyin\":\"jiàgé\",\"definitions\":[\"price\"]},{\"simplified\":\"坚持\",\"traditional\":\"堅持\",\"pinyin\":\"jiānchí\",\"definitions\":[\"persist in\",\"persevere\"]},{\"simplified\":\"减肥\",\"traditional\":\"減肥\",\"pinyin\":\"jiǎnféi\",\"definitions\":[\"go on a diet\",\"lose weight\"]},{\"simplified\":\"减少\",\"traditional\":\"減少\",\"pinyin\":\"jiǎnshǎo\",\"definitions\":[\"reduce\",\"to decrease\"]},{\"simplified\":\"建议\",\"traditional\":\"建議\",\"pinyin\":\"jiànyì\",\"definitions\":[\"to propose\",\"to suggest\",\"recommend\"]},{\"simplified\":\"将来\",\"traditional\":\"將來\",\"pinyin\":\"jiānglái\",\"definitions\":[\"the future\"]},{\"simplified\":\"奖金\",\"traditional\":\"獎金\",\"pinyin\":\"jiǎngjīn\",\"definitions\":[\"bonus\"]},{\"simplified\":\"降低\",\"traditional\":\"降低\",\"pinyin\":\"jiàngdī\",\"definitions\":[\"reduce\",\"to lower\",\"to drop\"]},{\"simplified\":\"降落\",\"traditional\":\"降落\",\"pinyin\":\"jiàngluò\",\"definitions\":[\"descend\",\"to land\",\"put down\"]},{\"simplified\":\"交\",\"traditional\":\"交\",\"pinyin\":\"jiāo\",\"definitions\":[\"deliver\",\"turn over\",\"intersect\",\"to pay (money)\",\"friendship\"]},{\"simplified\":\"交流\",\"traditional\":\"交流\",\"pinyin\":\"jiāoliú\",\"definitions\":[\"communicate\",\"exchange\",\"give and take\",\"interaction\",\"to alternate\"]},{\"simplified\":\"交通\",\"traditional\":\"交通\",\"pinyin\":\"jiāotōng\",\"definitions\":[\"traffic\",\"transportation\"]},{\"simplified\":\"郊区\",\"traditional\":\"郊區\",\"pinyin\":\"jiāoqū\",\"definitions\":[\"suburbs\",\"outskirts\"]},{\"simplified\":\"骄傲\",\"traditional\":\"驕傲\",\"pinyin\":\"jiāo'ào\",\"definitions\":[\"proud\",\"arrogant\",\"conceited\",\"take pride in\"]},{\"simplified\":\"饺子\",\"traditional\":\"餃子\",\"pinyin\":\"jiǎozi\",\"definitions\":[\"dumpling\",\"potsticker\"]},{\"simplified\":\"教授\",\"traditional\":\"教授\",\"pinyin\":\"jiàoshòu\",\"definitions\":[\"professor\",\"instruct\",\"to lecture\"]},{\"simplified\":\"教育\",\"traditional\":\"教育\",\"pinyin\":\"jiàoyù\",\"definitions\":[\"education\"]},{\"simplified\":\"接受\",\"traditional\":\"接受\",\"pinyin\":\"jiēshòu\",\"definitions\":[\"accept\",\"receive (honors, etc.)\"]},{\"simplified\":\"接着\",\"traditional\":\"接著\",\"pinyin\":\"jiēzhe\",\"definitions\":[\"continue\",\"carry on\",\"to catch\",\"follow\"]},{\"simplified\":\"节\",\"traditional\":\"節\",\"pinyin\":\"jié\",\"definitions\":[\"section\",\"part\",\"festival\",\"moral integrity\",\"save\",\"(mw for class periods)\"]},{\"simplified\":\"节约\",\"traditional\":\"節約\",\"pinyin\":\"jiéyuē\",\"definitions\":[\"frugal\",\"to save\"]},{\"simplified\":\"结果\",\"traditional\":\"結果\",\"pinyin\":\"jiéguǒ\",\"definitions\":[\"result\",\"outcome\",\"finally\"]},{\"simplified\":\"解释\",\"traditional\":\"解釋\",\"pinyin\":\"jiěshì\",\"definitions\":[\"to explain\"]},{\"simplified\":\"尽管\",\"traditional\":\"盡管\",\"pinyin\":\"jǐnguǎn\",\"definitions\":[\"despite\",\"although\",\"even though | freely\",\"without hesitation\"]},{\"simplified\":\"紧张\",\"traditional\":\"緊張\",\"pinyin\":\"jǐnzhāng\",\"definitions\":[\"nervous\",\"tension\",\"strain\"]},{\"simplified\":\"进行\",\"traditional\":\"進行\",\"pinyin\":\"jìnxíng\",\"definitions\":[\"carry on\",\"carry out\",\"undertake\"]},{\"simplified\":\"禁止\",\"traditional\":\"禁止\",\"pinyin\":\"jìnzhǐ\",\"definitions\":[\"to ban\",\"prohibit\"]},{\"simplified\":\"京剧\",\"traditional\":\"京劇\",\"pinyin\":\"jīngjù\",\"definitions\":[\"Beijing Opera\"]},{\"simplified\":\"经济\",\"traditional\":\"經濟\",\"pinyin\":\"jīngjì\",\"definitions\":[\"economy\",\"economic\"]},{\"simplified\":\"经历\",\"traditional\":\"經曆\",\"pinyin\":\"jīnglì\",\"definitions\":[\"undergo\",\"to experience\"]},{\"simplified\":\"经验\",\"traditional\":\"經驗\",\"pinyin\":\"jīngyàn\",\"definitions\":[\"experience\"]},{\"simplified\":\"精彩\",\"traditional\":\"精彩\",\"pinyin\":\"jīngcǎi\",\"definitions\":[\"brilliant\",\"spectacular\",\"wonderful\"]},{\"simplified\":\"景色\",\"traditional\":\"景色\",\"pinyin\":\"jǐngsè\",\"definitions\":[\"scenery\",\"landscape\",\"scene\",\"view\"]},{\"simplified\":\"警察\",\"traditional\":\"警察\",\"pinyin\":\"jǐngchá\",\"definitions\":[\"police\"]},{\"simplified\":\"竞争\",\"traditional\":\"競爭\",\"pinyin\":\"jìngzhēng\",\"definitions\":[\"compete\"]},{\"simplified\":\"竟然\",\"traditional\":\"竟然\",\"pinyin\":\"jìngrán\",\"definitions\":[\"unexpectedly\",\"to one's surprise\",\"go so far as to\"]},{\"simplified\":\"镜子\",\"traditional\":\"鏡子\",\"pinyin\":\"jìngzi\",\"definitions\":[\"mirror\"]},{\"simplified\":\"究竟\",\"traditional\":\"究竟\",\"pinyin\":\"jiūjìng\",\"definitions\":[\"after all\",\"when all is said and done\",\"actually\"]},{\"simplified\":\"举\",\"traditional\":\"舉\",\"pinyin\":\"jǔ\",\"definitions\":[\"lift\",\"raise\",\"cite\"]},{\"simplified\":\"举办\",\"traditional\":\"舉辦\",\"pinyin\":\"jǔbàn\",\"definitions\":[\"to conduct\",\"to hold\"]},{\"simplified\":\"举行\",\"traditional\":\"舉行\",\"pinyin\":\"jǔxíng\",\"definitions\":[\"convene\",\"to hold (a meeting, ceremony, etc.)\"]},{\"simplified\":\"拒绝\",\"traditional\":\"拒絕\",\"pinyin\":\"jùjué\",\"definitions\":[\"to refuse\",\"to decline\",\"to reject\"]},{\"simplified\":\"距离\",\"traditional\":\"距離\",\"pinyin\":\"jùlí\",\"definitions\":[\"distance\",\"be apart\",\"away from\"]},{\"simplified\":\"聚会\",\"traditional\":\"聚會\",\"pinyin\":\"jùhuì\",\"definitions\":[\"hold a meeting\",\"get together\",\"a party\"]},{\"simplified\":\"开玩笑\",\"traditional\":\"開玩笑\",\"pinyin\":\"kāi wánxiào\",\"definitions\":[\"joke\",\"play a joke\",\"make fun of\"]},{\"simplified\":\"开心\",\"traditional\":\"開心\",\"pinyin\":\"kāixīn\",\"definitions\":[\"feel happy\",\"have a great time\",\"make fun of somebody\"]},{\"simplified\":\"看法\",\"traditional\":\"看法\",\"pinyin\":\"kànfǎ\",\"definitions\":[\"point of view\",\"opinion\"]},{\"simplified\":\"考虑\",\"traditional\":\"考慮\",\"pinyin\":\"kǎolǜ\",\"definitions\":[\"think over\",\"consider\"]},{\"simplified\":\"烤鸭\",\"traditional\":\"烤鴨\",\"pinyin\":\"kǎoyā\",\"definitions\":[\"roast duck\"]},{\"simplified\":\"科学\",\"traditional\":\"科學\",\"pinyin\":\"kēxué\",\"definitions\":[\"science\",\"scientific knowledge\"]},{\"simplified\":\"棵\",\"traditional\":\"棵\",\"pinyin\":\"kē\",\"definitions\":[\"(mw for plants)\"]},{\"simplified\":\"咳嗽\",\"traditional\":\"咳嗽\",\"pinyin\":\"késou\",\"definitions\":[\"to cough\"]},{\"simplified\":\"可怜\",\"traditional\":\"可憐\",\"pinyin\":\"kělián\",\"definitions\":[\"pitiful\",\"poor\",\"pathetic\"]},{\"simplified\":\"可是\",\"traditional\":\"可是\",\"pinyin\":\"kěshì\",\"definitions\":[\"but\",\"however\"]},{\"simplified\":\"可惜\",\"traditional\":\"可惜\",\"pinyin\":\"kěxī\",\"definitions\":[\"it's a pity\",\"regrettable\",\"too bad\"]},{\"simplified\":\"客厅\",\"traditional\":\"客廳\",\"pinyin\":\"kètīng\",\"definitions\":[\"living room\",\"parlor\"]},{\"simplified\":\"肯定\",\"traditional\":\"肯定\",\"pinyin\":\"kěndìng\",\"definitions\":[\"sure\",\"definite\",\"affirm\",\"approve\"]},{\"simplified\":\"空\",\"traditional\":\"空\",\"pinyin\":\"kōng, kòng\",\"definitions\":[\"empty\",\"sky | leave blank\",\"leisure\"]},{\"simplified\":\"空气\",\"traditional\":\"空氣\",\"pinyin\":\"kōngqì\",\"definitions\":[\"air\"]},{\"simplified\":\"恐怕\",\"traditional\":\"恐怕\",\"pinyin\":\"kǒngpà\",\"definitions\":[\"be afraid\",\"to fear\",\"I'm afraid that...\"]},{\"simplified\":\"苦\",\"traditional\":\"苦\",\"pinyin\":\"kǔ\",\"definitions\":[\"bitter\",\"miserable\"]},{\"simplified\":\"矿泉水\",\"traditional\":\"礦泉水\",\"pinyin\":\"kuàngquánshuǐ\",\"definitions\":[\"mineral water\"]},{\"simplified\":\"困\",\"traditional\":\"困\",\"pinyin\":\"kùn\",\"definitions\":[\"sleepy\",\"surround\",\"hard-pressed\"]},{\"simplified\":\"困难\",\"traditional\":\"困難\",\"pinyin\":\"kùnnan\",\"definitions\":[\"difficulty\",\"difficult\",\"problem\"]},{\"simplified\":\"垃圾桶\",\"traditional\":\"垃圾桶\",\"pinyin\":\"lājītǒng\",\"definitions\":[\"garbage can\"]},{\"simplified\":\"拉\",\"traditional\":\"拉\",\"pinyin\":\"lā\",\"definitions\":[\"to pull\",\"to play (string instruments)\",\"to drag\"]},{\"simplified\":\"辣\",\"traditional\":\"辣\",\"pinyin\":\"là\",\"definitions\":[\"hot (spicy)\"]},{\"simplified\":\"来不及\",\"traditional\":\"來不及\",\"pinyin\":\"lái bu jí\",\"definitions\":[\"there's not enough time (to do something)\",\"it's too late\"]},{\"simplified\":\"来得及\",\"traditional\":\"來得及\",\"pinyin\":\"lái de jí\",\"definitions\":[\"there's still time\"]},{\"simplified\":\"来自\",\"traditional\":\"來自\",\"pinyin\":\"láizì\",\"definitions\":[\"come from (a place)\"]},{\"simplified\":\"懒\",\"traditional\":\"懶\",\"pinyin\":\"lǎn\",\"definitions\":[\"lazy\"]},{\"simplified\":\"浪费\",\"traditional\":\"浪費\",\"pinyin\":\"làngfèi\",\"definitions\":[\"to waste\",\"squander\"]},{\"simplified\":\"浪漫\",\"traditional\":\"浪漫\",\"pinyin\":\"làngmàn\",\"definitions\":[\"romantic\"]},{\"simplified\":\"老虎\",\"traditional\":\"老虎\",\"pinyin\":\"lǎohǔ\",\"definitions\":[\"tiger\"]},{\"simplified\":\"冷静\",\"traditional\":\"冷靜\",\"pinyin\":\"lěngjìng\",\"definitions\":[\"calm\",\"cool-headed\",\"sober\"]},{\"simplified\":\"礼拜天\",\"traditional\":\"禮拜天\",\"pinyin\":\"lǐbàitiān\",\"definitions\":[\"Sunday\"]},{\"simplified\":\"礼貌\",\"traditional\":\"禮貌\",\"pinyin\":\"lǐmào\",\"definitions\":[\"courtesy\",\"politeness\",\"manners\"]},{\"simplified\":\"理发\",\"traditional\":\"理發\",\"pinyin\":\"lǐfà\",\"definitions\":[\"a barber, hairdressing\",\"haircut\"]},{\"simplified\":\"理解\",\"traditional\":\"理解\",\"pinyin\":\"lǐjiě\",\"definitions\":[\"comprehend\",\"understand\"]},{\"simplified\":\"理想\",\"traditional\":\"理想\",\"pinyin\":\"lǐxiǎng\",\"definitions\":[\"ideal\"]},{\"simplified\":\"力气\",\"traditional\":\"力氣\",\"pinyin\":\"lìqi\",\"definitions\":[\"physical strength\",\"effort\"]},{\"simplified\":\"厉害\",\"traditional\":\"厲害\",\"pinyin\":\"lìhai\",\"definitions\":[\"terrible\",\"formidable\",\"fierce\",\"cool\",\"awesome\"]},{\"simplified\":\"例如\",\"traditional\":\"例如\",\"pinyin\":\"lìrú\",\"definitions\":[\"for example\",\"for instance\"]},{\"simplified\":\"俩\",\"traditional\":\"倆\",\"pinyin\":\"liǎng\",\"definitions\":[\"(colloquial) two (people)\"]},{\"simplified\":\"连\",\"traditional\":\"連\",\"pinyin\":\"lián\",\"definitions\":[\"even\",\"including\",\"join\"]},{\"simplified\":\"联系\",\"traditional\":\"聯系\",\"pinyin\":\"liánxì\",\"definitions\":[\"integrate\",\"link\",\"connection\",\"contact\"]},{\"simplified\":\"凉快\",\"traditional\":\"涼快\",\"pinyin\":\"liángkuai\",\"definitions\":[\"nice and cool\",\"pleasantly cool\"]},{\"simplified\":\"零钱\",\"traditional\":\"零錢\",\"pinyin\":\"língqián\",\"definitions\":[\"small change (of money)\"]},{\"simplified\":\"另外\",\"traditional\":\"另外\",\"pinyin\":\"lìngwài\",\"definitions\":[\"another\",\"in addition\",\"besides\"]},{\"simplified\":\"留\",\"traditional\":\"留\",\"pinyin\":\"liú\",\"definitions\":[\"to leave (behind, a message)\",\"to retain\",\"to stay\"]},{\"simplified\":\"流利\",\"traditional\":\"流利\",\"pinyin\":\"liúlì\",\"definitions\":[\"fluent\"]},{\"simplified\":\"流行\",\"traditional\":\"流行\",\"pinyin\":\"liúxíng\",\"definitions\":[\"spread\",\"prevalent\",\"be popular\"]},{\"simplified\":\"旅行\",\"traditional\":\"旅行\",\"pinyin\":\"lǚxíng\",\"definitions\":[\"travel\"]},{\"simplified\":\"律师\",\"traditional\":\"律師\",\"pinyin\":\"lǜshī\",\"definitions\":[\"lawyer\"]},{\"simplified\":\"乱\",\"traditional\":\"亂\",\"pinyin\":\"luàn\",\"definitions\":[\"disorder\",\"confusion\",\"arbitrarily\"]},{\"simplified\":\"麻烦\",\"traditional\":\"麻煩\",\"pinyin\":\"máfan\",\"definitions\":[\"trouble (someone)\",\"troubling\",\"bothersome\"]},{\"simplified\":\"马虎\",\"traditional\":\"馬虎\",\"pinyin\":\"mǎhu\",\"definitions\":[\"careless\",\"sloppy\",\"casual\"]},{\"simplified\":\"满\",\"traditional\":\"滿\",\"pinyin\":\"mǎn\",\"definitions\":[\"full\",\"abbreviation for Manchurian\"]},{\"simplified\":\"毛\",\"traditional\":\"毛\",\"pinyin\":\"máo\",\"definitions\":[\"hair\",\"fur\",\"feather\",\"dime (Kangxi radical 82)\"]},{\"simplified\":\"毛巾\",\"traditional\":\"毛巾\",\"pinyin\":\"máojīn\",\"definitions\":[\"towel\",\"washcloth\"]},{\"simplified\":\"美丽\",\"traditional\":\"美麗\",\"pinyin\":\"měilì\",\"definitions\":[\"beautiful\"]},{\"simplified\":\"梦\",\"traditional\":\"夢\",\"pinyin\":\"mèng\",\"definitions\":[\"to dream\"]},{\"simplified\":\"迷路\",\"traditional\":\"迷路\",\"pinyin\":\"mílù\",\"definitions\":[\"to get lost\"]},{\"simplified\":\"密码\",\"traditional\":\"密碼\",\"pinyin\":\"mìmǎ\",\"definitions\":[\"password\",\"secret code\"]},{\"simplified\":\"免费\",\"traditional\":\"免費\",\"pinyin\":\"miǎn fèi\",\"definitions\":[\"free (of charge)\",\"no cost\"]},{\"simplified\":\"秒\",\"traditional\":\"秒\",\"pinyin\":\"miǎo\",\"definitions\":[\"second (unit of time or angle)\"]},{\"simplified\":\"民族\",\"traditional\":\"民族\",\"pinyin\":\"mínzú\",\"definitions\":[\"nationality\",\"ethnic group\"]},{\"simplified\":\"母亲\",\"traditional\":\"母親\",\"pinyin\":\"mǔqin\",\"definitions\":[\"mother\"]},{\"simplified\":\"目的\",\"traditional\":\"目的\",\"pinyin\":\"mùdì\",\"definitions\":[\"purpose\",\"aim\",\"goal\"]},{\"simplified\":\"耐心\",\"traditional\":\"耐心\",\"pinyin\":\"nàixīn\",\"definitions\":[\"to be patient\"]},{\"simplified\":\"难道\",\"traditional\":\"難道\",\"pinyin\":\"nándào\",\"definitions\":[\"could it be that ...?\",\"don't tell me ...\"]},{\"simplified\":\"难受\",\"traditional\":\"難受\",\"pinyin\":\"nánshòu\",\"definitions\":[\"feel unwell\",\"to suffer pain\"]},{\"simplified\":\"内\",\"traditional\":\"內\",\"pinyin\":\"nèi\",\"definitions\":[\"inside\",\"inner\",\"internal\",\"within\"]},{\"simplified\":\"内容\",\"traditional\":\"內容\",\"pinyin\":\"nèiróng\",\"definitions\":[\"content\",\"substance\",\"details\"]},{\"simplified\":\"能力\",\"traditional\":\"能力\",\"pinyin\":\"nénglì\",\"definitions\":[\"capability\",\"capable\",\"ability\"]},{\"simplified\":\"年龄\",\"traditional\":\"年齡\",\"pinyin\":\"niánlíng\",\"definitions\":[\"(a person's) age\"]},{\"simplified\":\"弄\",\"traditional\":\"弄\",\"pinyin\":\"nòng\",\"definitions\":[\"do\",\"manage\",\"to handle\",\"make\"]},{\"simplified\":\"暖和\",\"traditional\":\"暖和\",\"pinyin\":\"nuǎnhuo\",\"definitions\":[\"warm\",\"nice and warm\"]},{\"simplified\":\"偶尔\",\"traditional\":\"偶爾\",\"pinyin\":\"ǒu'ěr\",\"definitions\":[\"occasionally\",\"once in a while\",\"sometimes\"]},{\"simplified\":\"排队\",\"traditional\":\"排隊\",\"pinyin\":\"pái duì\",\"definitions\":[\"queue\",\"stand in line\"]},{\"simplified\":\"排列\",\"traditional\":\"排列\",\"pinyin\":\"páiliè\",\"definitions\":[\"arrange\",\"align\",\"permutation\"]},{\"simplified\":\"判断\",\"traditional\":\"判斷\",\"pinyin\":\"pànduàn\",\"definitions\":[\"to judge\",\"judgment\",\"to decide\"]},{\"simplified\":\"陪\",\"traditional\":\"陪\",\"pinyin\":\"péi\",\"definitions\":[\"accompany\",\"keep company\"]},{\"simplified\":\"批评\",\"traditional\":\"批評\",\"pinyin\":\"pīpíng\",\"definitions\":[\"criticize\"]},{\"simplified\":\"皮肤\",\"traditional\":\"皮膚\",\"pinyin\":\"pífū\",\"definitions\":[\"skin\"]},{\"simplified\":\"脾气\",\"traditional\":\"脾氣\",\"pinyin\":\"píqi\",\"definitions\":[\"temperament\",\"disposition\",\"temper\"]},{\"simplified\":\"篇\",\"traditional\":\"篇\",\"pinyin\":\"piān\",\"definitions\":[\"sheet\",\"(mw for articles)\",\"piece of writing\"]},{\"simplified\":\"骗\",\"traditional\":\"騙\",\"pinyin\":\"piàn\",\"definitions\":[\"to cheat\",\"to swindle\",\"deceive\"]},{\"simplified\":\"乒乓球\",\"traditional\":\"乒乓球\",\"pinyin\":\"pīngpāngqiú\",\"definitions\":[\"ping pong\",\"table tennis\"]},{\"simplified\":\"平时\",\"traditional\":\"平時\",\"pinyin\":\"píngshí\",\"definitions\":[\"ordinarily\",\"in normal times\",\"in peacetime\"]},{\"simplified\":\"破\",\"traditional\":\"破\",\"pinyin\":\"pò\",\"definitions\":[\"broken\",\"damaged\",\"to split\"]},{\"simplified\":\"葡萄\",\"traditional\":\"葡萄\",\"pinyin\":\"pútao\",\"definitions\":[\"grape\"]},{\"simplified\":\"普遍\",\"traditional\":\"普遍\",\"pinyin\":\"pǔbiàn\",\"definitions\":[\"common\",\"universal\",\"general\",\"widespread\"]},{\"simplified\":\"普通话\",\"traditional\":\"普通話\",\"pinyin\":\"pǔtōnghuà\",\"definitions\":[\"Mandarin (common language)\"]},{\"simplified\":\"其次\",\"traditional\":\"其次\",\"pinyin\":\"qícì\",\"definitions\":[\"next\",\"secondly\"]},{\"simplified\":\"其中\",\"traditional\":\"其中\",\"pinyin\":\"qízhōng\",\"definitions\":[\"among\",\"in\",\"included among these\"]},{\"simplified\":\"气候\",\"traditional\":\"氣候\",\"pinyin\":\"qìhòu\",\"definitions\":[\"climate\",\"atmosphere\",\"weather\"]},{\"simplified\":\"千万\",\"traditional\":\"千萬\",\"pinyin\":\"qiānwàn\",\"definitions\":[\"ten million\",\"be sure to\",\"must\"]},{\"simplified\":\"签证\",\"traditional\":\"簽證\",\"pinyin\":\"qiānzhèng\",\"definitions\":[\"visa\"]},{\"simplified\":\"敲\",\"traditional\":\"敲\",\"pinyin\":\"qiāo\",\"definitions\":[\"knock\",\"blackmail\"]},{\"simplified\":\"桥\",\"traditional\":\"橋\",\"pinyin\":\"qiáo\",\"definitions\":[\"bridge\"]},{\"simplified\":\"巧克力\",\"traditional\":\"巧克力\",\"pinyin\":\"qiǎokèlì\",\"definitions\":[\"chocolate\"]},{\"simplified\":\"亲戚\",\"traditional\":\"親戚\",\"pinyin\":\"qīnqi\",\"definitions\":[\"a relative (i.e. family relation)\"]},{\"simplified\":\"轻\",\"traditional\":\"輕\",\"pinyin\":\"qīng\",\"definitions\":[\"light\",\"easy\",\"gentle\",\"soft\"]},{\"simplified\":\"轻松\",\"traditional\":\"輕松\",\"pinyin\":\"qīngsōng\",\"definitions\":[\"relaxed\",\"gentle\",\"easygoing\"]},{\"simplified\":\"情况\",\"traditional\":\"情況\",\"pinyin\":\"qíngkuàng\",\"definitions\":[\"circumstance\",\"state of affairs\",\"situation\"]},{\"simplified\":\"穷\",\"traditional\":\"窮\",\"pinyin\":\"qióng\",\"definitions\":[\"poor\",\"exhausted\"]},{\"simplified\":\"区别\",\"traditional\":\"區別\",\"pinyin\":\"qūbié\",\"definitions\":[\"difference\",\"distinguish\"]},{\"simplified\":\"取\",\"traditional\":\"取\",\"pinyin\":\"qǔ\",\"definitions\":[\"to take\",\"get\",\"choose\"]},{\"simplified\":\"全部\",\"traditional\":\"全部\",\"pinyin\":\"quánbù\",\"definitions\":[\"whole\",\"entire\",\"complete\"]},{\"simplified\":\"缺点\",\"traditional\":\"缺點\",\"pinyin\":\"quēdiǎn\",\"definitions\":[\"weak point\",\"defect\",\"fault\",\"shortcoming\"]},{\"simplified\":\"缺少\",\"traditional\":\"缺少\",\"pinyin\":\"quēshǎo\",\"definitions\":[\"to lack\",\"be short of\",\"be deficient in\"]},{\"simplified\":\"却\",\"traditional\":\"卻\",\"pinyin\":\"què\",\"definitions\":[\"but\",\"yet\",\"however\"]},{\"simplified\":\"确实\",\"traditional\":\"確實\",\"pinyin\":\"quèshí\",\"definitions\":[\"indeed\",\"in truth\",\"reliable\"]},{\"simplified\":\"然而\",\"traditional\":\"然而\",\"pinyin\":\"rán'ér\",\"definitions\":[\"however\",\"yet\",\"but\"]},{\"simplified\":\"热闹\",\"traditional\":\"熱鬧\",\"pinyin\":\"rènao\",\"definitions\":[\"bustling\",\"lively\",\"busy\"]},{\"simplified\":\"任何\",\"traditional\":\"任何\",\"pinyin\":\"rènhé\",\"definitions\":[\"any\",\"whatever\",\"whichever\"]},{\"simplified\":\"任务\",\"traditional\":\"任務\",\"pinyin\":\"rènwu\",\"definitions\":[\"a mission\",\"an assignment\",\"a task\"]},{\"simplified\":\"扔\",\"traditional\":\"扔\",\"pinyin\":\"rēng\",\"definitions\":[\"to throw\",\"throw away\"]},{\"simplified\":\"仍然\",\"traditional\":\"仍然\",\"pinyin\":\"réngrán\",\"definitions\":[\"still\",\"yet\"]},{\"simplified\":\"日记\",\"traditional\":\"日記\",\"pinyin\":\"rìjì\",\"definitions\":[\"diary\"]},{\"simplified\":\"入口\",\"traditional\":\"入口\",\"pinyin\":\"rùkǒu\",\"definitions\":[\"entrance\"]},{\"simplified\":\"散步\",\"traditional\":\"散步\",\"pinyin\":\"sàn bù\",\"definitions\":[\"to go for a walk\"]},{\"simplified\":\"森林\",\"traditional\":\"森林\",\"pinyin\":\"sēnlín\",\"definitions\":[\"forest\"]},{\"simplified\":\"沙发\",\"traditional\":\"沙發\",\"pinyin\":\"shāfā\",\"definitions\":[\"sofa\"]},{\"simplified\":\"伤心\",\"traditional\":\"傷心\",\"pinyin\":\"shāngxīn\",\"definitions\":[\"sad\",\"grieve\",\"brokenhearted\"]},{\"simplified\":\"商量\",\"traditional\":\"商量\",\"pinyin\":\"shāngliang\",\"definitions\":[\"consult\",\"talk over\",\"discuss\"]},{\"simplified\":\"稍微\",\"traditional\":\"稍微\",\"pinyin\":\"shāowēi\",\"definitions\":[\"a little bit\",\"slightly\"]},{\"simplified\":\"勺子\",\"traditional\":\"勺子\",\"pinyin\":\"sháozi\",\"definitions\":[\"spoon\",\"scoop\",\"ladle\"]},{\"simplified\":\"社会\",\"traditional\":\"社會\",\"pinyin\":\"shèhuì\",\"definitions\":[\"society\"]},{\"simplified\":\"申请\",\"traditional\":\"申請\",\"pinyin\":\"shēnqǐng\",\"definitions\":[\"apply for\",\"application\"]},{\"simplified\":\"深\",\"traditional\":\"深\",\"pinyin\":\"shēn\",\"definitions\":[\"deep\",\"profound\",\"dark (of colors)\"]},{\"simplified\":\"甚至\",\"traditional\":\"甚至\",\"pinyin\":\"shènzhì\",\"definitions\":[\"even (to the point of)\",\"so much so that\"]},{\"simplified\":\"生活\",\"traditional\":\"生活\",\"pinyin\":\"shēnghuó\",\"definitions\":[\"life\",\"livelihood\",\"to live\"]},{\"simplified\":\"生命\",\"traditional\":\"生命\",\"pinyin\":\"shēngmìng\",\"definitions\":[\"life\"]},{\"simplified\":\"生意\",\"traditional\":\"生意\",\"pinyin\":\"shēngyi\",\"definitions\":[\"business\",\"trade\"]},{\"simplified\":\"省\",\"traditional\":\"省\",\"pinyin\":\"shěng\",\"definitions\":[\"to save\",\"economize\",\"omit\",\"province\"]},{\"simplified\":\"剩\",\"traditional\":\"剩\",\"pinyin\":\"shèng\",\"definitions\":[\"have as remainder\",\"be left over\",\"surplus\"]},{\"simplified\":\"失败\",\"traditional\":\"失敗\",\"pinyin\":\"shībài\",\"definitions\":[\"be defeated\",\"fail\",\"lose\"]},{\"simplified\":\"失望\",\"traditional\":\"失望\",\"pinyin\":\"shīwàng\",\"definitions\":[\"disappointed\",\"lose hope\"]},{\"simplified\":\"师傅\",\"traditional\":\"師傅\",\"pinyin\":\"shīfu\",\"definitions\":[\"master\",\"qualified worker\",\"teacher\"]},{\"simplified\":\"十分\",\"traditional\":\"十分\",\"pinyin\":\"shífēn\",\"definitions\":[\"very\",\"fully\",\"100%\"]},{\"simplified\":\"实际\",\"traditional\":\"實際\",\"pinyin\":\"shíjì\",\"definitions\":[\"actual\",\"reality\",\"practice\"]},{\"simplified\":\"实在\",\"traditional\":\"實在\",\"pinyin\":\"shízài\",\"definitions\":[\"honest\",\"in reality\",\"honestly\",\"indeed\",\"certainly\"]},{\"simplified\":\"使\",\"traditional\":\"使\",\"pinyin\":\"shǐ\",\"definitions\":[\"to use\",\"to make\",\"to cause\",\"enable\",\"envoy\",\"messenger\"]},{\"simplified\":\"使用\",\"traditional\":\"使用\",\"pinyin\":\"shǐyòng\",\"definitions\":[\"to use\",\"employ\",\"apply\",\"administer\",\"manipulate\"]},{\"simplified\":\"世纪\",\"traditional\":\"世紀\",\"pinyin\":\"shìjì\",\"definitions\":[\"century\"]},{\"simplified\":\"是否\",\"traditional\":\"是否\",\"pinyin\":\"shìfǒu\",\"definitions\":[\"whether (or not)\",\"if\"]},{\"simplified\":\"适合\",\"traditional\":\"適合\",\"pinyin\":\"shìhé\",\"definitions\":[\"to suit\",\"to fit\"]},{\"simplified\":\"适应\",\"traditional\":\"適應\",\"pinyin\":\"shìyìng\",\"definitions\":[\"to suit\",\"to fit\",\"adapt\"]},{\"simplified\":\"收\",\"traditional\":\"收\",\"pinyin\":\"shōu\",\"definitions\":[\"receive\",\"accept\",\"collect\",\"to harvest\"]},{\"simplified\":\"收入\",\"traditional\":\"收入\",\"pinyin\":\"shōurù\",\"definitions\":[\"take in\",\"income\",\"revenue\"]},{\"simplified\":\"收拾\",\"traditional\":\"收拾\",\"pinyin\":\"shōushi\",\"definitions\":[\"to tidy\",\"put in order\",\"to repair\",\"to settle with\",\"punish\"]},{\"simplified\":\"首都\",\"traditional\":\"首都\",\"pinyin\":\"shǒudū\",\"definitions\":[\"capital (city)\"]},{\"simplified\":\"首先\",\"traditional\":\"首先\",\"pinyin\":\"shǒuxiān\",\"definitions\":[\"first (of all)\",\"in the first place\",\"firstly\"]},{\"simplified\":\"受不了\",\"traditional\":\"受不了\",\"pinyin\":\"shòu bu liǎo\",\"definitions\":[\"cannot endure\",\"unbearable\",\"can't stand\"]},{\"simplified\":\"受到\",\"traditional\":\"受到\",\"pinyin\":\"shòudào\",\"definitions\":[\"receive (influence, restriction, etc.)\",\"be subjected to\"]},{\"simplified\":\"售货员\",\"traditional\":\"售貨員\",\"pinyin\":\"shòuhuòyuán\",\"definitions\":[\"salesclerk\",\"shop assistant\"]},{\"simplified\":\"输\",\"traditional\":\"輸\",\"pinyin\":\"shū\",\"definitions\":[\"to transport\",\"to lose (a game, etc.)\"]},{\"simplified\":\"熟悉\",\"traditional\":\"熟悉\",\"pinyin\":\"shúxī\",\"definitions\":[\"familiar with\",\"know well\"]},{\"simplified\":\"数量\",\"traditional\":\"數量\",\"pinyin\":\"shùliàng\",\"definitions\":[\"amount\",\"quantity\",\"number\"]},{\"simplified\":\"数字\",\"traditional\":\"數字\",\"pinyin\":\"shùzì\",\"definitions\":[\"number\",\"numeral\",\"figure\",\"digit\"]},{\"simplified\":\"帅\",\"traditional\":\"帥\",\"pinyin\":\"shuài\",\"definitions\":[\"handsome\",\"graceful\",\"commander-in-chief\"]},{\"simplified\":\"顺便\",\"traditional\":\"順便\",\"pinyin\":\"shùnbiàn\",\"definitions\":[\"conveniently\",\"in passing\",\"on the way\"]},{\"simplified\":\"顺利\",\"traditional\":\"順利\",\"pinyin\":\"shùnlì\",\"definitions\":[\"go smoothly\",\"without a hitch\",\"successful\"]},{\"simplified\":\"顺序\",\"traditional\":\"順序\",\"pinyin\":\"shùnxù\",\"definitions\":[\"sequence\",\"order\"]},{\"simplified\":\"说明\",\"traditional\":\"說明\",\"pinyin\":\"shuōmíng\",\"definitions\":[\"explain\",\"explanation\",\"illustrate\",\"to show\"]},{\"simplified\":\"硕士\",\"traditional\":\"碩士\",\"pinyin\":\"shuòshì\",\"definitions\":[\"Master's degree (M.A.)\"]},{\"simplified\":\"死\",\"traditional\":\"死\",\"pinyin\":\"sǐ\",\"definitions\":[\"to die\",\"dead\",\"fixed\",\"impassible\",\"extremely\"]},{\"simplified\":\"速度\",\"traditional\":\"速度\",\"pinyin\":\"sùdù\",\"definitions\":[\"speed\",\"rate\",\"velocity\"]},{\"simplified\":\"塑料袋\",\"traditional\":\"塑料袋\",\"pinyin\":\"sùliàodài\",\"definitions\":[\"plastic bag\"]},{\"simplified\":\"酸\",\"traditional\":\"酸\",\"pinyin\":\"suān\",\"definitions\":[\"sour\",\"sore\",\"ache\"]},{\"simplified\":\"随便\",\"traditional\":\"隨便\",\"pinyin\":\"suíbiàn\",\"definitions\":[\"as one pleases\",\"informal\",\"random\",\"casual\"]},{\"simplified\":\"随着\",\"traditional\":\"隨著\",\"pinyin\":\"suízhe\",\"definitions\":[\"along with\",\"in the wake of\"]},{\"simplified\":\"孙子\",\"traditional\":\"孫子\",\"pinyin\":\"sūnzi\",\"definitions\":[\"grandson\",\"son's son\"]},{\"simplified\":\"所有\",\"traditional\":\"所有\",\"pinyin\":\"suǒyǒu\",\"definitions\":[\"all\",\"to have\",\"to possess\"]},{\"simplified\":\"台\",\"traditional\":\"台\",\"pinyin\":\"tái\",\"definitions\":[\"platform\",\"Taiwan (abbr.)\",\"desk\",\"stage\",\"typhoon\",\"(mw for machines)\",\"(classical) you (in letters)\"]},{\"simplified\":\"抬\",\"traditional\":\"擡\",\"pinyin\":\"tái\",\"definitions\":[\"to lift\",\"to raise (with both palms up)\",\"carry (together)\"]},{\"simplified\":\"态度\",\"traditional\":\"態度\",\"pinyin\":\"tàidu\",\"definitions\":[\"manner\",\"bearing\",\"attitude\"]},{\"simplified\":\"谈\",\"traditional\":\"談\",\"pinyin\":\"tán\",\"definitions\":[\"to talk\",\"to chat\",\"discuss\"]},{\"simplified\":\"弹钢琴\",\"traditional\":\"彈鋼琴\",\"pinyin\":\"tán gāngqín\",\"definitions\":[\"play the piano\"]},{\"simplified\":\"汤\",\"traditional\":\"湯\",\"pinyin\":\"tāng\",\"definitions\":[\"soup\",\"broth\"]},{\"simplified\":\"糖\",\"traditional\":\"糖\",\"pinyin\":\"táng\",\"definitions\":[\"sugar\",\"candy\",\"sweets\"]},{\"simplified\":\"躺\",\"traditional\":\"躺\",\"pinyin\":\"tǎng\",\"definitions\":[\"recline\",\"lie down (on back or side)\"]},{\"simplified\":\"趟\",\"traditional\":\"趟\",\"pinyin\":\"tàng, tāng\",\"definitions\":[\"(mw for trips times) | to wade\"]},{\"simplified\":\"讨论\",\"traditional\":\"討論\",\"pinyin\":\"tǎolùn\",\"definitions\":[\"to discuss\",\"discussion\",\"to talk over\"]},{\"simplified\":\"讨厌\",\"traditional\":\"討厭\",\"pinyin\":\"tǎoyàn\",\"definitions\":[\"to hate\",\"loathe\",\"disgusting\",\"troublesome\"]},{\"simplified\":\"特点\",\"traditional\":\"特點\",\"pinyin\":\"tèdiǎn\",\"definitions\":[\"a characteristic\",\"trait\",\"feature\"]},{\"simplified\":\"提\",\"traditional\":\"提\",\"pinyin\":\"tí\",\"definitions\":[\"to carry\",\"to lift\",\"to raise (an issue)\"]},{\"simplified\":\"提供\",\"traditional\":\"提供\",\"pinyin\":\"tígōng\",\"definitions\":[\"to supply\",\"provide\",\"furnish\"]},{\"simplified\":\"提前\",\"traditional\":\"提前\",\"pinyin\":\"tíqián\",\"definitions\":[\"shift to an earlier date\",\"bring forward\",\"to advance\"]},{\"simplified\":\"提醒\",\"traditional\":\"提醒\",\"pinyin\":\"tíxǐng\",\"definitions\":[\"remind\",\"call attention to\",\"warn of\"]},{\"simplified\":\"填空\",\"traditional\":\"填空\",\"pinyin\":\"tiánkòng\",\"definitions\":[\"fill in the blanks\",\"fill a vacancy\"]},{\"simplified\":\"条件\",\"traditional\":\"條件\",\"pinyin\":\"tiáojiàn\",\"definitions\":[\"condition\",\"circumstances\",\"prerequisite\"]},{\"simplified\":\"停\",\"traditional\":\"停\",\"pinyin\":\"tíng\",\"definitions\":[\"to stop\",\"to halt\",\"to park (a car)\"]},{\"simplified\":\"挺\",\"traditional\":\"挺\",\"pinyin\":\"tǐng\",\"definitions\":[\"straighten up\",\"stick out\",\"rather (good)\",\"very\"]},{\"simplified\":\"通过\",\"traditional\":\"通過\",\"pinyin\":\"tōngguò\",\"definitions\":[\"by means of\",\"through (a method)\",\"pass through\",\"via\"]},{\"simplified\":\"通知\",\"traditional\":\"通知\",\"pinyin\":\"tōngzhī\",\"definitions\":[\"notify\",\"to inform\",\"notice\"]},{\"simplified\":\"同情\",\"traditional\":\"同情\",\"pinyin\":\"tóngqíng\",\"definitions\":[\"compassion\",\"sympathy\"]},{\"simplified\":\"同时\",\"traditional\":\"同時\",\"pinyin\":\"tóngshí\",\"definitions\":[\"at the same time\",\"simultaneously\"]},{\"simplified\":\"推\",\"traditional\":\"推\",\"pinyin\":\"tuī\",\"definitions\":[\"to push\",\"to scrape\",\"to decline\",\"postpone\",\"elect\"]},{\"simplified\":\"推迟\",\"traditional\":\"推遲\",\"pinyin\":\"tuīchí\",\"definitions\":[\"postpone\",\"defer\"]},{\"simplified\":\"脱\",\"traditional\":\"脫\",\"pinyin\":\"tuō\",\"definitions\":[\"to shed\",\"take off\",\"to escape\"]},{\"simplified\":\"袜子\",\"traditional\":\"襪子\",\"pinyin\":\"wàzi\",\"definitions\":[\"socks\",\"stockings\"]},{\"simplified\":\"完全\",\"traditional\":\"完全\",\"pinyin\":\"wánquán\",\"definitions\":[\"complete\",\"whole\",\"totally\"]},{\"simplified\":\"网球\",\"traditional\":\"網球\",\"pinyin\":\"wǎngqiú\",\"definitions\":[\"tennis\",\"tennis ball\"]},{\"simplified\":\"网站\",\"traditional\":\"網站\",\"pinyin\":\"wǎngzhàn\",\"definitions\":[\"website\"]},{\"simplified\":\"往往\",\"traditional\":\"往往\",\"pinyin\":\"wǎngwǎng\",\"definitions\":[\"often\",\"frequently\",\"more often than not\"]},{\"simplified\":\"危险\",\"traditional\":\"危險\",\"pinyin\":\"wēixiǎn\",\"definitions\":[\"danger\",\"dangerous\",\"perilous\"]},{\"simplified\":\"卫生间\",\"traditional\":\"衛生間\",\"pinyin\":\"wèishēngjiān\",\"definitions\":[\"restroom\",\"bathroom\",\"water closet (WC)\"]},{\"simplified\":\"味道\",\"traditional\":\"味道\",\"pinyin\":\"wèidao\",\"definitions\":[\"flavor\",\"taste\"]},{\"simplified\":\"温度\",\"traditional\":\"溫度\",\"pinyin\":\"wēndù\",\"definitions\":[\"temperature\"]},{\"simplified\":\"文章\",\"traditional\":\"文章\",\"pinyin\":\"wénzhāng\",\"definitions\":[\"article\",\"essay\"]},{\"simplified\":\"污染\",\"traditional\":\"汙染\",\"pinyin\":\"wūrǎn\",\"definitions\":[\"pollution\",\"contamination\"]},{\"simplified\":\"无\",\"traditional\":\"無\",\"pinyin\":\"wú\",\"definitions\":[\"have not\",\"without\",\"not (Kangxi radical 71)\"]},{\"simplified\":\"无聊\",\"traditional\":\"無聊\",\"pinyin\":\"wúliáo\",\"definitions\":[\"nonsense\",\"bored\",\"silly\",\"stupid\"]},{\"simplified\":\"无论\",\"traditional\":\"無論\",\"pinyin\":\"wúlùn\",\"definitions\":[\"no matter what\",\"regardless of whether...\"]},{\"simplified\":\"误会\",\"traditional\":\"誤會\",\"pinyin\":\"wùhuì\",\"definitions\":[\"to misunderstand\",\"to mistake\"]},{\"simplified\":\"西红柿\",\"traditional\":\"西紅柿\",\"pinyin\":\"xīhóngshì\",\"definitions\":[\"tomato\"]},{\"simplified\":\"吸引\",\"traditional\":\"吸引\",\"pinyin\":\"xīyǐn\",\"definitions\":[\"attract (interest, investment, etc.)\"]},{\"simplified\":\"咸\",\"traditional\":\"鹹\",\"pinyin\":\"xián\",\"definitions\":[\"salty\",\"salted\",\"all\"]},{\"simplified\":\"现金\",\"traditional\":\"現金\",\"pinyin\":\"xiànjīn\",\"definitions\":[\"cash\"]},{\"simplified\":\"羡慕\",\"traditional\":\"羨慕\",\"pinyin\":\"xiànmù\",\"definitions\":[\"to envy\",\"admire\"]},{\"simplified\":\"相反\",\"traditional\":\"相反\",\"pinyin\":\"xiāngfǎn\",\"definitions\":[\"opposite\",\"contrary\"]},{\"simplified\":\"相同\",\"traditional\":\"相同\",\"pinyin\":\"xiāngtóng\",\"definitions\":[\"identical\",\"same\",\"alike\"]},{\"simplified\":\"香\",\"traditional\":\"香\",\"pinyin\":\"xiāng\",\"definitions\":[\"fragrant\",\"savory (Kangxi radical 186)\"]},{\"simplified\":\"详细\",\"traditional\":\"詳細\",\"pinyin\":\"xiángxì\",\"definitions\":[\"detailed\",\"in detail\",\"minute\"]},{\"simplified\":\"响\",\"traditional\":\"響\",\"pinyin\":\"xiǎng\",\"definitions\":[\"make a sound\",\"to ring\",\"echo\"]},{\"simplified\":\"橡皮\",\"traditional\":\"橡皮\",\"pinyin\":\"xiàngpí\",\"definitions\":[\"rubber\",\"an eraser\"]},{\"simplified\":\"消息\",\"traditional\":\"消息\",\"pinyin\":\"xiāoxi\",\"definitions\":[\"news\",\"information\"]},{\"simplified\":\"小吃\",\"traditional\":\"小吃\",\"pinyin\":\"xiǎochī\",\"definitions\":[\"snack\",\"refreshments\"]},{\"simplified\":\"小伙子\",\"traditional\":\"小夥子\",\"pinyin\":\"xiǎohuǒzi\",\"definitions\":[\"young man\",\"lad\",\"youngster\"]},{\"simplified\":\"小说\",\"traditional\":\"小說\",\"pinyin\":\"xiǎoshuō\",\"definitions\":[\"novel\",\"fiction\"]},{\"simplified\":\"笑话\",\"traditional\":\"笑話\",\"pinyin\":\"xiàohua\",\"definitions\":[\"joke\",\"laugh at\"]},{\"simplified\":\"效果\",\"traditional\":\"效果\",\"pinyin\":\"xiàoguǒ\",\"definitions\":[\"effect\",\"result\"]},{\"simplified\":\"心情\",\"traditional\":\"心情\",\"pinyin\":\"xīnqíng\",\"definitions\":[\"mood\",\"state of mind\"]},{\"simplified\":\"辛苦\",\"traditional\":\"辛苦\",\"pinyin\":\"xīnkǔ\",\"definitions\":[\"hard\",\"exhausting\",\"toilsome\",\"laborious\"]},{\"simplified\":\"信封\",\"traditional\":\"信封\",\"pinyin\":\"xìnfēng\",\"definitions\":[\"envelope\"]},{\"simplified\":\"信息\",\"traditional\":\"信息\",\"pinyin\":\"xìnxī\",\"definitions\":[\"information\",\"news\",\"message\"]},{\"simplified\":\"信心\",\"traditional\":\"信心\",\"pinyin\":\"xìnxīn\",\"definitions\":[\"confidence\",\"faith (in sb. or sth.)\"]},{\"simplified\":\"兴奋\",\"traditional\":\"興奮\",\"pinyin\":\"xīngfèn\",\"definitions\":[\"excitement； be excited\"]},{\"simplified\":\"行\",\"traditional\":\"行\",\"pinyin\":\"xíng\",\"definitions\":[\"walk\",\"be current\",\"do\",\"will do\",\"okay\"]},{\"simplified\":\"醒\",\"traditional\":\"醒\",\"pinyin\":\"xǐng\",\"definitions\":[\"wake up\"]},{\"simplified\":\"幸福\",\"traditional\":\"幸福\",\"pinyin\":\"xìngfú\",\"definitions\":[\"happy\",\"blessed\",\"fortunate\"]},{\"simplified\":\"性别\",\"traditional\":\"性別\",\"pinyin\":\"xìngbié\",\"definitions\":[\"gender\",\"sex\",\"sexual distinction\"]},{\"simplified\":\"性格\",\"traditional\":\"性格\",\"pinyin\":\"xìnggé\",\"definitions\":[\"nature\",\"personality\",\"temperament\"]},{\"simplified\":\"修理\",\"traditional\":\"修理\",\"pinyin\":\"xiūlǐ\",\"definitions\":[\"to repair\",\"perform maintenance\",\"to overhaul\"]},{\"simplified\":\"许多\",\"traditional\":\"許多\",\"pinyin\":\"xǔduō\",\"definitions\":[\"many\",\"a lot\",\"much\"]},{\"simplified\":\"学期\",\"traditional\":\"學期\",\"pinyin\":\"xuéqī\",\"definitions\":[\"semester\",\"school term\"]},{\"simplified\":\"压力\",\"traditional\":\"壓力\",\"pinyin\":\"yālì\",\"definitions\":[\"pressure\",\"stress\"]},{\"simplified\":\"呀\",\"traditional\":\"呀\",\"pinyin\":\"ya\",\"definitions\":[\"ah\",\"oh\",\"(used for 啊 after words ending with a, e, i, o, or ü)\"]},{\"simplified\":\"牙膏\",\"traditional\":\"牙膏\",\"pinyin\":\"yágāo\",\"definitions\":[\"toothpaste\"]},{\"simplified\":\"亚洲\",\"traditional\":\"亞洲\",\"pinyin\":\"Yàzhōu\",\"definitions\":[\"Asia\"]},{\"simplified\":\"严格\",\"traditional\":\"嚴格\",\"pinyin\":\"yángé\",\"definitions\":[\"strict\",\"stringent\",\"tight\"]},{\"simplified\":\"严重\",\"traditional\":\"嚴重\",\"pinyin\":\"yánzhòng\",\"definitions\":[\"grave\",\"serious\",\"critical\"]},{\"simplified\":\"研究\",\"traditional\":\"研究\",\"pinyin\":\"yánjiū\",\"definitions\":[\"to study\",\"to research\"]},{\"simplified\":\"盐\",\"traditional\":\"鹽\",\"pinyin\":\"yán\",\"definitions\":[\"salt\"]},{\"simplified\":\"眼镜\",\"traditional\":\"眼鏡\",\"pinyin\":\"yǎnjìng\",\"definitions\":[\"glasses\",\"spectacles\"]},{\"simplified\":\"演出\",\"traditional\":\"演出\",\"pinyin\":\"yǎnchū\",\"definitions\":[\"to act (in a play)\",\"to perform\",\"to put on a show\",\"performance\"]},{\"simplified\":\"演员\",\"traditional\":\"演員\",\"pinyin\":\"yǎnyuán\",\"definitions\":[\"actor or actress\",\"performer\"]},{\"simplified\":\"阳光\",\"traditional\":\"陽光\",\"pinyin\":\"yángguāng\",\"definitions\":[\"sunshine\",\"sunlight\"]},{\"simplified\":\"养成\",\"traditional\":\"養成\",\"pinyin\":\"yǎngchéng\",\"definitions\":[\"cultivate\",\"acquire\",\"to form\"]},{\"simplified\":\"样子\",\"traditional\":\"樣子\",\"pinyin\":\"yàngzi\",\"definitions\":[\"manner\",\"air\",\"appearance\",\"looks\"]},{\"simplified\":\"邀请\",\"traditional\":\"邀請\",\"pinyin\":\"yāoqǐng\",\"definitions\":[\"to invite\"]},{\"simplified\":\"要是\",\"traditional\":\"要是\",\"pinyin\":\"yàoshi\",\"definitions\":[\"if\",\"suppose\",\"in case\"]},{\"simplified\":\"钥匙\",\"traditional\":\"鑰匙\",\"pinyin\":\"yàoshi\",\"definitions\":[\"key\"]},{\"simplified\":\"也许\",\"traditional\":\"也許\",\"pinyin\":\"yěxǔ\",\"definitions\":[\"perhaps\",\"probably\",\"maybe\"]},{\"simplified\":\"叶子\",\"traditional\":\"葉子\",\"pinyin\":\"yèzi\",\"definitions\":[\"leaves\"]},{\"simplified\":\"页\",\"traditional\":\"頁\",\"pinyin\":\"yè\",\"definitions\":[\"page\",\"leaf (Kangxi radical 181)\"]},{\"simplified\":\"一切\",\"traditional\":\"一切\",\"pinyin\":\"yíqiè\",\"definitions\":[\"all\",\"every\",\"everything\"]},{\"simplified\":\"以\",\"traditional\":\"以\",\"pinyin\":\"yǐ\",\"definitions\":[\"to use\",\"according to\",\"so as to\",\"for\",\"by\"]},{\"simplified\":\"以为\",\"traditional\":\"以爲\",\"pinyin\":\"yǐwéi\",\"definitions\":[\"think (mistakenly)\",\"consider (that)\",\"believe\"]},{\"simplified\":\"艺术\",\"traditional\":\"藝術\",\"pinyin\":\"yìshù\",\"definitions\":[\"art\"]},{\"simplified\":\"意见\",\"traditional\":\"意見\",\"pinyin\":\"yìjiàn\",\"definitions\":[\"opinion\",\"view\",\"suggestion\",\"complaint\"]},{\"simplified\":\"因此\",\"traditional\":\"因此\",\"pinyin\":\"yīncǐ\",\"definitions\":[\"therefore\",\"thus\",\"that is why\",\"because of this\"]},{\"simplified\":\"引起\",\"traditional\":\"引起\",\"pinyin\":\"yǐnqǐ\",\"definitions\":[\"give rise to\",\"lead to\",\"to cause\",\"arouse\"]},{\"simplified\":\"印象\",\"traditional\":\"印象\",\"pinyin\":\"yìnxiàng\",\"definitions\":[\"impression\"]},{\"simplified\":\"赢\",\"traditional\":\"贏\",\"pinyin\":\"yíng\",\"definitions\":[\"to win\",\"to beat\",\"to profit\"]},{\"simplified\":\"应聘\",\"traditional\":\"應聘\",\"pinyin\":\"yìngpìn\",\"definitions\":[\"accept a job offer\",\"to apply for a job\"]},{\"simplified\":\"永远\",\"traditional\":\"永遠\",\"pinyin\":\"yǒngyuǎn\",\"definitions\":[\"forever\",\"eternal\",\"always\"]},{\"simplified\":\"勇敢\",\"traditional\":\"勇敢\",\"pinyin\":\"yǒnggǎn\",\"definitions\":[\"brave\",\"courageous\"]},{\"simplified\":\"优点\",\"traditional\":\"優點\",\"pinyin\":\"yōudiǎn\",\"definitions\":[\"merit\",\"good point\",\"a strength\",\"a benefit\"]},{\"simplified\":\"优秀\",\"traditional\":\"優秀\",\"pinyin\":\"yōuxiù\",\"definitions\":[\"outstanding\",\"excellent\"]},{\"simplified\":\"幽默\",\"traditional\":\"幽默\",\"pinyin\":\"yōumò\",\"definitions\":[\"humorous\"]},{\"simplified\":\"尤其\",\"traditional\":\"尤其\",\"pinyin\":\"yóuqí\",\"definitions\":[\"especially\",\"particularly\"]},{\"simplified\":\"由\",\"traditional\":\"由\",\"pinyin\":\"yóu\",\"definitions\":[\"follow\",\"from\",\"by\",\"through\"]},{\"simplified\":\"由于\",\"traditional\":\"由于\",\"pinyin\":\"yóuyú\",\"definitions\":[\"due to\",\"owing to\",\"as a result of\",\"thanks to\"]},{\"simplified\":\"邮局\",\"traditional\":\"郵局\",\"pinyin\":\"yóujú\",\"definitions\":[\"post office\"]},{\"simplified\":\"友好\",\"traditional\":\"友好\",\"pinyin\":\"yǒuhǎo\",\"definitions\":[\"friendly (relations)\",\"close friends\"]},{\"simplified\":\"友谊\",\"traditional\":\"友誼\",\"pinyin\":\"yǒuyì\",\"definitions\":[\"friendship\",\"companionship\"]},{\"simplified\":\"有趣\",\"traditional\":\"有趣\",\"pinyin\":\"yǒuqù\",\"definitions\":[\"interesting\",\"fascinating\",\"amusing\"]},{\"simplified\":\"于是\",\"traditional\":\"于是\",\"pinyin\":\"yúshì\",\"definitions\":[\"as a result\",\"thus\",\"therefore\"]},{\"simplified\":\"愉快\",\"traditional\":\"愉快\",\"pinyin\":\"yúkuài\",\"definitions\":[\"happy\",\"cheerful\",\"delightful\"]},{\"simplified\":\"与\",\"traditional\":\"與\",\"pinyin\":\"yǔ\",\"definitions\":[\"(formal) and\",\"to give\",\"together with\",\"participate\",\"final particle expressing doubt or surprise\"]},{\"simplified\":\"羽毛球\",\"traditional\":\"羽毛球\",\"pinyin\":\"yǔmáoqiú\",\"definitions\":[\"badminton\"]},{\"simplified\":\"语法\",\"traditional\":\"語法\",\"pinyin\":\"yǔfǎ\",\"definitions\":[\"grammar\"]},{\"simplified\":\"语言\",\"traditional\":\"語言\",\"pinyin\":\"yǔyán\",\"definitions\":[\"language\"]},{\"simplified\":\"预习\",\"traditional\":\"預習\",\"pinyin\":\"yùxí\",\"definitions\":[\"(of students) prepare a lesson before class\",\"preview\"]},{\"simplified\":\"原来\",\"traditional\":\"原來\",\"pinyin\":\"yuánlái\",\"definitions\":[\"original\",\"former\",\"as it turns out\"]},{\"simplified\":\"原谅\",\"traditional\":\"原諒\",\"pinyin\":\"yuánliàng\",\"definitions\":[\"to excuse\",\"forgive\",\"to pardon\"]},{\"simplified\":\"原因\",\"traditional\":\"原因\",\"pinyin\":\"yuányīn\",\"definitions\":[\"cause\",\"reason\"]},{\"simplified\":\"约会\",\"traditional\":\"約會\",\"pinyin\":\"yuēhuì\",\"definitions\":[\"appointment\",\"engagement\",\"date\"]},{\"simplified\":\"阅读\",\"traditional\":\"閱讀\",\"pinyin\":\"yuèdú\",\"definitions\":[\"read\",\"reading\"]},{\"simplified\":\"云\",\"traditional\":\"雲\",\"pinyin\":\"yún\",\"definitions\":[\"cloud\",\"Yunnan province | say\",\"speak\"]},{\"simplified\":\"允许\",\"traditional\":\"允許\",\"pinyin\":\"yǔnxǔ\",\"definitions\":[\"to permit\",\"allow\"]},{\"simplified\":\"杂志\",\"traditional\":\"雜志\",\"pinyin\":\"zázhì\",\"definitions\":[\"magazine\"]},{\"simplified\":\"咱们\",\"traditional\":\"咱們\",\"pinyin\":\"zánmen\",\"definitions\":[\"we (including the listener)\",\"us\",\"our\"]},{\"simplified\":\"暂时\",\"traditional\":\"暫時\",\"pinyin\":\"zànshí\",\"definitions\":[\"temporary\",\"transient\",\"for the moment\"]},{\"simplified\":\"脏\",\"traditional\":\"髒\",\"pinyin\":\"zāng\",\"definitions\":[\"filthy\",\"dirty\"]},{\"simplified\":\"责任\",\"traditional\":\"責任\",\"pinyin\":\"zérèn\",\"definitions\":[\"responsibility\",\"blame\",\"duty\"]},{\"simplified\":\"增加\",\"traditional\":\"增加\",\"pinyin\":\"zēngjiā\",\"definitions\":[\"to increase\",\"to raise\",\"add\"]},{\"simplified\":\"占线\",\"traditional\":\"占線\",\"pinyin\":\"zhànxiàn\",\"definitions\":[\"the (phone) line is busy\"]},{\"simplified\":\"招聘\",\"traditional\":\"招聘\",\"pinyin\":\"zhāopìn\",\"definitions\":[\"recruitment\",\"take job applications for a job\"]},{\"simplified\":\"照\",\"traditional\":\"照\",\"pinyin\":\"zhào\",\"definitions\":[\"to shine\",\"illuminate\",\"according to\"]},{\"simplified\":\"真正\",\"traditional\":\"真正\",\"pinyin\":\"zhēnzhèng\",\"definitions\":[\"genuine\",\"real\",\"true\"]},{\"simplified\":\"整理\",\"traditional\":\"整理\",\"pinyin\":\"zhěnglǐ\",\"definitions\":[\"put in order\",\"arrange\",\"straighten up\",\"to tidy\",\"to pack (luggage)\"]},{\"simplified\":\"正常\",\"traditional\":\"正常\",\"pinyin\":\"zhèngcháng\",\"definitions\":[\"normal\",\"regular\",\"ordinary\"]},{\"simplified\":\"正好\",\"traditional\":\"正好\",\"pinyin\":\"zhènghǎo\",\"definitions\":[\"just (in time)\",\"just right\",\"just enough\",\"happen to\",\"by chance\"]},{\"simplified\":\"正确\",\"traditional\":\"正確\",\"pinyin\":\"zhèngquè\",\"definitions\":[\"correct\",\"proper\"]},{\"simplified\":\"正式\",\"traditional\":\"正式\",\"pinyin\":\"zhèngshì\",\"definitions\":[\"formal\",\"official\"]},{\"simplified\":\"证明\",\"traditional\":\"證明\",\"pinyin\":\"zhèngmíng\",\"definitions\":[\"proof\",\"testify\",\"confirm\",\"certificate\"]},{\"simplified\":\"之\",\"traditional\":\"之\",\"pinyin\":\"zhī\",\"definitions\":[\"(literary equivalent to 的)\",\"(pronoun)\",\"of\"]},{\"simplified\":\"支持\",\"traditional\":\"支持\",\"pinyin\":\"zhīchí\",\"definitions\":[\"sustain\",\"hold out\",\"| support\",\"stand by (e.g. international support)\"]},{\"simplified\":\"知识\",\"traditional\":\"知識\",\"pinyin\":\"zhīshi\",\"definitions\":[\"knowledge\",\"intellectual\"]},{\"simplified\":\"直接\",\"traditional\":\"直接\",\"pinyin\":\"zhíjiē\",\"definitions\":[\"direct\",\"immediate\"]},{\"simplified\":\"值得\",\"traditional\":\"值得\",\"pinyin\":\"zhíde\",\"definitions\":[\"be worth\",\"deserve\"]},{\"simplified\":\"职业\",\"traditional\":\"職業\",\"pinyin\":\"zhíyè\",\"definitions\":[\"profession\",\"occupation\"]},{\"simplified\":\"植物\",\"traditional\":\"植物\",\"pinyin\":\"zhíwù\",\"definitions\":[\"plant\",\"botanical\",\"vegetation\"]},{\"simplified\":\"只好\",\"traditional\":\"只好\",\"pinyin\":\"zhǐhǎo\",\"definitions\":[\"have to\",\"be forced to\"]},{\"simplified\":\"只要\",\"traditional\":\"只要\",\"pinyin\":\"zhǐyào\",\"definitions\":[\"so long as\",\"if only\",\"provided that\"]},{\"simplified\":\"指\",\"traditional\":\"指\",\"pinyin\":\"zhǐ\",\"definitions\":[\"finger\",\"to point (at, to, out)\",\"refer to\"]},{\"simplified\":\"至少\",\"traditional\":\"至少\",\"pinyin\":\"zhìshǎo\",\"definitions\":[\"at least\",\"(to say the) least\"]},{\"simplified\":\"质量\",\"traditional\":\"質量\",\"pinyin\":\"zhìliàng\",\"definitions\":[\"quality\",\"mass (physics)\"]},{\"simplified\":\"重\",\"traditional\":\"重\",\"pinyin\":\"zhòng\",\"definitions\":[\"heavy\",\"serious\",\"important\"]},{\"simplified\":\"重点\",\"traditional\":\"重點\",\"pinyin\":\"zhòngdiǎn\",\"definitions\":[\"emphasis\",\"main point\"]},{\"simplified\":\"重视\",\"traditional\":\"重視\",\"pinyin\":\"zhòngshì\",\"definitions\":[\"to value\",\"take seriously\"]},{\"simplified\":\"周围\",\"traditional\":\"周圍\",\"pinyin\":\"zhōuwéi\",\"definitions\":[\"surroundings\",\"vicinity\",\"environment\"]},{\"simplified\":\"主意\",\"traditional\":\"主意\",\"pinyin\":\"zhǔyi\",\"definitions\":[\"plan\",\"idea\",\"decision\"]},{\"simplified\":\"祝贺\",\"traditional\":\"祝賀\",\"pinyin\":\"zhùhè\",\"definitions\":[\"congratulate\"]},{\"simplified\":\"著名\",\"traditional\":\"著名\",\"pinyin\":\"zhùmíng\",\"definitions\":[\"famous\",\"well-known\",\"celebration\"]},{\"simplified\":\"专门\",\"traditional\":\"專門\",\"pinyin\":\"zhuānmén\",\"definitions\":[\"specialized\"]},{\"simplified\":\"专业\",\"traditional\":\"專業\",\"pinyin\":\"zhuānyè\",\"definitions\":[\"profession\",\"specialized field of study\",\"major\"]},{\"simplified\":\"转\",\"traditional\":\"轉\",\"pinyin\":\"zhuǎn, zhuàn\",\"definitions\":[\"to turn\",\"to change\",\"pass on | revolve\",\"rotate\"]},{\"simplified\":\"赚\",\"traditional\":\"賺\",\"pinyin\":\"zhuàn\",\"definitions\":[\"earn\",\"make a profit\"]},{\"simplified\":\"准确\",\"traditional\":\"准確\",\"pinyin\":\"zhǔnquè\",\"definitions\":[\"accurate\",\"precise\"]},{\"simplified\":\"准时\",\"traditional\":\"准時\",\"pinyin\":\"zhǔnshí\",\"definitions\":[\"punctually\",\"on time\"]},{\"simplified\":\"仔细\",\"traditional\":\"仔細\",\"pinyin\":\"zǐxì\",\"definitions\":[\"careful\",\"attentive\",\"cautious\"]},{\"simplified\":\"自然\",\"traditional\":\"自然\",\"pinyin\":\"zìrán\",\"definitions\":[\"nature\",\"natural\"]},{\"simplified\":\"自信\",\"traditional\":\"自信\",\"pinyin\":\"zìxìn\",\"definitions\":[\"self-confidence\"]},{\"simplified\":\"总结\",\"traditional\":\"總結\",\"pinyin\":\"zǒngjié\",\"definitions\":[\"summarize\",\"conclude\"]},{\"simplified\":\"租\",\"traditional\":\"租\",\"pinyin\":\"zū\",\"definitions\":[\"to rent\"]},{\"simplified\":\"最好\",\"traditional\":\"最好\",\"pinyin\":\"zuìhǎo\",\"definitions\":[\"the best\",\"had better ...\",\"it would be best\"]},{\"simplified\":\"尊重\",\"traditional\":\"尊重\",\"pinyin\":\"zūnzhòng\",\"definitions\":[\"esteem\",\"to respect\",\"to value\",\"to honor\"]},{\"simplified\":\"左右\",\"traditional\":\"左右\",\"pinyin\":\"zuǒyòu\",\"definitions\":[\"about\",\"approximate\",\"around | left and right\"]},{\"simplified\":\"作家\",\"traditional\":\"作家\",\"pinyin\":\"zuòjiā\",\"definitions\":[\"author\",\"writer\"]},{\"simplified\":\"作用\",\"traditional\":\"作用\",\"pinyin\":\"zuòyòng\",\"definitions\":[\"action\",\"activity\",\"effect\"]},{\"simplified\":\"作者\",\"traditional\":\"作者\",\"pinyin\":\"zuòzhě\",\"definitions\":[\"author\",\"writer\"]},{\"simplified\":\"座\",\"traditional\":\"座\",\"pinyin\":\"zuò\",\"definitions\":[\"(mw for mountains, bridges, tall buildings, etc.)\",\"| seat\",\"base\",\"stand\",\"constellation\"]},{\"simplified\":\"座位\",\"traditional\":\"座位\",\"pinyin\":\"zuòwèi\",\"definitions\":[\"seat\",\"place\"]}]");
+
+/***/ }),
+
+/***/ "./words/hsk5.json":
+/*!*************************!*\
+  !*** ./words/hsk5.json ***!
+  \*************************/
+/*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 575, 576, 577, 578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 588, 589, 590, 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 667, 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683, 684, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754, 755, 756, 757, 758, 759, 760, 761, 762, 763, 764, 765, 766, 767, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779, 780, 781, 782, 783, 784, 785, 786, 787, 788, 789, 790, 791, 792, 793, 794, 795, 796, 797, 798, 799, 800, 801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 825, 826, 827, 828, 829, 830, 831, 832, 833, 834, 835, 836, 837, 838, 839, 840, 841, 842, 843, 844, 845, 846, 847, 848, 849, 850, 851, 852, 853, 854, 855, 856, 857, 858, 859, 860, 861, 862, 863, 864, 865, 866, 867, 868, 869, 870, 871, 872, 873, 874, 875, 876, 877, 878, 879, 880, 881, 882, 883, 884, 885, 886, 887, 888, 889, 890, 891, 892, 893, 894, 895, 896, 897, 898, 899, 900, 901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920, 921, 922, 923, 924, 925, 926, 927, 928, 929, 930, 931, 932, 933, 934, 935, 936, 937, 938, 939, 940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959, 960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988, 989, 990, 991, 992, 993, 994, 995, 996, 997, 998, 999, 1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032, 1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048, 1049, 1050, 1051, 1052, 1053, 1054, 1055, 1056, 1057, 1058, 1059, 1060, 1061, 1062, 1063, 1064, 1065, 1066, 1067, 1068, 1069, 1070, 1071, 1072, 1073, 1074, 1075, 1076, 1077, 1078, 1079, 1080, 1081, 1082, 1083, 1084, 1085, 1086, 1087, 1088, 1089, 1090, 1091, 1092, 1093, 1094, 1095, 1096, 1097, 1098, 1099, 1100, 1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1111, 1112, 1113, 1114, 1115, 1116, 1117, 1118, 1119, 1120, 1121, 1122, 1123, 1124, 1125, 1126, 1127, 1128, 1129, 1130, 1131, 1132, 1133, 1134, 1135, 1136, 1137, 1138, 1139, 1140, 1141, 1142, 1143, 1144, 1145, 1146, 1147, 1148, 1149, 1150, 1151, 1152, 1153, 1154, 1155, 1156, 1157, 1158, 1159, 1160, 1161, 1162, 1163, 1164, 1165, 1166, 1167, 1168, 1169, 1170, 1171, 1172, 1173, 1174, 1175, 1176, 1177, 1178, 1179, 1180, 1181, 1182, 1183, 1184, 1185, 1186, 1187, 1188, 1189, 1190, 1191, 1192, 1193, 1194, 1195, 1196, 1197, 1198, 1199, 1200, 1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1209, 1210, 1211, 1212, 1213, 1214, 1215, 1216, 1217, 1218, 1219, 1220, 1221, 1222, 1223, 1224, 1225, 1226, 1227, 1228, 1229, 1230, 1231, 1232, 1233, 1234, 1235, 1236, 1237, 1238, 1239, 1240, 1241, 1242, 1243, 1244, 1245, 1246, 1247, 1248, 1249, 1250, 1251, 1252, 1253, 1254, 1255, 1256, 1257, 1258, 1259, 1260, 1261, 1262, 1263, 1264, 1265, 1266, 1267, 1268, 1269, 1270, 1271, 1272, 1273, 1274, 1275, 1276, 1277, 1278, 1279, 1280, 1281, 1282, 1283, 1284, 1285, 1286, 1287, 1288, 1289, 1290, 1291, 1292, 1293, 1294, 1295, 1296, 1297, 1298, 1299, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("[{\"simplified\":\"﻿哎\",\"traditional\":\"哎\",\"pinyin\":\"āi\",\"definitions\":[\"hey!\",\"(interjection of surprise or dissatisfaction)\"]},{\"simplified\":\"唉\",\"traditional\":\"唉\",\"pinyin\":\"ài\",\"definitions\":[\"(an exclamation indicating resignation)\",\"oh well\",\"oh\",\"mm\"]},{\"simplified\":\"爱护\",\"traditional\":\"愛護\",\"pinyin\":\"àihù\",\"definitions\":[\"cherish\",\"reassure\",\"take good care of\"]},{\"simplified\":\"爱惜\",\"traditional\":\"愛惜\",\"pinyin\":\"àixī\",\"definitions\":[\"cherish\",\"treasure\",\"use sparingly\"]},{\"simplified\":\"爱心\",\"traditional\":\"愛心\",\"pinyin\":\"àixīn\",\"definitions\":[\"compassion\"]},{\"simplified\":\"安慰\",\"traditional\":\"安慰\",\"pinyin\":\"ānwèi\",\"definitions\":[\"to comfort\",\"to console\"]},{\"simplified\":\"安装\",\"traditional\":\"安裝\",\"pinyin\":\"ānzhuāng\",\"definitions\":[\"install\",\"erect\",\"to fix\",\"to mount\"]},{\"simplified\":\"岸\",\"traditional\":\"岸\",\"pinyin\":\"àn\",\"definitions\":[\"bank\",\"shore\",\"beach\",\"coast\"]},{\"simplified\":\"暗\",\"traditional\":\"暗\",\"pinyin\":\"àn\",\"definitions\":[\"dark\",\"gloomy\",\"hidden\",\"secret\"]},{\"simplified\":\"熬夜\",\"traditional\":\"熬夜\",\"pinyin\":\"áoyè\",\"definitions\":[\"stay up very late or all night\"]},{\"simplified\":\"把握\",\"traditional\":\"把握\",\"pinyin\":\"bǎwò\",\"definitions\":[\"grasp\",\"hold\",\"certainty\",\"assurance\"]},{\"simplified\":\"摆\",\"traditional\":\"擺\",\"pinyin\":\"bǎi\",\"definitions\":[\"to put (on)\",\"arrange\",\"to sway\",\"pendulum\"]},{\"simplified\":\"办理\",\"traditional\":\"辦理\",\"pinyin\":\"bànlǐ\",\"definitions\":[\"to handle\",\"to transact\",\"to conduct\"]},{\"simplified\":\"傍晚\",\"traditional\":\"傍晚\",\"pinyin\":\"bàngwǎn\",\"definitions\":[\"in the evening\",\"when night falls\"]},{\"simplified\":\"包裹\",\"traditional\":\"包裹\",\"pinyin\":\"bāoguǒ\",\"definitions\":[\"wrap up\",\"bind up\",\"package\"]},{\"simplified\":\"包含\",\"traditional\":\"包含\",\"pinyin\":\"bāohán\",\"definitions\":[\"contain\",\"embody\",\"include\"]},{\"simplified\":\"包括\",\"traditional\":\"包括\",\"pinyin\":\"bāokuò\",\"definitions\":[\"comprise\",\"include\",\"consist of\"]},{\"simplified\":\"薄\",\"traditional\":\"薄\",\"pinyin\":\"báo\",\"definitions\":[\"thin\",\"flimsy\",\"weak (first two pronunciations)\"]},{\"simplified\":\"宝贝\",\"traditional\":\"寶貝\",\"pinyin\":\"bǎobèi\",\"definitions\":[\"treasure\",\"precious things\",\"darling\",\"baby\"]},{\"simplified\":\"宝贵\",\"traditional\":\"寶貴\",\"pinyin\":\"bǎoguì\",\"definitions\":[\"valuable\",\"precious\",\"value\"]},{\"simplified\":\"保持\",\"traditional\":\"保持\",\"pinyin\":\"bǎochí\",\"definitions\":[\"to keep\",\"maintain\",\"to hold\"]},{\"simplified\":\"保存\",\"traditional\":\"保存\",\"pinyin\":\"bǎocún\",\"definitions\":[\"conserve\",\"preserve\",\"to keep, to save a file in a computer\"]},{\"simplified\":\"保留\",\"traditional\":\"保留\",\"pinyin\":\"bǎoliú\",\"definitions\":[\"to reserve\",\"hold back\",\"retain\"]},{\"simplified\":\"保险\",\"traditional\":\"保險\",\"pinyin\":\"bǎoxiǎn\",\"definitions\":[\"insurance\",\"insure\",\"safe\"]},{\"simplified\":\"报到\",\"traditional\":\"報到\",\"pinyin\":\"bàodào\",\"definitions\":[\"report for duty\",\"to check in\",\"register\"]},{\"simplified\":\"报道\",\"traditional\":\"報道\",\"pinyin\":\"bàodào\",\"definitions\":[\"to report\",\"news report\"]},{\"simplified\":\"报告\",\"traditional\":\"報告\",\"pinyin\":\"bàogào\",\"definitions\":[\"to report\",\"make known\",\"inform\",\"speech\",\"lecture\"]},{\"simplified\":\"报社\",\"traditional\":\"報社\",\"pinyin\":\"bàoshè\",\"definitions\":[\"newspaper office\"]},{\"simplified\":\"抱怨\",\"traditional\":\"抱怨\",\"pinyin\":\"bàoyuàn\",\"definitions\":[\"complain\",\"grumble\"]},{\"simplified\":\"背\",\"traditional\":\"背\",\"pinyin\":\"bēi\",\"definitions\":[\"carry on one's back\",\"to bear\"]},{\"simplified\":\"悲观\",\"traditional\":\"悲觀\",\"pinyin\":\"bēiguān\",\"definitions\":[\"pessimistic\"]},{\"simplified\":\"背景\",\"traditional\":\"背景\",\"pinyin\":\"bèijǐng\",\"definitions\":[\"background\"]},{\"simplified\":\"被子\",\"traditional\":\"被子\",\"pinyin\":\"bèizi\",\"definitions\":[\"quilt\",\"blanket\"]},{\"simplified\":\"本科\",\"traditional\":\"本科\",\"pinyin\":\"běnkē\",\"definitions\":[\"undergraduate\"]},{\"simplified\":\"本领\",\"traditional\":\"本領\",\"pinyin\":\"běnlǐng\",\"definitions\":[\"skill\",\"ability\",\"capability\"]},{\"simplified\":\"本质\",\"traditional\":\"本質\",\"pinyin\":\"běnzhì\",\"definitions\":[\"essence\",\"nature\",\"innate character\"]},{\"simplified\":\"比例\",\"traditional\":\"比例\",\"pinyin\":\"bǐlì\",\"definitions\":[\"proportion\",\"scale\"]},{\"simplified\":\"彼此\",\"traditional\":\"彼此\",\"pinyin\":\"bǐcǐ\",\"definitions\":[\"each other\",\"one another\"]},{\"simplified\":\"必然\",\"traditional\":\"必然\",\"pinyin\":\"bìrán\",\"definitions\":[\"inevitable\",\"certain\",\"necessary\"]},{\"simplified\":\"必要\",\"traditional\":\"必要\",\"pinyin\":\"bìyào\",\"definitions\":[\"necessary\",\"essential\",\"indispensable\"]},{\"simplified\":\"毕竟\",\"traditional\":\"畢竟\",\"pinyin\":\"bìjìng\",\"definitions\":[\"after all\",\"overall\",\"when all is said and done\"]},{\"simplified\":\"避免\",\"traditional\":\"避免\",\"pinyin\":\"bìmiǎn\",\"definitions\":[\"avoid\",\"avert\",\"prevent\"]},{\"simplified\":\"编辑\",\"traditional\":\"編輯\",\"pinyin\":\"biānjí\",\"definitions\":[\"to edit\",\"compile\",\"editor\"]},{\"simplified\":\"鞭炮\",\"traditional\":\"鞭炮\",\"pinyin\":\"biānpào\",\"definitions\":[\"firecracker\",\"a long string of small firecrackers\"]},{\"simplified\":\"便\",\"traditional\":\"便\",\"pinyin\":\"biàn, pián\",\"definitions\":[\"plain\",\"convenient\",\"excretion\",\"formal equivalent to 就 | cheap\"]},{\"simplified\":\"辩论\",\"traditional\":\"辯論\",\"pinyin\":\"biànlùn\",\"definitions\":[\"argue\",\"debate\",\"argue over\"]},{\"simplified\":\"标点\",\"traditional\":\"標點\",\"pinyin\":\"biāodiǎn\",\"definitions\":[\"punctuation\",\"punctuation mark\",\"punctuate\"]},{\"simplified\":\"标志\",\"traditional\":\"標志\",\"pinyin\":\"biāozhì\",\"definitions\":[\"sign\",\"mark\",\"signal\",\"symbol\"]},{\"simplified\":\"表达\",\"traditional\":\"表達\",\"pinyin\":\"biǎodá\",\"definitions\":[\"to express\",\"to voice\",\"convey\"]},{\"simplified\":\"表面\",\"traditional\":\"表面\",\"pinyin\":\"biǎomiàn\",\"definitions\":[\"surface\",\"outside\",\"face\"]},{\"simplified\":\"表明\",\"traditional\":\"表明\",\"pinyin\":\"biǎomíng\",\"definitions\":[\"make clear\",\"make known\"]},{\"simplified\":\"表情\",\"traditional\":\"表情\",\"pinyin\":\"biǎoqíng\",\"definitions\":[\"(facial) expression\",\"express one's feelings\"]},{\"simplified\":\"表现\",\"traditional\":\"表現\",\"pinyin\":\"biǎoxiàn\",\"definitions\":[\"to show\",\"to show off\",\"display\",\"performance\"]},{\"simplified\":\"冰激凌\",\"traditional\":\"冰激淩\",\"pinyin\":\"bīngjīlíng\",\"definitions\":[\"ice cream\"]},{\"simplified\":\"病毒\",\"traditional\":\"病毒\",\"pinyin\":\"bìngdú\",\"definitions\":[\"virus\"]},{\"simplified\":\"玻璃\",\"traditional\":\"玻璃\",\"pinyin\":\"bōli\",\"definitions\":[\"glass\",\"nylon\",\"plastic\"]},{\"simplified\":\"播放\",\"traditional\":\"播放\",\"pinyin\":\"bōfàng\",\"definitions\":[\"broadcast\",\"transmit\"]},{\"simplified\":\"脖子\",\"traditional\":\"脖子\",\"pinyin\":\"bózi\",\"definitions\":[\"neck\"]},{\"simplified\":\"博物馆\",\"traditional\":\"博物館\",\"pinyin\":\"bówùguǎn\",\"definitions\":[\"museum\"]},{\"simplified\":\"补充\",\"traditional\":\"補充\",\"pinyin\":\"bǔchōng\",\"definitions\":[\"replenish\",\"to supplement\",\"to complement\"]},{\"simplified\":\"不安\",\"traditional\":\"不安\",\"pinyin\":\"bù'ān\",\"definitions\":[\"uneasy\",\"unstable\",\"disturbed\"]},{\"simplified\":\"不得了\",\"traditional\":\"不得了\",\"pinyin\":\"bùdéliǎo\",\"definitions\":[\"extremely\",\"very\",\"terribly\",\"my god! (expression of surprise)\"]},{\"simplified\":\"不断\",\"traditional\":\"不斷\",\"pinyin\":\"búduàn\",\"definitions\":[\"unceasing\",\"uninterrupted\",\"continuously\"]},{\"simplified\":\"不见得\",\"traditional\":\"不見得\",\"pinyin\":\"bújiàndé\",\"definitions\":[\"not necessarily\",\"not likely\"]},{\"simplified\":\"不耐烦\",\"traditional\":\"不耐煩\",\"pinyin\":\"búnàifán\",\"definitions\":[\"impatience\",\"impatient\"]},{\"simplified\":\"不然\",\"traditional\":\"不然\",\"pinyin\":\"bùrán\",\"definitions\":[\"otherwise\",\"not so\"]},{\"simplified\":\"不如\",\"traditional\":\"不如\",\"pinyin\":\"bùrú\",\"definitions\":[\"not as good as\",\"inferior to\"]},{\"simplified\":\"不要紧\",\"traditional\":\"不要緊\",\"pinyin\":\"bú yàojǐn\",\"definitions\":[\"unimportant\",\"not serious\",\"it doesn't matter\"]},{\"simplified\":\"不足\",\"traditional\":\"不足\",\"pinyin\":\"bùzú\",\"definitions\":[\"insufficient\",\"not enough\"]},{\"simplified\":\"布\",\"traditional\":\"布\",\"pinyin\":\"bù\",\"definitions\":[\"cloth\",\"announce\",\"to spread\"]},{\"simplified\":\"步骤\",\"traditional\":\"步驟\",\"pinyin\":\"bùzhòu\",\"definitions\":[\"step\",\"move\",\"measure\",\"procedure\"]},{\"simplified\":\"部门\",\"traditional\":\"部門\",\"pinyin\":\"bùmén\",\"definitions\":[\"department\",\"branch\",\"section\"]},{\"simplified\":\"财产\",\"traditional\":\"財産\",\"pinyin\":\"cáichǎn\",\"definitions\":[\"property\",\"fortune\"]},{\"simplified\":\"采访\",\"traditional\":\"采訪\",\"pinyin\":\"cǎifǎng\",\"definitions\":[\"interview\",\"gather news\",\"hunt for and collect\"]},{\"simplified\":\"采取\",\"traditional\":\"采取\",\"pinyin\":\"cǎiqǔ\",\"definitions\":[\"carry out or adopt\",\"take(measures, policies, attitudes, etc.)\"]},{\"simplified\":\"彩虹\",\"traditional\":\"彩虹\",\"pinyin\":\"cǎihóng\",\"definitions\":[\"rainbow\"]},{\"simplified\":\"踩\",\"traditional\":\"踩\",\"pinyin\":\"cǎi\",\"definitions\":[\"step upon\",\"to tread\",\"to stamp\"]},{\"simplified\":\"参考\",\"traditional\":\"參考\",\"pinyin\":\"cānkǎo\",\"definitions\":[\"reference\",\"consult\"]},{\"simplified\":\"参与\",\"traditional\":\"參與\",\"pinyin\":\"cānyù\",\"definitions\":[\"participate (in sth.)\",\"attach oneself to\"]},{\"simplified\":\"惭愧\",\"traditional\":\"慚愧\",\"pinyin\":\"cánkuì\",\"definitions\":[\"ashamed\"]},{\"simplified\":\"操场\",\"traditional\":\"操場\",\"pinyin\":\"cāochǎng\",\"definitions\":[\"playground\",\"sports field\"]},{\"simplified\":\"操心\",\"traditional\":\"操心\",\"pinyin\":\"cāo xīn\",\"definitions\":[\"worry about\"]},{\"simplified\":\"册\",\"traditional\":\"冊\",\"pinyin\":\"cè\",\"definitions\":[\"book\",\"(mw for books)\"]},{\"simplified\":\"测验\",\"traditional\":\"測驗\",\"pinyin\":\"cèyàn\",\"definitions\":[\"test\",\"exam\",\"to test\"]},{\"simplified\":\"曾经\",\"traditional\":\"曾經\",\"pinyin\":\"céngjīng\",\"definitions\":[\"once\",\"(refers to something that happened previously)\"]},{\"simplified\":\"叉子\",\"traditional\":\"叉子\",\"pinyin\":\"chāzi\",\"definitions\":[\"fork\",\"cross\"]},{\"simplified\":\"差距\",\"traditional\":\"差距\",\"pinyin\":\"chājù\",\"definitions\":[\"disparity\",\"gap\",\"the difference (in distance\",\"amount\",\"progress\",\"etc.)\"]},{\"simplified\":\"插\",\"traditional\":\"插\",\"pinyin\":\"chā\",\"definitions\":[\"to insert\",\"stick in\",\"pierce\"]},{\"simplified\":\"拆\",\"traditional\":\"拆\",\"pinyin\":\"chāi\",\"definitions\":[\"unravel\",\"to tear\",\"demolish\"]},{\"simplified\":\"产品\",\"traditional\":\"産品\",\"pinyin\":\"chǎnpǐn\",\"definitions\":[\"product\",\"goods\",\"merchandise\"]},{\"simplified\":\"产生\",\"traditional\":\"産生\",\"pinyin\":\"chǎnshēng\",\"definitions\":[\"to produce\",\"emerge\",\"to cause\"]},{\"simplified\":\"长途\",\"traditional\":\"長途\",\"pinyin\":\"chángtú\",\"definitions\":[\"long distance\"]},{\"simplified\":\"常识\",\"traditional\":\"常識\",\"pinyin\":\"chángshí\",\"definitions\":[\"common sense\",\"general knowledge\"]},{\"simplified\":\"抄\",\"traditional\":\"抄\",\"pinyin\":\"chāo\",\"definitions\":[\"to copy\",\"plagiarize\",\"search and confiscate\"]},{\"simplified\":\"超级\",\"traditional\":\"超級\",\"pinyin\":\"chāojí\",\"definitions\":[\"super\",\"transcending\",\"high grade\"]},{\"simplified\":\"朝\",\"traditional\":\"朝\",\"pinyin\":\"cháo\",\"definitions\":[\"to face\",\"towards\",\"dynasty\"]},{\"simplified\":\"潮湿\",\"traditional\":\"潮濕\",\"pinyin\":\"cháoshī\",\"definitions\":[\"damp\",\"moist\",\"humid\"]},{\"simplified\":\"吵\",\"traditional\":\"吵\",\"pinyin\":\"chǎo\",\"definitions\":[\"to quarrel\",\"make noise\"]},{\"simplified\":\"吵架\",\"traditional\":\"吵架\",\"pinyin\":\"chǎo jià\",\"definitions\":[\"to quarrel\",\"to squabble\",\"bicker\"]},{\"simplified\":\"炒\",\"traditional\":\"炒\",\"pinyin\":\"chǎo\",\"definitions\":[\"to stir-fry\",\"saute\"]},{\"simplified\":\"车库\",\"traditional\":\"車庫\",\"pinyin\":\"chēkù\",\"definitions\":[\"garage\"]},{\"simplified\":\"车厢\",\"traditional\":\"車廂\",\"pinyin\":\"chēxiāng\",\"definitions\":[\"carriage\",\"railroad car\"]},{\"simplified\":\"彻底\",\"traditional\":\"徹底\",\"pinyin\":\"chèdǐ\",\"definitions\":[\"thorough\",\"complete\",\"completely\"]},{\"simplified\":\"沉默\",\"traditional\":\"沈默\",\"pinyin\":\"chénmò\",\"definitions\":[\"silent\",\"uncommunicative\"]},{\"simplified\":\"趁\",\"traditional\":\"趁\",\"pinyin\":\"chèn\",\"definitions\":[\"avail oneself of\",\"take advantage of (an opportunity or situation)\"]},{\"simplified\":\"称\",\"traditional\":\"稱\",\"pinyin\":\"chēng\",\"definitions\":[\"weigh\",\"to call\",\"be called\"]},{\"simplified\":\"称呼\",\"traditional\":\"稱呼\",\"pinyin\":\"chēnghu\",\"definitions\":[\"to call\",\"address as\",\"name\"]},{\"simplified\":\"称赞\",\"traditional\":\"稱贊\",\"pinyin\":\"chēngzàn\",\"definitions\":[\"to praise\",\"to acclaim\"]},{\"simplified\":\"成分\",\"traditional\":\"成分\",\"pinyin\":\"chéngfèn\",\"definitions\":[\"ingredient\",\"composition\"]},{\"simplified\":\"成果\",\"traditional\":\"成果\",\"pinyin\":\"chéngguǒ\",\"definitions\":[\"result\",\"achievement\",\"gain\"]},{\"simplified\":\"成就\",\"traditional\":\"成就\",\"pinyin\":\"chéngjiù\",\"definitions\":[\"accomplishment\",\"achievement\",\"success\"]},{\"simplified\":\"成立\",\"traditional\":\"成立\",\"pinyin\":\"chénglì\",\"definitions\":[\"establish\",\"to set up\"]},{\"simplified\":\"成人\",\"traditional\":\"成人\",\"pinyin\":\"chéngrén\",\"definitions\":[\"adult\",\"to grow up\",\"become full-grown\"]},{\"simplified\":\"成熟\",\"traditional\":\"成熟\",\"pinyin\":\"chéngshú\",\"definitions\":[\"mature\",\"ripe\"]},{\"simplified\":\"成语\",\"traditional\":\"成語\",\"pinyin\":\"chéngyǔ\",\"definitions\":[\"idiom\",\"proverb\"]},{\"simplified\":\"成长\",\"traditional\":\"成長\",\"pinyin\":\"chéngzhǎng\",\"definitions\":[\"to mature\",\"grow up\"]},{\"simplified\":\"诚恳\",\"traditional\":\"誠懇\",\"pinyin\":\"chéngkěn\",\"definitions\":[\"honest\",\"sincere\"]},{\"simplified\":\"承担\",\"traditional\":\"承擔\",\"pinyin\":\"chéngdān\",\"definitions\":[\"undertake\",\"assume (responsibility)\"]},{\"simplified\":\"承认\",\"traditional\":\"承認\",\"pinyin\":\"chéngrèn\",\"definitions\":[\"to admit\",\"concede\",\"acknowledge\"]},{\"simplified\":\"承受\",\"traditional\":\"承受\",\"pinyin\":\"chéngshòu\",\"definitions\":[\"to bear\",\"support\",\"endure\",\"sustain\"]},{\"simplified\":\"程度\",\"traditional\":\"程度\",\"pinyin\":\"chéngdù\",\"definitions\":[\"degree\",\"extent\",\"level\"]},{\"simplified\":\"程序\",\"traditional\":\"程序\",\"pinyin\":\"chéngxù\",\"definitions\":[\"procedure\",\"sequence\",\"program\"]},{\"simplified\":\"吃亏\",\"traditional\":\"吃虧\",\"pinyin\":\"chīkuī\",\"definitions\":[\"suffer losses\",\"get the worst of\"]},{\"simplified\":\"池塘\",\"traditional\":\"池塘\",\"pinyin\":\"chítáng\",\"definitions\":[\"pool\",\"pond\"]},{\"simplified\":\"迟早\",\"traditional\":\"遲早\",\"pinyin\":\"chízǎo\",\"definitions\":[\"sooner or later\"]},{\"simplified\":\"持续\",\"traditional\":\"持續\",\"pinyin\":\"chíxù\",\"definitions\":[\"continue\",\"persist\"]},{\"simplified\":\"尺子\",\"traditional\":\"尺子\",\"pinyin\":\"chǐzi\",\"definitions\":[\"ruler (measuring instrument)\"]},{\"simplified\":\"翅膀\",\"traditional\":\"翅膀\",\"pinyin\":\"chìbǎng\",\"definitions\":[\"wing\"]},{\"simplified\":\"冲\",\"traditional\":\"沖\",\"pinyin\":\"chōng\",\"definitions\":[\"to rush\",\"to clash\",\"to rinse\",\"thoroughfare\"]},{\"simplified\":\"充电器\",\"traditional\":\"充電器\",\"pinyin\":\"chōngdiànqì\",\"definitions\":[\"battery charger\"]},{\"simplified\":\"充分\",\"traditional\":\"充分\",\"pinyin\":\"chōngfèn\",\"definitions\":[\"full\",\"abundant\",\"ample\"]},{\"simplified\":\"充满\",\"traditional\":\"充滿\",\"pinyin\":\"chōngmǎn\",\"definitions\":[\"brimming with\",\"very full\"]},{\"simplified\":\"重复\",\"traditional\":\"重複\",\"pinyin\":\"chóngfù\",\"definitions\":[\"to repeat\",\"to duplicate\"]},{\"simplified\":\"宠物\",\"traditional\":\"寵物\",\"pinyin\":\"chǒngwù\",\"definitions\":[\"a pet\"]},{\"simplified\":\"抽屉\",\"traditional\":\"抽屜\",\"pinyin\":\"chōuti\",\"definitions\":[\"drawer\"]},{\"simplified\":\"抽象\",\"traditional\":\"抽象\",\"pinyin\":\"chōuxiàng\",\"definitions\":[\"abstract\",\"abstraction\"]},{\"simplified\":\"丑\",\"traditional\":\"醜\",\"pinyin\":\"chǒu\",\"definitions\":[\"ugly\",\"disgraceful (2nd Earthly Branch)\"]},{\"simplified\":\"臭\",\"traditional\":\"臭\",\"pinyin\":\"chòu\",\"definitions\":[\"stench\",\"stink\"]},{\"simplified\":\"出版\",\"traditional\":\"出版\",\"pinyin\":\"chūbǎn\",\"definitions\":[\"publish\"]},{\"simplified\":\"出口\",\"traditional\":\"出口\",\"pinyin\":\"chūkǒu\",\"definitions\":[\"exit\",\"speak\",\"export\"]},{\"simplified\":\"出色\",\"traditional\":\"出色\",\"pinyin\":\"chūsè\",\"definitions\":[\"remarkable\",\"outstanding\",\"excellent\"]},{\"simplified\":\"出示\",\"traditional\":\"出示\",\"pinyin\":\"chūshì\",\"definitions\":[\"to show\"]},{\"simplified\":\"出席\",\"traditional\":\"出席\",\"pinyin\":\"chūxí\",\"definitions\":[\"attend\",\"be present\",\"participate\"]},{\"simplified\":\"初级\",\"traditional\":\"初級\",\"pinyin\":\"chūjí\",\"definitions\":[\"junior\",\"primary\"]},{\"simplified\":\"除非\",\"traditional\":\"除非\",\"pinyin\":\"chúfēi\",\"definitions\":[\"only if\",\"unless\"]},{\"simplified\":\"除夕\",\"traditional\":\"除夕\",\"pinyin\":\"chúxī\",\"definitions\":[\"Lunar New Year's Eve\"]},{\"simplified\":\"处理\",\"traditional\":\"處理\",\"pinyin\":\"chǔlǐ\",\"definitions\":[\"deal with\",\"to process\",\"sell at a discount\",\"to treat (by a special process)\"]},{\"simplified\":\"传播\",\"traditional\":\"傳播\",\"pinyin\":\"chuánbō\",\"definitions\":[\"propagate\",\"to spread\"]},{\"simplified\":\"传染\",\"traditional\":\"傳染\",\"pinyin\":\"chuánrǎn\",\"definitions\":[\"infect\",\"be contagious\"]},{\"simplified\":\"传说\",\"traditional\":\"傳說\",\"pinyin\":\"chuánshuō\",\"definitions\":[\"it is said\",\"legend\",\"pass on (a story)\"]},{\"simplified\":\"传统\",\"traditional\":\"傳統\",\"pinyin\":\"chuántǒng\",\"definitions\":[\"tradition\",\"traditional\"]},{\"simplified\":\"窗帘\",\"traditional\":\"窗簾\",\"pinyin\":\"chuānglián\",\"definitions\":[\"window curtain\"]},{\"simplified\":\"闯\",\"traditional\":\"闖\",\"pinyin\":\"chuǎng\",\"definitions\":[\"rush\",\"break through\",\"to temper oneself (by battling difficulties)\"]},{\"simplified\":\"创造\",\"traditional\":\"創造\",\"pinyin\":\"chuàngzào\",\"definitions\":[\"create\",\"bring about\",\"creativity\"]},{\"simplified\":\"吹\",\"traditional\":\"吹\",\"pinyin\":\"chuī\",\"definitions\":[\"to blow\",\"to blast\",\"to puff\"]},{\"simplified\":\"词汇\",\"traditional\":\"詞彙\",\"pinyin\":\"cíhuì\",\"definitions\":[\"vocabulary\"]},{\"simplified\":\"辞职\",\"traditional\":\"辭職\",\"pinyin\":\"cízhí\",\"definitions\":[\"resign from a position\"]},{\"simplified\":\"此外\",\"traditional\":\"此外\",\"pinyin\":\"cǐwài\",\"definitions\":[\"besides\",\"in addition\",\"moreover\"]},{\"simplified\":\"次要\",\"traditional\":\"次要\",\"pinyin\":\"cìyào\",\"definitions\":[\"secondary\",\"less important\"]},{\"simplified\":\"刺激\",\"traditional\":\"刺激\",\"pinyin\":\"cìjī\",\"definitions\":[\"exciting\",\"provoke\",\"irritate\"]},{\"simplified\":\"匆忙\",\"traditional\":\"匆忙\",\"pinyin\":\"cōngmáng\",\"definitions\":[\"hasty\",\"hurried\"]},{\"simplified\":\"从此\",\"traditional\":\"從此\",\"pinyin\":\"cóngcǐ\",\"definitions\":[\"from now on\",\"since then\"]},{\"simplified\":\"从而\",\"traditional\":\"從而\",\"pinyin\":\"cóng'ér\",\"definitions\":[\"thus\",\"thereby\",\"as a result\"]},{\"simplified\":\"从前\",\"traditional\":\"從前\",\"pinyin\":\"cóngqián\",\"definitions\":[\"previously\",\"formerly\",\"in the past\"]},{\"simplified\":\"从事\",\"traditional\":\"從事\",\"pinyin\":\"cóngshì\",\"definitions\":[\"go for\",\"engage in\",\"deal with\"]},{\"simplified\":\"粗糙\",\"traditional\":\"粗糙\",\"pinyin\":\"cūcāo\",\"definitions\":[\"coarse\"]},{\"simplified\":\"促进\",\"traditional\":\"促進\",\"pinyin\":\"cùjìn\",\"definitions\":[\"promote (an idea or cause)\",\"to advance\"]},{\"simplified\":\"促使\",\"traditional\":\"促使\",\"pinyin\":\"cùshǐ\",\"definitions\":[\"to urge\",\"impel\",\"to cause\",\"to push\"]},{\"simplified\":\"醋\",\"traditional\":\"醋\",\"pinyin\":\"cù\",\"definitions\":[\"vinegar\"]},{\"simplified\":\"催\",\"traditional\":\"催\",\"pinyin\":\"cuī\",\"definitions\":[\"to press\",\"to urge\",\"to hurry\"]},{\"simplified\":\"存在\",\"traditional\":\"存在\",\"pinyin\":\"cúnzài\",\"definitions\":[\"to exist\",\"to be\"]},{\"simplified\":\"措施\",\"traditional\":\"措施\",\"pinyin\":\"cuòshī\",\"definitions\":[\"measure\",\"step (to be taken)\"]},{\"simplified\":\"答应\",\"traditional\":\"答應\",\"pinyin\":\"dāying\",\"definitions\":[\"to respond\",\"to promise\",\"to answer\",\"agree\"]},{\"simplified\":\"达到\",\"traditional\":\"達到\",\"pinyin\":\"dá dào\",\"definitions\":[\"achieve\",\"attain\",\"to reach\"]},{\"simplified\":\"打工\",\"traditional\":\"打工\",\"pinyin\":\"dǎgōng\",\"definitions\":[\"work a part time job\",\"(regional) do manual labor\",\"do odd jobs\"]},{\"simplified\":\"打交道\",\"traditional\":\"打交道\",\"pinyin\":\"dǎ jiāodao\",\"definitions\":[\"come into contact with\",\"to deal with\"]},{\"simplified\":\"打喷嚏\",\"traditional\":\"打噴嚏\",\"pinyin\":\"dǎpēntì\",\"definitions\":[\"to sneeze\"]},{\"simplified\":\"打听\",\"traditional\":\"打聽\",\"pinyin\":\"dǎting\",\"definitions\":[\"ask about\",\"inquire about\"]},{\"simplified\":\"大方\",\"traditional\":\"大方\",\"pinyin\":\"dàfang\",\"definitions\":[\"generous\",\"poise\",\"(-fang1: expert\",\"scholar)\"]},{\"simplified\":\"大厦\",\"traditional\":\"大廈\",\"pinyin\":\"dàshà\",\"definitions\":[\"large building\",\"edifice\",\"mansion\"]},{\"simplified\":\"大象\",\"traditional\":\"大象\",\"pinyin\":\"dàxiàng\",\"definitions\":[\"elephant\"]},{\"simplified\":\"大型\",\"traditional\":\"大型\",\"pinyin\":\"dàxíng\",\"definitions\":[\"large-scale\",\"wide-scale\"]},{\"simplified\":\"呆\",\"traditional\":\"呆\",\"pinyin\":\"dāi\",\"definitions\":[\"stupid\",\"foolish\",\"blank\",\"dumbstruck\",\"to stay\"]},{\"simplified\":\"代表\",\"traditional\":\"代表\",\"pinyin\":\"dàibiǎo\",\"definitions\":[\"represent\",\"to delegate\"]},{\"simplified\":\"代替\",\"traditional\":\"代替\",\"pinyin\":\"dàitì\",\"definitions\":[\"to replace\"]},{\"simplified\":\"贷款\",\"traditional\":\"貸款\",\"pinyin\":\"dài kuǎn\",\"definitions\":[\"(bank) loan\",\"provide a loan\"]},{\"simplified\":\"待遇\",\"traditional\":\"待遇\",\"pinyin\":\"dàiyù\",\"definitions\":[\"treatment\",\"pay\",\"wage\",\"salary\"]},{\"simplified\":\"担任\",\"traditional\":\"擔任\",\"pinyin\":\"dānrèn\",\"definitions\":[\"hold the post of\",\"serve as\"]},{\"simplified\":\"单纯\",\"traditional\":\"單純\",\"pinyin\":\"dānchún\",\"definitions\":[\"simple\",\"pure\",\"merely\"]},{\"simplified\":\"单调\",\"traditional\":\"單調\",\"pinyin\":\"dāndiào\",\"definitions\":[\"monotonous\",\"dull\"]},{\"simplified\":\"单独\",\"traditional\":\"單獨\",\"pinyin\":\"dāndú\",\"definitions\":[\"alone\"]},{\"simplified\":\"单位\",\"traditional\":\"單位\",\"pinyin\":\"dānwèi\",\"definitions\":[\"unit\",\"work unit\"]},{\"simplified\":\"单元\",\"traditional\":\"單元\",\"pinyin\":\"dānyuán\",\"definitions\":[\"unit\",\"entrance number\",\"staircase (for residential buildings)\"]},{\"simplified\":\"耽误\",\"traditional\":\"耽誤\",\"pinyin\":\"dānwu\",\"definitions\":[\"to delay\",\"waste time\"]},{\"simplified\":\"胆小鬼\",\"traditional\":\"膽小鬼\",\"pinyin\":\"dǎnxiǎoguǐ\",\"definitions\":[\"coward\"]},{\"simplified\":\"淡\",\"traditional\":\"淡\",\"pinyin\":\"dàn\",\"definitions\":[\"diluted\",\"weak\",\"thin\"]},{\"simplified\":\"当地\",\"traditional\":\"當地\",\"pinyin\":\"dāngdì\",\"definitions\":[\"local\"]},{\"simplified\":\"当心\",\"traditional\":\"當心\",\"pinyin\":\"dāngxīn\",\"definitions\":[\"take care\",\"watch out\"]},{\"simplified\":\"挡\",\"traditional\":\"擋\",\"pinyin\":\"dǎng\",\"definitions\":[\"to block\",\"hinder\",\"gear\",\"equipment\"]},{\"simplified\":\"导演\",\"traditional\":\"導演\",\"pinyin\":\"dǎoyǎn\",\"definitions\":[\"to direct\",\"director\"]},{\"simplified\":\"导致\",\"traditional\":\"導致\",\"pinyin\":\"dǎozhì\",\"definitions\":[\"lead to\",\"bring about\",\"to cause\"]},{\"simplified\":\"岛屿\",\"traditional\":\"島嶼\",\"pinyin\":\"dǎoyǔ\",\"definitions\":[\"islands\"]},{\"simplified\":\"倒霉\",\"traditional\":\"倒黴\",\"pinyin\":\"dǎoméi\",\"definitions\":[\"have bad luck\",\"be out of luck\"]},{\"simplified\":\"到达\",\"traditional\":\"到達\",\"pinyin\":\"dàodá\",\"definitions\":[\"to reach\",\"arrive\"]},{\"simplified\":\"道德\",\"traditional\":\"道德\",\"pinyin\":\"dàodé\",\"definitions\":[\"morals\",\"morality\",\"ethics\"]},{\"simplified\":\"道理\",\"traditional\":\"道理\",\"pinyin\":\"dàolǐ\",\"definitions\":[\"reason\",\"sense\",\"argument\"]},{\"simplified\":\"登记\",\"traditional\":\"登記\",\"pinyin\":\"dēngjì\",\"definitions\":[\"register (one's name)\",\"check in\",\"enroll\"]},{\"simplified\":\"等待\",\"traditional\":\"等待\",\"pinyin\":\"děngdài\",\"definitions\":[\"to wait (for)\",\"expect\"]},{\"simplified\":\"等于\",\"traditional\":\"等于\",\"pinyin\":\"děngyú\",\"definitions\":[\"(Mathematics) equal to\"]},{\"simplified\":\"滴\",\"traditional\":\"滴\",\"pinyin\":\"dī\",\"definitions\":[\"to drip\",\"drop\",\"(mw for drops of liquid)\"]},{\"simplified\":\"的确\",\"traditional\":\"的確\",\"pinyin\":\"díquè\",\"definitions\":[\"really\",\"indeed\"]},{\"simplified\":\"敌人\",\"traditional\":\"敵人\",\"pinyin\":\"dírén\",\"definitions\":[\"enemy\"]},{\"simplified\":\"地道\",\"traditional\":\"地道\",\"pinyin\":\"dìdao\",\"definitions\":[\"authentic\",\"genuine\",\"(-dào: tunnel)\"]},{\"simplified\":\"地理\",\"traditional\":\"地理\",\"pinyin\":\"dìlǐ\",\"definitions\":[\"geography\"]},{\"simplified\":\"地区\",\"traditional\":\"地區\",\"pinyin\":\"dìqū\",\"definitions\":[\"an area\",\"a region\",\"a district\"]},{\"simplified\":\"地毯\",\"traditional\":\"地毯\",\"pinyin\":\"dìtǎn\",\"definitions\":[\"carpet\",\"rug\"]},{\"simplified\":\"地位\",\"traditional\":\"地位\",\"pinyin\":\"dìwèi\",\"definitions\":[\"position\",\"status\"]},{\"simplified\":\"地震\",\"traditional\":\"地震\",\"pinyin\":\"dìzhèn\",\"definitions\":[\"earthquake\"]},{\"simplified\":\"递\",\"traditional\":\"遞\",\"pinyin\":\"dì\",\"definitions\":[\"hand over\",\"to pass\",\"to give\"]},{\"simplified\":\"点心\",\"traditional\":\"點心\",\"pinyin\":\"diǎnxin\",\"definitions\":[\"dim sum\",\"light refreshments\",\"snacks\"]},{\"simplified\":\"电池\",\"traditional\":\"電池\",\"pinyin\":\"diànchí\",\"definitions\":[\"battery\"]},{\"simplified\":\"电台\",\"traditional\":\"電台\",\"pinyin\":\"diàntái\",\"definitions\":[\"transceiver\",\"broadcasting station\"]},{\"simplified\":\"钓\",\"traditional\":\"釣\",\"pinyin\":\"diào\",\"definitions\":[\"to fish\"]},{\"simplified\":\"顶\",\"traditional\":\"頂\",\"pinyin\":\"dǐng\",\"definitions\":[\"top\",\"roof\",\"carry on one's head\",\"prop up\",\"to butt\",\"(mw for headwear, i.e. hats)\"]},{\"simplified\":\"动画片\",\"traditional\":\"動畫片\",\"pinyin\":\"dònghuàpiàn\",\"definitions\":[\"animated film\"]},{\"simplified\":\"冻\",\"traditional\":\"凍\",\"pinyin\":\"dòng\",\"definitions\":[\"to freeze\"]},{\"simplified\":\"洞\",\"traditional\":\"洞\",\"pinyin\":\"dòng\",\"definitions\":[\"cave\",\"hole\"]},{\"simplified\":\"豆腐\",\"traditional\":\"豆腐\",\"pinyin\":\"dòufu\",\"definitions\":[\"tofu\",\"bean curd\"]},{\"simplified\":\"逗\",\"traditional\":\"逗\",\"pinyin\":\"dòu\",\"definitions\":[\"to tease\",\"amuse\",\"to stay\",\"to stop\",\"funny\"]},{\"simplified\":\"独立\",\"traditional\":\"獨立\",\"pinyin\":\"dúlì\",\"definitions\":[\"independent\"]},{\"simplified\":\"独特\",\"traditional\":\"獨特\",\"pinyin\":\"dútè\",\"definitions\":[\"unique\",\"distinctive\"]},{\"simplified\":\"度过\",\"traditional\":\"度過\",\"pinyin\":\"dùguò\",\"definitions\":[\"spend\",\"to pass\"]},{\"simplified\":\"断\",\"traditional\":\"斷\",\"pinyin\":\"duàn\",\"definitions\":[\"to break\",\"decide\",\"absolutely (usually negative)\"]},{\"simplified\":\"堆\",\"traditional\":\"堆\",\"pinyin\":\"duī\",\"definitions\":[\"pile\",\"heap\",\"stack\",\"crowd\"]},{\"simplified\":\"对比\",\"traditional\":\"對比\",\"pinyin\":\"duìbǐ\",\"definitions\":[\"compare\",\"to contrast\",\"comparison\"]},{\"simplified\":\"对待\",\"traditional\":\"對待\",\"pinyin\":\"duìdài\",\"definitions\":[\"to treat\"]},{\"simplified\":\"对方\",\"traditional\":\"對方\",\"pinyin\":\"duìfāng\",\"definitions\":[\"counterpart\",\"the other party involved\"]},{\"simplified\":\"对手\",\"traditional\":\"對手\",\"pinyin\":\"duìshǒu\",\"definitions\":[\"opponent\",\"adversary\",\"match\"]},{\"simplified\":\"对象\",\"traditional\":\"對象\",\"pinyin\":\"duìxiàng\",\"definitions\":[\"target\",\"object\",\"partner\",\"boyfriend or girlfriend\"]},{\"simplified\":\"兑换\",\"traditional\":\"兌換\",\"pinyin\":\"duìhuàn\",\"definitions\":[\"to exchange\",\"to convert (currencies)\"]},{\"simplified\":\"吨\",\"traditional\":\"噸\",\"pinyin\":\"dūn\",\"definitions\":[\"ton\"]},{\"simplified\":\"蹲\",\"traditional\":\"蹲\",\"pinyin\":\"dūn\",\"definitions\":[\"to crouch\",\"to squat\"]},{\"simplified\":\"顿\",\"traditional\":\"頓\",\"pinyin\":\"dùn\",\"definitions\":[\"pause\",\"arrange\",\"stamp feet\",\"suddenly\",\"(mw for meals)\"]},{\"simplified\":\"多亏\",\"traditional\":\"多虧\",\"pinyin\":\"duōkuī\",\"definitions\":[\"thanks to\",\"luckily\"]},{\"simplified\":\"多余\",\"traditional\":\"多余\",\"pinyin\":\"duōyú\",\"definitions\":[\"unnecessary\",\"superfluous\"]},{\"simplified\":\"朵\",\"traditional\":\"朵\",\"pinyin\":\"duǒ\",\"definitions\":[\"(mw for flowers and clouds)\"]},{\"simplified\":\"躲藏\",\"traditional\":\"躲藏\",\"pinyin\":\"duǒcáng\",\"definitions\":[\"hide oneself\",\"take cover\"]},{\"simplified\":\"恶劣\",\"traditional\":\"惡劣\",\"pinyin\":\"èliè\",\"definitions\":[\"vile\",\"horrible\"]},{\"simplified\":\"耳环\",\"traditional\":\"耳環\",\"pinyin\":\"ěrhuán\",\"definitions\":[\"earring\"]},{\"simplified\":\"发表\",\"traditional\":\"發表\",\"pinyin\":\"fābiǎo\",\"definitions\":[\"publish\",\"to issue (a statement)\",\"announce\"]},{\"simplified\":\"发愁\",\"traditional\":\"發愁\",\"pinyin\":\"fā chóu\",\"definitions\":[\"worry about sth.\"]},{\"simplified\":\"发达\",\"traditional\":\"發達\",\"pinyin\":\"fādá\",\"definitions\":[\"developed (country, etc.)\",\"flourishing\",\"prosper\"]},{\"simplified\":\"发抖\",\"traditional\":\"發抖\",\"pinyin\":\"fādǒu\",\"definitions\":[\"to shiver\",\"to shudder\",\"tremble\"]},{\"simplified\":\"发挥\",\"traditional\":\"發揮\",\"pinyin\":\"fāhuī\",\"definitions\":[\"to bring (skill, talent, etc.) into play\",\"to develop (an idea)\"]},{\"simplified\":\"发明\",\"traditional\":\"發明\",\"pinyin\":\"fāmíng\",\"definitions\":[\"invent\"]},{\"simplified\":\"发票\",\"traditional\":\"發票\",\"pinyin\":\"fāpiào\",\"definitions\":[\"receipt or bill for purchase\",\"invoice\"]},{\"simplified\":\"发言\",\"traditional\":\"發言\",\"pinyin\":\"fāyán\",\"definitions\":[\"make a speech\",\"statement\"]},{\"simplified\":\"罚款\",\"traditional\":\"罰款\",\"pinyin\":\"fákuǎn\",\"definitions\":[\"fine\",\"penalty (monetary)\"]},{\"simplified\":\"法院\",\"traditional\":\"法院\",\"pinyin\":\"fǎyuàn\",\"definitions\":[\"court of law\"]},{\"simplified\":\"翻\",\"traditional\":\"翻\",\"pinyin\":\"fān\",\"definitions\":[\"to turn over\",\"capsize\",\"translate\"]},{\"simplified\":\"繁荣\",\"traditional\":\"繁榮\",\"pinyin\":\"fánróng\",\"definitions\":[\"prosperous\",\"prosperity\",\"booming (economy)\"]},{\"simplified\":\"反而\",\"traditional\":\"反而\",\"pinyin\":\"fǎn'ér\",\"definitions\":[\"on the contrary\",\"instead\"]},{\"simplified\":\"反复\",\"traditional\":\"反複\",\"pinyin\":\"fǎnfù\",\"definitions\":[\"repeatedly\",\"over and over\"]},{\"simplified\":\"反应\",\"traditional\":\"反應\",\"pinyin\":\"fǎnyìng\",\"definitions\":[\"react\",\"respond\",\"reply\"]},{\"simplified\":\"反映\",\"traditional\":\"反映\",\"pinyin\":\"fǎnyìng\",\"definitions\":[\"reflect\",\"reflection\",\"report on\"]},{\"simplified\":\"反正\",\"traditional\":\"反正\",\"pinyin\":\"fǎnzhèng\",\"definitions\":[\"anyway\"]},{\"simplified\":\"范围\",\"traditional\":\"範圍\",\"pinyin\":\"fànwéi\",\"definitions\":[\"scope\",\"range\",\"limits\",\"extent\"]},{\"simplified\":\"方\",\"traditional\":\"方\",\"pinyin\":\"fāng\",\"definitions\":[\"square\",\"direction\",\"side (Kangxi radical 70)\"]},{\"simplified\":\"方案\",\"traditional\":\"方案\",\"pinyin\":\"fāng'àn\",\"definitions\":[\"plan\",\"program (for action, etc.)\",\"proposal\"]},{\"simplified\":\"方式\",\"traditional\":\"方式\",\"pinyin\":\"fāngshì\",\"definitions\":[\"way\",\"style\",\"fashion\",\"manner\"]},{\"simplified\":\"妨碍\",\"traditional\":\"妨礙\",\"pinyin\":\"fáng'ài\",\"definitions\":[\"hinder\",\"to hamper\",\"to obstruct\"]},{\"simplified\":\"仿佛\",\"traditional\":\"仿佛\",\"pinyin\":\"fǎngfú\",\"definitions\":[\"to seem as though\",\"as if\"]},{\"simplified\":\"非\",\"traditional\":\"非\",\"pinyin\":\"fēi\",\"definitions\":[\"non-\",\"un-\",\"not be\",\"wrongdoing\",\"simply must (Kangxi radical 175)\"]},{\"simplified\":\"肥皂\",\"traditional\":\"肥皂\",\"pinyin\":\"féizào\",\"definitions\":[\"soap\"]},{\"simplified\":\"废话\",\"traditional\":\"廢話\",\"pinyin\":\"fèihuà\",\"definitions\":[\"nonsense\",\"rubbish\"]},{\"simplified\":\"分别\",\"traditional\":\"分別\",\"pinyin\":\"fēnbié\",\"definitions\":[\"distinguish\",\"split up\",\"difference\",\"to part\"]},{\"simplified\":\"分布\",\"traditional\":\"分布\",\"pinyin\":\"fēnbù\",\"definitions\":[\"be distributed (over an area)\",\"be scattered\"]},{\"simplified\":\"分配\",\"traditional\":\"分配\",\"pinyin\":\"fēnpèi\",\"definitions\":[\"distribute\",\"assign\",\"allocate\"]},{\"simplified\":\"分手\",\"traditional\":\"分手\",\"pinyin\":\"fēnshǒu\",\"definitions\":[\"part company\",\"break up\"]},{\"simplified\":\"分析\",\"traditional\":\"分析\",\"pinyin\":\"fēnxī\",\"definitions\":[\"analyze\",\"analysis\"]},{\"simplified\":\"纷纷\",\"traditional\":\"紛紛\",\"pinyin\":\"fēnfēn\",\"definitions\":[\"one after another\",\"in succession\",\"in profusion\",\"diverse\",\"pell-mell\"]},{\"simplified\":\"奋斗\",\"traditional\":\"奮鬥\",\"pinyin\":\"fèndòu\",\"definitions\":[\"strive\",\"to struggle\"]},{\"simplified\":\"风格\",\"traditional\":\"風格\",\"pinyin\":\"fēnggé\",\"definitions\":[\"style\"]},{\"simplified\":\"风景\",\"traditional\":\"風景\",\"pinyin\":\"fēngjǐng\",\"definitions\":[\"scenery\",\"landscape\"]},{\"simplified\":\"风俗\",\"traditional\":\"風俗\",\"pinyin\":\"fēngsú\",\"definitions\":[\"social custom\"]},{\"simplified\":\"风险\",\"traditional\":\"風險\",\"pinyin\":\"fēngxiǎn\",\"definitions\":[\"risk\",\"venture\",\"hazard\"]},{\"simplified\":\"疯狂\",\"traditional\":\"瘋狂\",\"pinyin\":\"fēngkuáng\",\"definitions\":[\"crazy\",\"madness\",\"wild\",\"extreme popularity\",\"insane\",\"frenzied\",\"unbridled\"]},{\"simplified\":\"讽刺\",\"traditional\":\"諷刺\",\"pinyin\":\"fěngcì\",\"definitions\":[\"satirize\",\"ridicule\",\"mock\",\"irony\"]},{\"simplified\":\"否定\",\"traditional\":\"否定\",\"pinyin\":\"fǒudìng\",\"definitions\":[\"negate\",\"negative\"]},{\"simplified\":\"否认\",\"traditional\":\"否認\",\"pinyin\":\"fǒurèn\",\"definitions\":[\"deny\",\"declare to be untrue\"]},{\"simplified\":\"扶\",\"traditional\":\"扶\",\"pinyin\":\"fú\",\"definitions\":[\"to support with hand\",\"to help somebody up\"]},{\"simplified\":\"服装\",\"traditional\":\"服裝\",\"pinyin\":\"fúzhuāng\",\"definitions\":[\"(formal) clothing\",\"costume\",\"dress\"]},{\"simplified\":\"幅\",\"traditional\":\"幅\",\"pinyin\":\"fú\",\"definitions\":[\"width of cloth\",\"size\",\"(mw for pictures, paintings, textiles)\"]},{\"simplified\":\"辅导\",\"traditional\":\"輔導\",\"pinyin\":\"fǔdǎo\",\"definitions\":[\"to coach\",\"to tutor\",\"give advice (in study)\"]},{\"simplified\":\"妇女\",\"traditional\":\"婦女\",\"pinyin\":\"fùnǚ\",\"definitions\":[\"woman\",\"women in general\"]},{\"simplified\":\"复制\",\"traditional\":\"複制\",\"pinyin\":\"fùzhì\",\"definitions\":[\"duplicate\",\"reproduce\"]},{\"simplified\":\"改革\",\"traditional\":\"改革\",\"pinyin\":\"gǎigé\",\"definitions\":[\"to reform\"]},{\"simplified\":\"改进\",\"traditional\":\"改進\",\"pinyin\":\"gǎijìn\",\"definitions\":[\"improve\",\"make better\"]},{\"simplified\":\"改善\",\"traditional\":\"改善\",\"pinyin\":\"gǎishàn\",\"definitions\":[\"improve\",\"make better\"]},{\"simplified\":\"改正\",\"traditional\":\"改正\",\"pinyin\":\"gǎizhèng\",\"definitions\":[\"to correct\",\"amend\"]},{\"simplified\":\"盖\",\"traditional\":\"蓋\",\"pinyin\":\"gài\",\"definitions\":[\"lid\",\"top\",\"cover\",\"to build\"]},{\"simplified\":\"概括\",\"traditional\":\"概括\",\"pinyin\":\"gàikuò\",\"definitions\":[\"summarize\",\"generalize\"]},{\"simplified\":\"概念\",\"traditional\":\"概念\",\"pinyin\":\"gàiniàn\",\"definitions\":[\"concept\",\"idea\"]},{\"simplified\":\"干脆\",\"traditional\":\"幹脆\",\"pinyin\":\"gāncuì\",\"definitions\":[\"straightforward\",\"clear-cut\",\"blunt\"]},{\"simplified\":\"干燥\",\"traditional\":\"幹燥\",\"pinyin\":\"gānzào\",\"definitions\":[\"to dry (of paint, cement, etc.)\",\"dry\",\"dryness\"]},{\"simplified\":\"赶紧\",\"traditional\":\"趕緊\",\"pinyin\":\"gǎnjǐn\",\"definitions\":[\"at once\",\"hurriedly\",\"lose no time\"]},{\"simplified\":\"赶快\",\"traditional\":\"趕快\",\"pinyin\":\"gǎnkuài\",\"definitions\":[\"at once\",\"immediately\"]},{\"simplified\":\"感激\",\"traditional\":\"感激\",\"pinyin\":\"gǎnjī\",\"definitions\":[\"appreciate\",\"feel grateful\"]},{\"simplified\":\"感受\",\"traditional\":\"感受\",\"pinyin\":\"gǎnshòu\",\"definitions\":[\"feel\",\"experience\",\"emotion\",\"impression\"]},{\"simplified\":\"感想\",\"traditional\":\"感想\",\"pinyin\":\"gǎnxiǎng\",\"definitions\":[\"impressions\",\"reflections\",\"thoughts\"]},{\"simplified\":\"干活儿\",\"traditional\":\"幹活兒\",\"pinyin\":\"gàn huór\",\"definitions\":[\"do manual labor\",\"to work\"]},{\"simplified\":\"钢铁\",\"traditional\":\"鋼鐵\",\"pinyin\":\"gāngtiě\",\"definitions\":[\"steel\"]},{\"simplified\":\"高档\",\"traditional\":\"高檔\",\"pinyin\":\"gāodàng\",\"definitions\":[\"top quality\",\"first rate\",\"high class\"]},{\"simplified\":\"高级\",\"traditional\":\"高級\",\"pinyin\":\"gāojí\",\"definitions\":[\"high-level\",\"high-grade\",\"advanced\"]},{\"simplified\":\"搞\",\"traditional\":\"搞\",\"pinyin\":\"gǎo\",\"definitions\":[\"do\",\"make\",\"be engaged in\"]},{\"simplified\":\"告别\",\"traditional\":\"告別\",\"pinyin\":\"gàobié\",\"definitions\":[\"say goodbye to\",\"to leave\",\"to part\"]},{\"simplified\":\"格外\",\"traditional\":\"格外\",\"pinyin\":\"géwài\",\"definitions\":[\"especially\",\"additionally\"]},{\"simplified\":\"隔壁\",\"traditional\":\"隔壁\",\"pinyin\":\"gébì\",\"definitions\":[\"next door\"]},{\"simplified\":\"个别\",\"traditional\":\"個別\",\"pinyin\":\"gèbié\",\"definitions\":[\"individual\",\"specific\",\"isolated\",\"very few\"]},{\"simplified\":\"个人\",\"traditional\":\"個人\",\"pinyin\":\"gèrén\",\"definitions\":[\"individual\",\"personal\",\"oneself\"]},{\"simplified\":\"个性\",\"traditional\":\"個性\",\"pinyin\":\"gèxìng\",\"definitions\":[\"individuality\",\"personality\"]},{\"simplified\":\"各自\",\"traditional\":\"各自\",\"pinyin\":\"gèzì\",\"definitions\":[\"each\",\"respective\",\"apiece\"]},{\"simplified\":\"根\",\"traditional\":\"根\",\"pinyin\":\"gēn\",\"definitions\":[\"root\",\"base\",\"(mw for long, slender objects)\"]},{\"simplified\":\"根本\",\"traditional\":\"根本\",\"pinyin\":\"gēnběn\",\"definitions\":[\"root\",\"essence\",\"fundamental\",\"basic\",\"(not) at all\",\"simply\"]},{\"simplified\":\"工厂\",\"traditional\":\"工廠\",\"pinyin\":\"gōngchǎng\",\"definitions\":[\"factory\"]},{\"simplified\":\"工程师\",\"traditional\":\"工程師\",\"pinyin\":\"gōngchéngshī\",\"definitions\":[\"engineer\"]},{\"simplified\":\"工具\",\"traditional\":\"工具\",\"pinyin\":\"gōngjù\",\"definitions\":[\"tool\",\"instrument\",\"utensil\"]},{\"simplified\":\"工人\",\"traditional\":\"工人\",\"pinyin\":\"gōngrén\",\"definitions\":[\"worker\"]},{\"simplified\":\"工业\",\"traditional\":\"工業\",\"pinyin\":\"gōngyè\",\"definitions\":[\"industry\"]},{\"simplified\":\"公布\",\"traditional\":\"公布\",\"pinyin\":\"gōngbù\",\"definitions\":[\"make public\",\"announce\",\"publicize\"]},{\"simplified\":\"公开\",\"traditional\":\"公開\",\"pinyin\":\"gōngkāi\",\"definitions\":[\"public\",\"make public\"]},{\"simplified\":\"公平\",\"traditional\":\"公平\",\"pinyin\":\"gōngpíng\",\"definitions\":[\"fair\",\"impartial\",\"just\"]},{\"simplified\":\"公寓\",\"traditional\":\"公寓\",\"pinyin\":\"gōngyù\",\"definitions\":[\"apartment building\"]},{\"simplified\":\"公元\",\"traditional\":\"公元\",\"pinyin\":\"gōngyuán\",\"definitions\":[\"(year) AD or CE\",\"Christian era\",\"common era\"]},{\"simplified\":\"公主\",\"traditional\":\"公主\",\"pinyin\":\"gōngzhǔ\",\"definitions\":[\"princess\"]},{\"simplified\":\"功能\",\"traditional\":\"功能\",\"pinyin\":\"gōngnéng\",\"definitions\":[\"function\",\"feature\"]},{\"simplified\":\"恭喜\",\"traditional\":\"恭喜\",\"pinyin\":\"gōngxǐ\",\"definitions\":[\"congratulate\"]},{\"simplified\":\"贡献\",\"traditional\":\"貢獻\",\"pinyin\":\"gòngxiàn\",\"definitions\":[\"contribute\",\"dedicate\",\"contribution\"]},{\"simplified\":\"沟通\",\"traditional\":\"溝通\",\"pinyin\":\"gōutōng\",\"definitions\":[\"link\",\"connect\",\"communicate\"]},{\"simplified\":\"构成\",\"traditional\":\"構成\",\"pinyin\":\"gòuchéng\",\"definitions\":[\"to constitute\",\"to compose\"]},{\"simplified\":\"姑姑\",\"traditional\":\"姑姑\",\"pinyin\":\"gūgu\",\"definitions\":[\"paternal aunt\",\"father's sister\"]},{\"simplified\":\"姑娘\",\"traditional\":\"姑娘\",\"pinyin\":\"gūniang\",\"definitions\":[\"young woman\",\"girl\"]},{\"simplified\":\"古代\",\"traditional\":\"古代\",\"pinyin\":\"gǔdài\",\"definitions\":[\"ancient times\"]},{\"simplified\":\"古典\",\"traditional\":\"古典\",\"pinyin\":\"gǔdiǎn\",\"definitions\":[\"classical\"]},{\"simplified\":\"股票\",\"traditional\":\"股票\",\"pinyin\":\"gǔpiào\",\"definitions\":[\"shares\",\"stock (market)\"]},{\"simplified\":\"骨头\",\"traditional\":\"骨頭\",\"pinyin\":\"gǔtou\",\"definitions\":[\"bone\",\"moral character\"]},{\"simplified\":\"鼓舞\",\"traditional\":\"鼓舞\",\"pinyin\":\"gǔwǔ\",\"definitions\":[\"inspire\",\"heartening\"]},{\"simplified\":\"鼓掌\",\"traditional\":\"鼓掌\",\"pinyin\":\"gǔ zhǎng\",\"definitions\":[\"applaud\"]},{\"simplified\":\"固定\",\"traditional\":\"固定\",\"pinyin\":\"gùdìng\",\"definitions\":[\"fixed\",\"regular\",\"stable\"]},{\"simplified\":\"挂号\",\"traditional\":\"挂號\",\"pinyin\":\"guà hào\",\"definitions\":[\"register\",\"check into hospital\",\"send by registered mail\"]},{\"simplified\":\"乖\",\"traditional\":\"乖\",\"pinyin\":\"guāi\",\"definitions\":[\"(of a child) obedient\",\"well-behaved\",\"clever\",\"perverse\",\"contrary to reason\"]},{\"simplified\":\"拐弯\",\"traditional\":\"拐彎\",\"pinyin\":\"guǎi wān\",\"definitions\":[\"turn a corner\",\"make a turn\"]},{\"simplified\":\"怪不得\",\"traditional\":\"怪不得\",\"pinyin\":\"guài bu de\",\"definitions\":[\"no wonder\",\"so that's why\"]},{\"simplified\":\"关闭\",\"traditional\":\"關閉\",\"pinyin\":\"guānbì\",\"definitions\":[\"close\",\"shut\"]},{\"simplified\":\"观察\",\"traditional\":\"觀察\",\"pinyin\":\"guānchá\",\"definitions\":[\"observe\",\"to watch\",\"to survey\"]},{\"simplified\":\"观点\",\"traditional\":\"觀點\",\"pinyin\":\"guāndiǎn\",\"definitions\":[\"point of view\",\"standpoint\"]},{\"simplified\":\"观念\",\"traditional\":\"觀念\",\"pinyin\":\"guānniàn\",\"definitions\":[\"notion\",\"thought\",\"concept\"]},{\"simplified\":\"官\",\"traditional\":\"官\",\"pinyin\":\"guān\",\"definitions\":[\"an official\",\"organ\",\"governmental\"]},{\"simplified\":\"管子\",\"traditional\":\"管子\",\"pinyin\":\"guǎnzi\",\"definitions\":[\"tube\",\"pipe\",\"drinking straw\"]},{\"simplified\":\"冠军\",\"traditional\":\"冠軍\",\"pinyin\":\"guànjūn\",\"definitions\":[\"champion\"]},{\"simplified\":\"光滑\",\"traditional\":\"光滑\",\"pinyin\":\"guānghuá\",\"definitions\":[\"glossy\",\"sleek\",\"smooth\"]},{\"simplified\":\"光临\",\"traditional\":\"光臨\",\"pinyin\":\"guānglín\",\"definitions\":[\"(polite) welcome!\",\"honor somebody with one's presence\"]},{\"simplified\":\"光明\",\"traditional\":\"光明\",\"pinyin\":\"guāngmíng\",\"definitions\":[\"bright (future)\",\"promising\",\"illuminate\"]},{\"simplified\":\"光盘\",\"traditional\":\"光盤\",\"pinyin\":\"guāngpán\",\"definitions\":[\"CD (compact disc)\"]},{\"simplified\":\"广场\",\"traditional\":\"廣場\",\"pinyin\":\"guǎngchǎng\",\"definitions\":[\"public square\",\"plaza\"]},{\"simplified\":\"广大\",\"traditional\":\"廣大\",\"pinyin\":\"guǎngdà\",\"definitions\":[\"vast\",\"extensive\"]},{\"simplified\":\"广泛\",\"traditional\":\"廣泛\",\"pinyin\":\"guǎngfàn\",\"definitions\":[\"extensive\",\"wide ranging\"]},{\"simplified\":\"归纳\",\"traditional\":\"歸納\",\"pinyin\":\"guīnà\",\"definitions\":[\"conclude from the facts\",\"induce\",\"sum up from the facts\"]},{\"simplified\":\"规矩\",\"traditional\":\"規矩\",\"pinyin\":\"guīju\",\"definitions\":[\"rule\",\"custom\"]},{\"simplified\":\"规律\",\"traditional\":\"規律\",\"pinyin\":\"guīlǜ\",\"definitions\":[\"law (e.g. of science)\",\"regular pattern\",\"discipline\"]},{\"simplified\":\"规模\",\"traditional\":\"規模\",\"pinyin\":\"guīmó\",\"definitions\":[\"scale\",\"scope\",\"extent\"]},{\"simplified\":\"规则\",\"traditional\":\"規則\",\"pinyin\":\"guīzé\",\"definitions\":[\"rule\",\"law\",\"regulation\"]},{\"simplified\":\"柜台\",\"traditional\":\"櫃台\",\"pinyin\":\"guìtái\",\"definitions\":[\"counter\",\"bar\",\"front desk\"]},{\"simplified\":\"滚\",\"traditional\":\"滾\",\"pinyin\":\"gǔn\",\"definitions\":[\"to roll\",\"get lost\",\"to boil\"]},{\"simplified\":\"锅\",\"traditional\":\"鍋\",\"pinyin\":\"guō\",\"definitions\":[\"pot\",\"pan\",\"boiler\"]},{\"simplified\":\"国庆节\",\"traditional\":\"國慶節\",\"pinyin\":\"Guóqìng Jié\",\"definitions\":[\"National Day\"]},{\"simplified\":\"国王\",\"traditional\":\"國王\",\"pinyin\":\"guówáng\",\"definitions\":[\"king\"]},{\"simplified\":\"果然\",\"traditional\":\"果然\",\"pinyin\":\"guǒrán\",\"definitions\":[\"really\",\"sure enough\",\"as expected\"]},{\"simplified\":\"果实\",\"traditional\":\"果實\",\"pinyin\":\"guǒshí\",\"definitions\":[\"fruit\",\"gains\",\"results\"]},{\"simplified\":\"过分\",\"traditional\":\"過分\",\"pinyin\":\"guòfèn\",\"definitions\":[\"excessive\",\"overly\"]},{\"simplified\":\"过敏\",\"traditional\":\"過敏\",\"pinyin\":\"guòmǐn\",\"definitions\":[\"be allergic\",\"allergy\"]},{\"simplified\":\"过期\",\"traditional\":\"過期\",\"pinyin\":\"guòqī\",\"definitions\":[\"overdue\",\"expire\"]},{\"simplified\":\"哈\",\"traditional\":\"哈\",\"pinyin\":\"hā\",\"definitions\":[\"exhale\",\"sip\",\"(sound of laughter)\"]},{\"simplified\":\"海关\",\"traditional\":\"海關\",\"pinyin\":\"hǎiguān\",\"definitions\":[\"customs (i.e. border inspection)\"]},{\"simplified\":\"海鲜\",\"traditional\":\"海鮮\",\"pinyin\":\"hǎixiān\",\"definitions\":[\"seafood\"]},{\"simplified\":\"喊\",\"traditional\":\"喊\",\"pinyin\":\"hǎn\",\"definitions\":[\"call\",\"cry\",\"shout\"]},{\"simplified\":\"行业\",\"traditional\":\"行業\",\"pinyin\":\"hángyè\",\"definitions\":[\"industry\",\"business\"]},{\"simplified\":\"豪华\",\"traditional\":\"豪華\",\"pinyin\":\"háohuá\",\"definitions\":[\"luxurious\"]},{\"simplified\":\"好客\",\"traditional\":\"好客\",\"pinyin\":\"hàokè\",\"definitions\":[\"hospitable\",\"to enjoy having guests\"]},{\"simplified\":\"好奇\",\"traditional\":\"好奇\",\"pinyin\":\"hàoqí\",\"definitions\":[\"curious\"]},{\"simplified\":\"合法\",\"traditional\":\"合法\",\"pinyin\":\"héfǎ\",\"definitions\":[\"lawful\",\"legitimate\",\"legal\"]},{\"simplified\":\"合理\",\"traditional\":\"合理\",\"pinyin\":\"hélǐ\",\"definitions\":[\"rational\",\"reasonable\"]},{\"simplified\":\"合同\",\"traditional\":\"合同\",\"pinyin\":\"hétong\",\"definitions\":[\"contract\"]},{\"simplified\":\"合影\",\"traditional\":\"合影\",\"pinyin\":\"héyǐng\",\"definitions\":[\"joint photo\",\"group photo\"]},{\"simplified\":\"合作\",\"traditional\":\"合作\",\"pinyin\":\"hézuò\",\"definitions\":[\"cooperate\",\"collaborate\",\"work together\"]},{\"simplified\":\"何必\",\"traditional\":\"何必\",\"pinyin\":\"hébì\",\"definitions\":[\"why should\",\"there is no need to\"]},{\"simplified\":\"何况\",\"traditional\":\"何況\",\"pinyin\":\"hékuàng\",\"definitions\":[\"let alone\",\"much less\"]},{\"simplified\":\"和平\",\"traditional\":\"和平\",\"pinyin\":\"hépíng\",\"definitions\":[\"peace\"]},{\"simplified\":\"核心\",\"traditional\":\"核心\",\"pinyin\":\"héxīn\",\"definitions\":[\"core\",\"nucleus\"]},{\"simplified\":\"恨\",\"traditional\":\"恨\",\"pinyin\":\"hèn\",\"definitions\":[\"to hate\"]},{\"simplified\":\"猴子\",\"traditional\":\"猴子\",\"pinyin\":\"hóuzi\",\"definitions\":[\"monkey\"]},{\"simplified\":\"后背\",\"traditional\":\"後背\",\"pinyin\":\"hòubèi\",\"definitions\":[\"back (of the body)\"]},{\"simplified\":\"后果\",\"traditional\":\"後果\",\"pinyin\":\"hòuguǒ\",\"definitions\":[\"consequences\",\"aftermath\"]},{\"simplified\":\"呼吸\",\"traditional\":\"呼吸\",\"pinyin\":\"hūxī\",\"definitions\":[\"breathe\"]},{\"simplified\":\"忽然\",\"traditional\":\"忽然\",\"pinyin\":\"hūrán\",\"definitions\":[\"suddenly\",\"all of a sudden\"]},{\"simplified\":\"忽视\",\"traditional\":\"忽視\",\"pinyin\":\"hūshì\",\"definitions\":[\"neglect\",\"ignore\",\"to overlook\"]},{\"simplified\":\"胡说\",\"traditional\":\"胡說\",\"pinyin\":\"húshuō\",\"definitions\":[\"talk nonsense\",\"drivel\"]},{\"simplified\":\"胡同\",\"traditional\":\"胡同\",\"pinyin\":\"hútòng\",\"definitions\":[\"lane\",\"alley\"]},{\"simplified\":\"壶\",\"traditional\":\"壺\",\"pinyin\":\"hú\",\"definitions\":[\"pot\",\"kettle\",\"jug\",\"(mw for bottled liquids)\"]},{\"simplified\":\"蝴蝶\",\"traditional\":\"蝴蝶\",\"pinyin\":\"húdié\",\"definitions\":[\"butterfly\"]},{\"simplified\":\"糊涂\",\"traditional\":\"糊塗\",\"pinyin\":\"hútu\",\"definitions\":[\"confused\",\"bewildered\",\"muddled\"]},{\"simplified\":\"花生\",\"traditional\":\"花生\",\"pinyin\":\"huāshēng\",\"definitions\":[\"peanut\"]},{\"simplified\":\"划\",\"traditional\":\"劃\",\"pinyin\":\"huà, huá\",\"definitions\":[\"delimit\",\"to transfer\",\"assign | to row\",\"to paddle\",\"to scratch\"]},{\"simplified\":\"华裔\",\"traditional\":\"華裔\",\"pinyin\":\"Huáyì\",\"definitions\":[\"person of Chinese descent\"]},{\"simplified\":\"滑\",\"traditional\":\"滑\",\"pinyin\":\"huá\",\"definitions\":[\"slippery\",\"cunning\",\"crafty\"]},{\"simplified\":\"化学\",\"traditional\":\"化學\",\"pinyin\":\"huàxué\",\"definitions\":[\"chemistry\"]},{\"simplified\":\"话题\",\"traditional\":\"話題\",\"pinyin\":\"huàtí\",\"definitions\":[\"subject (of a talk or conversation)\"]},{\"simplified\":\"怀念\",\"traditional\":\"懷念\",\"pinyin\":\"huáiniàn\",\"definitions\":[\"cherish the memory of\",\"think fondly of\"]},{\"simplified\":\"怀孕\",\"traditional\":\"懷孕\",\"pinyin\":\"huáiyùn\",\"definitions\":[\"become pregnant\",\"have conceived\"]},{\"simplified\":\"缓解\",\"traditional\":\"緩解\",\"pinyin\":\"huǎnjiě\",\"definitions\":[\"to alleviate\"]},{\"simplified\":\"幻想\",\"traditional\":\"幻想\",\"pinyin\":\"huànxiǎng\",\"definitions\":[\"delusion\",\"fantasy\",\"illusion\"]},{\"simplified\":\"慌张\",\"traditional\":\"慌張\",\"pinyin\":\"huāngzhāng\",\"definitions\":[\"flustered\",\"flurried\"]},{\"simplified\":\"黄金\",\"traditional\":\"黃金\",\"pinyin\":\"huángjīn\",\"definitions\":[\"gold\"]},{\"simplified\":\"灰\",\"traditional\":\"灰\",\"pinyin\":\"huī\",\"definitions\":[\"ash\",\"gray (grey)\",\"dust\",\"lime\"]},{\"simplified\":\"灰尘\",\"traditional\":\"灰塵\",\"pinyin\":\"huīchén\",\"definitions\":[\"dust\",\"dirt\"]},{\"simplified\":\"灰心\",\"traditional\":\"灰心\",\"pinyin\":\"huī xīn\",\"definitions\":[\"lose heart\",\"be discouraged\"]},{\"simplified\":\"挥\",\"traditional\":\"揮\",\"pinyin\":\"huī\",\"definitions\":[\"to wave\",\"brandish\",\"wield\",\"wipe away\"]},{\"simplified\":\"恢复\",\"traditional\":\"恢複\",\"pinyin\":\"huīfù\",\"definitions\":[\"reinstate\",\"resume\",\"recover\"]},{\"simplified\":\"汇率\",\"traditional\":\"彙率\",\"pinyin\":\"huìlǜ\",\"definitions\":[\"exchange rate\"]},{\"simplified\":\"婚礼\",\"traditional\":\"婚禮\",\"pinyin\":\"hūnlǐ\",\"definitions\":[\"wedding ceremony\"]},{\"simplified\":\"婚姻\",\"traditional\":\"婚姻\",\"pinyin\":\"hūnyīn\",\"definitions\":[\"marriage\",\"matrimony\",\"wedding\"]},{\"simplified\":\"活跃\",\"traditional\":\"活躍\",\"pinyin\":\"huóyuè\",\"definitions\":[\"active\",\"vigorous\"]},{\"simplified\":\"火柴\",\"traditional\":\"火柴\",\"pinyin\":\"huǒchái\",\"definitions\":[\"match (for lighting fire)\"]},{\"simplified\":\"伙伴\",\"traditional\":\"夥伴\",\"pinyin\":\"huǒbàn\",\"definitions\":[\"partner (for an activity)\",\"friend\",\"pal\"]},{\"simplified\":\"或许\",\"traditional\":\"或許\",\"pinyin\":\"huòxǔ\",\"definitions\":[\"perhaps\",\"maybe\"]},{\"simplified\":\"机器\",\"traditional\":\"機器\",\"pinyin\":\"jīqì\",\"definitions\":[\"machine\"]},{\"simplified\":\"肌肉\",\"traditional\":\"肌肉\",\"pinyin\":\"jīròu\",\"definitions\":[\"muscle\",\"flesh\"]},{\"simplified\":\"基本\",\"traditional\":\"基本\",\"pinyin\":\"jīběn\",\"definitions\":[\"basic\",\"fundamental\"]},{\"simplified\":\"激烈\",\"traditional\":\"激烈\",\"pinyin\":\"jīliè\",\"definitions\":[\"intense\",\"acute\",\"sharp\",\"fierce\"]},{\"simplified\":\"及格\",\"traditional\":\"及格\",\"pinyin\":\"jí gé\",\"definitions\":[\"pass an exam\"]},{\"simplified\":\"极其\",\"traditional\":\"極其\",\"pinyin\":\"jíqí\",\"definitions\":[\"extremely\",\"exceedingly\"]},{\"simplified\":\"急忙\",\"traditional\":\"急忙\",\"pinyin\":\"jímáng\",\"definitions\":[\"hastily\"]},{\"simplified\":\"急诊\",\"traditional\":\"急診\",\"pinyin\":\"jízhěn\",\"definitions\":[\"emergency call\",\"emergency treatment\"]},{\"simplified\":\"集合\",\"traditional\":\"集合\",\"pinyin\":\"jíhé\",\"definitions\":[\"gather\",\"assemble\",\"to muster\"]},{\"simplified\":\"集体\",\"traditional\":\"集體\",\"pinyin\":\"jítǐ\",\"definitions\":[\"collective\",\"group\"]},{\"simplified\":\"集中\",\"traditional\":\"集中\",\"pinyin\":\"jízhōng\",\"definitions\":[\"concentrate\",\"to focus\",\"amass\"]},{\"simplified\":\"计算\",\"traditional\":\"計算\",\"pinyin\":\"jìsuàn\",\"definitions\":[\"to count\",\"calculate\",\"compute\"]},{\"simplified\":\"记录\",\"traditional\":\"記錄\",\"pinyin\":\"jìlù\",\"definitions\":[\"to record\",\"take notes\"]},{\"simplified\":\"记忆\",\"traditional\":\"記憶\",\"pinyin\":\"jìyì\",\"definitions\":[\"memory\",\"to remember\"]},{\"simplified\":\"纪录\",\"traditional\":\"紀錄\",\"pinyin\":\"jìlù\",\"definitions\":[\"a record\",\"to take notes\"]},{\"simplified\":\"纪律\",\"traditional\":\"紀律\",\"pinyin\":\"jìlǜ\",\"definitions\":[\"discipline\",\"morale\",\"laws and regulations\"]},{\"simplified\":\"纪念\",\"traditional\":\"紀念\",\"pinyin\":\"jìniàn\",\"definitions\":[\"commemorate\",\"remember\"]},{\"simplified\":\"系领带\",\"traditional\":\"系領帶\",\"pinyin\":\"jìlǐngdài\",\"definitions\":[\"tie a neck tie\"]},{\"simplified\":\"寂寞\",\"traditional\":\"寂寞\",\"pinyin\":\"jìmò\",\"definitions\":[\"lonely\",\"lonesome\"]},{\"simplified\":\"夹子\",\"traditional\":\"夾子\",\"pinyin\":\"jiāzi\",\"definitions\":[\"clip\",\"tongs\",\"folder\"]},{\"simplified\":\"家庭\",\"traditional\":\"家庭\",\"pinyin\":\"jiātíng\",\"definitions\":[\"family\",\"household\"]},{\"simplified\":\"家务\",\"traditional\":\"家務\",\"pinyin\":\"jiāwù\",\"definitions\":[\"household duties\",\"chores\",\"housework\"]},{\"simplified\":\"家乡\",\"traditional\":\"家鄉\",\"pinyin\":\"jiāxiāng\",\"definitions\":[\"hometown\"]},{\"simplified\":\"嘉宾\",\"traditional\":\"嘉賓\",\"pinyin\":\"jiābīn\",\"definitions\":[\"honored guest\"]},{\"simplified\":\"甲\",\"traditional\":\"甲\",\"pinyin\":\"jiǎ\",\"definitions\":[\"one\",\"armor (1st Heavenly Stem)\"]},{\"simplified\":\"假如\",\"traditional\":\"假如\",\"pinyin\":\"jiǎrú\",\"definitions\":[\"if\",\"supposing\",\"in case\"]},{\"simplified\":\"假设\",\"traditional\":\"假設\",\"pinyin\":\"jiǎshè\",\"definitions\":[\"suppose that\",\"hypothesis\",\"conjecture\"]},{\"simplified\":\"假装\",\"traditional\":\"假裝\",\"pinyin\":\"jiǎzhuāng\",\"definitions\":[\"pretend to be\",\"feign\"]},{\"simplified\":\"价值\",\"traditional\":\"價值\",\"pinyin\":\"jiàzhí\",\"definitions\":[\"value\",\"worth\"]},{\"simplified\":\"驾驶\",\"traditional\":\"駕駛\",\"pinyin\":\"jiàshǐ\",\"definitions\":[\"to drive\",\"to pilot (a ship, an airplane, etc.)\"]},{\"simplified\":\"嫁\",\"traditional\":\"嫁\",\"pinyin\":\"jià\",\"definitions\":[\"marry (a husband)\",\"take a husband\"]},{\"simplified\":\"坚决\",\"traditional\":\"堅決\",\"pinyin\":\"jiānjué\",\"definitions\":[\"resolute\",\"determined\",\"uncompromising\"]},{\"simplified\":\"坚强\",\"traditional\":\"堅強\",\"pinyin\":\"jiānqiáng\",\"definitions\":[\"strong\",\"staunch\"]},{\"simplified\":\"肩膀\",\"traditional\":\"肩膀\",\"pinyin\":\"jiānbǎng\",\"definitions\":[\"shoulder\"]},{\"simplified\":\"艰巨\",\"traditional\":\"艱巨\",\"pinyin\":\"jiānjù\",\"definitions\":[\"very difficult\",\"arduous\",\"hard\"]},{\"simplified\":\"艰苦\",\"traditional\":\"艱苦\",\"pinyin\":\"jiānkǔ\",\"definitions\":[\"difficult\",\"hard\",\"arduous\"]},{\"simplified\":\"兼职\",\"traditional\":\"兼職\",\"pinyin\":\"jiānzhí\",\"definitions\":[\"part time\"]},{\"simplified\":\"捡\",\"traditional\":\"撿\",\"pinyin\":\"jiǎn\",\"definitions\":[\"to pick up\",\"collect\",\"gather\"]},{\"simplified\":\"剪刀\",\"traditional\":\"剪刀\",\"pinyin\":\"jiǎndāo\",\"definitions\":[\"scissors\"]},{\"simplified\":\"简历\",\"traditional\":\"簡曆\",\"pinyin\":\"jiǎnlì\",\"definitions\":[\"resume\",\"curriculum vitae\"]},{\"simplified\":\"简直\",\"traditional\":\"簡直\",\"pinyin\":\"jiǎnzhí\",\"definitions\":[\"simply\",\"at all\"]},{\"simplified\":\"建立\",\"traditional\":\"建立\",\"pinyin\":\"jiànlì\",\"definitions\":[\"establish\",\"to construct\",\"to set up\"]},{\"simplified\":\"建设\",\"traditional\":\"建設\",\"pinyin\":\"jiànshè\",\"definitions\":[\"to build\",\"to construct\",\"construction\"]},{\"simplified\":\"建筑\",\"traditional\":\"建築\",\"pinyin\":\"jiànzhù\",\"definitions\":[\"a building\",\"to construct\",\"architecture\"]},{\"simplified\":\"健身\",\"traditional\":\"健身\",\"pinyin\":\"jiànshēn\",\"definitions\":[\"work out\",\"body-building\"]},{\"simplified\":\"键盘\",\"traditional\":\"鍵盤\",\"pinyin\":\"jiànpán\",\"definitions\":[\"keyboard\"]},{\"simplified\":\"讲究\",\"traditional\":\"講究\",\"pinyin\":\"jiǎngjiu\",\"definitions\":[\"Be particular about\",\"fastidious\",\"stress\",\"exquisite\",\"careful study\"]},{\"simplified\":\"讲座\",\"traditional\":\"講座\",\"pinyin\":\"jiǎngzuò\",\"definitions\":[\"a lecture or course of lectures\",\"lecture hall\"]},{\"simplified\":\"酱油\",\"traditional\":\"醬油\",\"pinyin\":\"jiàngyóu\",\"definitions\":[\"soy sauce\"]},{\"simplified\":\"交换\",\"traditional\":\"交換\",\"pinyin\":\"jiāohuàn\",\"definitions\":[\"to exchange\",\"to swap\",\"to switch\"]},{\"simplified\":\"交际\",\"traditional\":\"交際\",\"pinyin\":\"jiāojì\",\"definitions\":[\"socialize\",\"social intercourse\",\"communication\"]},{\"simplified\":\"交往\",\"traditional\":\"交往\",\"pinyin\":\"jiāowǎng\",\"definitions\":[\"to associate\",\"to contact\"]},{\"simplified\":\"浇\",\"traditional\":\"澆\",\"pinyin\":\"jiāo\",\"definitions\":[\"to water\",\"irrigate\",\"to pour\",\"to sprinkle\"]},{\"simplified\":\"胶水\",\"traditional\":\"膠水\",\"pinyin\":\"jiāoshuǐ\",\"definitions\":[\"(watery) glue\",\"gum\"]},{\"simplified\":\"角度\",\"traditional\":\"角度\",\"pinyin\":\"jiǎodù\",\"definitions\":[\"angle\",\"point of view\"]},{\"simplified\":\"狡猾\",\"traditional\":\"狡猾\",\"pinyin\":\"jiǎohuá\",\"definitions\":[\"crafty\",\"cunning\",\"sly\"]},{\"simplified\":\"教材\",\"traditional\":\"教材\",\"pinyin\":\"jiàocái\",\"definitions\":[\"teaching materials\"]},{\"simplified\":\"教练\",\"traditional\":\"教練\",\"pinyin\":\"jiàoliàn\",\"definitions\":[\"(athlete's) coach\",\"sports coach\",\"instructor\"]},{\"simplified\":\"教训\",\"traditional\":\"教訓\",\"pinyin\":\"jiàoxun\",\"definitions\":[\"lesson\",\"teach someone or learn a lesson\",\"a moral\"]},{\"simplified\":\"阶段\",\"traditional\":\"階段\",\"pinyin\":\"jiēduàn\",\"definitions\":[\"stage\",\"phase\"]},{\"simplified\":\"结实\",\"traditional\":\"結實\",\"pinyin\":\"jiēshi\",\"definitions\":[\"sturdy\",\"(also -shí: bear fruit)\"]},{\"simplified\":\"接触\",\"traditional\":\"接觸\",\"pinyin\":\"jiēchù\",\"definitions\":[\"come into contact with\"]},{\"simplified\":\"接待\",\"traditional\":\"接待\",\"pinyin\":\"jiēdài\",\"definitions\":[\"receive (a visitor)\",\"admit (entry to)\"]},{\"simplified\":\"接近\",\"traditional\":\"接近\",\"pinyin\":\"jiējìn\",\"definitions\":[\"near\",\"be close to\"]},{\"simplified\":\"节省\",\"traditional\":\"節省\",\"pinyin\":\"jiéshěng\",\"definitions\":[\"save\",\"use sparingly\",\"frugal\"]},{\"simplified\":\"结构\",\"traditional\":\"結構\",\"pinyin\":\"jiégòu\",\"definitions\":[\"structure\",\"composition\"]},{\"simplified\":\"结合\",\"traditional\":\"結合\",\"pinyin\":\"jiéhé\",\"definitions\":[\"combine\",\"to link\",\"to bind\"]},{\"simplified\":\"结论\",\"traditional\":\"結論\",\"pinyin\":\"jiélùn\",\"definitions\":[\"conclusion\",\"verdict\"]},{\"simplified\":\"结账\",\"traditional\":\"結賬\",\"pinyin\":\"jiézhàng\",\"definitions\":[\"pay the bill\",\"settle accounts\"]},{\"simplified\":\"戒\",\"traditional\":\"戒\",\"pinyin\":\"jiè\",\"definitions\":[\"warn against\",\"swear off\"]},{\"simplified\":\"戒指\",\"traditional\":\"戒指\",\"pinyin\":\"jièzhi\",\"definitions\":[\"(finger) ring\"]},{\"simplified\":\"届\",\"traditional\":\"屆\",\"pinyin\":\"jiè\",\"definitions\":[\"arrive at\",\"period\",\"session\",\"(mw for events\",\"meetings\",\"etc.)\"]},{\"simplified\":\"借口\",\"traditional\":\"借口\",\"pinyin\":\"jièkǒu\",\"definitions\":[\"excuse\"]},{\"simplified\":\"金属\",\"traditional\":\"金屬\",\"pinyin\":\"jīnshǔ\",\"definitions\":[\"metal\"]},{\"simplified\":\"尽快\",\"traditional\":\"盡快\",\"pinyin\":\"jǐnkuài\",\"definitions\":[\"as quickly as possible\"]},{\"simplified\":\"尽量\",\"traditional\":\"盡量\",\"pinyin\":\"jǐnliàng\",\"definitions\":[\"as much as possible\",\"to the best of one's ability (jìn-: eat or drink to one's fill)\"]},{\"simplified\":\"紧急\",\"traditional\":\"緊急\",\"pinyin\":\"jǐnjí\",\"definitions\":[\"urgent\",\"pressing\"]},{\"simplified\":\"谨慎\",\"traditional\":\"謹慎\",\"pinyin\":\"jǐnshèn\",\"definitions\":[\"cautious\",\"prudent\"]},{\"simplified\":\"尽力\",\"traditional\":\"盡力\",\"pinyin\":\"jìn lì\",\"definitions\":[\"do one's best\",\"to strive as much as possible\"]},{\"simplified\":\"进步\",\"traditional\":\"進步\",\"pinyin\":\"jìnbù\",\"definitions\":[\"make progress\",\"to advance\"]},{\"simplified\":\"进口\",\"traditional\":\"進口\",\"pinyin\":\"jìn kǒu\",\"definitions\":[\"import\",\"entrance\",\"enter\"]},{\"simplified\":\"近代\",\"traditional\":\"近代\",\"pinyin\":\"jìndài\",\"definitions\":[\"modern times\",\"latest generation\"]},{\"simplified\":\"经典\",\"traditional\":\"經典\",\"pinyin\":\"jīngdiǎn\",\"definitions\":[\"classics\",\"scriptures\"]},{\"simplified\":\"经商\",\"traditional\":\"經商\",\"pinyin\":\"jīng shāng\",\"definitions\":[\"trade\",\"be in business\",\"do commerce\"]},{\"simplified\":\"经营\",\"traditional\":\"經營\",\"pinyin\":\"jīngyíng\",\"definitions\":[\"engage in (a business activity, etc.)\",\"run/operate (a business)\"]},{\"simplified\":\"精力\",\"traditional\":\"精力\",\"pinyin\":\"jīnglì\",\"definitions\":[\"energy\",\"vigor\"]},{\"simplified\":\"精神\",\"traditional\":\"精神\",\"pinyin\":\"jīngshen\",\"definitions\":[\"vigor\",\"spirit\",\"mind\"]},{\"simplified\":\"酒吧\",\"traditional\":\"酒吧\",\"pinyin\":\"jiǔbā\",\"definitions\":[\"bar\"]},{\"simplified\":\"救\",\"traditional\":\"救\",\"pinyin\":\"jiù\",\"definitions\":[\"to save (life)\",\"to assist\",\"to rescue\"]},{\"simplified\":\"救护车\",\"traditional\":\"救護車\",\"pinyin\":\"jiùhùchē\",\"definitions\":[\"ambulance\"]},{\"simplified\":\"舅舅\",\"traditional\":\"舅舅\",\"pinyin\":\"jiùjiu\",\"definitions\":[\"mother's brother\",\"maternal uncle\"]},{\"simplified\":\"居然\",\"traditional\":\"居然\",\"pinyin\":\"jūrán\",\"definitions\":[\"unexpectedly\",\"to one's surprise\",\"go so far as to\"]},{\"simplified\":\"桔子\",\"traditional\":\"桔子\",\"pinyin\":\"júzi\",\"definitions\":[\"tangerine\"]},{\"simplified\":\"巨大\",\"traditional\":\"巨大\",\"pinyin\":\"jùdà\",\"definitions\":[\"immense\",\"enormous\",\"very large\"]},{\"simplified\":\"具备\",\"traditional\":\"具備\",\"pinyin\":\"jùbèi\",\"definitions\":[\"possess\",\"be equipped with\"]},{\"simplified\":\"具体\",\"traditional\":\"具體\",\"pinyin\":\"jùtǐ\",\"definitions\":[\"concrete\",\"definite\",\"specific\"]},{\"simplified\":\"俱乐部\",\"traditional\":\"俱樂部\",\"pinyin\":\"jùlèbù\",\"definitions\":[\"club (group or organization)\"]},{\"simplified\":\"据说\",\"traditional\":\"據說\",\"pinyin\":\"jùshuō\",\"definitions\":[\"it is said that\",\"reportedly\"]},{\"simplified\":\"捐\",\"traditional\":\"捐\",\"pinyin\":\"juān\",\"definitions\":[\"to contribute\",\"to donate\",\"to subsribe to\",\"to abandon\",\"to relinquish\",\"contribution\",\"tax\"]},{\"simplified\":\"决赛\",\"traditional\":\"決賽\",\"pinyin\":\"juésài\",\"definitions\":[\"finals (of a competition)\",\"final match\"]},{\"simplified\":\"决心\",\"traditional\":\"決心\",\"pinyin\":\"juéxīn\",\"definitions\":[\"determination\",\"resolution\"]},{\"simplified\":\"角色\",\"traditional\":\"角色\",\"pinyin\":\"juésè\",\"definitions\":[\"role\",\"part\"]},{\"simplified\":\"绝对\",\"traditional\":\"絕對\",\"pinyin\":\"juéduì\",\"definitions\":[\"absolute\",\"definite\"]},{\"simplified\":\"军事\",\"traditional\":\"軍事\",\"pinyin\":\"jūnshì\",\"definitions\":[\"military affairs\",\"military matters\"]},{\"simplified\":\"均匀\",\"traditional\":\"均勻\",\"pinyin\":\"jūnyún\",\"definitions\":[\"even\",\"well-distributed\"]},{\"simplified\":\"卡车\",\"traditional\":\"卡車\",\"pinyin\":\"kǎchē\",\"definitions\":[\"truck\"]},{\"simplified\":\"开发\",\"traditional\":\"開發\",\"pinyin\":\"kāifā\",\"definitions\":[\"develop\",\"to exploit (a resource)\"]},{\"simplified\":\"开放\",\"traditional\":\"開放\",\"pinyin\":\"kāifàng\",\"definitions\":[\"(of flowers) to bloom\",\"open up\",\"to be open-minded\",\"lift a ban, restriction, etc.\",\"release\",\"liberalization\",\"China's 1979 open policy\"]},{\"simplified\":\"开幕式\",\"traditional\":\"開幕式\",\"pinyin\":\"kāimùshì\",\"definitions\":[\"opening ceremony\"]},{\"simplified\":\"开水\",\"traditional\":\"開水\",\"pinyin\":\"kāishuǐ\",\"definitions\":[\"boiled water\",\"boil water\"]},{\"simplified\":\"砍\",\"traditional\":\"砍\",\"pinyin\":\"kǎn\",\"definitions\":[\"to chop\",\"cut down\"]},{\"simplified\":\"看不起\",\"traditional\":\"看不起\",\"pinyin\":\"kàn bu qǐ\",\"definitions\":[\"look down upon\",\"despise\"]},{\"simplified\":\"看望\",\"traditional\":\"看望\",\"pinyin\":\"kànwàng\",\"definitions\":[\"visit\",\"call on\",\"see\"]},{\"simplified\":\"靠\",\"traditional\":\"靠\",\"pinyin\":\"kào\",\"definitions\":[\"depend on\",\"lean on\",\"near\",\"to trust\"]},{\"simplified\":\"颗\",\"traditional\":\"顆\",\"pinyin\":\"kē\",\"definitions\":[\"(mw for hearts and small, round things like seeds, grains, beans, etc.)\"]},{\"simplified\":\"可见\",\"traditional\":\"可見\",\"pinyin\":\"kějiàn\",\"definitions\":[\"it can clearly be seen that\",\"clear\"]},{\"simplified\":\"可靠\",\"traditional\":\"可靠\",\"pinyin\":\"kěkào\",\"definitions\":[\"reliable\"]},{\"simplified\":\"可怕\",\"traditional\":\"可怕\",\"pinyin\":\"kěpà\",\"definitions\":[\"terrible\",\"awful\",\"frightful\",\"scary\"]},{\"simplified\":\"克\",\"traditional\":\"克\",\"pinyin\":\"kè\",\"definitions\":[\"gram\",\"overcome\",\"restrain\"]},{\"simplified\":\"克服\",\"traditional\":\"克服\",\"pinyin\":\"kèfú\",\"definitions\":[\"overcome (hardships, etc.)\",\"conquer\"]},{\"simplified\":\"刻苦\",\"traditional\":\"刻苦\",\"pinyin\":\"kèkǔ\",\"definitions\":[\"hardworking\",\"assiduous\"]},{\"simplified\":\"客观\",\"traditional\":\"客觀\",\"pinyin\":\"kèguān\",\"definitions\":[\"objective\",\"impartial\",\"unbiased\"]},{\"simplified\":\"课程\",\"traditional\":\"課程\",\"pinyin\":\"kèchéng\",\"definitions\":[\"course\",\"curriculum\",\"class\"]},{\"simplified\":\"空间\",\"traditional\":\"空間\",\"pinyin\":\"kōngjiān\",\"definitions\":[\"space\"]},{\"simplified\":\"空闲\",\"traditional\":\"空閑\",\"pinyin\":\"kòngxián\",\"definitions\":[\"leisure\",\"free time\",\"idle\",\"unused\"]},{\"simplified\":\"控制\",\"traditional\":\"控制\",\"pinyin\":\"kòngzhì\",\"definitions\":[\"to control\"]},{\"simplified\":\"口味\",\"traditional\":\"口味\",\"pinyin\":\"kǒuwèi\",\"definitions\":[\"a person's tastes or preferences\"]},{\"simplified\":\"夸\",\"traditional\":\"誇\",\"pinyin\":\"kuā\",\"definitions\":[\"to boast\",\"to praise\",\"exaggerate\"]},{\"simplified\":\"夸张\",\"traditional\":\"誇張\",\"pinyin\":\"kuāzhāng\",\"definitions\":[\"exaggerate\",\"overstate\",\"exaggerated\",\"overstated\",\"vaunted\",\"hyperbole\"]},{\"simplified\":\"会计\",\"traditional\":\"會計\",\"pinyin\":\"kuàijì\",\"definitions\":[\"accountant\",\"accounting\"]},{\"simplified\":\"宽\",\"traditional\":\"寬\",\"pinyin\":\"kuān\",\"definitions\":[\"wide\",\"broad\",\"relaxed\",\"lenient\"]},{\"simplified\":\"昆虫\",\"traditional\":\"昆蟲\",\"pinyin\":\"kūnchóng\",\"definitions\":[\"insect\"]},{\"simplified\":\"扩大\",\"traditional\":\"擴大\",\"pinyin\":\"kuòdà\",\"definitions\":[\"enlarge\",\"expand\"]},{\"simplified\":\"辣椒\",\"traditional\":\"辣椒\",\"pinyin\":\"làjiāo\",\"definitions\":[\"hot pepper\",\"chili\"]},{\"simplified\":\"拦\",\"traditional\":\"攔\",\"pinyin\":\"lán\",\"definitions\":[\"to block\",\"to cut off\",\"hinder\"]},{\"simplified\":\"烂\",\"traditional\":\"爛\",\"pinyin\":\"làn\",\"definitions\":[\"overcooked\",\"rotten\",\"soft\",\"mushy\"]},{\"simplified\":\"朗读\",\"traditional\":\"朗讀\",\"pinyin\":\"lǎngdú\",\"definitions\":[\"read aloud\"]},{\"simplified\":\"劳动\",\"traditional\":\"勞動\",\"pinyin\":\"láodòng\",\"definitions\":[\"work\",\"toil\",\"(physical) labor\"]},{\"simplified\":\"劳驾\",\"traditional\":\"勞駕\",\"pinyin\":\"láo jià\",\"definitions\":[\"excuse me\"]},{\"simplified\":\"老百姓\",\"traditional\":\"老百姓\",\"pinyin\":\"lǎobǎixìng\",\"definitions\":[\"ordinary people\",\"the person on the street\",\"civilians\"]},{\"simplified\":\"老板\",\"traditional\":\"老板\",\"pinyin\":\"lǎobǎn\",\"definitions\":[\"boss\",\"proprietor\",\"shopkeeper\"]},{\"simplified\":\"老婆\",\"traditional\":\"老婆\",\"pinyin\":\"lǎopó\",\"definitions\":[\"(informal) wife\"]},{\"simplified\":\"老实\",\"traditional\":\"老實\",\"pinyin\":\"lǎoshi\",\"definitions\":[\"honest\",\"sincere\",\"naive\",\"simpleminded\"]},{\"simplified\":\"老鼠\",\"traditional\":\"老鼠\",\"pinyin\":\"lǎoshǔ\",\"definitions\":[\"rat\",\"mouse\"]},{\"simplified\":\"姥姥\",\"traditional\":\"姥姥\",\"pinyin\":\"lǎolao\",\"definitions\":[\"maternal grandmother\"]},{\"simplified\":\"乐观\",\"traditional\":\"樂觀\",\"pinyin\":\"lèguān\",\"definitions\":[\"optimism\",\"hopeful\"]},{\"simplified\":\"雷\",\"traditional\":\"雷\",\"pinyin\":\"léi\",\"definitions\":[\"thunder\"]},{\"simplified\":\"类型\",\"traditional\":\"類型\",\"pinyin\":\"lèixíng\",\"definitions\":[\"type\"]},{\"simplified\":\"冷淡\",\"traditional\":\"冷淡\",\"pinyin\":\"lěngdàn\",\"definitions\":[\"cold\",\"chill\",\"indifferent\",\"unconcerned\"]},{\"simplified\":\"厘米\",\"traditional\":\"厘米\",\"pinyin\":\"límǐ\",\"definitions\":[\"centimeter\"]},{\"simplified\":\"离婚\",\"traditional\":\"離婚\",\"pinyin\":\"lí hūn\",\"definitions\":[\"to divorce\",\"divorced from (one's spouse)\"]},{\"simplified\":\"梨\",\"traditional\":\"梨\",\"pinyin\":\"lí\",\"definitions\":[\"pear\"]},{\"simplified\":\"理论\",\"traditional\":\"理論\",\"pinyin\":\"lǐlùn\",\"definitions\":[\"theory\"]},{\"simplified\":\"理由\",\"traditional\":\"理由\",\"pinyin\":\"lǐyóu\",\"definitions\":[\"a reason\",\"grounds\",\"argument\"]},{\"simplified\":\"力量\",\"traditional\":\"力量\",\"pinyin\":\"lìliang\",\"definitions\":[\"power\",\"force\",\"strength\"]},{\"simplified\":\"立即\",\"traditional\":\"立即\",\"pinyin\":\"lìjí\",\"definitions\":[\"immediately\"]},{\"simplified\":\"立刻\",\"traditional\":\"立刻\",\"pinyin\":\"lìkè\",\"definitions\":[\"immediately\",\"at once\",\"right away\"]},{\"simplified\":\"利润\",\"traditional\":\"利潤\",\"pinyin\":\"lìrùn\",\"definitions\":[\"profit\"]},{\"simplified\":\"利息\",\"traditional\":\"利息\",\"pinyin\":\"lìxī\",\"definitions\":[\"interest (on a loan)\"]},{\"simplified\":\"利益\",\"traditional\":\"利益\",\"pinyin\":\"lìyì\",\"definitions\":[\"benefit\",\"(in sb.'s) interest\"]},{\"simplified\":\"利用\",\"traditional\":\"利用\",\"pinyin\":\"lìyòng\",\"definitions\":[\"to use\",\"to make use of\",\"to exploit\"]},{\"simplified\":\"连忙\",\"traditional\":\"連忙\",\"pinyin\":\"liánmáng\",\"definitions\":[\"promptly\",\"at once\"]},{\"simplified\":\"连续\",\"traditional\":\"連續\",\"pinyin\":\"liánxù\",\"definitions\":[\"continually\",\"in a row\",\"successively\"]},{\"simplified\":\"联合\",\"traditional\":\"聯合\",\"pinyin\":\"liánhé\",\"definitions\":[\"alliance\",\"combine\",\"unite\"]},{\"simplified\":\"恋爱\",\"traditional\":\"戀愛\",\"pinyin\":\"liàn'ài\",\"definitions\":[\"romantic love\",\"be in love\",\"love affair\"]},{\"simplified\":\"良好\",\"traditional\":\"良好\",\"pinyin\":\"liánghǎo\",\"definitions\":[\"good\",\"favorable\",\"well\"]},{\"simplified\":\"粮食\",\"traditional\":\"糧食\",\"pinyin\":\"liángshi\",\"definitions\":[\"grain\",\"food\",\"cereals\"]},{\"simplified\":\"亮\",\"traditional\":\"亮\",\"pinyin\":\"liàng\",\"definitions\":[\"bright\",\"light\",\"shiny\"]},{\"simplified\":\"了不起\",\"traditional\":\"了不起\",\"pinyin\":\"liǎobuqǐ\",\"definitions\":[\"incredible\",\"extraordinary\",\"great\",\"amazing\"]},{\"simplified\":\"列车\",\"traditional\":\"列車\",\"pinyin\":\"lièchē\",\"definitions\":[\"train (railway term)\"]},{\"simplified\":\"临时\",\"traditional\":\"臨時\",\"pinyin\":\"línshí\",\"definitions\":[\"temporary\",\"at the time\",\"when the time comes\"]},{\"simplified\":\"灵活\",\"traditional\":\"靈活\",\"pinyin\":\"línghuó\",\"definitions\":[\"flexible\",\"nimble\",\"agile\"]},{\"simplified\":\"铃\",\"traditional\":\"鈴\",\"pinyin\":\"líng\",\"definitions\":[\"bell\"]},{\"simplified\":\"零件\",\"traditional\":\"零件\",\"pinyin\":\"língjiàn\",\"definitions\":[\"spare parts\",\"component\"]},{\"simplified\":\"零食\",\"traditional\":\"零食\",\"pinyin\":\"língshí\",\"definitions\":[\"snack\"]},{\"simplified\":\"领导\",\"traditional\":\"領導\",\"pinyin\":\"lǐngdǎo\",\"definitions\":[\"to lead\",\"leader\",\"leadership\"]},{\"simplified\":\"领域\",\"traditional\":\"領域\",\"pinyin\":\"lǐngyù\",\"definitions\":[\"domain\",\"sphere\",\"field\",\"area\"]},{\"simplified\":\"浏览\",\"traditional\":\"浏覽\",\"pinyin\":\"liúlǎn\",\"definitions\":[\"browse\",\"glance over\",\"skim through\"]},{\"simplified\":\"流传\",\"traditional\":\"流傳\",\"pinyin\":\"liúchuán\",\"definitions\":[\"to spread\",\"circulate\",\"hand down\"]},{\"simplified\":\"流泪\",\"traditional\":\"流淚\",\"pinyin\":\"liúlèi\",\"definitions\":[\"shed tears\"]},{\"simplified\":\"龙\",\"traditional\":\"龍\",\"pinyin\":\"lóng\",\"definitions\":[\"dragon (Kangxi radical 212)\"]},{\"simplified\":\"漏\",\"traditional\":\"漏\",\"pinyin\":\"lòu\",\"definitions\":[\"to leak\",\"to funnel\",\"to let out\"]},{\"simplified\":\"陆地\",\"traditional\":\"陸地\",\"pinyin\":\"lùdì\",\"definitions\":[\"land\",\"dry land (as opposed to the sea)\"]},{\"simplified\":\"陆续\",\"traditional\":\"陸續\",\"pinyin\":\"lùxù\",\"definitions\":[\"in turn\",\"successively\",\"one after another\"]},{\"simplified\":\"录取\",\"traditional\":\"錄取\",\"pinyin\":\"lùqǔ\",\"definitions\":[\"recruit\",\"enroll\",\"matriculate\"]},{\"simplified\":\"录音\",\"traditional\":\"錄音\",\"pinyin\":\"lùyīn\",\"definitions\":[\"sound recording\",\"to record\"]},{\"simplified\":\"轮流\",\"traditional\":\"輪流\",\"pinyin\":\"lúnliú\",\"definitions\":[\"to alternate\",\"take turns\",\"rotate\"]},{\"simplified\":\"论文\",\"traditional\":\"論文\",\"pinyin\":\"lùnwén\",\"definitions\":[\"thesis\",\"paper\",\"treatise\"]},{\"simplified\":\"逻辑\",\"traditional\":\"邏輯\",\"pinyin\":\"luóji\",\"definitions\":[\"logic\"]},{\"simplified\":\"落后\",\"traditional\":\"落後\",\"pinyin\":\"luòhòu\",\"definitions\":[\"backward\",\"to lag (in technology)\",\"to fall behind\"]},{\"simplified\":\"骂\",\"traditional\":\"罵\",\"pinyin\":\"mà\",\"definitions\":[\"scold\",\"curse\",\"condemn\",\"verbally abuse\"]},{\"simplified\":\"麦克风\",\"traditional\":\"麥克風\",\"pinyin\":\"màikèfēng\",\"definitions\":[\"microphone\"]},{\"simplified\":\"馒头\",\"traditional\":\"饅頭\",\"pinyin\":\"mántou\",\"definitions\":[\"steamed bun/roll\"]},{\"simplified\":\"满足\",\"traditional\":\"滿足\",\"pinyin\":\"mǎnzú\",\"definitions\":[\"satisfy\",\"meet (the needs of)\"]},{\"simplified\":\"毛病\",\"traditional\":\"毛病\",\"pinyin\":\"máobìng\",\"definitions\":[\"fault\",\"bad habit\",\"shortcoming\"]},{\"simplified\":\"矛盾\",\"traditional\":\"矛盾\",\"pinyin\":\"máodùn\",\"definitions\":[\"contradiction\",\"conflict\"]},{\"simplified\":\"冒险\",\"traditional\":\"冒險\",\"pinyin\":\"màoxiǎn\",\"definitions\":[\"take a risk\",\"take chances\"]},{\"simplified\":\"贸易\",\"traditional\":\"貿易\",\"pinyin\":\"màoyì\",\"definitions\":[\"(commercial) trade\"]},{\"simplified\":\"眉毛\",\"traditional\":\"眉毛\",\"pinyin\":\"méimao\",\"definitions\":[\"eyebrow\"]},{\"simplified\":\"媒体\",\"traditional\":\"媒體\",\"pinyin\":\"méitǐ\",\"definitions\":[\"(news) media\",\"medium\"]},{\"simplified\":\"煤炭\",\"traditional\":\"煤炭\",\"pinyin\":\"méitàn\",\"definitions\":[\"coal\"]},{\"simplified\":\"美术\",\"traditional\":\"美術\",\"pinyin\":\"měishù\",\"definitions\":[\"the fine arts\",\"art\"]},{\"simplified\":\"魅力\",\"traditional\":\"魅力\",\"pinyin\":\"mèilì\",\"definitions\":[\"charm\",\"glamour\",\"enchantment\"]},{\"simplified\":\"梦想\",\"traditional\":\"夢想\",\"pinyin\":\"mèngxiǎng\",\"definitions\":[\"dream of\",\"wishful thinking\"]},{\"simplified\":\"秘密\",\"traditional\":\"秘密\",\"pinyin\":\"mìmì\",\"definitions\":[\"a secret\",\"confidential\"]},{\"simplified\":\"秘书\",\"traditional\":\"秘書\",\"pinyin\":\"mìshu\",\"definitions\":[\"secretary\"]},{\"simplified\":\"密切\",\"traditional\":\"密切\",\"pinyin\":\"mìqiè\",\"definitions\":[\"close\",\"familiar\",\"intimate\"]},{\"simplified\":\"蜜蜂\",\"traditional\":\"蜜蜂\",\"pinyin\":\"mìfēng\",\"definitions\":[\"bee\",\"honeybee\"]},{\"simplified\":\"面对\",\"traditional\":\"面對\",\"pinyin\":\"miànduì\",\"definitions\":[\"to face\",\"confront\"]},{\"simplified\":\"面积\",\"traditional\":\"面積\",\"pinyin\":\"miànjī\",\"definitions\":[\"(surface) area\"]},{\"simplified\":\"面临\",\"traditional\":\"面臨\",\"pinyin\":\"miànlín\",\"definitions\":[\"be faced with\",\"be up against\"]},{\"simplified\":\"苗条\",\"traditional\":\"苗條\",\"pinyin\":\"miáotiao\",\"definitions\":[\"slim\",\"slender\"]},{\"simplified\":\"描写\",\"traditional\":\"描寫\",\"pinyin\":\"miáoxiě\",\"definitions\":[\"to describe\",\"to depict\",\"to portray\"]},{\"simplified\":\"敏感\",\"traditional\":\"敏感\",\"pinyin\":\"mǐngǎn\",\"definitions\":[\"sensitive\",\"susceptible\"]},{\"simplified\":\"名牌\",\"traditional\":\"名牌\",\"pinyin\":\"míngpái\",\"definitions\":[\"famous brand\",\"name brand\"]},{\"simplified\":\"名片\",\"traditional\":\"名片\",\"pinyin\":\"míngpiàn\",\"definitions\":[\"business card\"]},{\"simplified\":\"名胜古迹\",\"traditional\":\"名勝古迹\",\"pinyin\":\"míngshènggǔjì\",\"definitions\":[\"famous scenic spots and ancient historic sites\"]},{\"simplified\":\"明确\",\"traditional\":\"明確\",\"pinyin\":\"míngquè\",\"definitions\":[\"clear-cut\",\"clearly\",\"clarify\"]},{\"simplified\":\"明显\",\"traditional\":\"明顯\",\"pinyin\":\"míngxiǎn\",\"definitions\":[\"clear\",\"obvious\"]},{\"simplified\":\"明星\",\"traditional\":\"明星\",\"pinyin\":\"míngxīng\",\"definitions\":[\"(movie, etc.) star\",\"celebrity\"]},{\"simplified\":\"命令\",\"traditional\":\"命令\",\"pinyin\":\"mìnglìng\",\"definitions\":[\"an order\",\"a command\"]},{\"simplified\":\"命运\",\"traditional\":\"命運\",\"pinyin\":\"mìngyùn\",\"definitions\":[\"fate\",\"destiny\"]},{\"simplified\":\"摸\",\"traditional\":\"摸\",\"pinyin\":\"mō\",\"definitions\":[\"to touch\",\"to stroke\",\"fish out\",\"feel out\"]},{\"simplified\":\"模仿\",\"traditional\":\"模仿\",\"pinyin\":\"mófǎng\",\"definitions\":[\"imitate\",\"to copy\"]},{\"simplified\":\"模糊\",\"traditional\":\"模糊\",\"pinyin\":\"móhu\",\"definitions\":[\"vague\",\"indistinct\",\"fuzzy\",\"foggy\"]},{\"simplified\":\"模特\",\"traditional\":\"模特\",\"pinyin\":\"mótè\",\"definitions\":[\"(fashion) model\"]},{\"simplified\":\"摩托车\",\"traditional\":\"摩托車\",\"pinyin\":\"mótuōchē\",\"definitions\":[\"motorcycle\",\"motorbike\"]},{\"simplified\":\"陌生\",\"traditional\":\"陌生\",\"pinyin\":\"mòshēng\",\"definitions\":[\"strange\",\"unfamiliar\"]},{\"simplified\":\"某\",\"traditional\":\"某\",\"pinyin\":\"mǒu\",\"definitions\":[\"a certain\",\"some\"]},{\"simplified\":\"木头\",\"traditional\":\"木頭\",\"pinyin\":\"mùtou\",\"definitions\":[\"wood\",\"log\",\"timber\"]},{\"simplified\":\"目标\",\"traditional\":\"目標\",\"pinyin\":\"mùbiāo\",\"definitions\":[\"target\",\"goal\",\"objective\"]},{\"simplified\":\"目录\",\"traditional\":\"目錄\",\"pinyin\":\"mùlù\",\"definitions\":[\"catalog\",\"table of contents\",\"directory (on computer hard drive)\"]},{\"simplified\":\"目前\",\"traditional\":\"目前\",\"pinyin\":\"mùqián\",\"definitions\":[\"at present\",\"now\",\"for the moment\"]},{\"simplified\":\"哪怕\",\"traditional\":\"哪怕\",\"pinyin\":\"nǎpà\",\"definitions\":[\"even (if/though)\",\"no matter how\"]},{\"simplified\":\"难怪\",\"traditional\":\"難怪\",\"pinyin\":\"nánguài\",\"definitions\":[\"no wonder\"]},{\"simplified\":\"难免\",\"traditional\":\"難免\",\"pinyin\":\"nánmiǎn\",\"definitions\":[\"hard to avoid\",\"difficult to escape from\"]},{\"simplified\":\"脑袋\",\"traditional\":\"腦袋\",\"pinyin\":\"nǎodai\",\"definitions\":[\"head\",\"mental capability\",\"brains\"]},{\"simplified\":\"内部\",\"traditional\":\"內部\",\"pinyin\":\"nèibù\",\"definitions\":[\"internal\",\"interior\",\"inside (part, section)\"]},{\"simplified\":\"内科\",\"traditional\":\"內科\",\"pinyin\":\"nèikē\",\"definitions\":[\"internal medicine\"]},{\"simplified\":\"嫩\",\"traditional\":\"嫩\",\"pinyin\":\"nèn\",\"definitions\":[\"tender\",\"inexperienced\"]},{\"simplified\":\"能干\",\"traditional\":\"能幹\",\"pinyin\":\"nénggàn\",\"definitions\":[\"capable\",\"competent\"]},{\"simplified\":\"能源\",\"traditional\":\"能源\",\"pinyin\":\"néngyuán\",\"definitions\":[\"energy resources\",\"power source\"]},{\"simplified\":\"嗯\",\"traditional\":\"嗯\",\"pinyin\":\"ēn\",\"definitions\":[\"(interjection expressing what?, huh? hmm? why? ok, etc.)\"]},{\"simplified\":\"年代\",\"traditional\":\"年代\",\"pinyin\":\"niándài\",\"definitions\":[\"decade\",\"era\"]},{\"simplified\":\"年纪\",\"traditional\":\"年紀\",\"pinyin\":\"niánjì\",\"definitions\":[\"age\"]},{\"simplified\":\"念\",\"traditional\":\"念\",\"pinyin\":\"niàn\",\"definitions\":[\"read aloud\",\"to study\",\"to miss or think of somebody\"]},{\"simplified\":\"宁可\",\"traditional\":\"甯可\",\"pinyin\":\"nìngkě\",\"definitions\":[\"would rather\",\"it is the lesser of two evils to\"]},{\"simplified\":\"牛仔裤\",\"traditional\":\"牛仔褲\",\"pinyin\":\"niúzǎikù\",\"definitions\":[\"jeans\",\"cowboy pants\"]},{\"simplified\":\"农村\",\"traditional\":\"農村\",\"pinyin\":\"nóngcūn\",\"definitions\":[\"rural area\",\"countryside\"]},{\"simplified\":\"农民\",\"traditional\":\"農民\",\"pinyin\":\"nóngmín\",\"definitions\":[\"peasant\"]},{\"simplified\":\"农业\",\"traditional\":\"農業\",\"pinyin\":\"nóngyè\",\"definitions\":[\"agriculture\",\"farming\"]},{\"simplified\":\"浓\",\"traditional\":\"濃\",\"pinyin\":\"nóng\",\"definitions\":[\"concentrated\",\"dense\"]},{\"simplified\":\"女士\",\"traditional\":\"女士\",\"pinyin\":\"nǚshì\",\"definitions\":[\"lady\",\"madam\"]},{\"simplified\":\"欧洲\",\"traditional\":\"歐洲\",\"pinyin\":\"Ōuzhōu\",\"definitions\":[\"Europe\"]},{\"simplified\":\"偶然\",\"traditional\":\"偶然\",\"pinyin\":\"ǒurán\",\"definitions\":[\"accidentally\",\"occasional\",\"fortuitous\"]},{\"simplified\":\"拍\",\"traditional\":\"拍\",\"pinyin\":\"pāi\",\"definitions\":[\"to clap\",\"to pat\",\"to shoot (pictures, a film)\",\"send (a telegram)\"]},{\"simplified\":\"派\",\"traditional\":\"派\",\"pinyin\":\"pài\",\"definitions\":[\"dispatch\",\"(mw for political groups\",\"schools of thought\",\"etc.)\"]},{\"simplified\":\"盼望\",\"traditional\":\"盼望\",\"pinyin\":\"pànwàng\",\"definitions\":[\"to hope for\",\"look forward to\"]},{\"simplified\":\"培训\",\"traditional\":\"培訓\",\"pinyin\":\"péixùn\",\"definitions\":[\"cultivate\",\"train\"]},{\"simplified\":\"培养\",\"traditional\":\"培養\",\"pinyin\":\"péiyǎng\",\"definitions\":[\"to train\",\"cultivate\",\"bring up\"]},{\"simplified\":\"赔偿\",\"traditional\":\"賠償\",\"pinyin\":\"péicháng\",\"definitions\":[\"compensate\",\"pay for somebody else's loss\"]},{\"simplified\":\"佩服\",\"traditional\":\"佩服\",\"pinyin\":\"pèifu\",\"definitions\":[\"admire\",\"to respect\"]},{\"simplified\":\"配合\",\"traditional\":\"配合\",\"pinyin\":\"pèihé\",\"definitions\":[\"be harmoniously combined or arranged\",\"matching\",\"fitting in with\",\"compatible with\",\"to correspond\",\"to fit\",\"to conform to\",\"rapport\",\"to coordinate with\",\"to act in concern with\",\"to cooperate\",\"to become man and wife\",\"to combine parts of a machine\"]},{\"simplified\":\"盆\",\"traditional\":\"盆\",\"pinyin\":\"pén\",\"definitions\":[\"basin\",\"(flower) pot\"]},{\"simplified\":\"碰\",\"traditional\":\"碰\",\"pinyin\":\"pèng\",\"definitions\":[\"to touch\",\"to bump\",\"to encounter\"]},{\"simplified\":\"批\",\"traditional\":\"批\",\"pinyin\":\"pī\",\"definitions\":[\"criticize\",\"to comment\",\"wholesale\",\"(mw for batches, lots, etc.)\"]},{\"simplified\":\"批准\",\"traditional\":\"批准\",\"pinyin\":\"pīzhǔn\",\"definitions\":[\"approve\",\"ratify\"]},{\"simplified\":\"披\",\"traditional\":\"披\",\"pinyin\":\"pī\",\"definitions\":[\"drape over one's shoulders\",\"split open\",\"open\"]},{\"simplified\":\"疲劳\",\"traditional\":\"疲勞\",\"pinyin\":\"píláo\",\"definitions\":[\"fatigue\",\"wearily\",\"weariness\",\"tired\"]},{\"simplified\":\"匹\",\"traditional\":\"匹\",\"pinyin\":\"pǐ\",\"definitions\":[\"ordinary person\",\"(mw for horses, bolt of cloth)\"]},{\"simplified\":\"片\",\"traditional\":\"片\",\"pinyin\":\"piàn, piān\",\"definitions\":[\"(mw for pieces of things)\",\"a slice\",\"a flake (Kangxi radical 91) | film\",\"photo\"]},{\"simplified\":\"片面\",\"traditional\":\"片面\",\"pinyin\":\"piànmiàn\",\"definitions\":[\"one-sided\",\"unilateral\"]},{\"simplified\":\"飘\",\"traditional\":\"飄\",\"pinyin\":\"piāo\",\"definitions\":[\"to float\",\"flutter\"]},{\"simplified\":\"拼音\",\"traditional\":\"拼音\",\"pinyin\":\"pīnyīn\",\"definitions\":[\"pinyin\",\"phonetic writing\"]},{\"simplified\":\"频道\",\"traditional\":\"頻道\",\"pinyin\":\"píndào\",\"definitions\":[\"frequency\",\"(television) channel\"]},{\"simplified\":\"平\",\"traditional\":\"平\",\"pinyin\":\"píng\",\"definitions\":[\"flat\",\"level\",\"equal\",\"ordinary\"]},{\"simplified\":\"平安\",\"traditional\":\"平安\",\"pinyin\":\"píng'ān\",\"definitions\":[\"safe and sound\"]},{\"simplified\":\"平常\",\"traditional\":\"平常\",\"pinyin\":\"píngcháng\",\"definitions\":[\"ordinary\",\"usually\",\"common\"]},{\"simplified\":\"平等\",\"traditional\":\"平等\",\"pinyin\":\"píngděng\",\"definitions\":[\"equal\",\"equality\"]},{\"simplified\":\"平方\",\"traditional\":\"平方\",\"pinyin\":\"píngfāng\",\"definitions\":[\"square (as in square foot, square mile, etc.)\"]},{\"simplified\":\"平衡\",\"traditional\":\"平衡\",\"pinyin\":\"pínghéng\",\"definitions\":[\"balance\",\"balanced\",\"equilibrium\"]},{\"simplified\":\"平静\",\"traditional\":\"平靜\",\"pinyin\":\"píngjìng\",\"definitions\":[\"calm\",\"peaceful\",\"tranquil\",\"serene\"]},{\"simplified\":\"平均\",\"traditional\":\"平均\",\"pinyin\":\"píngjūn\",\"definitions\":[\"average\",\"to share equally\"]},{\"simplified\":\"评价\",\"traditional\":\"評價\",\"pinyin\":\"píngjià\",\"definitions\":[\"to evaluate\"]},{\"simplified\":\"凭\",\"traditional\":\"憑\",\"pinyin\":\"píng\",\"definitions\":[\"lean against\",\"evidence\",\"proof\",\"no matter (what/how/etc.)\"]},{\"simplified\":\"迫切\",\"traditional\":\"迫切\",\"pinyin\":\"pòqiè\",\"definitions\":[\"urgent\",\"pressing\"]},{\"simplified\":\"破产\",\"traditional\":\"破産\",\"pinyin\":\"pò chǎn\",\"definitions\":[\"go bankrupt\",\"go broke\",\"bankruptcy\"]},{\"simplified\":\"破坏\",\"traditional\":\"破壞\",\"pinyin\":\"pòhuài\",\"definitions\":[\"destroy\",\"destruction\",\"to wreck\",\"to break\"]},{\"simplified\":\"期待\",\"traditional\":\"期待\",\"pinyin\":\"qīdài\",\"definitions\":[\"look forward to\",\"await\",\"expectation\"]},{\"simplified\":\"期间\",\"traditional\":\"期間\",\"pinyin\":\"qījiān\",\"definitions\":[\"period of time\",\"time\"]},{\"simplified\":\"其余\",\"traditional\":\"其余\",\"pinyin\":\"qíyú\",\"definitions\":[\"the others\",\"the rest\",\"remaining\"]},{\"simplified\":\"奇迹\",\"traditional\":\"奇迹\",\"pinyin\":\"qíjì\",\"definitions\":[\"miracle\",\"miraculous\",\"marvel\"]},{\"simplified\":\"企业\",\"traditional\":\"企業\",\"pinyin\":\"qǐyè\",\"definitions\":[\"company\",\"business\",\"firm\"]},{\"simplified\":\"启发\",\"traditional\":\"啓發\",\"pinyin\":\"qǐfā\",\"definitions\":[\"enlighten\",\"inspire\"]},{\"simplified\":\"气氛\",\"traditional\":\"氣氛\",\"pinyin\":\"qìfēn\",\"definitions\":[\"atmosphere\",\"mood\",\"ambience\"]},{\"simplified\":\"汽油\",\"traditional\":\"汽油\",\"pinyin\":\"qìyóu\",\"definitions\":[\"gasoline\",\"gas\",\"petrol\"]},{\"simplified\":\"谦虚\",\"traditional\":\"謙虛\",\"pinyin\":\"qiānxū\",\"definitions\":[\"modest\"]},{\"simplified\":\"签\",\"traditional\":\"簽\",\"pinyin\":\"qiān\",\"definitions\":[\"bamboo used for drawing lots\",\"toothpick\",\"to sign (one's name)\"]},{\"simplified\":\"前途\",\"traditional\":\"前途\",\"pinyin\":\"qiántú\",\"definitions\":[\"future\",\"prospects\",\"outlook (for the future)\"]},{\"simplified\":\"浅\",\"traditional\":\"淺\",\"pinyin\":\"qiǎn\",\"definitions\":[\"shallow\",\"simple\",\"superficial\",\"light (of colors)\"]},{\"simplified\":\"欠\",\"traditional\":\"欠\",\"pinyin\":\"qiàn\",\"definitions\":[\"yawn\",\"to lack\",\"owe (Kangxi radical 76)\"]},{\"simplified\":\"枪\",\"traditional\":\"槍\",\"pinyin\":\"qiāng\",\"definitions\":[\"gun\",\"spear\"]},{\"simplified\":\"强调\",\"traditional\":\"強調\",\"pinyin\":\"qiángdiào\",\"definitions\":[\"emphasize\",\"to stress\"]},{\"simplified\":\"强烈\",\"traditional\":\"強烈\",\"pinyin\":\"qiángliè\",\"definitions\":[\"intense\",\"strong\",\"violent\"]},{\"simplified\":\"墙\",\"traditional\":\"牆\",\"pinyin\":\"qiáng\",\"definitions\":[\"wall\"]},{\"simplified\":\"抢\",\"traditional\":\"搶\",\"pinyin\":\"qiǎng, qiāng\",\"definitions\":[\"fight over\",\"vie for\",\"grab\",\"rush | bump against\"]},{\"simplified\":\"悄悄\",\"traditional\":\"悄悄\",\"pinyin\":\"qiāoqiāo\",\"definitions\":[\"quietly\"]},{\"simplified\":\"瞧\",\"traditional\":\"瞧\",\"pinyin\":\"qiáo\",\"definitions\":[\"look at\",\"see (colloquial)\"]},{\"simplified\":\"巧妙\",\"traditional\":\"巧妙\",\"pinyin\":\"qiǎomiào\",\"definitions\":[\"ingenious\",\"clever\"]},{\"simplified\":\"切\",\"traditional\":\"切\",\"pinyin\":\"qiē, qiè\",\"definitions\":[\"to cut\",\"to chop | correspond to\",\"absolutely\",\"ardently\"]},{\"simplified\":\"亲爱\",\"traditional\":\"親愛\",\"pinyin\":\"qīn'ài\",\"definitions\":[\"beloved\",\"Dear ... (a way of starting a letter lovers, intimate friends or close relatives)\"]},{\"simplified\":\"亲切\",\"traditional\":\"親切\",\"pinyin\":\"qīnqiè\",\"definitions\":[\"kind\",\"amiable\",\"cordial\"]},{\"simplified\":\"亲自\",\"traditional\":\"親自\",\"pinyin\":\"qīnzì\",\"definitions\":[\"personally\"]},{\"simplified\":\"勤奋\",\"traditional\":\"勤奮\",\"pinyin\":\"qínfèn\",\"definitions\":[\"hardworking\",\"diligent\",\"industrious\"]},{\"simplified\":\"青\",\"traditional\":\"青\",\"pinyin\":\"qīng\",\"definitions\":[\"blue\",\"green\",\"young (Kangxi radical 174)\",\"Qinghai province (abbr.)\"]},{\"simplified\":\"青春\",\"traditional\":\"青春\",\"pinyin\":\"qīngchūn\",\"definitions\":[\"youth\",\"youthfulness\",\"fresh spring\"]},{\"simplified\":\"青少年\",\"traditional\":\"青少年\",\"pinyin\":\"qīngshàonián\",\"definitions\":[\"teenager\"]},{\"simplified\":\"轻视\",\"traditional\":\"輕視\",\"pinyin\":\"qīngshì\",\"definitions\":[\"contempt\",\"to scorn\",\"scornful\"]},{\"simplified\":\"轻易\",\"traditional\":\"輕易\",\"pinyin\":\"qīngyì\",\"definitions\":[\"easily\",\"lightly\",\"rashly\"]},{\"simplified\":\"清淡\",\"traditional\":\"清淡\",\"pinyin\":\"qīngdàn\",\"definitions\":[\"light (of food, not greasy or strongly flavored)\",\"insipid\",\"slack (sales)\"]},{\"simplified\":\"情景\",\"traditional\":\"情景\",\"pinyin\":\"qíngjǐng\",\"definitions\":[\"scene\",\"sight\",\"circumstances\"]},{\"simplified\":\"情绪\",\"traditional\":\"情緒\",\"pinyin\":\"qíngxù\",\"definitions\":[\"emotion\",\"sentiment\",\"mood\",\"morale\"]},{\"simplified\":\"请求\",\"traditional\":\"請求\",\"pinyin\":\"qǐngqiú\",\"definitions\":[\"to request\",\"ask\"]},{\"simplified\":\"庆祝\",\"traditional\":\"慶祝\",\"pinyin\":\"qìngzhù\",\"definitions\":[\"celebrate\"]},{\"simplified\":\"球迷\",\"traditional\":\"球迷\",\"pinyin\":\"qiúmí\",\"definitions\":[\"fan (of ball games: basketball, football, etc.)\"]},{\"simplified\":\"趋势\",\"traditional\":\"趨勢\",\"pinyin\":\"qūshì\",\"definitions\":[\"trend\",\"tendency\"]},{\"simplified\":\"取消\",\"traditional\":\"取消\",\"pinyin\":\"qǔxiāo\",\"definitions\":[\"cancel\",\"cancellation\",\"abolish\"]},{\"simplified\":\"娶\",\"traditional\":\"娶\",\"pinyin\":\"qǔ\",\"definitions\":[\"marry (a wife)\",\"take a wife\"]},{\"simplified\":\"去世\",\"traditional\":\"去世\",\"pinyin\":\"qùshì\",\"definitions\":[\"pass away\",\"die\"]},{\"simplified\":\"圈\",\"traditional\":\"圈\",\"pinyin\":\"quān\",\"definitions\":[\"circle\",\"ring\",\"(mw for loops, orbits, etc.)\"]},{\"simplified\":\"权力\",\"traditional\":\"權力\",\"pinyin\":\"quánlì\",\"definitions\":[\"power\",\"authority\"]},{\"simplified\":\"权利\",\"traditional\":\"權利\",\"pinyin\":\"quánlì\",\"definitions\":[\"right\",\"privilege\"]},{\"simplified\":\"全面\",\"traditional\":\"全面\",\"pinyin\":\"quánmiàn\",\"definitions\":[\"all-around\",\"comprehensive\",\"fully\"]},{\"simplified\":\"劝\",\"traditional\":\"勸\",\"pinyin\":\"quàn\",\"definitions\":[\"advise\",\"to urge\",\"persuade\"]},{\"simplified\":\"缺乏\",\"traditional\":\"缺乏\",\"pinyin\":\"quēfá\",\"definitions\":[\"shortage\",\"to lack\",\"be short of\"]},{\"simplified\":\"确定\",\"traditional\":\"確定\",\"pinyin\":\"quèdìng\",\"definitions\":[\"definite\",\"certain\",\"fixed\",\"determine\"]},{\"simplified\":\"确认\",\"traditional\":\"確認\",\"pinyin\":\"quèrèn\",\"definitions\":[\"confirm\",\"confirmation\",\"verify\"]},{\"simplified\":\"群\",\"traditional\":\"群\",\"pinyin\":\"qún\",\"definitions\":[\"crowd\",\"group\",\"(mw for groups, flocks, or swarms)\"]},{\"simplified\":\"燃烧\",\"traditional\":\"燃燒\",\"pinyin\":\"ránshāo\",\"definitions\":[\"combustion\",\"burn\",\"kindle\"]},{\"simplified\":\"绕\",\"traditional\":\"繞\",\"pinyin\":\"rào\",\"definitions\":[\"to wind\",\"to coil\",\"move round\"]},{\"simplified\":\"热爱\",\"traditional\":\"熱愛\",\"pinyin\":\"rè'ài\",\"definitions\":[\"love ardently\",\"adore\",\"passion\"]},{\"simplified\":\"热烈\",\"traditional\":\"熱烈\",\"pinyin\":\"rèliè\",\"definitions\":[\"warm\",\"enthusiastic\"]},{\"simplified\":\"热心\",\"traditional\":\"熱心\",\"pinyin\":\"rèxīn\",\"definitions\":[\"enthusiastic\",\"zealous\",\"warmhearted\"]},{\"simplified\":\"人才\",\"traditional\":\"人才\",\"pinyin\":\"réncái\",\"definitions\":[\"talent\",\"talented person\"]},{\"simplified\":\"人口\",\"traditional\":\"人口\",\"pinyin\":\"rénkǒu\",\"definitions\":[\"population\",\"the populace\"]},{\"simplified\":\"人类\",\"traditional\":\"人類\",\"pinyin\":\"rénlèi\",\"definitions\":[\"humanity\",\"human race\",\"mankind\"]},{\"simplified\":\"人民币\",\"traditional\":\"人民幣\",\"pinyin\":\"rénmínbì\",\"definitions\":[\"(currency) renminbi (RMB)\"]},{\"simplified\":\"人生\",\"traditional\":\"人生\",\"pinyin\":\"rénshēng\",\"definitions\":[\"human life\"]},{\"simplified\":\"人事\",\"traditional\":\"人事\",\"pinyin\":\"rénshì\",\"definitions\":[\"personnel\"]},{\"simplified\":\"人物\",\"traditional\":\"人物\",\"pinyin\":\"rénwù\",\"definitions\":[\"figure\",\"personage\",\"character (in a play, story, etc.)\"]},{\"simplified\":\"人员\",\"traditional\":\"人員\",\"pinyin\":\"rényuán\",\"definitions\":[\"staff\",\"crew\",\"personnel\"]},{\"simplified\":\"忍不住\",\"traditional\":\"忍不住\",\"pinyin\":\"rěn bu zhù\",\"definitions\":[\"cannot help but\",\"unable to bear\"]},{\"simplified\":\"日常\",\"traditional\":\"日常\",\"pinyin\":\"rìcháng\",\"definitions\":[\"daily\",\"everyday\"]},{\"simplified\":\"日程\",\"traditional\":\"日程\",\"pinyin\":\"rìchéng\",\"definitions\":[\"schedule\",\"itinerary\"]},{\"simplified\":\"日历\",\"traditional\":\"日曆\",\"pinyin\":\"rìlì\",\"definitions\":[\"calendar\"]},{\"simplified\":\"日期\",\"traditional\":\"日期\",\"pinyin\":\"rìqī\",\"definitions\":[\"date\"]},{\"simplified\":\"日用品\",\"traditional\":\"日用品\",\"pinyin\":\"rìyòngpǐn\",\"definitions\":[\"daily necessities\"]},{\"simplified\":\"日子\",\"traditional\":\"日子\",\"pinyin\":\"rìzi\",\"definitions\":[\"days\",\"date\",\"time\",\"life\"]},{\"simplified\":\"如何\",\"traditional\":\"如何\",\"pinyin\":\"rúhé\",\"definitions\":[\"how\",\"what\",\"what way\"]},{\"simplified\":\"如今\",\"traditional\":\"如今\",\"pinyin\":\"rújīn\",\"definitions\":[\"nowadays\"]},{\"simplified\":\"软\",\"traditional\":\"軟\",\"pinyin\":\"ruǎn\",\"definitions\":[\"soft\"]},{\"simplified\":\"软件\",\"traditional\":\"軟件\",\"pinyin\":\"ruǎnjiàn\",\"definitions\":[\"(computer) software\"]},{\"simplified\":\"弱\",\"traditional\":\"弱\",\"pinyin\":\"ruò\",\"definitions\":[\"weak\",\"feeble\",\"young\"]},{\"simplified\":\"洒\",\"traditional\":\"灑\",\"pinyin\":\"sǎ\",\"definitions\":[\"to sprinkle\",\"to spray\",\"to spill\"]},{\"simplified\":\"嗓子\",\"traditional\":\"嗓子\",\"pinyin\":\"sǎngzi\",\"definitions\":[\"throat\",\"voice\"]},{\"simplified\":\"色彩\",\"traditional\":\"色彩\",\"pinyin\":\"sècǎi\",\"definitions\":[\"tint\",\"color\",\"hue\"]},{\"simplified\":\"杀\",\"traditional\":\"殺\",\"pinyin\":\"shā\",\"definitions\":[\"to kill\",\"to murder\"]},{\"simplified\":\"沙漠\",\"traditional\":\"沙漠\",\"pinyin\":\"shāmò\",\"definitions\":[\"desert\"]},{\"simplified\":\"沙滩\",\"traditional\":\"沙灘\",\"pinyin\":\"shātān\",\"definitions\":[\"sand bar\",\"sand beach\"]},{\"simplified\":\"傻\",\"traditional\":\"傻\",\"pinyin\":\"shǎ\",\"definitions\":[\"foolish\",\"fool\"]},{\"simplified\":\"晒\",\"traditional\":\"曬\",\"pinyin\":\"shài\",\"definitions\":[\"to dry in the sun\",\"shine upon\",\"to sun\",\"bask\"]},{\"simplified\":\"删除\",\"traditional\":\"刪除\",\"pinyin\":\"shānchú\",\"definitions\":[\"to delete\"]},{\"simplified\":\"闪电\",\"traditional\":\"閃電\",\"pinyin\":\"shǎndiàn\",\"definitions\":[\"lightning\"]},{\"simplified\":\"扇子\",\"traditional\":\"扇子\",\"pinyin\":\"shànzi\",\"definitions\":[\"fan (for waving)\"]},{\"simplified\":\"善良\",\"traditional\":\"善良\",\"pinyin\":\"shànliáng\",\"definitions\":[\"good and honest\",\"kind-hearted\"]},{\"simplified\":\"善于\",\"traditional\":\"善于\",\"pinyin\":\"shànyú\",\"definitions\":[\"be good at\",\"excel at\"]},{\"simplified\":\"伤害\",\"traditional\":\"傷害\",\"pinyin\":\"shānghài\",\"definitions\":[\"injure\",\"to harm\",\"wound\"]},{\"simplified\":\"商品\",\"traditional\":\"商品\",\"pinyin\":\"shāngpǐn\",\"definitions\":[\"goods\",\"commodity\",\"merchandise\"]},{\"simplified\":\"商务\",\"traditional\":\"商務\",\"pinyin\":\"shāngwù\",\"definitions\":[\"business\",\"commercial affairs\"]},{\"simplified\":\"商业\",\"traditional\":\"商業\",\"pinyin\":\"shāngyè\",\"definitions\":[\"business\",\"commerce\",\"trade\"]},{\"simplified\":\"上当\",\"traditional\":\"上當\",\"pinyin\":\"shàng dàng\",\"definitions\":[\"be fooled\",\"be duped\",\"be taken in\"]},{\"simplified\":\"蛇\",\"traditional\":\"蛇\",\"pinyin\":\"shé\",\"definitions\":[\"snake\",\"serpent\"]},{\"simplified\":\"舍不得\",\"traditional\":\"舍不得\",\"pinyin\":\"shěbude\",\"definitions\":[\"hate to part with\",\"begrudge doing something\"]},{\"simplified\":\"设备\",\"traditional\":\"設備\",\"pinyin\":\"shèbèi\",\"definitions\":[\"equipment\",\"facilities\",\"installations\"]},{\"simplified\":\"设计\",\"traditional\":\"設計\",\"pinyin\":\"shèjì\",\"definitions\":[\"plan\",\"design\"]},{\"simplified\":\"设施\",\"traditional\":\"設施\",\"pinyin\":\"shèshī\",\"definitions\":[\"facilities\",\"installation\"]},{\"simplified\":\"射击\",\"traditional\":\"射擊\",\"pinyin\":\"shèjī\",\"definitions\":[\"to shoot\",\"to fire (a gun)\"]},{\"simplified\":\"摄影\",\"traditional\":\"攝影\",\"pinyin\":\"shè yǐng\",\"definitions\":[\"take a photograph\",\"shoot a film\"]},{\"simplified\":\"伸\",\"traditional\":\"伸\",\"pinyin\":\"shēn\",\"definitions\":[\"to stretch\",\"extend\"]},{\"simplified\":\"身材\",\"traditional\":\"身材\",\"pinyin\":\"shēncái\",\"definitions\":[\"stature\",\"figure\",\"build\"]},{\"simplified\":\"身份\",\"traditional\":\"身份\",\"pinyin\":\"shēnfèn\",\"definitions\":[\"identity\",\"status\",\"dignity\"]},{\"simplified\":\"深刻\",\"traditional\":\"深刻\",\"pinyin\":\"shēnkè\",\"definitions\":[\"profound\",\"deep\"]},{\"simplified\":\"神话\",\"traditional\":\"神話\",\"pinyin\":\"shénhuà\",\"definitions\":[\"mythology\",\"fairy tale\"]},{\"simplified\":\"神秘\",\"traditional\":\"神秘\",\"pinyin\":\"shénmì\",\"definitions\":[\"mysterious\",\"mystical\"]},{\"simplified\":\"升\",\"traditional\":\"升\",\"pinyin\":\"shēng\",\"definitions\":[\"rise\",\"hoist\",\"promote\",\"liter\"]},{\"simplified\":\"生产\",\"traditional\":\"生産\",\"pinyin\":\"shēngchǎn\",\"definitions\":[\"to produce\",\"manufacture\",\"give birth to a child\"]},{\"simplified\":\"生动\",\"traditional\":\"生動\",\"pinyin\":\"shēngdòng\",\"definitions\":[\"vivid\",\"lively\"]},{\"simplified\":\"生长\",\"traditional\":\"生長\",\"pinyin\":\"shēngzhǎng\",\"definitions\":[\"grow\",\"grow up\"]},{\"simplified\":\"声调\",\"traditional\":\"聲調\",\"pinyin\":\"shēngdiào\",\"definitions\":[\"tone\",\"note\"]},{\"simplified\":\"绳子\",\"traditional\":\"繩子\",\"pinyin\":\"shéngzi\",\"definitions\":[\"cord\",\"string\",\"rope\"]},{\"simplified\":\"省略\",\"traditional\":\"省略\",\"pinyin\":\"shěnglüè\",\"definitions\":[\"to omit\",\"to leave out\",\"abbreviate\"]},{\"simplified\":\"胜利\",\"traditional\":\"勝利\",\"pinyin\":\"shènglì\",\"definitions\":[\"victory\",\"triumph\"]},{\"simplified\":\"失眠\",\"traditional\":\"失眠\",\"pinyin\":\"shīmián\",\"definitions\":[\"lose sleep\",\"insomnia\"]},{\"simplified\":\"失去\",\"traditional\":\"失去\",\"pinyin\":\"shīqù\",\"definitions\":[\"to lose (time, an opportunity, work, etc.)\"]},{\"simplified\":\"失业\",\"traditional\":\"失業\",\"pinyin\":\"shī yè\",\"definitions\":[\"lose one's job\",\"unemployment\"]},{\"simplified\":\"诗\",\"traditional\":\"詩\",\"pinyin\":\"shī\",\"definitions\":[\"poem\",\"poetry\",\"verse\"]},{\"simplified\":\"狮子\",\"traditional\":\"獅子\",\"pinyin\":\"shīzi\",\"definitions\":[\"lion\"]},{\"simplified\":\"湿润\",\"traditional\":\"濕潤\",\"pinyin\":\"shīrùn\",\"definitions\":[\"moist\",\"humid\"]},{\"simplified\":\"石头\",\"traditional\":\"石頭\",\"pinyin\":\"shítou\",\"definitions\":[\"stone\",\"rock\"]},{\"simplified\":\"时差\",\"traditional\":\"時差\",\"pinyin\":\"shíchā\",\"definitions\":[\"jetlag\",\"time difference\"]},{\"simplified\":\"时代\",\"traditional\":\"時代\",\"pinyin\":\"shídài\",\"definitions\":[\"age\",\"era\",\"period\"]},{\"simplified\":\"时刻\",\"traditional\":\"時刻\",\"pinyin\":\"shíkè\",\"definitions\":[\"moment\",\"constantly\"]},{\"simplified\":\"时髦\",\"traditional\":\"時髦\",\"pinyin\":\"shímáo\",\"definitions\":[\"fashionable\"]},{\"simplified\":\"时期\",\"traditional\":\"時期\",\"pinyin\":\"shíqī\",\"definitions\":[\"period in time or history\",\"period\",\"time\"]},{\"simplified\":\"时尚\",\"traditional\":\"時尚\",\"pinyin\":\"shíshàng\",\"definitions\":[\"fashion\",\"fad\"]},{\"simplified\":\"实话\",\"traditional\":\"實話\",\"pinyin\":\"shíhuà\",\"definitions\":[\"truth\"]},{\"simplified\":\"实践\",\"traditional\":\"實踐\",\"pinyin\":\"shíjiàn\",\"definitions\":[\"practice\",\"put into practice\",\"carry out\"]},{\"simplified\":\"实习\",\"traditional\":\"實習\",\"pinyin\":\"shíxí\",\"definitions\":[\"to practice\",\"field work\",\"work as an intern\"]},{\"simplified\":\"实现\",\"traditional\":\"實現\",\"pinyin\":\"shíxiàn\",\"definitions\":[\"achieve\",\"to implement\"]},{\"simplified\":\"实验\",\"traditional\":\"實驗\",\"pinyin\":\"shíyàn\",\"definitions\":[\"experiment\",\"test\"]},{\"simplified\":\"实用\",\"traditional\":\"實用\",\"pinyin\":\"shíyòng\",\"definitions\":[\"practical\",\"pragmatic\",\"functional\"]},{\"simplified\":\"食物\",\"traditional\":\"食物\",\"pinyin\":\"shíwù\",\"definitions\":[\"food\"]},{\"simplified\":\"使劲儿\",\"traditional\":\"使勁兒\",\"pinyin\":\"shǐjìnr\",\"definitions\":[\"exert all one's strength\"]},{\"simplified\":\"始终\",\"traditional\":\"始終\",\"pinyin\":\"shǐzhōng\",\"definitions\":[\"from beginning to end\",\"all along\"]},{\"simplified\":\"士兵\",\"traditional\":\"士兵\",\"pinyin\":\"shìbīng\",\"definitions\":[\"soldier\"]},{\"simplified\":\"市场\",\"traditional\":\"市場\",\"pinyin\":\"shìchǎng\",\"definitions\":[\"market\"]},{\"simplified\":\"似的\",\"traditional\":\"似的\",\"pinyin\":\"shìde\",\"definitions\":[\"seems as if\",\"rather like\"]},{\"simplified\":\"事实\",\"traditional\":\"事實\",\"pinyin\":\"shìshí\",\"definitions\":[\"fact\",\"in fact\"]},{\"simplified\":\"事物\",\"traditional\":\"事物\",\"pinyin\":\"shìwù\",\"definitions\":[\"thing\",\"object\"]},{\"simplified\":\"事先\",\"traditional\":\"事先\",\"pinyin\":\"shìxiān\",\"definitions\":[\"in advance\",\"beforehand\",\"prior\"]},{\"simplified\":\"试卷\",\"traditional\":\"試卷\",\"pinyin\":\"shìjuàn\",\"definitions\":[\"exam paper\",\"test paper\"]},{\"simplified\":\"收获\",\"traditional\":\"收獲\",\"pinyin\":\"shōuhuò\",\"definitions\":[\"harvest\",\"acquisition\",\"gain\"]},{\"simplified\":\"收据\",\"traditional\":\"收據\",\"pinyin\":\"shōujù\",\"definitions\":[\"receipt\"]},{\"simplified\":\"手工\",\"traditional\":\"手工\",\"pinyin\":\"shǒugōng\",\"definitions\":[\"hand-made\",\"handicraft\",\"manual\"]},{\"simplified\":\"手术\",\"traditional\":\"手術\",\"pinyin\":\"shǒushù\",\"definitions\":[\"surgery\",\"operation\"]},{\"simplified\":\"手套\",\"traditional\":\"手套\",\"pinyin\":\"shǒutào\",\"definitions\":[\"glove\",\"mitten\"]},{\"simplified\":\"手续\",\"traditional\":\"手續\",\"pinyin\":\"shǒuxù\",\"definitions\":[\"formalities\",\"procedure\"]},{\"simplified\":\"手指\",\"traditional\":\"手指\",\"pinyin\":\"shǒuzhǐ\",\"definitions\":[\"finger\"]},{\"simplified\":\"首\",\"traditional\":\"首\",\"pinyin\":\"shǒu\",\"definitions\":[\"head\",\"chief\",\"first\",\"(mw for poems and songs) (Kangxi radical 185)\"]},{\"simplified\":\"寿命\",\"traditional\":\"壽命\",\"pinyin\":\"shòumìng\",\"definitions\":[\"life span\",\"life expectancy\"]},{\"simplified\":\"受伤\",\"traditional\":\"受傷\",\"pinyin\":\"shòu shāng\",\"definitions\":[\"sustain injuries (in an accident, etc.)\",\"be injured\"]},{\"simplified\":\"书架\",\"traditional\":\"書架\",\"pinyin\":\"shūjià\",\"definitions\":[\"bookshelf\"]},{\"simplified\":\"梳子\",\"traditional\":\"梳子\",\"pinyin\":\"shūzi\",\"definitions\":[\"comb\",\"hairbrush\"]},{\"simplified\":\"舒适\",\"traditional\":\"舒適\",\"pinyin\":\"shūshì\",\"definitions\":[\"cozy\",\"comfortable\",\"snug\"]},{\"simplified\":\"输入\",\"traditional\":\"輸入\",\"pinyin\":\"shūrù\",\"definitions\":[\"input\",\"enter\",\"import\"]},{\"simplified\":\"蔬菜\",\"traditional\":\"蔬菜\",\"pinyin\":\"shūcài\",\"definitions\":[\"vegetables\",\"produce\"]},{\"simplified\":\"熟练\",\"traditional\":\"熟練\",\"pinyin\":\"shúliàn\",\"definitions\":[\"practiced\",\"proficient\",\"skilled\"]},{\"simplified\":\"属于\",\"traditional\":\"屬于\",\"pinyin\":\"shǔyú\",\"definitions\":[\"belong to\",\"be part of\"]},{\"simplified\":\"鼠标\",\"traditional\":\"鼠標\",\"pinyin\":\"shǔ biāo\",\"definitions\":[\"mouse (computer)\"]},{\"simplified\":\"数\",\"traditional\":\"數\",\"pinyin\":\"shù, shǔ\",\"definitions\":[\"number | to count\",\"to rank\"]},{\"simplified\":\"数据\",\"traditional\":\"數據\",\"pinyin\":\"shùjù\",\"definitions\":[\"data\",\"numbers\",\"digital\"]},{\"simplified\":\"数码\",\"traditional\":\"數碼\",\"pinyin\":\"shùmǎ\",\"definitions\":[\"numeral\",\"number\",\"amount\",\"digital\"]},{\"simplified\":\"摔倒\",\"traditional\":\"摔倒\",\"pinyin\":\"shuāidǎo\",\"definitions\":[\"fall down\",\"slip and fall\",\"tumble\",\"trip\"]},{\"simplified\":\"甩\",\"traditional\":\"甩\",\"pinyin\":\"shuǎi\",\"definitions\":[\"to throw\",\"to fling\",\"to swing\",\"cast off\"]},{\"simplified\":\"双方\",\"traditional\":\"雙方\",\"pinyin\":\"shuāngfāng\",\"definitions\":[\"bilateral\",\"both sides\",\"both parties involved\"]},{\"simplified\":\"税\",\"traditional\":\"稅\",\"pinyin\":\"shuì\",\"definitions\":[\"tax\"]},{\"simplified\":\"说不定\",\"traditional\":\"說不定\",\"pinyin\":\"shuōbudìng\",\"definitions\":[\"can't say for sure\",\"perhaps\",\"maybe\"]},{\"simplified\":\"说服\",\"traditional\":\"說服\",\"pinyin\":\"shuō fú\",\"definitions\":[\"persuade\",\"convince\"]},{\"simplified\":\"丝绸\",\"traditional\":\"絲綢\",\"pinyin\":\"sīchóu\",\"definitions\":[\"silk\"]},{\"simplified\":\"丝毫\",\"traditional\":\"絲毫\",\"pinyin\":\"sīháo\",\"definitions\":[\"the slightest amount or degree\",\"a very little bit\"]},{\"simplified\":\"私人\",\"traditional\":\"私人\",\"pinyin\":\"sīrén\",\"definitions\":[\"private (citizen)\",\"personal\",\"individual\"]},{\"simplified\":\"思考\",\"traditional\":\"思考\",\"pinyin\":\"sīkǎo\",\"definitions\":[\"reflect on\",\"ponder\",\"consider\"]},{\"simplified\":\"思想\",\"traditional\":\"思想\",\"pinyin\":\"sīxiǎng\",\"definitions\":[\"thought\",\"thinking\",\"idea\",\"ideology\"]},{\"simplified\":\"撕\",\"traditional\":\"撕\",\"pinyin\":\"sī\",\"definitions\":[\"to tear (something)\"]},{\"simplified\":\"似乎\",\"traditional\":\"似乎\",\"pinyin\":\"sìhū\",\"definitions\":[\"it seems\",\"as if\",\"seemingly\"]},{\"simplified\":\"搜索\",\"traditional\":\"搜索\",\"pinyin\":\"sōusuǒ\",\"definitions\":[\"search\",\"look for something\",\"scour\"]},{\"simplified\":\"宿舍\",\"traditional\":\"宿舍\",\"pinyin\":\"sùshè\",\"definitions\":[\"dormitory\",\"living quarters\",\"hostel\"]},{\"simplified\":\"随身\",\"traditional\":\"隨身\",\"pinyin\":\"suíshēn\",\"definitions\":[\"carry on one's person\",\"bring with one\"]},{\"simplified\":\"随时\",\"traditional\":\"隨時\",\"pinyin\":\"suíshí\",\"definitions\":[\"at any time\",\"whenever necessary\"]},{\"simplified\":\"随手\",\"traditional\":\"隨手\",\"pinyin\":\"suíshǒu\",\"definitions\":[\"convenient\",\"without extra trouble\"]},{\"simplified\":\"碎\",\"traditional\":\"碎\",\"pinyin\":\"suì\",\"definitions\":[\"broken\",\"break into pieces\"]},{\"simplified\":\"损失\",\"traditional\":\"損失\",\"pinyin\":\"sǔnshī\",\"definitions\":[\"loss (financial)\",\"lose\"]},{\"simplified\":\"缩短\",\"traditional\":\"縮短\",\"pinyin\":\"suōduǎn\",\"definitions\":[\"shorten\",\"cut down\",\"curtail\"]},{\"simplified\":\"所\",\"traditional\":\"所\",\"pinyin\":\"suǒ\",\"definitions\":[\"place\",\"that which\",\"(mw for houses, buildings)\"]},{\"simplified\":\"锁\",\"traditional\":\"鎖\",\"pinyin\":\"suǒ\",\"definitions\":[\"lock\"]},{\"simplified\":\"台阶\",\"traditional\":\"台階\",\"pinyin\":\"táijiē\",\"definitions\":[\"flight of steps\",\"sidestep\",\"fig. way out of an embarrassing situation\"]},{\"simplified\":\"太极拳\",\"traditional\":\"太極拳\",\"pinyin\":\"tàijíquán\",\"definitions\":[\"Tai chi, a Chinese martial art\"]},{\"simplified\":\"太太\",\"traditional\":\"太太\",\"pinyin\":\"tàitai\",\"definitions\":[\"wife\",\"married woman\",\"Madame\",\"Mrs.\"]},{\"simplified\":\"谈判\",\"traditional\":\"談判\",\"pinyin\":\"tánpàn\",\"definitions\":[\"negotiate\",\"negotiation\",\"conference\"]},{\"simplified\":\"坦率\",\"traditional\":\"坦率\",\"pinyin\":\"tǎnshuài\",\"definitions\":[\"frank\"]},{\"simplified\":\"烫\",\"traditional\":\"燙\",\"pinyin\":\"tàng\",\"definitions\":[\"to scald\",\"to burn\",\"scalding hot\",\"to iron\"]},{\"simplified\":\"逃\",\"traditional\":\"逃\",\"pinyin\":\"táo\",\"definitions\":[\"to escape\",\"run away\",\"flee\"]},{\"simplified\":\"逃避\",\"traditional\":\"逃避\",\"pinyin\":\"táobì\",\"definitions\":[\"to escape\",\"evade\",\"shirk\"]},{\"simplified\":\"桃\",\"traditional\":\"桃\",\"pinyin\":\"táo\",\"definitions\":[\"peach\"]},{\"simplified\":\"淘气\",\"traditional\":\"淘氣\",\"pinyin\":\"táoqì\",\"definitions\":[\"naughty\",\"bad\"]},{\"simplified\":\"讨价还价\",\"traditional\":\"討價還價\",\"pinyin\":\"tǎo jià huán jià\",\"definitions\":[\"bargaining\",\"haggling over price\"]},{\"simplified\":\"套\",\"traditional\":\"套\",\"pinyin\":\"tào\",\"definitions\":[\"cover\",\"(mw for sets of things)\",\"tie together\"]},{\"simplified\":\"特色\",\"traditional\":\"特色\",\"pinyin\":\"tèsè\",\"definitions\":[\"characteristic\",\"distinguishing feature\"]},{\"simplified\":\"特殊\",\"traditional\":\"特殊\",\"pinyin\":\"tèshū\",\"definitions\":[\"special\",\"particular\",\"extraordinary\",\"unusual\"]},{\"simplified\":\"特征\",\"traditional\":\"特征\",\"pinyin\":\"tèzhēng\",\"definitions\":[\"characteristics\",\"distinctive features\",\"trait\"]},{\"simplified\":\"疼爱\",\"traditional\":\"疼愛\",\"pinyin\":\"téng ài\",\"definitions\":[\"love dearly\",\"be very fond of\"]},{\"simplified\":\"提倡\",\"traditional\":\"提倡\",\"pinyin\":\"tíchàng\",\"definitions\":[\"promote\",\"to advocate\",\"proposal\"]},{\"simplified\":\"提纲\",\"traditional\":\"提綱\",\"pinyin\":\"tígāng\",\"definitions\":[\"outline\",\"the key point\"]},{\"simplified\":\"提问\",\"traditional\":\"提問\",\"pinyin\":\"tíwèn\",\"definitions\":[\"put questions to\",\"to quiz\"]},{\"simplified\":\"题目\",\"traditional\":\"題目\",\"pinyin\":\"tímù\",\"definitions\":[\"subject\",\"title\",\"topic\"]},{\"simplified\":\"体会\",\"traditional\":\"體會\",\"pinyin\":\"tǐhuì\",\"definitions\":[\"know from experience\",\"learn through experience\",\"realize\",\"understanding\",\"experience\"]},{\"simplified\":\"体贴\",\"traditional\":\"體貼\",\"pinyin\":\"tǐtiē\",\"definitions\":[\"show consideration for\",\"thoughtful\"]},{\"simplified\":\"体现\",\"traditional\":\"體現\",\"pinyin\":\"tǐxiàn\",\"definitions\":[\"embody\",\"incarnate\",\"reflect\",\"to manifest\"]},{\"simplified\":\"体验\",\"traditional\":\"體驗\",\"pinyin\":\"tǐyàn\",\"definitions\":[\"experience for oneself\",\"to personally experience (usually a kind of life)\"]},{\"simplified\":\"天空\",\"traditional\":\"天空\",\"pinyin\":\"tiānkōng\",\"definitions\":[\"sky\",\"space\",\"heavens\"]},{\"simplified\":\"天真\",\"traditional\":\"天真\",\"pinyin\":\"tiānzhēn\",\"definitions\":[\"naïve\",\"innocent\",\"artless\"]},{\"simplified\":\"调皮\",\"traditional\":\"調皮\",\"pinyin\":\"tiáopí\",\"definitions\":[\"naughty\",\"mischievous\",\"unruly\"]},{\"simplified\":\"调整\",\"traditional\":\"調整\",\"pinyin\":\"tiáozhěng\",\"definitions\":[\"adjustment\",\"revision\"]},{\"simplified\":\"挑战\",\"traditional\":\"挑戰\",\"pinyin\":\"tiǎozhàn\",\"definitions\":[\"challenge\"]},{\"simplified\":\"通常\",\"traditional\":\"通常\",\"pinyin\":\"tōngcháng\",\"definitions\":[\"regular\",\"usual\",\"normal\",\"ordinary\"]},{\"simplified\":\"统一\",\"traditional\":\"統一\",\"pinyin\":\"tǒngyī\",\"definitions\":[\"unify\",\"unite\",\"integrate\",\"universal\"]},{\"simplified\":\"痛苦\",\"traditional\":\"痛苦\",\"pinyin\":\"tòngkǔ\",\"definitions\":[\"pain\",\"suffering\",\"agony\"]},{\"simplified\":\"痛快\",\"traditional\":\"痛快\",\"pinyin\":\"tòngkuai\",\"definitions\":[\"joyful\",\"delighted\",\"very happy\",\"jolly\"]},{\"simplified\":\"偷\",\"traditional\":\"偷\",\"pinyin\":\"tōu\",\"definitions\":[\"steal\",\"pilfer\"]},{\"simplified\":\"投入\",\"traditional\":\"投入\",\"pinyin\":\"tóurù\",\"definitions\":[\"put into operation\",\"throw into\",\"to invest\"]},{\"simplified\":\"投资\",\"traditional\":\"投資\",\"pinyin\":\"tóu zī\",\"definitions\":[\"investment\"]},{\"simplified\":\"透明\",\"traditional\":\"透明\",\"pinyin\":\"tòumíng\",\"definitions\":[\"transparent\",\"open (non-secretive)\"]},{\"simplified\":\"突出\",\"traditional\":\"突出\",\"pinyin\":\"tūchū\",\"definitions\":[\"prominent\",\"stand out\",\"give prominence to\"]},{\"simplified\":\"土地\",\"traditional\":\"土地\",\"pinyin\":\"tǔdì\",\"definitions\":[\"land\",\"territory\",\"soil\"]},{\"simplified\":\"土豆\",\"traditional\":\"土豆\",\"pinyin\":\"tǔdòu\",\"definitions\":[\"potato\"]},{\"simplified\":\"吐\",\"traditional\":\"吐\",\"pinyin\":\"tǔ, tù\",\"definitions\":[\"to spit | to vomit\",\"throw up\"]},{\"simplified\":\"兔子\",\"traditional\":\"兔子\",\"pinyin\":\"tùzi\",\"definitions\":[\"rabbit\",\"hare\"]},{\"simplified\":\"团\",\"traditional\":\"團\",\"pinyin\":\"tuán\",\"definitions\":[\"round\",\"ball\",\"group\",\"unite\",\"dumpling\",\"(mw for ball-like things)\"]},{\"simplified\":\"推辞\",\"traditional\":\"推辭\",\"pinyin\":\"tuīcí\",\"definitions\":[\"to decline\",\"turn down\"]},{\"simplified\":\"推广\",\"traditional\":\"推廣\",\"pinyin\":\"tuīguǎng\",\"definitions\":[\"popularize\",\"to spread\"]},{\"simplified\":\"推荐\",\"traditional\":\"推薦\",\"pinyin\":\"tuījiàn\",\"definitions\":[\"recommend\",\"recommendation\"]},{\"simplified\":\"退\",\"traditional\":\"退\",\"pinyin\":\"tuì\",\"definitions\":[\"to retreat\",\"decline\",\"withdraw\"]},{\"simplified\":\"退步\",\"traditional\":\"退步\",\"pinyin\":\"tuìbù\",\"definitions\":[\"to degenerate\",\"to regress\"]},{\"simplified\":\"退休\",\"traditional\":\"退休\",\"pinyin\":\"tuìxiū\",\"definitions\":[\"retirement (from work)\",\"retire\"]},{\"simplified\":\"歪\",\"traditional\":\"歪\",\"pinyin\":\"wāi\",\"definitions\":[\"askew\",\"crooked\",\"devious\",\"recline to take a rest (colloquial)\"]},{\"simplified\":\"外公\",\"traditional\":\"外公\",\"pinyin\":\"wàigōng\",\"definitions\":[\"maternal grandfather\"]},{\"simplified\":\"外交\",\"traditional\":\"外交\",\"pinyin\":\"wàijiāo\",\"definitions\":[\"diplomacy\",\"foreign affairs\"]},{\"simplified\":\"完美\",\"traditional\":\"完美\",\"pinyin\":\"wánměi\",\"definitions\":[\"perfect\"]},{\"simplified\":\"完善\",\"traditional\":\"完善\",\"pinyin\":\"wánshàn\",\"definitions\":[\"perfect\",\"make perfect\",\"improve\"]},{\"simplified\":\"完整\",\"traditional\":\"完整\",\"pinyin\":\"wánzhěng\",\"definitions\":[\"complete\",\"intact\"]},{\"simplified\":\"玩具\",\"traditional\":\"玩具\",\"pinyin\":\"wánjù\",\"definitions\":[\"plaything\",\"toy\"]},{\"simplified\":\"万一\",\"traditional\":\"萬一\",\"pinyin\":\"wànyī\",\"definitions\":[\"just in case\",\"if by any chance\"]},{\"simplified\":\"王子\",\"traditional\":\"王子\",\"pinyin\":\"wángzǐ\",\"definitions\":[\"prince\",\"son of a king\"]},{\"simplified\":\"网络\",\"traditional\":\"網絡\",\"pinyin\":\"wǎngluò\",\"definitions\":[\"network\"]},{\"simplified\":\"往返\",\"traditional\":\"往返\",\"pinyin\":\"wǎngfǎn\",\"definitions\":[\"go back and forth\",\"go to and fro\"]},{\"simplified\":\"危害\",\"traditional\":\"危害\",\"pinyin\":\"wēihài\",\"definitions\":[\"endanger\",\"jeopardize\",\"to harm\"]},{\"simplified\":\"威胁\",\"traditional\":\"威脅\",\"pinyin\":\"wēixié\",\"definitions\":[\"threaten\",\"to menace\"]},{\"simplified\":\"微笑\",\"traditional\":\"微笑\",\"pinyin\":\"wēixiào\",\"definitions\":[\"smile\"]},{\"simplified\":\"违反\",\"traditional\":\"違反\",\"pinyin\":\"wéifǎn\",\"definitions\":[\"violate (a law)\"]},{\"simplified\":\"围巾\",\"traditional\":\"圍巾\",\"pinyin\":\"wéijīn\",\"definitions\":[\"scarf\",\"shawl\"]},{\"simplified\":\"围绕\",\"traditional\":\"圍繞\",\"pinyin\":\"wéirào\",\"definitions\":[\"revolve around\",\"center on (an issue)\"]},{\"simplified\":\"唯一\",\"traditional\":\"唯一\",\"pinyin\":\"wéiyī\",\"definitions\":[\"only\",\"sole\"]},{\"simplified\":\"维修\",\"traditional\":\"維修\",\"pinyin\":\"wéixiū\",\"definitions\":[\"maintain (of equipment)\",\"to mend\",\"repair\"]},{\"simplified\":\"伟大\",\"traditional\":\"偉大\",\"pinyin\":\"wěidà\",\"definitions\":[\"great\",\"mighty\",\"large\"]},{\"simplified\":\"尾巴\",\"traditional\":\"尾巴\",\"pinyin\":\"wěiba\",\"definitions\":[\"tail\"]},{\"simplified\":\"委屈\",\"traditional\":\"委屈\",\"pinyin\":\"wěiqu\",\"definitions\":[\"feel wronged\",\"nurse a grievance\"]},{\"simplified\":\"未必\",\"traditional\":\"未必\",\"pinyin\":\"wèibì\",\"definitions\":[\"not necessarily\",\"need not\"]},{\"simplified\":\"未来\",\"traditional\":\"未來\",\"pinyin\":\"wèilái\",\"definitions\":[\"future\"]},{\"simplified\":\"位于\",\"traditional\":\"位于\",\"pinyin\":\"wèiyú\",\"definitions\":[\"be located at\"]},{\"simplified\":\"位置\",\"traditional\":\"位置\",\"pinyin\":\"wèizhi\",\"definitions\":[\"position\",\"place\",\"seat\"]},{\"simplified\":\"胃\",\"traditional\":\"胃\",\"pinyin\":\"wèi\",\"definitions\":[\"stomach\"]},{\"simplified\":\"胃口\",\"traditional\":\"胃口\",\"pinyin\":\"wèikǒu\",\"definitions\":[\"appetite\"]},{\"simplified\":\"温暖\",\"traditional\":\"溫暖\",\"pinyin\":\"wēnnuǎn\",\"definitions\":[\"warm\"]},{\"simplified\":\"温柔\",\"traditional\":\"溫柔\",\"pinyin\":\"wēnróu\",\"definitions\":[\"gentle and soft\",\"tender\",\"gentle\"]},{\"simplified\":\"文件\",\"traditional\":\"文件\",\"pinyin\":\"wénjiàn\",\"definitions\":[\"document\",\"file\"]},{\"simplified\":\"文具\",\"traditional\":\"文具\",\"pinyin\":\"wénjù\",\"definitions\":[\"stationery\",\"writing supplies\"]},{\"simplified\":\"文明\",\"traditional\":\"文明\",\"pinyin\":\"wénmíng\",\"definitions\":[\"civilization\",\"civilized\",\"culture\"]},{\"simplified\":\"文学\",\"traditional\":\"文學\",\"pinyin\":\"wénxué\",\"definitions\":[\"literature\"]},{\"simplified\":\"文字\",\"traditional\":\"文字\",\"pinyin\":\"wénzì\",\"definitions\":[\"characters\",\"script\",\"writing\"]},{\"simplified\":\"闻\",\"traditional\":\"聞\",\"pinyin\":\"wén\",\"definitions\":[\"hear\",\"to smell\",\"news\",\"reputation\"]},{\"simplified\":\"吻\",\"traditional\":\"吻\",\"pinyin\":\"wěn\",\"definitions\":[\"kiss\",\"lips\"]},{\"simplified\":\"稳定\",\"traditional\":\"穩定\",\"pinyin\":\"wěndìng\",\"definitions\":[\"stable\",\"steady\"]},{\"simplified\":\"问候\",\"traditional\":\"問候\",\"pinyin\":\"wènhòu\",\"definitions\":[\"send a greeting\",\"send one's regards to\"]},{\"simplified\":\"卧室\",\"traditional\":\"臥室\",\"pinyin\":\"wòshì\",\"definitions\":[\"bedroom\"]},{\"simplified\":\"握手\",\"traditional\":\"握手\",\"pinyin\":\"wò shǒu\",\"definitions\":[\"to shake hands\"]},{\"simplified\":\"屋子\",\"traditional\":\"屋子\",\"pinyin\":\"wūzi\",\"definitions\":[\"room\",\"house\"]},{\"simplified\":\"无奈\",\"traditional\":\"無奈\",\"pinyin\":\"wúnài\",\"definitions\":[\"can't help but\",\"have no choice\"]},{\"simplified\":\"无数\",\"traditional\":\"無數\",\"pinyin\":\"wúshù\",\"definitions\":[\"countless\",\"innumerable\"]},{\"simplified\":\"无所谓\",\"traditional\":\"無所謂\",\"pinyin\":\"wúsuǒwèi\",\"definitions\":[\"doesn't matter\",\"be indifferent\"]},{\"simplified\":\"武术\",\"traditional\":\"武術\",\"pinyin\":\"wǔshù\",\"definitions\":[\"martial arts\"]},{\"simplified\":\"勿\",\"traditional\":\"勿\",\"pinyin\":\"wù\",\"definitions\":[\"not\",\"do not\"]},{\"simplified\":\"物理\",\"traditional\":\"物理\",\"pinyin\":\"wùlǐ\",\"definitions\":[\"physics\",\"physical\"]},{\"simplified\":\"物质\",\"traditional\":\"物質\",\"pinyin\":\"wùzhì\",\"definitions\":[\"matter\",\"substance\",\"material\"]},{\"simplified\":\"雾\",\"traditional\":\"霧\",\"pinyin\":\"wù\",\"definitions\":[\"fog\",\"mist\"]},{\"simplified\":\"吸取\",\"traditional\":\"吸取\",\"pinyin\":\"xīqǔ\",\"definitions\":[\"absorb\",\"assimilate\"]},{\"simplified\":\"吸收\",\"traditional\":\"吸收\",\"pinyin\":\"xīshōu\",\"definitions\":[\"absorb\",\"ingest\"]},{\"simplified\":\"戏剧\",\"traditional\":\"戲劇\",\"pinyin\":\"xìjù\",\"definitions\":[\"drama\",\"play\",\"theater\"]},{\"simplified\":\"系\",\"traditional\":\"系\",\"pinyin\":\"xì, jì\",\"definitions\":[\"be\",\"relate to\",\"system\",\"fasten\",\"department\",\"faculty\",\"connect | to tie\"]},{\"simplified\":\"系统\",\"traditional\":\"系統\",\"pinyin\":\"xìtǒng\",\"definitions\":[\"system\"]},{\"simplified\":\"细节\",\"traditional\":\"細節\",\"pinyin\":\"xìjié\",\"definitions\":[\"details\",\"particulars\"]},{\"simplified\":\"瞎\",\"traditional\":\"瞎\",\"pinyin\":\"xiā\",\"definitions\":[\"blind\"]},{\"simplified\":\"下载\",\"traditional\":\"下載\",\"pinyin\":\"xiàzǎi\",\"definitions\":[\"to download\"]},{\"simplified\":\"吓\",\"traditional\":\"嚇\",\"pinyin\":\"xià\",\"definitions\":[\"frighten\",\"to scare\",\"intimidate\"]},{\"simplified\":\"夏令营\",\"traditional\":\"夏令營\",\"pinyin\":\"xiàlìngyíng\",\"definitions\":[\"summer camp\"]},{\"simplified\":\"鲜艳\",\"traditional\":\"鮮豔\",\"pinyin\":\"xiānyàn\",\"definitions\":[\"bright-colored\"]},{\"simplified\":\"显得\",\"traditional\":\"顯得\",\"pinyin\":\"xiǎnde\",\"definitions\":[\"appear\",\"seem\",\"to look\"]},{\"simplified\":\"显然\",\"traditional\":\"顯然\",\"pinyin\":\"xiǎnrán\",\"definitions\":[\"clear\",\"evidently\",\"obviously\"]},{\"simplified\":\"显示\",\"traditional\":\"顯示\",\"pinyin\":\"xiǎnshì\",\"definitions\":[\"display, illustrate, to show\"]},{\"simplified\":\"县\",\"traditional\":\"縣\",\"pinyin\":\"xiàn\",\"definitions\":[\"county\",\"district\"]},{\"simplified\":\"现代\",\"traditional\":\"現代\",\"pinyin\":\"xiàndài\",\"definitions\":[\"modern times\",\"modern age\"]},{\"simplified\":\"现实\",\"traditional\":\"現實\",\"pinyin\":\"xiànshí\",\"definitions\":[\"reality\",\"actuality\",\"practical\"]},{\"simplified\":\"现象\",\"traditional\":\"現象\",\"pinyin\":\"xiànxiàng\",\"definitions\":[\"appearance\",\"phenomenon\"]},{\"simplified\":\"限制\",\"traditional\":\"限制\",\"pinyin\":\"xiànzhì\",\"definitions\":[\"restrictions\",\"to limit\",\"to bound\"]},{\"simplified\":\"相处\",\"traditional\":\"相處\",\"pinyin\":\"xiāngchǔ\",\"definitions\":[\"get along\",\"interact\"]},{\"simplified\":\"相当\",\"traditional\":\"相當\",\"pinyin\":\"xiāngdāng\",\"definitions\":[\"equivalent to\",\"appropriate\",\"considerably\",\"quite\"]},{\"simplified\":\"相对\",\"traditional\":\"相對\",\"pinyin\":\"xiāngduì\",\"definitions\":[\"opposite\",\"relatively\",\"to resist\"]},{\"simplified\":\"相关\",\"traditional\":\"相關\",\"pinyin\":\"xiāngguān\",\"definitions\":[\"correlation\",\"interrelated\",\"dependence\"]},{\"simplified\":\"相似\",\"traditional\":\"相似\",\"pinyin\":\"xiāngsì\",\"definitions\":[\"similar\",\"resemble\",\"like\"]},{\"simplified\":\"香肠\",\"traditional\":\"香腸\",\"pinyin\":\"xiāngcháng\",\"definitions\":[\"sausage\"]},{\"simplified\":\"享受\",\"traditional\":\"享受\",\"pinyin\":\"xiǎngshòu\",\"definitions\":[\"enjoy\"]},{\"simplified\":\"想念\",\"traditional\":\"想念\",\"pinyin\":\"xiǎngniàn\",\"definitions\":[\"to miss\",\"remember with longing\",\"long to see again\"]},{\"simplified\":\"想象\",\"traditional\":\"想象\",\"pinyin\":\"xiǎngxiàng\",\"definitions\":[\"imagine\",\"visualize\"]},{\"simplified\":\"项\",\"traditional\":\"項\",\"pinyin\":\"xiàng\",\"definitions\":[\"nape (of the neck)\",\"sum (of money)\",\"mw item\"]},{\"simplified\":\"项链\",\"traditional\":\"項鏈\",\"pinyin\":\"xiàngliàn\",\"definitions\":[\"necklace\"]},{\"simplified\":\"项目\",\"traditional\":\"項目\",\"pinyin\":\"xiàngmù\",\"definitions\":[\"program\",\"item\",\"project\"]},{\"simplified\":\"象棋\",\"traditional\":\"象棋\",\"pinyin\":\"xiàngqí\",\"definitions\":[\"chess\",\"Chinese chess\"]},{\"simplified\":\"象征\",\"traditional\":\"象征\",\"pinyin\":\"xiàngzhēng\",\"definitions\":[\"symbol\",\"symbolize\",\"signify\"]},{\"simplified\":\"消费\",\"traditional\":\"消費\",\"pinyin\":\"xiāofèi\",\"definitions\":[\"consumption\",\"spending\"]},{\"simplified\":\"消化\",\"traditional\":\"消化\",\"pinyin\":\"xiāohuà\",\"definitions\":[\"to digest\"]},{\"simplified\":\"消极\",\"traditional\":\"消極\",\"pinyin\":\"xiāojí\",\"definitions\":[\"passive\",\"negative\",\"demoralized\"]},{\"simplified\":\"消失\",\"traditional\":\"消失\",\"pinyin\":\"xiāoshī\",\"definitions\":[\"disappear\",\"fade away\",\"dissolve\"]},{\"simplified\":\"销售\",\"traditional\":\"銷售\",\"pinyin\":\"xiāoshòu\",\"definitions\":[\"to sell\",\"to market\",\"sales\"]},{\"simplified\":\"小麦\",\"traditional\":\"小麥\",\"pinyin\":\"xiǎomài\",\"definitions\":[\"wheat\"]},{\"simplified\":\"小气\",\"traditional\":\"小氣\",\"pinyin\":\"xiǎoqì\",\"definitions\":[\"stingy\",\"petty\"]},{\"simplified\":\"孝顺\",\"traditional\":\"孝順\",\"pinyin\":\"xiàoshùn\",\"definitions\":[\"filial piety\"]},{\"simplified\":\"效率\",\"traditional\":\"效率\",\"pinyin\":\"xiàolǜ\",\"definitions\":[\"efficiency\"]},{\"simplified\":\"歇\",\"traditional\":\"歇\",\"pinyin\":\"xiē\",\"definitions\":[\"to rest\",\"to go to bed\",\"to take a break\"]},{\"simplified\":\"斜\",\"traditional\":\"斜\",\"pinyin\":\"xié\",\"definitions\":[\"slanting\",\"tilted\"]},{\"simplified\":\"写作\",\"traditional\":\"寫作\",\"pinyin\":\"xiězuò\",\"definitions\":[\"writing\",\"composition\",\"written works\"]},{\"simplified\":\"血\",\"traditional\":\"血\",\"pinyin\":\"xuè\",\"definitions\":[\"blood (Kangxi radical 143)\"]},{\"simplified\":\"心理\",\"traditional\":\"心理\",\"pinyin\":\"xīnlǐ\",\"definitions\":[\"psychology\",\"psychological\",\"mental\"]},{\"simplified\":\"心脏\",\"traditional\":\"心髒\",\"pinyin\":\"xīnzàng\",\"definitions\":[\"heart\"]},{\"simplified\":\"欣赏\",\"traditional\":\"欣賞\",\"pinyin\":\"xīnshǎng\",\"definitions\":[\"appreciate\",\"enjoy\",\"admire\"]},{\"simplified\":\"信号\",\"traditional\":\"信號\",\"pinyin\":\"xìnhào\",\"definitions\":[\"signal\"]},{\"simplified\":\"信任\",\"traditional\":\"信任\",\"pinyin\":\"xìnrèn\",\"definitions\":[\"to trust\",\"have confidence in\"]},{\"simplified\":\"行动\",\"traditional\":\"行動\",\"pinyin\":\"xíngdòng\",\"definitions\":[\"to move\",\"get around\",\"action\"]},{\"simplified\":\"行人\",\"traditional\":\"行人\",\"pinyin\":\"xíngrén\",\"definitions\":[\"pedestrian\"]},{\"simplified\":\"行为\",\"traditional\":\"行爲\",\"pinyin\":\"xíngwéi\",\"definitions\":[\"action\",\"behavior\",\"conduct\"]},{\"simplified\":\"形成\",\"traditional\":\"形成\",\"pinyin\":\"xíngchéng\",\"definitions\":[\"take shape\",\"form\"]},{\"simplified\":\"形容\",\"traditional\":\"形容\",\"pinyin\":\"xíngróng\",\"definitions\":[\"describe\",\"appearance\",\"look\"]},{\"simplified\":\"形式\",\"traditional\":\"形式\",\"pinyin\":\"xíngshì\",\"definitions\":[\"form\",\"shape\",\"situation\"]},{\"simplified\":\"形势\",\"traditional\":\"形勢\",\"pinyin\":\"xíngshì\",\"definitions\":[\"circumstances\",\"situation\",\"terrain\"]},{\"simplified\":\"形象\",\"traditional\":\"形象\",\"pinyin\":\"xíngxiàng\",\"definitions\":[\"image\",\"form\",\"figure\"]},{\"simplified\":\"形状\",\"traditional\":\"形狀\",\"pinyin\":\"xíngzhuàng\",\"definitions\":[\"form\",\"figure\",\"shape\"]},{\"simplified\":\"幸亏\",\"traditional\":\"幸虧\",\"pinyin\":\"xìngkuī\",\"definitions\":[\"fortunately\",\"luckily\"]},{\"simplified\":\"幸运\",\"traditional\":\"幸運\",\"pinyin\":\"xìngyùn\",\"definitions\":[\"luck\",\"fortune\"]},{\"simplified\":\"性质\",\"traditional\":\"性質\",\"pinyin\":\"xìngzhì\",\"definitions\":[\"nature\",\"characteristic\",\"quality\"]},{\"simplified\":\"兄弟\",\"traditional\":\"兄弟\",\"pinyin\":\"xiōngdì\",\"definitions\":[\"brothers\",\"younger brother\",\"brethren\"]},{\"simplified\":\"胸\",\"traditional\":\"胸\",\"pinyin\":\"xiōng\",\"definitions\":[\"chest\",\"bosom\",\"heart\"]},{\"simplified\":\"休闲\",\"traditional\":\"休閑\",\"pinyin\":\"xiūxián\",\"definitions\":[\"recreation\",\"leisure\"]},{\"simplified\":\"修改\",\"traditional\":\"修改\",\"pinyin\":\"xiūgǎi\",\"definitions\":[\"amend\",\"modify\",\"revise\",\"alter\"]},{\"simplified\":\"虚心\",\"traditional\":\"虛心\",\"pinyin\":\"xūxīn\",\"definitions\":[\"modest\",\"open-minded\"]},{\"simplified\":\"叙述\",\"traditional\":\"敘述\",\"pinyin\":\"xùshù\",\"definitions\":[\"retell\",\"narrate\"]},{\"simplified\":\"宣布\",\"traditional\":\"宣布\",\"pinyin\":\"xuānbù\",\"definitions\":[\"announce\",\"declare\",\"proclaim\"]},{\"simplified\":\"宣传\",\"traditional\":\"宣傳\",\"pinyin\":\"xuānchuán\",\"definitions\":[\"propaganda\",\"to propagate\",\"to give publicity to\"]},{\"simplified\":\"学历\",\"traditional\":\"學曆\",\"pinyin\":\"xuélì\",\"definitions\":[\"educational background\",\"school record\"]},{\"simplified\":\"学术\",\"traditional\":\"學術\",\"pinyin\":\"xuéshù\",\"definitions\":[\"learning\",\"science\",\"academic\"]},{\"simplified\":\"学问\",\"traditional\":\"學問\",\"pinyin\":\"xuéwen\",\"definitions\":[\"learning\",\"knowledge\"]},{\"simplified\":\"寻找\",\"traditional\":\"尋找\",\"pinyin\":\"xúnzhǎo\",\"definitions\":[\"seek\",\"look for\",\"quest\"]},{\"simplified\":\"询问\",\"traditional\":\"詢問\",\"pinyin\":\"xúnwèn\",\"definitions\":[\"inquire about\"]},{\"simplified\":\"训练\",\"traditional\":\"訓練\",\"pinyin\":\"xùnliàn\",\"definitions\":[\"to train\",\"to drill\",\"to exercise\",\"training\"]},{\"simplified\":\"迅速\",\"traditional\":\"迅速\",\"pinyin\":\"xùnsù\",\"definitions\":[\"fast\",\"quick\",\"rapid\"]},{\"simplified\":\"押金\",\"traditional\":\"押金\",\"pinyin\":\"yājīn\",\"definitions\":[\"security deposit\",\"down payment\"]},{\"simplified\":\"牙齿\",\"traditional\":\"牙齒\",\"pinyin\":\"yáchǐ\",\"definitions\":[\"tooth\"]},{\"simplified\":\"延长\",\"traditional\":\"延長\",\"pinyin\":\"yáncháng\",\"definitions\":[\"extend\",\"prolong\",\"lengthen\"]},{\"simplified\":\"严肃\",\"traditional\":\"嚴肅\",\"pinyin\":\"yánsù\",\"definitions\":[\"solemn\",\"serious\",\"earnest\"]},{\"simplified\":\"演讲\",\"traditional\":\"演講\",\"pinyin\":\"yǎnjiǎng\",\"definitions\":[\"give a lecture\",\"make a speech\"]},{\"simplified\":\"宴会\",\"traditional\":\"宴會\",\"pinyin\":\"yànhuì\",\"definitions\":[\"banquet\",\"feast\",\"dinner party\"]},{\"simplified\":\"阳台\",\"traditional\":\"陽台\",\"pinyin\":\"yángtái\",\"definitions\":[\"balcony\"]},{\"simplified\":\"痒\",\"traditional\":\"癢\",\"pinyin\":\"yǎng\",\"definitions\":[\"to itch\",\"itchy\"]},{\"simplified\":\"样式\",\"traditional\":\"樣式\",\"pinyin\":\"yàngshì\",\"definitions\":[\"type\",\"style\",\"form\"]},{\"simplified\":\"腰\",\"traditional\":\"腰\",\"pinyin\":\"yāo\",\"definitions\":[\"waist\",\"lower back\",\"pocket\"]},{\"simplified\":\"摇\",\"traditional\":\"搖\",\"pinyin\":\"yáo\",\"definitions\":[\"to shake\",\"to rock\"]},{\"simplified\":\"咬\",\"traditional\":\"咬\",\"pinyin\":\"yǎo\",\"definitions\":[\"to bite\",\"to nip\"]},{\"simplified\":\"要不\",\"traditional\":\"要不\",\"pinyin\":\"yàobù\",\"definitions\":[\"otherwise\",\"or else\",\"how about\"]},{\"simplified\":\"业务\",\"traditional\":\"業務\",\"pinyin\":\"yèwù\",\"definitions\":[\"business\",\"profession\"]},{\"simplified\":\"业余\",\"traditional\":\"業余\",\"pinyin\":\"yèyú\",\"definitions\":[\"spare time\",\"amateur\"]},{\"simplified\":\"夜\",\"traditional\":\"夜\",\"pinyin\":\"yè\",\"definitions\":[\"night\",\"darkness\"]},{\"simplified\":\"一辈子\",\"traditional\":\"一輩子\",\"pinyin\":\"yíbèizi\",\"definitions\":[\"(for) a lifetime\",\"all one's life\"]},{\"simplified\":\"一旦\",\"traditional\":\"一旦\",\"pinyin\":\"yídàn\",\"definitions\":[\"in case (something happens)\",\"once (sth. has happened ... then)\",\"in one day\"]},{\"simplified\":\"一律\",\"traditional\":\"一律\",\"pinyin\":\"yílǜ\",\"definitions\":[\"same\",\"uniformly\",\"all\",\"without exception\"]},{\"simplified\":\"一再\",\"traditional\":\"一再\",\"pinyin\":\"yízài\",\"definitions\":[\"repeatedly\",\"again and again\"]},{\"simplified\":\"一致\",\"traditional\":\"一致\",\"pinyin\":\"yízhì\",\"definitions\":[\"unanimous\",\"identical (views or opinions)\",\"consistent\"]},{\"simplified\":\"依然\",\"traditional\":\"依然\",\"pinyin\":\"yīrán\",\"definitions\":[\"still\",\"as before\"]},{\"simplified\":\"移动\",\"traditional\":\"移動\",\"pinyin\":\"yídòng\",\"definitions\":[\"to move\"]},{\"simplified\":\"移民\",\"traditional\":\"移民\",\"pinyin\":\"yímín\",\"definitions\":[\"immigrate\",\"emigrate\",\"migrate\"]},{\"simplified\":\"遗憾\",\"traditional\":\"遺憾\",\"pinyin\":\"yíhàn\",\"definitions\":[\"regret\",\"pity\",\"sorry\"]},{\"simplified\":\"疑问\",\"traditional\":\"疑問\",\"pinyin\":\"yíwèn\",\"definitions\":[\"doubt\",\"question\",\"to query\"]},{\"simplified\":\"乙\",\"traditional\":\"乙\",\"pinyin\":\"yǐ\",\"definitions\":[\"two\",\"twist (2nd Heavenly Stem) (Kangxi radical 5)\"]},{\"simplified\":\"以及\",\"traditional\":\"以及\",\"pinyin\":\"yǐjí\",\"definitions\":[\"as well as\",\"too\",\"(formal) and\"]},{\"simplified\":\"以来\",\"traditional\":\"以來\",\"pinyin\":\"yǐlái\",\"definitions\":[\"since (a previous event)\"]},{\"simplified\":\"亿\",\"traditional\":\"億\",\"pinyin\":\"yì\",\"definitions\":[\"one hundred million (100,000,000)\"]},{\"simplified\":\"义务\",\"traditional\":\"義務\",\"pinyin\":\"yìwù\",\"definitions\":[\"duty\",\"obligation\",\"volunteer duty\"]},{\"simplified\":\"议论\",\"traditional\":\"議論\",\"pinyin\":\"yìlùn\",\"definitions\":[\"discuss\",\"to comment\",\"talk about\"]},{\"simplified\":\"意外\",\"traditional\":\"意外\",\"pinyin\":\"yìwài\",\"definitions\":[\"unexpected\",\"accident\",\"mishap\"]},{\"simplified\":\"意义\",\"traditional\":\"意義\",\"pinyin\":\"yìyì\",\"definitions\":[\"meaning\",\"significance\"]},{\"simplified\":\"因而\",\"traditional\":\"因而\",\"pinyin\":\"yīn'ér\",\"definitions\":[\"therefore\",\"as a result\",\"thus\"]},{\"simplified\":\"因素\",\"traditional\":\"因素\",\"pinyin\":\"yīnsù\",\"definitions\":[\"element\",\"factor\"]},{\"simplified\":\"银\",\"traditional\":\"銀\",\"pinyin\":\"yín\",\"definitions\":[\"silver (the element)\"]},{\"simplified\":\"印刷\",\"traditional\":\"印刷\",\"pinyin\":\"yìnshuā\",\"definitions\":[\"print\"]},{\"simplified\":\"英俊\",\"traditional\":\"英俊\",\"pinyin\":\"yīngjùn\",\"definitions\":[\"handsome\"]},{\"simplified\":\"英雄\",\"traditional\":\"英雄\",\"pinyin\":\"yīngxióng\",\"definitions\":[\"hero\"]},{\"simplified\":\"迎接\",\"traditional\":\"迎接\",\"pinyin\":\"yíngjiē\",\"definitions\":[\"meet\",\"greet\",\"to welcome\"]},{\"simplified\":\"营养\",\"traditional\":\"營養\",\"pinyin\":\"yíngyǎng\",\"definitions\":[\"nutrition\",\"nourishment\",\"sustenance\"]},{\"simplified\":\"营业\",\"traditional\":\"營業\",\"pinyin\":\"yíngyè\",\"definitions\":[\"do business\",\"to trade\"]},{\"simplified\":\"影子\",\"traditional\":\"影子\",\"pinyin\":\"yǐngzi\",\"definitions\":[\"shadow\",\"reflection\"]},{\"simplified\":\"应付\",\"traditional\":\"應付\",\"pinyin\":\"yìngfu\",\"definitions\":[\"to cope with\",\"deal with\",\"handle\",\"do sth. perfunctorily\",\"do sth. after a fashion\",\"make do\"]},{\"simplified\":\"应用\",\"traditional\":\"應用\",\"pinyin\":\"yìngyòng\",\"definitions\":[\"to apply\",\"to use\",\"application\"]},{\"simplified\":\"硬\",\"traditional\":\"硬\",\"pinyin\":\"yìng\",\"definitions\":[\"hard\",\"stiff\",\"obstinately\"]},{\"simplified\":\"硬件\",\"traditional\":\"硬件\",\"pinyin\":\"yìngjiàn\",\"definitions\":[\"hardware\"]},{\"simplified\":\"拥抱\",\"traditional\":\"擁抱\",\"pinyin\":\"yōngbào\",\"definitions\":[\"embrace\",\"to hug\"]},{\"simplified\":\"拥挤\",\"traditional\":\"擁擠\",\"pinyin\":\"yōngjǐ\",\"definitions\":[\"to crowd\",\"to push\",\"to squeeze\"]},{\"simplified\":\"勇气\",\"traditional\":\"勇氣\",\"pinyin\":\"yǒngqì\",\"definitions\":[\"courage\",\"valor\"]},{\"simplified\":\"用功\",\"traditional\":\"用功\",\"pinyin\":\"yòng gōng\",\"definitions\":[\"diligent\",\"industrious\",\"hardworking\"]},{\"simplified\":\"用途\",\"traditional\":\"用途\",\"pinyin\":\"yòngtú\",\"definitions\":[\"use\",\"application\",\"purpose\"]},{\"simplified\":\"优惠\",\"traditional\":\"優惠\",\"pinyin\":\"yōuhuì\",\"definitions\":[\"preferential\",\"favorable\"]},{\"simplified\":\"优美\",\"traditional\":\"優美\",\"pinyin\":\"yōuměi\",\"definitions\":[\"graceful\",\"fine\",\"elegant\"]},{\"simplified\":\"优势\",\"traditional\":\"優勢\",\"pinyin\":\"yōushì\",\"definitions\":[\"advantage\",\"superiority\",\"dominant position\"]},{\"simplified\":\"悠久\",\"traditional\":\"悠久\",\"pinyin\":\"yōujiǔ\",\"definitions\":[\"established\",\"long\",\"longstanding\"]},{\"simplified\":\"犹豫\",\"traditional\":\"猶豫\",\"pinyin\":\"yóuyù\",\"definitions\":[\"hesitate\",\"hesitant\",\"undecided\"]},{\"simplified\":\"油炸\",\"traditional\":\"油炸\",\"pinyin\":\"yóuzhá\",\"definitions\":[\"deep fry\"]},{\"simplified\":\"游览\",\"traditional\":\"遊覽\",\"pinyin\":\"yóulǎn\",\"definitions\":[\"go sight-seeing\",\"tour\"]},{\"simplified\":\"有利\",\"traditional\":\"有利\",\"pinyin\":\"yǒulì\",\"definitions\":[\"advantageous\",\"beneficial\"]},{\"simplified\":\"幼儿园\",\"traditional\":\"幼兒園\",\"pinyin\":\"yòu'éryuán\",\"definitions\":[\"kindergarten\",\"nursery school\"]},{\"simplified\":\"娱乐\",\"traditional\":\"娛樂\",\"pinyin\":\"yúlè\",\"definitions\":[\"entertain\",\"amuse\",\"entertainment\"]},{\"simplified\":\"与其\",\"traditional\":\"與其\",\"pinyin\":\"yǔqí\",\"definitions\":[\"rather than\",\"better than\"]},{\"simplified\":\"语气\",\"traditional\":\"語氣\",\"pinyin\":\"yǔqì\",\"definitions\":[\"tone\",\"manner of speaking\",\"mood\"]},{\"simplified\":\"玉米\",\"traditional\":\"玉米\",\"pinyin\":\"yùmǐ\",\"definitions\":[\"corn\",\"maize\"]},{\"simplified\":\"预报\",\"traditional\":\"預報\",\"pinyin\":\"yùbào\",\"definitions\":[\"to predict\",\"forecast\"]},{\"simplified\":\"预订\",\"traditional\":\"預訂\",\"pinyin\":\"yùdìng\",\"definitions\":[\"place an order\",\"book ahead\",\"subscribe for\"]},{\"simplified\":\"预防\",\"traditional\":\"預防\",\"pinyin\":\"yùfáng\",\"definitions\":[\"prevent\",\"take precautions against\"]},{\"simplified\":\"元旦\",\"traditional\":\"元旦\",\"pinyin\":\"yuándàn\",\"definitions\":[\"New Year's Day\"]},{\"simplified\":\"员工\",\"traditional\":\"員工\",\"pinyin\":\"yuángōng\",\"definitions\":[\"employee\",\"staff\",\"personnel\"]},{\"simplified\":\"原料\",\"traditional\":\"原料\",\"pinyin\":\"yuánliào\",\"definitions\":[\"raw material\",\"ingredients\"]},{\"simplified\":\"原则\",\"traditional\":\"原則\",\"pinyin\":\"yuánzé\",\"definitions\":[\"principle\",\"doctrine\"]},{\"simplified\":\"圆\",\"traditional\":\"圓\",\"pinyin\":\"yuán\",\"definitions\":[\"round\",\"circular\",\"formal unit of Chinese currency\"]},{\"simplified\":\"愿望\",\"traditional\":\"願望\",\"pinyin\":\"yuànwàng\",\"definitions\":[\"desire\",\"wish\",\"aspiration\"]},{\"simplified\":\"乐器\",\"traditional\":\"樂器\",\"pinyin\":\"yuèqì\",\"definitions\":[\"musical instrument\"]},{\"simplified\":\"晕\",\"traditional\":\"暈\",\"pinyin\":\"yūn\",\"definitions\":[\"dizzy\",\"to fain\"]},{\"simplified\":\"运气\",\"traditional\":\"運氣\",\"pinyin\":\"yùnqi\",\"definitions\":[\"luck\"]},{\"simplified\":\"运输\",\"traditional\":\"運輸\",\"pinyin\":\"yùnshū\",\"definitions\":[\"transport\",\"transportation\"]},{\"simplified\":\"运用\",\"traditional\":\"運用\",\"pinyin\":\"yùnyòng\",\"definitions\":[\"to use\",\"apply\"]},{\"simplified\":\"灾害\",\"traditional\":\"災害\",\"pinyin\":\"zāihài\",\"definitions\":[\"disaster\",\"calamity\"]},{\"simplified\":\"再三\",\"traditional\":\"再三\",\"pinyin\":\"zàisān\",\"definitions\":[\"over and over again\",\"repeatedly\"]},{\"simplified\":\"在乎\",\"traditional\":\"在乎\",\"pinyin\":\"zàihu\",\"definitions\":[\"care about\",\"be determined by\",\"to mind\"]},{\"simplified\":\"在于\",\"traditional\":\"在于\",\"pinyin\":\"zàiyú\",\"definitions\":[\"lie in\",\"be in\",\"rest with\",\"depend on\"]},{\"simplified\":\"赞成\",\"traditional\":\"贊成\",\"pinyin\":\"zànchéng\",\"definitions\":[\"approve\",\"endorse\"]},{\"simplified\":\"赞美\",\"traditional\":\"贊美\",\"pinyin\":\"zànměi\",\"definitions\":[\"admire\",\"applause\",\"to praise\"]},{\"simplified\":\"糟糕\",\"traditional\":\"糟糕\",\"pinyin\":\"zāogāo\",\"definitions\":[\"terrible\",\"too bad\",\"how terrible\",\"what bad luck\",\"what a mess\"]},{\"simplified\":\"造成\",\"traditional\":\"造成\",\"pinyin\":\"zàochéng\",\"definitions\":[\"to cause\",\"make\",\"bring out\"]},{\"simplified\":\"则\",\"traditional\":\"則\",\"pinyin\":\"zé\",\"definitions\":[\"standard\",\"regulation\",\"however\",\"in that case\"]},{\"simplified\":\"责备\",\"traditional\":\"責備\",\"pinyin\":\"zébèi\",\"definitions\":[\"to blame\",\"criticize (sb.)\",\"accuse\"]},{\"simplified\":\"摘\",\"traditional\":\"摘\",\"pinyin\":\"zhāi\",\"definitions\":[\"to pick (flowers, fruit, etc.)\",\"to pluck\",\"to take\",\"to borrow\"]},{\"simplified\":\"窄\",\"traditional\":\"窄\",\"pinyin\":\"zhǎi\",\"definitions\":[\"narrow\",\"petty\",\"hard-up\"]},{\"simplified\":\"粘贴\",\"traditional\":\"粘貼\",\"pinyin\":\"zhāntiē\",\"definitions\":[\"to paste\"]},{\"simplified\":\"展开\",\"traditional\":\"展開\",\"pinyin\":\"zhǎn kāi\",\"definitions\":[\"spread out\",\"unfold\",\"carry out\",\"in full swing\"]},{\"simplified\":\"展览\",\"traditional\":\"展覽\",\"pinyin\":\"zhǎnlǎn\",\"definitions\":[\"put on display\",\"to exhibit\",\"exhibition\"]},{\"simplified\":\"占\",\"traditional\":\"占\",\"pinyin\":\"zhàn\",\"definitions\":[\"occupy\",\"seize\",\"to constitute\"]},{\"simplified\":\"战争\",\"traditional\":\"戰爭\",\"pinyin\":\"zhànzhēng\",\"definitions\":[\"war\",\"conflict\"]},{\"simplified\":\"长辈\",\"traditional\":\"長輩\",\"pinyin\":\"zhǎngbèi\",\"definitions\":[\"an elder\",\"an elder generation\"]},{\"simplified\":\"涨\",\"traditional\":\"漲\",\"pinyin\":\"zhǎng, zhàng\",\"definitions\":[\"to rise (of prices, rivers)\",\"to go up | to swell\",\"to bloat\"]},{\"simplified\":\"掌握\",\"traditional\":\"掌握\",\"pinyin\":\"zhǎngwò\",\"definitions\":[\"to grasp\",\"to master\",\"to control\"]},{\"simplified\":\"账户\",\"traditional\":\"賬戶\",\"pinyin\":\"zhànghù\",\"definitions\":[\"bank account\"]},{\"simplified\":\"招待\",\"traditional\":\"招待\",\"pinyin\":\"zhāodài\",\"definitions\":[\"receive (guests)\",\"entertain\",\"reception\"]},{\"simplified\":\"着火\",\"traditional\":\"著火\",\"pinyin\":\"zháohuǒ\",\"definitions\":[\"catch fire\",\"ignite\"]},{\"simplified\":\"着凉\",\"traditional\":\"著涼\",\"pinyin\":\"zháo liáng\",\"definitions\":[\"catch a cold\"]},{\"simplified\":\"召开\",\"traditional\":\"召開\",\"pinyin\":\"zhàokāi\",\"definitions\":[\"convene (a conference or meeting)\",\"call together\"]},{\"simplified\":\"照常\",\"traditional\":\"照常\",\"pinyin\":\"zhàocháng\",\"definitions\":[\"as usual\",\"normal\"]},{\"simplified\":\"哲学\",\"traditional\":\"哲學\",\"pinyin\":\"zhéxué\",\"definitions\":[\"philosophy\"]},{\"simplified\":\"针对\",\"traditional\":\"針對\",\"pinyin\":\"zhēnduì\",\"definitions\":[\"in connection with\",\"directed towards\"]},{\"simplified\":\"珍惜\",\"traditional\":\"珍惜\",\"pinyin\":\"zhēnxī\",\"definitions\":[\"to treasure\",\"cherish\",\"to value\"]},{\"simplified\":\"真实\",\"traditional\":\"真實\",\"pinyin\":\"zhēnshí\",\"definitions\":[\"true\",\"real\",\"authentic\"]},{\"simplified\":\"诊断\",\"traditional\":\"診斷\",\"pinyin\":\"zhěnduàn\",\"definitions\":[\"diagnosis\",\"diagnose\"]},{\"simplified\":\"阵\",\"traditional\":\"陣\",\"pinyin\":\"zhèn\",\"definitions\":[\"short period\",\"disposition of troops\",\"wave\"]},{\"simplified\":\"振动\",\"traditional\":\"振動\",\"pinyin\":\"zhèndòng\",\"definitions\":[\"vibrate\",\"vibration\"]},{\"simplified\":\"争论\",\"traditional\":\"爭論\",\"pinyin\":\"zhēnglùn\",\"definitions\":[\"argue\",\"to dispute\",\"contend\",\"argument\"]},{\"simplified\":\"争取\",\"traditional\":\"爭取\",\"pinyin\":\"zhēngqǔ\",\"definitions\":[\"fight for\",\"compete for\",\"strive\"]},{\"simplified\":\"征求\",\"traditional\":\"征求\",\"pinyin\":\"zhēngqiú\",\"definitions\":[\"solicit\",\"seek\",\"ask for\",\"to request\"]},{\"simplified\":\"睁\",\"traditional\":\"睜\",\"pinyin\":\"zhēng\",\"definitions\":[\"to open (eyes)\"]},{\"simplified\":\"整个\",\"traditional\":\"整個\",\"pinyin\":\"zhěnggè\",\"definitions\":[\"whole\",\"entire\",\"total\"]},{\"simplified\":\"整齐\",\"traditional\":\"整齊\",\"pinyin\":\"zhěngqí\",\"definitions\":[\"tidy\",\"neat\",\"in good order\"]},{\"simplified\":\"整体\",\"traditional\":\"整體\",\"pinyin\":\"zhěngtǐ\",\"definitions\":[\"whole\",\"entirety\"]},{\"simplified\":\"正\",\"traditional\":\"正\",\"pinyin\":\"zhèng\",\"definitions\":[\"straight\",\"currently\",\"correct\",\"just (right)\",\"pure\",\"precisely\"]},{\"simplified\":\"证件\",\"traditional\":\"證件\",\"pinyin\":\"zhèngjiàn\",\"definitions\":[\"paperwork\",\"credentials\",\"papers\",\"certificates\"]},{\"simplified\":\"证据\",\"traditional\":\"證據\",\"pinyin\":\"zhèngjù\",\"definitions\":[\"evidence\",\"proof\",\"testimony\"]},{\"simplified\":\"政府\",\"traditional\":\"政府\",\"pinyin\":\"zhèngfǔ\",\"definitions\":[\"government\"]},{\"simplified\":\"政治\",\"traditional\":\"政治\",\"pinyin\":\"zhèngzhì\",\"definitions\":[\"politics\"]},{\"simplified\":\"挣\",\"traditional\":\"掙\",\"pinyin\":\"zhèng, zhēng\",\"definitions\":[\"to earn | to struggle\"]},{\"simplified\":\"支\",\"traditional\":\"支\",\"pinyin\":\"zhī\",\"definitions\":[\"branch\",\"support\",\"put up\",\"(mw for long\",\"narrow objects) (Kangxi radical 65)\"]},{\"simplified\":\"支票\",\"traditional\":\"支票\",\"pinyin\":\"zhīpiào\",\"definitions\":[\"(bank) check\"]},{\"simplified\":\"执照\",\"traditional\":\"執照\",\"pinyin\":\"zhízhào\",\"definitions\":[\"a license\",\"a permit\"]},{\"simplified\":\"直\",\"traditional\":\"直\",\"pinyin\":\"zhí\",\"definitions\":[\"straight\",\"vertical\",\"frank\",\"directly\",\"continuously\"]},{\"simplified\":\"指导\",\"traditional\":\"指導\",\"pinyin\":\"zhǐdǎo\",\"definitions\":[\"to guide\",\"give directions\"]},{\"simplified\":\"指挥\",\"traditional\":\"指揮\",\"pinyin\":\"zhǐhuī\",\"definitions\":[\"to command\",\"to conduct\",\"commander\"]},{\"simplified\":\"至今\",\"traditional\":\"至今\",\"pinyin\":\"zhì jīn\",\"definitions\":[\"up to now\",\"so far\"]},{\"simplified\":\"至于\",\"traditional\":\"至于\",\"pinyin\":\"zhìyú\",\"definitions\":[\"as for\",\"go so far as to\"]},{\"simplified\":\"志愿者\",\"traditional\":\"志願者\",\"pinyin\":\"zhìyuànzhě\",\"definitions\":[\"volunteer\"]},{\"simplified\":\"制定\",\"traditional\":\"制定\",\"pinyin\":\"zhìdìng\",\"definitions\":[\"formulate\",\"lay down (a plan or policy)\",\"to draft\"]},{\"simplified\":\"制度\",\"traditional\":\"制度\",\"pinyin\":\"zhìdù\",\"definitions\":[\"system\",\"institution\"]},{\"simplified\":\"制造\",\"traditional\":\"制造\",\"pinyin\":\"zhìzào\",\"definitions\":[\"manufacture\",\"make\"]},{\"simplified\":\"制作\",\"traditional\":\"制作\",\"pinyin\":\"zhìzuò\",\"definitions\":[\"make\",\"manufacture\"]},{\"simplified\":\"治疗\",\"traditional\":\"治療\",\"pinyin\":\"zhìliáo\",\"definitions\":[\"to treat\",\"to cure\",\"medical treatment\"]},{\"simplified\":\"秩序\",\"traditional\":\"秩序\",\"pinyin\":\"zhìxù\",\"definitions\":[\"order\",\"sequence\"]},{\"simplified\":\"智慧\",\"traditional\":\"智慧\",\"pinyin\":\"zhìhuì\",\"definitions\":[\"wisdom\",\"knowledge\"]},{\"simplified\":\"中介\",\"traditional\":\"中介\",\"pinyin\":\"zhōngjiè\",\"definitions\":[\"agent\",\"act as an intermediary\"]},{\"simplified\":\"中心\",\"traditional\":\"中心\",\"pinyin\":\"zhōngxīn\",\"definitions\":[\"center\",\"heart\",\"core\"]},{\"simplified\":\"中旬\",\"traditional\":\"中旬\",\"pinyin\":\"zhōngxún\",\"definitions\":[\"middle third of a month\"]},{\"simplified\":\"种类\",\"traditional\":\"種類\",\"pinyin\":\"zhǒnglèi\",\"definitions\":[\"kind\",\"category\",\"class\"]},{\"simplified\":\"重大\",\"traditional\":\"重大\",\"pinyin\":\"zhòngdà\",\"definitions\":[\"great\",\"important\",\"major\"]},{\"simplified\":\"重量\",\"traditional\":\"重量\",\"pinyin\":\"zhòngliàng\",\"definitions\":[\"weight\"]},{\"simplified\":\"周到\",\"traditional\":\"周到\",\"pinyin\":\"zhōudào\",\"definitions\":[\"thoughtful\",\"considerate\",\"thorough\"]},{\"simplified\":\"猪\",\"traditional\":\"豬\",\"pinyin\":\"zhū\",\"definitions\":[\"pig\"]},{\"simplified\":\"竹子\",\"traditional\":\"竹子\",\"pinyin\":\"zhúzi\",\"definitions\":[\"bamboo\"]},{\"simplified\":\"逐步\",\"traditional\":\"逐步\",\"pinyin\":\"zhúbù\",\"definitions\":[\"step by step\",\"gradually\"]},{\"simplified\":\"逐渐\",\"traditional\":\"逐漸\",\"pinyin\":\"zhújiàn\",\"definitions\":[\"gradually\",\"by degrees\"]},{\"simplified\":\"主持\",\"traditional\":\"主持\",\"pinyin\":\"zhǔchí\",\"definitions\":[\"preside over\",\"manage\",\"to direct\"]},{\"simplified\":\"主动\",\"traditional\":\"主動\",\"pinyin\":\"zhǔdòng\",\"definitions\":[\"to take initiative\",\"voluntary\"]},{\"simplified\":\"主观\",\"traditional\":\"主觀\",\"pinyin\":\"zhǔguān\",\"definitions\":[\"subjective\"]},{\"simplified\":\"主人\",\"traditional\":\"主人\",\"pinyin\":\"zhǔrén\",\"definitions\":[\"master\",\"host\",\"owner\"]},{\"simplified\":\"主任\",\"traditional\":\"主任\",\"pinyin\":\"zhǔrèn\",\"definitions\":[\"director\",\"head\",\"chief\"]},{\"simplified\":\"主题\",\"traditional\":\"主題\",\"pinyin\":\"zhǔtí\",\"definitions\":[\"theme\",\"subject\",\"topic\"]},{\"simplified\":\"主席\",\"traditional\":\"主席\",\"pinyin\":\"zhǔxí\",\"definitions\":[\"chairperson\",\"president\"]},{\"simplified\":\"主张\",\"traditional\":\"主張\",\"pinyin\":\"zhǔzhāng\",\"definitions\":[\"to advocate\",\"viewpoint\",\"position\"]},{\"simplified\":\"煮\",\"traditional\":\"煮\",\"pinyin\":\"zhǔ\",\"definitions\":[\"to boil\",\"to cook\"]},{\"simplified\":\"注册\",\"traditional\":\"注冊\",\"pinyin\":\"zhùcè\",\"definitions\":[\"register\",\"registration\",\"enroll\"]},{\"simplified\":\"祝福\",\"traditional\":\"祝福\",\"pinyin\":\"zhùfú\",\"definitions\":[\"blessings\",\"wish well\"]},{\"simplified\":\"抓\",\"traditional\":\"抓\",\"pinyin\":\"zhuā\",\"definitions\":[\"to carry in your hand holding strongly\",\"catch\",\"arrest\"]},{\"simplified\":\"抓紧\",\"traditional\":\"抓緊\",\"pinyin\":\"zhuā jǐn\",\"definitions\":[\"to grasp firmly\",\"to pay close or special attention to\",\"to rush in\",\"to make the most of\"]},{\"simplified\":\"专家\",\"traditional\":\"專家\",\"pinyin\":\"zhuānjiā\",\"definitions\":[\"expert\",\"specialist\"]},{\"simplified\":\"专心\",\"traditional\":\"專心\",\"pinyin\":\"zhuānxīn\",\"definitions\":[\"be absorbed\",\"concentrate\",\"attentive\"]},{\"simplified\":\"转变\",\"traditional\":\"轉變\",\"pinyin\":\"zhuǎnbiàn\",\"definitions\":[\"to change\",\"to transform\"]},{\"simplified\":\"转告\",\"traditional\":\"轉告\",\"pinyin\":\"zhuǎngào\",\"definitions\":[\"pass on\",\"to communicate\",\"to transmit\"]},{\"simplified\":\"装\",\"traditional\":\"裝\",\"pinyin\":\"zhuāng\",\"definitions\":[\"to load\",\"dress up\",\"pretend\",\"clothing\",\"to install\"]},{\"simplified\":\"装饰\",\"traditional\":\"裝飾\",\"pinyin\":\"zhuāngshì\",\"definitions\":[\"decorate\"]},{\"simplified\":\"装修\",\"traditional\":\"裝修\",\"pinyin\":\"zhuāngxiū\",\"definitions\":[\"renovate\",\"to fit up\"]},{\"simplified\":\"状况\",\"traditional\":\"狀況\",\"pinyin\":\"zhuàngkuàng\",\"definitions\":[\"condition\",\"state\",\"situation\"]},{\"simplified\":\"状态\",\"traditional\":\"狀態\",\"pinyin\":\"zhuàngtài\",\"definitions\":[\"state of affairs\",\"condition\",\"state\"]},{\"simplified\":\"撞\",\"traditional\":\"撞\",\"pinyin\":\"zhuàng\",\"definitions\":[\"to hit\",\"collide\",\"run into\"]},{\"simplified\":\"追\",\"traditional\":\"追\",\"pinyin\":\"zhuī\",\"definitions\":[\"pursue\",\"chase\"]},{\"simplified\":\"追求\",\"traditional\":\"追求\",\"pinyin\":\"zhuīqiú\",\"definitions\":[\"pursue\",\"seek\"]},{\"simplified\":\"咨询\",\"traditional\":\"咨詢\",\"pinyin\":\"zīxún\",\"definitions\":[\"request information\",\"consultant\",\"advisory\"]},{\"simplified\":\"姿势\",\"traditional\":\"姿勢\",\"pinyin\":\"zīshì\",\"definitions\":[\"posture\",\"position\",\"pose\"]},{\"simplified\":\"资格\",\"traditional\":\"資格\",\"pinyin\":\"zīgé\",\"definitions\":[\"qualifications\",\"seniority\"]},{\"simplified\":\"资金\",\"traditional\":\"資金\",\"pinyin\":\"zījīn\",\"definitions\":[\"funds\",\"funding\"]},{\"simplified\":\"资料\",\"traditional\":\"資料\",\"pinyin\":\"zīliào\",\"definitions\":[\"data\",\"material\",\"resources\",\"information\"]},{\"simplified\":\"资源\",\"traditional\":\"資源\",\"pinyin\":\"zīyuán\",\"definitions\":[\"natural resource\",\"resource\"]},{\"simplified\":\"紫\",\"traditional\":\"紫\",\"pinyin\":\"zǐ\",\"definitions\":[\"purple\"]},{\"simplified\":\"自从\",\"traditional\":\"自從\",\"pinyin\":\"zìcóng\",\"definitions\":[\"since\",\"ever since\"]},{\"simplified\":\"自动\",\"traditional\":\"自動\",\"pinyin\":\"zìdòng\",\"definitions\":[\"automatic\"]},{\"simplified\":\"自豪\",\"traditional\":\"自豪\",\"pinyin\":\"zìháo\",\"definitions\":[\"(feel a sense of) pride\"]},{\"simplified\":\"自觉\",\"traditional\":\"自覺\",\"pinyin\":\"zìjué\",\"definitions\":[\"conscious\",\"be aware of\",\"self-motivated\"]},{\"simplified\":\"自私\",\"traditional\":\"自私\",\"pinyin\":\"zìsī\",\"definitions\":[\"selfish\"]},{\"simplified\":\"自由\",\"traditional\":\"自由\",\"pinyin\":\"zìyóu\",\"definitions\":[\"freedom\",\"free\",\"liberty\"]},{\"simplified\":\"自愿\",\"traditional\":\"自願\",\"pinyin\":\"zìyuàn\",\"definitions\":[\"voluntary\"]},{\"simplified\":\"字母\",\"traditional\":\"字母\",\"pinyin\":\"zìmǔ\",\"definitions\":[\"letter (of the alphabet)\"]},{\"simplified\":\"字幕\",\"traditional\":\"字幕\",\"pinyin\":\"zìmù\",\"definitions\":[\"subtitles\",\"captions\"]},{\"simplified\":\"综合\",\"traditional\":\"綜合\",\"pinyin\":\"zōnghé\",\"definitions\":[\"synthesized\",\"composite\",\"summarize\"]},{\"simplified\":\"总裁\",\"traditional\":\"總裁\",\"pinyin\":\"zǒngcái\",\"definitions\":[\"director-general\",\"president\"]},{\"simplified\":\"总共\",\"traditional\":\"總共\",\"pinyin\":\"zǒnggòng\",\"definitions\":[\"altogether\",\"in sum\",\"in all\",\"in total\"]},{\"simplified\":\"总理\",\"traditional\":\"總理\",\"pinyin\":\"zǒnglǐ\",\"definitions\":[\"premier\",\"prime minister\"]},{\"simplified\":\"总算\",\"traditional\":\"總算\",\"pinyin\":\"zǒngsuàn\",\"definitions\":[\"at long last\",\"finally\",\"on the whole\"]},{\"simplified\":\"总统\",\"traditional\":\"總統\",\"pinyin\":\"zǒngtǒng\",\"definitions\":[\"president (of a country)\"]},{\"simplified\":\"总之\",\"traditional\":\"總之\",\"pinyin\":\"zǒngzhī\",\"definitions\":[\"in a word\",\"in short\",\"in brief / anyway\",\"anyhow\"]},{\"simplified\":\"阻止\",\"traditional\":\"阻止\",\"pinyin\":\"zǔzhǐ\",\"definitions\":[\"prevent\",\"to block\"]},{\"simplified\":\"组\",\"traditional\":\"組\",\"pinyin\":\"zǔ\",\"definitions\":[\"compose\",\"team up\",\"group\"]},{\"simplified\":\"组成\",\"traditional\":\"組成\",\"pinyin\":\"zǔchéng\",\"definitions\":[\"to form\",\"part\",\"element\",\"constitute\"]},{\"simplified\":\"组合\",\"traditional\":\"組合\",\"pinyin\":\"zǔhé\",\"definitions\":[\"assemble\",\"combination\"]},{\"simplified\":\"组织\",\"traditional\":\"組織\",\"pinyin\":\"zǔzhī\",\"definitions\":[\"organize\",\"organization\"]},{\"simplified\":\"最初\",\"traditional\":\"最初\",\"pinyin\":\"zuìchū\",\"definitions\":[\"first\",\"primary\",\"initial\"]},{\"simplified\":\"醉\",\"traditional\":\"醉\",\"pinyin\":\"zuì\",\"definitions\":[\"intoxicated\",\"become drunk\"]},{\"simplified\":\"尊敬\",\"traditional\":\"尊敬\",\"pinyin\":\"zūnjìng\",\"definitions\":[\"respect\",\"revere\"]},{\"simplified\":\"遵守\",\"traditional\":\"遵守\",\"pinyin\":\"zūnshǒu\",\"definitions\":[\"observe\",\"abide by\",\"comply with\",\"keep (commandments)\",\"to respect (an agreement)\"]},{\"simplified\":\"作品\",\"traditional\":\"作品\",\"pinyin\":\"zuòpǐn\",\"definitions\":[\"works (of literature and art)\"]},{\"simplified\":\"作为\",\"traditional\":\"作爲\",\"pinyin\":\"zuòwéi\",\"definitions\":[\"regard as\",\"act as\",\"action\",\"deed\"]},{\"simplified\":\"作文\",\"traditional\":\"作文\",\"pinyin\":\"zuò wén\",\"definitions\":[\"write an essay\",\"essay\"]}]");
+
+/***/ }),
+
+/***/ "./words/hsk6.json":
+/*!*************************!*\
+  !*** ./words/hsk6.json ***!
+  \*************************/
+/*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 575, 576, 577, 578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 588, 589, 590, 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 667, 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683, 684, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754, 755, 756, 757, 758, 759, 760, 761, 762, 763, 764, 765, 766, 767, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779, 780, 781, 782, 783, 784, 785, 786, 787, 788, 789, 790, 791, 792, 793, 794, 795, 796, 797, 798, 799, 800, 801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 825, 826, 827, 828, 829, 830, 831, 832, 833, 834, 835, 836, 837, 838, 839, 840, 841, 842, 843, 844, 845, 846, 847, 848, 849, 850, 851, 852, 853, 854, 855, 856, 857, 858, 859, 860, 861, 862, 863, 864, 865, 866, 867, 868, 869, 870, 871, 872, 873, 874, 875, 876, 877, 878, 879, 880, 881, 882, 883, 884, 885, 886, 887, 888, 889, 890, 891, 892, 893, 894, 895, 896, 897, 898, 899, 900, 901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920, 921, 922, 923, 924, 925, 926, 927, 928, 929, 930, 931, 932, 933, 934, 935, 936, 937, 938, 939, 940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959, 960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988, 989, 990, 991, 992, 993, 994, 995, 996, 997, 998, 999, 1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032, 1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048, 1049, 1050, 1051, 1052, 1053, 1054, 1055, 1056, 1057, 1058, 1059, 1060, 1061, 1062, 1063, 1064, 1065, 1066, 1067, 1068, 1069, 1070, 1071, 1072, 1073, 1074, 1075, 1076, 1077, 1078, 1079, 1080, 1081, 1082, 1083, 1084, 1085, 1086, 1087, 1088, 1089, 1090, 1091, 1092, 1093, 1094, 1095, 1096, 1097, 1098, 1099, 1100, 1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1111, 1112, 1113, 1114, 1115, 1116, 1117, 1118, 1119, 1120, 1121, 1122, 1123, 1124, 1125, 1126, 1127, 1128, 1129, 1130, 1131, 1132, 1133, 1134, 1135, 1136, 1137, 1138, 1139, 1140, 1141, 1142, 1143, 1144, 1145, 1146, 1147, 1148, 1149, 1150, 1151, 1152, 1153, 1154, 1155, 1156, 1157, 1158, 1159, 1160, 1161, 1162, 1163, 1164, 1165, 1166, 1167, 1168, 1169, 1170, 1171, 1172, 1173, 1174, 1175, 1176, 1177, 1178, 1179, 1180, 1181, 1182, 1183, 1184, 1185, 1186, 1187, 1188, 1189, 1190, 1191, 1192, 1193, 1194, 1195, 1196, 1197, 1198, 1199, 1200, 1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1209, 1210, 1211, 1212, 1213, 1214, 1215, 1216, 1217, 1218, 1219, 1220, 1221, 1222, 1223, 1224, 1225, 1226, 1227, 1228, 1229, 1230, 1231, 1232, 1233, 1234, 1235, 1236, 1237, 1238, 1239, 1240, 1241, 1242, 1243, 1244, 1245, 1246, 1247, 1248, 1249, 1250, 1251, 1252, 1253, 1254, 1255, 1256, 1257, 1258, 1259, 1260, 1261, 1262, 1263, 1264, 1265, 1266, 1267, 1268, 1269, 1270, 1271, 1272, 1273, 1274, 1275, 1276, 1277, 1278, 1279, 1280, 1281, 1282, 1283, 1284, 1285, 1286, 1287, 1288, 1289, 1290, 1291, 1292, 1293, 1294, 1295, 1296, 1297, 1298, 1299, 1300, 1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1313, 1314, 1315, 1316, 1317, 1318, 1319, 1320, 1321, 1322, 1323, 1324, 1325, 1326, 1327, 1328, 1329, 1330, 1331, 1332, 1333, 1334, 1335, 1336, 1337, 1338, 1339, 1340, 1341, 1342, 1343, 1344, 1345, 1346, 1347, 1348, 1349, 1350, 1351, 1352, 1353, 1354, 1355, 1356, 1357, 1358, 1359, 1360, 1361, 1362, 1363, 1364, 1365, 1366, 1367, 1368, 1369, 1370, 1371, 1372, 1373, 1374, 1375, 1376, 1377, 1378, 1379, 1380, 1381, 1382, 1383, 1384, 1385, 1386, 1387, 1388, 1389, 1390, 1391, 1392, 1393, 1394, 1395, 1396, 1397, 1398, 1399, 1400, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430, 1431, 1432, 1433, 1434, 1435, 1436, 1437, 1438, 1439, 1440, 1441, 1442, 1443, 1444, 1445, 1446, 1447, 1448, 1449, 1450, 1451, 1452, 1453, 1454, 1455, 1456, 1457, 1458, 1459, 1460, 1461, 1462, 1463, 1464, 1465, 1466, 1467, 1468, 1469, 1470, 1471, 1472, 1473, 1474, 1475, 1476, 1477, 1478, 1479, 1480, 1481, 1482, 1483, 1484, 1485, 1486, 1487, 1488, 1489, 1490, 1491, 1492, 1493, 1494, 1495, 1496, 1497, 1498, 1499, 1500, 1501, 1502, 1503, 1504, 1505, 1506, 1507, 1508, 1509, 1510, 1511, 1512, 1513, 1514, 1515, 1516, 1517, 1518, 1519, 1520, 1521, 1522, 1523, 1524, 1525, 1526, 1527, 1528, 1529, 1530, 1531, 1532, 1533, 1534, 1535, 1536, 1537, 1538, 1539, 1540, 1541, 1542, 1543, 1544, 1545, 1546, 1547, 1548, 1549, 1550, 1551, 1552, 1553, 1554, 1555, 1556, 1557, 1558, 1559, 1560, 1561, 1562, 1563, 1564, 1565, 1566, 1567, 1568, 1569, 1570, 1571, 1572, 1573, 1574, 1575, 1576, 1577, 1578, 1579, 1580, 1581, 1582, 1583, 1584, 1585, 1586, 1587, 1588, 1589, 1590, 1591, 1592, 1593, 1594, 1595, 1596, 1597, 1598, 1599, 1600, 1601, 1602, 1603, 1604, 1605, 1606, 1607, 1608, 1609, 1610, 1611, 1612, 1613, 1614, 1615, 1616, 1617, 1618, 1619, 1620, 1621, 1622, 1623, 1624, 1625, 1626, 1627, 1628, 1629, 1630, 1631, 1632, 1633, 1634, 1635, 1636, 1637, 1638, 1639, 1640, 1641, 1642, 1643, 1644, 1645, 1646, 1647, 1648, 1649, 1650, 1651, 1652, 1653, 1654, 1655, 1656, 1657, 1658, 1659, 1660, 1661, 1662, 1663, 1664, 1665, 1666, 1667, 1668, 1669, 1670, 1671, 1672, 1673, 1674, 1675, 1676, 1677, 1678, 1679, 1680, 1681, 1682, 1683, 1684, 1685, 1686, 1687, 1688, 1689, 1690, 1691, 1692, 1693, 1694, 1695, 1696, 1697, 1698, 1699, 1700, 1701, 1702, 1703, 1704, 1705, 1706, 1707, 1708, 1709, 1710, 1711, 1712, 1713, 1714, 1715, 1716, 1717, 1718, 1719, 1720, 1721, 1722, 1723, 1724, 1725, 1726, 1727, 1728, 1729, 1730, 1731, 1732, 1733, 1734, 1735, 1736, 1737, 1738, 1739, 1740, 1741, 1742, 1743, 1744, 1745, 1746, 1747, 1748, 1749, 1750, 1751, 1752, 1753, 1754, 1755, 1756, 1757, 1758, 1759, 1760, 1761, 1762, 1763, 1764, 1765, 1766, 1767, 1768, 1769, 1770, 1771, 1772, 1773, 1774, 1775, 1776, 1777, 1778, 1779, 1780, 1781, 1782, 1783, 1784, 1785, 1786, 1787, 1788, 1789, 1790, 1791, 1792, 1793, 1794, 1795, 1796, 1797, 1798, 1799, 1800, 1801, 1802, 1803, 1804, 1805, 1806, 1807, 1808, 1809, 1810, 1811, 1812, 1813, 1814, 1815, 1816, 1817, 1818, 1819, 1820, 1821, 1822, 1823, 1824, 1825, 1826, 1827, 1828, 1829, 1830, 1831, 1832, 1833, 1834, 1835, 1836, 1837, 1838, 1839, 1840, 1841, 1842, 1843, 1844, 1845, 1846, 1847, 1848, 1849, 1850, 1851, 1852, 1853, 1854, 1855, 1856, 1857, 1858, 1859, 1860, 1861, 1862, 1863, 1864, 1865, 1866, 1867, 1868, 1869, 1870, 1871, 1872, 1873, 1874, 1875, 1876, 1877, 1878, 1879, 1880, 1881, 1882, 1883, 1884, 1885, 1886, 1887, 1888, 1889, 1890, 1891, 1892, 1893, 1894, 1895, 1896, 1897, 1898, 1899, 1900, 1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1915, 1916, 1917, 1918, 1919, 1920, 1921, 1922, 1923, 1924, 1925, 1926, 1927, 1928, 1929, 1930, 1931, 1932, 1933, 1934, 1935, 1936, 1937, 1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945, 1946, 1947, 1948, 1949, 1950, 1951, 1952, 1953, 1954, 1955, 1956, 1957, 1958, 1959, 1960, 1961, 1962, 1963, 1964, 1965, 1966, 1967, 1968, 1969, 1970, 1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980, 1981, 1982, 1983, 1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035, 2036, 2037, 2038, 2039, 2040, 2041, 2042, 2043, 2044, 2045, 2046, 2047, 2048, 2049, 2050, 2051, 2052, 2053, 2054, 2055, 2056, 2057, 2058, 2059, 2060, 2061, 2062, 2063, 2064, 2065, 2066, 2067, 2068, 2069, 2070, 2071, 2072, 2073, 2074, 2075, 2076, 2077, 2078, 2079, 2080, 2081, 2082, 2083, 2084, 2085, 2086, 2087, 2088, 2089, 2090, 2091, 2092, 2093, 2094, 2095, 2096, 2097, 2098, 2099, 2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116, 2117, 2118, 2119, 2120, 2121, 2122, 2123, 2124, 2125, 2126, 2127, 2128, 2129, 2130, 2131, 2132, 2133, 2134, 2135, 2136, 2137, 2138, 2139, 2140, 2141, 2142, 2143, 2144, 2145, 2146, 2147, 2148, 2149, 2150, 2151, 2152, 2153, 2154, 2155, 2156, 2157, 2158, 2159, 2160, 2161, 2162, 2163, 2164, 2165, 2166, 2167, 2168, 2169, 2170, 2171, 2172, 2173, 2174, 2175, 2176, 2177, 2178, 2179, 2180, 2181, 2182, 2183, 2184, 2185, 2186, 2187, 2188, 2189, 2190, 2191, 2192, 2193, 2194, 2195, 2196, 2197, 2198, 2199, 2200, 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216, 2217, 2218, 2219, 2220, 2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236, 2237, 2238, 2239, 2240, 2241, 2242, 2243, 2244, 2245, 2246, 2247, 2248, 2249, 2250, 2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266, 2267, 2268, 2269, 2270, 2271, 2272, 2273, 2274, 2275, 2276, 2277, 2278, 2279, 2280, 2281, 2282, 2283, 2284, 2285, 2286, 2287, 2288, 2289, 2290, 2291, 2292, 2293, 2294, 2295, 2296, 2297, 2298, 2299, 2300, 2301, 2302, 2303, 2304, 2305, 2306, 2307, 2308, 2309, 2310, 2311, 2312, 2313, 2314, 2315, 2316, 2317, 2318, 2319, 2320, 2321, 2322, 2323, 2324, 2325, 2326, 2327, 2328, 2329, 2330, 2331, 2332, 2333, 2334, 2335, 2336, 2337, 2338, 2339, 2340, 2341, 2342, 2343, 2344, 2345, 2346, 2347, 2348, 2349, 2350, 2351, 2352, 2353, 2354, 2355, 2356, 2357, 2358, 2359, 2360, 2361, 2362, 2363, 2364, 2365, 2366, 2367, 2368, 2369, 2370, 2371, 2372, 2373, 2374, 2375, 2376, 2377, 2378, 2379, 2380, 2381, 2382, 2383, 2384, 2385, 2386, 2387, 2388, 2389, 2390, 2391, 2392, 2393, 2394, 2395, 2396, 2397, 2398, 2399, 2400, 2401, 2402, 2403, 2404, 2405, 2406, 2407, 2408, 2409, 2410, 2411, 2412, 2413, 2414, 2415, 2416, 2417, 2418, 2419, 2420, 2421, 2422, 2423, 2424, 2425, 2426, 2427, 2428, 2429, 2430, 2431, 2432, 2433, 2434, 2435, 2436, 2437, 2438, 2439, 2440, 2441, 2442, 2443, 2444, 2445, 2446, 2447, 2448, 2449, 2450, 2451, 2452, 2453, 2454, 2455, 2456, 2457, 2458, 2459, 2460, 2461, 2462, 2463, 2464, 2465, 2466, 2467, 2468, 2469, 2470, 2471, 2472, 2473, 2474, 2475, 2476, 2477, 2478, 2479, 2480, 2481, 2482, 2483, 2484, 2485, 2486, 2487, 2488, 2489, 2490, 2491, 2492, 2493, 2494, 2495, 2496, 2497, 2498, 2499, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("[{\"simplified\":\"﻿挨\",\"traditional\":\"挨\",\"pinyin\":\"āi\",\"definitions\":[\"get close to\",\"in sequence\"]},{\"simplified\":\"癌症\",\"traditional\":\"癌症\",\"pinyin\":\"áizhèng\",\"definitions\":[\"cancer\"]},{\"simplified\":\"爱不释手\",\"traditional\":\"愛不釋手\",\"pinyin\":\"àibúshìshǒu\",\"definitions\":[\"love something too much to part with it\"]},{\"simplified\":\"爱戴\",\"traditional\":\"愛戴\",\"pinyin\":\"àidài\",\"definitions\":[\"love and respect\"]},{\"simplified\":\"暧昧\",\"traditional\":\"暧昧\",\"pinyin\":\"àimèi\",\"definitions\":[\"ambiguous\",\"shady\"]},{\"simplified\":\"安宁\",\"traditional\":\"安甯\",\"pinyin\":\"ānníng\",\"definitions\":[\"peaceful\",\"calm\",\"tranquil\",\"composed\"]},{\"simplified\":\"安详\",\"traditional\":\"安詳\",\"pinyin\":\"ānxiáng\",\"definitions\":[\"serene\",\"composed\"]},{\"simplified\":\"安置\",\"traditional\":\"安置\",\"pinyin\":\"ānzhì\",\"definitions\":[\"find a place for\",\"help settle down\",\"arrange for\"]},{\"simplified\":\"按摩\",\"traditional\":\"按摩\",\"pinyin\":\"ànmó\",\"definitions\":[\"massage\"]},{\"simplified\":\"案件\",\"traditional\":\"案件\",\"pinyin\":\"ànjiàn\",\"definitions\":[\"legal case\",\"judicial case\"]},{\"simplified\":\"案例\",\"traditional\":\"案例\",\"pinyin\":\"ànlì\",\"definitions\":[\"(Law) case\"]},{\"simplified\":\"暗示\",\"traditional\":\"暗示\",\"pinyin\":\"ànshì\",\"definitions\":[\"drop a hint\",\"suggest\"]},{\"simplified\":\"昂贵\",\"traditional\":\"昂貴\",\"pinyin\":\"ángguì\",\"definitions\":[\"expensive\",\"costly\"]},{\"simplified\":\"凹凸\",\"traditional\":\"凹凸\",\"pinyin\":\"āotū\",\"definitions\":[\"(of a surface) uneven\",\"bumpy\"]},{\"simplified\":\"熬\",\"traditional\":\"熬\",\"pinyin\":\"áo\",\"definitions\":[\"endure\",\"to boil\"]},{\"simplified\":\"奥秘\",\"traditional\":\"奧秘\",\"pinyin\":\"àomì\",\"definitions\":[\"mystery\",\"enigma\",\"profound\",\"deep\"]},{\"simplified\":\"巴不得\",\"traditional\":\"巴不得\",\"pinyin\":\"bābùdé\",\"definitions\":[\"eagerly look forward to\",\"earnestly wish\",\"be only too anxious to\"]},{\"simplified\":\"巴结\",\"traditional\":\"巴結\",\"pinyin\":\"bājie\",\"definitions\":[\"to fawn on\",\"curry favor with\"]},{\"simplified\":\"扒\",\"traditional\":\"扒\",\"pinyin\":\"bā\",\"definitions\":[\"dig up\",\"pull down\",\"take off\"]},{\"simplified\":\"疤\",\"traditional\":\"疤\",\"pinyin\":\"bā\",\"definitions\":[\"scar\"]},{\"simplified\":\"拔苗助长\",\"traditional\":\"拔苗助長\",\"pinyin\":\"bámiáozhùzhǎng\",\"definitions\":[\"(literally) help shoots grow by pulling them out\",\"spoil things by excessive enthusiasm\"]},{\"simplified\":\"把关\",\"traditional\":\"把關\",\"pinyin\":\"bǎ guān\",\"definitions\":[\"guard a pass\",\"check on\"]},{\"simplified\":\"把手\",\"traditional\":\"把手\",\"pinyin\":\"bǎshou\",\"definitions\":[\"knob\",\"handle\",\"grip\"]},{\"simplified\":\"罢工\",\"traditional\":\"罷工\",\"pinyin\":\"bà gōng\",\"definitions\":[\"to strike\",\"go on strike\"]},{\"simplified\":\"霸道\",\"traditional\":\"霸道\",\"pinyin\":\"bàdào\",\"definitions\":[\"overbearing\",\"despotic hegemony\",\"rule by force\",\"(of liquor, medicine, etc.) strong\"]},{\"simplified\":\"掰\",\"traditional\":\"掰\",\"pinyin\":\"bāi\",\"definitions\":[\"break with both hands\"]},{\"simplified\":\"摆脱\",\"traditional\":\"擺脫\",\"pinyin\":\"bǎituō\",\"definitions\":[\"break away\",\"free oneself from\",\"cast off\"]},{\"simplified\":\"败坏\",\"traditional\":\"敗壞\",\"pinyin\":\"bàihuài\",\"definitions\":[\"ruin\",\"corrupt\",\"undermine\"]},{\"simplified\":\"拜访\",\"traditional\":\"拜訪\",\"pinyin\":\"bàifǎng\",\"definitions\":[\"pay a visit\",\"call on\"]},{\"simplified\":\"拜年\",\"traditional\":\"拜年\",\"pinyin\":\"bài nián\",\"definitions\":[\"congratulate the New Year\",\"wish sb. a Happy New Year\"]},{\"simplified\":\"拜托\",\"traditional\":\"拜托\",\"pinyin\":\"bàituō\",\"definitions\":[\"ask a favor\",\"request\",\"please!\"]},{\"simplified\":\"颁布\",\"traditional\":\"頒布\",\"pinyin\":\"bānbù\",\"definitions\":[\"promulgate\",\"to issue\",\"publish (e.g a decree)\"]},{\"simplified\":\"颁发\",\"traditional\":\"頒發\",\"pinyin\":\"bānfā\",\"definitions\":[\"issue\",\"promulgate\",\"award\"]},{\"simplified\":\"斑\",\"traditional\":\"斑\",\"pinyin\":\"bān\",\"definitions\":[\"variety\",\"speckled\",\"spot\",\"colored patch\",\"stripe\"]},{\"simplified\":\"版本\",\"traditional\":\"版本\",\"pinyin\":\"bǎnběn\",\"definitions\":[\"edition\"]},{\"simplified\":\"半途而废\",\"traditional\":\"半途而廢\",\"pinyin\":\"bàn tú ér fèi\",\"definitions\":[\"give up halfway\",\"leave sth. unfinished\"]},{\"simplified\":\"扮演\",\"traditional\":\"扮演\",\"pinyin\":\"bànyǎn\",\"definitions\":[\"play the part of\",\"act\"]},{\"simplified\":\"伴侣\",\"traditional\":\"伴侶\",\"pinyin\":\"bànlǚ\",\"definitions\":[\"companion\",\"partner\",\"mate\"]},{\"simplified\":\"伴随\",\"traditional\":\"伴隨\",\"pinyin\":\"bànsuí\",\"definitions\":[\"accompany\",\"go with\",\"follow\"]},{\"simplified\":\"绑架\",\"traditional\":\"綁架\",\"pinyin\":\"bǎngjià\",\"definitions\":[\"kidnap\",\"staking\"]},{\"simplified\":\"榜样\",\"traditional\":\"榜樣\",\"pinyin\":\"bǎngyàng\",\"definitions\":[\"example\",\"model\"]},{\"simplified\":\"磅\",\"traditional\":\"磅\",\"pinyin\":\"bàng\",\"definitions\":[\"pound\",\"weigh\",\"scale\"]},{\"simplified\":\"包庇\",\"traditional\":\"包庇\",\"pinyin\":\"bāobì\",\"definitions\":[\"to shield\",\"to harbor\",\"cover up\"]},{\"simplified\":\"包袱\",\"traditional\":\"包袱\",\"pinyin\":\"bāofu\",\"definitions\":[\"bundle wrapped in cloth\",\"cloth-wrapper\"]},{\"simplified\":\"包围\",\"traditional\":\"包圍\",\"pinyin\":\"bāowéi\",\"definitions\":[\"surround\",\"encircle\",\"hem in\"]},{\"simplified\":\"包装\",\"traditional\":\"包裝\",\"pinyin\":\"bāozhuāng\",\"definitions\":[\"to pack\",\"package\",\"make up\"]},{\"simplified\":\"饱和\",\"traditional\":\"飽和\",\"pinyin\":\"bǎohé\",\"definitions\":[\"saturation\"]},{\"simplified\":\"饱经沧桑\",\"traditional\":\"飽經滄桑\",\"pinyin\":\"bǎojīngcāngsāng\",\"definitions\":[\"experienced many changes\"]},{\"simplified\":\"保管\",\"traditional\":\"保管\",\"pinyin\":\"bǎoguǎn\",\"definitions\":[\"assure\",\"take care of\",\"surely\"]},{\"simplified\":\"保密\",\"traditional\":\"保密\",\"pinyin\":\"bǎo mì\",\"definitions\":[\"keep secret/confidential\"]},{\"simplified\":\"保姆\",\"traditional\":\"保姆\",\"pinyin\":\"bǎomǔ\",\"definitions\":[\"nanny\",\"housekeeper\"]},{\"simplified\":\"保守\",\"traditional\":\"保守\",\"pinyin\":\"bǎoshǒu\",\"definitions\":[\"conservative (ideas, estimates, politically, etc.)\",\"to guard\",\"to keep\"]},{\"simplified\":\"保卫\",\"traditional\":\"保衛\",\"pinyin\":\"bǎowèi\",\"definitions\":[\"defend\",\"to safeguard\"]},{\"simplified\":\"保养\",\"traditional\":\"保養\",\"pinyin\":\"bǎoyǎng\",\"definitions\":[\"take good care of (or conserve) one's health\",\"keep in good repair\"]},{\"simplified\":\"保障\",\"traditional\":\"保障\",\"pinyin\":\"bǎozhàng\",\"definitions\":[\"ensure\",\"to guarantee\",\"protect\"]},{\"simplified\":\"保重\",\"traditional\":\"保重\",\"pinyin\":\"bǎozhòng\",\"definitions\":[\"take care (of oneself)\"]},{\"simplified\":\"报仇\",\"traditional\":\"報仇\",\"pinyin\":\"bàochóu\",\"definitions\":[\"retaliate\",\"to revenge\",\"avenge\"]},{\"simplified\":\"报酬\",\"traditional\":\"報酬\",\"pinyin\":\"bàochou\",\"definitions\":[\"reward\",\"remuneration\"]},{\"simplified\":\"报答\",\"traditional\":\"報答\",\"pinyin\":\"bàodá\",\"definitions\":[\"repay\",\"requite\"]},{\"simplified\":\"报复\",\"traditional\":\"報複\",\"pinyin\":\"bàofu\",\"definitions\":[\"retaliate\",\"revenge\"]},{\"simplified\":\"报警\",\"traditional\":\"報警\",\"pinyin\":\"bàojǐng\",\"definitions\":[\"report (an incident) to the police\"]},{\"simplified\":\"报销\",\"traditional\":\"報銷\",\"pinyin\":\"bàoxiāo\",\"definitions\":[\"submit an expense account\",\"apply for reimbursement\",\"write off\"]},{\"simplified\":\"抱负\",\"traditional\":\"抱負\",\"pinyin\":\"bàofù\",\"definitions\":[\"aspiration\",\"ambition\"]},{\"simplified\":\"暴力\",\"traditional\":\"暴力\",\"pinyin\":\"bàolì\",\"definitions\":[\"violence\",\"(use) force\"]},{\"simplified\":\"暴露\",\"traditional\":\"暴露\",\"pinyin\":\"bàolù\",\"definitions\":[\"expose\",\"reveal\",\"lay bare\"]},{\"simplified\":\"曝光\",\"traditional\":\"曝光\",\"pinyin\":\"bàoguāng\",\"definitions\":[\"to expose\",\"to make public\"]},{\"simplified\":\"爆发\",\"traditional\":\"爆發\",\"pinyin\":\"bàofā\",\"definitions\":[\"break out\",\"erupt\",\"explode\"]},{\"simplified\":\"爆炸\",\"traditional\":\"爆炸\",\"pinyin\":\"bàozhà\",\"definitions\":[\"explode\",\"explosion\",\"blow up\"]},{\"simplified\":\"卑鄙\",\"traditional\":\"卑鄙\",\"pinyin\":\"bēibǐ\",\"definitions\":[\"base\",\"mean\",\"despicable\",\"contemptible\",\"unprincipled\"]},{\"simplified\":\"悲哀\",\"traditional\":\"悲哀\",\"pinyin\":\"bēi'āi\",\"definitions\":[\"grieved\",\"sorrowful\",\"sad\"]},{\"simplified\":\"悲惨\",\"traditional\":\"悲慘\",\"pinyin\":\"bēicǎn\",\"definitions\":[\"miserable\",\"tragic\"]},{\"simplified\":\"北极\",\"traditional\":\"北極\",\"pinyin\":\"běijí\",\"definitions\":[\"the North Pole\"]},{\"simplified\":\"贝壳\",\"traditional\":\"貝殼\",\"pinyin\":\"bèiké\",\"definitions\":[\"shell\",\"conch\",\"cowry\"]},{\"simplified\":\"备份\",\"traditional\":\"備份\",\"pinyin\":\"bèifèn\",\"definitions\":[\"to back up\",\"a backup\"]},{\"simplified\":\"备忘录\",\"traditional\":\"備忘錄\",\"pinyin\":\"bèiwànglù\",\"definitions\":[\"memorandum\",\"aide-memoire\",\"diplomacy memorandum\",\"memorandum book\"]},{\"simplified\":\"背叛\",\"traditional\":\"背叛\",\"pinyin\":\"bèipàn\",\"definitions\":[\"betray\",\"forsake\"]},{\"simplified\":\"背诵\",\"traditional\":\"背誦\",\"pinyin\":\"bèisòng\",\"definitions\":[\"recite\"]},{\"simplified\":\"被动\",\"traditional\":\"被動\",\"pinyin\":\"bèidòng\",\"definitions\":[\"passive\"]},{\"simplified\":\"被告\",\"traditional\":\"被告\",\"pinyin\":\"bèigào\",\"definitions\":[\"defendant\"]},{\"simplified\":\"奔波\",\"traditional\":\"奔波\",\"pinyin\":\"bēnbō\",\"definitions\":[\"rush about\",\"be busy running about\"]},{\"simplified\":\"奔驰\",\"traditional\":\"奔馳\",\"pinyin\":\"bēnchí\",\"definitions\":[\"run quickly\",\"speed\",\"Mercedes-Benz (German vehicle manufacturer)\"]},{\"simplified\":\"本能\",\"traditional\":\"本能\",\"pinyin\":\"běnnéng\",\"definitions\":[\"instinct\"]},{\"simplified\":\"本钱\",\"traditional\":\"本錢\",\"pinyin\":\"běnqián\",\"definitions\":[\"capital (financial)\"]},{\"simplified\":\"本人\",\"traditional\":\"本人\",\"pinyin\":\"běnrén\",\"definitions\":[\"I\",\"me\",\"myself\",\"oneself\",\"in person\"]},{\"simplified\":\"本身\",\"traditional\":\"本身\",\"pinyin\":\"běnshēn\",\"definitions\":[\"itself\",\"in itself\",\"per se\"]},{\"simplified\":\"本事\",\"traditional\":\"本事\",\"pinyin\":\"běnshi\",\"definitions\":[\"ability\",\"skill\",\"capability\",\"(-shì: this matter\",\"literary source)\"]},{\"simplified\":\"笨拙\",\"traditional\":\"笨拙\",\"pinyin\":\"bènzhuō\",\"definitions\":[\"clumsy\",\"awkward\",\"stupid\"]},{\"simplified\":\"崩溃\",\"traditional\":\"崩潰\",\"pinyin\":\"bēngkuì\",\"definitions\":[\"collapse\",\"crumble\",\"fall apart\"]},{\"simplified\":\"甭\",\"traditional\":\"甭\",\"pinyin\":\"béng\",\"definitions\":[\"need not\",\"(contraction of 不 and 用)\"]},{\"simplified\":\"迸发\",\"traditional\":\"迸發\",\"pinyin\":\"bèngfā\",\"definitions\":[\"burst forth\",\"burst out\"]},{\"simplified\":\"蹦\",\"traditional\":\"蹦\",\"pinyin\":\"bèng\",\"definitions\":[\"jump\",\"bounce\",\"hop\"]},{\"simplified\":\"逼迫\",\"traditional\":\"逼迫\",\"pinyin\":\"bīpò\",\"definitions\":[\"to force\",\"compel\",\"coerce\"]},{\"simplified\":\"鼻涕\",\"traditional\":\"鼻涕\",\"pinyin\":\"bítì\",\"definitions\":[\"nasal mucus\",\"snivel\"]},{\"simplified\":\"比方\",\"traditional\":\"比方\",\"pinyin\":\"bǐfang\",\"definitions\":[\"instance\",\"analogy\",\"example\"]},{\"simplified\":\"比喻\",\"traditional\":\"比喻\",\"pinyin\":\"bǐyù\",\"definitions\":[\"metaphor\",\"analogy\",\"figure of speech\"]},{\"simplified\":\"比重\",\"traditional\":\"比重\",\"pinyin\":\"bǐzhòng\",\"definitions\":[\"proportion\",\"specific gravity\"]},{\"simplified\":\"鄙视\",\"traditional\":\"鄙視\",\"pinyin\":\"bǐshì\",\"definitions\":[\"despise\",\"disdain\",\"look down upon\"]},{\"simplified\":\"闭塞\",\"traditional\":\"閉塞\",\"pinyin\":\"bìsè\",\"definitions\":[\"stop up\",\"shelter from\",\"hard to get to\",\"unenlightened\"]},{\"simplified\":\"弊病\",\"traditional\":\"弊病\",\"pinyin\":\"bìbìng\",\"definitions\":[\"malady\",\"evil\",\"malpractice\",\"drawback\"]},{\"simplified\":\"弊端\",\"traditional\":\"弊端\",\"pinyin\":\"bìduān\",\"definitions\":[\"malpractice\",\"abuse\",\"corrupt practice\"]},{\"simplified\":\"臂\",\"traditional\":\"臂\",\"pinyin\":\"bì\",\"definitions\":[\"arm\"]},{\"simplified\":\"边疆\",\"traditional\":\"邊疆\",\"pinyin\":\"biānjiāng\",\"definitions\":[\"border area\",\"borderland\",\"frontier\",\"frontier region\"]},{\"simplified\":\"边界\",\"traditional\":\"邊界\",\"pinyin\":\"biānjiè\",\"definitions\":[\"boundary\",\"border\"]},{\"simplified\":\"边境\",\"traditional\":\"邊境\",\"pinyin\":\"biānjìng\",\"definitions\":[\"frontier\"]},{\"simplified\":\"边缘\",\"traditional\":\"邊緣\",\"pinyin\":\"biānyuán\",\"definitions\":[\"edge\",\"fringe\",\"verge\",\"brink\"]},{\"simplified\":\"编织\",\"traditional\":\"編織\",\"pinyin\":\"biānzhī\",\"definitions\":[\"to weave\",\"to knit\",\"to plait\",\"to braid\",\"to crochet\"]},{\"simplified\":\"鞭策\",\"traditional\":\"鞭策\",\"pinyin\":\"biāncè\",\"definitions\":[\"spur on\",\"urge on\"]},{\"simplified\":\"贬低\",\"traditional\":\"貶低\",\"pinyin\":\"biǎndī\",\"definitions\":[\"to belittle\",\"depreciate\",\"disparage\"]},{\"simplified\":\"贬义\",\"traditional\":\"貶義\",\"pinyin\":\"biǎnyì\",\"definitions\":[\"negative connotation\",\"derogatory sense\"]},{\"simplified\":\"扁\",\"traditional\":\"扁\",\"pinyin\":\"biǎn\",\"definitions\":[\"flat\"]},{\"simplified\":\"变故\",\"traditional\":\"變故\",\"pinyin\":\"biàngù\",\"definitions\":[\"unforeseen event\",\"accident\"]},{\"simplified\":\"变迁\",\"traditional\":\"變遷\",\"pinyin\":\"biànqiān\",\"definitions\":[\"changes\",\"vicissitude\"]},{\"simplified\":\"变质\",\"traditional\":\"變質\",\"pinyin\":\"biàn zhì\",\"definitions\":[\"go bad\",\"deteriorate\",\"metamorphism\"]},{\"simplified\":\"便利\",\"traditional\":\"便利\",\"pinyin\":\"biànlì\",\"definitions\":[\"convenient\",\"easy\",\"facilitate\"]},{\"simplified\":\"便条\",\"traditional\":\"便條\",\"pinyin\":\"biàntiáo\",\"definitions\":[\"informal note\"]},{\"simplified\":\"便于\",\"traditional\":\"便于\",\"pinyin\":\"biànyú\",\"definitions\":[\"be easy\",\"be convenient for\"]},{\"simplified\":\"遍布\",\"traditional\":\"遍布\",\"pinyin\":\"biànbù\",\"definitions\":[\"to cover the whole (area)\",\"found everywhere\",\"spread all over\"]},{\"simplified\":\"辨认\",\"traditional\":\"辨認\",\"pinyin\":\"biànrèn\",\"definitions\":[\"distinguish\",\"identify\",\"recognize\"]},{\"simplified\":\"辩护\",\"traditional\":\"辯護\",\"pinyin\":\"biànhù\",\"definitions\":[\"speak in defense of\",\"argue in favor of\",\"defend\"]},{\"simplified\":\"辩解\",\"traditional\":\"辯解\",\"pinyin\":\"biànjiě\",\"definitions\":[\"explain\",\"justify\",\"defend (a point of view, etc.)\"]},{\"simplified\":\"辩证\",\"traditional\":\"辯證\",\"pinyin\":\"biànzhèng\",\"definitions\":[\"investigate\",\"dialectical\"]},{\"simplified\":\"辫子\",\"traditional\":\"辮子\",\"pinyin\":\"biànzi\",\"definitions\":[\"plait\",\"braid\",\"pigtail\"]},{\"simplified\":\"标本\",\"traditional\":\"標本\",\"pinyin\":\"biāoběn\",\"definitions\":[\"specimen\",\"sample\",\"the root cause and symptoms of a disease\"]},{\"simplified\":\"标记\",\"traditional\":\"標記\",\"pinyin\":\"biāojì\",\"definitions\":[\"sign\",\"mark\",\"symbol\"]},{\"simplified\":\"标题\",\"traditional\":\"標題\",\"pinyin\":\"biāotí\",\"definitions\":[\"title\",\"header\",\"headline\",\"caption\"]},{\"simplified\":\"表决\",\"traditional\":\"表決\",\"pinyin\":\"biǎojué\",\"definitions\":[\"decide by vote\",\"vote\"]},{\"simplified\":\"表态\",\"traditional\":\"表態\",\"pinyin\":\"biǎotài\",\"definitions\":[\"make known one's position\",\"declare where one stands\"]},{\"simplified\":\"表彰\",\"traditional\":\"表彰\",\"pinyin\":\"biǎozhāng\",\"definitions\":[\"cite (in dispatches)\",\"commend\"]},{\"simplified\":\"憋\",\"traditional\":\"憋\",\"pinyin\":\"biē\",\"definitions\":[\"hold in (urine)\",\"hold (breath)\",\"choke\"]},{\"simplified\":\"别墅\",\"traditional\":\"別墅\",\"pinyin\":\"biéshù\",\"definitions\":[\"villa\"]},{\"simplified\":\"别致\",\"traditional\":\"別致\",\"pinyin\":\"biézhì\",\"definitions\":[\"unique\",\"unconventional\",\"fancy\"]},{\"simplified\":\"别扭\",\"traditional\":\"別扭\",\"pinyin\":\"bièniu\",\"definitions\":[\"awkward\",\"unnatural\"]},{\"simplified\":\"濒临\",\"traditional\":\"瀕臨\",\"pinyin\":\"bīnlín\",\"definitions\":[\"on the verge of\"]},{\"simplified\":\"冰雹\",\"traditional\":\"冰雹\",\"pinyin\":\"bīngbáo\",\"definitions\":[\"hail\"]},{\"simplified\":\"丙\",\"traditional\":\"丙\",\"pinyin\":\"bǐng\",\"definitions\":[\"bright\",\"fire (3rd Heavenly Stem)\"]},{\"simplified\":\"并非\",\"traditional\":\"並非\",\"pinyin\":\"bìngfēi\",\"definitions\":[\"really isn't\"]},{\"simplified\":\"并列\",\"traditional\":\"並列\",\"pinyin\":\"bìngliè\",\"definitions\":[\"stand side by side\",\"be juxtaposed\"]},{\"simplified\":\"拨\",\"traditional\":\"撥\",\"pinyin\":\"bō\",\"definitions\":[\"to dial\",\"move with a hand/foot\",\"stir\",\"poke\",\"allocate (money)\"]},{\"simplified\":\"波浪\",\"traditional\":\"波浪\",\"pinyin\":\"bōlàng\",\"definitions\":[\"wave\"]},{\"simplified\":\"波涛\",\"traditional\":\"波濤\",\"pinyin\":\"bōtāo\",\"definitions\":[\"great waves\",\"billows\"]},{\"simplified\":\"剥削\",\"traditional\":\"剝削\",\"pinyin\":\"bōxuē\",\"definitions\":[\"to exploit\"]},{\"simplified\":\"播种\",\"traditional\":\"播種\",\"pinyin\":\"bōzhǒng\",\"definitions\":[\"sow seeds\",\"sowing\",\"seed\"]},{\"simplified\":\"伯母\",\"traditional\":\"伯母\",\"pinyin\":\"bómǔ\",\"definitions\":[\"aunt\",\"wife of father's older brother\"]},{\"simplified\":\"博大精深\",\"traditional\":\"博大精深\",\"pinyin\":\"bódàjīngshēn\",\"definitions\":[\"broad and profound\"]},{\"simplified\":\"博览会\",\"traditional\":\"博覽會\",\"pinyin\":\"bólǎnhuì\",\"definitions\":[\"(international) exhibition\"]},{\"simplified\":\"搏斗\",\"traditional\":\"搏鬥\",\"pinyin\":\"bódòu\",\"definitions\":[\"fight\",\"struggle\",\"wrestle\"]},{\"simplified\":\"薄弱\",\"traditional\":\"薄弱\",\"pinyin\":\"bóruò\",\"definitions\":[\"weak\",\"frail\"]},{\"simplified\":\"补偿\",\"traditional\":\"補償\",\"pinyin\":\"bǔcháng\",\"definitions\":[\"compensation\",\"make up\"]},{\"simplified\":\"补救\",\"traditional\":\"補救\",\"pinyin\":\"bǔjiù\",\"definitions\":[\"remedy\",\"repair\"]},{\"simplified\":\"补贴\",\"traditional\":\"補貼\",\"pinyin\":\"bǔtiē\",\"definitions\":[\"subsidy\",\"allowance\"]},{\"simplified\":\"捕捉\",\"traditional\":\"捕捉\",\"pinyin\":\"bǔzhuō\",\"definitions\":[\"catch\",\"to seize\"]},{\"simplified\":\"哺乳\",\"traditional\":\"哺乳\",\"pinyin\":\"bǔrǔ\",\"definitions\":[\"breast-feeding\",\"to suckle\"]},{\"simplified\":\"不得已\",\"traditional\":\"不得已\",\"pinyin\":\"bùdéyǐ\",\"definitions\":[\"act against one's will\",\"have no alternative\"]},{\"simplified\":\"不妨\",\"traditional\":\"不妨\",\"pinyin\":\"bùfáng\",\"definitions\":[\"there is no harm in\",\"might as well\"]},{\"simplified\":\"不敢当\",\"traditional\":\"不敢當\",\"pinyin\":\"bù gǎndāng\",\"definitions\":[\"(literally) I dare not accept the honor\",\"you flatter me\"]},{\"simplified\":\"不顾\",\"traditional\":\"不顧\",\"pinyin\":\"búgù\",\"definitions\":[\"in spite of\",\"regardless of\",\"to disregard\"]},{\"simplified\":\"不禁\",\"traditional\":\"不禁\",\"pinyin\":\"bùjīn\",\"definitions\":[\"cannot help\",\"can't refrain from\"]},{\"simplified\":\"不堪\",\"traditional\":\"不堪\",\"pinyin\":\"bùkān\",\"definitions\":[\"cannot bear/stand\",\"utterly\"]},{\"simplified\":\"不可思议\",\"traditional\":\"不可思議\",\"pinyin\":\"bùkěsīyì\",\"definitions\":[\"unimaginable\",\"inconceivable\"]},{\"simplified\":\"不愧\",\"traditional\":\"不愧\",\"pinyin\":\"búkuì\",\"definitions\":[\"be worthy of\",\"deserve to be called\",\"prove oneself to be\"]},{\"simplified\":\"不料\",\"traditional\":\"不料\",\"pinyin\":\"búliào\",\"definitions\":[\"unexpectedly\",\"to one's surprise\"]},{\"simplified\":\"不免\",\"traditional\":\"不免\",\"pinyin\":\"bùmiǎn\",\"definitions\":[\"unavoidable\"]},{\"simplified\":\"不时\",\"traditional\":\"不時\",\"pinyin\":\"bùshí\",\"definitions\":[\"frequently\",\"often\",\"at any time\"]},{\"simplified\":\"不惜\",\"traditional\":\"不惜\",\"pinyin\":\"bùxī\",\"definitions\":[\"to not hesitate\",\"not spare\"]},{\"simplified\":\"不相上下\",\"traditional\":\"不相上下\",\"pinyin\":\"bù xiāng shàng xià\",\"definitions\":[\"equally matched\",\"about the same\"]},{\"simplified\":\"不像话\",\"traditional\":\"不像話\",\"pinyin\":\"búxiànghuà\",\"definitions\":[\"unreasonable\",\"absurd\",\"outrageous\"]},{\"simplified\":\"不屑一顾\",\"traditional\":\"不屑一顧\",\"pinyin\":\"búxièyígù\",\"definitions\":[\"not worth seeing\",\"disdain as beneath contempt\"]},{\"simplified\":\"不言而喻\",\"traditional\":\"不言而喻\",\"pinyin\":\"bùyán'éryù\",\"definitions\":[\"it goes without saying\",\"it is self-evident\"]},{\"simplified\":\"不由得\",\"traditional\":\"不由得\",\"pinyin\":\"bùyóude\",\"definitions\":[\"can't help\",\"cannot but\"]},{\"simplified\":\"不择手段\",\"traditional\":\"不擇手段\",\"pinyin\":\"bùzéshǒuduàn\",\"definitions\":[\"by fair means or foul\"]},{\"simplified\":\"不止\",\"traditional\":\"不止\",\"pinyin\":\"bùzhǐ\",\"definitions\":[\"incessantly\",\"more than\"]},{\"simplified\":\"布告\",\"traditional\":\"布告\",\"pinyin\":\"bùgào\",\"definitions\":[\"notice\",\"bulletin\"]},{\"simplified\":\"布局\",\"traditional\":\"布局\",\"pinyin\":\"bùjú\",\"definitions\":[\"arrangement\",\"composition\",\"layout\"]},{\"simplified\":\"布置\",\"traditional\":\"布置\",\"pinyin\":\"bùzhì\",\"definitions\":[\"arrange\",\"decorate\",\"decoration\"]},{\"simplified\":\"步伐\",\"traditional\":\"步伐\",\"pinyin\":\"bùfá\",\"definitions\":[\"pace\",\"(measured) step\",\"march\"]},{\"simplified\":\"部署\",\"traditional\":\"部署\",\"pinyin\":\"bùshǔ\",\"definitions\":[\"dispose\",\"deploy\"]},{\"simplified\":\"部位\",\"traditional\":\"部位\",\"pinyin\":\"bùwèi\",\"definitions\":[\"position\",\"place\"]},{\"simplified\":\"才干\",\"traditional\":\"才幹\",\"pinyin\":\"cáigàn\",\"definitions\":[\"ability\",\"competence\"]},{\"simplified\":\"财富\",\"traditional\":\"財富\",\"pinyin\":\"cáifù\",\"definitions\":[\"wealth\",\"riches\",\"fortune\"]},{\"simplified\":\"财务\",\"traditional\":\"財務\",\"pinyin\":\"cáiwù\",\"definitions\":[\"financial affairs\"]},{\"simplified\":\"财政\",\"traditional\":\"財政\",\"pinyin\":\"cáizhèng\",\"definitions\":[\"public finances\",\"financial\"]},{\"simplified\":\"裁缝\",\"traditional\":\"裁縫\",\"pinyin\":\"cáifeng\",\"definitions\":[\"tailor\",\"dressmaker\"]},{\"simplified\":\"裁判\",\"traditional\":\"裁判\",\"pinyin\":\"cáipàn\",\"definitions\":[\"judge\",\"to referee\",\"judgment\"]},{\"simplified\":\"裁员\",\"traditional\":\"裁員\",\"pinyin\":\"cáiyuán\",\"definitions\":[\"cut staff\",\"lay off employees\"]},{\"simplified\":\"采购\",\"traditional\":\"采購\",\"pinyin\":\"cǎigòu\",\"definitions\":[\"make purchases for an organization\",\"go shopping\"]},{\"simplified\":\"采集\",\"traditional\":\"采集\",\"pinyin\":\"cǎijí\",\"definitions\":[\"gather\",\"collect\"]},{\"simplified\":\"采纳\",\"traditional\":\"采納\",\"pinyin\":\"cǎinà\",\"definitions\":[\"accept\",\"adopt\"]},{\"simplified\":\"彩票\",\"traditional\":\"彩票\",\"pinyin\":\"cǎipiào\",\"definitions\":[\"lottery\",\"lottery ticket\"]},{\"simplified\":\"参谋\",\"traditional\":\"參謀\",\"pinyin\":\"cānmóu\",\"definitions\":[\"advisor\",\"give advice\"]},{\"simplified\":\"参照\",\"traditional\":\"參照\",\"pinyin\":\"cānzhào\",\"definitions\":[\"consult a reference\",\"refer to (another document)\"]},{\"simplified\":\"残疾\",\"traditional\":\"殘疾\",\"pinyin\":\"cánji\",\"definitions\":[\"deformity\",\"handicapped\",\"crippled\"]},{\"simplified\":\"残酷\",\"traditional\":\"殘酷\",\"pinyin\":\"cánkù\",\"definitions\":[\"cruel\"]},{\"simplified\":\"残留\",\"traditional\":\"殘留\",\"pinyin\":\"cánliú\",\"definitions\":[\"to remain\",\"be left over\",\"surplus\",\"remnant\"]},{\"simplified\":\"残忍\",\"traditional\":\"殘忍\",\"pinyin\":\"cánrěn\",\"definitions\":[\"brutal\",\"bloody\",\"merciless\"]},{\"simplified\":\"灿烂\",\"traditional\":\"燦爛\",\"pinyin\":\"cànlàn\",\"definitions\":[\"to glitter\",\"brilliant\",\"splendid\"]},{\"simplified\":\"仓促\",\"traditional\":\"倉促\",\"pinyin\":\"cāngcù\",\"definitions\":[\"hurried\"]},{\"simplified\":\"仓库\",\"traditional\":\"倉庫\",\"pinyin\":\"cāngkù\",\"definitions\":[\"depot\",\"storehouse\",\"warehouse\"]},{\"simplified\":\"苍白\",\"traditional\":\"蒼白\",\"pinyin\":\"cāngbái\",\"definitions\":[\"pale\",\"wan\",\"pallid\"]},{\"simplified\":\"舱\",\"traditional\":\"艙\",\"pinyin\":\"cāng\",\"definitions\":[\"cabin\",\"hold (of a ship or airplane)\"]},{\"simplified\":\"操劳\",\"traditional\":\"操勞\",\"pinyin\":\"cāoláo\",\"definitions\":[\"work hard\",\"look after\"]},{\"simplified\":\"操练\",\"traditional\":\"操練\",\"pinyin\":\"cāoliàn\",\"definitions\":[\"to drill\",\"to practice\"]},{\"simplified\":\"操纵\",\"traditional\":\"操縱\",\"pinyin\":\"cāozòng\",\"definitions\":[\"operate\",\"control\",\"manipulation\"]},{\"simplified\":\"操作\",\"traditional\":\"操作\",\"pinyin\":\"cāozuò\",\"definitions\":[\"operate\",\"manipulate\"]},{\"simplified\":\"嘈杂\",\"traditional\":\"嘈雜\",\"pinyin\":\"cáozá\",\"definitions\":[\"noisy\",\"raucous\"]},{\"simplified\":\"草案\",\"traditional\":\"草案\",\"pinyin\":\"cǎo'àn\",\"definitions\":[\"draft (legislation, proposal, etc.)\"]},{\"simplified\":\"草率\",\"traditional\":\"草率\",\"pinyin\":\"cǎoshuài\",\"definitions\":[\"cursory\",\"careless\",\"negligent\",\"sloppy\",\"not serious\"]},{\"simplified\":\"侧面\",\"traditional\":\"側面\",\"pinyin\":\"cèmiàn\",\"definitions\":[\"side\",\"profile\",\"flank\",\"face in profile\"]},{\"simplified\":\"测量\",\"traditional\":\"測量\",\"pinyin\":\"cèliáng\",\"definitions\":[\"to survey\",\"to measure\"]},{\"simplified\":\"策划\",\"traditional\":\"策劃\",\"pinyin\":\"cèhuà\",\"definitions\":[\"plot\",\"scheme\",\"bring about\"]},{\"simplified\":\"策略\",\"traditional\":\"策略\",\"pinyin\":\"cèlüè\",\"definitions\":[\"tactics\",\"plot\"]},{\"simplified\":\"层出不穷\",\"traditional\":\"層出不窮\",\"pinyin\":\"céng chū bù qióng\",\"definitions\":[\"(idiom) emerge more and more\",\"innumerable succession\",\"breeding like flies\"]},{\"simplified\":\"层次\",\"traditional\":\"層次\",\"pinyin\":\"céngcì\",\"definitions\":[\"level\",\"rank order\",\"standing\",\"layer\"]},{\"simplified\":\"差别\",\"traditional\":\"差別\",\"pinyin\":\"chābié\",\"definitions\":[\"difference\",\"disparity\"]},{\"simplified\":\"插座\",\"traditional\":\"插座\",\"pinyin\":\"chāzuò\",\"definitions\":[\"power socket\"]},{\"simplified\":\"查获\",\"traditional\":\"查獲\",\"pinyin\":\"cháhuò\",\"definitions\":[\"investigate and capture a criminal\",\"discover\"]},{\"simplified\":\"岔\",\"traditional\":\"岔\",\"pinyin\":\"chà\",\"definitions\":[\"fork in the road\",\"turn off\",\"diverge\"]},{\"simplified\":\"刹那\",\"traditional\":\"刹那\",\"pinyin\":\"chànà\",\"definitions\":[\"an instant (Sanskrit: ksana)\",\"split second\"]},{\"simplified\":\"诧异\",\"traditional\":\"詫異\",\"pinyin\":\"chàyì\",\"definitions\":[\"flabbergasted\",\"astonished\"]},{\"simplified\":\"柴油\",\"traditional\":\"柴油\",\"pinyin\":\"cháiyóu\",\"definitions\":[\"diesel fuel\",\"kerosene\"]},{\"simplified\":\"搀\",\"traditional\":\"攙\",\"pinyin\":\"chān\",\"definitions\":[\"assist by the arm\",\"mix\",\"support\",\"sustain\"]},{\"simplified\":\"馋\",\"traditional\":\"饞\",\"pinyin\":\"chán\",\"definitions\":[\"gluttonous\",\"greedy\"]},{\"simplified\":\"缠绕\",\"traditional\":\"纏繞\",\"pinyin\":\"chánrào\",\"definitions\":[\"bind\",\"wind\",\"twirl\",\"twist\",\"intertwine\"]},{\"simplified\":\"产业\",\"traditional\":\"産業\",\"pinyin\":\"chǎnyè\",\"definitions\":[\"industry\",\"estate\",\"property\"]},{\"simplified\":\"阐述\",\"traditional\":\"闡述\",\"pinyin\":\"chǎnshù\",\"definitions\":[\"expound (a position)\",\"elaborate (on a topic)\"]},{\"simplified\":\"颤抖\",\"traditional\":\"顫抖\",\"pinyin\":\"chàndǒu\",\"definitions\":[\"tremble\",\"to shiver\",\"to shake\"]},{\"simplified\":\"昌盛\",\"traditional\":\"昌盛\",\"pinyin\":\"chāngshèng\",\"definitions\":[\"prosperous\"]},{\"simplified\":\"尝试\",\"traditional\":\"嘗試\",\"pinyin\":\"chángshì\",\"definitions\":[\"to try\",\"attempt\"]},{\"simplified\":\"偿还\",\"traditional\":\"償還\",\"pinyin\":\"chánghuán\",\"definitions\":[\"repay\",\"reimburse\"]},{\"simplified\":\"场合\",\"traditional\":\"場合\",\"pinyin\":\"chǎnghé\",\"definitions\":[\"occasion\",\"situation\"]},{\"simplified\":\"场面\",\"traditional\":\"場面\",\"pinyin\":\"chǎngmiàn\",\"definitions\":[\"scene\",\"occasion\"]},{\"simplified\":\"场所\",\"traditional\":\"場所\",\"pinyin\":\"chǎngsuǒ\",\"definitions\":[\"location\",\"place\"]},{\"simplified\":\"敞开\",\"traditional\":\"敞開\",\"pinyin\":\"chǎngkāi\",\"definitions\":[\"open wide\"]},{\"simplified\":\"畅通\",\"traditional\":\"暢通\",\"pinyin\":\"chàngtōng\",\"definitions\":[\"unimpeded\",\"unclogged\",\"free-flowing\",\"straight path\",\"to expedite\"]},{\"simplified\":\"畅销\",\"traditional\":\"暢銷\",\"pinyin\":\"chàngxiāo\",\"definitions\":[\"best seller\",\"chart-topping\",\"very marketable\"]},{\"simplified\":\"倡导\",\"traditional\":\"倡導\",\"pinyin\":\"chàngdǎo\",\"definitions\":[\"to advocate\",\"propose\"]},{\"simplified\":\"倡议\",\"traditional\":\"倡議\",\"pinyin\":\"chàngyì\",\"definitions\":[\"suggest\",\"propose\"]},{\"simplified\":\"钞票\",\"traditional\":\"鈔票\",\"pinyin\":\"chāopiào\",\"definitions\":[\"paper money\",\"bill\"]},{\"simplified\":\"超越\",\"traditional\":\"超越\",\"pinyin\":\"chāoyuè\",\"definitions\":[\"surpass\",\"exceed\",\"transcend\"]},{\"simplified\":\"巢穴\",\"traditional\":\"巢穴\",\"pinyin\":\"cháoxué\",\"definitions\":[\"lair\",\"nest\",\"den\",\"hideout\"]},{\"simplified\":\"朝代\",\"traditional\":\"朝代\",\"pinyin\":\"cháodài\",\"definitions\":[\"dynasty\",\"reign (of a king)\"]},{\"simplified\":\"嘲笑\",\"traditional\":\"嘲笑\",\"pinyin\":\"cháoxiào\",\"definitions\":[\"jeer\",\"mock\",\"scoff\"]},{\"simplified\":\"潮流\",\"traditional\":\"潮流\",\"pinyin\":\"cháoliú\",\"definitions\":[\"tide\",\"current\",\"trend\"]},{\"simplified\":\"撤退\",\"traditional\":\"撤退\",\"pinyin\":\"chètuì\",\"definitions\":[\"retreat\"]},{\"simplified\":\"撤销\",\"traditional\":\"撤銷\",\"pinyin\":\"chèxiāo\",\"definitions\":[\"repeal\"]},{\"simplified\":\"沉淀\",\"traditional\":\"沈澱\",\"pinyin\":\"chéndiàn\",\"definitions\":[\"to precipitate (solid sediment out of a solution)\",\"to settle\"]},{\"simplified\":\"沉闷\",\"traditional\":\"沈悶\",\"pinyin\":\"chénmèn\",\"definitions\":[\"oppressive (of weather)\",\"heavy\",\"depressed\",\"not happy\"]},{\"simplified\":\"沉思\",\"traditional\":\"沈思\",\"pinyin\":\"chénsī\",\"definitions\":[\"ponder\",\"contemplate\",\"meditation\"]},{\"simplified\":\"沉重\",\"traditional\":\"沈重\",\"pinyin\":\"chénzhòng\",\"definitions\":[\"heavy\",\"hard\",\"serious\"]},{\"simplified\":\"沉着\",\"traditional\":\"沈著\",\"pinyin\":\"chénzhuó\",\"definitions\":[\"calm and collected\",\"not nervous\"]},{\"simplified\":\"陈旧\",\"traditional\":\"陳舊\",\"pinyin\":\"chénjiù\",\"definitions\":[\"old fashioned\",\"outmoded\",\"obsolete\"]},{\"simplified\":\"陈列\",\"traditional\":\"陳列\",\"pinyin\":\"chénliè\",\"definitions\":[\"to display\",\"to exhibit\"]},{\"simplified\":\"陈述\",\"traditional\":\"陳述\",\"pinyin\":\"chénshù\",\"definitions\":[\"allegation\",\"assertation\",\"to declare\",\"to state\"]},{\"simplified\":\"衬托\",\"traditional\":\"襯托\",\"pinyin\":\"chèntuō\",\"definitions\":[\"to set off\",\"serve as a foil to\"]},{\"simplified\":\"称心如意\",\"traditional\":\"稱心如意\",\"pinyin\":\"chènxīnrúyì\",\"definitions\":[\"find sth. satisfactory\"]},{\"simplified\":\"称号\",\"traditional\":\"稱號\",\"pinyin\":\"chēnghào\",\"definitions\":[\"title\",\"term of address\"]},{\"simplified\":\"成本\",\"traditional\":\"成本\",\"pinyin\":\"chéngběn\",\"definitions\":[\"cost (manufacturing, production, etc.)\"]},{\"simplified\":\"成交\",\"traditional\":\"成交\",\"pinyin\":\"chéngjiāo\",\"definitions\":[\"complete a contract\",\"clinch a deal\",\"to seal\"]},{\"simplified\":\"成天\",\"traditional\":\"成天\",\"pinyin\":\"chéngtiān\",\"definitions\":[\"all day long\",\"all the time\"]},{\"simplified\":\"成效\",\"traditional\":\"成效\",\"pinyin\":\"chéngxiào\",\"definitions\":[\"effect\",\"result\"]},{\"simplified\":\"成心\",\"traditional\":\"成心\",\"pinyin\":\"chéngxīn\",\"definitions\":[\"intentional\",\"deliberate\",\"with prior intent\"]},{\"simplified\":\"成员\",\"traditional\":\"成員\",\"pinyin\":\"chéngyuán\",\"definitions\":[\"member\"]},{\"simplified\":\"呈现\",\"traditional\":\"呈現\",\"pinyin\":\"chéngxiàn\",\"definitions\":[\"appear\",\"emerge\",\"present (a certain appearance)\"]},{\"simplified\":\"诚挚\",\"traditional\":\"誠摯\",\"pinyin\":\"chéngzhì\",\"definitions\":[\"sincere\",\"cordial\",\"earnest\"]},{\"simplified\":\"承办\",\"traditional\":\"承辦\",\"pinyin\":\"chéngbàn\",\"definitions\":[\"undertake\",\"accept an assignment\"]},{\"simplified\":\"承包\",\"traditional\":\"承包\",\"pinyin\":\"chéngbāo\",\"definitions\":[\"to contract (to undertake a job)\"]},{\"simplified\":\"承诺\",\"traditional\":\"承諾\",\"pinyin\":\"chéngnuò\",\"definitions\":[\"to promise\"]},{\"simplified\":\"城堡\",\"traditional\":\"城堡\",\"pinyin\":\"chéngbǎo\",\"definitions\":[\"castle\"]},{\"simplified\":\"乘\",\"traditional\":\"乘\",\"pinyin\":\"chéng\",\"definitions\":[\"to ride\",\"to mount\",\"make use of\",\"multiply\"]},{\"simplified\":\"盛\",\"traditional\":\"盛\",\"pinyin\":\"chéng, shèng\",\"definitions\":[\"contain\",\"to ladle\",\"to fill | flourishing\",\"grand\",\"abundant\"]},{\"simplified\":\"惩罚\",\"traditional\":\"懲罰\",\"pinyin\":\"chéngfá\",\"definitions\":[\"penalty\",\"punishment\",\"to punish\",\"to penalize\"]},{\"simplified\":\"澄清\",\"traditional\":\"澄清\",\"pinyin\":\"chéngqīng\",\"definitions\":[\"(of liquid) settle\",\"become clear\",\"(Chem.) precipitate\"]},{\"simplified\":\"橙\",\"traditional\":\"橙\",\"pinyin\":\"chéng\",\"definitions\":[\"orange (color)\",\"orange (fruit, tree)\"]},{\"simplified\":\"秤\",\"traditional\":\"秤\",\"pinyin\":\"chèng\",\"definitions\":[\"balance\",\"scale\",\"steelyard\"]},{\"simplified\":\"吃苦\",\"traditional\":\"吃苦\",\"pinyin\":\"chī kǔ\",\"definitions\":[\"bear hardships\",\"suffer\"]},{\"simplified\":\"吃力\",\"traditional\":\"吃力\",\"pinyin\":\"chīlì\",\"definitions\":[\"strenuous\",\"exhausted\"]},{\"simplified\":\"迟钝\",\"traditional\":\"遲鈍\",\"pinyin\":\"chídùn\",\"definitions\":[\"slow (witted)\",\"stupid\",\"dull\"]},{\"simplified\":\"迟缓\",\"traditional\":\"遲緩\",\"pinyin\":\"chíhuǎn\",\"definitions\":[\"slow\",\"sluggish\"]},{\"simplified\":\"迟疑\",\"traditional\":\"遲疑\",\"pinyin\":\"chíyí\",\"definitions\":[\"hesitate\"]},{\"simplified\":\"持久\",\"traditional\":\"持久\",\"pinyin\":\"chíjiǔ\",\"definitions\":[\"duration\",\"enduring\",\"lasting\",\"persistent\"]},{\"simplified\":\"赤道\",\"traditional\":\"赤道\",\"pinyin\":\"chìdào\",\"definitions\":[\"the equator\"]},{\"simplified\":\"赤字\",\"traditional\":\"赤字\",\"pinyin\":\"chìzì\",\"definitions\":[\"(financial) deficit\",\"red ink\"]},{\"simplified\":\"冲动\",\"traditional\":\"沖動\",\"pinyin\":\"chōngdòng\",\"definitions\":[\"impulsive\",\"act on impulse\"]},{\"simplified\":\"冲击\",\"traditional\":\"沖擊\",\"pinyin\":\"chōngjī\",\"definitions\":[\"attack\",\"impact\",\"a shock\"]},{\"simplified\":\"冲突\",\"traditional\":\"沖突\",\"pinyin\":\"chōngtū\",\"definitions\":[\"conflict\",\"clash\"]},{\"simplified\":\"充当\",\"traditional\":\"充當\",\"pinyin\":\"chōngdāng\",\"definitions\":[\"serve as\",\"play the part of\"]},{\"simplified\":\"充沛\",\"traditional\":\"充沛\",\"pinyin\":\"chōngpèi\",\"definitions\":[\"abundant\",\"plentiful\",\"vigorous\"]},{\"simplified\":\"充实\",\"traditional\":\"充實\",\"pinyin\":\"chōngshí\",\"definitions\":[\"substantial\",\"rich\",\"enrich\",\"substantiate\"]},{\"simplified\":\"充足\",\"traditional\":\"充足\",\"pinyin\":\"chōngzú\",\"definitions\":[\"adequate\",\"sufficient\",\"abundant\"]},{\"simplified\":\"重叠\",\"traditional\":\"重疊\",\"pinyin\":\"chóngdié\",\"definitions\":[\"to overlap\"]},{\"simplified\":\"崇拜\",\"traditional\":\"崇拜\",\"pinyin\":\"chóngbài\",\"definitions\":[\"worship\",\"adore\"]},{\"simplified\":\"崇高\",\"traditional\":\"崇高\",\"pinyin\":\"chónggāo\",\"definitions\":[\"lofty\",\"sublime\"]},{\"simplified\":\"崇敬\",\"traditional\":\"崇敬\",\"pinyin\":\"chóngjìng\",\"definitions\":[\"revere\",\"admire\",\"veneration\"]},{\"simplified\":\"稠密\",\"traditional\":\"稠密\",\"pinyin\":\"chóumì\",\"definitions\":[\"dense\",\"thick\"]},{\"simplified\":\"筹备\",\"traditional\":\"籌備\",\"pinyin\":\"chóubèi\",\"definitions\":[\"make preparations\",\"get ready for something\"]},{\"simplified\":\"丑恶\",\"traditional\":\"醜惡\",\"pinyin\":\"chǒu'è\",\"definitions\":[\"ugly\",\"repulsive\",\"odiousness\"]},{\"simplified\":\"出路\",\"traditional\":\"出路\",\"pinyin\":\"chūlù\",\"definitions\":[\"a way out\",\"outlet\"]},{\"simplified\":\"出卖\",\"traditional\":\"出賣\",\"pinyin\":\"chūmài\",\"definitions\":[\"sell\",\"betray\",\"sell out\"]},{\"simplified\":\"出身\",\"traditional\":\"出身\",\"pinyin\":\"chūshēn\",\"definitions\":[\"family background\",\"class origin\"]},{\"simplified\":\"出神\",\"traditional\":\"出神\",\"pinyin\":\"chū shén\",\"definitions\":[\"be lost in thought\",\"entranced\",\"preoccupation\",\"Trance (music genre)\"]},{\"simplified\":\"出息\",\"traditional\":\"出息\",\"pinyin\":\"chūxi\",\"definitions\":[\"future prospects\",\"aspiration\",\"promise\"]},{\"simplified\":\"初步\",\"traditional\":\"初步\",\"pinyin\":\"chūbù\",\"definitions\":[\"initial\",\"preliminary\",\"tentative\"]},{\"simplified\":\"除\",\"traditional\":\"除\",\"pinyin\":\"chú\",\"definitions\":[\"besides\",\"except\",\"remove\",\"to divide (mathematics)\"]},{\"simplified\":\"处分\",\"traditional\":\"處分\",\"pinyin\":\"chǔfèn\",\"definitions\":[\"punish\",\"punishment\",\"discipline\",\"disposal\"]},{\"simplified\":\"处境\",\"traditional\":\"處境\",\"pinyin\":\"chǔjìng\",\"definitions\":[\"plight\",\"unfavorable situation\"]},{\"simplified\":\"处置\",\"traditional\":\"處置\",\"pinyin\":\"chǔzhì\",\"definitions\":[\"to handle\",\"take care of\",\"punish\"]},{\"simplified\":\"储备\",\"traditional\":\"儲備\",\"pinyin\":\"chǔbèi\",\"definitions\":[\"reserves\",\"store up\"]},{\"simplified\":\"储存\",\"traditional\":\"儲存\",\"pinyin\":\"chǔcún\",\"definitions\":[\"stockpile\",\"to store\"]},{\"simplified\":\"储蓄\",\"traditional\":\"儲蓄\",\"pinyin\":\"chǔxù\",\"definitions\":[\"to save\",\"to deposit\"]},{\"simplified\":\"触犯\",\"traditional\":\"觸犯\",\"pinyin\":\"chùfàn\",\"definitions\":[\"offend\",\"violate\"]},{\"simplified\":\"川流不息\",\"traditional\":\"川流不息\",\"pinyin\":\"chuān liú bù xī\",\"definitions\":[\"(saying) flowing of an endless stream\"]},{\"simplified\":\"穿越\",\"traditional\":\"穿越\",\"pinyin\":\"chuānyuè\",\"definitions\":[\"pass through\",\"cut across\"]},{\"simplified\":\"传达\",\"traditional\":\"傳達\",\"pinyin\":\"chuándá\",\"definitions\":[\"convey\",\"transmit\",\"communicate\"]},{\"simplified\":\"传单\",\"traditional\":\"傳單\",\"pinyin\":\"chuándān\",\"definitions\":[\"leaflet\",\"flier\",\"pamphlet\"]},{\"simplified\":\"传授\",\"traditional\":\"傳授\",\"pinyin\":\"chuánshòu\",\"definitions\":[\"impart\",\"pass on\",\"teach\"]},{\"simplified\":\"船舶\",\"traditional\":\"船舶\",\"pinyin\":\"chuánbó\",\"definitions\":[\"ships\",\"boats\",\"watercraft\"]},{\"simplified\":\"喘气\",\"traditional\":\"喘氣\",\"pinyin\":\"chuǎnqì\",\"definitions\":[\"to pant\",\"gasp for breath\"]},{\"simplified\":\"串\",\"traditional\":\"串\",\"pinyin\":\"chuàn\",\"definitions\":[\"string together\",\"conspire\",\"gang up\",\"mix up\",\"bunch\"]},{\"simplified\":\"床单\",\"traditional\":\"床單\",\"pinyin\":\"chuángdān\",\"definitions\":[\"bed sheet\"]},{\"simplified\":\"创立\",\"traditional\":\"創立\",\"pinyin\":\"chuànglì\",\"definitions\":[\"to found\",\"establish\"]},{\"simplified\":\"创新\",\"traditional\":\"創新\",\"pinyin\":\"chuàngxīn\",\"definitions\":[\"innovate\",\"innovation\"]},{\"simplified\":\"创业\",\"traditional\":\"創業\",\"pinyin\":\"chuàngyè\",\"definitions\":[\"begin an undertaking\",\"start a major task\",\"start a company\"]},{\"simplified\":\"创作\",\"traditional\":\"創作\",\"pinyin\":\"chuàngzuò\",\"definitions\":[\"create\",\"to produce\",\"creative work\"]},{\"simplified\":\"吹牛\",\"traditional\":\"吹牛\",\"pinyin\":\"chuī niú\",\"definitions\":[\"to brag\",\"(regional) to chat\"]},{\"simplified\":\"吹捧\",\"traditional\":\"吹捧\",\"pinyin\":\"chuīpěng\",\"definitions\":[\"flatter sb.\",\"extol sb.'s accomplishments\"]},{\"simplified\":\"炊烟\",\"traditional\":\"炊煙\",\"pinyin\":\"chuīyān\",\"definitions\":[\"smoke from kitchen chimneys\"]},{\"simplified\":\"垂直\",\"traditional\":\"垂直\",\"pinyin\":\"chuízhí\",\"definitions\":[\"perpendicular\",\"vertical\"]},{\"simplified\":\"锤\",\"traditional\":\"錘\",\"pinyin\":\"chuí\",\"definitions\":[\"hammer\",\"weight\"]},{\"simplified\":\"纯粹\",\"traditional\":\"純粹\",\"pinyin\":\"chúncuì\",\"definitions\":[\"purely\",\"pure\"]},{\"simplified\":\"纯洁\",\"traditional\":\"純潔\",\"pinyin\":\"chúnjié\",\"definitions\":[\"pure\",\"unadulterated\",\"cleanse\"]},{\"simplified\":\"慈善\",\"traditional\":\"慈善\",\"pinyin\":\"císhàn\",\"definitions\":[\"philanthropic\",\"benevolent\",\"charitable\"]},{\"simplified\":\"慈祥\",\"traditional\":\"慈祥\",\"pinyin\":\"cíxiáng\",\"definitions\":[\"a kindly person\",\"benevolent (often of older people)\"]},{\"simplified\":\"磁带\",\"traditional\":\"磁帶\",\"pinyin\":\"cídài\",\"definitions\":[\"cassette tape\"]},{\"simplified\":\"雌雄\",\"traditional\":\"雌雄\",\"pinyin\":\"cíxióng\",\"definitions\":[\"male and female\",\"winners and losers\"]},{\"simplified\":\"次品\",\"traditional\":\"次品\",\"pinyin\":\"cìpǐn\",\"definitions\":[\"defective or substandard products\"]},{\"simplified\":\"次序\",\"traditional\":\"次序\",\"pinyin\":\"cìxù\",\"definitions\":[\"sequence\",\"order\"]},{\"simplified\":\"伺候\",\"traditional\":\"伺候\",\"pinyin\":\"cìhou\",\"definitions\":[\"serve\",\"wait upon\",\"act as a valet\"]},{\"simplified\":\"刺\",\"traditional\":\"刺\",\"pinyin\":\"cì\",\"definitions\":[\"thorn\",\"to sting\",\"to prick\",\"pierce\",\"stab\"]},{\"simplified\":\"从容\",\"traditional\":\"從容\",\"pinyin\":\"cóngróng\",\"definitions\":[\"leisurely\",\"calm\"]},{\"simplified\":\"丛\",\"traditional\":\"叢\",\"pinyin\":\"cóng\",\"definitions\":[\"crowd together\",\"thicket\",\"collection\"]},{\"simplified\":\"凑合\",\"traditional\":\"湊合\",\"pinyin\":\"còuhe\",\"definitions\":[\"bring together\",\"make do in a bad situation\",\"improvise\"]},{\"simplified\":\"粗鲁\",\"traditional\":\"粗魯\",\"pinyin\":\"cūlǔ\",\"definitions\":[\"crude\",\"coarse\",\"rough\",\"language\"]},{\"simplified\":\"窜\",\"traditional\":\"竄\",\"pinyin\":\"cuàn\",\"definitions\":[\"to flee\",\"to escape\",\"run away\"]},{\"simplified\":\"摧残\",\"traditional\":\"摧殘\",\"pinyin\":\"cuīcán\",\"definitions\":[\"to ruin\",\"devastate\",\"vandalize\"]},{\"simplified\":\"脆弱\",\"traditional\":\"脆弱\",\"pinyin\":\"cuìruò\",\"definitions\":[\"weak\",\"fragile\",\"flimsy\",\"frail\"]},{\"simplified\":\"搓\",\"traditional\":\"搓\",\"pinyin\":\"cuō\",\"definitions\":[\"rub or roll between the hands or fingers\",\"to twist\"]},{\"simplified\":\"磋商\",\"traditional\":\"磋商\",\"pinyin\":\"cuōshāng\",\"definitions\":[\"discuss seriously\",\"consult\",\"negotiate\"]},{\"simplified\":\"挫折\",\"traditional\":\"挫折\",\"pinyin\":\"cuòzhé\",\"definitions\":[\"setback\",\"defeat\",\"frustration\"]},{\"simplified\":\"搭\",\"traditional\":\"搭\",\"pinyin\":\"dā\",\"definitions\":[\"to erect\",\"to build\",\"travel by (car, plane, etc.)\",\"to hang\",\"to join\"]},{\"simplified\":\"搭档\",\"traditional\":\"搭檔\",\"pinyin\":\"dādàng\",\"definitions\":[\"team up\",\"cooperate\",\"work together\"]},{\"simplified\":\"搭配\",\"traditional\":\"搭配\",\"pinyin\":\"dāpèi\",\"definitions\":[\"pair up\",\"arrange in pairs\",\"to add sth. into a group\",\"to suit\"]},{\"simplified\":\"达成\",\"traditional\":\"達成\",\"pinyin\":\"dá chéng\",\"definitions\":[\"to reach (an agreement)\",\"achieve\"]},{\"simplified\":\"答辩\",\"traditional\":\"答辯\",\"pinyin\":\"dábiàn\",\"definitions\":[\"reply (to an accusation)\"]},{\"simplified\":\"答复\",\"traditional\":\"答複\",\"pinyin\":\"dáfù\",\"definitions\":[\"to answer\",\"to reply\"]},{\"simplified\":\"打包\",\"traditional\":\"打包\",\"pinyin\":\"dǎbāo\",\"definitions\":[\"get a doggy bag (at a restaurant)\",\"pack up\"]},{\"simplified\":\"打官司\",\"traditional\":\"打官司\",\"pinyin\":\"dǎ guānsi\",\"definitions\":[\"go to court\"]},{\"simplified\":\"打击\",\"traditional\":\"打擊\",\"pinyin\":\"dǎjī\",\"definitions\":[\"to strike\",\"to hit\",\"to attack\"]},{\"simplified\":\"打架\",\"traditional\":\"打架\",\"pinyin\":\"dǎ jià\",\"definitions\":[\"to fight\",\"scuffle\",\"to come to blows\"]},{\"simplified\":\"打量\",\"traditional\":\"打量\",\"pinyin\":\"dǎliang\",\"definitions\":[\"take measure of\",\"size up\"]},{\"simplified\":\"打猎\",\"traditional\":\"打獵\",\"pinyin\":\"dǎ liè\",\"definitions\":[\"hunt\",\"to go hunting\"]},{\"simplified\":\"打仗\",\"traditional\":\"打仗\",\"pinyin\":\"dǎzhàng\",\"definitions\":[\"fight\",\"go to war\",\"fight a battle\"]},{\"simplified\":\"大不了\",\"traditional\":\"大不了\",\"pinyin\":\"dàbuliǎo\",\"definitions\":[\"at the worst\",\"if worst comes to worst\",\"serious, alarming\"]},{\"simplified\":\"大臣\",\"traditional\":\"大臣\",\"pinyin\":\"dàchén\",\"definitions\":[\"chancellor\"]},{\"simplified\":\"大伙儿\",\"traditional\":\"大夥兒\",\"pinyin\":\"dàhuǒr\",\"definitions\":[\"everyone\"]},{\"simplified\":\"大肆\",\"traditional\":\"大肆\",\"pinyin\":\"dàsì\",\"definitions\":[\"wantonly\",\"without any constraint\"]},{\"simplified\":\"大体\",\"traditional\":\"大體\",\"pinyin\":\"dàtǐ\",\"definitions\":[\"in general\",\"more or less\",\"on the whole\"]},{\"simplified\":\"大意\",\"traditional\":\"大意\",\"pinyin\":\"dàyì\",\"definitions\":[\"main idea\",\"general idea\",\"gist\"]},{\"simplified\":\"大致\",\"traditional\":\"大致\",\"pinyin\":\"dàzhì\",\"definitions\":[\"more or less\",\"roughly\",\"approximately\"]},{\"simplified\":\"歹徒\",\"traditional\":\"歹徒\",\"pinyin\":\"dǎitú\",\"definitions\":[\"evil person who commits crimes\",\"villain\",\"gangster\"]},{\"simplified\":\"代价\",\"traditional\":\"代價\",\"pinyin\":\"dàijià\",\"definitions\":[\"price\",\"cost\",\"expense\"]},{\"simplified\":\"代理\",\"traditional\":\"代理\",\"pinyin\":\"dàilǐ\",\"definitions\":[\"acting (temporarily filling a position)\",\"agent\"]},{\"simplified\":\"带领\",\"traditional\":\"帶領\",\"pinyin\":\"dàilǐng\",\"definitions\":[\"to guide\",\"to lead\"]},{\"simplified\":\"怠慢\",\"traditional\":\"怠慢\",\"pinyin\":\"dàimàn\",\"definitions\":[\"to slight\",\"give somebody a cold shoulder\",\"treat somebody in a cold manner\"]},{\"simplified\":\"逮捕\",\"traditional\":\"逮捕\",\"pinyin\":\"dàibǔ\",\"definitions\":[\"to arrest\",\"to capture\"]},{\"simplified\":\"担保\",\"traditional\":\"擔保\",\"pinyin\":\"dānbǎo\",\"definitions\":[\"guarantee\",\"vouch for\"]},{\"simplified\":\"胆怯\",\"traditional\":\"膽怯\",\"pinyin\":\"dǎnqiè\",\"definitions\":[\"timid\",\"coward\"]},{\"simplified\":\"诞辰\",\"traditional\":\"誕辰\",\"pinyin\":\"dànchén\",\"definitions\":[\"birthday\"]},{\"simplified\":\"诞生\",\"traditional\":\"誕生\",\"pinyin\":\"dànshēng\",\"definitions\":[\"be born\",\"come into being\"]},{\"simplified\":\"淡季\",\"traditional\":\"淡季\",\"pinyin\":\"dànjì\",\"definitions\":[\"off season\",\"slow business season\"]},{\"simplified\":\"淡水\",\"traditional\":\"淡水\",\"pinyin\":\"dànshuǐ\",\"definitions\":[\"fresh water\",\"potable water (water with low salt content)\"]},{\"simplified\":\"蛋白质\",\"traditional\":\"蛋白質\",\"pinyin\":\"dànbáizhì\",\"definitions\":[\"protein\"]},{\"simplified\":\"当场\",\"traditional\":\"當場\",\"pinyin\":\"dāngchǎng\",\"definitions\":[\"at the scene\",\"on the spot\"]},{\"simplified\":\"当初\",\"traditional\":\"當初\",\"pinyin\":\"dāngchū\",\"definitions\":[\"at that time\",\"at the outset\",\"originally\"]},{\"simplified\":\"当代\",\"traditional\":\"當代\",\"pinyin\":\"dāngdài\",\"definitions\":[\"present day\",\"contemporary\"]},{\"simplified\":\"当面\",\"traditional\":\"當面\",\"pinyin\":\"dāng miàn\",\"definitions\":[\"to sb.'s face\",\"in sb.'s presence\"]},{\"simplified\":\"当前\",\"traditional\":\"當前\",\"pinyin\":\"dāngqián\",\"definitions\":[\"current\",\"modern\",\"present\"]},{\"simplified\":\"当事人\",\"traditional\":\"當事人\",\"pinyin\":\"dāngshìrén\",\"definitions\":[\"persons involved or implicated\",\"party (to an affair)\"]},{\"simplified\":\"当务之急\",\"traditional\":\"當務之急\",\"pinyin\":\"dāngwùzhījí\",\"definitions\":[\"the most pressing matter of the moment\",\"a top priority task\",\"urgent matter\"]},{\"simplified\":\"当选\",\"traditional\":\"當選\",\"pinyin\":\"dāngxuǎn\",\"definitions\":[\"be elected\"]},{\"simplified\":\"党\",\"traditional\":\"黨\",\"pinyin\":\"dǎng\",\"definitions\":[\"party\",\"club\",\"association\"]},{\"simplified\":\"档案\",\"traditional\":\"檔案\",\"pinyin\":\"dàng'àn\",\"definitions\":[\"file\",\"record\",\"archive\"]},{\"simplified\":\"档次\",\"traditional\":\"檔次\",\"pinyin\":\"dàngcì\",\"definitions\":[\"grade\",\"quality\",\"class\",\"level\"]},{\"simplified\":\"导弹\",\"traditional\":\"導彈\",\"pinyin\":\"dǎodàn\",\"definitions\":[\"guided missile\",\"cruise missile\"]},{\"simplified\":\"导航\",\"traditional\":\"導航\",\"pinyin\":\"dǎoháng\",\"definitions\":[\"navigation\"]},{\"simplified\":\"导向\",\"traditional\":\"導向\",\"pinyin\":\"dǎoxiàng\",\"definitions\":[\"guidance\",\"lead to\",\"direct something towards\"]},{\"simplified\":\"捣乱\",\"traditional\":\"搗亂\",\"pinyin\":\"dǎo luàn\",\"definitions\":[\"cause a disturbance\",\"look for trouble\"]},{\"simplified\":\"倒闭\",\"traditional\":\"倒閉\",\"pinyin\":\"dǎobì\",\"definitions\":[\"go bankrupt\",\"close down\"]},{\"simplified\":\"盗窃\",\"traditional\":\"盜竊\",\"pinyin\":\"dàoqiè\",\"definitions\":[\"steal\",\"pilfer\"]},{\"simplified\":\"稻谷\",\"traditional\":\"稻谷\",\"pinyin\":\"dàogǔ\",\"definitions\":[\"rice crops/paddy\"]},{\"simplified\":\"得不偿失\",\"traditional\":\"得不償失\",\"pinyin\":\"dé bù cháng shī\",\"definitions\":[\"the gains do not outweigh the losses\"]},{\"simplified\":\"得力\",\"traditional\":\"得力\",\"pinyin\":\"délì\",\"definitions\":[\"able\",\"competent\"]},{\"simplified\":\"得天独厚\",\"traditional\":\"得天獨厚\",\"pinyin\":\"détiāndúhòu\",\"definitions\":[\"enjoy exceptional advantages\",\"richly endowed by nature\"]},{\"simplified\":\"得罪\",\"traditional\":\"得罪\",\"pinyin\":\"dézuì\",\"definitions\":[\"offend\",\"a faux pas\"]},{\"simplified\":\"灯笼\",\"traditional\":\"燈籠\",\"pinyin\":\"dēnglong\",\"definitions\":[\"lantern\"]},{\"simplified\":\"登陆\",\"traditional\":\"登陸\",\"pinyin\":\"dēnglù\",\"definitions\":[\"to land\",\"come ashore\",\"sign/log in\"]},{\"simplified\":\"登录\",\"traditional\":\"登錄\",\"pinyin\":\"dēnglù\",\"definitions\":[\"sign-in\"]},{\"simplified\":\"蹬\",\"traditional\":\"蹬\",\"pinyin\":\"dēng\",\"definitions\":[\"press down with the foot\",\"step back or into something\"]},{\"simplified\":\"等候\",\"traditional\":\"等候\",\"pinyin\":\"děnghòu\",\"definitions\":[\"wait\",\"queue\"]},{\"simplified\":\"等级\",\"traditional\":\"等級\",\"pinyin\":\"děngjí\",\"definitions\":[\"degree\",\"rate\"]},{\"simplified\":\"瞪\",\"traditional\":\"瞪\",\"pinyin\":\"dèng\",\"definitions\":[\"stare at\",\"to glower\"]},{\"simplified\":\"堤坝\",\"traditional\":\"堤壩\",\"pinyin\":\"dībà\",\"definitions\":[\"dam\",\"dyke\"]},{\"simplified\":\"敌视\",\"traditional\":\"敵視\",\"pinyin\":\"díshì\",\"definitions\":[\"be hostile\",\"adopt a negative attitude towards\"]},{\"simplified\":\"抵达\",\"traditional\":\"抵達\",\"pinyin\":\"dǐdá\",\"definitions\":[\"arrive\",\"to reach (a destination)\",\"touch down\"]},{\"simplified\":\"抵抗\",\"traditional\":\"抵抗\",\"pinyin\":\"dǐkàng\",\"definitions\":[\"resist\",\"resistance\"]},{\"simplified\":\"抵制\",\"traditional\":\"抵制\",\"pinyin\":\"dǐzhì\",\"definitions\":[\"resistance\",\"refusal (to cooperate)\",\"boycott\"]},{\"simplified\":\"地步\",\"traditional\":\"地步\",\"pinyin\":\"dìbù\",\"definitions\":[\"condition\",\"plight\",\"extent\"]},{\"simplified\":\"地势\",\"traditional\":\"地勢\",\"pinyin\":\"dìshì\",\"definitions\":[\"terrain\",\"topography of a place\"]},{\"simplified\":\"地质\",\"traditional\":\"地質\",\"pinyin\":\"dìzhì\",\"definitions\":[\"geology\"]},{\"simplified\":\"递增\",\"traditional\":\"遞增\",\"pinyin\":\"dìzēng\",\"definitions\":[\"increase step by step\",\"steadily increase\"]},{\"simplified\":\"颠簸\",\"traditional\":\"顛簸\",\"pinyin\":\"diānbǒ\",\"definitions\":[\"shake\",\"to jolt\",\"bump\"]},{\"simplified\":\"颠倒\",\"traditional\":\"顛倒\",\"pinyin\":\"diāndǎo\",\"definitions\":[\"turn upside down\",\"upend\"]},{\"simplified\":\"典礼\",\"traditional\":\"典禮\",\"pinyin\":\"diǎnlǐ\",\"definitions\":[\"celebration\",\"ceremony\"]},{\"simplified\":\"典型\",\"traditional\":\"典型\",\"pinyin\":\"diǎnxíng\",\"definitions\":[\"typical case\",\"model\"]},{\"simplified\":\"点缀\",\"traditional\":\"點綴\",\"pinyin\":\"diǎnzhuì\",\"definitions\":[\"decorate\",\"an ornament\",\"beautify\",\"embellish\",\"be the finishing touch\"]},{\"simplified\":\"电源\",\"traditional\":\"電源\",\"pinyin\":\"diànyuán\",\"definitions\":[\"electric power supply\"]},{\"simplified\":\"垫\",\"traditional\":\"墊\",\"pinyin\":\"diàn\",\"definitions\":[\"cushion\",\"to pad\",\"pay for somebody and expect to be repaid\"]},{\"simplified\":\"惦记\",\"traditional\":\"惦記\",\"pinyin\":\"diànjì\",\"definitions\":[\"to remember with concern\",\"to be concerned about\",\"to think about\",\"to keep thinking about\",\"to worry about\"]},{\"simplified\":\"奠定\",\"traditional\":\"奠定\",\"pinyin\":\"diàndìng\",\"definitions\":[\"establish\",\"to found\",\"to settle\"]},{\"simplified\":\"叼\",\"traditional\":\"叼\",\"pinyin\":\"diāo\",\"definitions\":[\"hold sth. in the mouth\"]},{\"simplified\":\"雕刻\",\"traditional\":\"雕刻\",\"pinyin\":\"diāokè\",\"definitions\":[\"carve\",\"engrave\",\"sculpt\"]},{\"simplified\":\"雕塑\",\"traditional\":\"雕塑\",\"pinyin\":\"diāosù\",\"definitions\":[\"sculpture\",\"a statue\",\"a Buddhist image\"]},{\"simplified\":\"吊\",\"traditional\":\"吊\",\"pinyin\":\"diào\",\"definitions\":[\"hang\",\"suspend\"]},{\"simplified\":\"调动\",\"traditional\":\"調動\",\"pinyin\":\"diàodòng\",\"definitions\":[\"to transfer\",\"to maneuver (troops, etc.)\"]},{\"simplified\":\"跌\",\"traditional\":\"跌\",\"pinyin\":\"diē\",\"definitions\":[\"to fall down\",\"to drop\"]},{\"simplified\":\"丁\",\"traditional\":\"丁\",\"pinyin\":\"dīng\",\"definitions\":[\"male adult\",\"robust\",\"cubes (of food)\",\"T-shaped (4th Heavenly Stem)\"]},{\"simplified\":\"叮嘱\",\"traditional\":\"叮囑\",\"pinyin\":\"dīngzhǔ\",\"definitions\":[\"urge again and again\",\"exhort\",\"repeatedly warn\"]},{\"simplified\":\"盯\",\"traditional\":\"盯\",\"pinyin\":\"dīng\",\"definitions\":[\"to stare\",\"to gaze\"]},{\"simplified\":\"定期\",\"traditional\":\"定期\",\"pinyin\":\"dìngqī\",\"definitions\":[\"regularly\",\"at regular intervals\"]},{\"simplified\":\"定义\",\"traditional\":\"定義\",\"pinyin\":\"dìngyì\",\"definitions\":[\"definition\"]},{\"simplified\":\"丢人\",\"traditional\":\"丟人\",\"pinyin\":\"diū rén\",\"definitions\":[\"lose face\",\"be disgraced\"]},{\"simplified\":\"丢三落四\",\"traditional\":\"丟三落四\",\"pinyin\":\"diūsān làsì\",\"definitions\":[\"forgetful\",\"scatterbrained\"]},{\"simplified\":\"东道主\",\"traditional\":\"東道主\",\"pinyin\":\"dōngdàozhǔ\",\"definitions\":[\"host for a party or conference\"]},{\"simplified\":\"东张西望\",\"traditional\":\"東張西望\",\"pinyin\":\"dōngzhāngxīwàng\",\"definitions\":[\"look in all directions\",\"glance around\"]},{\"simplified\":\"董事长\",\"traditional\":\"董事長\",\"pinyin\":\"dǒngshìzhǎng\",\"definitions\":[\"chairman of the board\"]},{\"simplified\":\"动荡\",\"traditional\":\"動蕩\",\"pinyin\":\"dòngdàng\",\"definitions\":[\"(social or political) turmoil\",\"unrest\",\"upheaval\"]},{\"simplified\":\"动机\",\"traditional\":\"動機\",\"pinyin\":\"dòngjī\",\"definitions\":[\"motive\",\"motivation\",\"intention\"]},{\"simplified\":\"动静\",\"traditional\":\"動靜\",\"pinyin\":\"dòngjìng\",\"definitions\":[\"sound of activity\",\"activity\"]},{\"simplified\":\"动力\",\"traditional\":\"動力\",\"pinyin\":\"dònglì\",\"definitions\":[\"power\",\"motion\",\"impetus\",\"driving force\"]},{\"simplified\":\"动脉\",\"traditional\":\"動脈\",\"pinyin\":\"dòngmài\",\"definitions\":[\"artery\"]},{\"simplified\":\"动身\",\"traditional\":\"動身\",\"pinyin\":\"dòng shēn\",\"definitions\":[\"go on a journey\",\"leave\"]},{\"simplified\":\"动手\",\"traditional\":\"動手\",\"pinyin\":\"dòngshǒu\",\"definitions\":[\"get to work\",\"to touch\",\"strike a blow\"]},{\"simplified\":\"动态\",\"traditional\":\"動態\",\"pinyin\":\"dòngtài\",\"definitions\":[\"development\",\"trend\",\"dynamic state\"]},{\"simplified\":\"动员\",\"traditional\":\"動員\",\"pinyin\":\"dòngyuán\",\"definitions\":[\"mobilize\"]},{\"simplified\":\"冻结\",\"traditional\":\"凍結\",\"pinyin\":\"dòngjié\",\"definitions\":[\"(loan, wage, price) freeze\"]},{\"simplified\":\"栋\",\"traditional\":\"棟\",\"pinyin\":\"dòng\",\"definitions\":[\"roof beam\",\"(mw for buildings)\"]},{\"simplified\":\"兜\",\"traditional\":\"兜\",\"pinyin\":\"dōu\",\"definitions\":[\"pocket\",\"bag\",\"wrap up (in a piece of cloth)\",\"move around (in a circle)\",\"canvass (solicit)\",\"take responsibility\"]},{\"simplified\":\"陡峭\",\"traditional\":\"陡峭\",\"pinyin\":\"dǒuqiào\",\"definitions\":[\"steep\",\"precipitous\"]},{\"simplified\":\"斗争\",\"traditional\":\"鬥爭\",\"pinyin\":\"dòuzhēng\",\"definitions\":[\"to struggle\",\"to fight for\",\"to battle\"]},{\"simplified\":\"督促\",\"traditional\":\"督促\",\"pinyin\":\"dūcù\",\"definitions\":[\"supervise and urge sb. to complete a task\"]},{\"simplified\":\"毒品\",\"traditional\":\"毒品\",\"pinyin\":\"dúpǐn\",\"definitions\":[\"drugs\",\"narcotics\",\"poison\"]},{\"simplified\":\"独裁\",\"traditional\":\"獨裁\",\"pinyin\":\"dúcái\",\"definitions\":[\"dictatorship\"]},{\"simplified\":\"堵塞\",\"traditional\":\"堵塞\",\"pinyin\":\"dǔsè\",\"definitions\":[\"block\",\"stop\"]},{\"simplified\":\"赌博\",\"traditional\":\"賭博\",\"pinyin\":\"dǔbó\",\"definitions\":[\"to gamble\"]},{\"simplified\":\"杜绝\",\"traditional\":\"杜絕\",\"pinyin\":\"dùjué\",\"definitions\":[\"put an end to\"]},{\"simplified\":\"端\",\"traditional\":\"端\",\"pinyin\":\"duān\",\"definitions\":[\"end\",\"beginning\",\"extremity\",\"carry holding something from the sides\"]},{\"simplified\":\"端午节\",\"traditional\":\"端午節\",\"pinyin\":\"Duānwǔ Jié\",\"definitions\":[\"Dragon Boat Festival\"]},{\"simplified\":\"端正\",\"traditional\":\"端正\",\"pinyin\":\"duānzhèng\",\"definitions\":[\"upright\",\"regular\",\"proper\",\"correct\"]},{\"simplified\":\"短促\",\"traditional\":\"短促\",\"pinyin\":\"duǎncù\",\"definitions\":[\"short in time duration\",\"fleeting\",\"brief\"]},{\"simplified\":\"断定\",\"traditional\":\"斷定\",\"pinyin\":\"duàndìng\",\"definitions\":[\"conclude\",\"determine\",\"figure out\"]},{\"simplified\":\"断绝\",\"traditional\":\"斷絕\",\"pinyin\":\"duànjué\",\"definitions\":[\"sever\",\"break off\"]},{\"simplified\":\"堆积\",\"traditional\":\"堆積\",\"pinyin\":\"duījī\",\"definitions\":[\"pile up\",\"accumulate\"]},{\"simplified\":\"队伍\",\"traditional\":\"隊伍\",\"pinyin\":\"duìwu\",\"definitions\":[\"ranks\",\"troops\"]},{\"simplified\":\"对策\",\"traditional\":\"對策\",\"pinyin\":\"duìcè\",\"definitions\":[\"countermeasure for dealing with a situation\"]},{\"simplified\":\"对称\",\"traditional\":\"對稱\",\"pinyin\":\"duìchèn\",\"definitions\":[\"symmetry\"]},{\"simplified\":\"对付\",\"traditional\":\"對付\",\"pinyin\":\"duìfu\",\"definitions\":[\"to handle\",\"deal with\"]},{\"simplified\":\"对抗\",\"traditional\":\"對抗\",\"pinyin\":\"duìkàng\",\"definitions\":[\"withstand\",\"resist\",\"antagonize\"]},{\"simplified\":\"对立\",\"traditional\":\"對立\",\"pinyin\":\"duìlì\",\"definitions\":[\"oppose\",\"to counter\"]},{\"simplified\":\"对联\",\"traditional\":\"對聯\",\"pinyin\":\"duìlián\",\"definitions\":[\"rhyming couplet\",\"vertical written couplet usually placed along either side of a doorway\"]},{\"simplified\":\"对应\",\"traditional\":\"對應\",\"pinyin\":\"duìyìng\",\"definitions\":[\"corresponding\",\"counterpart\"]},{\"simplified\":\"对照\",\"traditional\":\"對照\",\"pinyin\":\"duìzhào\",\"definitions\":[\"contrast\",\"compare\"]},{\"simplified\":\"兑现\",\"traditional\":\"兌現\",\"pinyin\":\"duìxiàn\",\"definitions\":[\"cash a check\",\"honor a commitment\"]},{\"simplified\":\"顿时\",\"traditional\":\"頓時\",\"pinyin\":\"dùnshí\",\"definitions\":[\"immediately\",\"suddenly\"]},{\"simplified\":\"多元化\",\"traditional\":\"多元化\",\"pinyin\":\"duōyuánhuà\",\"definitions\":[\"diversify\",\"diversification\"]},{\"simplified\":\"哆嗦\",\"traditional\":\"哆嗦\",\"pinyin\":\"duōsuo\",\"definitions\":[\"tremble\",\"to shiver\",\"to quiver\"]},{\"simplified\":\"堕落\",\"traditional\":\"墮落\",\"pinyin\":\"duòluò\",\"definitions\":[\"morally degenerate\",\"become depraved\"]},{\"simplified\":\"额外\",\"traditional\":\"額外\",\"pinyin\":\"éwài\",\"definitions\":[\"extra\",\"added\",\"additional\"]},{\"simplified\":\"恶心\",\"traditional\":\"惡心\",\"pinyin\":\"ěxin\",\"definitions\":[\"disgusting\",\"nauseous\",\"make somebody embarrassed (èxīn: bad/vicious habit\",\"vice)\"]},{\"simplified\":\"恶化\",\"traditional\":\"惡化\",\"pinyin\":\"èhuà\",\"definitions\":[\"worsen\",\"deteriorate\"]},{\"simplified\":\"遏制\",\"traditional\":\"遏制\",\"pinyin\":\"èzhì\",\"definitions\":[\"keep within limits\",\"contain\",\"restrain\",\"hold back\"]},{\"simplified\":\"恩怨\",\"traditional\":\"恩怨\",\"pinyin\":\"ēnyuàn\",\"definitions\":[\"grievance\",\"old rivalry\",\"mixture of gratitude and resentment\"]},{\"simplified\":\"而已\",\"traditional\":\"而已\",\"pinyin\":\"éryǐ\",\"definitions\":[\"that's all\",\"nothing more\"]},{\"simplified\":\"二氧化碳\",\"traditional\":\"二氧化碳\",\"pinyin\":\"èryǎnghuàtàn\",\"definitions\":[\"carbon dioxide\",\"CO2\"]},{\"simplified\":\"发布\",\"traditional\":\"發布\",\"pinyin\":\"fābù\",\"definitions\":[\"issue\",\"announce\",\"release\"]},{\"simplified\":\"发财\",\"traditional\":\"發財\",\"pinyin\":\"fā cái\",\"definitions\":[\"get rich\"]},{\"simplified\":\"发呆\",\"traditional\":\"發呆\",\"pinyin\":\"fādāi\",\"definitions\":[\"stare blankly\",\"daze off\"]},{\"simplified\":\"发动\",\"traditional\":\"發動\",\"pinyin\":\"fādòng\",\"definitions\":[\"to start\",\"to launch\",\"mobilize\"]},{\"simplified\":\"发觉\",\"traditional\":\"發覺\",\"pinyin\":\"fājué\",\"definitions\":[\"discover\",\"detect\"]},{\"simplified\":\"发射\",\"traditional\":\"發射\",\"pinyin\":\"fāshè\",\"definitions\":[\"to launch\",\"to shoot (a projectile)\",\"to fire (a rocket)\"]},{\"simplified\":\"发誓\",\"traditional\":\"發誓\",\"pinyin\":\"fāshì\",\"definitions\":[\"to vow\",\"to pledge\",\"swear\"]},{\"simplified\":\"发行\",\"traditional\":\"發行\",\"pinyin\":\"fāxíng\",\"definitions\":[\"publish\",\"to issue\",\"distribute\"]},{\"simplified\":\"发炎\",\"traditional\":\"發炎\",\"pinyin\":\"fāyán\",\"definitions\":[\"become inflamed from infection or injury\"]},{\"simplified\":\"发扬\",\"traditional\":\"發揚\",\"pinyin\":\"fāyáng\",\"definitions\":[\"develop\",\"make full use of\",\"to carry on\"]},{\"simplified\":\"发育\",\"traditional\":\"發育\",\"pinyin\":\"fāyù\",\"definitions\":[\"develop\",\"growth\"]},{\"simplified\":\"法人\",\"traditional\":\"法人\",\"pinyin\":\"fǎrén\",\"definitions\":[\"legal entity (i.e., a corporation)\"]},{\"simplified\":\"番\",\"traditional\":\"番\",\"pinyin\":\"fān\",\"definitions\":[\"(mw for acts or deeds)\",\"foreign\"]},{\"simplified\":\"凡是\",\"traditional\":\"凡是\",\"pinyin\":\"fánshì\",\"definitions\":[\"every\",\"any\",\"all\",\"without exception\"]},{\"simplified\":\"繁华\",\"traditional\":\"繁華\",\"pinyin\":\"fánhuá\",\"definitions\":[\"flourishing\",\"bustling\",\"prosperous\"]},{\"simplified\":\"繁忙\",\"traditional\":\"繁忙\",\"pinyin\":\"fánmáng\",\"definitions\":[\"busy\",\"bustling\"]},{\"simplified\":\"繁体字\",\"traditional\":\"繁體字\",\"pinyin\":\"fántǐzì\",\"definitions\":[\"traditional Chinese character\"]},{\"simplified\":\"繁殖\",\"traditional\":\"繁殖\",\"pinyin\":\"fánzhí\",\"definitions\":[\"propagate\",\"to breed\",\"reproduce\"]},{\"simplified\":\"反驳\",\"traditional\":\"反駁\",\"pinyin\":\"fǎnbó\",\"definitions\":[\"retort\",\"refute\"]},{\"simplified\":\"反常\",\"traditional\":\"反常\",\"pinyin\":\"fǎncháng\",\"definitions\":[\"abnormal\",\"unusual\"]},{\"simplified\":\"反感\",\"traditional\":\"反感\",\"pinyin\":\"fǎngǎn\",\"definitions\":[\"(strongly) dislike\"]},{\"simplified\":\"反抗\",\"traditional\":\"反抗\",\"pinyin\":\"fǎnkàng\",\"definitions\":[\"resist\",\"to revolt\"]},{\"simplified\":\"反馈\",\"traditional\":\"反饋\",\"pinyin\":\"fǎnkuì\",\"definitions\":[\"feedback\",\"send information back\"]},{\"simplified\":\"反面\",\"traditional\":\"反面\",\"pinyin\":\"fǎnmiàn\",\"definitions\":[\"the reverse side of sth.\",\"opposite side of a topic\"]},{\"simplified\":\"反射\",\"traditional\":\"反射\",\"pinyin\":\"fǎnshè\",\"definitions\":[\"reflex\",\"reflection (from a mirror, etc.)\"]},{\"simplified\":\"反思\",\"traditional\":\"反思\",\"pinyin\":\"fǎnsī\",\"definitions\":[\"think back over something that happened\",\"to reflect\",\"introspection\"]},{\"simplified\":\"反问\",\"traditional\":\"反問\",\"pinyin\":\"fǎnwèn\",\"definitions\":[\"ask a rhetorical question\",\"answer a question with a question\"]},{\"simplified\":\"反之\",\"traditional\":\"反之\",\"pinyin\":\"fǎnzhī\",\"definitions\":[\"whereas...\",\"on the other hand ...\",\"conversely ...\"]},{\"simplified\":\"泛滥\",\"traditional\":\"泛濫\",\"pinyin\":\"fànlàn\",\"definitions\":[\"to be in flood\",\"to overflow (the banks)\",\"to inundate\",\"to spread unchecked\"]},{\"simplified\":\"范畴\",\"traditional\":\"範疇\",\"pinyin\":\"fànchóu\",\"definitions\":[\"category\"]},{\"simplified\":\"贩卖\",\"traditional\":\"販賣\",\"pinyin\":\"fànmài\",\"definitions\":[\"sell\",\"peddle\",\"(often derogatory) to traffic in\"]},{\"simplified\":\"方位\",\"traditional\":\"方位\",\"pinyin\":\"fāngwèi\",\"definitions\":[\"position\",\"direction\",\"points of the compass\",\"bearing\"]},{\"simplified\":\"方言\",\"traditional\":\"方言\",\"pinyin\":\"fāngyán\",\"definitions\":[\"dialect\"]},{\"simplified\":\"方圆\",\"traditional\":\"方圓\",\"pinyin\":\"fāngyuán\",\"definitions\":[\"circumference\",\"neighborhood\",\"vicinity\"]},{\"simplified\":\"方针\",\"traditional\":\"方針\",\"pinyin\":\"fāngzhēn\",\"definitions\":[\"policy\",\"guidelines\"]},{\"simplified\":\"防守\",\"traditional\":\"防守\",\"pinyin\":\"fángshǒu\",\"definitions\":[\"to defend\",\"protect\",\"to guard\"]},{\"simplified\":\"防御\",\"traditional\":\"防禦\",\"pinyin\":\"fángyù\",\"definitions\":[\"defense\",\"resist\",\"to guard\"]},{\"simplified\":\"防止\",\"traditional\":\"防止\",\"pinyin\":\"fángzhǐ\",\"definitions\":[\"prevent\",\"protect\",\"guard against\",\"avoid\"]},{\"simplified\":\"防治\",\"traditional\":\"防治\",\"pinyin\":\"fángzhì\",\"definitions\":[\"prevent and cure\"]},{\"simplified\":\"访问\",\"traditional\":\"訪問\",\"pinyin\":\"fǎngwèn\",\"definitions\":[\"to visit\",\"call on\",\"to interview\"]},{\"simplified\":\"纺织\",\"traditional\":\"紡織\",\"pinyin\":\"fǎngzhī\",\"definitions\":[\"spinning and weaving\",\"textile\"]},{\"simplified\":\"放大\",\"traditional\":\"放大\",\"pinyin\":\"fàngdà\",\"definitions\":[\"enlarge\",\"amplify\"]},{\"simplified\":\"放射\",\"traditional\":\"放射\",\"pinyin\":\"fàngshè\",\"definitions\":[\"radiate\",\"radioactive\"]},{\"simplified\":\"飞禽走兽\",\"traditional\":\"飛禽走獸\",\"pinyin\":\"fēiqínzǒushòu\",\"definitions\":[\"birds and animals\",\"the beasts of the field and the birds of the air\"]},{\"simplified\":\"飞翔\",\"traditional\":\"飛翔\",\"pinyin\":\"fēixiáng\",\"definitions\":[\"fly\",\"hover\"]},{\"simplified\":\"飞跃\",\"traditional\":\"飛躍\",\"pinyin\":\"fēiyuè\",\"definitions\":[\"to leap\"]},{\"simplified\":\"非法\",\"traditional\":\"非法\",\"pinyin\":\"fēifǎ\",\"definitions\":[\"illegal\"]},{\"simplified\":\"肥沃\",\"traditional\":\"肥沃\",\"pinyin\":\"féiwò\",\"definitions\":[\"fertile\"]},{\"simplified\":\"诽谤\",\"traditional\":\"誹謗\",\"pinyin\":\"fěibàng\",\"definitions\":[\"slander\",\"libel\"]},{\"simplified\":\"肺\",\"traditional\":\"肺\",\"pinyin\":\"fèi\",\"definitions\":[\"lung\"]},{\"simplified\":\"废除\",\"traditional\":\"廢除\",\"pinyin\":\"fèichú\",\"definitions\":[\"abolish\",\"annul\",\"abrogate\"]},{\"simplified\":\"废寝忘食\",\"traditional\":\"廢寢忘食\",\"pinyin\":\"fèiqǐnwàngshí\",\"definitions\":[\"to forget even sleeping and eating\"]},{\"simplified\":\"废墟\",\"traditional\":\"廢墟\",\"pinyin\":\"fèixū\",\"definitions\":[\"ruins\"]},{\"simplified\":\"沸腾\",\"traditional\":\"沸騰\",\"pinyin\":\"fèiténg\",\"definitions\":[\"to boil\",\"boiling\"]},{\"simplified\":\"分辨\",\"traditional\":\"分辨\",\"pinyin\":\"fēnbiàn\",\"definitions\":[\"distinguish\",\"differentiate\",\"resolve\"]},{\"simplified\":\"分寸\",\"traditional\":\"分寸\",\"pinyin\":\"fēncun\",\"definitions\":[\"propriety\",\"the limits of proper speech or action\"]},{\"simplified\":\"分红\",\"traditional\":\"分紅\",\"pinyin\":\"fēn hóng\",\"definitions\":[\"a bonus\",\"to award a bonus\",\"to draw or recieve dividends\",\"to share profits\"]},{\"simplified\":\"分解\",\"traditional\":\"分解\",\"pinyin\":\"fēnjiě\",\"definitions\":[\"to decompose\",\"to resolve\",\"to break down\"]},{\"simplified\":\"分裂\",\"traditional\":\"分裂\",\"pinyin\":\"fēnliè\",\"definitions\":[\"split up\",\"to divide\",\"separate\"]},{\"simplified\":\"分泌\",\"traditional\":\"分泌\",\"pinyin\":\"fēnmì\",\"definitions\":[\"secrete\"]},{\"simplified\":\"分明\",\"traditional\":\"分明\",\"pinyin\":\"fēnmíng\",\"definitions\":[\"clear\",\"distinct\",\"evidently\",\"clearly\"]},{\"simplified\":\"分歧\",\"traditional\":\"分歧\",\"pinyin\":\"fēnqí\",\"definitions\":[\"difference (of opinion/position）\"]},{\"simplified\":\"分散\",\"traditional\":\"分散\",\"pinyin\":\"fēnsàn\",\"definitions\":[\"to scatter\",\"disperse\",\"distribute\"]},{\"simplified\":\"吩咐\",\"traditional\":\"吩咐\",\"pinyin\":\"fēnfù\",\"definitions\":[\"instruct\",\"instructions\",\"to tell\",\"to order (to do something)\"]},{\"simplified\":\"坟墓\",\"traditional\":\"墳墓\",\"pinyin\":\"fénmù\",\"definitions\":[\"tomb\",\"sepulcher\"]},{\"simplified\":\"粉末\",\"traditional\":\"粉末\",\"pinyin\":\"fěnmò\",\"definitions\":[\"fine powder\",\"dust\"]},{\"simplified\":\"粉色\",\"traditional\":\"粉色\",\"pinyin\":\"fěnsè\",\"definitions\":[\"pink\"]},{\"simplified\":\"粉碎\",\"traditional\":\"粉碎\",\"pinyin\":\"fěnsuì\",\"definitions\":[\"to crash\",\"break up\"]},{\"simplified\":\"分量\",\"traditional\":\"分量\",\"pinyin\":\"fènliàng\",\"definitions\":[\"weight\",\"heft\",\"amount\"]},{\"simplified\":\"愤怒\",\"traditional\":\"憤怒\",\"pinyin\":\"fènnù\",\"definitions\":[\"angry\",\"indignant\",\"furious\",\"anger\",\"indignation\",\"wrath\",\"ire\"]},{\"simplified\":\"丰满\",\"traditional\":\"豐滿\",\"pinyin\":\"fēngmǎn\",\"definitions\":[\"plump\",\"well developed\",\"plentiful\",\"Fengman district of Jilin City, Jilin Province\"]},{\"simplified\":\"丰盛\",\"traditional\":\"豐盛\",\"pinyin\":\"fēngshèng\",\"definitions\":[\"sumptuous\",\"lavish\"]},{\"simplified\":\"丰收\",\"traditional\":\"豐收\",\"pinyin\":\"fēngshōu\",\"definitions\":[\"bumper crop\",\"have a good harvest\"]},{\"simplified\":\"风暴\",\"traditional\":\"風暴\",\"pinyin\":\"fēngbào\",\"definitions\":[\"storm\",\"violent commotion\"]},{\"simplified\":\"风度\",\"traditional\":\"風度\",\"pinyin\":\"fēngdù\",\"definitions\":[\"elegant demeanor\",\"grace\",\"poise\",\"style\"]},{\"simplified\":\"风光\",\"traditional\":\"風光\",\"pinyin\":\"fēngguāng\",\"definitions\":[\"a natural scenic view\",\"sight\"]},{\"simplified\":\"风气\",\"traditional\":\"風氣\",\"pinyin\":\"fēngqì\",\"definitions\":[\"general mood\",\"atmosphere\",\"common practice\"]},{\"simplified\":\"风趣\",\"traditional\":\"風趣\",\"pinyin\":\"fēngqù\",\"definitions\":[\"humor\",\"wit\",\"humorous\"]},{\"simplified\":\"风土人情\",\"traditional\":\"風土人情\",\"pinyin\":\"fēngtǔrénqíng\",\"definitions\":[\"local conditions (human and environmental)\"]},{\"simplified\":\"风味\",\"traditional\":\"風味\",\"pinyin\":\"fēngwèi\",\"definitions\":[\"local flavor\",\"local style\"]},{\"simplified\":\"封闭\",\"traditional\":\"封閉\",\"pinyin\":\"fēngbì\",\"definitions\":[\"to seal\",\"to close\",\"confine\"]},{\"simplified\":\"封建\",\"traditional\":\"封建\",\"pinyin\":\"fēngjiàn\",\"definitions\":[\"feudal\",\"feudalism\"]},{\"simplified\":\"封锁\",\"traditional\":\"封鎖\",\"pinyin\":\"fēngsuǒ\",\"definitions\":[\"to blockade\",\"to seal off\"]},{\"simplified\":\"锋利\",\"traditional\":\"鋒利\",\"pinyin\":\"fēnglì\",\"definitions\":[\"sharp (i.e. a knife blade)\",\"incisive\",\"to the point\"]},{\"simplified\":\"逢\",\"traditional\":\"逢\",\"pinyin\":\"féng\",\"definitions\":[\"to meet\",\"come upon\"]},{\"simplified\":\"奉献\",\"traditional\":\"奉獻\",\"pinyin\":\"fèngxiàn\",\"definitions\":[\"consecrate\",\"dedicate\",\"devote\"]},{\"simplified\":\"否决\",\"traditional\":\"否決\",\"pinyin\":\"fǒujué\",\"definitions\":[\"veto\",\"reject\",\"overrule\"]},{\"simplified\":\"夫妇\",\"traditional\":\"夫婦\",\"pinyin\":\"fūfù\",\"definitions\":[\"married couple\",\"husband and wife\"]},{\"simplified\":\"夫人\",\"traditional\":\"夫人\",\"pinyin\":\"fūrén\",\"definitions\":[\"lady\",\"madam\",\"Mrs.\",\"wife\"]},{\"simplified\":\"敷衍\",\"traditional\":\"敷衍\",\"pinyin\":\"fūyǎn\",\"definitions\":[\"to elaborate (on a theme)\",\"to expound (the classics)\",\"to do sth. half-heartedly or just for show\",\"barely enough to get by\",\"perfunctory\",\"apathetic\",\"to skimp\",\"to botch\"]},{\"simplified\":\"服从\",\"traditional\":\"服從\",\"pinyin\":\"fúcóng\",\"definitions\":[\"to obey\",\"to comply\"]},{\"simplified\":\"服气\",\"traditional\":\"服氣\",\"pinyin\":\"fúqì\",\"definitions\":[\"be convinced\"]},{\"simplified\":\"俘虏\",\"traditional\":\"俘虜\",\"pinyin\":\"fúlǔ\",\"definitions\":[\"captive\",\"prisoner\"]},{\"simplified\":\"符号\",\"traditional\":\"符號\",\"pinyin\":\"fúhào\",\"definitions\":[\"symbol\",\"mark\",\"sign\"]},{\"simplified\":\"幅度\",\"traditional\":\"幅度\",\"pinyin\":\"fúdù\",\"definitions\":[\"width\",\"margin\",\"extent\"]},{\"simplified\":\"辐射\",\"traditional\":\"輻射\",\"pinyin\":\"fúshè\",\"definitions\":[\"radiation\"]},{\"simplified\":\"福利\",\"traditional\":\"福利\",\"pinyin\":\"fúlì\",\"definitions\":[\"material benefits\",\"welfare\",\"well-being\"]},{\"simplified\":\"福气\",\"traditional\":\"福氣\",\"pinyin\":\"fúqì\",\"definitions\":[\"good fortune\"]},{\"simplified\":\"抚摸\",\"traditional\":\"撫摸\",\"pinyin\":\"fǔmō\",\"definitions\":[\"gently caress and stroke\",\"to pet\",\"to fondle\"]},{\"simplified\":\"抚养\",\"traditional\":\"撫養\",\"pinyin\":\"fǔyǎng\",\"definitions\":[\"foster\",\"bring up\",\"raise\"]},{\"simplified\":\"俯视\",\"traditional\":\"俯視\",\"pinyin\":\"fǔshì\",\"definitions\":[\"look down at\",\"overlook\"]},{\"simplified\":\"辅助\",\"traditional\":\"輔助\",\"pinyin\":\"fǔzhù\",\"definitions\":[\"assist\",\"aide\"]},{\"simplified\":\"腐败\",\"traditional\":\"腐敗\",\"pinyin\":\"fǔbài\",\"definitions\":[\"corruption\",\"corrupt\",\"rotten\"]},{\"simplified\":\"腐烂\",\"traditional\":\"腐爛\",\"pinyin\":\"fǔlàn\",\"definitions\":[\"rot\",\"become gangrenous\"]},{\"simplified\":\"腐蚀\",\"traditional\":\"腐蝕\",\"pinyin\":\"fǔshí\",\"definitions\":[\"erode\",\"corrode\",\"corrupt\",\"rusty\"]},{\"simplified\":\"腐朽\",\"traditional\":\"腐朽\",\"pinyin\":\"fǔxiǔ\",\"definitions\":[\"rotten\",\"decayed\",\"decadent\",\"degenerate\"]},{\"simplified\":\"负担\",\"traditional\":\"負擔\",\"pinyin\":\"fùdān\",\"definitions\":[\"to (bear a) burden\",\"carry\",\"a load\"]},{\"simplified\":\"附和\",\"traditional\":\"附和\",\"pinyin\":\"fùhè\",\"definitions\":[\"repeat an agreement\",\"copy sb.'s action or words\"]},{\"simplified\":\"附件\",\"traditional\":\"附件\",\"pinyin\":\"fùjiàn\",\"definitions\":[\"attachment\",\"enclosure\"]},{\"simplified\":\"附属\",\"traditional\":\"附屬\",\"pinyin\":\"fùshǔ\",\"definitions\":[\"subsidiary\",\"auxiliary\",\"affiliate\",\"attached\"]},{\"simplified\":\"复活\",\"traditional\":\"複活\",\"pinyin\":\"fùhuó\",\"definitions\":[\"resurrection\"]},{\"simplified\":\"复兴\",\"traditional\":\"複興\",\"pinyin\":\"fùxīng\",\"definitions\":[\"revive\",\"restore\"]},{\"simplified\":\"副\",\"traditional\":\"副\",\"pinyin\":\"fù\",\"definitions\":[\"vice-\",\"secondary\",\"auxiliary\",\"deputy\",\"assistant\",\"classifier for pairs (i.e. glasses)\"]},{\"simplified\":\"赋予\",\"traditional\":\"賦予\",\"pinyin\":\"fùyǔ\",\"definitions\":[\"confer upon\",\"bestow\",\"endow\",\"entrust (a task)\"]},{\"simplified\":\"富裕\",\"traditional\":\"富裕\",\"pinyin\":\"fùyù\",\"definitions\":[\"rich\",\"to prosper\",\"wealthy\"]},{\"simplified\":\"腹泻\",\"traditional\":\"腹瀉\",\"pinyin\":\"fùxiè\",\"definitions\":[\"diarrhea\"]},{\"simplified\":\"覆盖\",\"traditional\":\"覆蓋\",\"pinyin\":\"fùgài\",\"definitions\":[\"to cover\"]},{\"simplified\":\"改良\",\"traditional\":\"改良\",\"pinyin\":\"gǎiliáng\",\"definitions\":[\"improve\",\"to reform\"]},{\"simplified\":\"钙\",\"traditional\":\"鈣\",\"pinyin\":\"gài\",\"definitions\":[\"calcium\"]},{\"simplified\":\"盖章\",\"traditional\":\"蓋章\",\"pinyin\":\"gàizhāng\",\"definitions\":[\"affix one's seal\",\"seal\",\"stamp\"]},{\"simplified\":\"干旱\",\"traditional\":\"幹旱\",\"pinyin\":\"gānhàn\",\"definitions\":[\"drought\",\"dry\"]},{\"simplified\":\"干扰\",\"traditional\":\"幹擾\",\"pinyin\":\"gānrǎo\",\"definitions\":[\"interfere\",\"obstruction\"]},{\"simplified\":\"干涉\",\"traditional\":\"幹涉\",\"pinyin\":\"gānshè\",\"definitions\":[\"interfere\",\"intervene\",\"meddle\"]},{\"simplified\":\"干预\",\"traditional\":\"幹預\",\"pinyin\":\"gānyù\",\"definitions\":[\"meddle\",\"intervene\",\"intervention\"]},{\"simplified\":\"尴尬\",\"traditional\":\"尴尬\",\"pinyin\":\"gāngà\",\"definitions\":[\"awkward\",\"embarrassed\"]},{\"simplified\":\"感慨\",\"traditional\":\"感慨\",\"pinyin\":\"gǎnkǎi\",\"definitions\":[\"lament\",\"with a tinge of emotion or regret\"]},{\"simplified\":\"感染\",\"traditional\":\"感染\",\"pinyin\":\"gǎnrǎn\",\"definitions\":[\"infection\",\"infect\",\"influence\"]},{\"simplified\":\"干劲\",\"traditional\":\"幹勁\",\"pinyin\":\"gànjìn\",\"definitions\":[\"enthusiasm\",\"energy\",\"drive\"]},{\"simplified\":\"纲领\",\"traditional\":\"綱領\",\"pinyin\":\"gānglǐng\",\"definitions\":[\"program\",\"guiding principle\"]},{\"simplified\":\"岗位\",\"traditional\":\"崗位\",\"pinyin\":\"gǎngwèi\",\"definitions\":[\"a post\",\"a job\"]},{\"simplified\":\"港口\",\"traditional\":\"港口\",\"pinyin\":\"gǎngkǒu\",\"definitions\":[\"port\",\"harbor\"]},{\"simplified\":\"港湾\",\"traditional\":\"港灣\",\"pinyin\":\"gǎngwān\",\"definitions\":[\"harbor\",\"estuary\"]},{\"simplified\":\"杠杆\",\"traditional\":\"杠杆\",\"pinyin\":\"gànggǎn\",\"definitions\":[\"lever\",\"pry bar\",\"crowbar\",\"financial leverage\"]},{\"simplified\":\"高超\",\"traditional\":\"高超\",\"pinyin\":\"gāochāo\",\"definitions\":[\"excellent\",\"superb\"]},{\"simplified\":\"高潮\",\"traditional\":\"高潮\",\"pinyin\":\"gāocháo\",\"definitions\":[\"high tide\",\"upsurge\",\"climax\",\"chorus (of a song)\"]},{\"simplified\":\"高峰\",\"traditional\":\"高峰\",\"pinyin\":\"gāofēng\",\"definitions\":[\"peak\",\"summit\",\"apex\"]},{\"simplified\":\"高明\",\"traditional\":\"高明\",\"pinyin\":\"gāomíng\",\"definitions\":[\"brilliant\",\"wise\"]},{\"simplified\":\"高尚\",\"traditional\":\"高尚\",\"pinyin\":\"gāoshàng\",\"definitions\":[\"nobly\",\"lofty\"]},{\"simplified\":\"高涨\",\"traditional\":\"高漲\",\"pinyin\":\"gāozhǎng\",\"definitions\":[\"upsurge\",\"(tensions, etc.) run high\"]},{\"simplified\":\"稿件\",\"traditional\":\"稿件\",\"pinyin\":\"gǎojiàn\",\"definitions\":[\"rough draft of a document\"]},{\"simplified\":\"告辞\",\"traditional\":\"告辭\",\"pinyin\":\"gàocí\",\"definitions\":[\"take leave\",\"bid farewell\"]},{\"simplified\":\"告诫\",\"traditional\":\"告誡\",\"pinyin\":\"gàojiè\",\"definitions\":[\"warn\",\"admonish\"]},{\"simplified\":\"疙瘩\",\"traditional\":\"疙瘩\",\"pinyin\":\"gēda\",\"definitions\":[\"swelling or lump on skin\"]},{\"simplified\":\"鸽子\",\"traditional\":\"鴿子\",\"pinyin\":\"gēzi\",\"definitions\":[\"dove\",\"pigeon\"]},{\"simplified\":\"搁\",\"traditional\":\"擱\",\"pinyin\":\"gē\",\"definitions\":[\"to place\",\"put aside\"]},{\"simplified\":\"割\",\"traditional\":\"割\",\"pinyin\":\"gē\",\"definitions\":[\"to cut (apart/off)\"]},{\"simplified\":\"歌颂\",\"traditional\":\"歌頌\",\"pinyin\":\"gēsòng\",\"definitions\":[\"sing the praise of\",\"extol\",\"eulogize\"]},{\"simplified\":\"革命\",\"traditional\":\"革命\",\"pinyin\":\"gémìng\",\"definitions\":[\"revolution\",\"revolutionary (politics)\",\"cause great social change\",\"rise in revolt\",\"take part in revolution\"]},{\"simplified\":\"格局\",\"traditional\":\"格局\",\"pinyin\":\"géjú\",\"definitions\":[\"structure\",\"pattern\"]},{\"simplified\":\"格式\",\"traditional\":\"格式\",\"pinyin\":\"géshì\",\"definitions\":[\"form\",\"specification\",\"format\"]},{\"simplified\":\"隔阂\",\"traditional\":\"隔閡\",\"pinyin\":\"géhé\",\"definitions\":[\"estrangement\",\"misunderstanding\"]},{\"simplified\":\"隔离\",\"traditional\":\"隔離\",\"pinyin\":\"gélí\",\"definitions\":[\"insulate\",\"separate\",\"isolate\"]},{\"simplified\":\"个体\",\"traditional\":\"個體\",\"pinyin\":\"gètǐ\",\"definitions\":[\"individual\"]},{\"simplified\":\"各抒己见\",\"traditional\":\"各抒己見\",\"pinyin\":\"gèshūjǐjiàn\",\"definitions\":[\"everyone gives their own view\"]},{\"simplified\":\"根深蒂固\",\"traditional\":\"根深蒂固\",\"pinyin\":\"gēn shēn dì gù\",\"definitions\":[\"deep-rooted\",\"ingrained\",\"inveterate (problem, etc.)\"]},{\"simplified\":\"根源\",\"traditional\":\"根源\",\"pinyin\":\"gēnyuán\",\"definitions\":[\"origin\",\"root\",\"source\"]},{\"simplified\":\"跟前\",\"traditional\":\"跟前\",\"pinyin\":\"gēnqián\",\"definitions\":[\"in front of\"]},{\"simplified\":\"跟随\",\"traditional\":\"跟隨\",\"pinyin\":\"gēnsuí\",\"definitions\":[\"follow\",\"followed\"]},{\"simplified\":\"跟踪\",\"traditional\":\"跟蹤\",\"pinyin\":\"gēnzōng\",\"definitions\":[\"follow somebody's tracks\",\"tail\",\"shadow\"]},{\"simplified\":\"更新\",\"traditional\":\"更新\",\"pinyin\":\"gēngxīn\",\"definitions\":[\"to replace the old with new\",\"to renew\",\"to renovate\",\"to upgrade\",\"to update\",\"to regenerate\",\"to rejuvenate\"]},{\"simplified\":\"更正\",\"traditional\":\"更正\",\"pinyin\":\"gēngzhèng\",\"definitions\":[\"correct\",\"correction\"]},{\"simplified\":\"耕地\",\"traditional\":\"耕地\",\"pinyin\":\"gēngdì\",\"definitions\":[\"arable land\",\"to plow land\"]},{\"simplified\":\"工艺品\",\"traditional\":\"工藝品\",\"pinyin\":\"gōngyìpǐn\",\"definitions\":[\"handicraft\",\"handiwork\"]},{\"simplified\":\"公安局\",\"traditional\":\"公安局\",\"pinyin\":\"gōngānjú\",\"definitions\":[\"public security bureau\"]},{\"simplified\":\"公道\",\"traditional\":\"公道\",\"pinyin\":\"gōngdao\",\"definitions\":[\"fair\",\"equitable\"]},{\"simplified\":\"公告\",\"traditional\":\"公告\",\"pinyin\":\"gōnggào\",\"definitions\":[\"post\",\"announcement\"]},{\"simplified\":\"公关\",\"traditional\":\"公關\",\"pinyin\":\"gōngguān\",\"definitions\":[\"public relations\"]},{\"simplified\":\"公民\",\"traditional\":\"公民\",\"pinyin\":\"gōngmín\",\"definitions\":[\"citizen\"]},{\"simplified\":\"公然\",\"traditional\":\"公然\",\"pinyin\":\"gōngrán\",\"definitions\":[\"(do something) openly\",\"undisguised\"]},{\"simplified\":\"公认\",\"traditional\":\"公認\",\"pinyin\":\"gōngrèn\",\"definitions\":[\"publicly know (to be)\",\"recognize\",\"generally acknowledged\"]},{\"simplified\":\"公式\",\"traditional\":\"公式\",\"pinyin\":\"gōngshì\",\"definitions\":[\"formula\"]},{\"simplified\":\"公务\",\"traditional\":\"公務\",\"pinyin\":\"gōngwù\",\"definitions\":[\"public affairs\",\"official business\"]},{\"simplified\":\"公正\",\"traditional\":\"公正\",\"pinyin\":\"gōngzhèng\",\"definitions\":[\"just\",\"fair\"]},{\"simplified\":\"公证\",\"traditional\":\"公證\",\"pinyin\":\"gōngzhèng\",\"definitions\":[\"notarization\"]},{\"simplified\":\"功劳\",\"traditional\":\"功勞\",\"pinyin\":\"gōngláo\",\"definitions\":[\"contribution\",\"meritorious\",\"credit\"]},{\"simplified\":\"功效\",\"traditional\":\"功效\",\"pinyin\":\"gōngxiào\",\"definitions\":[\"efficiency\",\"effectiveness\"]},{\"simplified\":\"攻击\",\"traditional\":\"攻擊\",\"pinyin\":\"gōngjī\",\"definitions\":[\"to attack\",\"accuse\",\"to charge\"]},{\"simplified\":\"攻克\",\"traditional\":\"攻克\",\"pinyin\":\"gōngkè\",\"definitions\":[\"to capture\",\"to take\"]},{\"simplified\":\"供不应求\",\"traditional\":\"供不應求\",\"pinyin\":\"gōng bú yìng qiú\",\"definitions\":[\"(saying) demand outstrips supply\"]},{\"simplified\":\"供给\",\"traditional\":\"供給\",\"pinyin\":\"gōngjǐ\",\"definitions\":[\"to furnish\",\"provide\",\"to supply\"]},{\"simplified\":\"宫殿\",\"traditional\":\"宮殿\",\"pinyin\":\"gōngdiàn\",\"definitions\":[\"palace\"]},{\"simplified\":\"恭敬\",\"traditional\":\"恭敬\",\"pinyin\":\"gōngjìng\",\"definitions\":[\"dutiful\",\"deferential\"]},{\"simplified\":\"巩固\",\"traditional\":\"鞏固\",\"pinyin\":\"gǒnggù\",\"definitions\":[\"consolidate\",\"solidify\"]},{\"simplified\":\"共和国\",\"traditional\":\"共和國\",\"pinyin\":\"gònghéguó\",\"definitions\":[\"republic\"]},{\"simplified\":\"共计\",\"traditional\":\"共計\",\"pinyin\":\"gòngjì\",\"definitions\":[\"sum up\",\"total\"]},{\"simplified\":\"共鸣\",\"traditional\":\"共鳴\",\"pinyin\":\"gòngmíng\",\"definitions\":[\"physical resonance\",\"sympathetic response to something\"]},{\"simplified\":\"勾结\",\"traditional\":\"勾結\",\"pinyin\":\"gōujié\",\"definitions\":[\"collude with\",\"collaborate\",\"gang up\"]},{\"simplified\":\"钩子\",\"traditional\":\"鈎子\",\"pinyin\":\"gōuzi\",\"definitions\":[\"hook\"]},{\"simplified\":\"构思\",\"traditional\":\"構思\",\"pinyin\":\"gòusī\",\"definitions\":[\"outline a story\",\"make preliminary sketch\"]},{\"simplified\":\"孤独\",\"traditional\":\"孤獨\",\"pinyin\":\"gūdú\",\"definitions\":[\"lonely\",\"solitary\"]},{\"simplified\":\"孤立\",\"traditional\":\"孤立\",\"pinyin\":\"gūlì\",\"definitions\":[\"isolate\",\"isolated\"]},{\"simplified\":\"姑且\",\"traditional\":\"姑且\",\"pinyin\":\"gūqiě\",\"definitions\":[\"temporarily\",\"the time being\"]},{\"simplified\":\"辜负\",\"traditional\":\"辜負\",\"pinyin\":\"gūfù\",\"definitions\":[\"let down\",\"disappoint\",\"fail to live up to\"]},{\"simplified\":\"古董\",\"traditional\":\"古董\",\"pinyin\":\"gǔdǒng\",\"definitions\":[\"antique\"]},{\"simplified\":\"古怪\",\"traditional\":\"古怪\",\"pinyin\":\"gǔguài\",\"definitions\":[\"eccentric\",\"grotesque\",\"oddly\"]},{\"simplified\":\"股东\",\"traditional\":\"股東\",\"pinyin\":\"gǔdōng\",\"definitions\":[\"stockholder\",\"shareholder\"]},{\"simplified\":\"股份\",\"traditional\":\"股份\",\"pinyin\":\"gǔfèn\",\"definitions\":[\"a share (in a company) stock\"]},{\"simplified\":\"骨干\",\"traditional\":\"骨幹\",\"pinyin\":\"gǔgàn\",\"definitions\":[\"backbone\",\"mainstay\"]},{\"simplified\":\"鼓动\",\"traditional\":\"鼓動\",\"pinyin\":\"gǔdòng\",\"definitions\":[\"agitate\",\"instigate\"]},{\"simplified\":\"固然\",\"traditional\":\"固然\",\"pinyin\":\"gùrán\",\"definitions\":[\"admittedly\",\"it is true that\",\"indeed\"]},{\"simplified\":\"固体\",\"traditional\":\"固體\",\"pinyin\":\"gùtǐ\",\"definitions\":[\"solid\"]},{\"simplified\":\"固有\",\"traditional\":\"固有\",\"pinyin\":\"gùyǒu\",\"definitions\":[\"intrinsic/inherent to something\",\"native\"]},{\"simplified\":\"固执\",\"traditional\":\"固執\",\"pinyin\":\"gùzhí\",\"definitions\":[\"persistent\",\"stubborn\"]},{\"simplified\":\"故乡\",\"traditional\":\"故鄉\",\"pinyin\":\"gùxiāng\",\"definitions\":[\"hometown\",\"homeland\",\"birthplace\"]},{\"simplified\":\"故障\",\"traditional\":\"故障\",\"pinyin\":\"gùzhàng\",\"definitions\":[\"malfunction\",\"breakdown\"]},{\"simplified\":\"顾虑\",\"traditional\":\"顧慮\",\"pinyin\":\"gùlǜ\",\"definitions\":[\"misgivings\",\"apprehensions\"]},{\"simplified\":\"顾问\",\"traditional\":\"顧問\",\"pinyin\":\"gùwèn\",\"definitions\":[\"adviser\",\"consultant\"]},{\"simplified\":\"雇佣\",\"traditional\":\"雇傭\",\"pinyin\":\"gùyōng\",\"definitions\":[\"employ\",\"hire\"]},{\"simplified\":\"拐杖\",\"traditional\":\"拐杖\",\"pinyin\":\"guǎizhàng\",\"definitions\":[\"crutch\",\"walking stick\"]},{\"simplified\":\"关怀\",\"traditional\":\"關懷\",\"pinyin\":\"guānhuái\",\"definitions\":[\"care\",\"solicitude\",\"show care for\",\"concerned about\",\"attentive to\"]},{\"simplified\":\"关照\",\"traditional\":\"關照\",\"pinyin\":\"guānzhào\",\"definitions\":[\"concern\",\"look after\",\"keep an eye on\"]},{\"simplified\":\"观光\",\"traditional\":\"觀光\",\"pinyin\":\"guānguāng\",\"definitions\":[\"sight see\",\"tour\"]},{\"simplified\":\"官方\",\"traditional\":\"官方\",\"pinyin\":\"guānfāng\",\"definitions\":[\"official\",\"(by the) government\"]},{\"simplified\":\"管辖\",\"traditional\":\"管轄\",\"pinyin\":\"guǎnxiá\",\"definitions\":[\"administer\",\"have jurisdiction (over)\"]},{\"simplified\":\"贯彻\",\"traditional\":\"貫徹\",\"pinyin\":\"guànchè\",\"definitions\":[\"to implement\",\"put into practice\",\"carry out\"]},{\"simplified\":\"惯例\",\"traditional\":\"慣例\",\"pinyin\":\"guànlì\",\"definitions\":[\"conventional\"]},{\"simplified\":\"灌溉\",\"traditional\":\"灌溉\",\"pinyin\":\"guàngài\",\"definitions\":[\"irrigate\"]},{\"simplified\":\"罐\",\"traditional\":\"罐\",\"pinyin\":\"guàn\",\"definitions\":[\"can\",\"jar\",\"pot\",\"pitcher\",\"jug\"]},{\"simplified\":\"光彩\",\"traditional\":\"光彩\",\"pinyin\":\"guāngcǎi\",\"definitions\":[\"splendor\",\"radiance\",\"brilliance\",\"honor\"]},{\"simplified\":\"光辉\",\"traditional\":\"光輝\",\"pinyin\":\"guānghuī\",\"definitions\":[\"radiance\",\"brilliant\",\"glory\"]},{\"simplified\":\"光芒\",\"traditional\":\"光芒\",\"pinyin\":\"guāngmáng\",\"definitions\":[\"rays of light\",\"brilliant rays\",\"radiance\"]},{\"simplified\":\"光荣\",\"traditional\":\"光榮\",\"pinyin\":\"guāngróng\",\"definitions\":[\"glory\",\"honor\"]},{\"simplified\":\"广阔\",\"traditional\":\"廣闊\",\"pinyin\":\"guǎngkuò\",\"definitions\":[\"wide\",\"vast\"]},{\"simplified\":\"归根到底\",\"traditional\":\"歸根到底\",\"pinyin\":\"guī gēn dào dǐ\",\"definitions\":[\"(saying) to sum it up ...\"]},{\"simplified\":\"归还\",\"traditional\":\"歸還\",\"pinyin\":\"guīhuán\",\"definitions\":[\"return something\",\"revert\"]},{\"simplified\":\"规范\",\"traditional\":\"規範\",\"pinyin\":\"guīfàn\",\"definitions\":[\"standard (design or model)\",\"norm\",\"without variation\",\"to specify\"]},{\"simplified\":\"规格\",\"traditional\":\"規格\",\"pinyin\":\"guīgé\",\"definitions\":[\"standard\",\"norm\",\"specification\"]},{\"simplified\":\"规划\",\"traditional\":\"規劃\",\"pinyin\":\"guīhuà\",\"definitions\":[\"plan\",\"program\",\"project\"]},{\"simplified\":\"规章\",\"traditional\":\"規章\",\"pinyin\":\"guīzhāng\",\"definitions\":[\"regulations\",\"rule\"]},{\"simplified\":\"轨道\",\"traditional\":\"軌道\",\"pinyin\":\"guǐdào\",\"definitions\":[\"orbit\",\"railway\",\"trajectory\"]},{\"simplified\":\"贵族\",\"traditional\":\"貴族\",\"pinyin\":\"guìzú\",\"definitions\":[\"lord\",\"nobility\",\"nobleman\",\"noblewoman\"]},{\"simplified\":\"跪\",\"traditional\":\"跪\",\"pinyin\":\"guì\",\"definitions\":[\"kneel\"]},{\"simplified\":\"棍棒\",\"traditional\":\"棍棒\",\"pinyin\":\"gùnbàng\",\"definitions\":[\"club\"]},{\"simplified\":\"国防\",\"traditional\":\"國防\",\"pinyin\":\"guófáng\",\"definitions\":[\"national defense\"]},{\"simplified\":\"国务院\",\"traditional\":\"國務院\",\"pinyin\":\"guówùyuàn\",\"definitions\":[\"State Council (PRC)\",\"State Department (USA)\"]},{\"simplified\":\"果断\",\"traditional\":\"果斷\",\"pinyin\":\"guǒduàn\",\"definitions\":[\"firm\",\"decisive\"]},{\"simplified\":\"过度\",\"traditional\":\"過度\",\"pinyin\":\"guòdù\",\"definitions\":[\"excessive\",\"exceeding\",\"lavishly\"]},{\"simplified\":\"过渡\",\"traditional\":\"過渡\",\"pinyin\":\"guòdù\",\"definitions\":[\"to cross a river by ferry\",\"transition\",\"interim\"]},{\"simplified\":\"过奖\",\"traditional\":\"過獎\",\"pinyin\":\"guòjiǎng\",\"definitions\":[\"praise excessively\",\"flatter\"]},{\"simplified\":\"过滤\",\"traditional\":\"過濾\",\"pinyin\":\"guòlǜ\",\"definitions\":[\"to filter\",\"filter\"]},{\"simplified\":\"过失\",\"traditional\":\"過失\",\"pinyin\":\"guòshī\",\"definitions\":[\"defect\",\"fault\"]},{\"simplified\":\"过问\",\"traditional\":\"過問\",\"pinyin\":\"guòwèn\",\"definitions\":[\"take an interest in\",\"get involved with\"]},{\"simplified\":\"过瘾\",\"traditional\":\"過瘾\",\"pinyin\":\"guòyǐn\",\"definitions\":[\"satisfy a craving\",\"get a kick out of sth\",\"do to one's heart's content\"]},{\"simplified\":\"过于\",\"traditional\":\"過于\",\"pinyin\":\"guòyú\",\"definitions\":[\"too much\",\"excessively\"]},{\"simplified\":\"嗨\",\"traditional\":\"嗨\",\"pinyin\":\"hāi\",\"definitions\":[\"hey/hi (loanword)\",\"oh\",\"alas\",\"\"]},{\"simplified\":\"海拔\",\"traditional\":\"海拔\",\"pinyin\":\"hǎibá\",\"definitions\":[\"height above sea level\",\"elevation\"]},{\"simplified\":\"海滨\",\"traditional\":\"海濱\",\"pinyin\":\"hǎibīn\",\"definitions\":[\"shore\",\"seaside\"]},{\"simplified\":\"含糊\",\"traditional\":\"含糊\",\"pinyin\":\"hánhu\",\"definitions\":[\"unclear\",\"vague\",\"unsure\"]},{\"simplified\":\"含义\",\"traditional\":\"含義\",\"pinyin\":\"hányì\",\"definitions\":[\"implied meaning\",\"connotation\"]},{\"simplified\":\"寒暄\",\"traditional\":\"寒暄\",\"pinyin\":\"hánxuān\",\"definitions\":[\"exchanging conventional greetings\",\"winter and summer\"]},{\"simplified\":\"罕见\",\"traditional\":\"罕見\",\"pinyin\":\"hǎnjiàn\",\"definitions\":[\"rare\",\"rarely seen\",\"peculiar\"]},{\"simplified\":\"捍卫\",\"traditional\":\"捍衛\",\"pinyin\":\"hànwèi\",\"definitions\":[\"defend\",\"uphold\",\"safeguard\"]},{\"simplified\":\"行列\",\"traditional\":\"行列\",\"pinyin\":\"hángliè\",\"definitions\":[\"procession\",\"ranks\",\"queue\"]},{\"simplified\":\"航空\",\"traditional\":\"航空\",\"pinyin\":\"hángkōng\",\"definitions\":[\"aviation\"]},{\"simplified\":\"航天\",\"traditional\":\"航天\",\"pinyin\":\"hángtiān\",\"definitions\":[\"space flight\"]},{\"simplified\":\"航行\",\"traditional\":\"航行\",\"pinyin\":\"hángxíng\",\"definitions\":[\"to sail\",\"to fly\"]},{\"simplified\":\"毫米\",\"traditional\":\"毫米\",\"pinyin\":\"háomǐ\",\"definitions\":[\"millimeter\"]},{\"simplified\":\"毫无\",\"traditional\":\"毫無\",\"pinyin\":\"háo wú\",\"definitions\":[\"not at all\",\"completely without\",\"not in the least\"]},{\"simplified\":\"豪迈\",\"traditional\":\"豪邁\",\"pinyin\":\"háomài\",\"definitions\":[\"bold and generous\",\"heroic\"]},{\"simplified\":\"号召\",\"traditional\":\"號召\",\"pinyin\":\"hàozhào\",\"definitions\":[\"call upon\",\"summon\",\"to appeal\"]},{\"simplified\":\"耗费\",\"traditional\":\"耗費\",\"pinyin\":\"hàofèi\",\"definitions\":[\"waste\",\"spend\",\"consume\"]},{\"simplified\":\"呵\",\"traditional\":\"呵\",\"pinyin\":\"hē\",\"definitions\":[\"breathe out\",\"scold\"]},{\"simplified\":\"合并\",\"traditional\":\"合並\",\"pinyin\":\"hébìng\",\"definitions\":[\"merge\",\"annex\"]},{\"simplified\":\"合成\",\"traditional\":\"合成\",\"pinyin\":\"héchéng\",\"definitions\":[\"compound\",\"synthesis\",\"mixture\"]},{\"simplified\":\"合伙\",\"traditional\":\"合夥\",\"pinyin\":\"héhuǒ\",\"definitions\":[\"to make a partnership\"]},{\"simplified\":\"合算\",\"traditional\":\"合算\",\"pinyin\":\"hésuàn\",\"definitions\":[\"worthwhile\",\"reckon up\"]},{\"simplified\":\"和蔼\",\"traditional\":\"和藹\",\"pinyin\":\"hé'ǎi\",\"definitions\":[\"kindly\",\"good-tempered\",\"amiable\"]},{\"simplified\":\"和解\",\"traditional\":\"和解\",\"pinyin\":\"héjiě\",\"definitions\":[\"settlement\",\"to become reconciled\"]},{\"simplified\":\"和睦\",\"traditional\":\"和睦\",\"pinyin\":\"hémù\",\"definitions\":[\"peaceful relations\",\"harmonious\"]},{\"simplified\":\"和气\",\"traditional\":\"和氣\",\"pinyin\":\"héqi\",\"definitions\":[\"friendly\",\"polite\",\"amiable\"]},{\"simplified\":\"和谐\",\"traditional\":\"和諧\",\"pinyin\":\"héxié\",\"definitions\":[\"harmonious\",\"concordant\"]},{\"simplified\":\"嘿\",\"traditional\":\"嘿\",\"pinyin\":\"hēi\",\"definitions\":[\"hey\",\"interjection for calling attention\"]},{\"simplified\":\"痕迹\",\"traditional\":\"痕迹\",\"pinyin\":\"hénjì\",\"definitions\":[\"vestige\",\"trace\"]},{\"simplified\":\"狠心\",\"traditional\":\"狠心\",\"pinyin\":\"hěn xīn\",\"definitions\":[\"callous\",\"cruel\",\"cold-blooded\"]},{\"simplified\":\"恨不得\",\"traditional\":\"恨不得\",\"pinyin\":\"hèn bu de\",\"definitions\":[\"cannot bear not\",\"be dying to\"]},{\"simplified\":\"横\",\"traditional\":\"橫\",\"pinyin\":\"héng\",\"definitions\":[\"horizontal\",\"across\",\"(horizontal character stroke)\"]},{\"simplified\":\"哼\",\"traditional\":\"哼\",\"pinyin\":\"hēng\",\"definitions\":[\"groan\",\"snort\",\"to hum\",\"croon\"]},{\"simplified\":\"轰动\",\"traditional\":\"轟動\",\"pinyin\":\"hōngdòng\",\"definitions\":[\"a sensation\",\"a stir\"]},{\"simplified\":\"烘\",\"traditional\":\"烘\",\"pinyin\":\"hōng\",\"definitions\":[\"to dry or warm by the fire\",\"to bake\",\"to heat by fire\",\"to set off by contrast\"]},{\"simplified\":\"宏观\",\"traditional\":\"宏觀\",\"pinyin\":\"hóngguān\",\"definitions\":[\"macro-\",\"macroscopic\"]},{\"simplified\":\"宏伟\",\"traditional\":\"宏偉\",\"pinyin\":\"hóngwěi\",\"definitions\":[\"grand\",\"imposing\",\"magnificent\",\"grand\"]},{\"simplified\":\"洪水\",\"traditional\":\"洪水\",\"pinyin\":\"hóngshuǐ\",\"definitions\":[\"flood\"]},{\"simplified\":\"哄\",\"traditional\":\"哄\",\"pinyin\":\"hǒng\",\"definitions\":[\"fool\",\"coax\",\"to amuse (a child)\"]},{\"simplified\":\"喉咙\",\"traditional\":\"喉嚨\",\"pinyin\":\"hóulóng\",\"definitions\":[\"throat\",\"larynx\"]},{\"simplified\":\"吼\",\"traditional\":\"吼\",\"pinyin\":\"hǒu\",\"definitions\":[\"roar\",\"howl\"]},{\"simplified\":\"后代\",\"traditional\":\"後代\",\"pinyin\":\"hòudài\",\"definitions\":[\"posterity\",\"later generations\",\"descendants\"]},{\"simplified\":\"后顾之忧\",\"traditional\":\"後顧之憂\",\"pinyin\":\"hòugùzhīyōu\",\"definitions\":[\"fears of trouble in the rear (idiom)\",\"family worries (obstructing freedom to act)\",\"trouble back at home\",\"worries about the future consequences\",\"often in negative expressions, meaning no worries about anything\"]},{\"simplified\":\"后勤\",\"traditional\":\"後勤\",\"pinyin\":\"hòuqín\",\"definitions\":[\"logistics\"]},{\"simplified\":\"候选\",\"traditional\":\"候選\",\"pinyin\":\"hòuxuǎn\",\"definitions\":[\"candidate\"]},{\"simplified\":\"呼唤\",\"traditional\":\"呼喚\",\"pinyin\":\"hūhuàn\",\"definitions\":[\"call out (a name etc.)\",\"shout\"]},{\"simplified\":\"呼啸\",\"traditional\":\"呼嘯\",\"pinyin\":\"hūxiào\",\"definitions\":[\"whistle\",\"scream\",\"howl\"]},{\"simplified\":\"呼吁\",\"traditional\":\"呼籲\",\"pinyin\":\"hūyù\",\"definitions\":[\"call on (someone to do something)\",\"appeal\"]},{\"simplified\":\"忽略\",\"traditional\":\"忽略\",\"pinyin\":\"hūlüè\",\"definitions\":[\"ignore\",\"forget about\",\"neglect\"]},{\"simplified\":\"胡乱\",\"traditional\":\"胡亂\",\"pinyin\":\"húluàn\",\"definitions\":[\"carelessly\",\"recklessly\"]},{\"simplified\":\"胡须\",\"traditional\":\"胡須\",\"pinyin\":\"húxū\",\"definitions\":[\"beard\",\"moustache\",\"whiskers\"]},{\"simplified\":\"湖泊\",\"traditional\":\"湖泊\",\"pinyin\":\"húpō\",\"definitions\":[\"lake\"]},{\"simplified\":\"花瓣\",\"traditional\":\"花瓣\",\"pinyin\":\"huābàn\",\"definitions\":[\"petal\"]},{\"simplified\":\"花蕾\",\"traditional\":\"花蕾\",\"pinyin\":\"huālěi\",\"definitions\":[\"(flower) bud\"]},{\"simplified\":\"华丽\",\"traditional\":\"華麗\",\"pinyin\":\"huálì\",\"definitions\":[\"gorgeous\",\"magnificent\"]},{\"simplified\":\"华侨\",\"traditional\":\"華僑\",\"pinyin\":\"huáqiáo\",\"definitions\":[\"overseas Chinese\"]},{\"simplified\":\"化肥\",\"traditional\":\"化肥\",\"pinyin\":\"huàféi\",\"definitions\":[\"chemical fertilizer\"]},{\"simplified\":\"化石\",\"traditional\":\"化石\",\"pinyin\":\"huàshí\",\"definitions\":[\"fossil\"]},{\"simplified\":\"化验\",\"traditional\":\"化驗\",\"pinyin\":\"huàyàn\",\"definitions\":[\"laboratory test\",\"chemically examine\"]},{\"simplified\":\"化妆\",\"traditional\":\"化妝\",\"pinyin\":\"huà zhuāng\",\"definitions\":[\"put on make-up\"]},{\"simplified\":\"划分\",\"traditional\":\"劃分\",\"pinyin\":\"huàfēn\",\"definitions\":[\"divide up\",\"differentiate\"]},{\"simplified\":\"画蛇添足\",\"traditional\":\"畫蛇添足\",\"pinyin\":\"huàshétiānzú\",\"definitions\":[\"draw legs on a snake (idiom)\",\"to ruin something by adding something superfluous\"]},{\"simplified\":\"话筒\",\"traditional\":\"話筒\",\"pinyin\":\"huàtǒng\",\"definitions\":[\"microphone\",\"transmitter\",\"megaphone\"]},{\"simplified\":\"欢乐\",\"traditional\":\"歡樂\",\"pinyin\":\"huānlè\",\"definitions\":[\"gaiety\",\"glee\",\"delighted\"]},{\"simplified\":\"还原\",\"traditional\":\"還原\",\"pinyin\":\"huányuán\",\"definitions\":[\"restore to the original state\",\"(Chemistry) reduce\"]},{\"simplified\":\"环节\",\"traditional\":\"環節\",\"pinyin\":\"huánjié\",\"definitions\":[\"link\",\"sector\",\"segment (of annelid worms)\"]},{\"simplified\":\"缓和\",\"traditional\":\"緩和\",\"pinyin\":\"huǎnhé\",\"definitions\":[\"alleviate\",\"to moderate\",\"to ease (tension)\"]},{\"simplified\":\"患者\",\"traditional\":\"患者\",\"pinyin\":\"huànzhě\",\"definitions\":[\"sufferer\",\"patient\",\"the sick\"]},{\"simplified\":\"荒凉\",\"traditional\":\"荒涼\",\"pinyin\":\"huāngliáng\",\"definitions\":[\"desolate\"]},{\"simplified\":\"荒谬\",\"traditional\":\"荒謬\",\"pinyin\":\"huāngmiù\",\"definitions\":[\"ridiculous\",\"nonsensical\"]},{\"simplified\":\"荒唐\",\"traditional\":\"荒唐\",\"pinyin\":\"huāngtang\",\"definitions\":[\"beyond belief\",\"preposterous\",\"absurd\",\"intemperate\"]},{\"simplified\":\"皇帝\",\"traditional\":\"皇帝\",\"pinyin\":\"huángdì\",\"definitions\":[\"emperor\"]},{\"simplified\":\"皇后\",\"traditional\":\"皇後\",\"pinyin\":\"huánghòu\",\"definitions\":[\"an empress\"]},{\"simplified\":\"黄昏\",\"traditional\":\"黃昏\",\"pinyin\":\"huánghūn\",\"definitions\":[\"dusk\",\"evening\",\"nightfall\"]},{\"simplified\":\"恍然大悟\",\"traditional\":\"恍然大悟\",\"pinyin\":\"huǎngrándàwù\",\"definitions\":[\"suddenly see the light\",\"suddenly realize what has happened\",\"twig\"]},{\"simplified\":\"晃\",\"traditional\":\"晃\",\"pinyin\":\"huàng\",\"definitions\":[\"to sway\",\"to shake\"]},{\"simplified\":\"挥霍\",\"traditional\":\"揮霍\",\"pinyin\":\"huīhuò\",\"definitions\":[\"squander money without restraint\",\"squander\"]},{\"simplified\":\"辉煌\",\"traditional\":\"輝煌\",\"pinyin\":\"huīhuáng\",\"definitions\":[\"splendid\",\"glorious\"]},{\"simplified\":\"回报\",\"traditional\":\"回報\",\"pinyin\":\"huíbào\",\"definitions\":[\"repayment\",\"payback\"]},{\"simplified\":\"回避\",\"traditional\":\"回避\",\"pinyin\":\"huíbì\",\"definitions\":[\"avoid\",\"shun\",\"evade\"]},{\"simplified\":\"回顾\",\"traditional\":\"回顧\",\"pinyin\":\"huígù\",\"definitions\":[\"look back\",\"to review\"]},{\"simplified\":\"回收\",\"traditional\":\"回收\",\"pinyin\":\"huíshōu\",\"definitions\":[\"recycle\",\"recover and put back to use\"]},{\"simplified\":\"悔恨\",\"traditional\":\"悔恨\",\"pinyin\":\"huǐhèn\",\"definitions\":[\"remorse\",\"repentance\"]},{\"simplified\":\"毁灭\",\"traditional\":\"毀滅\",\"pinyin\":\"huǐmiè\",\"definitions\":[\"perish\",\"ruin\",\"destroy\"]},{\"simplified\":\"汇报\",\"traditional\":\"彙報\",\"pinyin\":\"huìbào\",\"definitions\":[\"report\",\"give an account of\",\"to collect information and report back\"]},{\"simplified\":\"会晤\",\"traditional\":\"會晤\",\"pinyin\":\"huìwù\",\"definitions\":[\"meet\",\"meeting\",\"conference\"]},{\"simplified\":\"贿赂\",\"traditional\":\"賄賂\",\"pinyin\":\"huìlù\",\"definitions\":[\"to bribe\"]},{\"simplified\":\"昏迷\",\"traditional\":\"昏迷\",\"pinyin\":\"hūnmí\",\"definitions\":[\"lose consciousness\",\"be in a coma\"]},{\"simplified\":\"荤\",\"traditional\":\"葷\",\"pinyin\":\"hūn\",\"definitions\":[\"meat or fish dish\",\"pungent vegetables forbidden to Buddhist vegetarians\"]},{\"simplified\":\"浑身\",\"traditional\":\"渾身\",\"pinyin\":\"húnshēn\",\"definitions\":[\"entire body\",\"from head to foot\"]},{\"simplified\":\"混合\",\"traditional\":\"混合\",\"pinyin\":\"hùnhé\",\"definitions\":[\"to mix\",\"to blend\"]},{\"simplified\":\"混乱\",\"traditional\":\"混亂\",\"pinyin\":\"hùnluàn\",\"definitions\":[\"confusion\",\"chaotic\"]},{\"simplified\":\"混淆\",\"traditional\":\"混淆\",\"pinyin\":\"hùnxiáo\",\"definitions\":[\"obscure\",\"confuse\",\"mix up\",\"blur\",\"mislead\",\"confusing\"]},{\"simplified\":\"混浊\",\"traditional\":\"混濁\",\"pinyin\":\"hùnzhuó\",\"definitions\":[\"muddy\",\"dirty\",\"turbid\"]},{\"simplified\":\"活该\",\"traditional\":\"活該\",\"pinyin\":\"huógāi\",\"definitions\":[\"serve sb. right\",\"deservedly\",\"ought\"]},{\"simplified\":\"活力\",\"traditional\":\"活力\",\"pinyin\":\"huólì\",\"definitions\":[\"energy\",\"vitality\",\"vigor\"]},{\"simplified\":\"火箭\",\"traditional\":\"火箭\",\"pinyin\":\"huǒjiàn\",\"definitions\":[\"rocket\"]},{\"simplified\":\"火焰\",\"traditional\":\"火焰\",\"pinyin\":\"huǒyàn\",\"definitions\":[\"blaze\",\"flame\"]},{\"simplified\":\"火药\",\"traditional\":\"火藥\",\"pinyin\":\"huǒyào\",\"definitions\":[\"gunpowder\"]},{\"simplified\":\"货币\",\"traditional\":\"貨幣\",\"pinyin\":\"huòbì\",\"definitions\":[\"currency\",\"money\"]},{\"simplified\":\"讥笑\",\"traditional\":\"譏笑\",\"pinyin\":\"jīxiào\",\"definitions\":[\"sneer at\",\"deride\"]},{\"simplified\":\"饥饿\",\"traditional\":\"饑餓\",\"pinyin\":\"jī'è\",\"definitions\":[\"hunger\",\"hungry\",\"starve\"]},{\"simplified\":\"机动\",\"traditional\":\"機動\",\"pinyin\":\"jīdòng\",\"definitions\":[\"motorized\",\"mobile\",\"flexible\"]},{\"simplified\":\"机构\",\"traditional\":\"機構\",\"pinyin\":\"jīgòu\",\"definitions\":[\"structure\",\"organization\",\"institution\"]},{\"simplified\":\"机灵\",\"traditional\":\"機靈\",\"pinyin\":\"jīling\",\"definitions\":[\"clever\",\"quick-witted\",\"smartness\"]},{\"simplified\":\"机密\",\"traditional\":\"機密\",\"pinyin\":\"jīmì\",\"definitions\":[\"secret\",\"classified (information)\"]},{\"simplified\":\"机械\",\"traditional\":\"機械\",\"pinyin\":\"jīxiè\",\"definitions\":[\"machine\",\"mechanical\"]},{\"simplified\":\"机遇\",\"traditional\":\"機遇\",\"pinyin\":\"jīyù\",\"definitions\":[\"opportunity\",\"stroke of good luck\",\"favorable circumstance\"]},{\"simplified\":\"机智\",\"traditional\":\"機智\",\"pinyin\":\"jīzhì\",\"definitions\":[\"tact\",\"quick-witted\",\"resourceful\"]},{\"simplified\":\"基地\",\"traditional\":\"基地\",\"pinyin\":\"jīdì\",\"definitions\":[\"base (of operations)\"]},{\"simplified\":\"基金\",\"traditional\":\"基金\",\"pinyin\":\"jījīn\",\"definitions\":[\"fund\",\"endowment\"]},{\"simplified\":\"基因\",\"traditional\":\"基因\",\"pinyin\":\"jīyīn\",\"definitions\":[\"gene\"]},{\"simplified\":\"激发\",\"traditional\":\"激發\",\"pinyin\":\"jīfā\",\"definitions\":[\"to arouse\",\"excite\"]},{\"simplified\":\"激励\",\"traditional\":\"激勵\",\"pinyin\":\"jīlì\",\"definitions\":[\"urge\",\"encourage\",\"motivation\"]},{\"simplified\":\"激情\",\"traditional\":\"激情\",\"pinyin\":\"jīqíng\",\"definitions\":[\"passion\",\"strong emotion\",\"fervor\",\"enthusiasm\"]},{\"simplified\":\"及早\",\"traditional\":\"及早\",\"pinyin\":\"jízǎo\",\"definitions\":[\"as soon as possible\",\"at the earliest possible time\"]},{\"simplified\":\"吉祥\",\"traditional\":\"吉祥\",\"pinyin\":\"jíxiáng\",\"definitions\":[\"lucky\"]},{\"simplified\":\"级别\",\"traditional\":\"級別\",\"pinyin\":\"jíbié\",\"definitions\":[\"rank\",\"level\",\"grade\"]},{\"simplified\":\"极端\",\"traditional\":\"極端\",\"pinyin\":\"jíduān\",\"definitions\":[\"extreme\"]},{\"simplified\":\"极限\",\"traditional\":\"極限\",\"pinyin\":\"jíxiàn\",\"definitions\":[\"limit\",\"extreme boundary\"]},{\"simplified\":\"即便\",\"traditional\":\"即便\",\"pinyin\":\"jíbiàn\",\"definitions\":[\"even if\",\"even though\"]},{\"simplified\":\"即将\",\"traditional\":\"即將\",\"pinyin\":\"jíjiāng\",\"definitions\":[\"will shortly\",\"soon\",\"be on the verge of\"]},{\"simplified\":\"急功近利\",\"traditional\":\"急功近利\",\"pinyin\":\"jígōngjìnlì\",\"definitions\":[\"eager for success and profit\"]},{\"simplified\":\"急剧\",\"traditional\":\"急劇\",\"pinyin\":\"jíjù\",\"definitions\":[\"rapid\",\"sudden\"]},{\"simplified\":\"急切\",\"traditional\":\"急切\",\"pinyin\":\"jíqiè\",\"definitions\":[\"eager\",\"impatient\",\"imperative\"]},{\"simplified\":\"急于求成\",\"traditional\":\"急于求成\",\"pinyin\":\"jíyúqiúchéng\",\"definitions\":[\"impatient for success\"]},{\"simplified\":\"急躁\",\"traditional\":\"急躁\",\"pinyin\":\"jízào\",\"definitions\":[\"irritable\",\"impetuous\",\"impatient\"]},{\"simplified\":\"疾病\",\"traditional\":\"疾病\",\"pinyin\":\"jíbìng\",\"definitions\":[\"disease\",\"illness\",\"sickness\",\"ailment\"]},{\"simplified\":\"集团\",\"traditional\":\"集團\",\"pinyin\":\"jítuán\",\"definitions\":[\"group\",\"bloc\",\"circle\",\"clique\"]},{\"simplified\":\"嫉妒\",\"traditional\":\"嫉妒\",\"pinyin\":\"jídù\",\"definitions\":[\"to be jealous\",\"to envy, covet\",\"to hate\",\"to begrudge\"]},{\"simplified\":\"籍贯\",\"traditional\":\"籍貫\",\"pinyin\":\"jíguàn\",\"definitions\":[\"place of one's ancestry\"]},{\"simplified\":\"给予\",\"traditional\":\"給予\",\"pinyin\":\"jǐyǔ\",\"definitions\":[\"to give\"]},{\"simplified\":\"计较\",\"traditional\":\"計較\",\"pinyin\":\"jìjiào\",\"definitions\":[\"focus excessively on\",\"haggle\",\"bicker\",\"argue\"]},{\"simplified\":\"记性\",\"traditional\":\"記性\",\"pinyin\":\"jìxing\",\"definitions\":[\"memory\"]},{\"simplified\":\"记载\",\"traditional\":\"記載\",\"pinyin\":\"jìzǎi\",\"definitions\":[\"write down\",\"to record\"]},{\"simplified\":\"纪要\",\"traditional\":\"紀要\",\"pinyin\":\"jìyào\",\"definitions\":[\"written summary of a meeting\",\"minutes\"]},{\"simplified\":\"技巧\",\"traditional\":\"技巧\",\"pinyin\":\"jìqiǎo\",\"definitions\":[\"skill\",\"technique\"]},{\"simplified\":\"忌讳\",\"traditional\":\"忌諱\",\"pinyin\":\"jìhuì\",\"definitions\":[\"avoid as a taboo\",\"abstain from\",\"taboo\"]},{\"simplified\":\"季度\",\"traditional\":\"季度\",\"pinyin\":\"jìdù\",\"definitions\":[\"(financial) quarter\",\"period of three months\"]},{\"simplified\":\"季军\",\"traditional\":\"季軍\",\"pinyin\":\"jìjūn\",\"definitions\":[\"third in a race\",\"bronze medalist\"]},{\"simplified\":\"迹象\",\"traditional\":\"迹象\",\"pinyin\":\"jìxiàng\",\"definitions\":[\"mark\",\"indication\",\"sign\"]},{\"simplified\":\"继承\",\"traditional\":\"繼承\",\"pinyin\":\"jìchéng\",\"definitions\":[\"inherit\",\"carry on\",\"succeed\"]},{\"simplified\":\"寄托\",\"traditional\":\"寄托\",\"pinyin\":\"jìtuō\",\"definitions\":[\"entrust somebody someone's care\",\"consign\",\"commit\"]},{\"simplified\":\"寂静\",\"traditional\":\"寂靜\",\"pinyin\":\"jìjìng\",\"definitions\":[\"quiet\"]},{\"simplified\":\"加工\",\"traditional\":\"加工\",\"pinyin\":\"jiā gōng\",\"definitions\":[\"to process\",\"processing\",\"machining\"]},{\"simplified\":\"加剧\",\"traditional\":\"加劇\",\"pinyin\":\"jiājù\",\"definitions\":[\"aggravate\",\"intensify\",\"sharpen\",\"accelerate\"]},{\"simplified\":\"夹杂\",\"traditional\":\"夾雜\",\"pinyin\":\"jiāzá\",\"definitions\":[\"mix together\",\"have two dissimilar substances mixed together\"]},{\"simplified\":\"佳肴\",\"traditional\":\"佳肴\",\"pinyin\":\"jiāyáo\",\"definitions\":[\"delicacy\"]},{\"simplified\":\"家常\",\"traditional\":\"家常\",\"pinyin\":\"jiācháng\",\"definitions\":[\"the daily life of a family\",\"home-style (food)\"]},{\"simplified\":\"家伙\",\"traditional\":\"家夥\",\"pinyin\":\"jiāhuo\",\"definitions\":[\"guy\",\"chap\",\"tool\",\"weapon\"]},{\"simplified\":\"家属\",\"traditional\":\"家屬\",\"pinyin\":\"jiāshǔ\",\"definitions\":[\"family member\",\"a dependent\"]},{\"simplified\":\"家喻户晓\",\"traditional\":\"家喻戶曉\",\"pinyin\":\"jiā yù hù xiǎo\",\"definitions\":[\"become a household name\",\"well-known\"]},{\"simplified\":\"尖端\",\"traditional\":\"尖端\",\"pinyin\":\"jiānduān\",\"definitions\":[\"highest peak\",\"the tip\",\"sharp pointed end\",\"most advanced and sophisticated\"]},{\"simplified\":\"尖锐\",\"traditional\":\"尖銳\",\"pinyin\":\"jiānruì\",\"definitions\":[\"sharp\",\"intense\",\"penetrating\"]},{\"simplified\":\"坚定\",\"traditional\":\"堅定\",\"pinyin\":\"jiāndìng\",\"definitions\":[\"firm\",\"staunch\",\"resolute\"]},{\"simplified\":\"坚固\",\"traditional\":\"堅固\",\"pinyin\":\"jiāngù\",\"definitions\":[\"firm\",\"strong\",\"sturdy\"]},{\"simplified\":\"坚韧\",\"traditional\":\"堅韌\",\"pinyin\":\"jiānrèn\",\"definitions\":[\"tough and durable\",\"hard-bitten\",\"firm and tenacious\"]},{\"simplified\":\"坚实\",\"traditional\":\"堅實\",\"pinyin\":\"jiānshí\",\"definitions\":[\"firm and substantial\",\"solid\"]},{\"simplified\":\"坚硬\",\"traditional\":\"堅硬\",\"pinyin\":\"jiānyìng\",\"definitions\":[\"hard\",\"solid\"]},{\"simplified\":\"艰难\",\"traditional\":\"艱難\",\"pinyin\":\"jiānnán\",\"definitions\":[\"difficult\",\"arduous\"]},{\"simplified\":\"监督\",\"traditional\":\"監督\",\"pinyin\":\"jiāndū\",\"definitions\":[\"control\",\"monitor\",\"supervise\",\"inspect\"]},{\"simplified\":\"监视\",\"traditional\":\"監視\",\"pinyin\":\"jiānshì\",\"definitions\":[\"oversee\",\"to monitor\"]},{\"simplified\":\"监狱\",\"traditional\":\"監獄\",\"pinyin\":\"jiānyù\",\"definitions\":[\"prison\",\"jail\"]},{\"simplified\":\"煎\",\"traditional\":\"煎\",\"pinyin\":\"jiān\",\"definitions\":[\"pan-fry\",\"fry in shallow oil\"]},{\"simplified\":\"拣\",\"traditional\":\"揀\",\"pinyin\":\"jiǎn\",\"definitions\":[\"choose\",\"select\",\"sort out\"]},{\"simplified\":\"检讨\",\"traditional\":\"檢討\",\"pinyin\":\"jiǎntǎo\",\"definitions\":[\"self-criticism\",\"analyze\"]},{\"simplified\":\"检验\",\"traditional\":\"檢驗\",\"pinyin\":\"jiǎnyàn\",\"definitions\":[\"inspect\",\"examine\",\"to test\"]},{\"simplified\":\"剪彩\",\"traditional\":\"剪彩\",\"pinyin\":\"jiǎn cǎi\",\"definitions\":[\"cut the ribbon at an opening ceremony\"]},{\"simplified\":\"简化\",\"traditional\":\"簡化\",\"pinyin\":\"jiǎnhuà\",\"definitions\":[\"simplify\",\"simplification\"]},{\"simplified\":\"简陋\",\"traditional\":\"簡陋\",\"pinyin\":\"jiǎnlòu\",\"definitions\":[\"simple and crude (i.e. room or building)\"]},{\"simplified\":\"简体字\",\"traditional\":\"簡體字\",\"pinyin\":\"jiǎntǐzì\",\"definitions\":[\"simplified Chinese characters\"]},{\"simplified\":\"简要\",\"traditional\":\"簡要\",\"pinyin\":\"jiǎnyào\",\"definitions\":[\"concise\",\"brief\"]},{\"simplified\":\"见多识广\",\"traditional\":\"見多識廣\",\"pinyin\":\"jiànduōshíguǎng\",\"definitions\":[\"experienced and knowledgeable\"]},{\"simplified\":\"见解\",\"traditional\":\"見解\",\"pinyin\":\"jiànjiě\",\"definitions\":[\"view\",\"opinion\",\"understanding\"]},{\"simplified\":\"见闻\",\"traditional\":\"見聞\",\"pinyin\":\"jiànwén\",\"definitions\":[\"information\"]},{\"simplified\":\"见义勇为\",\"traditional\":\"見義勇爲\",\"pinyin\":\"jiànyìyǒngwéi\",\"definitions\":[\"to see what is right and act courageously (idiom, from Analects)\",\"to stand up bravely for the truth\",\"acting heroically in a just cause\"]},{\"simplified\":\"间谍\",\"traditional\":\"間諜\",\"pinyin\":\"jiàndié\",\"definitions\":[\"a spy\",\"intelligence agent\"]},{\"simplified\":\"间隔\",\"traditional\":\"間隔\",\"pinyin\":\"jiàngé\",\"definitions\":[\"interval\",\"intermission\",\"gap\",\"be separated\"]},{\"simplified\":\"间接\",\"traditional\":\"間接\",\"pinyin\":\"jiànjiē\",\"definitions\":[\"indirect\"]},{\"simplified\":\"剑\",\"traditional\":\"劍\",\"pinyin\":\"jiàn\",\"definitions\":[\"sword\"]},{\"simplified\":\"健全\",\"traditional\":\"健全\",\"pinyin\":\"jiànquán\",\"definitions\":[\"Perfect\",\"sound\",\"to perfect/strengthen/amplify\"]},{\"simplified\":\"舰艇\",\"traditional\":\"艦艇\",\"pinyin\":\"jiàntǐng\",\"definitions\":[\"warship\",\"naval vessel\"]},{\"simplified\":\"践踏\",\"traditional\":\"踐踏\",\"pinyin\":\"jiàntà\",\"definitions\":[\"trample\"]},{\"simplified\":\"溅\",\"traditional\":\"濺\",\"pinyin\":\"jiàn\",\"definitions\":[\"to splash\"]},{\"simplified\":\"鉴别\",\"traditional\":\"鑒別\",\"pinyin\":\"jiànbié\",\"definitions\":[\"differentiate\",\"distinguish\"]},{\"simplified\":\"鉴定\",\"traditional\":\"鑒定\",\"pinyin\":\"jiàndìng\",\"definitions\":[\"appraise\",\"identify\",\"evaluate\"]},{\"simplified\":\"鉴于\",\"traditional\":\"鑒于\",\"pinyin\":\"jiànyú\",\"definitions\":[\"in light of\",\"in view of\",\"seeing that\"]},{\"simplified\":\"将近\",\"traditional\":\"將近\",\"pinyin\":\"jiāngjìn\",\"definitions\":[\"almost\",\"nearly\",\"close to\"]},{\"simplified\":\"将就\",\"traditional\":\"將就\",\"pinyin\":\"jiāngjiu\",\"definitions\":[\"put up with\",\"accept somewhat reluctantly\"]},{\"simplified\":\"将军\",\"traditional\":\"將軍\",\"pinyin\":\"jiāngjūn\",\"definitions\":[\"a general (military officer)\"]},{\"simplified\":\"僵硬\",\"traditional\":\"僵硬\",\"pinyin\":\"jiāngyìng\",\"definitions\":[\"stiff\"]},{\"simplified\":\"奖励\",\"traditional\":\"獎勵\",\"pinyin\":\"jiǎnglì\",\"definitions\":[\"to reward (as encouragement)\"]},{\"simplified\":\"奖赏\",\"traditional\":\"獎賞\",\"pinyin\":\"jiǎngshǎng\",\"definitions\":[\"to reward\"]},{\"simplified\":\"桨\",\"traditional\":\"槳\",\"pinyin\":\"jiǎng\",\"definitions\":[\"oar\",\"paddle\"]},{\"simplified\":\"降临\",\"traditional\":\"降臨\",\"pinyin\":\"jiànglín\",\"definitions\":[\"befall\",\"descend\"]},{\"simplified\":\"交叉\",\"traditional\":\"交叉\",\"pinyin\":\"jiāochā\",\"definitions\":[\"cross\",\"intersect\"]},{\"simplified\":\"交代\",\"traditional\":\"交代\",\"pinyin\":\"jiāodài\",\"definitions\":[\"explain\",\"account for\",\"hand over\"]},{\"simplified\":\"交涉\",\"traditional\":\"交涉\",\"pinyin\":\"jiāoshè\",\"definitions\":[\"negotiate\",\"discuss a matter with the opposing side\"]},{\"simplified\":\"交易\",\"traditional\":\"交易\",\"pinyin\":\"jiāoyì\",\"definitions\":[\"business transaction\",\"deal\",\"trade\"]},{\"simplified\":\"娇气\",\"traditional\":\"嬌氣\",\"pinyin\":\"jiāoqì\",\"definitions\":[\"delicate\",\"effeminate\",\"squeamish\"]},{\"simplified\":\"焦点\",\"traditional\":\"焦點\",\"pinyin\":\"jiāodiǎn\",\"definitions\":[\"focus\",\"focal point\"]},{\"simplified\":\"焦急\",\"traditional\":\"焦急\",\"pinyin\":\"jiāojí\",\"definitions\":[\"anxiety\",\"worried\"]},{\"simplified\":\"角落\",\"traditional\":\"角落\",\"pinyin\":\"jiǎoluò\",\"definitions\":[\"corner\",\"nook\"]},{\"simplified\":\"侥幸\",\"traditional\":\"僥幸\",\"pinyin\":\"jiǎoxìng\",\"definitions\":[\"by luck\",\"by a fluke\"]},{\"simplified\":\"搅拌\",\"traditional\":\"攪拌\",\"pinyin\":\"jiǎobàn\",\"definitions\":[\"stir\",\"mix up\"]},{\"simplified\":\"缴纳\",\"traditional\":\"繳納\",\"pinyin\":\"jiǎonà\",\"definitions\":[\"to pay (taxes)\"]},{\"simplified\":\"较量\",\"traditional\":\"較量\",\"pinyin\":\"jiàoliàng\",\"definitions\":[\"competition\",\"to have a contest with sb.\"]},{\"simplified\":\"教养\",\"traditional\":\"教養\",\"pinyin\":\"jiàoyǎng\",\"definitions\":[\"upbringing\",\"education\",\"bring up\",\"nurture and train\"]},{\"simplified\":\"阶层\",\"traditional\":\"階層\",\"pinyin\":\"jiēcéng\",\"definitions\":[\"hierarchy\"]},{\"simplified\":\"皆\",\"traditional\":\"皆\",\"pinyin\":\"jiē\",\"definitions\":[\"all\",\"each and every\",\"in all cases\"]},{\"simplified\":\"接连\",\"traditional\":\"接連\",\"pinyin\":\"jiēlián\",\"definitions\":[\"one after another\",\"in a row\",\"in succession\"]},{\"simplified\":\"揭露\",\"traditional\":\"揭露\",\"pinyin\":\"jiēlù\",\"definitions\":[\"expose\",\"unmask\"]},{\"simplified\":\"节制\",\"traditional\":\"節制\",\"pinyin\":\"jiézhì\",\"definitions\":[\"to be restrained or moderate\"]},{\"simplified\":\"节奏\",\"traditional\":\"節奏\",\"pinyin\":\"jiézòu\",\"definitions\":[\"rhythm\",\"cadence\",\"tempo\"]},{\"simplified\":\"杰出\",\"traditional\":\"傑出\",\"pinyin\":\"jiéchū\",\"definitions\":[\"outstanding\",\"preeminent\"]},{\"simplified\":\"结晶\",\"traditional\":\"結晶\",\"pinyin\":\"jiéjīng\",\"definitions\":[\"a crystal\",\"to crystallize\"]},{\"simplified\":\"结局\",\"traditional\":\"結局\",\"pinyin\":\"jiéjú\",\"definitions\":[\"conclusion\",\"ending\"]},{\"simplified\":\"结算\",\"traditional\":\"結算\",\"pinyin\":\"jiésuàn\",\"definitions\":[\"settle up the bill\",\"close an account\"]},{\"simplified\":\"截止\",\"traditional\":\"截止\",\"pinyin\":\"jiézhǐ\",\"definitions\":[\"end\",\"close\",\"stop\",\"expiration\"]},{\"simplified\":\"截至\",\"traditional\":\"截至\",\"pinyin\":\"jiézhì\",\"definitions\":[\"up until\",\"by (a specified time\"]},{\"simplified\":\"竭尽全力\",\"traditional\":\"竭盡全力\",\"pinyin\":\"jiéjìn quánlì\",\"definitions\":[\"to spare no efforts\",\"do one's utmost\"]},{\"simplified\":\"解除\",\"traditional\":\"解除\",\"pinyin\":\"jiěchú\",\"definitions\":[\"remove\",\"relieve (someone of their duties)\",\"sack\",\"get rid of\"]},{\"simplified\":\"解放\",\"traditional\":\"解放\",\"pinyin\":\"jiěfàng\",\"definitions\":[\"liberate\"]},{\"simplified\":\"解雇\",\"traditional\":\"解雇\",\"pinyin\":\"jiěgù\",\"definitions\":[\"fire\",\"lay off\",\"dismiss from\"]},{\"simplified\":\"解剖\",\"traditional\":\"解剖\",\"pinyin\":\"jiěpōu\",\"definitions\":[\"dissect\",\"analyze\",\"anatomy\"]},{\"simplified\":\"解散\",\"traditional\":\"解散\",\"pinyin\":\"jiěsàn\",\"definitions\":[\"dismiss\",\"dissolve\",\"disband\"]},{\"simplified\":\"解体\",\"traditional\":\"解體\",\"pinyin\":\"jiětǐ\",\"definitions\":[\"disintegrate\"]},{\"simplified\":\"戒备\",\"traditional\":\"戒備\",\"pinyin\":\"jièbèi\",\"definitions\":[\"take precautions\",\"be on the alert\"]},{\"simplified\":\"界限\",\"traditional\":\"界限\",\"pinyin\":\"jièxiàn\",\"definitions\":[\"boundary\",\"marginal\",\"limit\"]},{\"simplified\":\"借鉴\",\"traditional\":\"借鑒\",\"pinyin\":\"jièjiàn\",\"definitions\":[\"take example by\",\"use other people's experience\"]},{\"simplified\":\"借助\",\"traditional\":\"借助\",\"pinyin\":\"jièzhù\",\"definitions\":[\"get help from\"]},{\"simplified\":\"金融\",\"traditional\":\"金融\",\"pinyin\":\"jīnróng\",\"definitions\":[\"banking finance\",\"financial\"]},{\"simplified\":\"津津有味\",\"traditional\":\"津津有味\",\"pinyin\":\"jīnjīn yǒu wèi\",\"definitions\":[\"(saying) with gusto\",\"eagerly\",\"with great interest\"]},{\"simplified\":\"紧迫\",\"traditional\":\"緊迫\",\"pinyin\":\"jǐnpò\",\"definitions\":[\"urgent\",\"urgency\"]},{\"simplified\":\"锦上添花\",\"traditional\":\"錦上添花\",\"pinyin\":\"jǐnshàngtiānhuā\",\"definitions\":[\"lit. on brocade, add flowers (idiom)\",\"to decorate sth already perfect / gilding the lily\"]},{\"simplified\":\"进而\",\"traditional\":\"進而\",\"pinyin\":\"jìn'ér\",\"definitions\":[\"and then (what follows next)\"]},{\"simplified\":\"进攻\",\"traditional\":\"進攻\",\"pinyin\":\"jìngōng\",\"definitions\":[\"attack (military)\",\"assault\"]},{\"simplified\":\"进化\",\"traditional\":\"進化\",\"pinyin\":\"jìnhuà\",\"definitions\":[\"evolution\"]},{\"simplified\":\"进展\",\"traditional\":\"進展\",\"pinyin\":\"jìnzhǎn\",\"definitions\":[\"make progress\",\"development\",\"make headway\"]},{\"simplified\":\"近来\",\"traditional\":\"近來\",\"pinyin\":\"jìnlái\",\"definitions\":[\"recently\",\"lately\"]},{\"simplified\":\"晋升\",\"traditional\":\"晉升\",\"pinyin\":\"jìnshēng\",\"definitions\":[\"promote to a higher position\"]},{\"simplified\":\"浸泡\",\"traditional\":\"浸泡\",\"pinyin\":\"jìnpào\",\"definitions\":[\"to soak\"]},{\"simplified\":\"茎\",\"traditional\":\"莖\",\"pinyin\":\"jīng\",\"definitions\":[\"stalk\",\"stem\"]},{\"simplified\":\"经费\",\"traditional\":\"經費\",\"pinyin\":\"jīngfèi\",\"definitions\":[\"funds\",\"expenses\"]},{\"simplified\":\"经纬\",\"traditional\":\"經緯\",\"pinyin\":\"jīngwěi\",\"definitions\":[\"warp and woof\",\"longitude and latitude\",\"main points\"]},{\"simplified\":\"惊动\",\"traditional\":\"驚動\",\"pinyin\":\"jīngdòng\",\"definitions\":[\"alarm\",\"alert\",\"startle\",\"disturb\"]},{\"simplified\":\"惊奇\",\"traditional\":\"驚奇\",\"pinyin\":\"jīngqí\",\"definitions\":[\"amaze\",\"astonished\"]},{\"simplified\":\"惊讶\",\"traditional\":\"驚訝\",\"pinyin\":\"jīngyà\",\"definitions\":[\"surprised\",\"astonished\",\"astound\"]},{\"simplified\":\"兢兢业业\",\"traditional\":\"兢兢業業\",\"pinyin\":\"jīngjīng yèyè\",\"definitions\":[\"cautious and conscientious\"]},{\"simplified\":\"精打细算\",\"traditional\":\"精打細算\",\"pinyin\":\"jīng dǎ xì suàn\",\"definitions\":[\"(saying) meticulous planning and careful accounting\"]},{\"simplified\":\"精华\",\"traditional\":\"精華\",\"pinyin\":\"jīnghuá\",\"definitions\":[\"elite\",\"best feature\",\"most important part of an object\",\"essence\",\"quintessence\"]},{\"simplified\":\"精简\",\"traditional\":\"精簡\",\"pinyin\":\"jīngjiǎn\",\"definitions\":[\"simplify\",\"reduce\"]},{\"simplified\":\"精密\",\"traditional\":\"精密\",\"pinyin\":\"jīngmì\",\"definitions\":[\"accuracy\",\"exact\",\"precise\",\"refined\"]},{\"simplified\":\"精确\",\"traditional\":\"精確\",\"pinyin\":\"jīngquè\",\"definitions\":[\"accurate\",\"precise\"]},{\"simplified\":\"精通\",\"traditional\":\"精通\",\"pinyin\":\"jīngtōng\",\"definitions\":[\"proficient\",\"have a good command of\"]},{\"simplified\":\"精心\",\"traditional\":\"精心\",\"pinyin\":\"jīngxīn\",\"definitions\":[\"with utmost care\",\"meticulous\",\"detailed\"]},{\"simplified\":\"精益求精\",\"traditional\":\"精益求精\",\"pinyin\":\"jīng yì qiú jīng\",\"definitions\":[\"(saying) improving and wanting to improve even more\"]},{\"simplified\":\"精致\",\"traditional\":\"精致\",\"pinyin\":\"jīngzhì\",\"definitions\":[\"exquisite\",\"delicate\",\"refined\"]},{\"simplified\":\"井\",\"traditional\":\"井\",\"pinyin\":\"jǐng\",\"definitions\":[\"a well\"]},{\"simplified\":\"颈椎\",\"traditional\":\"頸椎\",\"pinyin\":\"jǐngzhuī\",\"definitions\":[\"cervical vertebra\",\"the seven cervical vertebrae in the neck of humans and most mammals\"]},{\"simplified\":\"警告\",\"traditional\":\"警告\",\"pinyin\":\"jǐnggào\",\"definitions\":[\"to warn\",\"admonish\"]},{\"simplified\":\"警惕\",\"traditional\":\"警惕\",\"pinyin\":\"jǐngtì\",\"definitions\":[\"vigilant\",\"alert\",\"be on guard\"]},{\"simplified\":\"竞赛\",\"traditional\":\"競賽\",\"pinyin\":\"jìngsài\",\"definitions\":[\"race\",\"contest\",\"competition\"]},{\"simplified\":\"竞选\",\"traditional\":\"競選\",\"pinyin\":\"jìngxuǎn\",\"definitions\":[\"run for (electoral) office\",\"take part in an election\"]},{\"simplified\":\"敬礼\",\"traditional\":\"敬禮\",\"pinyin\":\"jìnglǐ\",\"definitions\":[\"to salute\",\"best regards\"]},{\"simplified\":\"敬业\",\"traditional\":\"敬業\",\"pinyin\":\"jìngyè\",\"definitions\":[\"work ethic\"]},{\"simplified\":\"境界\",\"traditional\":\"境界\",\"pinyin\":\"jìngjiè\",\"definitions\":[\"boundary\",\"state\",\"realm\",\"level\"]},{\"simplified\":\"镜头\",\"traditional\":\"鏡頭\",\"pinyin\":\"jìngtóu\",\"definitions\":[\"camera shot (in a movie, etc.)\",\"scene\",\"camera lens\"]},{\"simplified\":\"纠纷\",\"traditional\":\"糾紛\",\"pinyin\":\"jiūfēn\",\"definitions\":[\"dispute\",\"quarrel\"]},{\"simplified\":\"纠正\",\"traditional\":\"糾正\",\"pinyin\":\"jiūzhèng\",\"definitions\":[\"to correct\",\"to make right\"]},{\"simplified\":\"酒精\",\"traditional\":\"酒精\",\"pinyin\":\"jiǔjīng\",\"definitions\":[\"alcohol\",\"ethanol\"]},{\"simplified\":\"救济\",\"traditional\":\"救濟\",\"pinyin\":\"jiùjì\",\"definitions\":[\"emergency relief\",\"aid\",\"help out in a disaster\"]},{\"simplified\":\"就近\",\"traditional\":\"就近\",\"pinyin\":\"jiùjìn\",\"definitions\":[\"nearby\",\"in a close neighborhood\"]},{\"simplified\":\"就业\",\"traditional\":\"就業\",\"pinyin\":\"jiùyè\",\"definitions\":[\"employment\",\"getting a job\"]},{\"simplified\":\"就职\",\"traditional\":\"就職\",\"pinyin\":\"jiù zhí\",\"definitions\":[\"take office\",\"assume a post\"]},{\"simplified\":\"拘留\",\"traditional\":\"拘留\",\"pinyin\":\"jūliú\",\"definitions\":[\"detain (a prison)\",\"keep (someone) in custody\"]},{\"simplified\":\"拘束\",\"traditional\":\"拘束\",\"pinyin\":\"jūshù\",\"definitions\":[\"restrict\",\"constrained\",\"ill at ease\",\"reticent\"]},{\"simplified\":\"居民\",\"traditional\":\"居民\",\"pinyin\":\"jūmín\",\"definitions\":[\"resident\",\"inhabitant\"]},{\"simplified\":\"居住\",\"traditional\":\"居住\",\"pinyin\":\"jūzhù\",\"definitions\":[\"reside\",\"dwell\",\"to live (in a place)\"]},{\"simplified\":\"鞠躬\",\"traditional\":\"鞠躬\",\"pinyin\":\"jūgōng\",\"definitions\":[\"to bow\"]},{\"simplified\":\"局部\",\"traditional\":\"局部\",\"pinyin\":\"júbù\",\"definitions\":[\"part\",\"local\"]},{\"simplified\":\"局面\",\"traditional\":\"局面\",\"pinyin\":\"júmiàn\",\"definitions\":[\"aspect\",\"situation\"]},{\"simplified\":\"局势\",\"traditional\":\"局勢\",\"pinyin\":\"júshì\",\"definitions\":[\"situation\",\"state (of affairs)\"]},{\"simplified\":\"局限\",\"traditional\":\"局限\",\"pinyin\":\"júxiàn\",\"definitions\":[\"to limit\",\"confine\",\"restrict or confine sth.\"]},{\"simplified\":\"咀嚼\",\"traditional\":\"咀嚼\",\"pinyin\":\"jǔjué\",\"definitions\":[\"to chew\"]},{\"simplified\":\"沮丧\",\"traditional\":\"沮喪\",\"pinyin\":\"jǔsàng\",\"definitions\":[\"dejected\",\"depressed\",\"dispirited\"]},{\"simplified\":\"举动\",\"traditional\":\"舉動\",\"pinyin\":\"jǔdòng\",\"definitions\":[\"action\",\"act\",\"(make) a move\",\"movement\"]},{\"simplified\":\"举世瞩目\",\"traditional\":\"舉世矚目\",\"pinyin\":\"jǔshì zhǔmù\",\"definitions\":[\"attract worldwide attention\"]},{\"simplified\":\"举足轻重\",\"traditional\":\"舉足輕重\",\"pinyin\":\"jǔzúqīngzhòng\",\"definitions\":[\"a foot's move sways the balance\",\"hold the balance of power\",\"play a key role\"]},{\"simplified\":\"剧本\",\"traditional\":\"劇本\",\"pinyin\":\"jùběn\",\"definitions\":[\"script for a play\",\"opera\",\"movie\",\"etc\"]},{\"simplified\":\"剧烈\",\"traditional\":\"劇烈\",\"pinyin\":\"jùliè\",\"definitions\":[\"acute\",\"violent\",\"severe\"]},{\"simplified\":\"据悉\",\"traditional\":\"據悉\",\"pinyin\":\"jùxī\",\"definitions\":[\"according to reports\",\"it is reported (that)\"]},{\"simplified\":\"聚精会神\",\"traditional\":\"聚精會神\",\"pinyin\":\"jù jīng huì shén\",\"definitions\":[\"concentrate one's attention\"]},{\"simplified\":\"卷\",\"traditional\":\"卷\",\"pinyin\":\"juǎn\",\"definitions\":[\"to roll (up)\",\"to coil\",\"(mw for tapes)\"]},{\"simplified\":\"决策\",\"traditional\":\"決策\",\"pinyin\":\"juécè\",\"definitions\":[\"Make policy\",\"make strategic decision\"]},{\"simplified\":\"觉悟\",\"traditional\":\"覺悟\",\"pinyin\":\"juéwù\",\"definitions\":[\"consciousness\",\"awareness\",\"(Buddhist) enlightenment\"]},{\"simplified\":\"觉醒\",\"traditional\":\"覺醒\",\"pinyin\":\"juéxǐng\",\"definitions\":[\"awaken\",\"arousal\",\"realize\"]},{\"simplified\":\"绝望\",\"traditional\":\"絕望\",\"pinyin\":\"jué wàng\",\"definitions\":[\"desperation\",\"forlorn\",\"hopeless\"]},{\"simplified\":\"倔强\",\"traditional\":\"倔強\",\"pinyin\":\"juéjiàng\",\"definitions\":[\"stubborn\",\"unbending\"]},{\"simplified\":\"军队\",\"traditional\":\"軍隊\",\"pinyin\":\"jūnduì\",\"definitions\":[\"army troops\"]},{\"simplified\":\"君子\",\"traditional\":\"君子\",\"pinyin\":\"jūnzǐ\",\"definitions\":[\"gentleman\",\"man of noble character\"]},{\"simplified\":\"卡通\",\"traditional\":\"卡通\",\"pinyin\":\"kǎtōng\",\"definitions\":[\"cartoon\"]},{\"simplified\":\"开采\",\"traditional\":\"開采\",\"pinyin\":\"kāicǎi\",\"definitions\":[\"extract ore or some other natural resource from a mine\"]},{\"simplified\":\"开除\",\"traditional\":\"開除\",\"pinyin\":\"kāichú\",\"definitions\":[\"expel\",\"to discharge\",\"to kick out\"]},{\"simplified\":\"开阔\",\"traditional\":\"開闊\",\"pinyin\":\"kāikuò\",\"definitions\":[\"wide\",\"open (spaces)\"]},{\"simplified\":\"开朗\",\"traditional\":\"開朗\",\"pinyin\":\"kāilǎng\",\"definitions\":[\"outgoing and cheerful\",\"optimistic\",\"carefree\",\"spacious and well-lit\"]},{\"simplified\":\"开明\",\"traditional\":\"開明\",\"pinyin\":\"kāimíng\",\"definitions\":[\"enlightened\",\"open-minded\"]},{\"simplified\":\"开辟\",\"traditional\":\"開辟\",\"pinyin\":\"kāipì\",\"definitions\":[\"open up\",\"to start\",\"to build\"]},{\"simplified\":\"开拓\",\"traditional\":\"開拓\",\"pinyin\":\"kāituò\",\"definitions\":[\"break new ground (for agriculture)\",\"development\"]},{\"simplified\":\"开展\",\"traditional\":\"開展\",\"pinyin\":\"kāizhǎn\",\"definitions\":[\"begin to develop\",\"to launch\"]},{\"simplified\":\"开支\",\"traditional\":\"開支\",\"pinyin\":\"kāizhī\",\"definitions\":[\"expenditures\",\"pay\",\"expenses\"]},{\"simplified\":\"刊登\",\"traditional\":\"刊登\",\"pinyin\":\"kāndēng\",\"definitions\":[\"publish in a newspaper\",\"carry a story\"]},{\"simplified\":\"刊物\",\"traditional\":\"刊物\",\"pinyin\":\"kānwù\",\"definitions\":[\"publication\",\"periodical\",\"journal\"]},{\"simplified\":\"勘探\",\"traditional\":\"勘探\",\"pinyin\":\"kāntàn\",\"definitions\":[\"exploration\"]},{\"simplified\":\"侃侃而谈\",\"traditional\":\"侃侃而談\",\"pinyin\":\"kǎnkǎn'értán\",\"definitions\":[\"speak frankly and in measured tones\",\"argue about leisurely and boldly\"]},{\"simplified\":\"砍伐\",\"traditional\":\"砍伐\",\"pinyin\":\"kǎnfá\",\"definitions\":[\"cut down\",\"lop\",\"hew (as a tree)\"]},{\"simplified\":\"看待\",\"traditional\":\"看待\",\"pinyin\":\"kàndài\",\"definitions\":[\"look upon\",\"regard\"]},{\"simplified\":\"慷慨\",\"traditional\":\"慷慨\",\"pinyin\":\"kāngkǎi\",\"definitions\":[\"vehement\",\"fervent\",\"generous\"]},{\"simplified\":\"扛\",\"traditional\":\"扛\",\"pinyin\":\"káng\",\"definitions\":[\"to carry on one's shoulder\"]},{\"simplified\":\"抗议\",\"traditional\":\"抗議\",\"pinyin\":\"kàngyì\",\"definitions\":[\"to protest\",\"protest\"]},{\"simplified\":\"考察\",\"traditional\":\"考察\",\"pinyin\":\"kǎochá\",\"definitions\":[\"inspect\",\"investigate\",\"analyze\"]},{\"simplified\":\"考古\",\"traditional\":\"考古\",\"pinyin\":\"kǎogǔ\",\"definitions\":[\"archaeology\"]},{\"simplified\":\"考核\",\"traditional\":\"考核\",\"pinyin\":\"kǎohé\",\"definitions\":[\"examine\",\"check up on\"]},{\"simplified\":\"考验\",\"traditional\":\"考驗\",\"pinyin\":\"kǎoyàn\",\"definitions\":[\"put to the test\",\"trial\"]},{\"simplified\":\"靠拢\",\"traditional\":\"靠攏\",\"pinyin\":\"kàolǒng\",\"definitions\":[\"draw close\",\"close up\",\"move up\"]},{\"simplified\":\"科目\",\"traditional\":\"科目\",\"pinyin\":\"kēmù\",\"definitions\":[\"(school) subject\"]},{\"simplified\":\"磕\",\"traditional\":\"磕\",\"pinyin\":\"kē\",\"definitions\":[\"knock\",\"tap\"]},{\"simplified\":\"可观\",\"traditional\":\"可觀\",\"pinyin\":\"kěguān\",\"definitions\":[\"considerable\",\"impressive\"]},{\"simplified\":\"可口\",\"traditional\":\"可口\",\"pinyin\":\"kěkǒu\",\"definitions\":[\"tasty\",\"taste good\"]},{\"simplified\":\"可恶\",\"traditional\":\"可惡\",\"pinyin\":\"kěwù\",\"definitions\":[\"hateful\",\"abominable\",\"repulsive\"]},{\"simplified\":\"可行\",\"traditional\":\"可行\",\"pinyin\":\"kěxíng\",\"definitions\":[\"feasible\"]},{\"simplified\":\"渴望\",\"traditional\":\"渴望\",\"pinyin\":\"kěwàng\",\"definitions\":[\"wishful\",\"to yearn for\",\"desire\"]},{\"simplified\":\"克制\",\"traditional\":\"克制\",\"pinyin\":\"kèzhì\",\"definitions\":[\"restrain\",\"take a firm hold on\"]},{\"simplified\":\"刻不容缓\",\"traditional\":\"刻不容緩\",\"pinyin\":\"kèbùrónghuǎn\",\"definitions\":[\"demand immediate action\",\"brook no delay\"]},{\"simplified\":\"客户\",\"traditional\":\"客戶\",\"pinyin\":\"kèhù\",\"definitions\":[\"customer\",\"account\",\"client\"]},{\"simplified\":\"课题\",\"traditional\":\"課題\",\"pinyin\":\"kètí\",\"definitions\":[\"task\",\"problem\",\"issue\",\"question for discussion\"]},{\"simplified\":\"恳切\",\"traditional\":\"懇切\",\"pinyin\":\"kěnqiè\",\"definitions\":[\"earnest\",\"genuine\",\"fair-spoken\"]},{\"simplified\":\"啃\",\"traditional\":\"啃\",\"pinyin\":\"kěn\",\"definitions\":[\"gnaw\",\"nibble\",\"bite\"]},{\"simplified\":\"坑\",\"traditional\":\"坑\",\"pinyin\":\"kēng\",\"definitions\":[\"pit\",\"hole\",\"defraud\"]},{\"simplified\":\"空洞\",\"traditional\":\"空洞\",\"pinyin\":\"kōngdòng\",\"definitions\":[\"empty\",\"hollow\",\"vacuous\",\"devoid of content\"]},{\"simplified\":\"空前绝后\",\"traditional\":\"空前絕後\",\"pinyin\":\"kōngqiánjuéhòu\",\"definitions\":[\"unprecedented and unrepeatable\",\"never to be reduplicated\",\"the first and the last\",\"unmatched\",\"unique\"]},{\"simplified\":\"空想\",\"traditional\":\"空想\",\"pinyin\":\"kōngxiǎng\",\"definitions\":[\"daydream\",\"fantasy\"]},{\"simplified\":\"空虚\",\"traditional\":\"空虛\",\"pinyin\":\"kōngxū\",\"definitions\":[\"hollow\",\"emptiness\",\"meaningless\"]},{\"simplified\":\"孔\",\"traditional\":\"孔\",\"pinyin\":\"kǒng\",\"definitions\":[\"hole\"]},{\"simplified\":\"恐怖\",\"traditional\":\"恐怖\",\"pinyin\":\"kǒngbù\",\"definitions\":[\"afraid\",\"terror\"]},{\"simplified\":\"恐吓\",\"traditional\":\"恐嚇\",\"pinyin\":\"kǒnghè\",\"definitions\":[\"to threaten\"]},{\"simplified\":\"恐惧\",\"traditional\":\"恐懼\",\"pinyin\":\"kǒngjù\",\"definitions\":[\"fear\",\"dread\",\"phobia\"]},{\"simplified\":\"空白\",\"traditional\":\"空白\",\"pinyin\":\"kòngbái\",\"definitions\":[\"blank space\",\"blank\"]},{\"simplified\":\"空隙\",\"traditional\":\"空隙\",\"pinyin\":\"kòngxì\",\"definitions\":[\"crack\",\"gap between two objects\"]},{\"simplified\":\"口气\",\"traditional\":\"口氣\",\"pinyin\":\"kǒuqì\",\"definitions\":[\"tone of voice\",\"manner of speaking\"]},{\"simplified\":\"口腔\",\"traditional\":\"口腔\",\"pinyin\":\"kǒuqiāng\",\"definitions\":[\"space inside mouth (oral cavity)\"]},{\"simplified\":\"口头\",\"traditional\":\"口頭\",\"pinyin\":\"kǒutóu\",\"definitions\":[\"oral\",\"verbal\"]},{\"simplified\":\"口音\",\"traditional\":\"口音\",\"pinyin\":\"kǒuyīn\",\"definitions\":[\"accent\"]},{\"simplified\":\"扣\",\"traditional\":\"扣\",\"pinyin\":\"kòu\",\"definitions\":[\"to fasten\",\"to button\",\"button\",\"buckle\",\"knot\",\"to arrest\",\"to confiscate\",\"to deduct (money)\",\"discount\",\"to knock\",\"put upside down\",\"to smash or spike (a ball)\",\"to cover (with a bowl etc)\",\"fig. to tag a label on sb\"]},{\"simplified\":\"枯萎\",\"traditional\":\"枯萎\",\"pinyin\":\"kūwěi\",\"definitions\":[\"wither\",\"withered\"]},{\"simplified\":\"枯燥\",\"traditional\":\"枯燥\",\"pinyin\":\"kūzào\",\"definitions\":[\"dry and dull\",\"uninteresting\"]},{\"simplified\":\"哭泣\",\"traditional\":\"哭泣\",\"pinyin\":\"kūqì\",\"definitions\":[\"weep\",\"cry\",\"sob\"]},{\"simplified\":\"苦尽甘来\",\"traditional\":\"苦盡甘來\",\"pinyin\":\"kǔjìngānlái\",\"definitions\":[\"sweetness comes after bitterness\",\"the hard times are over and the good times are just beginning\"]},{\"simplified\":\"苦涩\",\"traditional\":\"苦澀\",\"pinyin\":\"kǔsè\",\"definitions\":[\"bitter and astringent\",\"pained\",\"agonized\",\"anguished\"]},{\"simplified\":\"挎\",\"traditional\":\"挎\",\"pinyin\":\"kuà\",\"definitions\":[\"carry over one's shoulder or slung on one's side\"]},{\"simplified\":\"跨\",\"traditional\":\"跨\",\"pinyin\":\"kuà\",\"definitions\":[\"step across\",\"stride\",\"straddle\",\"to cross\"]},{\"simplified\":\"快活\",\"traditional\":\"快活\",\"pinyin\":\"kuàihuo\",\"definitions\":[\"happy\",\"cheerful\"]},{\"simplified\":\"宽敞\",\"traditional\":\"寬敞\",\"pinyin\":\"kuānchang\",\"definitions\":[\"spacious\",\"commodious\"]},{\"simplified\":\"宽容\",\"traditional\":\"寬容\",\"pinyin\":\"kuānróng\",\"definitions\":[\"tolerant\",\"lenient\"]},{\"simplified\":\"款待\",\"traditional\":\"款待\",\"pinyin\":\"kuǎndài\",\"definitions\":[\"to entertain (guests)\"]},{\"simplified\":\"款式\",\"traditional\":\"款式\",\"pinyin\":\"kuǎnshì\",\"definitions\":[\"pattern\",\"design\",\"style\"]},{\"simplified\":\"筐\",\"traditional\":\"筐\",\"pinyin\":\"kuāng\",\"definitions\":[\"basket\"]},{\"simplified\":\"旷课\",\"traditional\":\"曠課\",\"pinyin\":\"kuàng kè\",\"definitions\":[\"cut school\",\"be truant from school\"]},{\"simplified\":\"况且\",\"traditional\":\"況且\",\"pinyin\":\"kuàngqiě\",\"definitions\":[\"moreover\",\"besides\",\"in addition\"]},{\"simplified\":\"矿产\",\"traditional\":\"礦産\",\"pinyin\":\"kuàngchǎn\",\"definitions\":[\"minerals\"]},{\"simplified\":\"框架\",\"traditional\":\"框架\",\"pinyin\":\"kuàngjià\",\"definitions\":[\"frame\",\"framework\",\"skeleton\"]},{\"simplified\":\"亏待\",\"traditional\":\"虧待\",\"pinyin\":\"kuīdài\",\"definitions\":[\"treat sb. unfairly\"]},{\"simplified\":\"亏损\",\"traditional\":\"虧損\",\"pinyin\":\"kuīsǔn\",\"definitions\":[\"deficit\",\"(financial) loss\"]},{\"simplified\":\"捆绑\",\"traditional\":\"捆綁\",\"pinyin\":\"kǔnbǎng\",\"definitions\":[\"tie up\",\"bundled\"]},{\"simplified\":\"扩充\",\"traditional\":\"擴充\",\"pinyin\":\"kuòchōng\",\"definitions\":[\"expand\",\"extend\"]},{\"simplified\":\"扩散\",\"traditional\":\"擴散\",\"pinyin\":\"kuòsàn\",\"definitions\":[\"spread\",\"proliferation\"]},{\"simplified\":\"扩张\",\"traditional\":\"擴張\",\"pinyin\":\"kuòzhāng\",\"definitions\":[\"expansion\",\"extension\"]},{\"simplified\":\"喇叭\",\"traditional\":\"喇叭\",\"pinyin\":\"lǎba\",\"definitions\":[\"horn\",\"trumpet\",\"loudspeaker\"]},{\"simplified\":\"蜡烛\",\"traditional\":\"蠟燭\",\"pinyin\":\"làzhú\",\"definitions\":[\"candle\"]},{\"simplified\":\"啦\",\"traditional\":\"啦\",\"pinyin\":\"la\",\"definitions\":[\"sentence-final particle: a contraction of 了 (le) and 啊 (a)\"]},{\"simplified\":\"来历\",\"traditional\":\"來曆\",\"pinyin\":\"láilì\",\"definitions\":[\"history\",\"antecedents\",\"origin\"]},{\"simplified\":\"来源\",\"traditional\":\"來源\",\"pinyin\":\"láiyuán\",\"definitions\":[\"source\",\"originate\"]},{\"simplified\":\"栏目\",\"traditional\":\"欄目\",\"pinyin\":\"lánmù\",\"definitions\":[\"column (in a newspaper,TV,etc)\"]},{\"simplified\":\"懒惰\",\"traditional\":\"懶惰\",\"pinyin\":\"lǎnduò\",\"definitions\":[\"lazy\",\"idle\"]},{\"simplified\":\"狼狈\",\"traditional\":\"狼狽\",\"pinyin\":\"lángbèi\",\"definitions\":[\"in a difficult position or situation\",\"in a tight corner\",\"scoundrel! (derogatory)\"]},{\"simplified\":\"狼吞虎咽\",\"traditional\":\"狼吞虎咽\",\"pinyin\":\"lángtūnhǔyàn\",\"definitions\":[\"wolf down one's food (idiom)\",\"gorge oneself\"]},{\"simplified\":\"捞\",\"traditional\":\"撈\",\"pinyin\":\"lāo\",\"definitions\":[\"dredge up\",\"fish up\"]},{\"simplified\":\"牢固\",\"traditional\":\"牢固\",\"pinyin\":\"láogù\",\"definitions\":[\"firm\",\"secure\",\"solid\"]},{\"simplified\":\"牢骚\",\"traditional\":\"牢騷\",\"pinyin\":\"láosāo\",\"definitions\":[\"grumble\",\"complaint\"]},{\"simplified\":\"唠叨\",\"traditional\":\"唠叨\",\"pinyin\":\"láodao\",\"definitions\":[\"be talkative (especially about trivial matters)\",\"be garrulous\",\"prattle\"]},{\"simplified\":\"乐趣\",\"traditional\":\"樂趣\",\"pinyin\":\"lèqù\",\"definitions\":[\"delight\",\"pleasure\",\"joy\",\"fun\"]},{\"simplified\":\"乐意\",\"traditional\":\"樂意\",\"pinyin\":\"lèyì\",\"definitions\":[\"be happy/willing do something\",\"content\",\"satisfied\"]},{\"simplified\":\"雷达\",\"traditional\":\"雷達\",\"pinyin\":\"léidá\",\"definitions\":[\"radar\"]},{\"simplified\":\"类似\",\"traditional\":\"類似\",\"pinyin\":\"lèisì\",\"definitions\":[\"similar\",\"analogous\"]},{\"simplified\":\"冷酷\",\"traditional\":\"冷酷\",\"pinyin\":\"lěngkù\",\"definitions\":[\"grim\",\"unfeeling\",\"callous\"]},{\"simplified\":\"冷落\",\"traditional\":\"冷落\",\"pinyin\":\"lěngluò\",\"definitions\":[\"to treat somebody coldy\",\"to snub\",\"desolate\",\"to give the cold shoulder\"]},{\"simplified\":\"冷却\",\"traditional\":\"冷卻\",\"pinyin\":\"lěngquè\",\"definitions\":[\"cooling\",\"cool off\"]},{\"simplified\":\"愣\",\"traditional\":\"愣\",\"pinyin\":\"lèng\",\"definitions\":[\"dumbfounded\",\"stupefied\",\"distracted\",\"(spoken) blunt\",\"rash\"]},{\"simplified\":\"黎明\",\"traditional\":\"黎明\",\"pinyin\":\"límíng\",\"definitions\":[\"dawn\",\"daybreak\"]},{\"simplified\":\"礼节\",\"traditional\":\"禮節\",\"pinyin\":\"lǐjié\",\"definitions\":[\"etiquette\",\"proprieties\",\"festival\"]},{\"simplified\":\"礼尚往来\",\"traditional\":\"禮尚往來\",\"pinyin\":\"lǐshàngwǎnglái\",\"definitions\":[\"courtesy requires reciprocity\"]},{\"simplified\":\"里程碑\",\"traditional\":\"裏程碑\",\"pinyin\":\"lǐchéngbēi\",\"definitions\":[\"milestone\"]},{\"simplified\":\"理睬\",\"traditional\":\"理睬\",\"pinyin\":\"lǐcǎi\",\"definitions\":[\"heed\",\"pay attention to (usually used in the negative)\"]},{\"simplified\":\"理所当然\",\"traditional\":\"理所當然\",\"pinyin\":\"lǐ suǒ dāng rán\",\"definitions\":[\"(idiom) it goes without saying\",\"certainly\",\"of course\",\"be natural and right\"]},{\"simplified\":\"理直气壮\",\"traditional\":\"理直氣壯\",\"pinyin\":\"lǐzhíqìzhuàng\",\"definitions\":[\"with justice on one's side, one is bold and assured\",\"to have the courage of ones convictions\",\"just and forceful\"]},{\"simplified\":\"理智\",\"traditional\":\"理智\",\"pinyin\":\"lǐzhì\",\"definitions\":[\"reason\",\"intellect\",\"rational\"]},{\"simplified\":\"力求\",\"traditional\":\"力求\",\"pinyin\":\"lìqiú\",\"definitions\":[\"make every effort\",\"do one's best\"]},{\"simplified\":\"力所能及\",\"traditional\":\"力所能及\",\"pinyin\":\"lìsuǒnéngjí\",\"definitions\":[\"within one's power\",\"to the best of one's ability\"]},{\"simplified\":\"力争\",\"traditional\":\"力爭\",\"pinyin\":\"lìzhēng\",\"definitions\":[\"work hard\",\"do all one can to\",\"strive for/argue strongly\"]},{\"simplified\":\"历代\",\"traditional\":\"曆代\",\"pinyin\":\"lìdài\",\"definitions\":[\"successive dynasties\",\"past dynasties\"]},{\"simplified\":\"历来\",\"traditional\":\"曆來\",\"pinyin\":\"lìlái\",\"definitions\":[\"always\",\"throughout (a period of time)\"]},{\"simplified\":\"立场\",\"traditional\":\"立場\",\"pinyin\":\"lìchǎng\",\"definitions\":[\"position\",\"standpoint\"]},{\"simplified\":\"立方\",\"traditional\":\"立方\",\"pinyin\":\"lìfāng\",\"definitions\":[\"cube\",\"(mw cubic units of measure)\"]},{\"simplified\":\"立交桥\",\"traditional\":\"立交橋\",\"pinyin\":\"lìjiāoqiáo\",\"definitions\":[\"overpass\",\"one road goes on top of another\",\"cloverleaf intersection\"]},{\"simplified\":\"立体\",\"traditional\":\"立體\",\"pinyin\":\"lìtǐ\",\"definitions\":[\"solid\",\"three dimensional\"]},{\"simplified\":\"立足\",\"traditional\":\"立足\",\"pinyin\":\"lìzú\",\"definitions\":[\"base oneself on\",\"be established\",\"have a footing\"]},{\"simplified\":\"利害\",\"traditional\":\"利害\",\"pinyin\":\"lìhai\",\"definitions\":[\"serious\",\"formidable\",\"devastating\",\"(-hài: advantages and disadvantages)\"]},{\"simplified\":\"例外\",\"traditional\":\"例外\",\"pinyin\":\"lìwài\",\"definitions\":[\"(make an) exception\"]},{\"simplified\":\"粒\",\"traditional\":\"粒\",\"pinyin\":\"lì\",\"definitions\":[\"a grain\",\"granule\",\"(mw for grain-like things)\"]},{\"simplified\":\"连年\",\"traditional\":\"連年\",\"pinyin\":\"liánnián\",\"definitions\":[\"successive years\",\"over many years\",\"once again this year\"]},{\"simplified\":\"连锁\",\"traditional\":\"連鎖\",\"pinyin\":\"liánsuǒ\",\"definitions\":[\"chain (store etc)\",\"to interlock\"]},{\"simplified\":\"连同\",\"traditional\":\"連同\",\"pinyin\":\"liántóng\",\"definitions\":[\"together with\",\"along with\"]},{\"simplified\":\"联欢\",\"traditional\":\"聯歡\",\"pinyin\":\"liánhuān\",\"definitions\":[\"have a get-together\"]},{\"simplified\":\"联络\",\"traditional\":\"聯絡\",\"pinyin\":\"liánluò\",\"definitions\":[\"communication\",\"to contact\"]},{\"simplified\":\"联盟\",\"traditional\":\"聯盟\",\"pinyin\":\"liánméng\",\"definitions\":[\"alliance\",\"union\",\"coalition\"]},{\"simplified\":\"联想\",\"traditional\":\"聯想\",\"pinyin\":\"liánxiǎng\",\"definitions\":[\"to associate (cognitively)\",\"to make an associative connection\",\"mental association\",\"word prediction and auto-complete functions of input method editing programs\",\"abbr. for 联想集团 Lenovo Group (PRC computer firm)\"]},{\"simplified\":\"廉洁\",\"traditional\":\"廉潔\",\"pinyin\":\"liánjié\",\"definitions\":[\"honest\",\"incorruptible\"]},{\"simplified\":\"良心\",\"traditional\":\"良心\",\"pinyin\":\"liángxīn\",\"definitions\":[\"conscience\"]},{\"simplified\":\"谅解\",\"traditional\":\"諒解\",\"pinyin\":\"liàngjiě\",\"definitions\":[\"understanding\",\"make an allowance for\",\"forgive\"]},{\"simplified\":\"晾\",\"traditional\":\"晾\",\"pinyin\":\"liàng\",\"definitions\":[\"dry in the air/sun\",\"(colloquial) snub or ignore\"]},{\"simplified\":\"辽阔\",\"traditional\":\"遼闊\",\"pinyin\":\"liáokuò\",\"definitions\":[\"vast\",\"extensive\"]},{\"simplified\":\"列举\",\"traditional\":\"列舉\",\"pinyin\":\"lièjǔ\",\"definitions\":[\"make a list\",\"enumerate\"]},{\"simplified\":\"临床\",\"traditional\":\"臨床\",\"pinyin\":\"línchuáng\",\"definitions\":[\"clinical\"]},{\"simplified\":\"淋\",\"traditional\":\"淋\",\"pinyin\":\"lín\",\"definitions\":[\"to drain\",\"to drip\",\"drench\"]},{\"simplified\":\"吝啬\",\"traditional\":\"吝啬\",\"pinyin\":\"lìnsè\",\"definitions\":[\"stingy\",\"mean\",\"miserly\"]},{\"simplified\":\"伶俐\",\"traditional\":\"伶俐\",\"pinyin\":\"línglì\",\"definitions\":[\"clever\",\"witty\",\"intelligent\"]},{\"simplified\":\"灵感\",\"traditional\":\"靈感\",\"pinyin\":\"línggǎn\",\"definitions\":[\"inspiration\",\"insight\",\"a burst of creativity in scientific or artistic endeavor\"]},{\"simplified\":\"灵魂\",\"traditional\":\"靈魂\",\"pinyin\":\"línghún\",\"definitions\":[\"soul\",\"spirit\",\"conscience\"]},{\"simplified\":\"灵敏\",\"traditional\":\"靈敏\",\"pinyin\":\"língmǐn\",\"definitions\":[\"sensitive\"]},{\"simplified\":\"凌晨\",\"traditional\":\"淩晨\",\"pinyin\":\"língchén\",\"definitions\":[\"early in the morning\"]},{\"simplified\":\"零星\",\"traditional\":\"零星\",\"pinyin\":\"língxīng\",\"definitions\":[\"partial\",\"scattered\",\"fragmentary\"]},{\"simplified\":\"领会\",\"traditional\":\"領會\",\"pinyin\":\"lǐnghuì\",\"definitions\":[\"understand\",\"comprehend\",\"grasp\"]},{\"simplified\":\"领事馆\",\"traditional\":\"領事館\",\"pinyin\":\"lǐngshìguǎn\",\"definitions\":[\"consulate\"]},{\"simplified\":\"领土\",\"traditional\":\"領土\",\"pinyin\":\"lǐngtǔ\",\"definitions\":[\"territory\"]},{\"simplified\":\"领悟\",\"traditional\":\"領悟\",\"pinyin\":\"lǐngwù\",\"definitions\":[\"comprehend\",\"grasp\",\"fathom\"]},{\"simplified\":\"领先\",\"traditional\":\"領先\",\"pinyin\":\"lǐngxiān\",\"definitions\":[\"leadership\",\"to lead\",\"be in front\"]},{\"simplified\":\"领袖\",\"traditional\":\"領袖\",\"pinyin\":\"lǐngxiù\",\"definitions\":[\"leader\"]},{\"simplified\":\"溜\",\"traditional\":\"溜\",\"pinyin\":\"liū\",\"definitions\":[\"slip away\",\"to skate\",\"to glide\"]},{\"simplified\":\"留恋\",\"traditional\":\"留戀\",\"pinyin\":\"liúliàn\",\"definitions\":[\"be reluctant to leave\"]},{\"simplified\":\"留念\",\"traditional\":\"留念\",\"pinyin\":\"liúniàn\",\"definitions\":[\"to keep as a souvenir\"]},{\"simplified\":\"留神\",\"traditional\":\"留神\",\"pinyin\":\"liú shén\",\"definitions\":[\"(idiom) take care to ...\",\"be careful of ...\"]},{\"simplified\":\"流浪\",\"traditional\":\"流浪\",\"pinyin\":\"liúlàng\",\"definitions\":[\"drift about\",\"wander\"]},{\"simplified\":\"流露\",\"traditional\":\"流露\",\"pinyin\":\"liúlù\",\"definitions\":[\"express\",\"reveal (one's thoughts or feelings)\"]},{\"simplified\":\"流氓\",\"traditional\":\"流氓\",\"pinyin\":\"liúmáng\",\"definitions\":[\"rogue\",\"hooligan\",\"gangster\"]},{\"simplified\":\"流通\",\"traditional\":\"流通\",\"pinyin\":\"liútōng\",\"definitions\":[\"circulate\",\"currency\"]},{\"simplified\":\"聋哑\",\"traditional\":\"聾啞\",\"pinyin\":\"lóngyǎ\",\"definitions\":[\"deaf and dumb\",\"deaf-mute\"]},{\"simplified\":\"隆重\",\"traditional\":\"隆重\",\"pinyin\":\"lóngzhòng\",\"definitions\":[\"grand\",\"prosperous\",\"ceremonious\"]},{\"simplified\":\"垄断\",\"traditional\":\"壟斷\",\"pinyin\":\"lǒngduàn\",\"definitions\":[\"monopoly\"]},{\"simplified\":\"笼罩\",\"traditional\":\"籠罩\",\"pinyin\":\"lǒngzhào\",\"definitions\":[\"envelop\",\"to shroud\",\"be masked by\"]},{\"simplified\":\"搂\",\"traditional\":\"摟\",\"pinyin\":\"lǒu\",\"definitions\":[\"to hug\",\"to embrace\"]},{\"simplified\":\"炉灶\",\"traditional\":\"爐竈\",\"pinyin\":\"lúzào\",\"definitions\":[\"kitchen range\",\"cooking range\",\"stovetop range\"]},{\"simplified\":\"屡次\",\"traditional\":\"屢次\",\"pinyin\":\"lǚcì\",\"definitions\":[\"repeatedly\",\"time and again\",\"frequently\"]},{\"simplified\":\"履行\",\"traditional\":\"履行\",\"pinyin\":\"lǚxíng\",\"definitions\":[\"fulfill (one's obligations)\",\"carry out\"]},{\"simplified\":\"掠夺\",\"traditional\":\"掠奪\",\"pinyin\":\"lüèduó\",\"definitions\":[\"to plunder\",\"rob\",\"pillage\"]},{\"simplified\":\"轮船\",\"traditional\":\"輪船\",\"pinyin\":\"lúnchuán\",\"definitions\":[\"steamship\"]},{\"simplified\":\"轮廓\",\"traditional\":\"輪廓\",\"pinyin\":\"lúnkuò\",\"definitions\":[\"outline\",\"silhouette\"]},{\"simplified\":\"轮胎\",\"traditional\":\"輪胎\",\"pinyin\":\"lúntāi\",\"definitions\":[\"tire (of a wheel)\"]},{\"simplified\":\"论坛\",\"traditional\":\"論壇\",\"pinyin\":\"lùntán\",\"definitions\":[\"forum\"]},{\"simplified\":\"论证\",\"traditional\":\"論證\",\"pinyin\":\"lùnzhèng\",\"definitions\":[\"prove a point\",\"expound on\",\"argumentation\"]},{\"simplified\":\"啰唆\",\"traditional\":\"啰唆\",\"pinyin\":\"luōsuo\",\"definitions\":[\"long-winded\",\"wordy\",\"troublesome\",\"pesky\"]},{\"simplified\":\"络绎不绝\",\"traditional\":\"絡繹不絕\",\"pinyin\":\"luòyìbùjué\",\"definitions\":[\"endless stream\"]},{\"simplified\":\"落成\",\"traditional\":\"落成\",\"pinyin\":\"luòchéng\",\"definitions\":[\"complete a construction project\"]},{\"simplified\":\"落实\",\"traditional\":\"落實\",\"pinyin\":\"luòshí\",\"definitions\":[\"workable\",\"implement\"]},{\"simplified\":\"麻痹\",\"traditional\":\"麻痹\",\"pinyin\":\"mábì\",\"definitions\":[\"paralysis\",\"palsy\",\"numbness\"]},{\"simplified\":\"麻木\",\"traditional\":\"麻木\",\"pinyin\":\"mámù\",\"definitions\":[\"numb\"]},{\"simplified\":\"麻醉\",\"traditional\":\"麻醉\",\"pinyin\":\"mázuì\",\"definitions\":[\"anesthesia\"]},{\"simplified\":\"码头\",\"traditional\":\"碼頭\",\"pinyin\":\"mǎtou\",\"definitions\":[\"dock\",\"wharf\"]},{\"simplified\":\"蚂蚁\",\"traditional\":\"螞蟻\",\"pinyin\":\"mǎyǐ\",\"definitions\":[\"ant\"]},{\"simplified\":\"嘛\",\"traditional\":\"嘛\",\"pinyin\":\"ma, má\",\"definitions\":[\"(used to persuade somebody to do something)\",\"(particle indicating obviousness) | (colloqial) what?\"]},{\"simplified\":\"埋伏\",\"traditional\":\"埋伏\",\"pinyin\":\"máifu\",\"definitions\":[\"ambush\",\"lie in ambush\"]},{\"simplified\":\"埋没\",\"traditional\":\"埋沒\",\"pinyin\":\"máimò\",\"definitions\":[\"oblivion\",\"bury\",\"neglect\"]},{\"simplified\":\"埋葬\",\"traditional\":\"埋葬\",\"pinyin\":\"máizàng\",\"definitions\":[\"bury\"]},{\"simplified\":\"迈\",\"traditional\":\"邁\",\"pinyin\":\"mài\",\"definitions\":[\"to step\",\"stride\"]},{\"simplified\":\"脉搏\",\"traditional\":\"脈搏\",\"pinyin\":\"màibó\",\"definitions\":[\"pulse\",\"throbbing\"]},{\"simplified\":\"埋怨\",\"traditional\":\"埋怨\",\"pinyin\":\"mányuàn\",\"definitions\":[\"complain\",\"blame\",\"connotes sb or sth is to blame\"]},{\"simplified\":\"蔓延\",\"traditional\":\"蔓延\",\"pinyin\":\"mànyán\",\"definitions\":[\"extend\",\"spread\",\"to creep\"]},{\"simplified\":\"漫长\",\"traditional\":\"漫長\",\"pinyin\":\"màncháng\",\"definitions\":[\"very long\",\"endless\"]},{\"simplified\":\"漫画\",\"traditional\":\"漫畫\",\"pinyin\":\"mànhuà\",\"definitions\":[\"comics\",\"manga\"]},{\"simplified\":\"慢性\",\"traditional\":\"慢性\",\"pinyin\":\"mànxìng\",\"definitions\":[\"slow and patient\",\"chronic (disease)\"]},{\"simplified\":\"忙碌\",\"traditional\":\"忙碌\",\"pinyin\":\"mánglù\",\"definitions\":[\"be busy\",\"bustling\"]},{\"simplified\":\"盲目\",\"traditional\":\"盲目\",\"pinyin\":\"mángmù\",\"definitions\":[\"blindness\",\"aimless\"]},{\"simplified\":\"茫茫\",\"traditional\":\"茫茫\",\"pinyin\":\"mángmáng\",\"definitions\":[\"boundless\",\"vast and obscure\"]},{\"simplified\":\"茫然\",\"traditional\":\"茫然\",\"pinyin\":\"mángrán\",\"definitions\":[\"unseeing\",\"ignorant\",\"have no knowledge of sth.\"]},{\"simplified\":\"茂盛\",\"traditional\":\"茂盛\",\"pinyin\":\"màoshèng\",\"definitions\":[\"exuberance\",\"luxuriant\"]},{\"simplified\":\"冒充\",\"traditional\":\"冒充\",\"pinyin\":\"màochōng\",\"definitions\":[\"pretend to be (somebody or something else)\",\"pass (somebody or something) off as\",\"impersonate\"]},{\"simplified\":\"冒犯\",\"traditional\":\"冒犯\",\"pinyin\":\"màofàn\",\"definitions\":[\"to offend\"]},{\"simplified\":\"枚\",\"traditional\":\"枚\",\"pinyin\":\"méi\",\"definitions\":[\"(mw for coins, rings, medals)\"]},{\"simplified\":\"媒介\",\"traditional\":\"媒介\",\"pinyin\":\"méijiè\",\"definitions\":[\"media\",\"medium\"]},{\"simplified\":\"美观\",\"traditional\":\"美觀\",\"pinyin\":\"měiguān\",\"definitions\":[\"pleasing to the eye\",\"beautiful\",\"artistic\"]},{\"simplified\":\"美满\",\"traditional\":\"美滿\",\"pinyin\":\"měimǎn\",\"definitions\":[\"happy\",\"blissful\"]},{\"simplified\":\"美妙\",\"traditional\":\"美妙\",\"pinyin\":\"měimiào\",\"definitions\":[\"beautiful (when describing a work of art)\",\"wonderful\",\"splendid\"]},{\"simplified\":\"萌芽\",\"traditional\":\"萌芽\",\"pinyin\":\"méngyá\",\"definitions\":[\"sprout\",\"bud\",\"germ of a plant\"]},{\"simplified\":\"猛烈\",\"traditional\":\"猛烈\",\"pinyin\":\"měngliè\",\"definitions\":[\"fierce\",\"violent\"]},{\"simplified\":\"眯\",\"traditional\":\"眯\",\"pinyin\":\"mī\",\"definitions\":[\"to squint\",\"to take a nap\"]},{\"simplified\":\"弥补\",\"traditional\":\"彌補\",\"pinyin\":\"míbǔ\",\"definitions\":[\"make up for a deficiency\",\"remedy\",\"offset\"]},{\"simplified\":\"弥漫\",\"traditional\":\"彌漫\",\"pinyin\":\"mímàn\",\"definitions\":[\"fill the air\",\"permeate\",\"to suffuse\"]},{\"simplified\":\"迷惑\",\"traditional\":\"迷惑\",\"pinyin\":\"míhuò\",\"definitions\":[\"to puzzle\",\"confuse\",\"mystify\"]},{\"simplified\":\"迷人\",\"traditional\":\"迷人\",\"pinyin\":\"mírén\",\"definitions\":[\"charming\",\"enchanting\",\"cute\"]},{\"simplified\":\"迷信\",\"traditional\":\"迷信\",\"pinyin\":\"míxìn\",\"definitions\":[\"superstition\",\"be superstitious\"]},{\"simplified\":\"谜语\",\"traditional\":\"謎語\",\"pinyin\":\"míyǔ\",\"definitions\":[\"riddle\",\"conundrum\"]},{\"simplified\":\"密度\",\"traditional\":\"密度\",\"pinyin\":\"mìdù\",\"definitions\":[\"density\",\"thickness\",\"consistency\"]},{\"simplified\":\"密封\",\"traditional\":\"密封\",\"pinyin\":\"mìfēng\",\"definitions\":[\"seal up\",\"pressurize\"]},{\"simplified\":\"棉花\",\"traditional\":\"棉花\",\"pinyin\":\"miánhua\",\"definitions\":[\"cotton\"]},{\"simplified\":\"免得\",\"traditional\":\"免得\",\"pinyin\":\"miǎnde\",\"definitions\":[\"so as not to\",\"so as to avoid\"]},{\"simplified\":\"免疫\",\"traditional\":\"免疫\",\"pinyin\":\"miǎnyì\",\"definitions\":[\"immune\"]},{\"simplified\":\"勉励\",\"traditional\":\"勉勵\",\"pinyin\":\"miǎnlì\",\"definitions\":[\"encourage\"]},{\"simplified\":\"勉强\",\"traditional\":\"勉強\",\"pinyin\":\"miǎnqiǎng\",\"definitions\":[\"reluctantly\",\"grudgingly\",\"force sb. to do sth.\"]},{\"simplified\":\"面貌\",\"traditional\":\"面貌\",\"pinyin\":\"miànmào\",\"definitions\":[\"appearance\",\"looks\",\"features\"]},{\"simplified\":\"面子\",\"traditional\":\"面子\",\"pinyin\":\"miànzi\",\"definitions\":[\"honor\",\"reputation\",\"prestige\",\"face\"]},{\"simplified\":\"描绘\",\"traditional\":\"描繪\",\"pinyin\":\"miáohuì\",\"definitions\":[\"describe\",\"portray\"]},{\"simplified\":\"瞄准\",\"traditional\":\"瞄准\",\"pinyin\":\"miáozhǔn\",\"definitions\":[\"take aim (a weapon at a target)\"]},{\"simplified\":\"渺小\",\"traditional\":\"渺小\",\"pinyin\":\"miǎoxiǎo\",\"definitions\":[\"tiny\",\"minute\",\"negligible\"]},{\"simplified\":\"藐视\",\"traditional\":\"藐視\",\"pinyin\":\"miǎoshì\",\"definitions\":[\"treat with contempt\"]},{\"simplified\":\"灭亡\",\"traditional\":\"滅亡\",\"pinyin\":\"mièwáng\",\"definitions\":[\"be destroyed\",\"perish\",\"exterminate\",\"become extinct\"]},{\"simplified\":\"蔑视\",\"traditional\":\"蔑視\",\"pinyin\":\"mièshì\",\"definitions\":[\"despise\",\"loathe\",\"disparage\",\"scorn\"]},{\"simplified\":\"民间\",\"traditional\":\"民間\",\"pinyin\":\"mínjiān\",\"definitions\":[\"among the people\",\"popular\",\"folk\"]},{\"simplified\":\"民主\",\"traditional\":\"民主\",\"pinyin\":\"mínzhǔ\",\"definitions\":[\"democracy\"]},{\"simplified\":\"敏捷\",\"traditional\":\"敏捷\",\"pinyin\":\"mǐnjié\",\"definitions\":[\"nimble\",\"agile\",\"shrewd\"]},{\"simplified\":\"敏锐\",\"traditional\":\"敏銳\",\"pinyin\":\"mǐnruì\",\"definitions\":[\"keen\",\"sharp\",\"acute\",\"brisk\"]},{\"simplified\":\"名次\",\"traditional\":\"名次\",\"pinyin\":\"míngcì\",\"definitions\":[\"position in a ranking of names\"]},{\"simplified\":\"名额\",\"traditional\":\"名額\",\"pinyin\":\"míng'é\",\"definitions\":[\"particular number of people\",\"quota\"]},{\"simplified\":\"名副其实\",\"traditional\":\"名副其實\",\"pinyin\":\"míng fù qí shí\",\"definitions\":[\"not just in name only\",\"but also in reality\"]},{\"simplified\":\"名誉\",\"traditional\":\"名譽\",\"pinyin\":\"míngyù\",\"definitions\":[\"fame\",\"reputation\",\"honor\",\"honorary\"]},{\"simplified\":\"明明\",\"traditional\":\"明明\",\"pinyin\":\"míngmíng\",\"definitions\":[\"obviously\",\"plainly\",\"undoubtedly\"]},{\"simplified\":\"明智\",\"traditional\":\"明智\",\"pinyin\":\"míngzhì\",\"definitions\":[\"wise\"]},{\"simplified\":\"命名\",\"traditional\":\"命名\",\"pinyin\":\"mìngmíng\",\"definitions\":[\"give a name\",\"to dub\",\"christen\",\"naming\"]},{\"simplified\":\"摸索\",\"traditional\":\"摸索\",\"pinyin\":\"mōsuǒ\",\"definitions\":[\"feel about\",\"grope around\",\"fumble\"]},{\"simplified\":\"模范\",\"traditional\":\"模範\",\"pinyin\":\"mófàn\",\"definitions\":[\"model\",\"exemplar\"]},{\"simplified\":\"模式\",\"traditional\":\"模式\",\"pinyin\":\"móshì\",\"definitions\":[\"model\",\"pattern\",\"method\"]},{\"simplified\":\"模型\",\"traditional\":\"模型\",\"pinyin\":\"móxíng\",\"definitions\":[\"model\",\"mould\",\"matrix\",\"pattern\"]},{\"simplified\":\"膜\",\"traditional\":\"膜\",\"pinyin\":\"mó\",\"definitions\":[\"membrane\",\"film\"]},{\"simplified\":\"摩擦\",\"traditional\":\"摩擦\",\"pinyin\":\"mócā\",\"definitions\":[\"friction\",\"clash (between two parties)\",\"conflict\"]},{\"simplified\":\"磨合\",\"traditional\":\"磨合\",\"pinyin\":\"móhé\",\"definitions\":[\"adapt gradually to each other\",\"to consult\",\"break in\",\"wear in\"]},{\"simplified\":\"魔鬼\",\"traditional\":\"魔鬼\",\"pinyin\":\"móguǐ\",\"definitions\":[\"devil\",\"demon\",\"monster\"]},{\"simplified\":\"魔术\",\"traditional\":\"魔術\",\"pinyin\":\"móshù\",\"definitions\":[\"magic\"]},{\"simplified\":\"抹杀\",\"traditional\":\"抹殺\",\"pinyin\":\"mǒshā\",\"definitions\":[\"write off\",\"erase\",\"remove from evidence\"]},{\"simplified\":\"莫名其妙\",\"traditional\":\"莫名其妙\",\"pinyin\":\"mòmíngqímiào\",\"definitions\":[\"odd\",\"baffling\",\"unaccountable\"]},{\"simplified\":\"墨水儿\",\"traditional\":\"墨水兒\",\"pinyin\":\"mòshuǐer\",\"definitions\":[\"ink\"]},{\"simplified\":\"默默\",\"traditional\":\"默默\",\"pinyin\":\"mòmò\",\"definitions\":[\"in silence\",\"not speaking\"]},{\"simplified\":\"谋求\",\"traditional\":\"謀求\",\"pinyin\":\"móuqiú\",\"definitions\":[\"seek\",\"strive for\",\"try to get\"]},{\"simplified\":\"模样\",\"traditional\":\"模樣\",\"pinyin\":\"múyàng\",\"definitions\":[\"appearance\",\"form\",\"approximation\"]},{\"simplified\":\"母语\",\"traditional\":\"母語\",\"pinyin\":\"mǔyǔ\",\"definitions\":[\"native/mother tongue\"]},{\"simplified\":\"目睹\",\"traditional\":\"目睹\",\"pinyin\":\"mùdǔ\",\"definitions\":[\"witness\",\"see first hand\"]},{\"simplified\":\"目光\",\"traditional\":\"目光\",\"pinyin\":\"mùguāng\",\"definitions\":[\"sight\",\"vision\",\"view\"]},{\"simplified\":\"沐浴\",\"traditional\":\"沐浴\",\"pinyin\":\"mùyù\",\"definitions\":[\"take a bath\",\"revel\",\"immerse\"]},{\"simplified\":\"拿手\",\"traditional\":\"拿手\",\"pinyin\":\"náshǒu\",\"definitions\":[\"good at\",\"adept\"]},{\"simplified\":\"纳闷儿\",\"traditional\":\"納悶兒\",\"pinyin\":\"nà mènr\",\"definitions\":[\"feel puzzled\",\"bewildered\"]},{\"simplified\":\"耐用\",\"traditional\":\"耐用\",\"pinyin\":\"nàiyòng\",\"definitions\":[\"durable\"]},{\"simplified\":\"南辕北辙\",\"traditional\":\"南轅北轍\",\"pinyin\":\"nányuánběizhé\",\"definitions\":[\"at odds with\",\"act in a way that defeats one's purpose\"]},{\"simplified\":\"难得\",\"traditional\":\"難得\",\"pinyin\":\"nándé\",\"definitions\":[\"hard to come by\",\"difficult to get\",\"rare\"]},{\"simplified\":\"难堪\",\"traditional\":\"難堪\",\"pinyin\":\"nánkān\",\"definitions\":[\"hard to take\",\"endure\",\"embarrassed\"]},{\"simplified\":\"难能可贵\",\"traditional\":\"難能可貴\",\"pinyin\":\"nánnéngkěguì\",\"definitions\":[\"estimable\",\"extremely good\"]},{\"simplified\":\"恼火\",\"traditional\":\"惱火\",\"pinyin\":\"nǎohuǒ\",\"definitions\":[\"get angry\",\"irritated\",\"annoy\"]},{\"simplified\":\"内涵\",\"traditional\":\"內涵\",\"pinyin\":\"nèihán\",\"definitions\":[\"connotation\"]},{\"simplified\":\"内幕\",\"traditional\":\"內幕\",\"pinyin\":\"nèimù\",\"definitions\":[\"inside story\",\"non-public information\",\"behind the scenes\"]},{\"simplified\":\"内在\",\"traditional\":\"內在\",\"pinyin\":\"nèizài\",\"definitions\":[\"intrinsic\",\"innate\"]},{\"simplified\":\"能量\",\"traditional\":\"能量\",\"pinyin\":\"néngliàng\",\"definitions\":[\"energy\",\"capabilities\"]},{\"simplified\":\"拟定\",\"traditional\":\"擬定\",\"pinyin\":\"nǐdìng\",\"definitions\":[\"make an initial draft\",\"draw up\"]},{\"simplified\":\"逆行\",\"traditional\":\"逆行\",\"pinyin\":\"nìxíng\",\"definitions\":[\"go/drive against the traffic\",\"go in the wrong direction\",\"regress\",\"retrograde\"]},{\"simplified\":\"年度\",\"traditional\":\"年度\",\"pinyin\":\"niándù\",\"definitions\":[\"year (e.g. school year, fiscal year, etc.)\",\"annual\"]},{\"simplified\":\"捏\",\"traditional\":\"捏\",\"pinyin\":\"niē\",\"definitions\":[\"to pinch (with one's fingers)\",\"knead\"]},{\"simplified\":\"凝固\",\"traditional\":\"凝固\",\"pinyin\":\"nínggù\",\"definitions\":[\"curdle\",\"freeze\",\"solidify\",\"congeal\"]},{\"simplified\":\"凝聚\",\"traditional\":\"凝聚\",\"pinyin\":\"níngjù\",\"definitions\":[\"agglomeration\",\"agglomerate\",\"cohesion\",\"coherence\"]},{\"simplified\":\"凝视\",\"traditional\":\"凝視\",\"pinyin\":\"níngshì\",\"definitions\":[\"gaze\",\"stare\"]},{\"simplified\":\"拧\",\"traditional\":\"擰\",\"pinyin\":\"níng\",\"definitions\":[\"wring\",\"to pinch\"]},{\"simplified\":\"宁肯\",\"traditional\":\"甯肯\",\"pinyin\":\"nìngkěn\",\"definitions\":[\"would rather ...\",\"it would be better\"]},{\"simplified\":\"宁愿\",\"traditional\":\"甯願\",\"pinyin\":\"nìngyuàn\",\"definitions\":[\"would rather\",\"better\"]},{\"simplified\":\"扭转\",\"traditional\":\"扭轉\",\"pinyin\":\"niǔzhuǎn\",\"definitions\":[\"to reverse\",\"turn around (an undesirable situation)\"]},{\"simplified\":\"纽扣儿\",\"traditional\":\"紐扣兒\",\"pinyin\":\"niǔkòur\",\"definitions\":[\"button\"]},{\"simplified\":\"农历\",\"traditional\":\"農曆\",\"pinyin\":\"nónglì\",\"definitions\":[\"agricultural calendar\",\"lunar calendar\"]},{\"simplified\":\"浓厚\",\"traditional\":\"濃厚\",\"pinyin\":\"nónghòu\",\"definitions\":[\"dense\",\"thick (fog, clouds, etc.)\"]},{\"simplified\":\"奴隶\",\"traditional\":\"奴隸\",\"pinyin\":\"núlì\",\"definitions\":[\"slave\"]},{\"simplified\":\"虐待\",\"traditional\":\"虐待\",\"pinyin\":\"nüèdài\",\"definitions\":[\"to abuse\",\"maltreat\",\"tyrannize\"]},{\"simplified\":\"挪\",\"traditional\":\"挪\",\"pinyin\":\"nuó\",\"definitions\":[\"shift\",\"move\"]},{\"simplified\":\"哦\",\"traditional\":\"哦\",\"pinyin\":\"ò\",\"definitions\":[\"oh (indicates understanding)\"]},{\"simplified\":\"殴打\",\"traditional\":\"毆打\",\"pinyin\":\"ōudǎ\",\"definitions\":[\"beat up\",\"hit\"]},{\"simplified\":\"呕吐\",\"traditional\":\"嘔吐\",\"pinyin\":\"ǒutù\",\"definitions\":[\"to vomit\",\"retch\",\"nausea\"]},{\"simplified\":\"偶像\",\"traditional\":\"偶像\",\"pinyin\":\"ǒuxiàng\",\"definitions\":[\"Idol\"]},{\"simplified\":\"趴\",\"traditional\":\"趴\",\"pinyin\":\"pā\",\"definitions\":[\"lie on one's stomach\"]},{\"simplified\":\"排斥\",\"traditional\":\"排斥\",\"pinyin\":\"páichì\",\"definitions\":[\"to reject\",\"repulse\",\"exclude\"]},{\"simplified\":\"排除\",\"traditional\":\"排除\",\"pinyin\":\"páichú\",\"definitions\":[\"eliminate\",\"get rid of\",\"remove\"]},{\"simplified\":\"排放\",\"traditional\":\"排放\",\"pinyin\":\"páifàng\",\"definitions\":[\"to discharge\",\"emit\"]},{\"simplified\":\"排练\",\"traditional\":\"排練\",\"pinyin\":\"páiliàn\",\"definitions\":[\"to rehearse\"]},{\"simplified\":\"徘徊\",\"traditional\":\"徘徊\",\"pinyin\":\"páihuái\",\"definitions\":[\"pace back and forth\",\"hesitate\",\"waver\"]},{\"simplified\":\"派别\",\"traditional\":\"派別\",\"pinyin\":\"pàibié\",\"definitions\":[\"denomination\",\"group\",\"school\",\"faction\",\"school of thought\",\"sect\"]},{\"simplified\":\"派遣\",\"traditional\":\"派遣\",\"pinyin\":\"pàiqiǎn\",\"definitions\":[\"send (on a mission)\",\"dispatch\"]},{\"simplified\":\"攀登\",\"traditional\":\"攀登\",\"pinyin\":\"pāndēng\",\"definitions\":[\"to climb\",\"clamber\",\"to pull oneself up\"]},{\"simplified\":\"盘旋\",\"traditional\":\"盤旋\",\"pinyin\":\"pánxuán\",\"definitions\":[\"spiral\",\"coil\",\"circle\",\"go around\"]},{\"simplified\":\"判决\",\"traditional\":\"判決\",\"pinyin\":\"pànjué\",\"definitions\":[\"judgment (by a court of law)\",\"adjudicate\"]},{\"simplified\":\"畔\",\"traditional\":\"畔\",\"pinyin\":\"pàn\",\"definitions\":[\"riverbank\",\"side\",\"boundary\"]},{\"simplified\":\"庞大\",\"traditional\":\"龐大\",\"pinyin\":\"pángdà\",\"definitions\":[\"enormous\",\"huge\",\"tremendous\"]},{\"simplified\":\"抛弃\",\"traditional\":\"抛棄\",\"pinyin\":\"pāoqì\",\"definitions\":[\"discard\",\"abandon\",\"dump (sb)\"]},{\"simplified\":\"泡沫\",\"traditional\":\"泡沫\",\"pinyin\":\"pàomò\",\"definitions\":[\"foam\",\"(soap bubble)\",\"(economic) bubble\"]},{\"simplified\":\"培育\",\"traditional\":\"培育\",\"pinyin\":\"péiyù\",\"definitions\":[\"to train\",\"nurture\",\"to breed\"]},{\"simplified\":\"配备\",\"traditional\":\"配備\",\"pinyin\":\"pèibèi\",\"definitions\":[\"provide\",\"outfit with\"]},{\"simplified\":\"配偶\",\"traditional\":\"配偶\",\"pinyin\":\"pèi'ǒu\",\"definitions\":[\"mate\",\"consort\",\"spouse\"]},{\"simplified\":\"配套\",\"traditional\":\"配套\",\"pinyin\":\"pèi tào\",\"definitions\":[\"form a complete set\"]},{\"simplified\":\"盆地\",\"traditional\":\"盆地\",\"pinyin\":\"péndì\",\"definitions\":[\"basin\"]},{\"simplified\":\"烹饪\",\"traditional\":\"烹饪\",\"pinyin\":\"pēngrèn\",\"definitions\":[\"cooking\",\"culinary arts\"]},{\"simplified\":\"捧\",\"traditional\":\"捧\",\"pinyin\":\"pěng\",\"definitions\":[\"hold or carry with both hands facing up\"]},{\"simplified\":\"批发\",\"traditional\":\"批發\",\"pinyin\":\"pīfā\",\"definitions\":[\"wholesale\"]},{\"simplified\":\"批判\",\"traditional\":\"批判\",\"pinyin\":\"pīpàn\",\"definitions\":[\"criticize\",\"critique\"]},{\"simplified\":\"劈\",\"traditional\":\"劈\",\"pinyin\":\"pī\",\"definitions\":[\"split in two\",\"to divide\"]},{\"simplified\":\"皮革\",\"traditional\":\"皮革\",\"pinyin\":\"pígé\",\"definitions\":[\"leather\"]},{\"simplified\":\"疲惫\",\"traditional\":\"疲憊\",\"pinyin\":\"píbèi\",\"definitions\":[\"beaten\",\"exhausted\",\"tired\"]},{\"simplified\":\"疲倦\",\"traditional\":\"疲倦\",\"pinyin\":\"píjuàn\",\"definitions\":[\"tired\",\"weary\"]},{\"simplified\":\"屁股\",\"traditional\":\"屁股\",\"pinyin\":\"pìgu\",\"definitions\":[\"butt\",\"rear\",\"rump\"]},{\"simplified\":\"譬如\",\"traditional\":\"譬如\",\"pinyin\":\"pìrú\",\"definitions\":[\"for example\",\"for instance\",\"such as\"]},{\"simplified\":\"偏差\",\"traditional\":\"偏差\",\"pinyin\":\"piānchā\",\"definitions\":[\"bias\",\"deviation\"]},{\"simplified\":\"偏见\",\"traditional\":\"偏見\",\"pinyin\":\"piānjiàn\",\"definitions\":[\"prejudice\"]},{\"simplified\":\"偏僻\",\"traditional\":\"偏僻\",\"pinyin\":\"piānpì\",\"definitions\":[\"remote and isolated\",\"far from the city\"]},{\"simplified\":\"偏偏\",\"traditional\":\"偏偏\",\"pinyin\":\"piānpiān\",\"definitions\":[\"unexpectedly\",\"contrary to expectations\"]},{\"simplified\":\"片断\",\"traditional\":\"片斷\",\"pinyin\":\"piànduàn\",\"definitions\":[\"part\",\"passage\",\"extract\",\"fragment\",\"snatch\"]},{\"simplified\":\"片刻\",\"traditional\":\"片刻\",\"pinyin\":\"piànkè\",\"definitions\":[\"a short period of time\"]},{\"simplified\":\"漂浮\",\"traditional\":\"漂浮\",\"pinyin\":\"piāofú\",\"definitions\":[\"superficial\",\"float\",\"hover\",\"drift\"]},{\"simplified\":\"飘扬\",\"traditional\":\"飄揚\",\"pinyin\":\"piāoyáng\",\"definitions\":[\"wave in the wind\",\"flutter\",\"fly\"]},{\"simplified\":\"撇\",\"traditional\":\"撇\",\"pinyin\":\"piě\",\"definitions\":[\"left-curving stroke (丿)\",\"throw\",\"fling\"]},{\"simplified\":\"拼搏\",\"traditional\":\"拼搏\",\"pinyin\":\"pīnbó\",\"definitions\":[\"struggle\",\"wrestle\"]},{\"simplified\":\"拼命\",\"traditional\":\"拼命\",\"pinyin\":\"pīn mìng\",\"definitions\":[\"risk one's life\",\"desperately\",\"with all one's might\"]},{\"simplified\":\"贫乏\",\"traditional\":\"貧乏\",\"pinyin\":\"pínfá\",\"definitions\":[\"lacking\",\"incomplete\"]},{\"simplified\":\"贫困\",\"traditional\":\"貧困\",\"pinyin\":\"pínkùn\",\"definitions\":[\"poor\",\"impoverished\"]},{\"simplified\":\"频繁\",\"traditional\":\"頻繁\",\"pinyin\":\"pínfán\",\"definitions\":[\"frequently\",\"often\"]},{\"simplified\":\"频率\",\"traditional\":\"頻率\",\"pinyin\":\"pínlǜ\",\"definitions\":[\"frequency\"]},{\"simplified\":\"品尝\",\"traditional\":\"品嘗\",\"pinyin\":\"pǐncháng\",\"definitions\":[\"try\",\"taste a small amount\",\"to sample\"]},{\"simplified\":\"品德\",\"traditional\":\"品德\",\"pinyin\":\"pǐndé\",\"definitions\":[\"moral character\",\"morality\",\"morals\"]},{\"simplified\":\"品质\",\"traditional\":\"品質\",\"pinyin\":\"pǐnzhì\",\"definitions\":[\"quality\",\"character\"]},{\"simplified\":\"品种\",\"traditional\":\"品種\",\"pinyin\":\"pǐnzhǒng\",\"definitions\":[\"breed\",\"variety\"]},{\"simplified\":\"平凡\",\"traditional\":\"平凡\",\"pinyin\":\"píngfán\",\"definitions\":[\"commonplace\",\"ordinary\"]},{\"simplified\":\"平面\",\"traditional\":\"平面\",\"pinyin\":\"píngmiàn\",\"definitions\":[\"a plane (i.e. flat surface)\",\"type\",\"category\"]},{\"simplified\":\"平坦\",\"traditional\":\"平坦\",\"pinyin\":\"píngtǎn\",\"definitions\":[\"flat\"]},{\"simplified\":\"平行\",\"traditional\":\"平行\",\"pinyin\":\"píngxíng\",\"definitions\":[\"parallel\",\"concurrent\"]},{\"simplified\":\"平庸\",\"traditional\":\"平庸\",\"pinyin\":\"píngyōng\",\"definitions\":[\"mediocre\"]},{\"simplified\":\"平原\",\"traditional\":\"平原\",\"pinyin\":\"píngyuán\",\"definitions\":[\"field\",\"plain\",\"flatlands\"]},{\"simplified\":\"评估\",\"traditional\":\"評估\",\"pinyin\":\"pínggū\",\"definitions\":[\"evaluate\"]},{\"simplified\":\"评论\",\"traditional\":\"評論\",\"pinyin\":\"pínglùn\",\"definitions\":[\"comment on\",\"discuss\",\"remark\"]},{\"simplified\":\"屏幕\",\"traditional\":\"屏幕\",\"pinyin\":\"píngmù\",\"definitions\":[\"screen (TV, etc.)\"]},{\"simplified\":\"屏障\",\"traditional\":\"屏障\",\"pinyin\":\"píngzhàng\",\"definitions\":[\"wall\",\"barrier\",\"protective screen\"]},{\"simplified\":\"坡\",\"traditional\":\"坡\",\"pinyin\":\"pō\",\"definitions\":[\"slope\"]},{\"simplified\":\"泼\",\"traditional\":\"潑\",\"pinyin\":\"pō\",\"definitions\":[\"to splash\",\"to spill\",\"rude and unreasonable\",\"brutish\"]},{\"simplified\":\"颇\",\"traditional\":\"頗\",\"pinyin\":\"pō\",\"definitions\":[\"rather\",\"quite\",\"inclined to one side\"]},{\"simplified\":\"迫不及待\",\"traditional\":\"迫不及待\",\"pinyin\":\"pòbùjídài\",\"definitions\":[\"be too impatient to wait\"]},{\"simplified\":\"迫害\",\"traditional\":\"迫害\",\"pinyin\":\"pòhài\",\"definitions\":[\"persecute\",\"persecution\"]},{\"simplified\":\"破例\",\"traditional\":\"破例\",\"pinyin\":\"pòlì\",\"definitions\":[\"make an exception\"]},{\"simplified\":\"魄力\",\"traditional\":\"魄力\",\"pinyin\":\"pòlì\",\"definitions\":[\"daring resolution\",\"boldness\",\"courage\"]},{\"simplified\":\"扑\",\"traditional\":\"撲\",\"pinyin\":\"pū\",\"definitions\":[\"to assault\",\"rush at\",\"throw oneself on\"]},{\"simplified\":\"铺\",\"traditional\":\"鋪\",\"pinyin\":\"pù, pū\",\"definitions\":[\"bed\",\"store | to spread\",\"to lay\"]},{\"simplified\":\"朴实\",\"traditional\":\"樸實\",\"pinyin\":\"pǔshí\",\"definitions\":[\"plain\",\"sober\",\"down-to-earth\"]},{\"simplified\":\"朴素\",\"traditional\":\"樸素\",\"pinyin\":\"pǔsù\",\"definitions\":[\"plain\",\"simple\",\"austerity\"]},{\"simplified\":\"普及\",\"traditional\":\"普及\",\"pinyin\":\"pǔjí\",\"definitions\":[\"widespread\",\"popular\",\"popularize\"]},{\"simplified\":\"瀑布\",\"traditional\":\"瀑布\",\"pinyin\":\"pùbù\",\"definitions\":[\"waterfall\"]},{\"simplified\":\"凄凉\",\"traditional\":\"淒涼\",\"pinyin\":\"qīliáng\",\"definitions\":[\"desolate\",\"feel like no one likes you\"]},{\"simplified\":\"期望\",\"traditional\":\"期望\",\"pinyin\":\"qīwàng\",\"definitions\":[\"hope\",\"expectation\"]},{\"simplified\":\"期限\",\"traditional\":\"期限\",\"pinyin\":\"qīxiàn\",\"definitions\":[\"time limit\",\"deadline\",\"allotted time\"]},{\"simplified\":\"欺负\",\"traditional\":\"欺負\",\"pinyin\":\"qīfu\",\"definitions\":[\"to bully\",\"intimidate\"]},{\"simplified\":\"欺骗\",\"traditional\":\"欺騙\",\"pinyin\":\"qīpiàn\",\"definitions\":[\"deceive\",\"to cheat\",\"to dupe\"]},{\"simplified\":\"齐全\",\"traditional\":\"齊全\",\"pinyin\":\"qíquán\",\"definitions\":[\"complete\"]},{\"simplified\":\"齐心协力\",\"traditional\":\"齊心協力\",\"pinyin\":\"qíxīnxiélì\",\"definitions\":[\"make concerted efforts\"]},{\"simplified\":\"奇妙\",\"traditional\":\"奇妙\",\"pinyin\":\"qímiào\",\"definitions\":[\"wonderful\",\"fantastic\"]},{\"simplified\":\"歧视\",\"traditional\":\"歧視\",\"pinyin\":\"qíshì\",\"definitions\":[\"discriminate (against someone)\"]},{\"simplified\":\"旗袍\",\"traditional\":\"旗袍\",\"pinyin\":\"qípáo\",\"definitions\":[\"cheongsam\",\"Chinese-style dress\"]},{\"simplified\":\"旗帜\",\"traditional\":\"旗幟\",\"pinyin\":\"qízhì\",\"definitions\":[\"flag\",\"banner\"]},{\"simplified\":\"乞丐\",\"traditional\":\"乞丐\",\"pinyin\":\"qǐgài\",\"definitions\":[\"beggar\"]},{\"simplified\":\"岂有此理\",\"traditional\":\"豈有此理\",\"pinyin\":\"qǐ yǒu cǐ lǐ\",\"definitions\":[\"outrageous\",\"ridiculous\",\"absurd\"]},{\"simplified\":\"企图\",\"traditional\":\"企圖\",\"pinyin\":\"qǐtú\",\"definitions\":[\"(to ) attempt\",\"try\",\"attempt\"]},{\"simplified\":\"启程\",\"traditional\":\"啓程\",\"pinyin\":\"qǐchéng\",\"definitions\":[\"set out on a journey\"]},{\"simplified\":\"启蒙\",\"traditional\":\"啓蒙\",\"pinyin\":\"qǐméng\",\"definitions\":[\"enlighten\",\"enlightenment； instruct the young\",\"to initiate\"]},{\"simplified\":\"启示\",\"traditional\":\"啓示\",\"pinyin\":\"qǐshì\",\"definitions\":[\"enlightenment\",\"revelation\"]},{\"simplified\":\"启事\",\"traditional\":\"啓事\",\"pinyin\":\"qǐshì\",\"definitions\":[\"announcement\",\"public information (usually posted on a billboard)\"]},{\"simplified\":\"起草\",\"traditional\":\"起草\",\"pinyin\":\"qǐ cǎo\",\"definitions\":[\"draft (a bill)\",\"draw up (plans)\"]},{\"simplified\":\"起初\",\"traditional\":\"起初\",\"pinyin\":\"qǐchū\",\"definitions\":[\"at first\",\"originally\",\"in the beginning\"]},{\"simplified\":\"起伏\",\"traditional\":\"起伏\",\"pinyin\":\"qǐfú\",\"definitions\":[\"ups and downs\",\"with a wavy motion\"]},{\"simplified\":\"起哄\",\"traditional\":\"起哄\",\"pinyin\":\"qǐ hòng\",\"definitions\":[\"gather together\",\"cause a commotion\"]},{\"simplified\":\"起码\",\"traditional\":\"起碼\",\"pinyin\":\"qǐmǎ\",\"definitions\":[\"at the minimum\",\"at the very least\"]},{\"simplified\":\"起源\",\"traditional\":\"起源\",\"pinyin\":\"qǐyuán\",\"definitions\":[\"origin\",\"originate\",\"come from\"]},{\"simplified\":\"气概\",\"traditional\":\"氣概\",\"pinyin\":\"qìgài\",\"definitions\":[\"mettle\",\"spirit\",\"gumption\"]},{\"simplified\":\"气功\",\"traditional\":\"氣功\",\"pinyin\":\"qìgōng\",\"definitions\":[\"Qi Gong, a system of deep breathing exercises\"]},{\"simplified\":\"气魄\",\"traditional\":\"氣魄\",\"pinyin\":\"qìpò\",\"definitions\":[\"spirit\",\"daring\",\"nerve\",\"boldness\",\"enterprising outlook\"]},{\"simplified\":\"气色\",\"traditional\":\"氣色\",\"pinyin\":\"qìsè\",\"definitions\":[\"complexion\"]},{\"simplified\":\"气势\",\"traditional\":\"氣勢\",\"pinyin\":\"qìshì\",\"definitions\":[\"imposing manner\",\"look of great force or imposing manner\"]},{\"simplified\":\"气味\",\"traditional\":\"氣味\",\"pinyin\":\"qìwèi\",\"definitions\":[\"odor\",\"scent\"]},{\"simplified\":\"气象\",\"traditional\":\"氣象\",\"pinyin\":\"qìxiàng\",\"definitions\":[\"meteorology\",\"atmosphere\",\"phenomenon\"]},{\"simplified\":\"气压\",\"traditional\":\"氣壓\",\"pinyin\":\"qìyā\",\"definitions\":[\"atmospheric pressure\",\"barometric pressure\"]},{\"simplified\":\"气质\",\"traditional\":\"氣質\",\"pinyin\":\"qìzhì\",\"definitions\":[\"temperament\",\"disposition\"]},{\"simplified\":\"迄今为止\",\"traditional\":\"迄今爲止\",\"pinyin\":\"qìjīnwéizhǐ\",\"definitions\":[\"until now\",\"so far\",\"to date\"]},{\"simplified\":\"器材\",\"traditional\":\"器材\",\"pinyin\":\"qìcái\",\"definitions\":[\"equipment\",\"material\"]},{\"simplified\":\"器官\",\"traditional\":\"器官\",\"pinyin\":\"qìguān\",\"definitions\":[\"organ\",\"apparatus\"]},{\"simplified\":\"掐\",\"traditional\":\"掐\",\"pinyin\":\"qiā\",\"definitions\":[\"pick (flowers)\",\"pinch\",\"clutch\"]},{\"simplified\":\"洽谈\",\"traditional\":\"洽談\",\"pinyin\":\"qiàtán\",\"definitions\":[\"discuss\",\"talk over\"]},{\"simplified\":\"恰当\",\"traditional\":\"恰當\",\"pinyin\":\"qiàdàng\",\"definitions\":[\"appropriate\",\"suitable\",\"proper\"]},{\"simplified\":\"恰到好处\",\"traditional\":\"恰到好處\",\"pinyin\":\"qià dào hǎo chù\",\"definitions\":[\"just right\",\"it's just perfect\"]},{\"simplified\":\"恰巧\",\"traditional\":\"恰巧\",\"pinyin\":\"qiàqiǎo\",\"definitions\":[\"happen by chance\",\"coincidence\"]},{\"simplified\":\"千方百计\",\"traditional\":\"千方百計\",\"pinyin\":\"qiān fāng bǎi jì\",\"definitions\":[\"by every possible means\"]},{\"simplified\":\"迁就\",\"traditional\":\"遷就\",\"pinyin\":\"qiānjiù\",\"definitions\":[\"humor\",\"yield\",\"adapt to\",\"accommodate (something)\"]},{\"simplified\":\"迁徙\",\"traditional\":\"遷徙\",\"pinyin\":\"qiānxǐ\",\"definitions\":[\"migrate\",\"move\",\"change one's residence\"]},{\"simplified\":\"牵\",\"traditional\":\"牽\",\"pinyin\":\"qiān\",\"definitions\":[\"to lead along\",\"to pull (an animal on a tether)\"]},{\"simplified\":\"牵扯\",\"traditional\":\"牽扯\",\"pinyin\":\"qiānchě\",\"definitions\":[\"implicate\",\"involve\"]},{\"simplified\":\"牵制\",\"traditional\":\"牽制\",\"pinyin\":\"qiānzhì\",\"definitions\":[\"control\",\"curb\",\"restrict\",\"impede\"]},{\"simplified\":\"谦逊\",\"traditional\":\"謙遜\",\"pinyin\":\"qiānxùn\",\"definitions\":[\"humble\",\"modest\",\"humility\"]},{\"simplified\":\"签署\",\"traditional\":\"簽署\",\"pinyin\":\"qiānshǔ\",\"definitions\":[\"sign (an agreement)\"]},{\"simplified\":\"前景\",\"traditional\":\"前景\",\"pinyin\":\"qiánjǐng\",\"definitions\":[\"outlook\",\"future (prospects)\",\"foreground\"]},{\"simplified\":\"前提\",\"traditional\":\"前提\",\"pinyin\":\"qiántí\",\"definitions\":[\"premise\",\"precondition\"]},{\"simplified\":\"潜力\",\"traditional\":\"潛力\",\"pinyin\":\"qiánlì\",\"definitions\":[\"potential\",\"capacity\"]},{\"simplified\":\"潜水\",\"traditional\":\"潛水\",\"pinyin\":\"qiánshuǐ\",\"definitions\":[\"go diving\"]},{\"simplified\":\"潜移默化\",\"traditional\":\"潛移默化\",\"pinyin\":\"qiányímòhuà\",\"definitions\":[\"exert a subtle influence on sb.'s character, thinking, etc.\",\"impercebtibly influence\",\"to influence secretly\"]},{\"simplified\":\"谴责\",\"traditional\":\"譴責\",\"pinyin\":\"qiǎnzé\",\"definitions\":[\"denounce\",\"condemn\",\"criticize\"]},{\"simplified\":\"强制\",\"traditional\":\"強制\",\"pinyin\":\"qiángzhì\",\"definitions\":[\"enforce\",\"control\",\"coerce\"]},{\"simplified\":\"抢劫\",\"traditional\":\"搶劫\",\"pinyin\":\"qiǎngjié\",\"definitions\":[\"rob\",\"looting\"]},{\"simplified\":\"抢救\",\"traditional\":\"搶救\",\"pinyin\":\"qiǎngjiù\",\"definitions\":[\"rescue\",\"to save\"]},{\"simplified\":\"强迫\",\"traditional\":\"強迫\",\"pinyin\":\"qiǎngpò\",\"definitions\":[\"compel\",\"to force\"]},{\"simplified\":\"桥梁\",\"traditional\":\"橋梁\",\"pinyin\":\"qiáoliáng\",\"definitions\":[\"bridge\"]},{\"simplified\":\"窍门\",\"traditional\":\"竅門\",\"pinyin\":\"qiàomén\",\"definitions\":[\"special tricks\"]},{\"simplified\":\"翘\",\"traditional\":\"翹\",\"pinyin\":\"qiào\",\"definitions\":[\"stick up\",\"bend upwards\"]},{\"simplified\":\"切实\",\"traditional\":\"切實\",\"pinyin\":\"qièshí\",\"definitions\":[\"realistic\",\"feasible\",\"conscientiously\"]},{\"simplified\":\"锲而不舍\",\"traditional\":\"锲而不舍\",\"pinyin\":\"qiè'érbùshě\",\"definitions\":[\"keep on chipping away\",\"work with perseverance\"]},{\"simplified\":\"钦佩\",\"traditional\":\"欽佩\",\"pinyin\":\"qīnpèi\",\"definitions\":[\"admire\",\"have great respect for\"]},{\"simplified\":\"侵犯\",\"traditional\":\"侵犯\",\"pinyin\":\"qīnfàn\",\"definitions\":[\"encroach on\",\"infringe on\",\"violation\"]},{\"simplified\":\"侵略\",\"traditional\":\"侵略\",\"pinyin\":\"qīnlüè\",\"definitions\":[\"invasion\",\"encroachment\",\"invade\"]},{\"simplified\":\"亲密\",\"traditional\":\"親密\",\"pinyin\":\"qīnmì\",\"definitions\":[\"intimate\",\"close\",\"familiarity\"]},{\"simplified\":\"亲热\",\"traditional\":\"親熱\",\"pinyin\":\"qīnrè\",\"definitions\":[\"intimate\",\"affectionate\",\"warm\"]},{\"simplified\":\"勤俭\",\"traditional\":\"勤儉\",\"pinyin\":\"qínjiǎn\",\"definitions\":[\"hardworking and thrifty\"]},{\"simplified\":\"勤劳\",\"traditional\":\"勤勞\",\"pinyin\":\"qínláo\",\"definitions\":[\"hardworking\",\"diligent\",\"industrious\"]},{\"simplified\":\"倾听\",\"traditional\":\"傾聽\",\"pinyin\":\"qīngtīng\",\"definitions\":[\"listen attentively\",\"heed (other people's opinions)\"]},{\"simplified\":\"倾向\",\"traditional\":\"傾向\",\"pinyin\":\"qīngxiàng\",\"definitions\":[\"trend\",\"tendency\",\"inclination\"]},{\"simplified\":\"倾斜\",\"traditional\":\"傾斜\",\"pinyin\":\"qīngxié\",\"definitions\":[\"incline\",\"lean\",\"to slant\",\"to slope\",\"to tilt\"]},{\"simplified\":\"清澈\",\"traditional\":\"清澈\",\"pinyin\":\"qīngchè\",\"definitions\":[\"clear\",\"limpid\"]},{\"simplified\":\"清晨\",\"traditional\":\"清晨\",\"pinyin\":\"qīngchén\",\"definitions\":[\"early morning\"]},{\"simplified\":\"清除\",\"traditional\":\"清除\",\"pinyin\":\"qīngchú\",\"definitions\":[\"eliminate\",\"get rid of\"]},{\"simplified\":\"清洁\",\"traditional\":\"清潔\",\"pinyin\":\"qīngjié\",\"definitions\":[\"clean\",\"unpolluted\",\"purity\"]},{\"simplified\":\"清理\",\"traditional\":\"清理\",\"pinyin\":\"qīnglǐ\",\"definitions\":[\"cleanup\",\"put in order\",\"check up\"]},{\"simplified\":\"清晰\",\"traditional\":\"清晰\",\"pinyin\":\"qīngxī\",\"definitions\":[\"clear\",\"distinct\",\"clarity\"]},{\"simplified\":\"清醒\",\"traditional\":\"清醒\",\"pinyin\":\"qīngxǐng\",\"definitions\":[\"clear-headed\",\"sober\",\"regain consciousness\"]},{\"simplified\":\"清真\",\"traditional\":\"清真\",\"pinyin\":\"qīngzhēn\",\"definitions\":[\"Muslim\"]},{\"simplified\":\"情报\",\"traditional\":\"情報\",\"pinyin\":\"qíngbào\",\"definitions\":[\"intelligence\",\"information-gathering\"]},{\"simplified\":\"情节\",\"traditional\":\"情節\",\"pinyin\":\"qíngjié\",\"definitions\":[\"plot\",\"circumstances\"]},{\"simplified\":\"情理\",\"traditional\":\"情理\",\"pinyin\":\"qínglǐ\",\"definitions\":[\"reason\",\"sense\"]},{\"simplified\":\"情形\",\"traditional\":\"情形\",\"pinyin\":\"qíngxing\",\"definitions\":[\"circumstances\",\"situation\"]},{\"simplified\":\"晴朗\",\"traditional\":\"晴朗\",\"pinyin\":\"qínglǎng\",\"definitions\":[\"sunny and cloudless\"]},{\"simplified\":\"请柬\",\"traditional\":\"請柬\",\"pinyin\":\"qǐngjiǎn\",\"definitions\":[\"invitation card\",\"written invitation\"]},{\"simplified\":\"请教\",\"traditional\":\"請教\",\"pinyin\":\"qǐngjiào\",\"definitions\":[\"consult\",\"seek advice\"]},{\"simplified\":\"请示\",\"traditional\":\"請示\",\"pinyin\":\"qǐngshì\",\"definitions\":[\"ask for instructions\"]},{\"simplified\":\"请帖\",\"traditional\":\"請帖\",\"pinyin\":\"qǐngtiě\",\"definitions\":[\"invitation card\",\"written invitation\"]},{\"simplified\":\"丘陵\",\"traditional\":\"丘陵\",\"pinyin\":\"qiūlíng\",\"definitions\":[\"hills\"]},{\"simplified\":\"区分\",\"traditional\":\"區分\",\"pinyin\":\"qūfēn\",\"definitions\":[\"differentiate\",\"find differing aspects\",\"find the difference between\"]},{\"simplified\":\"区域\",\"traditional\":\"區域\",\"pinyin\":\"qūyù\",\"definitions\":[\"area\",\"region\",\"district\"]},{\"simplified\":\"曲折\",\"traditional\":\"曲折\",\"pinyin\":\"qūzhé\",\"definitions\":[\"winding\",\"zigzag\",\"complicated\"]},{\"simplified\":\"驱逐\",\"traditional\":\"驅逐\",\"pinyin\":\"qūzhú\",\"definitions\":[\"banishment\",\"expel\",\"deport\"]},{\"simplified\":\"屈服\",\"traditional\":\"屈服\",\"pinyin\":\"qūfú\",\"definitions\":[\"yield\",\"give in\",\"submit\"]},{\"simplified\":\"渠道\",\"traditional\":\"渠道\",\"pinyin\":\"qúdào\",\"definitions\":[\"irrigation ditch\",\"medium or channel of communication\"]},{\"simplified\":\"曲子\",\"traditional\":\"曲子\",\"pinyin\":\"qǔzi\",\"definitions\":[\"folk tune\",\"music\",\"melody\"]},{\"simplified\":\"取缔\",\"traditional\":\"取締\",\"pinyin\":\"qǔdì\",\"definitions\":[\"to ban\",\"suppress\"]},{\"simplified\":\"趣味\",\"traditional\":\"趣味\",\"pinyin\":\"qùwèi\",\"definitions\":[\"fun\",\"interest\",\"delight\",\"taste\"]},{\"simplified\":\"圈套\",\"traditional\":\"圈套\",\"pinyin\":\"quāntào\",\"definitions\":[\"trap\"]},{\"simplified\":\"权衡\",\"traditional\":\"權衡\",\"pinyin\":\"quánhéng\",\"definitions\":[\"trade-off\",\"weigh pros and cons\"]},{\"simplified\":\"权威\",\"traditional\":\"權威\",\"pinyin\":\"quánwēi\",\"definitions\":[\"authority\",\"authoritative\"]},{\"simplified\":\"全局\",\"traditional\":\"全局\",\"pinyin\":\"quánjú\",\"definitions\":[\"overall situation\"]},{\"simplified\":\"全力以赴\",\"traditional\":\"全力以赴\",\"pinyin\":\"quán lì yǐ fù\",\"definitions\":[\"do at all costs\",\"make an all-out effort\"]},{\"simplified\":\"拳头\",\"traditional\":\"拳頭\",\"pinyin\":\"quántou\",\"definitions\":[\"fist\"]},{\"simplified\":\"犬\",\"traditional\":\"犬\",\"pinyin\":\"quǎn\",\"definitions\":[\"dog (Kangxi radical 94)\"]},{\"simplified\":\"缺口\",\"traditional\":\"缺口\",\"pinyin\":\"quēkǒu\",\"definitions\":[\"gap\",\"breach\",\"shortfall\"]},{\"simplified\":\"缺席\",\"traditional\":\"缺席\",\"pinyin\":\"quē xí\",\"definitions\":[\"absence\",\"absent\",\"default\"]},{\"simplified\":\"缺陷\",\"traditional\":\"缺陷\",\"pinyin\":\"quēxiàn\",\"definitions\":[\"a defect\",\"a flaw\",\"disfigurement\"]},{\"simplified\":\"瘸\",\"traditional\":\"瘸\",\"pinyin\":\"qué\",\"definitions\":[\"lame\"]},{\"simplified\":\"确保\",\"traditional\":\"確保\",\"pinyin\":\"quèbǎo\",\"definitions\":[\"ensure\",\"guarantee\"]},{\"simplified\":\"确立\",\"traditional\":\"確立\",\"pinyin\":\"quèlì\",\"definitions\":[\"to establish\",\"to institute\"]},{\"simplified\":\"确切\",\"traditional\":\"確切\",\"pinyin\":\"quèqiè\",\"definitions\":[\"definite\",\"exact\",\"precise\"]},{\"simplified\":\"确信\",\"traditional\":\"確信\",\"pinyin\":\"quèxìn\",\"definitions\":[\"confident\",\"be certain of\",\"to firmly believe\"]},{\"simplified\":\"群众\",\"traditional\":\"群衆\",\"pinyin\":\"qúnzhòng\",\"definitions\":[\"the masses\",\"multitude\"]},{\"simplified\":\"染\",\"traditional\":\"染\",\"pinyin\":\"rǎn\",\"definitions\":[\"dye\",\"to catch (a disease)\"]},{\"simplified\":\"嚷\",\"traditional\":\"嚷\",\"pinyin\":\"rǎng\",\"definitions\":[\"blurt out\",\"shout\"]},{\"simplified\":\"让步\",\"traditional\":\"讓步\",\"pinyin\":\"ràng bù\",\"definitions\":[\"give in\",\"concede\",\"yield\"]},{\"simplified\":\"饶恕\",\"traditional\":\"饒恕\",\"pinyin\":\"ráoshù\",\"definitions\":[\"forgive\",\"pardon\",\"spare\"]},{\"simplified\":\"扰乱\",\"traditional\":\"擾亂\",\"pinyin\":\"rǎoluàn\",\"definitions\":[\"disturb\",\"perturb\",\"harass\"]},{\"simplified\":\"惹祸\",\"traditional\":\"惹禍\",\"pinyin\":\"rěhuò\",\"definitions\":[\"stir up troubles\"]},{\"simplified\":\"热泪盈眶\",\"traditional\":\"熱淚盈眶\",\"pinyin\":\"rè lèi yíng kuàng\",\"definitions\":[\"(saying) eyes brimming with tears\",\"extremely moved\"]},{\"simplified\":\"热门\",\"traditional\":\"熱門\",\"pinyin\":\"rèmén\",\"definitions\":[\"in demand\",\"popular\",\"in vogue\"]},{\"simplified\":\"人道\",\"traditional\":\"人道\",\"pinyin\":\"réndào\",\"definitions\":[\"humanitarianism\",\"humane\"]},{\"simplified\":\"人格\",\"traditional\":\"人格\",\"pinyin\":\"réngé\",\"definitions\":[\"personality\",\"moral integrity\",\"character\"]},{\"simplified\":\"人工\",\"traditional\":\"人工\",\"pinyin\":\"réngōng\",\"definitions\":[\"man-made\",\"manpower\",\"manual work\"]},{\"simplified\":\"人家\",\"traditional\":\"人家\",\"pinyin\":\"rénjiā\",\"definitions\":[\"other people\",\"others\",\"they\",\"I\",\"family\",\"household\"]},{\"simplified\":\"人间\",\"traditional\":\"人間\",\"pinyin\":\"rénjiān\",\"definitions\":[\"man's world\",\"the world\"]},{\"simplified\":\"人士\",\"traditional\":\"人士\",\"pinyin\":\"rénshì\",\"definitions\":[\"person\",\"public figure\"]},{\"simplified\":\"人为\",\"traditional\":\"人爲\",\"pinyin\":\"rénwéi\",\"definitions\":[\"artificial\",\"man-made\"]},{\"simplified\":\"人性\",\"traditional\":\"人性\",\"pinyin\":\"rénxìng\",\"definitions\":[\"human nature\",\"humanity\"]},{\"simplified\":\"人质\",\"traditional\":\"人質\",\"pinyin\":\"rénzhì\",\"definitions\":[\"hostage\"]},{\"simplified\":\"仁慈\",\"traditional\":\"仁慈\",\"pinyin\":\"réncí\",\"definitions\":[\"benevolent\",\"kindhearted\",\"charitable\"]},{\"simplified\":\"忍耐\",\"traditional\":\"忍耐\",\"pinyin\":\"rěnnài\",\"definitions\":[\"show restraint\",\"endure\",\"exercise patience\"]},{\"simplified\":\"忍受\",\"traditional\":\"忍受\",\"pinyin\":\"rěnshòu\",\"definitions\":[\"to bear\",\"endure\",\"tolerate\"]},{\"simplified\":\"认定\",\"traditional\":\"認定\",\"pinyin\":\"rèndìng\",\"definitions\":[\"maintain (that sth. is true)\",\"firmly believe\"]},{\"simplified\":\"认可\",\"traditional\":\"認可\",\"pinyin\":\"rènkě\",\"definitions\":[\"approve\",\"accept\",\"ratify\"]},{\"simplified\":\"任命\",\"traditional\":\"任命\",\"pinyin\":\"rènmìng\",\"definitions\":[\"appoint and nominate\"]},{\"simplified\":\"任性\",\"traditional\":\"任性\",\"pinyin\":\"rènxìng\",\"definitions\":[\"willful\",\"headstrong\"]},{\"simplified\":\"任意\",\"traditional\":\"任意\",\"pinyin\":\"rènyì\",\"definitions\":[\"arbitrarily\",\"at will\",\"at random\"]},{\"simplified\":\"任重道远\",\"traditional\":\"任重道遠\",\"pinyin\":\"rènzhòngdàoyuǎn\",\"definitions\":[\"lit. a heavy load and a long road\",\"fig. to bear heavy responsibilities through a long struggle\",\"shoulder heavy responsibilities\"]},{\"simplified\":\"仍旧\",\"traditional\":\"仍舊\",\"pinyin\":\"réngjiù\",\"definitions\":[\"still (remaining)\",\"remain (the same)\",\"yet\"]},{\"simplified\":\"日新月异\",\"traditional\":\"日新月異\",\"pinyin\":\"rìxīnyuèyì\",\"definitions\":[\"change with each passing day\"]},{\"simplified\":\"日益\",\"traditional\":\"日益\",\"pinyin\":\"rìyì\",\"definitions\":[\"day by day\",\"more and more\",\"increasingly\"]},{\"simplified\":\"荣幸\",\"traditional\":\"榮幸\",\"pinyin\":\"róngxìng\",\"definitions\":[\"honored\"]},{\"simplified\":\"荣誉\",\"traditional\":\"榮譽\",\"pinyin\":\"róngyù\",\"definitions\":[\"honor\",\"glory\"]},{\"simplified\":\"容貌\",\"traditional\":\"容貌\",\"pinyin\":\"róngmào\",\"definitions\":[\"facial features\",\"looks\",\"appearance\"]},{\"simplified\":\"容纳\",\"traditional\":\"容納\",\"pinyin\":\"róngnà\",\"definitions\":[\"contain\",\"accommodate\",\"tolerate (different options)\"]},{\"simplified\":\"容器\",\"traditional\":\"容器\",\"pinyin\":\"róngqì\",\"definitions\":[\"container\",\"receptacle\",\"vessel\"]},{\"simplified\":\"容忍\",\"traditional\":\"容忍\",\"pinyin\":\"róngrěn\",\"definitions\":[\"put up with\",\"tolerate\",\"condone\"]},{\"simplified\":\"溶解\",\"traditional\":\"溶解\",\"pinyin\":\"róngjiě\",\"definitions\":[\"dissolve\",\"solution\"]},{\"simplified\":\"融化\",\"traditional\":\"融化\",\"pinyin\":\"rónghuà\",\"definitions\":[\"melt\",\"thaw\",\"dissolve\",\"blend into\"]},{\"simplified\":\"融洽\",\"traditional\":\"融洽\",\"pinyin\":\"róngqià\",\"definitions\":[\"harmonious\",\"friendly relations\"]},{\"simplified\":\"柔和\",\"traditional\":\"柔和\",\"pinyin\":\"róuhé\",\"definitions\":[\"gentle\",\"soft\",\"mild\"]},{\"simplified\":\"揉\",\"traditional\":\"揉\",\"pinyin\":\"róu\",\"definitions\":[\"knead\",\"to massage\",\"to rub\"]},{\"simplified\":\"儒家\",\"traditional\":\"儒家\",\"pinyin\":\"rújiā\",\"definitions\":[\"Confucianism\"]},{\"simplified\":\"若干\",\"traditional\":\"若幹\",\"pinyin\":\"ruògān\",\"definitions\":[\"a certain number or amount\",\"how many\",\"how much\"]},{\"simplified\":\"弱点\",\"traditional\":\"弱點\",\"pinyin\":\"ruòdiǎn\",\"definitions\":[\"weak point\",\"failing\"]},{\"simplified\":\"撒谎\",\"traditional\":\"撒謊\",\"pinyin\":\"sā huǎng\",\"definitions\":[\"to tell lies\"]},{\"simplified\":\"散文\",\"traditional\":\"散文\",\"pinyin\":\"sǎnwén\",\"definitions\":[\"prose\",\"essay\"]},{\"simplified\":\"散布\",\"traditional\":\"散布\",\"pinyin\":\"sànbù\",\"definitions\":[\"to scatter\",\"disseminate\",\"to spread\"]},{\"simplified\":\"散发\",\"traditional\":\"散發\",\"pinyin\":\"sànfā\",\"definitions\":[\"distribute\",\"emit\"]},{\"simplified\":\"丧失\",\"traditional\":\"喪失\",\"pinyin\":\"sàngshī\",\"definitions\":[\"to lose\",\"to forfeit\"]},{\"simplified\":\"骚扰\",\"traditional\":\"騷擾\",\"pinyin\":\"sāorǎo\",\"definitions\":[\"harass\",\"disturb\",\"molest\",\"cause a commotion\"]},{\"simplified\":\"嫂子\",\"traditional\":\"嫂子\",\"pinyin\":\"sǎozi\",\"definitions\":[\"(informal) elder brother's wife\",\"sister-in-law\"]},{\"simplified\":\"刹车\",\"traditional\":\"刹車\",\"pinyin\":\"shā chē\",\"definitions\":[\"brake (when driving)\",\"stop\",\"switch off\"]},{\"simplified\":\"啥\",\"traditional\":\"啥\",\"pinyin\":\"shá\",\"definitions\":[\"(spoken) what\"]},{\"simplified\":\"筛选\",\"traditional\":\"篩選\",\"pinyin\":\"shāixuǎn\",\"definitions\":[\"to filter\",\"to sift\"]},{\"simplified\":\"山脉\",\"traditional\":\"山脈\",\"pinyin\":\"shānmài\",\"definitions\":[\"mountain range\"]},{\"simplified\":\"闪烁\",\"traditional\":\"閃爍\",\"pinyin\":\"shǎnshuò\",\"definitions\":[\"to twinkle\",\"to flicker\",\"glimmer\"]},{\"simplified\":\"擅长\",\"traditional\":\"擅長\",\"pinyin\":\"shàncháng\",\"definitions\":[\"be good at\",\"be expert in\"]},{\"simplified\":\"擅自\",\"traditional\":\"擅自\",\"pinyin\":\"shànzì\",\"definitions\":[\"unauthorized\"]},{\"simplified\":\"伤脑筋\",\"traditional\":\"傷腦筋\",\"pinyin\":\"shāng nǎojīn\",\"definitions\":[\"troublesome\",\"bothersome\"]},{\"simplified\":\"商标\",\"traditional\":\"商標\",\"pinyin\":\"shāngbiāo\",\"definitions\":[\"trademark\",\"logo\"]},{\"simplified\":\"上级\",\"traditional\":\"上級\",\"pinyin\":\"shàngjí\",\"definitions\":[\"higher authorities\",\"superiors\"]},{\"simplified\":\"上进\",\"traditional\":\"上進\",\"pinyin\":\"shàngjìn\",\"definitions\":[\"make forward progress\",\"do better\"]},{\"simplified\":\"上任\",\"traditional\":\"上任\",\"pinyin\":\"shàng rèn\",\"definitions\":[\"take office\"]},{\"simplified\":\"上瘾\",\"traditional\":\"上瘾\",\"pinyin\":\"shàngyǐn\",\"definitions\":[\"become addicted\",\"get into a habit\"]},{\"simplified\":\"上游\",\"traditional\":\"上遊\",\"pinyin\":\"shàngyóu\",\"definitions\":[\"upper reaches (of a river)\",\"advanced position\"]},{\"simplified\":\"尚且\",\"traditional\":\"尚且\",\"pinyin\":\"shàngqiě\",\"definitions\":[\"yet\",\"still\",\"even\",\"also\"]},{\"simplified\":\"捎\",\"traditional\":\"捎\",\"pinyin\":\"shāo\",\"definitions\":[\"bring or take (along)\",\"deliver (a message)\"]},{\"simplified\":\"梢\",\"traditional\":\"梢\",\"pinyin\":\"shāo\",\"definitions\":[\"tip of a branch\"]},{\"simplified\":\"哨\",\"traditional\":\"哨\",\"pinyin\":\"shào\",\"definitions\":[\"a whistle\",\"sentry post\"]},{\"simplified\":\"奢侈\",\"traditional\":\"奢侈\",\"pinyin\":\"shēchǐ\",\"definitions\":[\"luxury\",\"sumptuous\",\"extravagant\"]},{\"simplified\":\"舌头\",\"traditional\":\"舌頭\",\"pinyin\":\"shétou\",\"definitions\":[\"tongue\"]},{\"simplified\":\"设立\",\"traditional\":\"設立\",\"pinyin\":\"shèlì\",\"definitions\":[\"set up\",\"establish\"]},{\"simplified\":\"设想\",\"traditional\":\"設想\",\"pinyin\":\"shèxiǎng\",\"definitions\":[\"imagine\",\"consider\",\"tentative plan\"]},{\"simplified\":\"设置\",\"traditional\":\"設置\",\"pinyin\":\"shèzhì\",\"definitions\":[\"set up\",\"install\",\"to fit\"]},{\"simplified\":\"社区\",\"traditional\":\"社區\",\"pinyin\":\"shèqū\",\"definitions\":[\"community\"]},{\"simplified\":\"涉及\",\"traditional\":\"涉及\",\"pinyin\":\"shèjí\",\"definitions\":[\"involve\",\"relate to\",\"to touch upon (a topic)\"]},{\"simplified\":\"摄氏度\",\"traditional\":\"攝氏度\",\"pinyin\":\"shèshìdù\",\"definitions\":[\"degrees Celsius\"]},{\"simplified\":\"申报\",\"traditional\":\"申報\",\"pinyin\":\"shēnbào\",\"definitions\":[\"declare\",\"report (to customs or other authority)\"]},{\"simplified\":\"呻吟\",\"traditional\":\"呻吟\",\"pinyin\":\"shēnyín\",\"definitions\":[\"to moan\",\"to groan\"]},{\"simplified\":\"绅士\",\"traditional\":\"紳士\",\"pinyin\":\"shēnshì\",\"definitions\":[\"gentleman\"]},{\"simplified\":\"深奥\",\"traditional\":\"深奧\",\"pinyin\":\"shēn'ào\",\"definitions\":[\"profound\",\"deep\"]},{\"simplified\":\"深沉\",\"traditional\":\"深沈\",\"pinyin\":\"shēnchén\",\"definitions\":[\"deep\",\"extreme\",\"low pitched (sound)\",\"grave\",\"of major importance\"]},{\"simplified\":\"深情厚谊\",\"traditional\":\"深情厚誼\",\"pinyin\":\"shēnqínghòuyì\",\"definitions\":[\"profound friendship\"]},{\"simplified\":\"神经\",\"traditional\":\"神經\",\"pinyin\":\"shénjīng\",\"definitions\":[\"nerve\"]},{\"simplified\":\"神奇\",\"traditional\":\"神奇\",\"pinyin\":\"shénqí\",\"definitions\":[\"miraculous\",\"magical\",\"mystical\"]},{\"simplified\":\"神气\",\"traditional\":\"神氣\",\"pinyin\":\"shénqì\",\"definitions\":[\"expression\",\"manner\",\"spirited\"]},{\"simplified\":\"神圣\",\"traditional\":\"神聖\",\"pinyin\":\"shénshèng\",\"definitions\":[\"divine\",\"holy\",\"sacred\"]},{\"simplified\":\"神态\",\"traditional\":\"神態\",\"pinyin\":\"shéntài\",\"definitions\":[\"appearance\",\"looks\",\"manner\",\"expression\"]},{\"simplified\":\"神仙\",\"traditional\":\"神仙\",\"pinyin\":\"shénxiān\",\"definitions\":[\"fig. lighthearted person\",\"Daoist immortal\",\"supernatural entity\",\"(in modern fiction) fairy, elf, leprechaun, etc.\",\"supernatural being, celestial being, immortal\",\"a person who has the power of clairvoyance or who is free from worldly cares\"]},{\"simplified\":\"审查\",\"traditional\":\"審查\",\"pinyin\":\"shěnchá\",\"definitions\":[\"examine\",\"investigate\",\"censorship\"]},{\"simplified\":\"审理\",\"traditional\":\"審理\",\"pinyin\":\"shěnlǐ\",\"definitions\":[\"hear (a case)\"]},{\"simplified\":\"审美\",\"traditional\":\"審美\",\"pinyin\":\"shěnměi\",\"definitions\":[\"aesthetic sense\",\"appreciation of the arts\"]},{\"simplified\":\"审判\",\"traditional\":\"審判\",\"pinyin\":\"shěnpàn\",\"definitions\":[\"put (someone) to trial\",\"to try somebody\"]},{\"simplified\":\"渗透\",\"traditional\":\"滲透\",\"pinyin\":\"shèntòu\",\"definitions\":[\"infiltrate\",\"permeate\"]},{\"simplified\":\"慎重\",\"traditional\":\"慎重\",\"pinyin\":\"shènzhòng\",\"definitions\":[\"cautious\",\"careful\",\"prudent\"]},{\"simplified\":\"生存\",\"traditional\":\"生存\",\"pinyin\":\"shēngcún\",\"definitions\":[\"exist\",\"survive\"]},{\"simplified\":\"生机\",\"traditional\":\"生機\",\"pinyin\":\"shēngjī\",\"definitions\":[\"reprieve from death\",\"life force\",\"vitality\"]},{\"simplified\":\"生理\",\"traditional\":\"生理\",\"pinyin\":\"shēnglǐ\",\"definitions\":[\"physiology\"]},{\"simplified\":\"生疏\",\"traditional\":\"生疏\",\"pinyin\":\"shēngshū\",\"definitions\":[\"unfamiliar\",\"strange\",\"out of practice\"]},{\"simplified\":\"生态\",\"traditional\":\"生態\",\"pinyin\":\"shēngtài\",\"definitions\":[\"way of life\",\"ecology\"]},{\"simplified\":\"生物\",\"traditional\":\"生物\",\"pinyin\":\"shēngwù\",\"definitions\":[\"organism\",\"living creature\",\"life form\"]},{\"simplified\":\"生肖\",\"traditional\":\"生肖\",\"pinyin\":\"shēngxiào\",\"definitions\":[\"Chinese zodiac\"]},{\"simplified\":\"生效\",\"traditional\":\"生效\",\"pinyin\":\"shēng xiào\",\"definitions\":[\"take effect\",\"become effective\"]},{\"simplified\":\"生锈\",\"traditional\":\"生鏽\",\"pinyin\":\"shēngxiù\",\"definitions\":[\"to rust\"]},{\"simplified\":\"生育\",\"traditional\":\"生育\",\"pinyin\":\"shēngyù\",\"definitions\":[\"give birth\",\"to rear\",\"bring up (children)\"]},{\"simplified\":\"声明\",\"traditional\":\"聲明\",\"pinyin\":\"shēngmíng\",\"definitions\":[\"statement\",\"declare\",\"proclaim\"]},{\"simplified\":\"声势\",\"traditional\":\"聲勢\",\"pinyin\":\"shēngshì\",\"definitions\":[\"momentum\",\"fame and power\",\"prestige\"]},{\"simplified\":\"声誉\",\"traditional\":\"聲譽\",\"pinyin\":\"shēngyù\",\"definitions\":[\"reputation\",\"fame\"]},{\"simplified\":\"牲畜\",\"traditional\":\"牲畜\",\"pinyin\":\"shēngchù\",\"definitions\":[\"livestock\",\"domesticated animals\"]},{\"simplified\":\"省会\",\"traditional\":\"省會\",\"pinyin\":\"shěnghuì\",\"definitions\":[\"provincial capital\"]},{\"simplified\":\"胜负\",\"traditional\":\"勝負\",\"pinyin\":\"shèngfù\",\"definitions\":[\"victory or defeat\",\"the outcome of a battle\"]},{\"simplified\":\"盛产\",\"traditional\":\"盛産\",\"pinyin\":\"shèngchǎn\",\"definitions\":[\"abound in\",\"teem with\",\"superabundant\"]},{\"simplified\":\"盛开\",\"traditional\":\"盛開\",\"pinyin\":\"shèngkāi\",\"definitions\":[\"to bloom\",\"be in full flower\"]},{\"simplified\":\"盛情\",\"traditional\":\"盛情\",\"pinyin\":\"shèngqíng\",\"definitions\":[\"great kindness\",\"boundless hospitality\"]},{\"simplified\":\"盛行\",\"traditional\":\"盛行\",\"pinyin\":\"shèngxíng\",\"definitions\":[\"in fashion\",\"prevalent\",\"prevail\"]},{\"simplified\":\"尸体\",\"traditional\":\"屍體\",\"pinyin\":\"shītǐ\",\"definitions\":[\"dead body\",\"corpse\",\"carcass\"]},{\"simplified\":\"失事\",\"traditional\":\"失事\",\"pinyin\":\"shī shì\",\"definitions\":[\"be involved in a crash\",\"(have an) accident\"]},{\"simplified\":\"失误\",\"traditional\":\"失誤\",\"pinyin\":\"shīwù\",\"definitions\":[\"mistake\",\"lapse\",\"miss\"]},{\"simplified\":\"失踪\",\"traditional\":\"失蹤\",\"pinyin\":\"shī zōng\",\"definitions\":[\"be missing\",\"be unaccounted for\"]},{\"simplified\":\"师范\",\"traditional\":\"師範\",\"pinyin\":\"shīfàn\",\"definitions\":[\"teacher-training\",\"pedagogical\",\"normal (school)\"]},{\"simplified\":\"施加\",\"traditional\":\"施加\",\"pinyin\":\"shījiā\",\"definitions\":[\"exert (effort or pressure)\"]},{\"simplified\":\"施展\",\"traditional\":\"施展\",\"pinyin\":\"shīzhǎn\",\"definitions\":[\"use fully\",\"put to good use\"]},{\"simplified\":\"十足\",\"traditional\":\"十足\",\"pinyin\":\"shízú\",\"definitions\":[\"full of\",\"complete\",\"100 percent\"]},{\"simplified\":\"石油\",\"traditional\":\"石油\",\"pinyin\":\"shíyóu\",\"definitions\":[\"oil\",\"petroleum\"]},{\"simplified\":\"时常\",\"traditional\":\"時常\",\"pinyin\":\"shícháng\",\"definitions\":[\"time and again\",\"often\",\"frequently\"]},{\"simplified\":\"时而\",\"traditional\":\"時而\",\"pinyin\":\"shí'ér\",\"definitions\":[\"occasionally\",\"often, but not at any fixed time\"]},{\"simplified\":\"时光\",\"traditional\":\"時光\",\"pinyin\":\"shíguāng\",\"definitions\":[\"time\",\"era\",\"period of time\"]},{\"simplified\":\"时机\",\"traditional\":\"時機\",\"pinyin\":\"shíjī\",\"definitions\":[\"opportune time\",\"opportunity\"]},{\"simplified\":\"时事\",\"traditional\":\"時事\",\"pinyin\":\"shíshì\",\"definitions\":[\"current events\",\"the present situation\"]},{\"simplified\":\"识别\",\"traditional\":\"識別\",\"pinyin\":\"shíbié\",\"definitions\":[\"identify\",\"distinguish\",\"discern\"]},{\"simplified\":\"实惠\",\"traditional\":\"實惠\",\"pinyin\":\"shíhuì\",\"definitions\":[\"substantial material benefit\",\"advantageous (deal)\"]},{\"simplified\":\"实力\",\"traditional\":\"實力\",\"pinyin\":\"shílì\",\"definitions\":[\"strength\"]},{\"simplified\":\"实施\",\"traditional\":\"實施\",\"pinyin\":\"shíshī\",\"definitions\":[\"to implement\",\"put into effect\",\"carry out\"]},{\"simplified\":\"实事求是\",\"traditional\":\"實事求是\",\"pinyin\":\"shí shì qiú shì\",\"definitions\":[\"be practical and realistic\",\"seek truth from facts\"]},{\"simplified\":\"实行\",\"traditional\":\"實行\",\"pinyin\":\"shíxíng\",\"definitions\":[\"to implement\",\"put into practice\",\"carry out\"]},{\"simplified\":\"实质\",\"traditional\":\"實質\",\"pinyin\":\"shízhì\",\"definitions\":[\"substance\",\"essence\",\"gist\"]},{\"simplified\":\"拾\",\"traditional\":\"拾\",\"pinyin\":\"shí\",\"definitions\":[\"pick up\",\"ten (banker's anti-fraud numeral)\"]},{\"simplified\":\"使命\",\"traditional\":\"使命\",\"pinyin\":\"shǐmìng\",\"definitions\":[\"a (diplomatic or other) mission\"]},{\"simplified\":\"示范\",\"traditional\":\"示範\",\"pinyin\":\"shìfàn\",\"definitions\":[\"demonstrate\",\"lead the way\",\"show how something is done\"]},{\"simplified\":\"示威\",\"traditional\":\"示威\",\"pinyin\":\"shìwēi\",\"definitions\":[\"hold a protest demonstration\"]},{\"simplified\":\"示意\",\"traditional\":\"示意\",\"pinyin\":\"shìyì\",\"definitions\":[\"to signal\",\"to hint\",\"to gesture\",\"to motion\",\"to indicate (an idea to sb)\"]},{\"simplified\":\"世代\",\"traditional\":\"世代\",\"pinyin\":\"shìdài\",\"definitions\":[\"for generations\",\"generation to generation\"]},{\"simplified\":\"势必\",\"traditional\":\"勢必\",\"pinyin\":\"shìbì\",\"definitions\":[\"is bound to (happen)\"]},{\"simplified\":\"势力\",\"traditional\":\"勢力\",\"pinyin\":\"shìli\",\"definitions\":[\"power\",\"influence\"]},{\"simplified\":\"事故\",\"traditional\":\"事故\",\"pinyin\":\"shìgù\",\"definitions\":[\"accident\"]},{\"simplified\":\"事迹\",\"traditional\":\"事迹\",\"pinyin\":\"shìjì\",\"definitions\":[\"achievement\",\"deed\"]},{\"simplified\":\"事件\",\"traditional\":\"事件\",\"pinyin\":\"shìjiàn\",\"definitions\":[\"event\",\"happening\",\"incident\"]},{\"simplified\":\"事态\",\"traditional\":\"事態\",\"pinyin\":\"shìtài\",\"definitions\":[\"situation\",\"existing state of affairs\"]},{\"simplified\":\"事务\",\"traditional\":\"事務\",\"pinyin\":\"shìwù\",\"definitions\":[\"affairs\",\"work\"]},{\"simplified\":\"事项\",\"traditional\":\"事項\",\"pinyin\":\"shìxiàng\",\"definitions\":[\"matter\",\"item\"]},{\"simplified\":\"事业\",\"traditional\":\"事業\",\"pinyin\":\"shìyè\",\"definitions\":[\"undertaking\",\"project\",\"cause\",\"enterprise\"]},{\"simplified\":\"试图\",\"traditional\":\"試圖\",\"pinyin\":\"shìtú\",\"definitions\":[\"to try\",\"to attempt\"]},{\"simplified\":\"试验\",\"traditional\":\"試驗\",\"pinyin\":\"shìyàn\",\"definitions\":[\"experiment\",\"test\"]},{\"simplified\":\"视力\",\"traditional\":\"視力\",\"pinyin\":\"shìlì\",\"definitions\":[\"vision\",\"eyesight\"]},{\"simplified\":\"视频\",\"traditional\":\"視頻\",\"pinyin\":\"shìpín\",\"definitions\":[\"video\"]},{\"simplified\":\"视线\",\"traditional\":\"視線\",\"pinyin\":\"shìxiàn\",\"definitions\":[\"line of sight\",\"view line\"]},{\"simplified\":\"视野\",\"traditional\":\"視野\",\"pinyin\":\"shìyě\",\"definitions\":[\"field of vision\"]},{\"simplified\":\"是非\",\"traditional\":\"是非\",\"pinyin\":\"shìfēi\",\"definitions\":[\"right and wrong\",\"truth and fiction\",\"quarrel\"]},{\"simplified\":\"适宜\",\"traditional\":\"適宜\",\"pinyin\":\"shìyí\",\"definitions\":[\"suitable for\",\"appropriate for\"]},{\"simplified\":\"逝世\",\"traditional\":\"逝世\",\"pinyin\":\"shìshì\",\"definitions\":[\"pass away\",\"to die\"]},{\"simplified\":\"释放\",\"traditional\":\"釋放\",\"pinyin\":\"shìfàng\",\"definitions\":[\"release\",\"set free\",\"liberate (a prisoner)\"]},{\"simplified\":\"收藏\",\"traditional\":\"收藏\",\"pinyin\":\"shōucáng\",\"definitions\":[\"collect\",\"keep\"]},{\"simplified\":\"收缩\",\"traditional\":\"收縮\",\"pinyin\":\"shōusuō\",\"definitions\":[\"pull back\",\"shrink\"]},{\"simplified\":\"收益\",\"traditional\":\"收益\",\"pinyin\":\"shōuyì\",\"definitions\":[\"earnings\",\"profit\"]},{\"simplified\":\"收音机\",\"traditional\":\"收音機\",\"pinyin\":\"shōuyīnjī\",\"definitions\":[\"radio\"]},{\"simplified\":\"手法\",\"traditional\":\"手法\",\"pinyin\":\"shǒufǎ\",\"definitions\":[\"technique\",\"trick\",\"skill\",\"tact\"]},{\"simplified\":\"手势\",\"traditional\":\"手勢\",\"pinyin\":\"shǒushì\",\"definitions\":[\"gesture\",\"sign\",\"signal\"]},{\"simplified\":\"手艺\",\"traditional\":\"手藝\",\"pinyin\":\"shǒuyì\",\"definitions\":[\"craft\",\"workmanship\",\"one's cooking\"]},{\"simplified\":\"守护\",\"traditional\":\"守護\",\"pinyin\":\"shǒuhù\",\"definitions\":[\"guard\",\"defend\",\"protect\"]},{\"simplified\":\"首饰\",\"traditional\":\"首飾\",\"pinyin\":\"shǒushì\",\"definitions\":[\"jewelry\"]},{\"simplified\":\"首要\",\"traditional\":\"首要\",\"pinyin\":\"shǒuyào\",\"definitions\":[\"the most important\",\"chief\",\"principal\"]},{\"simplified\":\"受罪\",\"traditional\":\"受罪\",\"pinyin\":\"shòuzuì\",\"definitions\":[\"endure hardships\",\"have a hard time\"]},{\"simplified\":\"授予\",\"traditional\":\"授予\",\"pinyin\":\"shòuyǔ\",\"definitions\":[\"to award\",\"confer\"]},{\"simplified\":\"书法\",\"traditional\":\"書法\",\"pinyin\":\"shūfǎ\",\"definitions\":[\"calligraphy\",\"penmanship\"]},{\"simplified\":\"书籍\",\"traditional\":\"書籍\",\"pinyin\":\"shūjí\",\"definitions\":[\"books\",\"works\"]},{\"simplified\":\"书记\",\"traditional\":\"書記\",\"pinyin\":\"shūji\",\"definitions\":[\"secretary\",\"clerk\"]},{\"simplified\":\"书面\",\"traditional\":\"書面\",\"pinyin\":\"shūmiàn\",\"definitions\":[\"in writing\",\"written (guarantee, etc.)\"]},{\"simplified\":\"舒畅\",\"traditional\":\"舒暢\",\"pinyin\":\"shūchàng\",\"definitions\":[\"happy\",\"entirely free from worry\"]},{\"simplified\":\"疏忽\",\"traditional\":\"疏忽\",\"pinyin\":\"shūhu\",\"definitions\":[\"neglect\",\"overlook\",\"negligence\"]},{\"simplified\":\"疏远\",\"traditional\":\"疏遠\",\"pinyin\":\"shūyuǎn\",\"definitions\":[\"drift apart\",\"keep at a distance\",\"not in close touch\",\"estranged\"]},{\"simplified\":\"束\",\"traditional\":\"束\",\"pinyin\":\"shù\",\"definitions\":[\"to tie\",\"to bind\",\"restrain\",\"(mw for bunches, bundles, bouquets, etc.)\"]},{\"simplified\":\"束缚\",\"traditional\":\"束縛\",\"pinyin\":\"shùfù\",\"definitions\":[\"to bind\",\"restrict\",\"to tie\"]},{\"simplified\":\"树立\",\"traditional\":\"樹立\",\"pinyin\":\"shùlì\",\"definitions\":[\"set up\",\"establish\"]},{\"simplified\":\"竖\",\"traditional\":\"豎\",\"pinyin\":\"shù\",\"definitions\":[\"vertical\",\"to erect\",\"vertical stroke\"]},{\"simplified\":\"数额\",\"traditional\":\"數額\",\"pinyin\":\"shù'é\",\"definitions\":[\"amount\",\"sum of money\",\"fixed number\"]},{\"simplified\":\"耍\",\"traditional\":\"耍\",\"pinyin\":\"shuǎ\",\"definitions\":[\"play/mess around with\",\"juggle\"]},{\"simplified\":\"衰老\",\"traditional\":\"衰老\",\"pinyin\":\"shuāilǎo\",\"definitions\":[\"grow old\",\"age\",\"deteriorate\"]},{\"simplified\":\"衰退\",\"traditional\":\"衰退\",\"pinyin\":\"shuāituì\",\"definitions\":[\"decline\",\"fall\",\"drop\",\"falter\"]},{\"simplified\":\"率领\",\"traditional\":\"率領\",\"pinyin\":\"shuàilǐng\",\"definitions\":[\"lead\",\"command\",\"head\"]},{\"simplified\":\"涮火锅\",\"traditional\":\"涮火鍋\",\"pinyin\":\"shuànhuǒguō\",\"definitions\":[\"to instant-boil (mutton, beef, vegetables, etc.)\"]},{\"simplified\":\"双胞胎\",\"traditional\":\"雙胞胎\",\"pinyin\":\"shuāngbāotāi\",\"definitions\":[\"twins\"]},{\"simplified\":\"爽快\",\"traditional\":\"爽快\",\"pinyin\":\"shuǎngkuài\",\"definitions\":[\"refreshed\",\"rejuvenated\",\"frank\"]},{\"simplified\":\"水利\",\"traditional\":\"水利\",\"pinyin\":\"shuǐlì\",\"definitions\":[\"water conservancy\",\"irrigation works\"]},{\"simplified\":\"水龙头\",\"traditional\":\"水龍頭\",\"pinyin\":\"shuǐlóngtóu\",\"definitions\":[\"faucet\",\"tap\"]},{\"simplified\":\"水泥\",\"traditional\":\"水泥\",\"pinyin\":\"shuǐní\",\"definitions\":[\"cement\"]},{\"simplified\":\"瞬间\",\"traditional\":\"瞬間\",\"pinyin\":\"shùnjiān\",\"definitions\":[\"in the twinkling of an eye\",\"in an instant\",\"momentary\"]},{\"simplified\":\"司法\",\"traditional\":\"司法\",\"pinyin\":\"sīfǎ\",\"definitions\":[\"judicial\",\"(administration of) justice\"]},{\"simplified\":\"司令\",\"traditional\":\"司令\",\"pinyin\":\"sīlìng\",\"definitions\":[\"commanding officer\"]},{\"simplified\":\"私自\",\"traditional\":\"私自\",\"pinyin\":\"sīzì\",\"definitions\":[\"private\",\"secretly\",\"without permission\"]},{\"simplified\":\"思念\",\"traditional\":\"思念\",\"pinyin\":\"sīniàn\",\"definitions\":[\"think of\",\"long for\",\"to miss\"]},{\"simplified\":\"思索\",\"traditional\":\"思索\",\"pinyin\":\"sīsuǒ\",\"definitions\":[\"think deeply\",\"ponder\"]},{\"simplified\":\"思维\",\"traditional\":\"思維\",\"pinyin\":\"sīwéi\",\"definitions\":[\"(line) of thought\",\"thinking\"]},{\"simplified\":\"斯文\",\"traditional\":\"斯文\",\"pinyin\":\"sīwen\",\"definitions\":[\"refined\",\"educated\",\"cultured\",\"intellectual\",\"men of letters\",\"scholars\",\"literati\",\"polite\",\"gentle\"]},{\"simplified\":\"死亡\",\"traditional\":\"死亡\",\"pinyin\":\"sǐwáng\",\"definitions\":[\"to die\",\"death\",\"be dead\"]},{\"simplified\":\"四肢\",\"traditional\":\"四肢\",\"pinyin\":\"sìzhī\",\"definitions\":[\"arms and legs\",\"the four limbs of the body\"]},{\"simplified\":\"寺庙\",\"traditional\":\"寺廟\",\"pinyin\":\"sìmiào\",\"definitions\":[\"temple\",\"monastery\"]},{\"simplified\":\"饲养\",\"traditional\":\"飼養\",\"pinyin\":\"sìyǎng\",\"definitions\":[\"to raise\",\"to rear (domestic animal)\"]},{\"simplified\":\"肆无忌惮\",\"traditional\":\"肆無忌憚\",\"pinyin\":\"sìwújìdàn\",\"definitions\":[\"absolutely unrestrained\",\"unbridled\",\"without the slightest scruple\"]},{\"simplified\":\"耸\",\"traditional\":\"聳\",\"pinyin\":\"sǒng\",\"definitions\":[\"shrug\",\"towering\",\"shock (alarm)\"]},{\"simplified\":\"艘\",\"traditional\":\"艘\",\"pinyin\":\"sōu\",\"definitions\":[\"(mw for boats and ships)\"]},{\"simplified\":\"苏醒\",\"traditional\":\"蘇醒\",\"pinyin\":\"sūxǐng\",\"definitions\":[\"wake up\",\"regain consciousness\"]},{\"simplified\":\"俗话\",\"traditional\":\"俗話\",\"pinyin\":\"súhuà\",\"definitions\":[\"common saying\",\"proverb\"]},{\"simplified\":\"诉讼\",\"traditional\":\"訴訟\",\"pinyin\":\"sùsòng\",\"definitions\":[\"lawsuit\"]},{\"simplified\":\"素食\",\"traditional\":\"素食\",\"pinyin\":\"sùshí\",\"definitions\":[\"vegetables\",\"vegetarian food\"]},{\"simplified\":\"素质\",\"traditional\":\"素質\",\"pinyin\":\"sùzhì\",\"definitions\":[\"inner quality\",\"basic essence\",\"character quality\"]},{\"simplified\":\"塑造\",\"traditional\":\"塑造\",\"pinyin\":\"sùzào\",\"definitions\":[\"to shape\",\"mould\",\"figure\"]},{\"simplified\":\"算数\",\"traditional\":\"算數\",\"pinyin\":\"suànshù\",\"definitions\":[\"(do) arithmetic\",\"count\"]},{\"simplified\":\"随即\",\"traditional\":\"隨即\",\"pinyin\":\"suíjí\",\"definitions\":[\"immediately (after)\",\"soon after\",\"immediately\"]},{\"simplified\":\"随意\",\"traditional\":\"隨意\",\"pinyin\":\"suíyì\",\"definitions\":[\"as one wishes\",\"according to one's wishes\"]},{\"simplified\":\"岁月\",\"traditional\":\"歲月\",\"pinyin\":\"suìyuè\",\"definitions\":[\"the years of a person's life\"]},{\"simplified\":\"隧道\",\"traditional\":\"隧道\",\"pinyin\":\"suìdào\",\"definitions\":[\"tunnel\"]},{\"simplified\":\"损坏\",\"traditional\":\"損壞\",\"pinyin\":\"sǔnhuài\",\"definitions\":[\"to damage\",\"injure\"]},{\"simplified\":\"索取\",\"traditional\":\"索取\",\"pinyin\":\"suǒqǔ\",\"definitions\":[\"demand\",\"ask for\",\"to exact\"]},{\"simplified\":\"索性\",\"traditional\":\"索性\",\"pinyin\":\"suǒxìng\",\"definitions\":[\"you might as well (do it)\",\"simply\",\"just\",\"frankly\",\"bluntly\",\"directly\"]},{\"simplified\":\"塌\",\"traditional\":\"塌\",\"pinyin\":\"tā\",\"definitions\":[\"collapse\",\"fall down\",\"crumple\"]},{\"simplified\":\"踏实\",\"traditional\":\"踏實\",\"pinyin\":\"tāshi\",\"definitions\":[\"practical\",\"down-to-earth\",\"realistic\",\"feel at ease\",\"steadfast\"]},{\"simplified\":\"塔\",\"traditional\":\"塔\",\"pinyin\":\"tǎ\",\"definitions\":[\"pagoda\",\"tower\"]},{\"simplified\":\"台风\",\"traditional\":\"台風\",\"pinyin\":\"táifēng\",\"definitions\":[\"typhoon\"]},{\"simplified\":\"太空\",\"traditional\":\"太空\",\"pinyin\":\"tàikōng\",\"definitions\":[\"outer space\"]},{\"simplified\":\"泰斗\",\"traditional\":\"泰鬥\",\"pinyin\":\"tàidǒu\",\"definitions\":[\"leading scholar of his time\",\"magnate\"]},{\"simplified\":\"贪婪\",\"traditional\":\"貪婪\",\"pinyin\":\"tānlán\",\"definitions\":[\"greedy\",\"avaricious\"]},{\"simplified\":\"贪污\",\"traditional\":\"貪汙\",\"pinyin\":\"tānwū\",\"definitions\":[\"(political, moral) corruption\",\"embezzle\"]},{\"simplified\":\"摊\",\"traditional\":\"攤\",\"pinyin\":\"tān\",\"definitions\":[\"to spread out\",\"vendor's stand\",\"booth\",\"fry\",\"(mw for puddles)\"]},{\"simplified\":\"瘫痪\",\"traditional\":\"癱瘓\",\"pinyin\":\"tānhuàn\",\"definitions\":[\"paralysis\"]},{\"simplified\":\"弹性\",\"traditional\":\"彈性\",\"pinyin\":\"tánxìng\",\"definitions\":[\"flexibility\",\"elasticity\"]},{\"simplified\":\"坦白\",\"traditional\":\"坦白\",\"pinyin\":\"tǎnbái\",\"definitions\":[\"honest\",\"forthcoming\",\"to confess\"]},{\"simplified\":\"叹气\",\"traditional\":\"歎氣\",\"pinyin\":\"tàn qì\",\"definitions\":[\"to sigh\"]},{\"simplified\":\"探测\",\"traditional\":\"探測\",\"pinyin\":\"tàncè\",\"definitions\":[\"probe\",\"take readings\",\"detect\",\"explore\"]},{\"simplified\":\"探索\",\"traditional\":\"探索\",\"pinyin\":\"tànsuǒ\",\"definitions\":[\"explore\",\"quest\"]},{\"simplified\":\"探讨\",\"traditional\":\"探討\",\"pinyin\":\"tàntǎo\",\"definitions\":[\"inquire into\",\"explore\"]},{\"simplified\":\"探望\",\"traditional\":\"探望\",\"pinyin\":\"tànwàng\",\"definitions\":[\"pay a visit\",\"look around\"]},{\"simplified\":\"倘若\",\"traditional\":\"倘若\",\"pinyin\":\"tǎngruò\",\"definitions\":[\"provided that\",\"supposing that\",\"if\",\"in case\"]},{\"simplified\":\"掏\",\"traditional\":\"掏\",\"pinyin\":\"tāo\",\"definitions\":[\"fish out (from pocket)\"]},{\"simplified\":\"滔滔不绝\",\"traditional\":\"滔滔不絕\",\"pinyin\":\"tāotāo bù jué\",\"definitions\":[\"(saying) talking non-stop\",\"gushing\",\"torrential\"]},{\"simplified\":\"陶瓷\",\"traditional\":\"陶瓷\",\"pinyin\":\"táocí\",\"definitions\":[\"ceramics\",\"pottery and porcelain\"]},{\"simplified\":\"陶醉\",\"traditional\":\"陶醉\",\"pinyin\":\"táozuì\",\"definitions\":[\"be intoxicated (with power, success, etc.)\"]},{\"simplified\":\"淘汰\",\"traditional\":\"淘汰\",\"pinyin\":\"táotài\",\"definitions\":[\"eliminate (in a competition)\",\"natural selection\",\"die/phase out\"]},{\"simplified\":\"讨好\",\"traditional\":\"討好\",\"pinyin\":\"tǎohǎo\",\"definitions\":[\"to flatter\"]},{\"simplified\":\"特长\",\"traditional\":\"特長\",\"pinyin\":\"tècháng\",\"definitions\":[\"strong point\",\"specialty\"]},{\"simplified\":\"特定\",\"traditional\":\"特定\",\"pinyin\":\"tèdìng\",\"definitions\":[\"special\",\"specific\",\"designated\"]},{\"simplified\":\"特意\",\"traditional\":\"特意\",\"pinyin\":\"tèyì\",\"definitions\":[\"specially for\",\"with the special intention of\"]},{\"simplified\":\"提拔\",\"traditional\":\"提拔\",\"pinyin\":\"tíbá\",\"definitions\":[\"promote to a higher job\",\"elevate\"]},{\"simplified\":\"提炼\",\"traditional\":\"提煉\",\"pinyin\":\"tíliàn\",\"definitions\":[\"extract (ore, minerals, etc.)\",\"refine\",\"purify\"]},{\"simplified\":\"提示\",\"traditional\":\"提示\",\"pinyin\":\"tíshì\",\"definitions\":[\"to prompt\",\"to present\",\"to point out\",\"to draw attention to sth\",\"hint\",\"brief\",\"cue\"]},{\"simplified\":\"提议\",\"traditional\":\"提議\",\"pinyin\":\"tíyì\",\"definitions\":[\"propose\",\"suggest\"]},{\"simplified\":\"题材\",\"traditional\":\"題材\",\"pinyin\":\"tícái\",\"definitions\":[\"subject matter\"]},{\"simplified\":\"体裁\",\"traditional\":\"體裁\",\"pinyin\":\"tǐcái\",\"definitions\":[\"types or forms of literature\"]},{\"simplified\":\"体积\",\"traditional\":\"體積\",\"pinyin\":\"tǐjī\",\"definitions\":[\"volume\",\"bulk\"]},{\"simplified\":\"体谅\",\"traditional\":\"體諒\",\"pinyin\":\"tǐliàng\",\"definitions\":[\"empathize\",\"express sympathy\",\"allow (for something)\"]},{\"simplified\":\"体面\",\"traditional\":\"體面\",\"pinyin\":\"tǐmiàn\",\"definitions\":[\"dignity\",\"honorable\",\"face\"]},{\"simplified\":\"体系\",\"traditional\":\"體系\",\"pinyin\":\"tǐxì\",\"definitions\":[\"system\",\"setup\"]},{\"simplified\":\"天才\",\"traditional\":\"天才\",\"pinyin\":\"tiāncái\",\"definitions\":[\"talent\",\"gift\",\"a genius\",\"talented\"]},{\"simplified\":\"天赋\",\"traditional\":\"天賦\",\"pinyin\":\"tiānfù\",\"definitions\":[\"natural talent\"]},{\"simplified\":\"天伦之乐\",\"traditional\":\"天倫之樂\",\"pinyin\":\"tiānlúnzhīlè\",\"definitions\":[\"family happiness\"]},{\"simplified\":\"天然气\",\"traditional\":\"天然氣\",\"pinyin\":\"tiānránqì\",\"definitions\":[\"natural gas\"]},{\"simplified\":\"天生\",\"traditional\":\"天生\",\"pinyin\":\"tiānshēng\",\"definitions\":[\"innate\",\"inherent\",\"natural\"]},{\"simplified\":\"天堂\",\"traditional\":\"天堂\",\"pinyin\":\"tiāntáng\",\"definitions\":[\"paradise\",\"heaven\"]},{\"simplified\":\"天文\",\"traditional\":\"天文\",\"pinyin\":\"tiānwén\",\"definitions\":[\"astronomy\"]},{\"simplified\":\"田径\",\"traditional\":\"田徑\",\"pinyin\":\"tiánjìng\",\"definitions\":[\"track and field\"]},{\"simplified\":\"田野\",\"traditional\":\"田野\",\"pinyin\":\"tiányě\",\"definitions\":[\"field\",\"open country\"]},{\"simplified\":\"舔\",\"traditional\":\"舔\",\"pinyin\":\"tiǎn\",\"definitions\":[\"to lick\"]},{\"simplified\":\"挑剔\",\"traditional\":\"挑剔\",\"pinyin\":\"tiāoti\",\"definitions\":[\"picky\",\"fastidious\"]},{\"simplified\":\"条款\",\"traditional\":\"條款\",\"pinyin\":\"tiáokuǎn\",\"definitions\":[\"clause (of contract or law)\"]},{\"simplified\":\"条理\",\"traditional\":\"條理\",\"pinyin\":\"tiáolǐ\",\"definitions\":[\"consecutive\",\"arrangement\",\"orderliness\"]},{\"simplified\":\"条约\",\"traditional\":\"條約\",\"pinyin\":\"tiáoyuē\",\"definitions\":[\"treaty\",\"pact\"]},{\"simplified\":\"调和\",\"traditional\":\"調和\",\"pinyin\":\"tiáohé\",\"definitions\":[\"harmonious\",\"harmony\"]},{\"simplified\":\"调剂\",\"traditional\":\"調劑\",\"pinyin\":\"tiáojì\",\"definitions\":[\"make an adjustment\"]},{\"simplified\":\"调节\",\"traditional\":\"調節\",\"pinyin\":\"tiáojié\",\"definitions\":[\"adjust\",\"regulate\",\"reconcile\"]},{\"simplified\":\"调解\",\"traditional\":\"調解\",\"pinyin\":\"tiáojiě\",\"definitions\":[\"mediation\",\"bring together to an agreement\"]},{\"simplified\":\"调料\",\"traditional\":\"調料\",\"pinyin\":\"tiáoliào\",\"definitions\":[\"seasoning\",\"flavoring\"]},{\"simplified\":\"挑拨\",\"traditional\":\"挑撥\",\"pinyin\":\"tiǎobō\",\"definitions\":[\"incite disharmony\",\"provoke\",\"stir up tension in others\"]},{\"simplified\":\"挑衅\",\"traditional\":\"挑釁\",\"pinyin\":\"tiǎoxìn\",\"definitions\":[\"provoke\",\"defiance\"]},{\"simplified\":\"跳跃\",\"traditional\":\"跳躍\",\"pinyin\":\"tiàoyuè\",\"definitions\":[\"jump\",\"leap\",\"bound\",\"skip\"]},{\"simplified\":\"亭子\",\"traditional\":\"亭子\",\"pinyin\":\"tíngzi\",\"definitions\":[\"pavilion\",\"kiosk\"]},{\"simplified\":\"停泊\",\"traditional\":\"停泊\",\"pinyin\":\"tíngbó\",\"definitions\":[\"anchor\",\"mooring (of a ship)\"]},{\"simplified\":\"停顿\",\"traditional\":\"停頓\",\"pinyin\":\"tíngdùn\",\"definitions\":[\"pause\",\"halt\"]},{\"simplified\":\"停滞\",\"traditional\":\"停滯\",\"pinyin\":\"tíngzhì\",\"definitions\":[\"stagnation\",\"be at a standstill\",\"bogged down\"]},{\"simplified\":\"挺拔\",\"traditional\":\"挺拔\",\"pinyin\":\"tǐngbá\",\"definitions\":[\"tall and straight\"]},{\"simplified\":\"通货膨胀\",\"traditional\":\"通貨膨脹\",\"pinyin\":\"tōnghuò péngzhàng\",\"definitions\":[\"inflation\"]},{\"simplified\":\"通缉\",\"traditional\":\"通緝\",\"pinyin\":\"tōngjī\",\"definitions\":[\"order the arrest of a criminal\"]},{\"simplified\":\"通俗\",\"traditional\":\"通俗\",\"pinyin\":\"tōngsú\",\"definitions\":[\"popular\",\"common\",\"everyday\",\"average\",\"vulgar\"]},{\"simplified\":\"通讯\",\"traditional\":\"通訊\",\"pinyin\":\"tōngxùn\",\"definitions\":[\"communication\",\"correspondence\",\"news dispatch\"]},{\"simplified\":\"通用\",\"traditional\":\"通用\",\"pinyin\":\"tōngyòng\",\"definitions\":[\"in common use\",\"interchangeable\",\"General Motors\"]},{\"simplified\":\"同胞\",\"traditional\":\"同胞\",\"pinyin\":\"tóngbāo\",\"definitions\":[\"compatriot\",\"fellow countryman\"]},{\"simplified\":\"同志\",\"traditional\":\"同志\",\"pinyin\":\"tóngzhì\",\"definitions\":[\"comrade\",\"gay (slang)\"]},{\"simplified\":\"铜\",\"traditional\":\"銅\",\"pinyin\":\"tóng\",\"definitions\":[\"copper\"]},{\"simplified\":\"童话\",\"traditional\":\"童話\",\"pinyin\":\"tónghuà\",\"definitions\":[\"fairy tale\"]},{\"simplified\":\"统筹兼顾\",\"traditional\":\"統籌兼顧\",\"pinyin\":\"tǒngchóujiāngù\",\"definitions\":[\"take every aspects into consideration through plan and preparation\"]},{\"simplified\":\"统计\",\"traditional\":\"統計\",\"pinyin\":\"tǒngjì\",\"definitions\":[\"statistics\",\"to tally\",\"to add up\"]},{\"simplified\":\"统统\",\"traditional\":\"統統\",\"pinyin\":\"tǒngtǒng\",\"definitions\":[\"totally\",\"completely\"]},{\"simplified\":\"统治\",\"traditional\":\"統治\",\"pinyin\":\"tǒngzhì\",\"definitions\":[\"to rule (a country)\",\"govern\",\"governance\"]},{\"simplified\":\"投机\",\"traditional\":\"投機\",\"pinyin\":\"tóujī\",\"definitions\":[\"speculate (on financial markets)\",\"congenial\",\"opportunistic\"]},{\"simplified\":\"投票\",\"traditional\":\"投票\",\"pinyin\":\"tóupiào\",\"definitions\":[\"vote\",\"poll\"]},{\"simplified\":\"投诉\",\"traditional\":\"投訴\",\"pinyin\":\"tóusù\",\"definitions\":[\"make a complaint\",\"appeal to a court\"]},{\"simplified\":\"投降\",\"traditional\":\"投降\",\"pinyin\":\"tóuxiáng\",\"definitions\":[\"to surrender\"]},{\"simplified\":\"投掷\",\"traditional\":\"投擲\",\"pinyin\":\"tóuzhì\",\"definitions\":[\"throw something a long distance\",\"hurl\"]},{\"simplified\":\"透露\",\"traditional\":\"透露\",\"pinyin\":\"tòulù\",\"definitions\":[\"divulge\",\"to reveal\",\"leak out\"]},{\"simplified\":\"秃\",\"traditional\":\"禿\",\"pinyin\":\"tū\",\"definitions\":[\"bald\",\"blunt\"]},{\"simplified\":\"突破\",\"traditional\":\"突破\",\"pinyin\":\"tūpò\",\"definitions\":[\"break through\",\"breakthrough\"]},{\"simplified\":\"图案\",\"traditional\":\"圖案\",\"pinyin\":\"tú'àn\",\"definitions\":[\"design\",\"pattern\"]},{\"simplified\":\"徒弟\",\"traditional\":\"徒弟\",\"pinyin\":\"túdì\",\"definitions\":[\"disciple\"]},{\"simplified\":\"途径\",\"traditional\":\"途徑\",\"pinyin\":\"tújìng\",\"definitions\":[\"way\",\"channel\"]},{\"simplified\":\"涂抹\",\"traditional\":\"塗抹\",\"pinyin\":\"túmǒ\",\"definitions\":[\"scribble\",\"smear\",\"doodle\"]},{\"simplified\":\"土壤\",\"traditional\":\"土壤\",\"pinyin\":\"tǔrǎng\",\"definitions\":[\"soil\",\"earth\"]},{\"simplified\":\"团结\",\"traditional\":\"團結\",\"pinyin\":\"tuánjié\",\"definitions\":[\"unite\",\"hold a rally\",\"join forces\"]},{\"simplified\":\"团体\",\"traditional\":\"團體\",\"pinyin\":\"tuántǐ\",\"definitions\":[\"group\",\"organization\",\"team\"]},{\"simplified\":\"团圆\",\"traditional\":\"團圓\",\"pinyin\":\"tuányuán\",\"definitions\":[\"have a reunion\",\"reunite as a family\"]},{\"simplified\":\"推测\",\"traditional\":\"推測\",\"pinyin\":\"tuīcè\",\"definitions\":[\"speculate\",\"conjecture\",\"surmise\"]},{\"simplified\":\"推翻\",\"traditional\":\"推翻\",\"pinyin\":\"tuīfān\",\"definitions\":[\"overthrow\",\"topple\"]},{\"simplified\":\"推理\",\"traditional\":\"推理\",\"pinyin\":\"tuīlǐ\",\"definitions\":[\"reasoning\",\"speculative\",\"inference\"]},{\"simplified\":\"推论\",\"traditional\":\"推論\",\"pinyin\":\"tuīlùn\",\"definitions\":[\"infer\",\"a deduction\",\"a corollary\"]},{\"simplified\":\"推销\",\"traditional\":\"推銷\",\"pinyin\":\"tuīxiāo\",\"definitions\":[\"to market\",\"sell\"]},{\"simplified\":\"吞吞吐吐\",\"traditional\":\"吞吞吐吐\",\"pinyin\":\"tūntūntǔtǔ\",\"definitions\":[\"hum and haw (idiom)\",\"mumble as if hiding something\",\"speak and break off, then start again\",\"to hold something back\"]},{\"simplified\":\"托运\",\"traditional\":\"托運\",\"pinyin\":\"tuōyùn\",\"definitions\":[\"check in (baggage)\",\"consign for shipment\"]},{\"simplified\":\"拖延\",\"traditional\":\"拖延\",\"pinyin\":\"tuōyán\",\"definitions\":[\"prolong\",\"protraction\",\"delay\",\"stall\",\"procrastinate\"]},{\"simplified\":\"脱离\",\"traditional\":\"脫離\",\"pinyin\":\"tuōlí\",\"definitions\":[\"to separate oneself from\",\"to break away from\",\"be divorced from\",\"diastasis (medicine)\",\"abscission\",\"abjunction (botany)\"]},{\"simplified\":\"妥当\",\"traditional\":\"妥當\",\"pinyin\":\"tuǒdang\",\"definitions\":[\"appropriate\",\"proper\",\"pertinence\"]},{\"simplified\":\"妥善\",\"traditional\":\"妥善\",\"pinyin\":\"tuǒshàn\",\"definitions\":[\"appropriate\",\"proper\",\"well-arranged\"]},{\"simplified\":\"妥协\",\"traditional\":\"妥協\",\"pinyin\":\"tuǒxié\",\"definitions\":[\"to compromise\",\"reach terms\"]},{\"simplified\":\"椭圆\",\"traditional\":\"橢圓\",\"pinyin\":\"tuǒyuán\",\"definitions\":[\"ellipse\",\"oval\"]},{\"simplified\":\"唾弃\",\"traditional\":\"唾棄\",\"pinyin\":\"tuòqì\",\"definitions\":[\"cast aside\",\"spurn\"]},{\"simplified\":\"挖掘\",\"traditional\":\"挖掘\",\"pinyin\":\"wājué\",\"definitions\":[\"excavate\",\"dig\",\"unearth\"]},{\"simplified\":\"哇\",\"traditional\":\"哇\",\"pinyin\":\"wa\",\"definitions\":[\"wow\",\"(sound of crying or surprise)\"]},{\"simplified\":\"娃娃\",\"traditional\":\"娃娃\",\"pinyin\":\"wáwa\",\"definitions\":[\"baby\",\"child\",\"doll\"]},{\"simplified\":\"瓦解\",\"traditional\":\"瓦解\",\"pinyin\":\"wǎjiě\",\"definitions\":[\"collapse\",\"disintegrate\",\"crumble\"]},{\"simplified\":\"歪曲\",\"traditional\":\"歪曲\",\"pinyin\":\"wāiqū\",\"definitions\":[\"to distort\",\"to misrepresent\",\"to twist\",\"crooked\",\"askew\",\"aslant\"]},{\"simplified\":\"外表\",\"traditional\":\"外表\",\"pinyin\":\"wàibiǎo\",\"definitions\":[\"outward appearance\",\"external\",\"outside\"]},{\"simplified\":\"外行\",\"traditional\":\"外行\",\"pinyin\":\"wàiháng\",\"definitions\":[\"layman\",\"amateur\",\"nonprofessional\"]},{\"simplified\":\"外界\",\"traditional\":\"外界\",\"pinyin\":\"wàijiè\",\"definitions\":[\"the outside world\",\"external\"]},{\"simplified\":\"外向\",\"traditional\":\"外向\",\"pinyin\":\"wàixiàng\",\"definitions\":[\"extroverted\",\"export-oriented (economy)\"]},{\"simplified\":\"丸\",\"traditional\":\"丸\",\"pinyin\":\"wán\",\"definitions\":[\"pill\",\"pellet\"]},{\"simplified\":\"完备\",\"traditional\":\"完備\",\"pinyin\":\"wánbèi\",\"definitions\":[\"complete\",\"perfect\"]},{\"simplified\":\"完毕\",\"traditional\":\"完畢\",\"pinyin\":\"wánbì\",\"definitions\":[\"finish\",\"end\",\"complete\"]},{\"simplified\":\"玩弄\",\"traditional\":\"玩弄\",\"pinyin\":\"wánnòng\",\"definitions\":[\"resort to\",\"play with\",\"engage in\"]},{\"simplified\":\"玩意儿\",\"traditional\":\"玩意兒\",\"pinyin\":\"wányìr\",\"definitions\":[\"thing\",\"toy\",\"gadget\"]},{\"simplified\":\"顽固\",\"traditional\":\"頑固\",\"pinyin\":\"wángù\",\"definitions\":[\"stubborn\",\"obstinate\"]},{\"simplified\":\"顽强\",\"traditional\":\"頑強\",\"pinyin\":\"wánqiáng\",\"definitions\":[\"tenacious\",\"hard to defeat\"]},{\"simplified\":\"挽回\",\"traditional\":\"挽回\",\"pinyin\":\"wǎnhuí\",\"definitions\":[\"reverse or salvage (a situation)\",\"redeem\",\"retrieve\"]},{\"simplified\":\"挽救\",\"traditional\":\"挽救\",\"pinyin\":\"wǎnjiù\",\"definitions\":[\"to rescue\",\"retrieve\",\"to remedy\"]},{\"simplified\":\"惋惜\",\"traditional\":\"惋惜\",\"pinyin\":\"wǎnxī\",\"definitions\":[\"feel sorry for a person\",\"sympathize\",\"to regret\"]},{\"simplified\":\"万分\",\"traditional\":\"萬分\",\"pinyin\":\"wànfēn\",\"definitions\":[\"very much\",\"extremely\"]},{\"simplified\":\"往常\",\"traditional\":\"往常\",\"pinyin\":\"wǎngcháng\",\"definitions\":[\"habitually in the past\",\"as one used to do\",\"as it used to be\"]},{\"simplified\":\"往事\",\"traditional\":\"往事\",\"pinyin\":\"wǎngshì\",\"definitions\":[\"the past events\",\"former happenings\"]},{\"simplified\":\"妄想\",\"traditional\":\"妄想\",\"pinyin\":\"wàngxiǎng\",\"definitions\":[\"vainly hope\",\"wishful thinking\",\"delusion\"]},{\"simplified\":\"危机\",\"traditional\":\"危機\",\"pinyin\":\"wēijī\",\"definitions\":[\"crisis\"]},{\"simplified\":\"威风\",\"traditional\":\"威風\",\"pinyin\":\"wēifēng\",\"definitions\":[\"awe-inspiring authority\",\"power and prestige\",\"impressive force\"]},{\"simplified\":\"威力\",\"traditional\":\"威力\",\"pinyin\":\"wēilì\",\"definitions\":[\"might\",\"power that invokes fear\"]},{\"simplified\":\"威望\",\"traditional\":\"威望\",\"pinyin\":\"wēiwàng\",\"definitions\":[\"prestige\"]},{\"simplified\":\"威信\",\"traditional\":\"威信\",\"pinyin\":\"wēixìn\",\"definitions\":[\"prestige\",\"reputation\",\"veneration\",\"authority\",\"trust\"]},{\"simplified\":\"微不足道\",\"traditional\":\"微不足道\",\"pinyin\":\"wēi bù zú dào\",\"definitions\":[\"negligible\",\"insignificant\",\"not worth mentioning\"]},{\"simplified\":\"微观\",\"traditional\":\"微觀\",\"pinyin\":\"wēiguān\",\"definitions\":[\"microscopic\",\"sub atomic\"]},{\"simplified\":\"为难\",\"traditional\":\"爲難\",\"pinyin\":\"wéinán\",\"definitions\":[\"make things difficult for someone\",\"embarrassed\"]},{\"simplified\":\"为期\",\"traditional\":\"爲期\",\"pinyin\":\"wéiqī\",\"definitions\":[\"be scheduled for\",\"last for (a certain duration)\"]},{\"simplified\":\"违背\",\"traditional\":\"違背\",\"pinyin\":\"wéibèi\",\"definitions\":[\"violate\",\"go against\"]},{\"simplified\":\"唯独\",\"traditional\":\"唯獨\",\"pinyin\":\"wéidú\",\"definitions\":[\"only\",\"just (i.e. it is only that ...)\",\"alone\"]},{\"simplified\":\"维持\",\"traditional\":\"維持\",\"pinyin\":\"wéichí\",\"definitions\":[\"maintain\",\"preserve\"]},{\"simplified\":\"维护\",\"traditional\":\"維護\",\"pinyin\":\"wéihù\",\"definitions\":[\"defend\",\"to safeguard\",\"defense\",\"maintain\"]},{\"simplified\":\"维生素\",\"traditional\":\"維生素\",\"pinyin\":\"wéishēngsù\",\"definitions\":[\"vitamin\"]},{\"simplified\":\"伪造\",\"traditional\":\"僞造\",\"pinyin\":\"wěizào\",\"definitions\":[\"forge\",\"to fake\",\"to counterfeit\"]},{\"simplified\":\"委托\",\"traditional\":\"委托\",\"pinyin\":\"wěituō\",\"definitions\":[\"to entrust\",\"to trust\",\"to ensign\",\"to commission\"]},{\"simplified\":\"委员\",\"traditional\":\"委員\",\"pinyin\":\"wěiyuán\",\"definitions\":[\"committee member\",\"committee\",\"council\"]},{\"simplified\":\"卫星\",\"traditional\":\"衛星\",\"pinyin\":\"wèixīng\",\"definitions\":[\"satellite\"]},{\"simplified\":\"未免\",\"traditional\":\"未免\",\"pinyin\":\"wèimiǎn\",\"definitions\":[\"(of something that one finds has gone too far)\",\"rather a bit too\"]},{\"simplified\":\"畏惧\",\"traditional\":\"畏懼\",\"pinyin\":\"wèijù\",\"definitions\":[\"to fear\",\"foreboding\"]},{\"simplified\":\"喂\",\"traditional\":\"喂\",\"pinyin\":\"wèi, wéi\",\"definitions\":[\"hey\",\"to feed | hello (on the phone)\"]},{\"simplified\":\"蔚蓝\",\"traditional\":\"蔚藍\",\"pinyin\":\"wèilán\",\"definitions\":[\"azure\",\"sky blue\"]},{\"simplified\":\"慰问\",\"traditional\":\"慰問\",\"pinyin\":\"wèiwèn\",\"definitions\":[\"to express sympathy\",\"consolation\",\"extend regards to\",\"salute\"]},{\"simplified\":\"温带\",\"traditional\":\"溫帶\",\"pinyin\":\"wēndài\",\"definitions\":[\"temperate zone\"]},{\"simplified\":\"温和\",\"traditional\":\"溫和\",\"pinyin\":\"wēnhé\",\"definitions\":[\"moderate\",\"warm\",\"(-huo: lukewarm)\"]},{\"simplified\":\"文凭\",\"traditional\":\"文憑\",\"pinyin\":\"wénpíng\",\"definitions\":[\"diploma\"]},{\"simplified\":\"文物\",\"traditional\":\"文物\",\"pinyin\":\"wénwù\",\"definitions\":[\"cultural relic\",\"historical relic\"]},{\"simplified\":\"文献\",\"traditional\":\"文獻\",\"pinyin\":\"wénxiàn\",\"definitions\":[\"document\",\"literature\"]},{\"simplified\":\"文雅\",\"traditional\":\"文雅\",\"pinyin\":\"wényǎ\",\"definitions\":[\"elegant\",\"refined\"]},{\"simplified\":\"文艺\",\"traditional\":\"文藝\",\"pinyin\":\"wényì\",\"definitions\":[\"literature and art\"]},{\"simplified\":\"问世\",\"traditional\":\"問世\",\"pinyin\":\"wènshì\",\"definitions\":[\"be published\",\"to come out\"]},{\"simplified\":\"窝\",\"traditional\":\"窩\",\"pinyin\":\"wō\",\"definitions\":[\"nest\",\"den\"]},{\"simplified\":\"乌黑\",\"traditional\":\"烏黑\",\"pinyin\":\"wūhēi\",\"definitions\":[\"jet-black\",\"pitch-black\"]},{\"simplified\":\"污蔑\",\"traditional\":\"汙蔑\",\"pinyin\":\"wūmiè\",\"definitions\":[\"to slander\"]},{\"simplified\":\"诬陷\",\"traditional\":\"誣陷\",\"pinyin\":\"wūxiàn\",\"definitions\":[\"entrap\",\"to frame\",\"plant false evidence against sb.\"]},{\"simplified\":\"无比\",\"traditional\":\"無比\",\"pinyin\":\"wúbǐ\",\"definitions\":[\"matchless\",\"incomparable\"]},{\"simplified\":\"无偿\",\"traditional\":\"無償\",\"pinyin\":\"wúcháng\",\"definitions\":[\"free\",\"no charge\",\"at no cost\"]},{\"simplified\":\"无耻\",\"traditional\":\"無恥\",\"pinyin\":\"wúchǐ\",\"definitions\":[\"without any sense of shame\",\"shameless\",\"audaciousness\"]},{\"simplified\":\"无动于衷\",\"traditional\":\"無動于衷\",\"pinyin\":\"wúdòngyúzhōng\",\"definitions\":[\"aloof\",\"indifferent\",\"unconcerned\",\"untouched\"]},{\"simplified\":\"无非\",\"traditional\":\"無非\",\"pinyin\":\"wúfēi\",\"definitions\":[\"nothing but\",\"only\"]},{\"simplified\":\"无辜\",\"traditional\":\"無辜\",\"pinyin\":\"wúgū\",\"definitions\":[\"innocent\"]},{\"simplified\":\"无精打采\",\"traditional\":\"無精打采\",\"pinyin\":\"wújīngdǎcǎi\",\"definitions\":[\"listless\",\"be dispirited\",\"in low spirits\"]},{\"simplified\":\"无赖\",\"traditional\":\"無賴\",\"pinyin\":\"wúlài\",\"definitions\":[\"hoodlum\",\"rascal\",\"rogue\",\"rascally\",\"scoundrelly\"]},{\"simplified\":\"无理取闹\",\"traditional\":\"無理取鬧\",\"pinyin\":\"wúlǐqǔnào\",\"definitions\":[\"to make trouble without reason (idiom)\",\"wilfully make trouble\",\"to be deliberately provocative\",\"deliberately awkward\",\"pointless provocation\"]},{\"simplified\":\"无能为力\",\"traditional\":\"無能爲力\",\"pinyin\":\"wú néng wéi lì\",\"definitions\":[\"incapable of action\",\"powerless\",\"impotent\"]},{\"simplified\":\"无穷无尽\",\"traditional\":\"無窮無盡\",\"pinyin\":\"wúqióngwújìn\",\"definitions\":[\"vast and limitless\",\"endless span of time\",\"no vestige of a beginning, no prospect of an end\"]},{\"simplified\":\"无微不至\",\"traditional\":\"無微不至\",\"pinyin\":\"wú wēi bú zhì\",\"definitions\":[\"in every possible way\",\"meticulously\"]},{\"simplified\":\"无忧无虑\",\"traditional\":\"無憂無慮\",\"pinyin\":\"wúyōuwúlǜ\",\"definitions\":[\"carefree and without worries\"]},{\"simplified\":\"无知\",\"traditional\":\"無知\",\"pinyin\":\"wúzhī\",\"definitions\":[\"ignorance\"]},{\"simplified\":\"武器\",\"traditional\":\"武器\",\"pinyin\":\"wǔqì\",\"definitions\":[\"weapon\",\"arms\"]},{\"simplified\":\"武侠\",\"traditional\":\"武俠\",\"pinyin\":\"wǔxiá\",\"definitions\":[\"knight-errant\",\"a genre of swordplay martial arts movies and books\"]},{\"simplified\":\"武装\",\"traditional\":\"武裝\",\"pinyin\":\"wǔzhuāng\",\"definitions\":[\"arms\",\"equipment\",\"to arm\"]},{\"simplified\":\"侮辱\",\"traditional\":\"侮辱\",\"pinyin\":\"wǔrǔ\",\"definitions\":[\"to insult\",\"humiliate\"]},{\"simplified\":\"舞蹈\",\"traditional\":\"舞蹈\",\"pinyin\":\"wǔdǎo\",\"definitions\":[\"a dance\"]},{\"simplified\":\"务必\",\"traditional\":\"務必\",\"pinyin\":\"wùbì\",\"definitions\":[\"must\",\"need to\",\"be sure to\"]},{\"simplified\":\"物美价廉\",\"traditional\":\"物美價廉\",\"pinyin\":\"wùměijiàlián\",\"definitions\":[\"attractive goods at inexpensive prices\"]},{\"simplified\":\"物业\",\"traditional\":\"物業\",\"pinyin\":\"wùyè\",\"definitions\":[\"property management\"]},{\"simplified\":\"物资\",\"traditional\":\"物資\",\"pinyin\":\"wùzī\",\"definitions\":[\"goods and materials\",\"commodity\"]},{\"simplified\":\"误差\",\"traditional\":\"誤差\",\"pinyin\":\"wùchā\",\"definitions\":[\"difference\",\"error\",\"inaccuracy\"]},{\"simplified\":\"误解\",\"traditional\":\"誤解\",\"pinyin\":\"wùjiě\",\"definitions\":[\"misunderstand\",\"misread\"]},{\"simplified\":\"夕阳\",\"traditional\":\"夕陽\",\"pinyin\":\"xīyáng\",\"definitions\":[\"setting sun\"]},{\"simplified\":\"昔日\",\"traditional\":\"昔日\",\"pinyin\":\"xīrì\",\"definitions\":[\"formerly\",\"in olden days\"]},{\"simplified\":\"牺牲\",\"traditional\":\"犧牲\",\"pinyin\":\"xīshēng\",\"definitions\":[\"sacrifice (one's life, etc.)\"]},{\"simplified\":\"溪\",\"traditional\":\"溪\",\"pinyin\":\"xī\",\"definitions\":[\"creek\"]},{\"simplified\":\"熄灭\",\"traditional\":\"熄滅\",\"pinyin\":\"xīmiè\",\"definitions\":[\"extinguish\",\"go out (of fire)\",\"die out\",\"extinction\"]},{\"simplified\":\"膝盖\",\"traditional\":\"膝蓋\",\"pinyin\":\"xīgài\",\"definitions\":[\"knee\"]},{\"simplified\":\"习俗\",\"traditional\":\"習俗\",\"pinyin\":\"xísú\",\"definitions\":[\"custom\",\"tradition\",\"(local) convention\"]},{\"simplified\":\"袭击\",\"traditional\":\"襲擊\",\"pinyin\":\"xíjī\",\"definitions\":[\"surprise attack\",\"to raid\"]},{\"simplified\":\"媳妇\",\"traditional\":\"媳婦\",\"pinyin\":\"xífù\",\"definitions\":[\"daughter-in-law\",\"son's wife\"]},{\"simplified\":\"喜闻乐见\",\"traditional\":\"喜聞樂見\",\"pinyin\":\"xǐwénlèjiàn\",\"definitions\":[\"a delight to see (idiom)\",\"an attractive spectacle\"]},{\"simplified\":\"喜悦\",\"traditional\":\"喜悅\",\"pinyin\":\"xǐyuè\",\"definitions\":[\"happy\",\"joyous\"]},{\"simplified\":\"系列\",\"traditional\":\"系列\",\"pinyin\":\"xìliè\",\"definitions\":[\"series\"]},{\"simplified\":\"细胞\",\"traditional\":\"細胞\",\"pinyin\":\"xìbāo\",\"definitions\":[\"cell (biology)\"]},{\"simplified\":\"细菌\",\"traditional\":\"細菌\",\"pinyin\":\"xìjūn\",\"definitions\":[\"bacteria\",\"virus\",\"germ\"]},{\"simplified\":\"细致\",\"traditional\":\"細致\",\"pinyin\":\"xìzhì\",\"definitions\":[\"delicate\",\"meticulous\"]},{\"simplified\":\"峡谷\",\"traditional\":\"峽谷\",\"pinyin\":\"xiágǔ\",\"definitions\":[\"canyon\",\"ravine\",\"gorge\"]},{\"simplified\":\"狭隘\",\"traditional\":\"狹隘\",\"pinyin\":\"xiá'ài\",\"definitions\":[\"narrow\",\"tight\",\"narrow (minded)\",\"lacking in experience\"]},{\"simplified\":\"狭窄\",\"traditional\":\"狹窄\",\"pinyin\":\"xiázhǎi\",\"definitions\":[\"narrow\"]},{\"simplified\":\"霞\",\"traditional\":\"霞\",\"pinyin\":\"xiá\",\"definitions\":[\"red clouds\"]},{\"simplified\":\"下属\",\"traditional\":\"下屬\",\"pinyin\":\"xiàshǔ\",\"definitions\":[\"subordinate\",\"underling\"]},{\"simplified\":\"先进\",\"traditional\":\"先進\",\"pinyin\":\"xiānjìn\",\"definitions\":[\"advanced (technology)\",\"to advance\"]},{\"simplified\":\"先前\",\"traditional\":\"先前\",\"pinyin\":\"xiānqián\",\"definitions\":[\"before\",\"previously\"]},{\"simplified\":\"纤维\",\"traditional\":\"纖維\",\"pinyin\":\"xiānwéi\",\"definitions\":[\"fiber\"]},{\"simplified\":\"掀起\",\"traditional\":\"掀起\",\"pinyin\":\"xiānqǐ\",\"definitions\":[\"lift\",\"raise in height\"]},{\"simplified\":\"鲜明\",\"traditional\":\"鮮明\",\"pinyin\":\"xiānmíng\",\"definitions\":[\"bright\",\"clear-cut\",\"distinct\"]},{\"simplified\":\"闲话\",\"traditional\":\"閑話\",\"pinyin\":\"xiánhuà\",\"definitions\":[\"gossip\",\"digression\"]},{\"simplified\":\"贤惠\",\"traditional\":\"賢惠\",\"pinyin\":\"xiánhuì\",\"definitions\":[\"virtuous and dutiful (of women)\"]},{\"simplified\":\"弦\",\"traditional\":\"弦\",\"pinyin\":\"xián\",\"definitions\":[\"bow string\",\"string of musical instruments\"]},{\"simplified\":\"衔接\",\"traditional\":\"銜接\",\"pinyin\":\"xiánjiē\",\"definitions\":[\"to join together\",\"to combine\"]},{\"simplified\":\"嫌\",\"traditional\":\"嫌\",\"pinyin\":\"xián\",\"definitions\":[\"to dislike\",\"suspicion\",\"grudge\"]},{\"simplified\":\"嫌疑\",\"traditional\":\"嫌疑\",\"pinyin\":\"xiányí\",\"definitions\":[\"suspicion\",\"(be) suspected (of)\"]},{\"simplified\":\"显著\",\"traditional\":\"顯著\",\"pinyin\":\"xiǎnzhù\",\"definitions\":[\"notable\",\"marked\",\"outstanding\",\"remarkable\"]},{\"simplified\":\"现场\",\"traditional\":\"現場\",\"pinyin\":\"xiànchǎng\",\"definitions\":[\"scene (of event or incident)\",\"on the spot\"]},{\"simplified\":\"现成\",\"traditional\":\"現成\",\"pinyin\":\"xiànchéng\",\"definitions\":[\"ready-made\",\"off-the-shelf\"]},{\"simplified\":\"现状\",\"traditional\":\"現狀\",\"pinyin\":\"xiànzhuàng\",\"definitions\":[\"current situation\",\"status quo\"]},{\"simplified\":\"线索\",\"traditional\":\"線索\",\"pinyin\":\"xiànsuǒ\",\"definitions\":[\"trail\",\"clues\",\"hints\",\"thread (of a story)\"]},{\"simplified\":\"宪法\",\"traditional\":\"憲法\",\"pinyin\":\"xiànfǎ\",\"definitions\":[\"constitution\",\"charter\"]},{\"simplified\":\"陷害\",\"traditional\":\"陷害\",\"pinyin\":\"xiànhài\",\"definitions\":[\"cast blame on\",\"to frame\"]},{\"simplified\":\"陷阱\",\"traditional\":\"陷阱\",\"pinyin\":\"xiànjǐng\",\"definitions\":[\"trap\",\"snare\"]},{\"simplified\":\"陷入\",\"traditional\":\"陷入\",\"pinyin\":\"xiànrù\",\"definitions\":[\"sink into\",\"get caught up in\",\"land in (a predicament)\"]},{\"simplified\":\"馅儿\",\"traditional\":\"餡兒\",\"pinyin\":\"xiànr\",\"definitions\":[\"stuffing\",\"filling\"]},{\"simplified\":\"乡镇\",\"traditional\":\"鄉鎮\",\"pinyin\":\"xiāngzhèn\",\"definitions\":[\"village and town\"]},{\"simplified\":\"相差\",\"traditional\":\"相差\",\"pinyin\":\"xiāngchà\",\"definitions\":[\"differ\",\"difference\"]},{\"simplified\":\"相等\",\"traditional\":\"相等\",\"pinyin\":\"xiāngděng\",\"definitions\":[\"be equal to\",\"equally\",\"equivalent\"]},{\"simplified\":\"相辅相成\",\"traditional\":\"相輔相成\",\"pinyin\":\"xiāngfǔxiāngchéng\",\"definitions\":[\"supplement and complement each other\"]},{\"simplified\":\"相应\",\"traditional\":\"相應\",\"pinyin\":\"xiāngyìng\",\"definitions\":[\"correspond\",\"relevant\"]},{\"simplified\":\"镶嵌\",\"traditional\":\"鑲嵌\",\"pinyin\":\"xiāngqiàn\",\"definitions\":[\"inlay\"]},{\"simplified\":\"响亮\",\"traditional\":\"響亮\",\"pinyin\":\"xiǎngliàng\",\"definitions\":[\"loud and clear\",\"resounding\"]},{\"simplified\":\"响应\",\"traditional\":\"響應\",\"pinyin\":\"xiǎngyìng\",\"definitions\":[\"respond to\",\"answer\"]},{\"simplified\":\"想方设法\",\"traditional\":\"想方設法\",\"pinyin\":\"xiǎng fāng shè fǎ\",\"definitions\":[\"(saying) think of or try every possible method\",\"by all means possible\"]},{\"simplified\":\"向导\",\"traditional\":\"向導\",\"pinyin\":\"xiàngdǎo\",\"definitions\":[\"guide\"]},{\"simplified\":\"向来\",\"traditional\":\"向來\",\"pinyin\":\"xiànglái\",\"definitions\":[\"always\",\"all along\"]},{\"simplified\":\"向往\",\"traditional\":\"向往\",\"pinyin\":\"xiàngwǎng\",\"definitions\":[\"yearn for\",\"look forward to\"]},{\"simplified\":\"巷\",\"traditional\":\"巷\",\"pinyin\":\"xiàng\",\"definitions\":[\"lane\",\"alley\"]},{\"simplified\":\"相声\",\"traditional\":\"相聲\",\"pinyin\":\"xiàngsheng\",\"definitions\":[\"comic dialogue\",\"crosstalk\"]},{\"simplified\":\"削\",\"traditional\":\"削\",\"pinyin\":\"xuē\",\"definitions\":[\"to pare/peel with a knife\",\"to cut\",\"to chop\"]},{\"simplified\":\"消除\",\"traditional\":\"消除\",\"pinyin\":\"xiāochú\",\"definitions\":[\"eliminate\",\"remove\",\"clear up (abstract things）\"]},{\"simplified\":\"消毒\",\"traditional\":\"消毒\",\"pinyin\":\"xiāo dú\",\"definitions\":[\"disinfect\",\"sterilize\"]},{\"simplified\":\"消防\",\"traditional\":\"消防\",\"pinyin\":\"xiāofáng\",\"definitions\":[\"fire-fighting\",\"fire prevention and control\"]},{\"simplified\":\"消耗\",\"traditional\":\"消耗\",\"pinyin\":\"xiāohào\",\"definitions\":[\"use up\",\"consume\"]},{\"simplified\":\"消灭\",\"traditional\":\"消滅\",\"pinyin\":\"xiāomiè\",\"definitions\":[\"eliminate\",\"perish\",\"wipe out\"]},{\"simplified\":\"销毁\",\"traditional\":\"銷毀\",\"pinyin\":\"xiāohuǐ\",\"definitions\":[\"destroy (by melting or burning)\"]},{\"simplified\":\"潇洒\",\"traditional\":\"潇灑\",\"pinyin\":\"xiāosǎ\",\"definitions\":[\"free and easy\"]},{\"simplified\":\"小心翼翼\",\"traditional\":\"小心翼翼\",\"pinyin\":\"xiǎoxīn yìyì\",\"definitions\":[\"carefully\",\"cautiously\",\"with great care\"]},{\"simplified\":\"肖像\",\"traditional\":\"肖像\",\"pinyin\":\"xiàoxiàng\",\"definitions\":[\"portrait\"]},{\"simplified\":\"效益\",\"traditional\":\"效益\",\"pinyin\":\"xiàoyì\",\"definitions\":[\"benefit；results\"]},{\"simplified\":\"协会\",\"traditional\":\"協會\",\"pinyin\":\"xiéhuì\",\"definitions\":[\"an association\",\"a society\"]},{\"simplified\":\"协商\",\"traditional\":\"協商\",\"pinyin\":\"xiéshāng\",\"definitions\":[\"consult with\",\"talk things over\"]},{\"simplified\":\"协调\",\"traditional\":\"協調\",\"pinyin\":\"xiétiáo\",\"definitions\":[\"coordinate\",\"harmonize\"]},{\"simplified\":\"协议\",\"traditional\":\"協議\",\"pinyin\":\"xiéyì\",\"definitions\":[\"agreement\",\"pact\",\"protocol\"]},{\"simplified\":\"协助\",\"traditional\":\"協助\",\"pinyin\":\"xiézhù\",\"definitions\":[\"assist\",\"to help\"]},{\"simplified\":\"携带\",\"traditional\":\"攜帶\",\"pinyin\":\"xiédài\",\"definitions\":[\"take with\",\"portable\"]},{\"simplified\":\"泄露\",\"traditional\":\"泄露\",\"pinyin\":\"xièlòu\",\"definitions\":[\"leak (information)\",\"divulge\"]},{\"simplified\":\"泄气\",\"traditional\":\"泄氣\",\"pinyin\":\"xièqì\",\"definitions\":[\"despair\",\"feel like giving up/disappointing\",\"pathetic\"]},{\"simplified\":\"屑\",\"traditional\":\"屑\",\"pinyin\":\"xiè\",\"definitions\":[\"crumbs\",\"filings\",\"worth while\"]},{\"simplified\":\"谢绝\",\"traditional\":\"謝絕\",\"pinyin\":\"xièjué\",\"definitions\":[\"politely refuse\"]},{\"simplified\":\"心得\",\"traditional\":\"心得\",\"pinyin\":\"xīndé\",\"definitions\":[\"knowledge gained\"]},{\"simplified\":\"心甘情愿\",\"traditional\":\"心甘情願\",\"pinyin\":\"xīngānqíngyuàn\",\"definitions\":[\"totally willing\",\"perfectly happy to\"]},{\"simplified\":\"心灵\",\"traditional\":\"心靈\",\"pinyin\":\"xīnlíng\",\"definitions\":[\"heart\",\"soul\",\"smart\",\"quick-witted\"]},{\"simplified\":\"心态\",\"traditional\":\"心態\",\"pinyin\":\"xīntài\",\"definitions\":[\"pyschology\",\"mentality\",\"spirit\"]},{\"simplified\":\"心疼\",\"traditional\":\"心疼\",\"pinyin\":\"xīnténg\",\"definitions\":[\"love dearly\",\"the pain of love\"]},{\"simplified\":\"心血\",\"traditional\":\"心血\",\"pinyin\":\"xīnxuè\",\"definitions\":[\"heart and blood\",\"painstaking effort\",\"meticulous care\"]},{\"simplified\":\"心眼儿\",\"traditional\":\"心眼兒\",\"pinyin\":\"xīnyǎnr\",\"definitions\":[\"one's thoughts\",\"mind\",\"intention\",\"willingness to accept new ideas\"]},{\"simplified\":\"辛勤\",\"traditional\":\"辛勤\",\"pinyin\":\"xīnqín\",\"definitions\":[\"hardworking\",\"diligent\",\"industrious\"]},{\"simplified\":\"欣慰\",\"traditional\":\"欣慰\",\"pinyin\":\"xīnwèi\",\"definitions\":[\"be gratified\",\"satisfied\"]},{\"simplified\":\"欣欣向荣\",\"traditional\":\"欣欣向榮\",\"pinyin\":\"xīnxīn xiàng róng\",\"definitions\":[\"flourishing\",\"thriving\",\"prosperous\"]},{\"simplified\":\"新陈代谢\",\"traditional\":\"新陳代謝\",\"pinyin\":\"xīn chén dàixiè\",\"definitions\":[\"metabolism (bio)\",\"(saying) the new replaces the old\"]},{\"simplified\":\"新郎\",\"traditional\":\"新郎\",\"pinyin\":\"xīnláng\",\"definitions\":[\"bridegroom\",\"groom\"]},{\"simplified\":\"新娘\",\"traditional\":\"新娘\",\"pinyin\":\"xīnniáng\",\"definitions\":[\"bride\"]},{\"simplified\":\"新颖\",\"traditional\":\"新穎\",\"pinyin\":\"xīnyǐng\",\"definitions\":[\"new and original\",\"novel\"]},{\"simplified\":\"薪水\",\"traditional\":\"薪水\",\"pinyin\":\"xīnshuǐ\",\"definitions\":[\"salary\",\"wage\",\"pay\",\"stipend\"]},{\"simplified\":\"信赖\",\"traditional\":\"信賴\",\"pinyin\":\"xìnlài\",\"definitions\":[\"trust\",\"have confidence in\",\"confide\"]},{\"simplified\":\"信念\",\"traditional\":\"信念\",\"pinyin\":\"xìnniàn\",\"definitions\":[\"faith\",\"belief\",\"conviction\"]},{\"simplified\":\"信仰\",\"traditional\":\"信仰\",\"pinyin\":\"xìnyǎng\",\"definitions\":[\"firm belief\",\"faith\",\"believe in (a religion)\"]},{\"simplified\":\"信誉\",\"traditional\":\"信譽\",\"pinyin\":\"xìnyù\",\"definitions\":[\"reputation\",\"prestige\",\"trust\"]},{\"simplified\":\"兴隆\",\"traditional\":\"興隆\",\"pinyin\":\"xīnglóng\",\"definitions\":[\"prosperous\",\"flourishing\"]},{\"simplified\":\"兴旺\",\"traditional\":\"興旺\",\"pinyin\":\"xīngwàng\",\"definitions\":[\"prosperous\",\"thriving\",\"to prosper\"]},{\"simplified\":\"腥\",\"traditional\":\"腥\",\"pinyin\":\"xīng\",\"definitions\":[\"fishy (smell)\"]},{\"simplified\":\"刑事\",\"traditional\":\"刑事\",\"pinyin\":\"xíngshì\",\"definitions\":[\"criminal\",\"penal\"]},{\"simplified\":\"行政\",\"traditional\":\"行政\",\"pinyin\":\"xíngzhèng\",\"definitions\":[\"administration\",\"administrative\"]},{\"simplified\":\"形态\",\"traditional\":\"形態\",\"pinyin\":\"xíngtài\",\"definitions\":[\"shape\",\"form\",\"pattern\"]},{\"simplified\":\"兴高采烈\",\"traditional\":\"興高采烈\",\"pinyin\":\"xìng gāo cǎi liè\",\"definitions\":[\"in high spirits\"]},{\"simplified\":\"兴致勃勃\",\"traditional\":\"興致勃勃\",\"pinyin\":\"xìngzhìbóbó\",\"definitions\":[\"in high spirits\"]},{\"simplified\":\"性感\",\"traditional\":\"性感\",\"pinyin\":\"xìnggǎn\",\"definitions\":[\"sex appeal\",\"sexy\",\"sexuality\"]},{\"simplified\":\"性命\",\"traditional\":\"性命\",\"pinyin\":\"xìngmìng\",\"definitions\":[\"life\"]},{\"simplified\":\"性能\",\"traditional\":\"性能\",\"pinyin\":\"xìngnéng\",\"definitions\":[\"function\",\"performance\"]},{\"simplified\":\"凶恶\",\"traditional\":\"凶惡\",\"pinyin\":\"xiōng'è\",\"definitions\":[\"fierce\",\"ferocious\",\"menacing\"]},{\"simplified\":\"凶手\",\"traditional\":\"凶手\",\"pinyin\":\"xiōngshǒu\",\"definitions\":[\"murderer\",\"assassin\",\"assailant\"]},{\"simplified\":\"汹涌\",\"traditional\":\"洶湧\",\"pinyin\":\"xiōngyǒng\",\"definitions\":[\"(used in reference to an ocean, river, lake etc.) violently surge up\",\"turbulent\"]},{\"simplified\":\"胸怀\",\"traditional\":\"胸懷\",\"pinyin\":\"xiōnghuái\",\"definitions\":[\"think about\",\"heart\",\"one's bosom (the seat of emotions)\",\"breast\",\"broad-minded and open\"]},{\"simplified\":\"胸膛\",\"traditional\":\"胸膛\",\"pinyin\":\"xiōngtáng\",\"definitions\":[\"chest\"]},{\"simplified\":\"雄厚\",\"traditional\":\"雄厚\",\"pinyin\":\"xiónghòu\",\"definitions\":[\"abundant\",\"strong and solid\",\"rich\"]},{\"simplified\":\"雄伟\",\"traditional\":\"雄偉\",\"pinyin\":\"xióngwěi\",\"definitions\":[\"grand\",\"majestic\"]},{\"simplified\":\"修复\",\"traditional\":\"修複\",\"pinyin\":\"xiūfù\",\"definitions\":[\"restoration\",\"repair\"]},{\"simplified\":\"修建\",\"traditional\":\"修建\",\"pinyin\":\"xiūjiàn\",\"definitions\":[\"to build\",\"to construct\",\"renovate\"]},{\"simplified\":\"修养\",\"traditional\":\"修養\",\"pinyin\":\"xiūyǎng\",\"definitions\":[\"accomplishment\",\"self-cultivation\"]},{\"simplified\":\"羞耻\",\"traditional\":\"羞恥\",\"pinyin\":\"xiūchǐ\",\"definitions\":[\"(a feeling of) shame\"]},{\"simplified\":\"绣\",\"traditional\":\"繡\",\"pinyin\":\"xiù\",\"definitions\":[\"embroider\",\"embroidery\"]},{\"simplified\":\"嗅觉\",\"traditional\":\"嗅覺\",\"pinyin\":\"xiùjué\",\"definitions\":[\"sense of smell\",\"scent\"]},{\"simplified\":\"须知\",\"traditional\":\"須知\",\"pinyin\":\"xūzhī\",\"definitions\":[\"prerequisites\",\"knowledge requirement\"]},{\"simplified\":\"虚假\",\"traditional\":\"虛假\",\"pinyin\":\"xūjiǎ\",\"definitions\":[\"false\",\"phony\",\"pretense\",\"deceit\"]},{\"simplified\":\"虚荣\",\"traditional\":\"虛榮\",\"pinyin\":\"xūróng\",\"definitions\":[\"vanity\"]},{\"simplified\":\"虚伪\",\"traditional\":\"虛僞\",\"pinyin\":\"xūwěi\",\"definitions\":[\"false\",\"hypocritical\",\"artificial\",\"sham\"]},{\"simplified\":\"需求\",\"traditional\":\"需求\",\"pinyin\":\"xūqiú\",\"definitions\":[\"requirement\",\"demand (economics)\"]},{\"simplified\":\"许可\",\"traditional\":\"許可\",\"pinyin\":\"xǔkě\",\"definitions\":[\"allow\",\"permit\",\"permission\"]},{\"simplified\":\"序言\",\"traditional\":\"序言\",\"pinyin\":\"xùyán\",\"definitions\":[\"preface of a book, used to explain the book's objective\"]},{\"simplified\":\"畜牧\",\"traditional\":\"畜牧\",\"pinyin\":\"xùmù\",\"definitions\":[\"raise animals\"]},{\"simplified\":\"酗酒\",\"traditional\":\"酗酒\",\"pinyin\":\"xùjiǔ\",\"definitions\":[\"heavy drinking\",\"drink to excess\",\"binge drink\"]},{\"simplified\":\"宣誓\",\"traditional\":\"宣誓\",\"pinyin\":\"xuān shì\",\"definitions\":[\"swear an oath (of office)\",\"make a vow\"]},{\"simplified\":\"宣扬\",\"traditional\":\"宣揚\",\"pinyin\":\"xuānyáng\",\"definitions\":[\"publicize\",\"make public or well known\"]},{\"simplified\":\"喧哗\",\"traditional\":\"喧嘩\",\"pinyin\":\"xuānhuá\",\"definitions\":[\"cause a scene\"]},{\"simplified\":\"悬挂\",\"traditional\":\"懸挂\",\"pinyin\":\"xuánguà\",\"definitions\":[\"suspend\",\"hang\",\"suspension (cable car)\"]},{\"simplified\":\"悬念\",\"traditional\":\"懸念\",\"pinyin\":\"xuánniàn\",\"definitions\":[\"reader's involvement\",\"suspense in a movie, place etc\"]},{\"simplified\":\"悬殊\",\"traditional\":\"懸殊\",\"pinyin\":\"xuánshū\",\"definitions\":[\"a wide gap\",\"big contrast\",\"large disparity\",\"a mismatch\"]},{\"simplified\":\"悬崖峭壁\",\"traditional\":\"懸崖峭壁\",\"pinyin\":\"xuányáqiàobì\",\"definitions\":[\"cliffside\"]},{\"simplified\":\"旋律\",\"traditional\":\"旋律\",\"pinyin\":\"xuánlǜ\",\"definitions\":[\"melody\",\"tune\",\"rhythm\"]},{\"simplified\":\"旋转\",\"traditional\":\"旋轉\",\"pinyin\":\"xuánzhuǎn\",\"definitions\":[\"to whirl\",\"to spin\",\"rotate\"]},{\"simplified\":\"选拔\",\"traditional\":\"選拔\",\"pinyin\":\"xuǎnbá\",\"definitions\":[\"select the best\",\"choose\"]},{\"simplified\":\"选举\",\"traditional\":\"選舉\",\"pinyin\":\"xuǎnjǔ\",\"definitions\":[\"elect\",\"election\"]},{\"simplified\":\"选手\",\"traditional\":\"選手\",\"pinyin\":\"xuǎnshǒu\",\"definitions\":[\"athlete\",\"contestant\",\"player\"]},{\"simplified\":\"炫耀\",\"traditional\":\"炫耀\",\"pinyin\":\"xuànyào\",\"definitions\":[\"to show off\",\"flaunt\"]},{\"simplified\":\"削弱\",\"traditional\":\"削弱\",\"pinyin\":\"xuēruò\",\"definitions\":[\"weaken\",\"to cripple\"]},{\"simplified\":\"学说\",\"traditional\":\"學說\",\"pinyin\":\"xuéshuō\",\"definitions\":[\"theory\",\"doctrine\"]},{\"simplified\":\"学位\",\"traditional\":\"學位\",\"pinyin\":\"xuéwèi\",\"definitions\":[\"academic degree\",\"educational level\"]},{\"simplified\":\"雪上加霜\",\"traditional\":\"雪上加霜\",\"pinyin\":\"xuěshàngjiāshuāng\",\"definitions\":[\"(literally) add frost to snow\",\"one disaster after another\",\"insult added to injury\"]},{\"simplified\":\"血压\",\"traditional\":\"血壓\",\"pinyin\":\"xuèyā\",\"definitions\":[\"blood pressure\"]},{\"simplified\":\"熏陶\",\"traditional\":\"熏陶\",\"pinyin\":\"xūntáo\",\"definitions\":[\"to influence (positively)\"]},{\"simplified\":\"寻觅\",\"traditional\":\"尋覓\",\"pinyin\":\"xúnmì\",\"definitions\":[\"to seek\",\"to look for\"]},{\"simplified\":\"巡逻\",\"traditional\":\"巡邏\",\"pinyin\":\"xúnluó\",\"definitions\":[\"to patrol (police, army or navy)\"]},{\"simplified\":\"循环\",\"traditional\":\"循環\",\"pinyin\":\"xúnhuán\",\"definitions\":[\"circular cycle\",\"loop\",\"circulate\"]},{\"simplified\":\"循序渐进\",\"traditional\":\"循序漸進\",\"pinyin\":\"xún xù jiàn jìn\",\"definitions\":[\"make steady progress incrementally\",\"step by step program\"]},{\"simplified\":\"压迫\",\"traditional\":\"壓迫\",\"pinyin\":\"yāpò\",\"definitions\":[\"oppress\"]},{\"simplified\":\"压岁钱\",\"traditional\":\"壓歲錢\",\"pinyin\":\"yāsuìqián\",\"definitions\":[\"gifts of money given to children during the Spring Festival\"]},{\"simplified\":\"压缩\",\"traditional\":\"壓縮\",\"pinyin\":\"yāsuō\",\"definitions\":[\"to compress\"]},{\"simplified\":\"压抑\",\"traditional\":\"壓抑\",\"pinyin\":\"yāyì\",\"definitions\":[\"constrain or repress one's emotions\",\"inhibition\",\"repressive\"]},{\"simplified\":\"压榨\",\"traditional\":\"壓榨\",\"pinyin\":\"yāzhà\",\"definitions\":[\"to press\",\"to squeeze\",\"to extract juice, oil, etc. by squeezing\"]},{\"simplified\":\"压制\",\"traditional\":\"壓制\",\"pinyin\":\"yāzhì\",\"definitions\":[\"suppress\",\"inhibit\",\"stifle\"]},{\"simplified\":\"鸦雀无声\",\"traditional\":\"鴉雀無聲\",\"pinyin\":\"yāquèwúshēng\",\"definitions\":[\"not even a crow or sparrow can be heard (idiom)\",\"silence reigns\"]},{\"simplified\":\"亚军\",\"traditional\":\"亞軍\",\"pinyin\":\"yàjūn\",\"definitions\":[\"second place\",\"runner-up\"]},{\"simplified\":\"烟花爆竹\",\"traditional\":\"煙花爆竹\",\"pinyin\":\"yānhuābàozhú\",\"definitions\":[\"fireworks and crackers\"]},{\"simplified\":\"淹没\",\"traditional\":\"淹沒\",\"pinyin\":\"yānmò\",\"definitions\":[\"submerge\",\"drown\",\"to flood\"]},{\"simplified\":\"延期\",\"traditional\":\"延期\",\"pinyin\":\"yán qī\",\"definitions\":[\"delay\",\"extend\",\"postpone\"]},{\"simplified\":\"延伸\",\"traditional\":\"延伸\",\"pinyin\":\"yánshēn\",\"definitions\":[\"extend\",\"spread\",\"stretch\"]},{\"simplified\":\"延续\",\"traditional\":\"延續\",\"pinyin\":\"yánxù\",\"definitions\":[\"continue\",\"last longer\"]},{\"simplified\":\"严寒\",\"traditional\":\"嚴寒\",\"pinyin\":\"yánhán\",\"definitions\":[\"bitter cold\",\"severe winter\"]},{\"simplified\":\"严禁\",\"traditional\":\"嚴禁\",\"pinyin\":\"yánjìn\",\"definitions\":[\"strictly prohibit\",\"forbid\"]},{\"simplified\":\"严峻\",\"traditional\":\"嚴峻\",\"pinyin\":\"yánjùn\",\"definitions\":[\"grim\",\"severe\",\"rigorous\",\"harsh\"]},{\"simplified\":\"严厉\",\"traditional\":\"嚴厲\",\"pinyin\":\"yánlì\",\"definitions\":[\"strict\",\"severe\"]},{\"simplified\":\"严密\",\"traditional\":\"嚴密\",\"pinyin\":\"yánmì\",\"definitions\":[\"strict\",\"closely-knit\",\"tight\"]},{\"simplified\":\"言论\",\"traditional\":\"言論\",\"pinyin\":\"yánlùn\",\"definitions\":[\"expression of (political) opinion\",\"speech\"]},{\"simplified\":\"岩石\",\"traditional\":\"岩石\",\"pinyin\":\"yánshí\",\"definitions\":[\"rock\",\"stone\"]},{\"simplified\":\"炎热\",\"traditional\":\"炎熱\",\"pinyin\":\"yánrè\",\"definitions\":[\"blistering hot\",\"sizzling hot (weather)\"]},{\"simplified\":\"沿海\",\"traditional\":\"沿海\",\"pinyin\":\"yánhǎi\",\"definitions\":[\"coastal\"]},{\"simplified\":\"掩盖\",\"traditional\":\"掩蓋\",\"pinyin\":\"yǎngài\",\"definitions\":[\"conceal\",\"cover up\",\"hide behind\"]},{\"simplified\":\"掩护\",\"traditional\":\"掩護\",\"pinyin\":\"yǎnhù\",\"definitions\":[\"cover\",\"shield\",\"screen\"]},{\"simplified\":\"掩饰\",\"traditional\":\"掩飾\",\"pinyin\":\"yǎnshì\",\"definitions\":[\"conceal a fault\",\"gloss over\"]},{\"simplified\":\"眼光\",\"traditional\":\"眼光\",\"pinyin\":\"yǎnguāng\",\"definitions\":[\"vision\"]},{\"simplified\":\"眼色\",\"traditional\":\"眼色\",\"pinyin\":\"yǎnsè\",\"definitions\":[\"a wink\",\"signal with one's eyes\"]},{\"simplified\":\"眼神\",\"traditional\":\"眼神\",\"pinyin\":\"yǎnshén\",\"definitions\":[\"expression or emotion showing in one's eyes\"]},{\"simplified\":\"演变\",\"traditional\":\"演變\",\"pinyin\":\"yǎnbiàn\",\"definitions\":[\"develop\",\"evolve\"]},{\"simplified\":\"演习\",\"traditional\":\"演習\",\"pinyin\":\"yǎnxí\",\"definitions\":[\"rehearse\",\"practice\",\"put on a play\"]},{\"simplified\":\"演绎\",\"traditional\":\"演繹\",\"pinyin\":\"yǎnyì\",\"definitions\":[\"deduction\",\"to deduce\",\"to infer\"]},{\"simplified\":\"演奏\",\"traditional\":\"演奏\",\"pinyin\":\"yǎnzòu\",\"definitions\":[\"give an instrumental performance\"]},{\"simplified\":\"厌恶\",\"traditional\":\"厭惡\",\"pinyin\":\"yànwù\",\"definitions\":[\"loathe\",\"to hate\",\"detest\"]},{\"simplified\":\"验收\",\"traditional\":\"驗收\",\"pinyin\":\"yànshōu\",\"definitions\":[\"inspect and then accept (i.e. received goods\"]},{\"simplified\":\"验证\",\"traditional\":\"驗證\",\"pinyin\":\"yànzhèng\",\"definitions\":[\"inspect and verify\"]},{\"simplified\":\"氧气\",\"traditional\":\"氧氣\",\"pinyin\":\"yǎngqì\",\"definitions\":[\"oxygen\"]},{\"simplified\":\"样品\",\"traditional\":\"樣品\",\"pinyin\":\"yàngpǐn\",\"definitions\":[\"sample\",\"specimen\"]},{\"simplified\":\"谣言\",\"traditional\":\"謠言\",\"pinyin\":\"yáoyán\",\"definitions\":[\"rumor\"]},{\"simplified\":\"摇摆\",\"traditional\":\"搖擺\",\"pinyin\":\"yáobǎi\",\"definitions\":[\"to waver\",\"to wag\",\"to sway\"]},{\"simplified\":\"摇滚\",\"traditional\":\"搖滾\",\"pinyin\":\"yáogǔn\",\"definitions\":[\"rock and roll\"]},{\"simplified\":\"遥控\",\"traditional\":\"遙控\",\"pinyin\":\"yáokòng\",\"definitions\":[\"remote control\"]},{\"simplified\":\"遥远\",\"traditional\":\"遙遠\",\"pinyin\":\"yáoyuǎn\",\"definitions\":[\"distant\",\"remote\"]},{\"simplified\":\"要点\",\"traditional\":\"要點\",\"pinyin\":\"yàodiǎn\",\"definitions\":[\"main point\",\"essential\"]},{\"simplified\":\"要命\",\"traditional\":\"要命\",\"pinyin\":\"yàomìng\",\"definitions\":[\"cause somebody's death\",\"very\",\"extremely\",\"frighteningly\",\"annoyance\"]},{\"simplified\":\"要素\",\"traditional\":\"要素\",\"pinyin\":\"yàosù\",\"definitions\":[\"essential factor\",\"key constituent\"]},{\"simplified\":\"耀眼\",\"traditional\":\"耀眼\",\"pinyin\":\"yàoyǎn\",\"definitions\":[\"dazzle\",\"to shine\"]},{\"simplified\":\"野蛮\",\"traditional\":\"野蠻\",\"pinyin\":\"yěmán\",\"definitions\":[\"barbarous\",\"uncivilized\",\"cruel\",\"wild\"]},{\"simplified\":\"野心\",\"traditional\":\"野心\",\"pinyin\":\"yěxīn\",\"definitions\":[\"ambition\",\"wild schemes or ambitions\",\"careerism\"]},{\"simplified\":\"液体\",\"traditional\":\"液體\",\"pinyin\":\"yètǐ\",\"definitions\":[\"liquid\"]},{\"simplified\":\"一度\",\"traditional\":\"一度\",\"pinyin\":\"yídù\",\"definitions\":[\"for a time\",\"at one time\",\"one time\",\"once\"]},{\"simplified\":\"一帆风顺\",\"traditional\":\"一帆風順\",\"pinyin\":\"yìfānfēngshùn\",\"definitions\":[\"(saying) smooth sailing\"]},{\"simplified\":\"一贯\",\"traditional\":\"一貫\",\"pinyin\":\"yíguàn\",\"definitions\":[\"consistent\",\"constant\",\"from start to finish\",\"then as now\"]},{\"simplified\":\"一举两得\",\"traditional\":\"一舉兩得\",\"pinyin\":\"yìjǔliǎngdé\",\"definitions\":[\"kill two birds with one stone\",\"(literally) attain two objectives with a single move\"]},{\"simplified\":\"一流\",\"traditional\":\"一流\",\"pinyin\":\"yīliú\",\"definitions\":[\"top-grade\"]},{\"simplified\":\"一目了然\",\"traditional\":\"一目了然\",\"pinyin\":\"yímùliǎorán\",\"definitions\":[\"obvious at a glance\"]},{\"simplified\":\"一如既往\",\"traditional\":\"一如既往\",\"pinyin\":\"yìrújìwǎng\",\"definitions\":[\"just as in the past (idiom)\",\"as before\",\"continuing as always\"]},{\"simplified\":\"一丝不苟\",\"traditional\":\"一絲不苟\",\"pinyin\":\"yìsībùgǒu\",\"definitions\":[\"(literally) not one thread loose\",\"strictly according to the rules\",\"meticulous\"]},{\"simplified\":\"一向\",\"traditional\":\"一向\",\"pinyin\":\"yíxiàng\",\"definitions\":[\"all along\",\"the whole time\",\"constantly\",\"always\"]},{\"simplified\":\"衣裳\",\"traditional\":\"衣裳\",\"pinyin\":\"yīshang\",\"definitions\":[\"clothes\"]},{\"simplified\":\"依旧\",\"traditional\":\"依舊\",\"pinyin\":\"yījiù\",\"definitions\":[\"as before\",\"still\"]},{\"simplified\":\"依据\",\"traditional\":\"依據\",\"pinyin\":\"yījù\",\"definitions\":[\"according to\",\"basis\",\"foundation\"]},{\"simplified\":\"依靠\",\"traditional\":\"依靠\",\"pinyin\":\"yīkào\",\"definitions\":[\"rely on\",\"depend on\"]},{\"simplified\":\"依赖\",\"traditional\":\"依賴\",\"pinyin\":\"yīlài\",\"definitions\":[\"depend on\",\"be dependent on\"]},{\"simplified\":\"依托\",\"traditional\":\"依托\",\"pinyin\":\"yītuō\",\"definitions\":[\"rely on\",\"depend on\"]},{\"simplified\":\"仪器\",\"traditional\":\"儀器\",\"pinyin\":\"yíqì\",\"definitions\":[\"apparatus\",\"(scientific) instrument\"]},{\"simplified\":\"仪式\",\"traditional\":\"儀式\",\"pinyin\":\"yíshì\",\"definitions\":[\"ceremony\"]},{\"simplified\":\"遗产\",\"traditional\":\"遺産\",\"pinyin\":\"yíchǎn\",\"definitions\":[\"heritage\",\"legacy\"]},{\"simplified\":\"遗传\",\"traditional\":\"遺傳\",\"pinyin\":\"yíchuán\",\"definitions\":[\"inherit\",\"hereditary\"]},{\"simplified\":\"遗留\",\"traditional\":\"遺留\",\"pinyin\":\"yíliú\",\"definitions\":[\"legacy\",\"left over\",\"hand down\"]},{\"simplified\":\"遗失\",\"traditional\":\"遺失\",\"pinyin\":\"yíshī\",\"definitions\":[\"lose\",\"lose due to carelessness\"]},{\"simplified\":\"疑惑\",\"traditional\":\"疑惑\",\"pinyin\":\"yíhuò\",\"definitions\":[\"(a sense of) uncertainty\",\"to feel unsure about something\",\"uncertainty\"]},{\"simplified\":\"以便\",\"traditional\":\"以便\",\"pinyin\":\"yǐbiàn\",\"definitions\":[\"so that\",\"in order to\"]},{\"simplified\":\"以免\",\"traditional\":\"以免\",\"pinyin\":\"yǐmiǎn\",\"definitions\":[\"so as not to\",\"in order to avoid\",\"lest\"]},{\"simplified\":\"以往\",\"traditional\":\"以往\",\"pinyin\":\"yǐwǎng\",\"definitions\":[\"in the past\",\"formerly\"]},{\"simplified\":\"以至\",\"traditional\":\"以至\",\"pinyin\":\"yǐzhì\",\"definitions\":[\"down to\",\"up to\",\"to such an extent as to...\"]},{\"simplified\":\"以致\",\"traditional\":\"以致\",\"pinyin\":\"yǐzhì\",\"definitions\":[\"so that\",\"as a result\"]},{\"simplified\":\"亦\",\"traditional\":\"亦\",\"pinyin\":\"yì\",\"definitions\":[\"also\"]},{\"simplified\":\"异常\",\"traditional\":\"異常\",\"pinyin\":\"yìcháng\",\"definitions\":[\"exceptional\",\"abnormal\"]},{\"simplified\":\"意料\",\"traditional\":\"意料\",\"pinyin\":\"yìliào\",\"definitions\":[\"expectation\",\"to anticipate\",\"to think ahead\"]},{\"simplified\":\"意识\",\"traditional\":\"意識\",\"pinyin\":\"yìshi\",\"definitions\":[\"realize\",\"consciousness\",\"awareness\",\"sense\"]},{\"simplified\":\"意图\",\"traditional\":\"意圖\",\"pinyin\":\"yìtú\",\"definitions\":[\"intent\",\"intention\",\"intend\"]},{\"simplified\":\"意味着\",\"traditional\":\"意味著\",\"pinyin\":\"yìwèizhe\",\"definitions\":[\"signify\",\"to mean\",\"imply\"]},{\"simplified\":\"意向\",\"traditional\":\"意向\",\"pinyin\":\"yìxiàng\",\"definitions\":[\"will\",\"intent\",\"disposition\"]},{\"simplified\":\"意志\",\"traditional\":\"意志\",\"pinyin\":\"yìzhì\",\"definitions\":[\"will\",\"willpower\",\"determination\"]},{\"simplified\":\"毅力\",\"traditional\":\"毅力\",\"pinyin\":\"yìlì\",\"definitions\":[\"willpower\",\"perseverance\",\"will\",\"stamina\",\"tenacity\"]},{\"simplified\":\"毅然\",\"traditional\":\"毅然\",\"pinyin\":\"yìrán\",\"definitions\":[\"without hesitation\",\"resolutely\",\"firmly\"]},{\"simplified\":\"翼\",\"traditional\":\"翼\",\"pinyin\":\"yì\",\"definitions\":[\"wings\",\"fins on fish\",\"shelter\"]},{\"simplified\":\"阴谋\",\"traditional\":\"陰謀\",\"pinyin\":\"yīnmóu\",\"definitions\":[\"a plot\",\"a conspiracy\"]},{\"simplified\":\"音响\",\"traditional\":\"音響\",\"pinyin\":\"yīnxiǎng\",\"definitions\":[\"(Electronic) speakers\",\"acoustics\",\"sound field (i.e., in a room or theater)\"]},{\"simplified\":\"引导\",\"traditional\":\"引導\",\"pinyin\":\"yǐndǎo\",\"definitions\":[\"to guide\",\"to conduct\",\"introduction\"]},{\"simplified\":\"引擎\",\"traditional\":\"引擎\",\"pinyin\":\"yǐnqíng\",\"definitions\":[\"engine\"]},{\"simplified\":\"引用\",\"traditional\":\"引用\",\"pinyin\":\"yǐnyòng\",\"definitions\":[\"quote\",\"cite\"]},{\"simplified\":\"饮食\",\"traditional\":\"飲食\",\"pinyin\":\"yǐnshí\",\"definitions\":[\"food and drink\",\"diet\"]},{\"simplified\":\"隐蔽\",\"traditional\":\"隱蔽\",\"pinyin\":\"yǐnbì\",\"definitions\":[\"conceal\",\"hide\",\"covert\",\"under cover\",\"Take cover!\"]},{\"simplified\":\"隐患\",\"traditional\":\"隱患\",\"pinyin\":\"yǐnhuàn\",\"definitions\":[\"hidden danger\"]},{\"simplified\":\"隐瞒\",\"traditional\":\"隱瞞\",\"pinyin\":\"yǐnmán\",\"definitions\":[\"conceal\",\"hide\",\"(a taboo subject)\",\"cover up the truth\"]},{\"simplified\":\"隐私\",\"traditional\":\"隱私\",\"pinyin\":\"yǐnsī\",\"definitions\":[\"privacy\",\"personal secret\"]},{\"simplified\":\"隐约\",\"traditional\":\"隱約\",\"pinyin\":\"yǐnyuē\",\"definitions\":[\"vague\",\"faint\",\"indistinct\"]},{\"simplified\":\"英明\",\"traditional\":\"英明\",\"pinyin\":\"yīngmíng\",\"definitions\":[\"wise\",\"brilliant\"]},{\"simplified\":\"英勇\",\"traditional\":\"英勇\",\"pinyin\":\"yīngyǒng\",\"definitions\":[\"bravery\",\"heroic\",\"valiant\",\"gallant\"]},{\"simplified\":\"婴儿\",\"traditional\":\"嬰兒\",\"pinyin\":\"yīng'ér\",\"definitions\":[\"baby infant\"]},{\"simplified\":\"迎面\",\"traditional\":\"迎面\",\"pinyin\":\"yíng miàn\",\"definitions\":[\"face to face\",\"headlong\",\"in one's face\"]},{\"simplified\":\"盈利\",\"traditional\":\"盈利\",\"pinyin\":\"yínglì\",\"definitions\":[\"profit\",\"gain\"]},{\"simplified\":\"应酬\",\"traditional\":\"應酬\",\"pinyin\":\"yìngchou\",\"definitions\":[\"socialize with\",\"a social engagement\"]},{\"simplified\":\"应邀\",\"traditional\":\"應邀\",\"pinyin\":\"yìngyāo\",\"definitions\":[\"at sb.'s invitation\"]},{\"simplified\":\"拥护\",\"traditional\":\"擁護\",\"pinyin\":\"yōnghù\",\"definitions\":[\"to support\",\"endorse\"]},{\"simplified\":\"拥有\",\"traditional\":\"擁有\",\"pinyin\":\"yōngyǒu\",\"definitions\":[\"have\",\"possess\"]},{\"simplified\":\"庸俗\",\"traditional\":\"庸俗\",\"pinyin\":\"yōngsú\",\"definitions\":[\"filthy\",\"vulgar\",\"debased\"]},{\"simplified\":\"永恒\",\"traditional\":\"永恒\",\"pinyin\":\"yǒnghéng\",\"definitions\":[\"eternal\",\"everlasting\"]},{\"simplified\":\"勇于\",\"traditional\":\"勇于\",\"pinyin\":\"yǒngyú\",\"definitions\":[\"have the courage to\",\"be brave enough\"]},{\"simplified\":\"涌现\",\"traditional\":\"湧現\",\"pinyin\":\"yǒngxiàn\",\"definitions\":[\"spring up\",\"emerge prominently\"]},{\"simplified\":\"踊跃\",\"traditional\":\"踴躍\",\"pinyin\":\"yǒngyuè\",\"definitions\":[\"eager\",\"enthusiastically\"]},{\"simplified\":\"用户\",\"traditional\":\"用戶\",\"pinyin\":\"yònghù\",\"definitions\":[\"user\",\"consumer\",\"subscriber\",\"customer\"]},{\"simplified\":\"优胜劣汰\",\"traditional\":\"優勝劣汰\",\"pinyin\":\"yōushèngliètài\",\"definitions\":[\"survival of the fittest\"]},{\"simplified\":\"优先\",\"traditional\":\"優先\",\"pinyin\":\"yōuxiān\",\"definitions\":[\"priority\",\"preferential\"]},{\"simplified\":\"优异\",\"traditional\":\"優異\",\"pinyin\":\"yōuyì\",\"definitions\":[\"exceptional\",\"excellent\",\"outstandingly good\"]},{\"simplified\":\"优越\",\"traditional\":\"優越\",\"pinyin\":\"yōuyuè\",\"definitions\":[\"superior\",\"superiority\"]},{\"simplified\":\"忧郁\",\"traditional\":\"憂郁\",\"pinyin\":\"yōuyù\",\"definitions\":[\"melancholy\",\"dejected\"]},{\"simplified\":\"犹如\",\"traditional\":\"猶如\",\"pinyin\":\"yóurú\",\"definitions\":[\"just as\",\"similar to\",\"appearing to be\"]},{\"simplified\":\"油腻\",\"traditional\":\"油膩\",\"pinyin\":\"yóunì\",\"definitions\":[\"greasy or oily (food)\"]},{\"simplified\":\"油漆\",\"traditional\":\"油漆\",\"pinyin\":\"yóuqī\",\"definitions\":[\"oil paint\",\"varnish\"]},{\"simplified\":\"有条不紊\",\"traditional\":\"有條不紊\",\"pinyin\":\"yǒutiáobùwěn\",\"definitions\":[\"in an orderly way\",\"methodically\",\"systematically\",\"methodical\"]},{\"simplified\":\"幼稚\",\"traditional\":\"幼稚\",\"pinyin\":\"yòuzhì\",\"definitions\":[\"childish\",\"naïve\",\"immature\"]},{\"simplified\":\"诱惑\",\"traditional\":\"誘惑\",\"pinyin\":\"yòuhuò\",\"definitions\":[\"tempt\",\"temptation\",\"entice\",\"lure\",\"attract\"]},{\"simplified\":\"渔民\",\"traditional\":\"漁民\",\"pinyin\":\"yúmín\",\"definitions\":[\"fisherman\",\"fisher folk\"]},{\"simplified\":\"愚蠢\",\"traditional\":\"愚蠢\",\"pinyin\":\"yúchǔn\",\"definitions\":[\"silly\",\"stupid\"]},{\"simplified\":\"愚昧\",\"traditional\":\"愚昧\",\"pinyin\":\"yúmèi\",\"definitions\":[\"ignorant\",\"benighted\"]},{\"simplified\":\"舆论\",\"traditional\":\"輿論\",\"pinyin\":\"yúlùn\",\"definitions\":[\"public opinion\"]},{\"simplified\":\"与日俱增\",\"traditional\":\"與日俱增\",\"pinyin\":\"yǔrìjùzēng\",\"definitions\":[\"grow with each passing day\"]},{\"simplified\":\"宇宙\",\"traditional\":\"宇宙\",\"pinyin\":\"yǔzhòu\",\"definitions\":[\"universe\",\"cosmos\"]},{\"simplified\":\"羽绒服\",\"traditional\":\"羽絨服\",\"pinyin\":\"yǔróngfú\",\"definitions\":[\"down jacket\"]},{\"simplified\":\"玉\",\"traditional\":\"玉\",\"pinyin\":\"yù\",\"definitions\":[\"jade (Kangxi radical 96)\"]},{\"simplified\":\"预料\",\"traditional\":\"預料\",\"pinyin\":\"yùliào\",\"definitions\":[\"anticipate\",\"to forecast\",\"expectation\"]},{\"simplified\":\"预期\",\"traditional\":\"預期\",\"pinyin\":\"yùqī\",\"definitions\":[\"expect\",\"expected\",\"anticipate\"]},{\"simplified\":\"预算\",\"traditional\":\"預算\",\"pinyin\":\"yùsuàn\",\"definitions\":[\"budget\"]},{\"simplified\":\"预先\",\"traditional\":\"預先\",\"pinyin\":\"yùxiān\",\"definitions\":[\"beforehand\",\"prior\"]},{\"simplified\":\"预言\",\"traditional\":\"預言\",\"pinyin\":\"yùyán\",\"definitions\":[\"predict\",\"prophecy\"]},{\"simplified\":\"预兆\",\"traditional\":\"預兆\",\"pinyin\":\"yùzhào\",\"definitions\":[\"omen, sign\"]},{\"simplified\":\"欲望\",\"traditional\":\"欲望\",\"pinyin\":\"yùwàng\",\"definitions\":[\"desire\",\"lust\"]},{\"simplified\":\"寓言\",\"traditional\":\"寓言\",\"pinyin\":\"yùyán\",\"definitions\":[\"fable\"]},{\"simplified\":\"愈\",\"traditional\":\"愈\",\"pinyin\":\"yù\",\"definitions\":[\"recover\",\"heal\",\"the more ... the more\"]},{\"simplified\":\"冤枉\",\"traditional\":\"冤枉\",\"pinyin\":\"yuānwang\",\"definitions\":[\"to wrong\",\"injustice\",\"not worthwhile\"]},{\"simplified\":\"元首\",\"traditional\":\"元首\",\"pinyin\":\"yuánshǒu\",\"definitions\":[\"head of state\"]},{\"simplified\":\"元素\",\"traditional\":\"元素\",\"pinyin\":\"yuánsù\",\"definitions\":[\"element\",\"element of a set\",\"chemical element\"]},{\"simplified\":\"元宵节\",\"traditional\":\"元宵節\",\"pinyin\":\"Yuánxiāo Jié\",\"definitions\":[\"the Lantern Festival\"]},{\"simplified\":\"园林\",\"traditional\":\"園林\",\"pinyin\":\"yuánlín\",\"definitions\":[\"gardens\",\"park\",\"landscape\"]},{\"simplified\":\"原告\",\"traditional\":\"原告\",\"pinyin\":\"yuángào\",\"definitions\":[\"plaintiff\",\"complainant\",\"accuser\"]},{\"simplified\":\"原理\",\"traditional\":\"原理\",\"pinyin\":\"yuánlǐ\",\"definitions\":[\"principle\",\"theory\"]},{\"simplified\":\"原始\",\"traditional\":\"原始\",\"pinyin\":\"yuánshǐ\",\"definitions\":[\"first\",\"original\",\"primitive\"]},{\"simplified\":\"原先\",\"traditional\":\"原先\",\"pinyin\":\"yuánxiān\",\"definitions\":[\"former\",\"original\"]},{\"simplified\":\"圆满\",\"traditional\":\"圓滿\",\"pinyin\":\"yuánmǎn\",\"definitions\":[\"satisfactory\"]},{\"simplified\":\"缘故\",\"traditional\":\"緣故\",\"pinyin\":\"yuángù\",\"definitions\":[\"reason\",\"cause\"]},{\"simplified\":\"源泉\",\"traditional\":\"源泉\",\"pinyin\":\"yuánquán\",\"definitions\":[\"headspring\",\"fountainhead\",\"water source\"]},{\"simplified\":\"约束\",\"traditional\":\"約束\",\"pinyin\":\"yuēshù\",\"definitions\":[\"restrict\",\"limit to\",\"constrain\",\"restriction\"]},{\"simplified\":\"乐谱\",\"traditional\":\"樂譜\",\"pinyin\":\"yuèpǔ\",\"definitions\":[\"sheet music\"]},{\"simplified\":\"岳母\",\"traditional\":\"嶽母\",\"pinyin\":\"yuèmǔ\",\"definitions\":[\"wife's mother\",\"mother-in-law\"]},{\"simplified\":\"孕育\",\"traditional\":\"孕育\",\"pinyin\":\"yùnyù\",\"definitions\":[\"be pregnant\",\"to produce offspring\",\"nurture (a development, school of thought, artwork, etc.)\"]},{\"simplified\":\"运算\",\"traditional\":\"運算\",\"pinyin\":\"yùnsuàn\",\"definitions\":[\"(mathematical) operation\"]},{\"simplified\":\"运行\",\"traditional\":\"運行\",\"pinyin\":\"yùnxíng\",\"definitions\":[\"movement\",\"be in motion\",\"run\"]},{\"simplified\":\"酝酿\",\"traditional\":\"醞釀\",\"pinyin\":\"yùnniàng\",\"definitions\":[\"mull over (an issue)\",\"hold a preliminary round of exploratory discussions\"]},{\"simplified\":\"蕴藏\",\"traditional\":\"蘊藏\",\"pinyin\":\"yùncáng\",\"definitions\":[\"hold in store\",\"contain untapped quantities\"]},{\"simplified\":\"熨\",\"traditional\":\"熨\",\"pinyin\":\"yùn\",\"definitions\":[\"iron\",\"press\"]},{\"simplified\":\"杂技\",\"traditional\":\"雜技\",\"pinyin\":\"zájì\",\"definitions\":[\"acrobatics\"]},{\"simplified\":\"杂交\",\"traditional\":\"雜交\",\"pinyin\":\"zájiāo\",\"definitions\":[\"create a hybrid\",\"cross-fertilize\"]},{\"simplified\":\"砸\",\"traditional\":\"砸\",\"pinyin\":\"zá\",\"definitions\":[\"to smash\",\"to pound\",\"to break\",\"fail\"]},{\"simplified\":\"咋\",\"traditional\":\"咋\",\"pinyin\":\"zǎ\",\"definitions\":[\"how/why (contraction of 怎么)\"]},{\"simplified\":\"灾难\",\"traditional\":\"災難\",\"pinyin\":\"zāinàn\",\"definitions\":[\"disaster\",\"catastrophe\"]},{\"simplified\":\"栽培\",\"traditional\":\"栽培\",\"pinyin\":\"zāipéi\",\"definitions\":[\"grow\",\"educate\",\"cultivate\"]},{\"simplified\":\"宰\",\"traditional\":\"宰\",\"pinyin\":\"zǎi\",\"definitions\":[\"slaughter\",\"butcher\",\"govern\",\"rule\",\"imperial official in dynastic China\"]},{\"simplified\":\"再接再厉\",\"traditional\":\"再接再厲\",\"pinyin\":\"zàijiēzàilì\",\"definitions\":[\"continue the struggle\",\"persist\",\"unremitting efforts\"]},{\"simplified\":\"在意\",\"traditional\":\"在意\",\"pinyin\":\"zài yì\",\"definitions\":[\"care about\",\"mind\",\"care\"]},{\"simplified\":\"攒\",\"traditional\":\"攢\",\"pinyin\":\"zǎn\",\"definitions\":[\"save\",\"hoard\"]},{\"simplified\":\"暂且\",\"traditional\":\"暫且\",\"pinyin\":\"zànqiě\",\"definitions\":[\"for the moment\",\"for the time being\",\"temporarily\"]},{\"simplified\":\"赞叹\",\"traditional\":\"贊歎\",\"pinyin\":\"zàntàn\",\"definitions\":[\"sigh or grasp in admiration\",\"highly praise\"]},{\"simplified\":\"赞助\",\"traditional\":\"贊助\",\"pinyin\":\"zànzhù\",\"definitions\":[\"support\",\"sponsor\"]},{\"simplified\":\"遭受\",\"traditional\":\"遭受\",\"pinyin\":\"zāoshòu\",\"definitions\":[\"suffer\",\"suffering\",\"be subjected to (something unfortunate)\"]},{\"simplified\":\"遭殃\",\"traditional\":\"遭殃\",\"pinyin\":\"zāo yāng\",\"definitions\":[\"to suffer a calamity\",\"go through a disaster\"]},{\"simplified\":\"遭遇\",\"traditional\":\"遭遇\",\"pinyin\":\"zāoyù\",\"definitions\":[\"befall\",\"suffer\",\"encounter\"]},{\"simplified\":\"糟蹋\",\"traditional\":\"糟蹋\",\"pinyin\":\"zāotà\",\"definitions\":[\"waste\",\"ruin\",\"wreck\",\"spoil\",\"slander\"]},{\"simplified\":\"造型\",\"traditional\":\"造型\",\"pinyin\":\"zàoxíng\",\"definitions\":[\"make a model\",\"to mold\"]},{\"simplified\":\"噪音\",\"traditional\":\"噪音\",\"pinyin\":\"zàoyīn\",\"definitions\":[\"uproar\",\"rumble\",\"noise\",\"static\"]},{\"simplified\":\"责怪\",\"traditional\":\"責怪\",\"pinyin\":\"zéguài\",\"definitions\":[\"blame\",\"rebuke\"]},{\"simplified\":\"贼\",\"traditional\":\"賊\",\"pinyin\":\"zéi\",\"definitions\":[\"thief\"]},{\"simplified\":\"增添\",\"traditional\":\"增添\",\"pinyin\":\"zēngtiān\",\"definitions\":[\"add to\",\"increase\"]},{\"simplified\":\"赠送\",\"traditional\":\"贈送\",\"pinyin\":\"zèngsòng\",\"definitions\":[\"give as a present\"]},{\"simplified\":\"扎\",\"traditional\":\"紮\",\"pinyin\":\"zhā\",\"definitions\":[\"to prick\",\"push a needle into\",\"penetrating\"]},{\"simplified\":\"扎实\",\"traditional\":\"紮實\",\"pinyin\":\"zhāshi\",\"definitions\":[\"strong\",\"sturdy\",\"practical\"]},{\"simplified\":\"渣\",\"traditional\":\"渣\",\"pinyin\":\"zhā\",\"definitions\":[\"dregs\",\"slag\"]},{\"simplified\":\"眨\",\"traditional\":\"眨\",\"pinyin\":\"zhǎ\",\"definitions\":[\"wink\",\"blink\"]},{\"simplified\":\"诈骗\",\"traditional\":\"詐騙\",\"pinyin\":\"zhàpiàn\",\"definitions\":[\"defraud\",\"swindle\",\"blackmail\"]},{\"simplified\":\"摘要\",\"traditional\":\"摘要\",\"pinyin\":\"zhāiyào\",\"definitions\":[\"summary\",\"abstract\"]},{\"simplified\":\"债券\",\"traditional\":\"債券\",\"pinyin\":\"zhàiquàn\",\"definitions\":[\"bond\"]},{\"simplified\":\"沾光\",\"traditional\":\"沾光\",\"pinyin\":\"zhān guāng\",\"definitions\":[\"bask in the light\",\"benefit from association with sth.\",\"reflected glory\"]},{\"simplified\":\"瞻仰\",\"traditional\":\"瞻仰\",\"pinyin\":\"zhānyǎng\",\"definitions\":[\"look at with reverence\",\"admire\"]},{\"simplified\":\"斩钉截铁\",\"traditional\":\"斬釘截鐵\",\"pinyin\":\"zhǎn dīng jié tiě\",\"definitions\":[\"to chop the nail and slice the iron (idiom)\",\"resolute and decisive\",\"definitely\"]},{\"simplified\":\"展示\",\"traditional\":\"展示\",\"pinyin\":\"zhǎnshì\",\"definitions\":[\"open up\",\"reveal\",\"to display\"]},{\"simplified\":\"展望\",\"traditional\":\"展望\",\"pinyin\":\"zhǎnwàng\",\"definitions\":[\"outlook\",\"prospect\",\"to look ahead\",\"look forward to\"]},{\"simplified\":\"展现\",\"traditional\":\"展現\",\"pinyin\":\"zhǎnxiàn\",\"definitions\":[\"come out\",\"emerge\",\"express\",\"show\"]},{\"simplified\":\"崭新\",\"traditional\":\"嶄新\",\"pinyin\":\"zhǎnxīn\",\"definitions\":[\"brand new\"]},{\"simplified\":\"占据\",\"traditional\":\"占據\",\"pinyin\":\"zhànjù\",\"definitions\":[\"occupy\",\"hold\",\"inhabit\"]},{\"simplified\":\"占领\",\"traditional\":\"占領\",\"pinyin\":\"zhànlǐng\",\"definitions\":[\"occupy (a territory)\",\"capture\",\"seize\"]},{\"simplified\":\"战斗\",\"traditional\":\"戰鬥\",\"pinyin\":\"zhàndòu\",\"definitions\":[\"to fight\",\"to battle\",\"to struggle\"]},{\"simplified\":\"战略\",\"traditional\":\"戰略\",\"pinyin\":\"zhànlüè\",\"definitions\":[\"strategy\"]},{\"simplified\":\"战术\",\"traditional\":\"戰術\",\"pinyin\":\"zhànshù\",\"definitions\":[\"(military) tactics\"]},{\"simplified\":\"战役\",\"traditional\":\"戰役\",\"pinyin\":\"zhànyì\",\"definitions\":[\"military campaign\",\"battle\"]},{\"simplified\":\"章程\",\"traditional\":\"章程\",\"pinyin\":\"zhāngchéng\",\"definitions\":[\"written rules\",\"statute\",\"regulations\",\"charter of a corporation\"]},{\"simplified\":\"帐篷\",\"traditional\":\"帳篷\",\"pinyin\":\"zhàngpeng\",\"definitions\":[\"tent\"]},{\"simplified\":\"障碍\",\"traditional\":\"障礙\",\"pinyin\":\"zhàng'ài\",\"definitions\":[\"barrier\",\"obstacle\"]},{\"simplified\":\"招标\",\"traditional\":\"招標\",\"pinyin\":\"zhāobiāo\",\"definitions\":[\"to beckon\",\"to invite bids\"]},{\"simplified\":\"招收\",\"traditional\":\"招收\",\"pinyin\":\"zhāoshōu\",\"definitions\":[\"recruit\",\"take in\",\"to hire\"]},{\"simplified\":\"朝气蓬勃\",\"traditional\":\"朝氣蓬勃\",\"pinyin\":\"zhāo qì péng bó\",\"definitions\":[\"full of youthful energy (idiom)\",\"full of vigour and vitality\",\"energetic\",\"spirited\",\"a bright spark\"]},{\"simplified\":\"着迷\",\"traditional\":\"著迷\",\"pinyin\":\"zháomí\",\"definitions\":[\"to be fascinated\"]},{\"simplified\":\"沼泽\",\"traditional\":\"沼澤\",\"pinyin\":\"zhǎozé\",\"definitions\":[\"marsh\",\"swamp\",\"glade\",\"wetlands\"]},{\"simplified\":\"照样\",\"traditional\":\"照樣\",\"pinyin\":\"zhàoyàng\",\"definitions\":[\"as before\",\"(same) as usual\"]},{\"simplified\":\"照耀\",\"traditional\":\"照耀\",\"pinyin\":\"zhàoyào\",\"definitions\":[\"to shine\",\"illuminate\"]},{\"simplified\":\"折腾\",\"traditional\":\"折騰\",\"pinyin\":\"zhēteng\",\"definitions\":[\"toss from side to side (e.g. sleeplessly)\",\"do something over and over again\",\"cause suffering\",\"play crazy\",\"screw around\"]},{\"simplified\":\"遮挡\",\"traditional\":\"遮擋\",\"pinyin\":\"zhēdǎng\",\"definitions\":[\"shelter from\",\"keep out\"]},{\"simplified\":\"折\",\"traditional\":\"折\",\"pinyin\":\"zhé\",\"definitions\":[\"to break\",\"to fracture\",\"convert into\",\"to fold\"]},{\"simplified\":\"折磨\",\"traditional\":\"折磨\",\"pinyin\":\"zhémo\",\"definitions\":[\"persecute\",\"to torture\"]},{\"simplified\":\"侦探\",\"traditional\":\"偵探\",\"pinyin\":\"zhēntàn\",\"definitions\":[\"detective\"]},{\"simplified\":\"珍贵\",\"traditional\":\"珍貴\",\"pinyin\":\"zhēnguì\",\"definitions\":[\"precious\"]},{\"simplified\":\"珍稀\",\"traditional\":\"珍稀\",\"pinyin\":\"zhēnxī\",\"definitions\":[\"rare\",\"precious and uncommon\"]},{\"simplified\":\"珍珠\",\"traditional\":\"珍珠\",\"pinyin\":\"zhēnzhū\",\"definitions\":[\"pearl\"]},{\"simplified\":\"真理\",\"traditional\":\"真理\",\"pinyin\":\"zhēnlǐ\",\"definitions\":[\"truth\"]},{\"simplified\":\"真相\",\"traditional\":\"真相\",\"pinyin\":\"zhēnxiàng\",\"definitions\":[\"the actual facts\",\"reality\"]},{\"simplified\":\"真挚\",\"traditional\":\"真摯\",\"pinyin\":\"zhēnzhì\",\"definitions\":[\"sincere\",\"sincerity\",\"genuine\"]},{\"simplified\":\"斟酌\",\"traditional\":\"斟酌\",\"pinyin\":\"zhēnzhuó\",\"definitions\":[\"Consider\",\"deliberate\"]},{\"simplified\":\"枕头\",\"traditional\":\"枕頭\",\"pinyin\":\"zhěntou\",\"definitions\":[\"pillow\"]},{\"simplified\":\"阵地\",\"traditional\":\"陣地\",\"pinyin\":\"zhèndì\",\"definitions\":[\"position\",\"battlefront\"]},{\"simplified\":\"阵容\",\"traditional\":\"陣容\",\"pinyin\":\"zhènróng\",\"definitions\":[\"line-up\",\"troop arrangement\"]},{\"simplified\":\"振奋\",\"traditional\":\"振奮\",\"pinyin\":\"zhènfèn\",\"definitions\":[\"stir oneself up\",\"raise one's spirits\",\"inspire\"]},{\"simplified\":\"振兴\",\"traditional\":\"振興\",\"pinyin\":\"zhènxīng\",\"definitions\":[\"develop vigorously\",\"promote\",\"revive\",\"revitalize\",\"invigorate\",\"re-energize\"]},{\"simplified\":\"震撼\",\"traditional\":\"震撼\",\"pinyin\":\"zhènhàn\",\"definitions\":[\"to shake\"]},{\"simplified\":\"震惊\",\"traditional\":\"震驚\",\"pinyin\":\"zhènjīng\",\"definitions\":[\"shock\",\"astonish\",\"amaze\"]},{\"simplified\":\"镇定\",\"traditional\":\"鎮定\",\"pinyin\":\"zhèndìng\",\"definitions\":[\"cool\",\"calm\",\"unperturbed\"]},{\"simplified\":\"镇静\",\"traditional\":\"鎮靜\",\"pinyin\":\"zhènjìng\",\"definitions\":[\"calm\",\"cool\",\"tranquil\"]},{\"simplified\":\"正月\",\"traditional\":\"正月\",\"pinyin\":\"zhēngyuè\",\"definitions\":[\"the first month of the lunar calendar\"]},{\"simplified\":\"争端\",\"traditional\":\"爭端\",\"pinyin\":\"zhēngduān\",\"definitions\":[\"dispute\",\"controversy\",\"conflict\"]},{\"simplified\":\"争夺\",\"traditional\":\"爭奪\",\"pinyin\":\"zhēngduó\",\"definitions\":[\"fight over\"]},{\"simplified\":\"争气\",\"traditional\":\"爭氣\",\"pinyin\":\"zhēng qì\",\"definitions\":[\"work hard for sth.\",\"determined not to fall short\"]},{\"simplified\":\"争先恐后\",\"traditional\":\"爭先恐後\",\"pinyin\":\"zhēng xiān kǒng hòu\",\"definitions\":[\"striving to be first\",\"compete with each other\"]},{\"simplified\":\"争议\",\"traditional\":\"爭議\",\"pinyin\":\"zhēngyì\",\"definitions\":[\"controversy\",\"dispute\",\"contention\"]},{\"simplified\":\"征服\",\"traditional\":\"征服\",\"pinyin\":\"zhēngfú\",\"definitions\":[\"conquer\",\"subdue\"]},{\"simplified\":\"征收\",\"traditional\":\"征收\",\"pinyin\":\"zhēngshōu\",\"definitions\":[\"levy (fine)\",\"impose (tariff)\"]},{\"simplified\":\"挣扎\",\"traditional\":\"掙紮\",\"pinyin\":\"zhēngzhá\",\"definitions\":[\"to struggle\"]},{\"simplified\":\"蒸发\",\"traditional\":\"蒸發\",\"pinyin\":\"zhēngfā\",\"definitions\":[\"evaporate\",\"evaporation\"]},{\"simplified\":\"整顿\",\"traditional\":\"整頓\",\"pinyin\":\"zhěngdùn\",\"definitions\":[\"organize\",\"consolidate\"]},{\"simplified\":\"正当\",\"traditional\":\"正當\",\"pinyin\":\"zhèng dāng\",\"definitions\":[\"timely\",\"just when, (dàng) proper\"]},{\"simplified\":\"正负\",\"traditional\":\"正負\",\"pinyin\":\"zhèngfù\",\"definitions\":[\"positive and negative\",\"plus-minus\"]},{\"simplified\":\"正规\",\"traditional\":\"正規\",\"pinyin\":\"zhèngguī\",\"definitions\":[\"formal\",\"regular\",\"according to standards\"]},{\"simplified\":\"正经\",\"traditional\":\"正經\",\"pinyin\":\"zhèngjing\",\"definitions\":[\"decent\",\"serious\",\"standard\",\"really\"]},{\"simplified\":\"正气\",\"traditional\":\"正氣\",\"pinyin\":\"zhèngqì\",\"definitions\":[\"healthy environment\",\"healthy atmosphere\"]},{\"simplified\":\"正义\",\"traditional\":\"正義\",\"pinyin\":\"zhèngyì\",\"definitions\":[\"justice\",\"righteous\"]},{\"simplified\":\"正宗\",\"traditional\":\"正宗\",\"pinyin\":\"zhèngzōng\",\"definitions\":[\"authentic, orthodox\",\"old school\"]},{\"simplified\":\"证实\",\"traditional\":\"證實\",\"pinyin\":\"zhèngshí\",\"definitions\":[\"confirm\",\"verify\"]},{\"simplified\":\"证书\",\"traditional\":\"證書\",\"pinyin\":\"zhèngshū\",\"definitions\":[\"certificate\",\"credentials\"]},{\"simplified\":\"郑重\",\"traditional\":\"鄭重\",\"pinyin\":\"zhèngzhòng\",\"definitions\":[\"serious\",\"solemn\"]},{\"simplified\":\"政策\",\"traditional\":\"政策\",\"pinyin\":\"zhèngcè\",\"definitions\":[\"policy\"]},{\"simplified\":\"政权\",\"traditional\":\"政權\",\"pinyin\":\"zhèngquán\",\"definitions\":[\"regime\",\"political power\",\"authority\"]},{\"simplified\":\"症状\",\"traditional\":\"症狀\",\"pinyin\":\"zhèngzhuàng\",\"definitions\":[\"symptom (of an illness)\"]},{\"simplified\":\"之际\",\"traditional\":\"之際\",\"pinyin\":\"zhījì\",\"definitions\":[\"during\",\"at the time of\",\"the time when something happens\"]},{\"simplified\":\"支撑\",\"traditional\":\"支撐\",\"pinyin\":\"zhīchēng\",\"definitions\":[\"support\",\"prop up\",\"crutch\",\"brace\"]},{\"simplified\":\"支出\",\"traditional\":\"支出\",\"pinyin\":\"zhīchū\",\"definitions\":[\"spend\",\"pay out\",\"expense\"]},{\"simplified\":\"支流\",\"traditional\":\"支流\",\"pinyin\":\"zhīliú\",\"definitions\":[\"tributary\",\"minor aspect\",\"offshoot\"]},{\"simplified\":\"支配\",\"traditional\":\"支配\",\"pinyin\":\"zhīpèi\",\"definitions\":[\"to control\"]},{\"simplified\":\"支援\",\"traditional\":\"支援\",\"pinyin\":\"zhīyuán\",\"definitions\":[\"to support\",\"assist\",\"aid\"]},{\"simplified\":\"支柱\",\"traditional\":\"支柱\",\"pinyin\":\"zhīzhù\",\"definitions\":[\"pillar\",\"prop\",\"mainstay\",\"backbone\"]},{\"simplified\":\"枝\",\"traditional\":\"枝\",\"pinyin\":\"zhī\",\"definitions\":[\"branch\",\"twig\",\"(mw for sticks, rods, pencils)\"]},{\"simplified\":\"知觉\",\"traditional\":\"知覺\",\"pinyin\":\"zhījué\",\"definitions\":[\"perception\",\"consciousness\",\"feeling\"]},{\"simplified\":\"知足常乐\",\"traditional\":\"知足常樂\",\"pinyin\":\"zhīzúchánglè\",\"definitions\":[\"content with what one has\"]},{\"simplified\":\"脂肪\",\"traditional\":\"脂肪\",\"pinyin\":\"zhīfáng\",\"definitions\":[\"body fat\"]},{\"simplified\":\"执行\",\"traditional\":\"執行\",\"pinyin\":\"zhíxíng\",\"definitions\":[\"implementation\",\"carry out\",\"execute\"]},{\"simplified\":\"执着\",\"traditional\":\"執著\",\"pinyin\":\"zhízhuó\",\"definitions\":[\"to refuse to change one's viewpoint\"]},{\"simplified\":\"直播\",\"traditional\":\"直播\",\"pinyin\":\"zhíbō\",\"definitions\":[\"live broadcast (not recorded)\"]},{\"simplified\":\"直径\",\"traditional\":\"直徑\",\"pinyin\":\"zhíjìng\",\"definitions\":[\"diameter\"]},{\"simplified\":\"侄子\",\"traditional\":\"侄子\",\"pinyin\":\"zhízi\",\"definitions\":[\"nephew\",\"brother's son or daughter\"]},{\"simplified\":\"值班\",\"traditional\":\"值班\",\"pinyin\":\"zhí bān\",\"definitions\":[\"be on duty\",\"work a shift\"]},{\"simplified\":\"职能\",\"traditional\":\"職能\",\"pinyin\":\"zhínéng\",\"definitions\":[\"function\",\"role\"]},{\"simplified\":\"职位\",\"traditional\":\"職位\",\"pinyin\":\"zhíwèi\",\"definitions\":[\"(professional) position\"]},{\"simplified\":\"职务\",\"traditional\":\"職務\",\"pinyin\":\"zhíwù\",\"definitions\":[\"post\",\"a position\",\"job\",\"duties\"]},{\"simplified\":\"殖民地\",\"traditional\":\"殖民地\",\"pinyin\":\"zhímíndì\",\"definitions\":[\"colony\"]},{\"simplified\":\"指标\",\"traditional\":\"指標\",\"pinyin\":\"zhǐbiāo\",\"definitions\":[\"target\",\"norm\",\"index\",\"indicator\"]},{\"simplified\":\"指定\",\"traditional\":\"指定\",\"pinyin\":\"zhǐdìng\",\"definitions\":[\"appoint\",\"designate\"]},{\"simplified\":\"指甲\",\"traditional\":\"指甲\",\"pinyin\":\"zhǐjia\",\"definitions\":[\"fingernail\"]},{\"simplified\":\"指令\",\"traditional\":\"指令\",\"pinyin\":\"zhǐlìng\",\"definitions\":[\"order\",\"command\",\"instruction\"]},{\"simplified\":\"指南针\",\"traditional\":\"指南針\",\"pinyin\":\"zhǐnánzhēn\",\"definitions\":[\"compass\"]},{\"simplified\":\"指示\",\"traditional\":\"指示\",\"pinyin\":\"zhǐshì\",\"definitions\":[\"indicate\",\"instruct\",\"instructions\"]},{\"simplified\":\"指望\",\"traditional\":\"指望\",\"pinyin\":\"zhǐwàng\",\"definitions\":[\"hope for\",\"count on\",\"hope\"]},{\"simplified\":\"指责\",\"traditional\":\"指責\",\"pinyin\":\"zhǐzé\",\"definitions\":[\"to censure\",\"criticize\",\"find fault with\"]},{\"simplified\":\"志气\",\"traditional\":\"志氣\",\"pinyin\":\"zhìqì\",\"definitions\":[\"ambition\",\"resolve\",\"backbone\",\"drive\",\"spirit\"]},{\"simplified\":\"制裁\",\"traditional\":\"制裁\",\"pinyin\":\"zhìcái\",\"definitions\":[\"punish\",\"(economic) sanctions\"]},{\"simplified\":\"制服\",\"traditional\":\"制服\",\"pinyin\":\"zhìfú\",\"definitions\":[\"uniform\",\"to subdue\",\"to bring under control\"]},{\"simplified\":\"制约\",\"traditional\":\"制約\",\"pinyin\":\"zhìyuē\",\"definitions\":[\"restrict\",\"condition\"]},{\"simplified\":\"制止\",\"traditional\":\"制止\",\"pinyin\":\"zhìzhǐ\",\"definitions\":[\"to curb\",\"to put a stop to\"]},{\"simplified\":\"治安\",\"traditional\":\"治安\",\"pinyin\":\"zhì'ān\",\"definitions\":[\"law and order\",\"public security\"]},{\"simplified\":\"治理\",\"traditional\":\"治理\",\"pinyin\":\"zhìlǐ\",\"definitions\":[\"to bring under control\",\"to govern\",\"to manage\"]},{\"simplified\":\"致辞\",\"traditional\":\"致辭\",\"pinyin\":\"zhìcí\",\"definitions\":[\"make/deliver a speech\"]},{\"simplified\":\"致力\",\"traditional\":\"致力\",\"pinyin\":\"zhìlì\",\"definitions\":[\"work for\",\"devote one's efforts\"]},{\"simplified\":\"致使\",\"traditional\":\"致使\",\"pinyin\":\"zhìshǐ\",\"definitions\":[\"cause\",\"result in\"]},{\"simplified\":\"智力\",\"traditional\":\"智力\",\"pinyin\":\"zhìlì\",\"definitions\":[\"intelligence\",\"intellect\"]},{\"simplified\":\"智能\",\"traditional\":\"智能\",\"pinyin\":\"zhìnéng\",\"definitions\":[\"intelligent\",\"capability\",\"smart (phone, system, bomb, etc.)\"]},{\"simplified\":\"智商\",\"traditional\":\"智商\",\"pinyin\":\"zhìshāng\",\"definitions\":[\"IQ (intelligence quotient)\"]},{\"simplified\":\"滞留\",\"traditional\":\"滯留\",\"pinyin\":\"zhìliú\",\"definitions\":[\"detain\",\"retention\"]},{\"simplified\":\"中断\",\"traditional\":\"中斷\",\"pinyin\":\"zhōngduàn\",\"definitions\":[\"interrupt\",\"break off\"]},{\"simplified\":\"中立\",\"traditional\":\"中立\",\"pinyin\":\"zhōnglì\",\"definitions\":[\"neutral\",\"neutrality\"]},{\"simplified\":\"中央\",\"traditional\":\"中央\",\"pinyin\":\"zhōngyāng\",\"definitions\":[\"central\",\"middle\",\"center\"]},{\"simplified\":\"忠诚\",\"traditional\":\"忠誠\",\"pinyin\":\"zhōngchéng\",\"definitions\":[\"honest\",\"loyalty\",\"devoted\"]},{\"simplified\":\"忠实\",\"traditional\":\"忠實\",\"pinyin\":\"zhōngshí\",\"definitions\":[\"faithful\",\"dependable\"]},{\"simplified\":\"终点\",\"traditional\":\"終點\",\"pinyin\":\"zhōngdiǎn\",\"definitions\":[\"the end\",\"end point\",\"destination\",\"finish line (in a race)\"]},{\"simplified\":\"终究\",\"traditional\":\"終究\",\"pinyin\":\"zhōngjiū\",\"definitions\":[\"in the end\",\"after all is said and done\",\"eventually\"]},{\"simplified\":\"终身\",\"traditional\":\"終身\",\"pinyin\":\"zhōngshēn\",\"definitions\":[\"lifelong\"]},{\"simplified\":\"终止\",\"traditional\":\"終止\",\"pinyin\":\"zhōngzhǐ\",\"definitions\":[\"stop\",\"cease\",\"terminate (legal)\"]},{\"simplified\":\"衷心\",\"traditional\":\"衷心\",\"pinyin\":\"zhōngxīn\",\"definitions\":[\"heartfelt\",\"wholehearted\",\"cordial\"]},{\"simplified\":\"肿瘤\",\"traditional\":\"腫瘤\",\"pinyin\":\"zhǒngliú\",\"definitions\":[\"tumor\",\"neoplasm\"]},{\"simplified\":\"种子\",\"traditional\":\"種子\",\"pinyin\":\"zhǒngzi\",\"definitions\":[\"seed\"]},{\"simplified\":\"种族\",\"traditional\":\"種族\",\"pinyin\":\"zhǒngzú\",\"definitions\":[\"race\",\"ethnicity\"]},{\"simplified\":\"众所周知\",\"traditional\":\"衆所周知\",\"pinyin\":\"zhòng suǒ zhōu zhī\",\"definitions\":[\"as everyone knows\",\"(saying) as is known to everyone\"]},{\"simplified\":\"种植\",\"traditional\":\"種植\",\"pinyin\":\"zhòngzhí\",\"definitions\":[\"plant\",\"grow\",\"crop\"]},{\"simplified\":\"重心\",\"traditional\":\"重心\",\"pinyin\":\"zhòngxīn\",\"definitions\":[\"center of gravity\",\"central core\",\"main part\"]},{\"simplified\":\"舟\",\"traditional\":\"舟\",\"pinyin\":\"zhōu\",\"definitions\":[\"boat (Kangxi radical 137)\"]},{\"simplified\":\"州\",\"traditional\":\"州\",\"pinyin\":\"zhōu\",\"definitions\":[\"province\",\"sub-prefecture\",\"(United States) state\"]},{\"simplified\":\"周边\",\"traditional\":\"周邊\",\"pinyin\":\"zhōubiān\",\"definitions\":[\"surrounding\"]},{\"simplified\":\"周密\",\"traditional\":\"周密\",\"pinyin\":\"zhōumì\",\"definitions\":[\"meticulous\",\"careful\",\"thorough\"]},{\"simplified\":\"周年\",\"traditional\":\"周年\",\"pinyin\":\"zhōunián\",\"definitions\":[\"anniversary\",\"annual\"]},{\"simplified\":\"周期\",\"traditional\":\"周期\",\"pinyin\":\"zhōuqī\",\"definitions\":[\"period\",\"cycle\",\"rhythm\"]},{\"simplified\":\"周折\",\"traditional\":\"周折\",\"pinyin\":\"zhōuzhé\",\"definitions\":[\"setback\",\"twists and turns\",\"problem\",\"complication\"]},{\"simplified\":\"周转\",\"traditional\":\"周轉\",\"pinyin\":\"zhōuzhuǎn\",\"definitions\":[\"turnover (in cash or personnel)\",\"have enough resources to cover a need\"]},{\"simplified\":\"粥\",\"traditional\":\"粥\",\"pinyin\":\"zhōu\",\"definitions\":[\"porridge\",\"congee\",\"gruel\"]},{\"simplified\":\"昼夜\",\"traditional\":\"晝夜\",\"pinyin\":\"zhòuyè\",\"definitions\":[\"day and night\",\"continuously without stop\"]},{\"simplified\":\"皱纹\",\"traditional\":\"皺紋\",\"pinyin\":\"zhòuwén\",\"definitions\":[\"wrinkle\",\"furrow\"]},{\"simplified\":\"株\",\"traditional\":\"株\",\"pinyin\":\"zhū\",\"definitions\":[\"stem\",\"root\",\"trunk\",\"(mw for plants)\"]},{\"simplified\":\"诸位\",\"traditional\":\"諸位\",\"pinyin\":\"zhūwèi\",\"definitions\":[\"(pronoun) everyone\",\"ladies and gentlemen\"]},{\"simplified\":\"逐年\",\"traditional\":\"逐年\",\"pinyin\":\"zhúnián\",\"definitions\":[\"year after year\",\"on an annual basis\"]},{\"simplified\":\"主办\",\"traditional\":\"主辦\",\"pinyin\":\"zhǔbàn\",\"definitions\":[\"to host (a conference or sports event)\"]},{\"simplified\":\"主导\",\"traditional\":\"主導\",\"pinyin\":\"zhǔdǎo\",\"definitions\":[\"leading\",\"dominant\",\"guiding\"]},{\"simplified\":\"主管\",\"traditional\":\"主管\",\"pinyin\":\"zhǔguǎn\",\"definitions\":[\"person in charge of (a position, etc.)\",\"preside over\",\"Chief Operating Officer (COO)\"]},{\"simplified\":\"主流\",\"traditional\":\"主流\",\"pinyin\":\"zhǔliú\",\"definitions\":[\"main stream (of a river)\",\"the essential point\"]},{\"simplified\":\"主权\",\"traditional\":\"主權\",\"pinyin\":\"zhǔquán\",\"definitions\":[\"sovereignty\"]},{\"simplified\":\"主义\",\"traditional\":\"主義\",\"pinyin\":\"zhǔyì\",\"definitions\":[\"-ism\",\"ideology\"]},{\"simplified\":\"拄\",\"traditional\":\"拄\",\"pinyin\":\"zhǔ\",\"definitions\":[\"post\",\"lean on a stick\",\"prop\"]},{\"simplified\":\"嘱咐\",\"traditional\":\"囑咐\",\"pinyin\":\"zhǔfù\",\"definitions\":[\"enjoin\",\"to tell\",\"exhort\"]},{\"simplified\":\"助理\",\"traditional\":\"助理\",\"pinyin\":\"zhùlǐ\",\"definitions\":[\"assistant\"]},{\"simplified\":\"助手\",\"traditional\":\"助手\",\"pinyin\":\"zhùshǒu\",\"definitions\":[\"assistant\",\"helper\"]},{\"simplified\":\"住宅\",\"traditional\":\"住宅\",\"pinyin\":\"zhùzhái\",\"definitions\":[\"residence\",\"tenement\"]},{\"simplified\":\"注射\",\"traditional\":\"注射\",\"pinyin\":\"zhùshè\",\"definitions\":[\"injection\",\"inject (medicine)\"]},{\"simplified\":\"注视\",\"traditional\":\"注視\",\"pinyin\":\"zhùshì\",\"definitions\":[\"watch attentively\",\"gaze at\",\"stare\"]},{\"simplified\":\"注释\",\"traditional\":\"注釋\",\"pinyin\":\"zhùshì\",\"definitions\":[\"annotate\",\"annotation\",\"note\",\"make notes in the margin\"]},{\"simplified\":\"注重\",\"traditional\":\"注重\",\"pinyin\":\"zhùzhòng\",\"definitions\":[\"pay attention\",\"emphasize\",\"put stress on\"]},{\"simplified\":\"驻扎\",\"traditional\":\"駐紮\",\"pinyin\":\"zhùzhā\",\"definitions\":[\"to station\",\"to garrison (troops)\"]},{\"simplified\":\"著作\",\"traditional\":\"著作\",\"pinyin\":\"zhùzuò\",\"definitions\":[\"work\",\"book\",\"writing\"]},{\"simplified\":\"铸造\",\"traditional\":\"鑄造\",\"pinyin\":\"zhùzào\",\"definitions\":[\"cast (pour metal into a mold)\"]},{\"simplified\":\"拽\",\"traditional\":\"拽\",\"pinyin\":\"zhuài\",\"definitions\":[\"drag\",\"haul\"]},{\"simplified\":\"专长\",\"traditional\":\"專長\",\"pinyin\":\"zhuāncháng\",\"definitions\":[\"specialty\",\"special knowledge or ability\"]},{\"simplified\":\"专程\",\"traditional\":\"專程\",\"pinyin\":\"zhuānchéng\",\"definitions\":[\"special-purpose trip\"]},{\"simplified\":\"专利\",\"traditional\":\"專利\",\"pinyin\":\"zhuānlì\",\"definitions\":[\"patent\"]},{\"simplified\":\"专题\",\"traditional\":\"專題\",\"pinyin\":\"zhuāntí\",\"definitions\":[\"special topic\",\"questions\",\"special matter or subject\"]},{\"simplified\":\"砖\",\"traditional\":\"磚\",\"pinyin\":\"zhuān\",\"definitions\":[\"brick\"]},{\"simplified\":\"转达\",\"traditional\":\"轉達\",\"pinyin\":\"zhuǎndá\",\"definitions\":[\"pass on\",\"convey\",\"communicate\"]},{\"simplified\":\"转让\",\"traditional\":\"轉讓\",\"pinyin\":\"zhuǎnràng\",\"definitions\":[\"transfer (technology, good, etc.)\",\"make over\"]},{\"simplified\":\"转移\",\"traditional\":\"轉移\",\"pinyin\":\"zhuǎnyí\",\"definitions\":[\"to shift\",\"divert\",\"migrate\"]},{\"simplified\":\"转折\",\"traditional\":\"轉折\",\"pinyin\":\"zhuǎnzhé\",\"definitions\":[\"turning point\",\"shift in the trend of events\",\"plot twist in a book\"]},{\"simplified\":\"传记\",\"traditional\":\"傳記\",\"pinyin\":\"zhuànjì\",\"definitions\":[\"biography\"]},{\"simplified\":\"庄稼\",\"traditional\":\"莊稼\",\"pinyin\":\"zhuāngjia\",\"definitions\":[\"farm crops\"]},{\"simplified\":\"庄严\",\"traditional\":\"莊嚴\",\"pinyin\":\"zhuāngyán\",\"definitions\":[\"stately\",\"dignified\"]},{\"simplified\":\"庄重\",\"traditional\":\"莊重\",\"pinyin\":\"zhuāngzhòng\",\"definitions\":[\"grave\",\"solemn\",\"dignified\"]},{\"simplified\":\"装备\",\"traditional\":\"裝備\",\"pinyin\":\"zhuāngbèi\",\"definitions\":[\"equipment\",\"to equip\",\"to outfit\"]},{\"simplified\":\"装卸\",\"traditional\":\"裝卸\",\"pinyin\":\"zhuāngxiè\",\"definitions\":[\"load and unload\",\"to transfer\"]},{\"simplified\":\"壮观\",\"traditional\":\"壯觀\",\"pinyin\":\"zhuàngguān\",\"definitions\":[\"spectacular\",\"grand (of buildings, monuments, scenery, etc.)\"]},{\"simplified\":\"壮丽\",\"traditional\":\"壯麗\",\"pinyin\":\"zhuànglì\",\"definitions\":[\"magnificence\",\"splendid\",\"majestic\"]},{\"simplified\":\"壮烈\",\"traditional\":\"壯烈\",\"pinyin\":\"zhuàngliè\",\"definitions\":[\"brave and honorable\"]},{\"simplified\":\"幢\",\"traditional\":\"幢\",\"pinyin\":\"zhuàng\",\"definitions\":[\"(mw for houses, buildings)\",\"tent\"]},{\"simplified\":\"追悼\",\"traditional\":\"追悼\",\"pinyin\":\"zhuīdào\",\"definitions\":[\"mourning\",\"memorial (service, etc.)\"]},{\"simplified\":\"追究\",\"traditional\":\"追究\",\"pinyin\":\"zhuījiū\",\"definitions\":[\"investigate\",\"look into\",\"find out\"]},{\"simplified\":\"坠\",\"traditional\":\"墜\",\"pinyin\":\"zhuì\",\"definitions\":[\"fall\",\"drop\"]},{\"simplified\":\"准则\",\"traditional\":\"准則\",\"pinyin\":\"zhǔnzé\",\"definitions\":[\"principle\",\"standard or norm\",\"criterion\"]},{\"simplified\":\"卓越\",\"traditional\":\"卓越\",\"pinyin\":\"zhuóyuè\",\"definitions\":[\"distinction\",\"excellence\",\"splendid\"]},{\"simplified\":\"着手\",\"traditional\":\"著手\",\"pinyin\":\"zhuóshǒu\",\"definitions\":[\"put one's hand to\",\"commence\"]},{\"simplified\":\"着想\",\"traditional\":\"著想\",\"pinyin\":\"zhuóxiǎng\",\"definitions\":[\"give consideration to\",\"consider (other people's) needs\"]},{\"simplified\":\"着重\",\"traditional\":\"著重\",\"pinyin\":\"zhuózhòng\",\"definitions\":[\"put emphasis on\",\"to stress\"]},{\"simplified\":\"琢磨\",\"traditional\":\"琢磨\",\"pinyin\":\"zuómo\",\"definitions\":[\"ponder\",\"(also zhuómó: to polish (gems or literary works))\"]},{\"simplified\":\"姿态\",\"traditional\":\"姿態\",\"pinyin\":\"zītài\",\"definitions\":[\"attitude\",\"posture\",\"stance\"]},{\"simplified\":\"资本\",\"traditional\":\"資本\",\"pinyin\":\"zīběn\",\"definitions\":[\"(Economics) capital\",\"asset\"]},{\"simplified\":\"资产\",\"traditional\":\"資産\",\"pinyin\":\"zīchǎn\",\"definitions\":[\"property\",\"assets\"]},{\"simplified\":\"资深\",\"traditional\":\"資深\",\"pinyin\":\"zīshēn\",\"definitions\":[\"experienced\",\"senior\"]},{\"simplified\":\"资助\",\"traditional\":\"資助\",\"pinyin\":\"zīzhù\",\"definitions\":[\"subsidy\",\"provide financial aid\"]},{\"simplified\":\"滋润\",\"traditional\":\"滋潤\",\"pinyin\":\"zīrùn\",\"definitions\":[\"quenched\",\"moist\"]},{\"simplified\":\"滋味\",\"traditional\":\"滋味\",\"pinyin\":\"zīwèi\",\"definitions\":[\"taste\",\"flavor\",\"the way one feels\"]},{\"simplified\":\"子弹\",\"traditional\":\"子彈\",\"pinyin\":\"zǐdàn\",\"definitions\":[\"bullet\",\"cartridge\"]},{\"simplified\":\"自卑\",\"traditional\":\"自卑\",\"pinyin\":\"zìbēi\",\"definitions\":[\"feel inferior\",\"be self-abased\"]},{\"simplified\":\"自发\",\"traditional\":\"自發\",\"pinyin\":\"zìfā\",\"definitions\":[\"spontaneous\",\"unprompted\"]},{\"simplified\":\"自力更生\",\"traditional\":\"自力更生\",\"pinyin\":\"zì lì gēng shēng\",\"definitions\":[\"(idiom) self reliance\"]},{\"simplified\":\"自满\",\"traditional\":\"自滿\",\"pinyin\":\"zìmǎn\",\"definitions\":[\"complacent\",\"self-satisfied\"]},{\"simplified\":\"自主\",\"traditional\":\"自主\",\"pinyin\":\"zìzhǔ\",\"definitions\":[\"independent\",\"to act for oneself\",\"autonomous\"]},{\"simplified\":\"宗教\",\"traditional\":\"宗教\",\"pinyin\":\"zōngjiào\",\"definitions\":[\"religion\"]},{\"simplified\":\"宗旨\",\"traditional\":\"宗旨\",\"pinyin\":\"zōngzhǐ\",\"definitions\":[\"purpose\",\"objective\",\"aim\",\"goal\"]},{\"simplified\":\"棕色\",\"traditional\":\"棕色\",\"pinyin\":\"zōngsè\",\"definitions\":[\"brown (the color)\"]},{\"simplified\":\"踪迹\",\"traditional\":\"蹤迹\",\"pinyin\":\"zōngjì\",\"definitions\":[\"tracks\",\"trail\",\"footprint\",\"trace\",\"vestige\"]},{\"simplified\":\"总而言之\",\"traditional\":\"總而言之\",\"pinyin\":\"zǒngéryánzhī\",\"definitions\":[\"in short\",\"in a word\"]},{\"simplified\":\"总和\",\"traditional\":\"總和\",\"pinyin\":\"zǒnghé\",\"definitions\":[\"sum\"]},{\"simplified\":\"纵横\",\"traditional\":\"縱橫\",\"pinyin\":\"zònghéng\",\"definitions\":[\"able to move unhindered\",\"length and breadth\"]},{\"simplified\":\"走廊\",\"traditional\":\"走廊\",\"pinyin\":\"zǒuláng\",\"definitions\":[\"corridor\",\"hallway\"]},{\"simplified\":\"走漏\",\"traditional\":\"走漏\",\"pinyin\":\"zǒulòu\",\"definitions\":[\"leak (information, liquid, etc)\",\"divulge\",\"reveal\"]},{\"simplified\":\"走私\",\"traditional\":\"走私\",\"pinyin\":\"zǒu sī\",\"definitions\":[\"smuggle\",\"have an illicit affair\"]},{\"simplified\":\"揍\",\"traditional\":\"揍\",\"pinyin\":\"zòu\",\"definitions\":[\"(informal) beat\",\"hit\",\"(regional) smash\",\"break\"]},{\"simplified\":\"租赁\",\"traditional\":\"租賃\",\"pinyin\":\"zūlìn\",\"definitions\":[\"rent\",\"lease\"]},{\"simplified\":\"足以\",\"traditional\":\"足以\",\"pinyin\":\"zúyǐ\",\"definitions\":[\"sufficient to ...\",\"so much so that\",\"sufficiently\"]},{\"simplified\":\"阻碍\",\"traditional\":\"阻礙\",\"pinyin\":\"zǔ'ài\",\"definitions\":[\"obstruct\",\"hinder\",\"impede\"]},{\"simplified\":\"阻拦\",\"traditional\":\"阻攔\",\"pinyin\":\"zǔlán\",\"definitions\":[\"to stop\",\"obstruct\",\"block off\"]},{\"simplified\":\"阻挠\",\"traditional\":\"阻撓\",\"pinyin\":\"zǔnáo\",\"definitions\":[\"thwart\",\"to obstruct (something)\",\"stand in the way\"]},{\"simplified\":\"祖父\",\"traditional\":\"祖父\",\"pinyin\":\"zǔfù\",\"definitions\":[\"paternal grandfather\"]},{\"simplified\":\"祖国\",\"traditional\":\"祖國\",\"pinyin\":\"zǔguó\",\"definitions\":[\"homeland\",\"motherland\",\"fatherland\"]},{\"simplified\":\"祖先\",\"traditional\":\"祖先\",\"pinyin\":\"zǔxiān\",\"definitions\":[\"ancestor\",\"forbearer\"]},{\"simplified\":\"钻研\",\"traditional\":\"鑽研\",\"pinyin\":\"zuānyán\",\"definitions\":[\"study intensively\",\"delve into\"]},{\"simplified\":\"钻石\",\"traditional\":\"鑽石\",\"pinyin\":\"zuànshí\",\"definitions\":[\"diamond\"]},{\"simplified\":\"嘴唇\",\"traditional\":\"嘴唇\",\"pinyin\":\"zuǐchún\",\"definitions\":[\"lip\"]},{\"simplified\":\"罪犯\",\"traditional\":\"罪犯\",\"pinyin\":\"zuìfàn\",\"definitions\":[\"criminal\"]},{\"simplified\":\"尊严\",\"traditional\":\"尊嚴\",\"pinyin\":\"zūnyán\",\"definitions\":[\"dignity\",\"sanctity\",\"honor\"]},{\"simplified\":\"遵循\",\"traditional\":\"遵循\",\"pinyin\":\"zūnxún\",\"definitions\":[\"follow\",\"abide by\"]},{\"simplified\":\"作弊\",\"traditional\":\"作弊\",\"pinyin\":\"zuòbì\",\"definitions\":[\"practice fraud\",\"cheat\"]},{\"simplified\":\"作废\",\"traditional\":\"作廢\",\"pinyin\":\"zuòfèi\",\"definitions\":[\"cancellation\",\"delete\",\"to nullify\",\"to expire and thus lose validity\"]},{\"simplified\":\"作风\",\"traditional\":\"作風\",\"pinyin\":\"zuòfēng\",\"definitions\":[\"work style\",\"way\"]},{\"simplified\":\"作息\",\"traditional\":\"作息\",\"pinyin\":\"zuòxī\",\"definitions\":[\"work and rest\"]},{\"simplified\":\"座右铭\",\"traditional\":\"座右銘\",\"pinyin\":\"zuòyòumíng\",\"definitions\":[\"motto\"]},{\"simplified\":\"做主\",\"traditional\":\"做主\",\"pinyin\":\"zuòzhǔ\",\"definitions\":[\"decide\",\"take the responsibility for a decision\"]}]");
+
+/***/ }),
+
+/***/ 3:
+/*!***********************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fdictionary&absolutePagePath=%2FUsers%2Flynx%2Fprojects%2Fhsk%2Fpages%2Fdictionary.js ***!
+  \***********************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Flynx%2Fprojects%2Fhsk%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Flynx%2Fprojects%2Fhsk%2Fpages%2Findex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fdictionary&absolutePagePath=%2FUsers%2Flynx%2Fprojects%2Fhsk%2Fpages%2Fdictionary.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fdictionary&absolutePagePath=%2FUsers%2Flynx%2Fprojects%2Fhsk%2Fpages%2Fdictionary.js!./");
 
 
 /***/ }),
@@ -23041,5 +27031,5 @@ module.exports = dll_c2e10d183b950a67d9e7;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
-//# sourceMappingURL=index.js.map
+},[[3,"static/runtime/webpack.js"]]]);
+//# sourceMappingURL=dictionary.js.map
