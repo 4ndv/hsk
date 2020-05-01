@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { Button } from 'reactstrap'
 
 import LearnCard from './LearnCard'
+import Link from './Link'
 
 const Learn = (props) => {
   const { data, config } = props
@@ -47,7 +48,10 @@ const Learn = (props) => {
           {' '}
           {data.length}
         </p>
-        <p><Button onClick={tryAgain}>Try again</Button></p>
+        <p>
+          <Button onClick={tryAgain}>Try again</Button>
+          <Link href="/"><Button className="ml-1">Return to home</Button></Link>
+        </p>
       </>
     )
   }
