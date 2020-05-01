@@ -36,6 +36,7 @@
     "jsx-a11y/no-noninteractive-element-interactions": "off",
     "jsx-a11y/click-events-have-key-events": "off",
     "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/interactive-supports-focus": "off",
     "no-console": "off",
     "react/forbid-prop-types": "off",
     "react/jsx-no-target-blank": [

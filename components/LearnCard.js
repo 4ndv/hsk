@@ -4,7 +4,11 @@ import {
   Card, CardBody, Button, Row, Col
 } from 'reactstrap'
 
-const renderQuestion = (question, type) => {
+import Hider from './Hider'
+
+const renderQuestion = (config, question, type) => {
+  const { hidePinyin } = config
+
   switch (type) {
     case 'characters-pinyin':
       return <div className="question">{question.simplified}</div>
@@ -14,7 +18,14 @@ const renderQuestion = (question, type) => {
       return (
         <>
           <div className="question">{question.simplified}</div>
-          <div className="comment">{question.pinyin}</div>
+          <div className="comment">
+            <Hider
+              enabled={hidePinyin}
+              caption="Show pinyin"
+            >
+              {question.pinyin}
+            </Hider>
+          </div>
         </>
       )
     case 'translation-characters':
@@ -40,7 +51,7 @@ const renderAnswerText = (answer, type) => {
 }
 
 const LearnCard = (props) => {
-  const { word, submitResult } = props
+  const { word, submitResult, config } = props
   const { question, variants, type } = word
   const [selected, setSelected] = useState([])
 
@@ -80,7 +91,7 @@ const LearnCard = (props) => {
       <Card className="learn-card mb-4">
         <CardBody>
           <div className="question">
-            {renderQuestion(question, type)}
+            {renderQuestion(config, question, type)}
           </div>
         </CardBody>
       </Card>
@@ -101,7 +112,8 @@ const LearnCard = (props) => {
 
 LearnCard.propTypes = {
   word: PropTypes.object.isRequired,
-  submitResult: PropTypes.func.isRequired
+  submitResult: PropTypes.func.isRequired,
+  config: PropTypes.object.isRequired
 }
 
 export default LearnCard

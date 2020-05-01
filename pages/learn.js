@@ -9,17 +9,19 @@ import SiteLayout from '~/components/SiteLayout'
 const LearnPage = () => {
   const { query: { config } } = useRouter()
 
+  const configObject = useMemo(() => JSON.parse(config), [config])
+
   const data = useMemo(() => {
     if (!config) return null
 
-    return buildFromConfig(JSON.parse(config))
+    return buildFromConfig(configObject)
   }, [config])
 
   if (!data) return <SiteLayout><h1>Loading...</h1></SiteLayout>
 
   return (
     <SiteLayout>
-      <Learn data={data} />
+      <Learn data={data} config={configObject} />
     </SiteLayout>
   )
 }

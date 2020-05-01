@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import LearnCard from './LearnCard'
 
 const Learn = (props) => {
-  const { data } = props
+  const { data, config } = props
   const [position, setPosition] = useState(0)
   const [correct, setCorrect] = useState(0)
 
@@ -46,12 +46,13 @@ const Learn = (props) => {
   }
 
   return (
-    <LearnCard word={data[position]} key={position} submitResult={submitResult} />
+    <LearnCard word={data[position]} key={position} submitResult={submitResult} config={config} />
   )
 }
 
 Learn.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.object).isRequired
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  config: PropTypes.object.isRequired
 }
 
 export default Learn

@@ -16,7 +16,8 @@ const SettingsForm = (props) => {
     defaultValues: {
       levels: [1, 2, 3, 4],
       wordsLimit: 0,
-      modes: ['characters-pinyin', 'character-translation']
+      modes: ['characters-pinyin', 'character-translation'],
+      hidePinyin: true
     }
   })
 
@@ -103,6 +104,20 @@ const SettingsForm = (props) => {
           />
           {' '}
           Select characters for translation
+        </Label>
+      </FormGroup>
+      <FormGroup className="mb-0 mt-2">
+        <Label for="modes">Other settings</Label>
+      </FormGroup>
+      <FormGroup check>
+        <Label check>
+          <Input
+            type="checkbox"
+            name="hidePinyin"
+            innerRef={register()}
+          />
+          {' '}
+          Hide pinyin
         </Label>
       </FormGroup>
       <FormGroup className="mt-3">
