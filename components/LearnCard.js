@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import {
-  Card, CardBody, Button, Row, Col
+  Card, CardBody, Button, Row, Col, Badge
 } from 'reactstrap'
+
+import { useHotkeys } from 'react-hotkeys-hook'
 
 import Hider from './Hider'
 
@@ -84,6 +86,18 @@ const LearnCard = (props) => {
     return null
   }
 
+  useHotkeys('1,2,3,4,space', (event, { key }) => {
+    if (key === 'space') {
+      skip()
+    } else {
+      const index = +key - 1
+
+      const correct = variants.findIndex((item) => question.simplified === item.simplified)
+
+      selectAnswer(index, index === correct)
+    }
+  }, [selected])
+
   const renderAnswer = (index, variant, correct) => {
     const isSelected = selected.includes(index)
     const correctColor = correct ? 'success' : 'danger'
@@ -99,6 +113,8 @@ const LearnCard = (props) => {
           onClick={() => selectAnswer(index, correct)}
           size="lg"
         >
+          <Badge color="dark">{index + 1}</Badge>
+          {' '}
           {renderAnswerText(variant, type)}
         </Button>
       </Col>
@@ -131,6 +147,8 @@ const LearnCard = (props) => {
             onClick={() => skip()}
             size="lg"
           >
+            <Badge color="dark">Space</Badge>
+            {' '}
             Skip
           </Button>
         </Col>
