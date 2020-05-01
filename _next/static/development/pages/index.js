@@ -1020,7 +1020,7 @@ function _unsupportedIterableToArray(o, minLen) {
   if (typeof o === "string") return Object(_arrayLikeToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(o, minLen);
   var n = Object.prototype.toString.call(o).slice(8, -1);
   if (n === "Object" && o.constructor) n = o.constructor.name;
-  if (n === "Map" || n === "Set") return Array.from(n);
+  if (n === "Map" || n === "Set") return Array.from(o);
   if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return Object(_arrayLikeToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(o, minLen);
 }
 
@@ -8911,7 +8911,7 @@ var getCheckboxValue = (options) => {
     if (isArray(options)) {
         if (options.length > 1) {
             const values = options
-                .filter(({ ref: { checked } }) => checked)
+                .filter((option) => option && option.ref.checked)
                 .map(({ ref: { value } }) => value);
             return { value: values, isValid: !!values.length };
         }
@@ -9220,11 +9220,7 @@ var assignWatchFields = (fieldValues, fieldName, watchFields, combinedDefaultVal
             getPath$1(fieldName, value).forEach((name) => watchFields.add(name));
         }
     }
-    return isUndefined(value)
-        ? isObject(combinedDefaultValues)
-            ? get(combinedDefaultValues, fieldName)
-            : combinedDefaultValues
-        : value;
+    return isUndefined(value) ? get(combinedDefaultValues, fieldName) : value;
 };
 
 var skipValidation = ({ isOnChange, hasError, isBlurEvent, isOnSubmit, isReValidateOnSubmit, isOnBlur, isReValidateOnBlur, isSubmitted, }) => (isOnChange && isBlurEvent) ||
@@ -9685,14 +9681,17 @@ function useForm({ mode = VALIDATION_MODE.onSubmit, reValidateMode = VALIDATION_
     }
     function watch(fieldNames, defaultValue) {
         const watchFields = watchFieldsRef.current;
-        const combinedDefaultValues = isUndefined(defaultValue)
-            ? isUndefined(defaultValuesRef.current)
-                ? {}
-                : defaultValuesRef.current
+        const isDefaultValueUndefined = isUndefined(defaultValue);
+        const combinedDefaultValues = isDefaultValueUndefined
+            ? defaultValuesRef.current
             : defaultValue;
         const fieldValues = getFieldsValues(fieldsRef.current, fieldNames);
         if (isString(fieldNames)) {
-            return assignWatchFields(fieldValues, fieldNames, watchFields, combinedDefaultValues);
+            return assignWatchFields(fieldValues, fieldNames, watchFields, {
+                [fieldNames]: isDefaultValueUndefined
+                    ? get(combinedDefaultValues, fieldNames)
+                    : defaultValue,
+            });
         }
         if (isArray(fieldNames)) {
             return fieldNames.reduce((previous, name) => (Object.assign(Object.assign({}, previous), { [name]: assignWatchFields(fieldValues, name, watchFields, combinedDefaultValues) })), {});
@@ -9703,9 +9702,9 @@ function useForm({ mode = VALIDATION_MODE.onSubmit, reValidateMode = VALIDATION_
             ? transformToNestObject(result)
             : result;
     }
-    function unregister(names) {
+    function unregister(name) {
         if (fieldsRef.current) {
-            (isArray(names) ? names : [names]).forEach((fieldName) => removeFieldEventListenerAndRef(fieldsRef.current[fieldName], true));
+            (isArray(name) ? name : [name]).forEach((fieldName) => removeFieldEventListenerAndRef(fieldsRef.current[fieldName], true));
         }
     }
     function registerFieldsRef(ref, validateOptions = {}) {
