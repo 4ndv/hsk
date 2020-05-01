@@ -54,13 +54,32 @@ const LearnCard = (props) => {
   const { word, submitResult, config } = props
   const { question, variants, type } = word
   const [selected, setSelected] = useState([])
+  const [disableAll, setDisableAll] = useState(false)
 
   const selectAnswer = (index, correct) => {
+    if (disableAll) return null
+
     const newSelected = [index, ...selected]
 
-    if (correct) submitResult({ word, selected: newSelected })
+    if (correct) {
+      submitResult({ word, selected: newSelected })
+      setDisableAll(true)
+    }
 
     setSelected(newSelected)
+
+    return null
+  }
+
+  const skip = () => {
+    if (disableAll) return null
+
+    const newSelected = [0, 1, 2, 3]
+
+    submitResult({ word, selected: newSelected })
+
+    setSelected(newSelected)
+    setDisableAll(true)
 
     return null
   }
@@ -105,6 +124,16 @@ const LearnCard = (props) => {
             )
           )
         }
+        <Col lg={12}>
+          <Button
+            block
+            color="warning"
+            onClick={() => skip()}
+            size="lg"
+          >
+            Skip
+          </Button>
+        </Col>
       </Row>
     </>
   )
