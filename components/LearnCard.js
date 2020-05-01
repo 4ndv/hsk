@@ -113,9 +113,9 @@ const LearnCard = (props) => {
           onClick={() => selectAnswer(index, correct)}
           size="lg"
         >
-          <Badge color="dark">{index + 1}</Badge>
+          <Badge color="dark" className="float-left mt-1">{index + 1}</Badge>
           {' '}
-          {renderAnswerText(variant, type)}
+          <span className="mr-4">{renderAnswerText(variant, type)}</span>
         </Button>
       </Col>
     )
