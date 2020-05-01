@@ -568,13 +568,22 @@ var LearnCard = function LearnCard(props) {
       }
     }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Badge"], {
       color: "dark",
+      className: "float-left mt-1",
       __self: _this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 116,
         columnNumber: 11
       }
-    }, index + 1), ' ', renderAnswerText(variant, type)));
+    }, index + 1), ' ', __jsx("span", {
+      className: "mr-4",
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 118,
+        columnNumber: 11
+      }
+    }, renderAnswerText(variant, type))));
   };
 
   return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Card"], {
