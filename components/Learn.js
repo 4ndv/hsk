@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import Router from 'next/router'
 
-import { Button, ListGroup, ListGroupItem } from 'reactstrap'
+import {
+  Button, ListGroup, ListGroupItem, Progress
+} from 'reactstrap'
 
 import LearnCard from './LearnCard'
 import Link from './Link'
@@ -119,7 +121,13 @@ const Learn = (props) => {
   }
 
   return (
-    <LearnCard word={data[position]} key={position} submitResult={submitResult} config={config} />
+    <>
+      <Progress multi className="mb-1">
+        <Progress bar color="success" value={(100.0 / data.length) * correct} />
+        <Progress bar color="danger" value={(100.0 / data.length) * errors.length} />
+      </Progress>
+      <LearnCard word={data[position]} key={position} submitResult={submitResult} config={config} />
+    </>
   )
 }
 
