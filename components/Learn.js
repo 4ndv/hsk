@@ -2,10 +2,44 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import Router from 'next/router'
 
-import { Button } from 'reactstrap'
+import { Button, ListGroup, ListGroupItem } from 'reactstrap'
 
 import LearnCard from './LearnCard'
 import Link from './Link'
+
+const renderMistakes = (mistakes) => {
+  if (mistakes.length === 0) return null
+
+  const mistakesElements = mistakes.map((mistake) => {
+    const { question } = mistake
+
+    return (
+      <ListGroupItem key={question.id}>
+        <div>
+          <b>Character: </b>
+          {question.simplified}
+        </div>
+        <div>
+          <b>Pinyin: </b>
+          {question.pinyin}
+        </div>
+        <div>
+          <b>Definitions: </b>
+          {question.definitions.join('; ')}
+        </div>
+      </ListGroupItem>
+    )
+  })
+
+  return (
+    <>
+      <h3>Mistakes</h3>
+      <ListGroup>
+        {mistakesElements}
+      </ListGroup>
+    </>
+  )
+}
 
 const Learn = (props) => {
   const { data, config } = props
@@ -79,6 +113,7 @@ const Learn = (props) => {
           {errors.length > 0 ? <Button className="ml-1" onClick={retryIncorrect}>Retry incorrect</Button> : null}
           <Link href="/"><Button className="ml-1">Return to home</Button></Link>
         </p>
+        {renderMistakes(errors)}
       </>
     )
   }
