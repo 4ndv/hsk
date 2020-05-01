@@ -9,20 +9,44 @@ import { useHotkeys } from 'react-hotkeys-hook'
 import Hider from './Hider'
 
 const renderQuestion = (config, question, type) => {
-  const { hidePinyin } = config
+  const { alwaysShowPinyin, alwaysShowTranslation } = config
 
   switch (type) {
     case 'characters-pinyin':
-      return <div className="question">{question.simplified}</div>
+      return (
+        <>
+          <div className="question">{question.simplified}</div>
+          <div className="comment">
+            <Hider
+              enabled={!alwaysShowTranslation}
+              caption="Show translation"
+            >
+              {question.definitions[0]}
+            </Hider>
+          </div>
+        </>
+      )
     case 'pinyin-characters':
-      return <div className="question">{question.pinyin}</div>
+      return (
+        <>
+          <div className="question">{question.pinyin}</div>
+          <div className="comment">
+            <Hider
+              enabled={!alwaysShowTranslation}
+              caption="Show translation"
+            >
+              {question.definitions[0]}
+            </Hider>
+          </div>
+        </>
+      )
     case 'characters-translation':
       return (
         <>
           <div className="question">{question.simplified}</div>
           <div className="comment">
             <Hider
-              enabled={hidePinyin}
+              enabled={!alwaysShowPinyin}
               caption="Show pinyin"
             >
               {question.pinyin}

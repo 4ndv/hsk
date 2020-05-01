@@ -16,8 +16,9 @@ const SettingsForm = (props) => {
     defaultValues: {
       levels: [1, 2, 3, 4],
       wordsLimit: 0,
-      modes: ['characters-pinyin', 'character-translation'],
-      hidePinyin: true
+      modes: ['characters-pinyin'],
+      alwaysShowPinyin: false,
+      alwaysShowTranslation: false
     }
   })
 
@@ -113,11 +114,22 @@ const SettingsForm = (props) => {
         <Label check>
           <Input
             type="checkbox"
-            name="hidePinyin"
+            name="alwaysShowPinyin"
             innerRef={register()}
           />
           {' '}
-          Hide pinyin
+          Always show pinyin
+        </Label>
+      </FormGroup>
+      <FormGroup check>
+        <Label check>
+          <Input
+            type="checkbox"
+            name="alwaysShowTranslation"
+            innerRef={register()}
+          />
+          {' '}
+          Always show definition
         </Label>
       </FormGroup>
       <FormGroup className="mt-3">
