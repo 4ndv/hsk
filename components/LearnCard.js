@@ -91,7 +91,7 @@ const LearnCard = (props) => {
     const newSelected = [index, ...selected]
 
     if (correct) {
-      submitResult({ word, selected: newSelected })
+      submitResult({ word, selected: newSelected }, 500)
       setDisableAll(true)
     }
 
@@ -105,7 +105,7 @@ const LearnCard = (props) => {
 
     const newSelected = [0, 1, 2, 3]
 
-    submitResult({ word, selected: newSelected })
+    submitResult({ word, selected: newSelected }, 1200)
 
     setSelected(newSelected)
     setDisableAll(true)

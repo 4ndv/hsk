@@ -59,7 +59,7 @@ const Learn = (props) => {
     setFinished(false)
   }, [config])
 
-  const submitResult = (result) => {
+  const submitResult = (result, timeout) => {
     const { word, selected } = result
 
     setTimeout(() => {
@@ -70,7 +70,7 @@ const Learn = (props) => {
       } else {
         setErrors([...errors, word])
       }
-    }, 500)
+    }, timeout)
   }
 
   const finish = () => {
