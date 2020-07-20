@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.4.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "next": "9.3.5",
     "nextjs-progressbar": "^0.0.4",
     "react": "16.13.1",
