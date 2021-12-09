@@ -1,0 +1,1 @@
+self.__BUILD_MANIFEST = (function(a,b){return {"/":[a],"/dictionary":[a,b],"/index":[a],"/learn":[a,b]}}("static\u002Fchunks\u002F5237b713c84046c7134aa91f44282fc67ba1ea42.2952abdc7a22c7190950.js","static\u002Fchunks\u002F014cd3c8a39e906c9e1c629867998d2784c7d662.45613de153c33a0e5077.js"));self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()
